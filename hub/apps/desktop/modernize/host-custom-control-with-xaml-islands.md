@@ -1,19 +1,19 @@
 ---
 description: 本文演示如何使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件。
 title: 使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛、自定义控件、用户控件、宿主控件
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: af8ef4d8fb8661e4a8f2d6b1fb98dd19cbd567c1
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: 4fb6e2d4fc13d90ec69f962e69b1ee8cb5c1361c
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302521"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520392"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
 
@@ -53,9 +53,9 @@ ms.locfileid: "75302521"
 
 5. 在 " **NuGet 包管理器**" 窗口中，确保选择 "**包括预发行**版"。
 
-6. 选择 "**浏览**" 选项卡，搜索[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)包（版本 v 6.0.0-preview7 或更高版本），然后安装包。 此包提供了使用**WindowsXamlHost**控件承载 UWP 控件所需的所有内容，包括其他相关的 NuGet 包。
+6. 选择 "**浏览**" 选项卡，搜索[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)包（版本 v 6.0.0 或更高版本），然后安装包。 此包提供了使用**WindowsXamlHost**控件承载 UWP 控件所需的所有内容，包括其他相关的 NuGet 包。
     > [!NOTE]
-    > Windows 窗体应用必须使用[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)包（版本 v 6.0.0-preview7 或更高版本）。
+    > Windows 窗体应用必须使用[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost)包（版本 v 6.0.0 或更高版本）。
 
 7. 配置解决方案以面向特定的平台，例如 x86 或 x64。 对于以**任何 CPU**为目标的项目，不支持自定义 UWP 控件。
 
@@ -70,7 +70,7 @@ ms.locfileid: "75302521"
 
 1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**添加** -> "**新建项目**"。
 2. 向你的解决方案中添加一个**空白应用（通用 Windows）** 项目。 请确保目标版本和最低版本均设置为**Windows 10 1903 版**或更高版本。
-3. 在 UWP 应用项目中，安装[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 包（版本 v 6.0.0-preview7 或更高版本）。
+3. 在 UWP 应用项目中，安装[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 包（版本 v 6.0.0 或更高版本）。
 4. 打开**app.config**文件，并将此文件的内容替换为以下 xaml。 将 `MyUWPApp` 替换为 UWP 应用项目的命名空间。
 
     ```xml
@@ -200,13 +200,11 @@ ms.locfileid: "75302521"
 
 在传统上，UWP 控件已作为 Windows 10 操作系统的一部分发布，并通过 Windows SDK 向开发人员提供。 [WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)是一种替代方法，在此方法中，Windows SDK 中第一方 UWP 控件的更新版本分发到未绑定到 Windows SDK 版本的 NuGet 包中。 此库还包括不属于 Windows SDK 和默认 UWP 平台的新控件。 有关更多详细信息，请参阅我们的[WinUI 库路线图](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
-本部分演示如何将 WinUI 库中的 UWP 控件添加到用户控件，以便可以在 WPF 应用程序中承载此控件。 
+本部分演示如何将 WinUI 库中的 UWP 控件添加到用户控件，以便可以在 WPF 应用程序中承载此控件。
 
-1. 在 UWP 应用项目中，安装最新的[Microsoft. UI](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包预发布版本。
-    > [!NOTE]
-    > 请确保安装最新的*预发行*版本。 目前，如果你选择将你的应用打包到[.msix 包](https://docs.microsoft.com/windows/msix)进行部署，则只有此包的预发行版本才适用。
+1. 在 UWP 应用项目中，安装最新版本的[Microsoft. UI](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包。
 
-2. 在此项目的 App.config 文件中，将以下子元素添加到 `<xaml:Application>` 元素。
+2. 在此项目的 App.config 文件中，将以下子元素添加到 `<xaml:XamlApplication>` 元素。
 
     ```xml
     <Application.Resources>
@@ -229,7 +227,7 @@ ms.locfileid: "75302521"
     </xaml:XamlApplication>
     ```
 
-3. 在 UWP 类库项目中，安装最新的[Microsoft. UI](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的预发行版本（在 UWP 应用项目中安装的版本）。
+3. 在 UWP 类库项目中，安装最新版本的[Microsoft. UI](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包（在 UWP 应用项目中安装的版本相同）。
 
 4. 在同一项目中，打开用户控件的 XAML 文件，并将以下命名空间声明添加到 `<UserControl>` 元素。
 
@@ -289,20 +287,7 @@ ms.locfileid: "75302521"
 
     3. 保存项目文件并将其关闭。
 
-4. 编辑包清单以引用正确的默认初始屏幕图像。 此解决方法目前是打包自定义 UWP 控件的 WPF 应用程序所必需的。
-
-    1. 在打包项目中，右键单击**appxmanifest.xml**文件，然后单击 "**查看代码**"。
-    2. 在文件中找到以下元素。
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.png" />```
-
-    3. 将此元素更改为：
-
-        ```<uap:SplashScreen Image="Images\SplashScreen.scale-200.png" />```
-
-    4. 保存**appxmanifest.xml**文件并将其关闭。
-
-5. 编辑 WPF 项目文件。 这些更改当前是打包自定义 UWP 控件的 WPF 应用程序所必需的。
+4. 编辑 WPF 项目文件。 这些更改当前是打包自定义 UWP 控件的 WPF 应用程序所必需的。
 
     1. 在解决方案资源管理器中，右键单击 WPF 项目节点，然后选择 "**卸载项目**"。
     2. 右键单击 WPF 项目节点，然后选择 "**编辑**"。
@@ -317,7 +302,7 @@ ms.locfileid: "75302521"
     4. 保存项目文件并将其关闭。
     5. 右键单击 WPF 项目节点，然后选择 "**重新加载项目**"。
 
-6. 生成并运行打包项目。 确认 WPF 运行，UWP 自定义控件按预期方式显示。
+5. 生成并运行打包项目。 确认 WPF 运行，UWP 自定义控件按预期方式显示。
 
 ## <a name="related-topics"></a>相关主题
 

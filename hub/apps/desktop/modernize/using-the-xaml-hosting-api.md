@@ -1,19 +1,19 @@
 ---
 description: 本文介绍如何在桌面C++ Win32 应用程序中托管 UWP XAML UI。
 title: 在 C++ Win32 应用中使用 UWP XAML 托管 API
-ms.date: 08/20/2019
+ms.date: 01/10/2010
 ms.topic: article
 keywords: windows 10、uwp、windows 窗体、wpf、win32、xaml 孤岛
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 9e4fdc8366e26bcd7e106bf070cb42ed2cd1a49f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5a0973bcce4de4fac8f923a303b0c3216600fb97
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683680"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520422"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-c-win32-app"></a>在 C++ Win32 应用中使用 UWP XAML 托管 API
 
@@ -55,7 +55,7 @@ XAML 孤岛需要 Windows 10 版本1903（或更高版本）以及相应的 Wind
     1. 安装 Windows 10 版本 1903 SDK （版本10.0.18362）或更高版本。
     2. 通过向解决方案添加[Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)并添加对C++/Win32 项目的引用，将应用打包在 .msix 包中。
 
-* **安装 Microsoft 工具包. Win32**。 如果不想在 .msix 包中打包应用程序，可以安装[（版本](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)v 6.0.0-preview7 或更高版本）。 此包提供了多个生成和运行时资产，使 XAML 孤岛可以在应用中工作。 请确保已选中 "**包括预发行**版" 选项，以便你可以查看此包的最新预览版本。
+* **安装 Microsoft 工具包. Win32**。 如果不想在 .msix 包中打包应用程序，可以安装[（版本](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)v 6.0.0 或更高版本）。 此包提供了多个生成和运行时资产，使 XAML 孤岛可以在应用中工作。
 
 > [!NOTE]
 > 这些说明的早期版本已经将 `maxversiontested` 元素添加到项目中的应用程序清单。 只要你使用上面列出的选项之一，就不再需要将此元素添加到清单中。
@@ -125,7 +125,7 @@ Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/window
 4. 安装[Microsoft 工具包. Win32](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet 包：
 
     1. 在 " **NuGet 包管理器**" 窗口中，确保选择 "**包括预发行**版"。
-    2. 选择 "**浏览**" 选项卡，搜索["6.0.0" 包](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)，并安装此包的版本 v preview7 （或更高版本）。
+    2. 选择 "**浏览**" 选项卡，搜索["6.0.0](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) " 包，然后安装此包的版本 v （或更高版本）。
 
 ### <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>使用 XAML 宿主 API 承载 UWP 控件
 

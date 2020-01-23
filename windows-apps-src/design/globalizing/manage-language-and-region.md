@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 79edf30733f7bca443c5fd12103fbd5d93909732
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1642f8ccc989ce224ff0b3250fa1b79c954167b1
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258068"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520412"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解用户配置文件语言和应用清单语言
 Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**来配置首选显示语言的排序列表或一种首选显示语言。 某种语言可能会具有区域变体。 例如，可以选择西班牙使用的西班牙语、墨西哥使用的西班牙语、美国使用的西班牙语等。
@@ -35,7 +35,7 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 ## <a name="app-manifest-language-list"></a>应用部件清单语言列表
 应用部件清单语言列表是你的应用声明（或将声明）支持的语言列表。 随着应用从开发生命周期一直到本地化的过程中，此列表会不断扩展。
 
-尽管此列表是在编译时确定的，但可以通过两种方式来精确控制它的确定方式。 一种方式是让 Visual Studio 从项目的文件中确定此列表。 为此，首先在应用包清单源文件 ( **) 中的**应用程序**选项卡上设置应用的**默认语言`Package.appxmanifest`。 然后，确认同一文件中包含此配置（默认包含）。
+尽管此列表是在编译时确定的，但可以通过两种方式来精确控制它的确定方式。 一种方式是让 Visual Studio 从项目的文件中确定此列表。 为此，首先在应用包清单源文件 (`Package.appxmanifest`) 中的**应用程序**选项卡上设置应用的**默认语言**。 然后，确认同一文件中包含此配置（默认包含）。
 
 ```xml
   <Resources>
@@ -53,7 +53,7 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
   </Resources>
 ```
 
-另一种方式是将应用包清单源文件 (`<Resource>`) 中的单个“x-generate”`Package.appxmanifest` 元素替换为 `<Resource>` 元素的扩展列表（注意要首先列出默认语言）。 尽管该方法会涉及更多的维护工作，但如果使用的是自定义构建系统，这可能是合适的方法。
+另一种方式是将应用包清单源文件 (`Package.appxmanifest`) 中的单个“x-generate”`<Resource>` 元素替换为 `<Resource>` 元素的扩展列表（注意要首先列出默认语言）。 尽管该方法会涉及更多的维护工作，但如果使用的是自定义构建系统，这可能是合适的方法。
 
 首先，应用部件清单语言列表将仅包含一种语言。 可能是 en-US。 但最后，由于你已手动配置清单或向项目添加已翻译的资源，因此，此列表将扩展。
 
@@ -193,7 +193,7 @@ Windows 用户可以使用**设置** > **时间和语言** > **区域和语言**
 </table>
 
 >[!NOTE]
-> 有关 Microsoft 使用的标准国家/地区代码的列表，请参阅[官方国家/地区列表](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)。
+> 有关 Microsoft 使用的标准国家/地区代码的列表，请参阅[官方国家/地区列表](/windows/uwp/publish/supported-languages)。
 
 ## <a name="important-apis"></a>重要的 API
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
