@@ -126,7 +126,7 @@
               href: controls-and-patterns/collection-commanding.md
             - name: “选择模式”概述
               href: controls-and-patterns/selection-modes.md
-            - name: Swipe
+            - name: 轻扫
               href: controls-and-patterns/swipe.md
             - name: 下拉刷新
               href: controls-and-patterns/pull-to-refresh.md
@@ -182,7 +182,7 @@
           href: controls-and-patterns/pivot.md
         - name: 选项卡视图
           href: controls-and-patterns/tab-view.md
-    - name: 人脉
+    - name: 人员
       items:
         - name: 联系人卡片
           href: controls-and-patterns/contact-card.md
@@ -240,6 +240,8 @@
           href: controls-and-patterns/content-links.md
         - name: 手写视图
           href: controls-and-patterns/text-handwriting-view.md
+    - name: 双窗格视图
+      href: controls-and-patterns/two-pane-view.md
 - name: 样式
   items:
     - name: 概述
@@ -306,7 +308,7 @@
           href: motion/storyboarded-animations.md
         - name: 关键帧以及缓动函数动画
           href: motion/key-frame-and-easing-function-animations.md
-- name: 壳体
+- name: Shell
   items:
     - name: 磁贴
       href: shell/tiles-and-notifications/creating-tiles.md
@@ -423,11 +425,11 @@
           href: input/save-and-load-ink.md
         - name: 添加 InkToolbar
           href: input/ink-toolbar.md
-    - name: 触控
+    - name: 触摸
       href: input/touch-interactions.md
     - name: 鼠标
       href: input/mouse-interactions.md
-    - name: 键盘
+    - name: Keyboard
       href: input/keyboard-interactions.md
       items:
         - name: 访问键
@@ -505,7 +507,7 @@
       href: input/guidelines-for-rotation.md
     - name: 选择文本和图像
       href: input/guidelines-for-textselection.md
-    - name: 定位
+    - name: 目标设定
       href: input/guidelines-for-targeting.md
     - name: 视觉反馈
       href: input/guidelines-for-visualfeedback.md

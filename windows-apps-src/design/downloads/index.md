@@ -7,19 +7,18 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f33e2f10686edf149feb11e317a10e535685ef19
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.openlocfilehash: 4678565547616c0cee4a7961cb4a0c95fc03241b
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74902533"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520452"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>适用于 UWP 应用的设计工具包和示例
 
 ![设计基础知识](../images/downloads-2x.png)
 
-适用于 Fluent Design/UWP 应用的设计和 UI 相关下载。 有关 Visual Studio 之类的其他工具，请参阅<a href="https://developer.microsoft.com/windows/downloads">我们的主下载页</a>。 
-
+适用于 Fluent Design/UWP 应用的设计和 UI 相关下载。 有关 Visual Studio 之类的其他工具，请参阅<a href="https://developer.microsoft.com/windows/downloads">我们的主下载页</a>。
 
 ## <a name="design-toolkits"></a>设计工具包
 
@@ -60,11 +59,6 @@ v1705，2017 年 5 月<br>
 <a href="https://aka.ms/adobephotoshoptoolkit">下载</a>
     :::column-end:::
     :::column:::
-![主图](images/framer.png)
-<b>Framer 工具包</b><br>
-（此工具包不再受支持。）<br/>
-v1806，2018 年 6 月<br>
-<a href="https://github.com/Microsoft/windows-framer-toolkit">下载</a>
     :::column-end:::
 :::row-end:::
 
