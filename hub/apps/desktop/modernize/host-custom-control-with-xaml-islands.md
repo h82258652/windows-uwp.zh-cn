@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4fb6e2d4fc13d90ec69f962e69b1ee8cb5c1361c
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 70ba858daa09f4412a771441e76f5c00dd8c6c32
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520392"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725980"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
 
@@ -21,7 +21,7 @@ ms.locfileid: "76520392"
 
 尽管本文演示了如何在 WPF 应用程序中执行此操作，但此过程与 Windows 窗体应用程序类似。 有关在 WPF 中承载 UWP 控件和 Windows 窗体应用的概述，请参阅[此文](xaml-islands.md#wpf-and-windows-forms-applications)。
 
-## <a name="overview"></a>概述
+## <a name="overview"></a>개요
 
 若要在 WPF 应用程序中托管自定义 UWP 控件，你将需要以下组件。 本文提供了有关创建每个组件的说明。
 
@@ -69,7 +69,7 @@ ms.locfileid: "76520392"
 接下来，将 UWP 应用项目添加到与 WPF 项目相同的解决方案中。 您将修改此项目中的默认 `App` 类，以便从 Windows 社区工具包提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 类派生。 WPF 应用中的**WindowsXamlHost**对象需要此 `XamlApplication` 对象来承载自定义 UWP 控件。
 
 1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**添加** -> "**新建项目**"。
-2. 向你的解决方案中添加一个**空白应用（通用 Windows）** 项目。 请确保目标版本和最低版本均设置为**Windows 10 1903 版**或更高版本。
+2. 솔루션에 **빈 앱(Universal Windows)** 프로젝트 추가 请确保目标版本和最低版本均设置为**Windows 10 1903 版**或更高版本。
 3. 在 UWP 应用项目中，安装[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 包（版本 v 6.0.0 或更高版本）。
 4. 打开**app.config**文件，并将此文件的内容替换为以下 xaml。 将 `MyUWPApp` 替换为 UWP 应用项目的命名空间。
 
@@ -258,36 +258,7 @@ ms.locfileid: "76520392"
 
 2. 在打包项目中，右键单击 "**应用程序**" 节点，然后选择 "**添加引用**"。 在项目列表中，选择解决方案中的 WPF 项目，然后单击 **"确定"** 。
 
-3. 编辑打包项目文件。 这些更改当前需要打包面向 .NET Core 3 且托管 XAML 孤岛的 WPF 应用。
-
-    1. 在解决方案资源管理器中，右键单击打包项目节点，然后选择 "**编辑项目文件**"。
-    2. 在文件中找到 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。 将此元素替换为以下 XML。 这些更改当前是打包面向 .NET Core 3 并承载 UWP 控件的 WPF 应用程序所必需的。
-
-        ``` xml
-        <ItemGroup>
-            <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-            </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-            <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject></SourceProject>
-                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-            </_FilteredNonWapProjProjectOutput>
-            </ItemGroup>
-        </Target>
-        ```
-
-    3. 保存项目文件并将其关闭。
-
-4. 编辑 WPF 项目文件。 这些更改当前是打包自定义 UWP 控件的 WPF 应用程序所必需的。
+3. 编辑 WPF 项目文件。 这些更改当前是打包自定义 UWP 控件的 WPF 应用程序所必需的。
 
     1. 在解决方案资源管理器中，右键单击 WPF 项目节点，然后选择 "**卸载项目**"。
     2. 右键单击 WPF 项目节点，然后选择 "**编辑**"。
@@ -299,12 +270,12 @@ ms.locfileid: "76520392"
         </PropertyGroup>
         ```
 
-    4. 保存项目文件并将其关闭。
+    4. 保存并关闭项目文件。
     5. 右键单击 WPF 项目节点，然后选择 "**重新加载项目**"。
 
-5. 生成并运行打包项目。 确认 WPF 运行，UWP 自定义控件按预期方式显示。
+4. 生成并运行打包项目。 确认 WPF 运行，UWP 自定义控件按预期方式显示。
 
-## <a name="related-topics"></a>相关主题
+## <a name="related-topics"></a>관련 항목
 
 * [桌面应用程序中的 UWP 控件](xaml-islands.md)
 * [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

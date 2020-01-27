@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: e1a5b192ed57d3962b6ba4cbef69e3663bc1e2ec
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
+ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683990"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76520442"
 ---
 # <a name="forms"></a>窗体
 表单是一组控件，用于收集和提交来自用户的数据。 表单通常用于设置页面、调查、创建帐户，等等。 
@@ -127,7 +127,7 @@ ms.locfileid: "75683990"
 ### <a name="lists"></a>列表
 控件 | 用途 | 示例
 - | - | -
-[ComboBox](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists.md#drop-down-lists) | 最初处于紧凑状态，可展开以显示可选择项的列表 | 从项（例如州或国家/地区）的长列表中进行选择
+[ComboBox](combo-box.md) | 最初处于紧凑状态，可展开以显示可选择项的列表 | 从项（例如州或国家/地区）的长列表中进行选择
 [ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 对项进行分类并为之分配组标头、拖放项、规划内容以及重新对项进行排序 | 分级选项
 [GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列和浏览基于图像的集合 | 选取照片、颜色、显示主题
 
