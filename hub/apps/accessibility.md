@@ -6,16 +6,16 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的易访问性, 易访问性, 构建易访问的 win32 应用, 构建易访问的 UWP 应用, 构建易访问的 WPF 应用, 构建易访问的 WinForms 应用
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: fdb1092139602edd00086e17ff4dc7a27cf361dd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 2739546061febcfc96403ed5520fdcbd8bc2c462
+ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681888"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725930"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的易访问性
 
-![hero-accessibility-bar-smaller .png](images/hero-accessibility-bar-smaller.png)
+![易访问性主图](images/hero-accessibility-bar-smaller.png)
 
 ## <a name="build-accessibility-into-your-applications-to-empower-people-of-all-abilities"></a>将易访问性内置到应用程序中，帮助各种能力水平的用户使用
 
@@ -256,7 +256,6 @@ ms.locfileid: "75681888"
       [Windows UI 自动化博客](https://blogs.msdn.microsoft.com/winuiautomation/)
    :::column-end:::
 :::row-end:::
-
 :::row:::
    :::column span="3":::
       **社区和支持**
