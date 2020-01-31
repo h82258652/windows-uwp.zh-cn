@@ -1,19 +1,19 @@
 ---
 description: 本文演示如何使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件。
 title: 使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛、自定义控件、用户控件、宿主控件
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 70ba858daa09f4412a771441e76f5c00dd8c6c32
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: 8f22761bf535f13ae0686a9b180ee810fba61028
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725980"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76813997"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
 
@@ -21,17 +21,20 @@ ms.locfileid: "76725980"
 
 尽管本文演示了如何在 WPF 应用程序中执行此操作，但此过程与 Windows 窗体应用程序类似。 有关在 WPF 中承载 UWP 控件和 Windows 窗体应用的概述，请参阅[此文](xaml-islands.md#wpf-and-windows-forms-applications)。
 
-## <a name="overview"></a>개요
+## <a name="required-components"></a>必需的组件
 
-若要在 WPF 应用程序中托管自定义 UWP 控件，你将需要以下组件。 本文提供了有关创建每个组件的说明。
+若要在 WPF （或 Windows 窗体）应用程序中托管自定义 UWP 控件，你的解决方案中将需要以下组件。 本文提供了有关创建每个组件的说明。
 
-* **用于 WPF 应用程序的项目和源代码**。 仅在 WPF 和面向 .NET Core 3 的 Windows 窗体应用中，才支持使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件托管自定义 UWP 控件。 面向 .NET Framework 的应用不支持此方案。
+* **应用程序的项目和源代码**。 只有面向 .NET Core 3 的应用才支持使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件托管自定义 UWP 控件。 面向 .NET Framework 的应用不支持此方案。
 
-* **自定义 UWP 控件**。 你需要承载自定义 UWP 控件的源代码，以便可以将其与你的应用进行编译。 通常，自定义控件在与 WPF （或 Windows 窗体）项目相同的解决方案中引用的 UWP 类库项目中定义。
+* **自定义 UWP 控件**。 你需要承载自定义 UWP 控件的源代码，以便可以将其与你的应用进行编译。 通常，自定义控件在与 WPF 或 Windows 窗体项目相同的解决方案中引用的 UWP 类库项目中定义。
 
-* **定义 XamlApplication 对象的 UWP 应用项目**。 WPF （或 Windows 窗体）项目必须有权访问 Windows 社区工具包提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 类的实例。 此对象用作根元数据提供程序，用于为应用程序的当前目录中的程序集中的自定义 UWP XAML 类型加载元数据。 执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与 WPF （或 Windows 窗体）项目相同的解决方案，并修改此项目中的默认 `App` 类。
-  > [!NOTE]
-  > 你的解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享相同的 `XamlApplication` 对象。 定义 `XamlApplication` 对象的项目必须包含对在 XAML 岛中承载 UWP 控件的所有其他 UWP 库和项目的引用。
+* **一个 UWP 应用项目，用于定义从 XamlApplication 派生的根应用程序类**。 WPF 或 Windows 窗体项目必须有权访问 Windows 社区工具包提供的[XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)类的 XamlHost 类实例的访问权限。 此对象用作根元数据提供程序，用于为应用程序的当前目录中的程序集中的自定义 UWP XAML 类型加载元数据。
+
+    执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与 WPF 或 Windows 窗体项目相同的解决方案中，将此项目中的默认 `App` 类修改为从 `XamlApplication`派生，然后在应用的入口点代码中创建此对象的实例。
+
+    > [!NOTE]
+    > 你的解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享相同的 `XamlApplication` 对象。 定义 `XamlApplication` 对象的项目必须包含对在 XAML 岛中承载 UWP 控件的所有其他 UWP 库和项目的引用。
 
 ## <a name="create-a-wpf-project"></a>创建 WPF 项目
 
@@ -59,17 +62,17 @@ ms.locfileid: "76725980"
 
 7. 配置解决方案以面向特定的平台，例如 x86 或 x64。 对于以**任何 CPU**为目标的项目，不支持自定义 UWP 控件。
 
-    1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**属性**" " -> **配置属性**" -> **Configuration Manager**"。 
+    1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**属性**" " -> **配置属性**" -> **Configuration Manager**"。
     2. 在 "**活动解决方案平台**" 下，选择 "**新建**"。 
     3. 在 "**新建解决方案平台**" 对话框中，选择 " **X64**或**X86** "，并按 **"确定"** 。 
     4. 关闭 "打开" 对话框。
 
-## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>在 UWP 应用项目中创建 XamlApplication 对象
+## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 应用项目中定义 XamlApplication 类
 
-接下来，将 UWP 应用项目添加到与 WPF 项目相同的解决方案中。 您将修改此项目中的默认 `App` 类，以便从 Windows 社区工具包提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 类派生。 WPF 应用中的**WindowsXamlHost**对象需要此 `XamlApplication` 对象来承载自定义 UWP 控件。
+接下来，将 UWP 应用项目添加到与 WPF 项目相同的解决方案中。 您将修改此项目中的默认 `App` 类，以派生自 Windows 社区工具包提供的[XamlHost. XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)类。 有关此类的用途的详细信息，请参阅[此部分](#required-components)。
 
 1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**添加** -> "**新建项目**"。
-2. 솔루션에 **빈 앱(Universal Windows)** 프로젝트 추가 请确保目标版本和最低版本均设置为**Windows 10 1903 版**或更高版本。
+2. 向你的解决方案中添加一个**空白应用（通用 Windows）** 项目。 请确保目标版本和最低版本均设置为**Windows 10 1903 版**或更高版本。
 3. 在 UWP 应用项目中，安装[XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 包（版本 v 6.0.0 或更高版本）。
 4. 打开**app.config**文件，并将此文件的内容替换为以下 xaml。 将 `MyUWPApp` 替换为 UWP 应用项目的命名空间。
 
@@ -101,6 +104,38 @@ ms.locfileid: "76725980"
 6. 从 UWP 应用项目中删除**MainPage**文件。
 7. 清除 UWP 应用项目，然后生成该项目。
 8. 在 WPF 项目中，右键单击 "**依赖项**" 节点，并添加对 UWP 应用项目的引用。
+
+## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>在 WPF 应用程序的入口点实例化 XamlApplication 对象
+
+接下来，将代码添加到 WPF 应用程序的入口点，以创建刚在 UWP 项目中定义的 `App` 类的实例（这是现在派生自 `XamlApplication`的类）。 有关此对象的用途的详细信息，请参阅[此部分](#required-components)。
+
+1. 在 WPF 项目中，右键单击项目节点，选择 "**添加** -> **新项**"，然后选择 "**类**"。 命名类**程序**，然后单击 "**添加**"。
+
+2. 将生成的 `Program` 类替换为以下代码，然后保存该文件。 将 `MyUWPApp` 替换为 UWP 应用项目的命名空间，并将 `MyWPFApp` 替换为您的 WPF 应用程序项目的命名空间。
+
+    ```csharp
+    public class Program
+    {
+        [System.STAThreadAttribute()]
+        public static void Main()
+        {
+            using (new MyUWPApp.App())
+            {
+                MyWPFApp.App app = new MyWPFApp.App();
+                app.InitializeComponent();
+                app.Run();
+            }
+        }
+    }
+    ```
+
+3. 右键单击项目节点，然后选择 "**属性**"。
+
+4. 在 "属性" 的 "**应用程序**" 选项卡上，单击 "**启动对象**" 下拉箭头，然后选择在上一步中添加的 `Program` 类的完全限定名称。 
+    > [!NOTE]
+    > 默认情况下，WPF 项目会在生成的代码文件中定义一个 `Main` 入口点函数，而不应进行修改。 此步骤会将项目的入口点更改为新 `Program` 类的 `Main` 方法，这使你能够添加在应用程序启动过程早期运行的代码。 
+
+5. 保存对项目属性所做的更改。
 
 ## <a name="create-a-custom-uwp-control"></a>创建自定义 UWP 控件
 
@@ -275,7 +310,8 @@ ms.locfileid: "76725980"
 
 4. 生成并运行打包项目。 确认 WPF 运行，UWP 自定义控件按预期方式显示。
 
-## <a name="related-topics"></a>관련 항목
+## <a name="related-topics"></a>相关主题
 
-* [桌面应用程序中的 UWP 控件](xaml-islands.md)
+* [在桌面应用中托管 UWP XAML 控件（XAML 孤岛）](xaml-islands.md)
+* [XAML 孤岛代码示例](https://github.com/microsoft/Xaml-Islands-Samples)
 * [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

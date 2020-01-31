@@ -1,19 +1,19 @@
 ---
 description: 本文演示如何使用 XAML 孤岛在 WPF 应用程序中承载标准 UWP 控件。
 title: 使用 XAML 孤岛在 WPF 应用中托管标准 UWP 控件
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛、包装控件、标准控件、InkCanvas、InkToolbar
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 47998d9c79dbbb41060b4fbd52fe3ee805aecc52
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: e7fa4a3d97354efdfe4514ea69230883fffdb3cd
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520382"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814017"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用中托管标准 UWP 控件
 
@@ -23,16 +23,23 @@ ms.locfileid: "76520382"
 
 * 它还演示了如何通过使用 Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件来承载 UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)控件。 因为只有一小部分 UWP 控件作为包装控件提供，所以可以使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)托管任何其他标准 UWP 控件。
 
-若要在 WPF 应用程序中承载 UWP 控件，你将需要以下组件。 本文提供了有关创建每个组件的说明。
-
-* 用于 WPF 应用程序的项目和源代码。
-* 一个 UWP 应用项目，该项目使用 Windows 社区工具包定义 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 类的实例。
-  > [!NOTE]
-  > 若要确保你的应用程序在所有 XAML 应用场景中都能正常工作，WPF （或 Windows 窗体）项目必须具有对 `XamlApplication` 对象的访问权限。 此对象用作根元数据提供程序，用于在应用程序的当前目录中的程序集中加载 UWP XAML 类型的元数据。 执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与 WPF （或 Windows 窗体）项目相同的解决方案，并修改此项目中的默认 `App` 类，使其从 `XamlApplication`派生。
-  >
-  > 虽然此步骤不是日常 XAML 岛方案（如承载第一方 UWP 控件）所必需的，但 WPF 应用需要此 `XamlApplication` 对象以支持各种 XAML 岛方案，包括托管自定义 UWP 控件。 建议你始终添加 UWP 项目，并在使用 XAML 孤岛的任何解决方案中定义一个 `XamlApplication` 对象。 你的解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享相同的 `XamlApplication` 对象。
-
 虽然本文演示如何在 WPF 应用程序中托管 UWP 控件，但该过程与 Windows 窗体应用程序类似。
+
+## <a name="required-components"></a>必需的组件
+
+若要在 WPF （或 Windows 窗体）应用程序中承载 UWP 控件，你的解决方案中将需要以下组件。 本文提供了有关创建每个组件的说明。
+
+* **应用程序的项目和源代码**。 以 .NET Framework 或 .NET Core 3 为目标的应用程序支持使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件承载标准第一方 UWP 控件。
+
+* **一个 UWP 应用项目，用于定义从 XamlApplication 派生的根应用程序类**。 WPF 或 Windows 窗体项目必须有权访问 Windows 社区工具包提供的[XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)类的 XamlHost 类实例的访问权限。 此对象用作根元数据提供程序，用于为应用程序的当前目录中的程序集中的自定义 UWP XAML 类型加载元数据。
+
+    执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与 WPF 或 Windows 窗体项目相同的解决方案中，将此项目中的默认 `App` 类修改为从 `XamlApplication`派生，然后在应用的入口点代码中创建此对象的实例。
+
+    > [!NOTE]
+    > 虽然此组件对于普通的 XAML 岛方案（如承载第一方 UWP 控件）不是必需的，但你的应用程序需要此 `XamlApplication` 对象以支持各种 XAML 岛方案，包括托管自定义 UWP 控件。 因此，建议您始终在使用 XAML 孤岛的任何解决方案中定义一个 `XamlApplication` 对象。
+
+    > [!NOTE]
+    > 你的解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享相同的 `XamlApplication` 对象。 定义 `XamlApplication` 对象的项目必须包含对在 XAML 岛中承载 UWP 控件的所有其他 UWP 库和项目的引用。
 
 ## <a name="create-a-wpf-project"></a>创建 WPF 项目
 
@@ -60,9 +67,9 @@ ms.locfileid: "76520382"
     3. 在 "**新建解决方案平台**" 对话框中，选择 " **X64**或**X86** "，并按 **"确定"** 。 
     4. 关闭 "打开" 对话框。
 
-## <a name="create-a-xamlapplication-object-in-a-uwp-app-project"></a>在 UWP 应用项目中创建 XamlApplication 对象
+## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 应用项目中定义 XamlApplication 类
 
-接下来，将 UWP 应用项目添加到与 WPF 项目相同的解决方案中。 您将修改此项目中的默认 `App` 类，以便从 Windows 社区工具包提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 类派生。 虽然此步骤不是日常 XAML 岛方案所必需的（例如托管单个第一方 UWP 控件），但 WPF 应用需要此 `XamlApplication` 对象来支持各种 XAML 岛方案。 建议你始终将此项目添加到使用 XAML 孤岛的任何解决方案。
+接下来，将 UWP 应用项目添加到与 WPF 项目相同的解决方案中。 您将修改此项目中的默认 `App` 类，以派生自 Windows 社区工具包提供的[XamlHost. XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)类。 有关此类的用途的详细信息，请参阅[此部分](#required-components)。
 
 1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**添加** -> "**新建项目**"。
 2. 向你的解决方案中添加一个**空白应用（通用 Windows）** 项目。 请确保目标版本和最低版本均设置为**Windows 10 1903 版**或更高版本。
@@ -98,11 +105,43 @@ ms.locfileid: "76520382"
 7. 生成 UWP 应用项目。
 8. 在 WPF 项目中，右键单击 "**依赖项**" 节点，并添加对 UWP 应用项目的引用。
 
+## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>在 WPF 应用程序的入口点实例化 XamlApplication 对象
+
+接下来，将代码添加到 WPF 应用程序的入口点，以创建刚在 UWP 项目中定义的 `App` 类的实例（这是现在派生自 `XamlApplication`的类）。 有关此对象的用途的详细信息，请参阅[此部分](#required-components)。
+
+1. 在 WPF 项目中，右键单击项目节点，选择 "**添加** -> **新项**"，然后选择 "**类**"。 命名类**程序**，然后单击 "**添加**"。
+
+2. 将生成的 `Program` 类替换为以下代码，然后保存该文件。 将 `MyUWPApp` 替换为 UWP 应用项目的命名空间，并将 `MyWPFApp` 替换为您的 WPF 应用程序项目的命名空间。
+
+    ```csharp
+    public class Program
+    {
+        [System.STAThreadAttribute()]
+        public static void Main()
+        {
+            using (new MyUWPApp.App())
+            {
+                MyWPFApp.App app = new MyWPFApp.App();
+                app.InitializeComponent();
+                app.Run();
+            }
+        }
+    }
+    ```
+
+3. 右键单击项目节点，然后选择 "**属性**"。
+
+4. 在 "属性" 的 "**应用程序**" 选项卡上，单击 "**启动对象**" 下拉箭头，然后选择在上一步中添加的 `Program` 类的完全限定名称。 
+    > [!NOTE]
+    > 默认情况下，WPF 项目会在生成的代码文件中定义一个 `Main` 入口点函数，而不应进行修改。 此步骤会将项目的入口点更改为新 `Program` 类的 `Main` 方法，这使你能够添加在应用程序启动过程早期运行的代码。 
+
+5. 保存对项目属性所做的更改。
+
 ## <a name="host-an-inkcanvas-and-inktoolbar-by-using-wrapped-controls"></a>使用包装的控件承载 InkCanvas 和 InkToolbar
 
 现在，已将项目配置为使用 UWP XAML 孤岛，接下来可以将[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[INKTOOLBAR](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)包装的 UWP 控件添加到应用中。
 
-1. 在“解决方案资源管理器”中，打开 “MainWindow.xaml”文件。
+1. 在**解决方案资源管理器**中，打开**mainwindow.xaml**文件。
 
 2. 在 XAML 文件顶部附近的**Window**元素中，添加以下属性。 这将引用[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)和[INKTOOLBAR](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)包装的 UWP 控件的 XAML 命名空间。
 
@@ -144,7 +183,7 @@ ms.locfileid: "76520382"
 
 4. 保存**mainwindow.xaml**文件。
 
-    如果设备支持数字笔（如表面），并且在物理计算机上运行此实验室，则现在可以使用笔生成并运行应用，并在屏幕上绘制数字墨迹。 但是，如果没有支持笔的设备，并且尝试使用鼠标进行签名，则不会发生任何事情。 发生这种情况的原因是，默认情况下， **InkCanvas**控件仅对数字笔启用。 不过，您可以更改此行为。
+    如果设备支持数字笔（如表面），并且在物理计算机上运行此实验室，则现在可以使用笔生成并运行应用，并在屏幕上绘制数字墨迹。 但是，如果没有支持笔的设备，并且尝试使用鼠标进行签名，则不会发生任何事情。 发生这种情况的原因是，默认情况下， **InkCanvas**控件仅对数字笔启用。 但是，您可以更改此行为。
 
 5. 打开**MainWindow.xaml.cs**文件。
 
@@ -171,7 +210,7 @@ ms.locfileid: "76520382"
 > [!NOTE]
 > [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件是由[XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost)包提供的控件。 此包包含在前面安装的 " [Microsoft 工具包](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls)" 包中。
 
-1. 在“解决方案资源管理器”中，打开 “MainWindow.xaml”文件。
+1. 在**解决方案资源管理器**中，打开**mainwindow.xaml**文件。
 
 2. 在 XAML 文件顶部附近的**Window**元素中，添加以下属性。 这将引用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件的 XAML 命名空间。
 
@@ -256,36 +295,7 @@ ms.locfileid: "76520382"
 
 2. 在打包项目中，右键单击 "**应用程序**" 节点，然后选择 "**添加引用**"。 在项目列表中，选择解决方案中的 WPF 项目，然后单击 **"确定"** 。
 
-3. 如果 WPF 项目面向 .NET Core 3，则必须编辑打包项目文件。 这些更改当前是打包面向 .NET Core 3 并承载 UWP 控件的 WPF 应用程序所必需的。
-
-    1. 在解决方案资源管理器中，右键单击打包项目节点，然后选择 "**编辑项目文件**"。
-    2. 在文件中找到 `<Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />` 元素。 将此元素替换为以下 XML。
-
-        ``` xml
-        <ItemGroup>
-            <SDKReference Include="Microsoft.VCLibs,Version=14.0">
-            <TargetedSDKConfiguration Condition="'$(Configuration)'!='Debug'">Retail</TargetedSDKConfiguration>
-            <TargetedSDKConfiguration Condition="'$(Configuration)'=='Debug'">Debug</TargetedSDKConfiguration>
-            <TargetedSDKArchitecture>$(PlatformShortName)</TargetedSDKArchitecture>
-            <Implicit>true</Implicit>
-            </SDKReference>
-        </ItemGroup>
-        <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
-        <Target Name="_StompSourceProjectForWapProject" BeforeTargets="_ConvertItems">
-            <ItemGroup>
-            <_TemporaryFilteredWapProjOutput Include="@(_FilteredNonWapProjProjectOutput)" />
-            <_FilteredNonWapProjProjectOutput Remove="@(_TemporaryFilteredWapProjOutput)" />
-            <_FilteredNonWapProjProjectOutput Include="@(_TemporaryFilteredWapProjOutput)">
-                <SourceProject></SourceProject>
-                <TargetPath Condition="'%(FileName)%(Extension)'=='resources.pri'">app_resources.pri</TargetPath>
-            </_FilteredNonWapProjProjectOutput>
-            </ItemGroup>
-        </Target>
-        ```
-
-    3. 保存项目文件并将其关闭。
-
-4. 配置解决方案以面向特定的平台，例如 x86 或 x64。 这是使用 Windows 应用程序打包项目将 WPF 应用程序生成到 .MSIX 包所必需的。
+3. 配置解决方案以面向特定的平台，例如 x86 或 x64。 这是使用 Windows 应用程序打包项目将 WPF 应用程序生成到 .MSIX 包所必需的。
 
     1. 在**解决方案资源管理器**中，右键单击 "解决方案" 节点，然后选择 "**属性**" " -> **配置属性**" -> **Configuration Manager**"。
     2. 在 "**活动解决方案平台**" 下，选择 " **x64**或**x86**"。
@@ -297,7 +307,8 @@ ms.locfileid: "76520382"
 
 ## <a name="related-topics"></a>相关主题
 
-* [桌面应用程序中的 UWP 控件](xaml-islands.md)
+* [在桌面应用中托管 UWP XAML 控件（XAML 孤岛）](xaml-islands.md)
+* [XAML 孤岛代码示例](https://github.com/microsoft/Xaml-Islands-Samples)
 * [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)
 * [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)
 * [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

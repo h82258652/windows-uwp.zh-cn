@@ -2,18 +2,18 @@
 description: 本教程演示如何添加 UWP XAML 用户界面、创建 .MSIX 包以及将其他新式组件合并到 WPF 应用。
 title: 使用 XAML Islands 添加 UWP InkCanvas 控件
 ms.topic: article
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.author: mcleans
 author: mcleanbyron
-keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛
+keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 1ed4fa54b9987ef0ab5f3dd89aa9d11a00ae695c
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 945cc2f1cf225c194e5820990bdbeda584069e4c
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520432"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814037"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第2部分：使用 XAML 孤岛添加 UWP InkCanvas 控件
 
@@ -22,7 +22,7 @@ ms.locfileid: "76520432"
 在本教程的虚构方案中，Contoso 开发团队想要将对数字签名的支持添加到 Contoso 支出应用程序中。 对于此方案，UWP **InkCanvas**控件是一个不错的选择，因为它支持数字墨迹和 AI 功能，如识别文本和形状的功能。 为此，你将使用 Windows 社区工具包中提供的[InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)包装 UWP 控件。 此控件包装 UWP **InkCanvas**控件的接口和功能，以用于 WPF 应用程序。 有关包装的 UWP 控件的详细信息，请参阅[在桌面应用中托管 UWP XAML 控件（XAML 孤岛）](xaml-islands.md)。
 
 > [!NOTE]
-> 在本教程中，WPF 应用将仅托管 Windows SDK 的第一方 UWP 控件。 若要支持包括自定义 UWP 控件的其他 XAML 岛方案，应用程序项目必须具有对 Windows 社区工具包提供的 `Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication` 类的实例的访问权限。 执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与 WPF （或 Windows 窗体）项目相同的解决方案，并修改此项目中的默认 `App` 类。 由于从 Windows SDK 承载第一方 UWP 控件的基本方案不需要此步骤，因此本教程将忽略此步骤。 有关更多详细信息，请参阅[此文](host-standard-control-with-xaml-islands.md)。
+> 在本教程中，WPF 应用将仅托管 Windows SDK 的第一方 UWP 控件。 因此，本教程省略了定义[XamlHost](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication)类的实例的步骤，如[此处](host-standard-control-with-xaml-islands.md#required-components)所述。
 
 ## <a name="configure-the-project-to-use-xaml-islands"></a>将项目配置为使用 XAML 孤岛
 
