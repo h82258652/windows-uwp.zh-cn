@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: b2b60354acb2c3d97ced3dce0b3fb7f6d97ac35d
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 92a1567fe72d46e53bf218c033fc59e8c98a2981
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684777"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929273"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -165,7 +165,6 @@ EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以�
 现在，我们将让云彩移动。 实际上，移动云彩以及任何对象的秘密在于设置 [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) 函数，该函数将在一秒内被反复调用多次。 每调用一次该函数，就会在略有不同的位置重新绘制图像。
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">请参阅 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 为云彩添加动画效果</a>，Microsoft Edge 文档 (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>)（位于 <a href="https://codepen.io">CodePen</a>）。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  执行该操作的代码已位于 main.js 文件中，由 CreateJS 库 EaselJS 提供  。 它的外观如下所示：
 
 ```
