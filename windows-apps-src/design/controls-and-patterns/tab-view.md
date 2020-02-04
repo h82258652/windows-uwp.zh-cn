@@ -7,16 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 141a24ca1f828f98231ec35471f7b43229df57e6
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 24c7bd8828ec036135233f569ee7add5d39ffb32
+ms.sourcegitcommit: 136416e8e2eb0565bb6eb99e42482c1723ccb8c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684290"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890422"
 ---
 # <a name="tabview"></a>TabView
 
 可以通过 TabView 控件显示一组选项卡及其相应的内容。 用户可以使用 TabView 来显示多个页面（或文档）的内容，以及重新排列、打开或关闭新选项卡。
+
+> **重要的 API**：[TabView 类](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 类](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 ![TabView 示例](images/tabview/tab-introduction.png)
 
@@ -25,7 +27,7 @@ ms.locfileid: "75684290"
 通常情况下，选项卡式 UI 有两种不同的样式，这两种样式的功能和外观均不相同：**静态选项卡**是通常在设置窗口中发现的选项卡类型。 它们包含一定数目的页面，这些页面的顺序固定且通常包含预定义的内容。
 **文档选项卡**是在浏览器（例如 Microsoft Edge）中发现的选项卡类型。 用户可以创建、删除和重新排列选项卡；在窗口之间移动选项卡；更改选项卡的内容。
 
-TabView 提供适用于 UWP 应用的文档选项卡。 在以下情况下使用 TabView：
+[TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 提供适用于 UWP 应用的文档选项卡。 在以下情况下使用 TabView：
 
 - 用户需要能够动态地打开、关闭或重新排列选项卡。
 - 用户需要能够将文档或网页直接打开到选项卡中。
@@ -35,21 +37,21 @@ TabView 提供适用于 UWP 应用的文档选项卡。 在以下情况下使用
 
 ## <a name="anatomy"></a>结构
 
-下图显示 TabView 控件的部件。 TabStrip 有一个头和尾，但与文档不同，TabStrip 的头和尾分别位于此选项卡条的最左端和最右端。
+下图显示 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 控件的部件。 TabStrip 有一个头和尾，但与文档不同，TabStrip 的头和尾分别位于此选项卡条的最左端和最右端。
 
 ![TabView 控件的结构](images/tabview/tab-view-anatomy.png)
 
-下图显示 TabViewItem 控件的部件。 请注意，虽然内容显示在 TabView 控件中，但该内容实际上是 TabViewItem 的一部分。
+下图显示 [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) 控件的部件。 请注意，虽然内容显示在 TabView 控件中，但该内容实际上是 TabViewItem 的一部分。
 
 ![TabViewItem 控件的结构](images/tabview/tab-control-anatomy.png)
 
 ### <a name="create-a-tab-view"></a>创建选项卡视图
 
-以下示例创建一个简单的 TabView 和多个支持打开和关闭选项卡的事件处理程序。
+以下示例创建一个简单的 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 和多个支持打开和关闭选项卡的事件处理程序。
 
 ```xaml
 <TabView AddTabButtonClick="Tabs_AddTabButtonClick"
-            TabCloseRequested="Tabs_TabCloseRequested" />
+         TabCloseRequested="Tabs_TabCloseRequested" />
 ```
 
 ```csharp
@@ -77,7 +79,7 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 
 ## <a name="behavior"></a>行为
 
-可以通过多种方法来利用或扩展 TabView 的功能。
+可以通过多种方法来利用或扩展 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 的功能。
 
 ### <a name="bind-tabitemssource-to-a-tabviewitemcollection"></a>将 TabItemsSource 绑定到 TabViewItemCollection
 
@@ -89,7 +91,7 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 
 可以将选项卡和窗口的标题栏合并到同一区域中，而不是让选项卡在窗口的标题栏下自占一行。 这样可以节省内容的垂直空间，为应用带来现代的观感。
 
-由于用户可以通过窗口的标题栏来拖动窗口，调整窗口的位置，因此不能让标题栏填满选项卡，这一点很重要。 因此，在标题栏中显示选项卡时，必须指定标题栏的一部分作为可拖动区域保留。 如果不指定可拖动区域，则整个标题栏会变得可拖动，这会妨碍选项卡接收输入事件。 如果 TabView 将显示在窗口的标题栏中，则应始终在 TabView 中包括一个 TabStripFooter 并将其标记为可拖动区域。
+由于用户可以通过窗口的标题栏来拖动窗口，调整窗口的位置，因此不能让标题栏填满选项卡，这一点很重要。 因此，在标题栏中显示选项卡时，必须指定标题栏的一部分作为可拖动区域保留。 如果不指定可拖动区域，则整个标题栏会变得可拖动，这会妨碍选项卡接收输入事件。 如果 TabView 将显示在窗口的标题栏中，则应始终在 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 中包括一个 [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter) 并将其标记为可拖动区域。
 
 有关详细信息，请参阅[标题栏自定义](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)
 
@@ -98,7 +100,7 @@ private void Tabs_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEven
 ```xaml
 <Page>
     <TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <TabViewItem Icon="Home" Header="Home" IsCloseable="False" />
+        <TabViewItem Icon="Home" Header="Home" IsClosable="False" />
         <TabViewItem Icon="Document" Header="Document 1" />
         <TabViewItem Icon="Document" Header="Document 2" />
         <TabViewItem Icon="Document" Header="Document 3" />
@@ -147,7 +149,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 ### <a name="control-overflow-behavior"></a>控制溢出行为
 
-当选项卡栏充满选项卡时，可以通过设置 TabView.TabWidthMode 来控制选项卡的显示方式。
+当选项卡栏充满选项卡时，可以通过设置 [TabView.TabWidthMode](/uwp/api/microsoft.ui.xaml.controls.tabview.tabwidthmode) 来控制选项卡的显示方式。
 
 | TabWidthMode 值 | 行为                                                                                                                                                    |
 |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -160,15 +162,15 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 大多数用户只需使用 Web 浏览器即可获得文档选项卡的使用体验。 他们在你的应用中使用文档选项卡时，会根据自己的体验预期你的选项卡的具体行为。
 
-不管用户以何种方式与一组文档选项卡交互，始终应有一个活动选项卡。如果用户关闭所选选项卡或将所选选项卡移到另一窗口中，则另一选项卡应成为活动选项卡。为此，TabView 会尝试自动选择下一选项卡。如果你觉得应用应该允许 TabView 的选项卡处于未选中状态，则应让 TabView 的内容区域直接显示为空白。
+不管用户以何种方式与一组文档选项卡交互，始终应有一个活动选项卡。如果用户关闭所选选项卡或将所选选项卡移到另一窗口中，则另一选项卡应成为活动选项卡。为此，[TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 会尝试自动选择下一选项卡。如果你觉得应用应该允许 TabView 的选项卡处于未选中状态，则应让 TabView 的内容区域直接显示为空白。
 
 ## <a name="keyboard-navigation"></a>键盘导航
 
-默认情况下，TabView 支持许多常见的键盘导航方案。 此部分介绍内置功能，并提供可能对某些应用有用的其他功能的建议。
+默认情况下，[TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 支持许多常见的键盘导航方案。 此部分介绍内置功能，并提供可能对某些应用有用的其他功能的建议。
 
 ### <a name="tab-and-cursor-key-behavior"></a>Tab 键和光标键的行为
 
-当焦点移到 TabStrip 区域时，所选 TabViewItem 获得焦点。 然后，用户可以使用向左和向右箭头键将焦点（不是选择的内容）移到 TabStrip 中的其他选项卡。 箭头焦点限制在选项卡条和“添加选项卡(+)”按钮（如果存在）中。 若要将焦点移出 TabStrip 区域，用户可以按 Tab 键，将焦点移到下一个可聚焦元素。
+当焦点移到 _TabStrip_ 区域时，所选 [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem) 获得焦点。 然后，用户可以使用向左和向右箭头键将焦点（不是选择的内容）移到 TabStrip 中的其他选项卡。 箭头焦点限制在选项卡条和“添加选项卡(+)”按钮（如果存在）中。 若要将焦点移出 TabStrip 区域，用户可以按 Tab 键，将焦点移到下一个可聚焦元素。
 
 通过 Tab 键移动焦点
 
@@ -188,18 +190,18 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 ### <a name="shortcuts-for-selecting-adjacent-tabs"></a>选择相邻选项卡的快捷方式
 
-按 Ctrl+Tab 会选择下一 TabViewItem。 按 Ctrl+Shift+Tab 会选择上一 TabViewItem。 进行此类用途的操作时，选项卡列表处于“循环”状态。因此，如果在最后一个选项卡处于选中状态的情况下选择下一个选项卡，会导致第一个选项卡变为选中状态。
+按 Ctrl+Tab 会选择下一 [TabViewItem](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)。 按 Ctrl+Shift+Tab 会选择上一 TabViewItem。 进行此类用途的操作时，选项卡列表处于“循环”状态。因此，如果在最后一个选项卡处于选中状态的情况下选择下一个选项卡，会导致第一个选项卡变为选中状态。
 
 ### <a name="closing-a-tab"></a>关闭选项卡
 
-按 Ctrl + F4 会引发 TabCloseRequested 事件。 请根据需要处理该事件并关闭选项卡。
+按 Ctrl + F4 会引发 [TabCloseRequested](/uwp/api/microsoft.ui.xaml.controls.tabview.tabcloserequested) 事件。 请根据需要处理该事件并关闭选项卡。
 
 ### <a name="keyboard-guidance-for-app-developers"></a>应用开发人员键盘指南
 
 某些应用程序可能需要更高级的键盘控制。 考虑根据应用的具体情况实现以下快捷方式。
 
 > [!WARNING]
-> 如果将 TabView 添加到现有应用，你可能会发现，你已经创建了键盘快捷方式，这些快捷方式映射到建议的 TabView 键盘快捷方式的组合键。 在这种情况下，必须考虑是保留现有的快捷方式，还是为用户提供直观的选项卡体验。
+> 如果将 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 添加到现有应用，你可能会发现，你已经创建了键盘快捷方式，这些快捷方式映射到建议的 TabView 键盘快捷方式的组合键。 在这种情况下，必须考虑是保留现有的快捷方式，还是为用户提供直观的选项卡体验。
 
 - Ctrl + T 会打开新的选项卡。通常情况下，该选项卡填充了预定义的文档，或者在创建时是空的，但可以通过简单的方式选择其内容。 如果用户必须为新选项卡选择内容，考虑为内容选择控件提供输入焦点。
 - Ctrl + W 会关闭所选选项卡。记住，TabView 会自动选择下一选项卡。
@@ -210,7 +212,7 @@ private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sende
 
 ### <a name="implement-browser-style-keyboarding-behavior"></a>实现浏览器样式的键盘操作行为
 
-以下示例在 TabView 上实现了上述许多建议。 具体说来，此示例实现了 Ctrl + T、Ctrl + W、Ctrl + 1-8 和 Ctrl + 9。
+以下示例在 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 上实现了上述许多建议。 具体说来，此示例实现了 Ctrl + T、Ctrl + W、Ctrl + 1-8 和 Ctrl + 9。
 
 ```xaml
 <controls:TabView x:Name="TabRoot">

@@ -1,19 +1,19 @@
 ---
 description: 本指南介绍如何直接在 WPF 和 Windows 窗体应用程序中创建基于 Fluent 的 UWP UI
 title: 桌面应用中的 UWP 控件
-ms.date: 01/10/2010
+ms.date: 01/24/2020
 ms.topic: article
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 95fbfc9aa988330fb21713651687690fa769b99f
-ms.sourcegitcommit: 85fd390b1e602707bd9342cb4b84b97ae0d8b831
+ms.openlocfilehash: 96705faff278c4cab31e0ab271bc31d08261401b
+ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76520402"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76814007"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 UWP XAML 控件（XAML 岛）
 
@@ -127,4 +127,5 @@ UWP XAML 托管 API 包含多个 Windows 运行时类和 COM 接口，可供 C++
 有关如何使用 XAML 岛的更多背景信息和教程，请参阅以下文章和资源：
 
 * [WPF 应用现代化教程](modernize-wpf-tutorial.md)：本教程提供的分步说明介绍了如何使用 Windows 社区工具包中的包装控件和主机控件向现有的 WPF 业务线应用程序添加 UWP 控件。 本教程包含 WPF 应用程序的完整代码，以及该过程中每个步骤的详细说明。
+* [XAML 岛代码示例](https://github.com/microsoft/Xaml-Islands-Samples)：此存储库包含的 Windows 窗体、WPF 和 C++/Win32 示例演示了如何使用 XAML 岛。
 * [XAML Islands v1 - Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap)（XAML 岛 v1 - 更新和路线图）：此博客文章讨论了有关 XAML 岛的许多常见问题，并提供了详细的开发路线图。

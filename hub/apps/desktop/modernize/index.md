@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7403c0a3fd9f822ee24411aa88d8fd91994748dd
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: fb6d2bebda31ed768309b23d18b3b47e4487b058
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73142510"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929250"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -24,7 +24,7 @@ Windows 10 和通用 Windows 平台 (UWP) 提供的许多功能可以用来在�
 
 ## <a name="msix-packages"></a>MSIX 包
 
-MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（包括 UWP、WPF、Windows 窗体和 Win32 应用）的通用打包体验。 MSIX 汇集了 MSI、.appx、App-V 和 ClickOnce 安装技术的最佳方面，按照安全可靠的目标构建。
+MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（包括 UWP、WPF、Windows 窗体和 Win32 应用）的通用打包体验。 MSIX 汇集了 MSI、AppX、App-V 和 ClickOnce 安装技术的最佳方面，提供新式且可靠的打包体验。
 
 将桌面 Windows 应用打包到 MSIX 包中即可访问可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。
 
@@ -69,7 +69,7 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 不管你是要构建专门面向桌面设备系列的 UWP 应用，还是要在 WPF、Windows 窗体或 C++ Win32 桌面应用中使用 UWP 控件，均可利用下面这些全新的和更新的 UWP 控件。这些控件旨在提供可以与 [Fluent Design System](/windows/uwp/design/fluent-design-system/index) 配合使用的桌面优化体验。 这些控件是在 Windows 10 版本 1809（2018 年 10 月更新，或者版本 10.0.17763）中引入的。
 
-| 控件 |  描述 |
+| 控件 |  说明 |
 |------ |--------------|
 | [MenuBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | 为那些需要的组织或分组功能可能无法通过 **CommandBar** 来满足的应用提供一种公开命令集的方式，这种方式既快速又简单。 |
 | [DropDownButton](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | 显示一个 V 形图标作为视觉指示器，表明其附加的浮出控件包含更多选项。  |
