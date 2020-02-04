@@ -23,21 +23,21 @@ ms.locfileid: "76726547"
 
 本页提供各种 Windows 开发框架如何为生成 Windows 应用程序的开发人员提供语音识别、语音合成和会话支持的相关信息。
 
-## <a name="platform-specific-documentation"></a>플랫폼별 설명서
+## <a name="platform-specific-documentation"></a>特定于平台的文档
 
 :::row:::
    :::column:::
-      ![UWP(유니버설 Windows 플랫폼)](images/platform-uwp.png)
+      ![通用 Windows 平台 (UWP)](images/platform-uwp.png)
 
-      **UWP(유니버설 Windows 플랫폼)**
+      通用 Windows 平台 (UWP)
 
       在适用于 Windows 10 应用程序和游戏的新式平台上，在任何 Windows 设备（包括电脑、手机、Xbox One、HoloLens 等）上生成启用了语音功能的应用，并将其发布到 Microsoft Store。
 
-      [음성 조작](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
+      [语音交互](https://docs.microsoft.com/windows/uwp/design/input/speech-interactions)
 
-      [음성 인식](https://docs.microsoft.com/windows/uwp/design/input/speech-recognition)
+      [语音识别](https://docs.microsoft.com/windows/uwp/design/input/speech-recognition)
 
-      [연속 받아쓰기](https://docs.microsoft.com/windows/uwp/design/input/enable-continuous-dictation)
+      [连续听写](https://docs.microsoft.com/windows/uwp/design/input/enable-continuous-dictation)
 
       [语音合成](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
 
@@ -46,26 +46,26 @@ ms.locfileid: "76726547"
       [Cortana 语音命令](https://docs.microsoft.com/cortana/voice-commands/vcd)
    :::column-end:::
    :::column:::
-      ![Win32 플랫폼 앱](images/platform-win32.png)
+      ![Win32 平台应用](images/platform-win32.png)
 
-      **Win32 플랫폼**
+      **Win32 平台**
 
       使用此处提供的工具、信息、示例引擎和应用程序，为 Windows 桌面和 Windows Server 开发支持语音功能的应用程序。
 
-      [Microsoft 语音平台-软件开发工具包（SDK）（版本11）](https://www.microsoft.com/download/details.aspx?id=27226)
+      [Microsoft 语音平台 - 软件开发工具包 (SDK)（版本11）](https://www.microsoft.com/download/details.aspx?id=27226)
       
-      [Microsoft Speech SDK，版本5。1](https://www.microsoft.com/download/details.aspx?id=10121)
+      [Microsoft 语音 SDK，版本 5.1](https://www.microsoft.com/download/details.aspx?id=10121)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
       ![.NET](images/platform-dotnet.png)
 
-      **.NET Framework**
+      **.NET 框架**
 
-      XAML UI 모델 및 .NET Framework를 사용하여 관리형 Windows 애플리케이션용으로 설정된 플랫폼에서 접근성 지원 앱과 도구를 개발합니다.
+      使用 XAML UI 模型和 .NET Framework 在建立的平台上针对托管 Windows 应用程序开发易访问的应用和工具。
 
-      [.NET Framework 的系统语音编程指南](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
+      [适用于 .NET Framework 的 System.Speech 编程指南](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))
    :::column-end:::
    :::column:::
       ![Azure 语音服务](images/platform-azure-speech.png)
@@ -105,42 +105,42 @@ ms.locfileid: "76726547"
    :::column-end:::
 :::row-end:::
 
-## <a name="samples"></a>샘플
+## <a name="samples"></a>示例
 
-다양한 접근성의 특징과 기능을 보여 주는 Windows 샘플 전체를 다운로드하고 실행합니다.
+下载并运行完整 Windows 示例，这些示例演示了各种易访问性特性和功能。
 
 :::row:::
    :::column:::
-      [코드 샘플 브라우저](https://docs.microsoft.com/samples/browse/?term=speech)
+      [代码示例浏览器](https://docs.microsoft.com/samples/browse/?term=speech)
 
       新示例浏览器（替换 MSDN 代码库）。
    :::column-end:::
    :::column:::
-      [GitHub의 Windows 클래식 샘플](https://github.com/microsoft/Windows-classic-samples/search?q=speech&unscoped_q=speech)
+      [GitHub 上的 Windows 经典示例](https://github.com/microsoft/Windows-classic-samples/search?q=speech&unscoped_q=speech)
 
-      이러한 샘플에서는 Windows 및 Windows Server의 기능 및 프로그래밍 모델을 보여 줍니다. 
+      这些示例演示适用于 Windows 和 Windows Server 的功能和编程模型。 
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [GitHub의 UWP(유니버설 Windows 플랫폼) 코드 샘플](https://github.com/microsoft/Windows-universal-samples/search?q=speech&unscoped_q=speech)
+      [GitHub 上的通用 Windows 平台 (UWP) 示例](https://github.com/microsoft/Windows-universal-samples/search?q=speech&unscoped_q=speech)
 
-      이러한 샘플에서는 Windows 10용 Windows SDK(소프트웨어 개발 키트)의 UWP(유니버설 Windows 플랫폼)에 대한 API 사용 패턴을 보여 줍니다.
+      这些示例演示适用于 Windows 10 的 Windows 软件开发工具包 (SDK) 中的通用 Windows 平台 (UWP) API 使用模式。
    :::column-end:::
    :::column:::
-      [XAML 컨트롤 갤러리](https://github.com/microsoft/Xaml-Controls-Gallery)
+      [XAML 控件库](https://github.com/microsoft/Xaml-Controls-Gallery)
 
-      이 앱에서는 흐름 디자인 시스템에서 지원되는 다양한 Xaml 컨트롤을 보여 줍니다.
+      此应用演示在 Fluent Design 系统中支持的各种 Xaml 控件。
    :::column-end:::
 :::row-end:::
 
-## <a name="videos"></a>비디오
+## <a name="videos"></a>视频
 
 涵盖了如何构建合并语音交互的 Windows 应用程序的各种视频。
 
 :::row:::
    :::column:::
-      **Cortana 및 음성 플랫폼 세부 정보**
+      **Cortana 和语音平台深度结合**
    :::column-end:::
    :::column:::
       **通用 Windows 应用中的 Cortana 扩展性**
@@ -155,23 +155,23 @@ ms.locfileid: "76726547"
    :::column-end:::
 :::row-end:::
 
-## <a name="other-resources"></a>다른 리소스
+## <a name="other-resources"></a>其他资源
 
 :::row:::
    :::column:::
-      **블로그 및 뉴스**
+      **博客和新闻**
 
       Microsoft 语音领域的最新功能。
    :::column-end:::
    :::column:::
-      **커뮤니티 및 지원**
+      **社区和支持**
 
       Windows 开发人员和用户的会面，并一起学习。
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
-      [뉴스](https://news.microsoft.com/?s=speech)
+      [新闻动态](https://news.microsoft.com/?s=speech)
 
       [语音博客](https://blogs.windows.com/windowsdeveloper/?s=speech)
    :::column-end:::

@@ -1,11 +1,11 @@
 ---
 description: 本教程演示如何添加 UWP XAML 用户界面、创建 .MSIX 包以及将其他新式组件合并到 WPF 应用。
-title: MSIX로 패키징 및 배포
+title: 使用 MSIX 打包和部署
 ms.topic: article
 ms.date: 01/23/2020
 ms.author: mcleans
 author: mcleanbyron
-keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛
+keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
 ms.openlocfilehash: 27906d9d389c065ab1fdf7124151cd1915f850eb

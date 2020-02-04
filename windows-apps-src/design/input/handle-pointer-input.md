@@ -1,10 +1,10 @@
 ---
 Description: 在通用 Windows 平台（UWP）应用程序中接收、处理和管理指针设备（如触摸、鼠标、笔/触笔和触摸板）中的输入数据。
-title: 포인터 입력 처리
+title: 处理指针输入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
-keywords: 펜, 마우스, 터치 패드, 터치, 포인터, 입력, 사용자 조작
+keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
@@ -15,35 +15,35 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76725990"
 ---
-# <a name="handle-pointer-input"></a>포인터 입력 처리
+# <a name="handle-pointer-input"></a>处理指针输入
 
-UWP(유니버설 Windows 플랫폼) 응용 프로그램에서 터치, 마우스, 펜/스타일러스, 터치 패드 등의 포인팅 장치에서 입력 데이터를 수신하고, 처리하고, 관리합니다.
+在通用 Windows 平台 (UWP) 应用程序中接收、处理和管理来自指针设备（例如触控、鼠标、笔/触笔和触摸板）的输入数据。
 
 > [!Important]
-> 요구 사항이 명확하게 잘 정의되어 있으며 플랫폼 컨트롤에서 지원하는 제스처가 시나리오를 지원하지 않는 경우에만 사용자 지정 조작을 만드세요.  
-> Windows 응용 프로그램의 조작 환경을 사용자 지정하는 경우, 사용자들을 해당 사항이 일관되고, 직관적이며, 검색 가능할 것으로 기대합니다. 이러한 이유로 [플랫폼 컨트롤](../controls-and-patterns/controls-by-function.md)에서 지원하는 항목에 대해 사용자 지정 조작을 모델링하는 것이 좋습니다. 플랫폼 컨트롤은 표준 조작, 애니메이션 효과를 준 물리적 효과, 시각적 피드백 및 접근성을 비롯하여 UWP(유니버설 Windows 플랫폼) 사용자 조작 환경 전체를 제공합니다. 
+> 仅当要求清楚、定义良好且平台控件支持的交互不支持你的方案时才创建自定义交互。  
+> 如果你在 Windows 应用程序中自定义交互体验，用户需要的是一致、直观且可发现的体验。 出于这些原因，我们建议你基于[平台控件](../controls-and-patterns/controls-by-function.md)支持的交互进行自定义交互建模。 平台控件提供完整的通用 Windows 平台 (UWP) 用户交互体验，包括标准交互、动态显示的物理效果、视觉反馈和辅助功能。 
 
-## <a name="important-apis"></a>중요 API
+## <a name="important-apis"></a>重要的 API
 - [Windows.Devices.Input](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 - [Windows.UI.Xaml.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
-## <a name="pointers"></a>포인터
-대부분의 조작 환경에는 일반적으로 터치, 마우스, 펜/스타일러스, 터치 패드 등의 입력 장치로 가리켜서 조작하려는 개체를 식별하는 사용자를 포함합니다. 이러한 입력 장치에서 제공하는 원시 HID(휴먼 인터페이스 장치) 데이터에는 많은 일반적인 속성이 포함되어 있으므로 데이터가 통합 입력 스택으로 올라가며 장치 독립적인 통합 포인터 데이터로 표시됩니다. 그런 다음 UWP 응용 프로그램은 사용 중인 입력 장치와 상관없이 이 데이터를 사용할 수 있습니다.
+## <a name="pointers"></a>Pointers
+大多数交互体验通常涉及到用户通过使用输入设备（如触控、鼠标、笔/触笔和触摸板）指向要与其进行交互的对象来标识该对象。 由于这些输入设备所提供的原始人体学接口设备 (HID) 数据包括许多常用属性，因此将该数据升级并整合到一个统一的输入堆栈，并公开为独立于设备的指针数据。 然后，你的 UWP 应用程序可以使用此数据，而无需担心所使用的输入设备。
 
 > [!NOTE]
-> 앱에 장치 관련 정보가 필요한 경우 해당 정보가 원시 HID 데이터에서도 올라갑니다.
+> 如果你的应用需要，也可以从原始 HID 数据升级特定于设备的信息。
 
-입력 스택의 각 입력 지점(또는 연락처)은 다양한 포인터 이벤트 처리기에서 제공하는 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.Pointer) 매개 변수를 통해 표시되는 [**Pointer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 개체로 표시됩니다. 멀티 펜 또는 멀티 터치 입력의 경우 각 접점이 하나의 고유한 입력 포인터로 간주됩니다.
+输入堆栈上的每个输入点（或接触点）通过由各种指针事件处理程序中的 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.Pointer) 参数公开的 [**Pointer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 对象表示。 在多笔或多点触控输入的情况下，每个接触点都视为一个唯一的输入指针。
 
-## <a name="pointer-events"></a>포인터 이벤트
+## <a name="pointer-events"></a>指针事件
 
-포인터 이벤트는 입력 장치 유형 및 범위 또는 접촉의 감지 상태 등의 기본 정보와 위치, 압력, 접촉 기하 등의 확장 정보를 표시합니다. 또한 사용자가 누른 마우스 단추, 펜 지우개 팁을 사용 중인지 여부 등의 특정 장치 속성도 사용할 수 있습니다. 앱에서 입력 장치와 해당 접근 권한 값을 구분해야 할 경우에는 [입력 장치 식별](identify-input-devices.md)을 참조하세요.
+指针事件可公开诸如输入设备类型和检测状态（范围内或相互接触）之类的基本信息，以及诸如位置、压力和接触几何图形之类的扩展信息。 此外，还提供特定设备属性，例如用户按了哪一个鼠标按钮或是否正在使用笔尖橡皮擦。 如果你的应用需要在输入设备与其功能之间进行区分，请参阅[标识输入设备](identify-input-devices.md)。
 
-UWP 앱은 다음과 같은 포인터 이벤트를 수신 대기할 수 있습니다.
+UWP 应用可以侦听以下指针事件：
 
 > [!NOTE]
-> 포인터 이벤트 처리기 내의 해당 요소에 대해 [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer)를 호출하여 특정 UI 요소로 포인터 입력을 제한할 수 있습니다. 포인터가 요소로 캡처될 경우 포인터가 개체의 경계 영역 외부로 이동하더라도 해당 개체만 포인터 입력 이벤트를 받습니다. [  **IsInContact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact)(마우스 단추 누름, 터치 또는 스타일러스 접촉 중)이 true여야 **CapturePointer**가 성공적으로 수행됩니다.
+> 通过在指针事件处理程序内对该元素调用 [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer)，将指针输入约束到特定的 UI 元素。 当指针由元素捕获时，仅该对象接收指针输入事件，即使指针移动到该对象的边界区域之外也是如此。 若要使 [CapturePointer **成功，** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact)IsInContact（鼠标按钮已按下，触控或触笔相互接触）必须为 true。
 
 <table>
 <colgroup>
@@ -52,25 +52,25 @@ UWP 앱은 다음과 같은 포인터 이벤트를 수신 대기할 수 있습�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">이벤트</th>
-<th align="left">설명</th>
+<th align="left">事件</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
-<td align="left"><p>플랫폼에서 포인터를 취소할 경우 발생합니다. 이 작업은 다음과 같은 환경에서 발생할 수 있습니다.</p>
+<td align="left"><p>在指针由平台取消时发生。 在以下条件下，可能会发生这种情况：</p>
 <ul>
-<li>펜이 입력 표면 범위 내에서 감지되면 터치 포인터가 취소됩니다.</li>
-<li>100ms가 넘는 활성 접촉은 인식되지 않습니다.</li>
-<li>모니터/디스플레이가 변경됩니다(해상도, 설정, 다중 모니터 구성).</li>
-<li>데스크톱이 잠기거나 사용자가 로그오프했습니다.</li>
-<li>동시 접촉 수가 장치에서 지원하는 수를 초과했습니다.</li>
+<li>当在输入图面的范围内检测到笔时，将取消触摸指针。</li>
+<li>超过 100 毫秒未检测到活动的接触点。</li>
+<li>监视器/显示器已更改（分辨率、设置、多监视器配置）。</li>
+<li>桌面已锁定或用户已注销。</li>
+<li>同时接触点的数量超出了设备所支持的数量。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
-<td align="left"><p>다른 UI 요소가 포인터를 캡처하거나, 포인터가 해제되거나, 다른 포인터가 프로그래밍 방식으로 캡처될 때 발생합니다.</p>
+<td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
 <strong>请注意</strong>  没有相应的指针捕获事件。
 </div>
@@ -80,63 +80,63 @@ UWP 앱은 다음과 같은 포인터 이벤트를 수신 대기할 수 있습�
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
-<td align="left"><p>포인터가 요소의 경계 영역에 들어갈 때 발생합니다. 터치, 터치 패드, 마우스 및 펜 입력의 경우에는 약간 다른 방식으로 발생할 수 있습니다.</p>
+<td align="left"><p>在指针进入元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
-<li>터치의 경우 이벤트를 발생시키려면 요소를 직접 누르거나 요소의 경계 영역으로 이동하여 손가락을 접촉해야 합니다.</li>
-<li>마우스 및 터치 패드에는 항상 표시되는 화상 커서가 있으며 마우스 또는 터치 패드 버튼을 누르지 않은 경우에도 이 이벤트가 발생합니다.</li>
-<li>터치와 마찬가지로 펜에서도 요소를 직접 누르거나 요소의 경계 영역으로 이동하여 이 이벤트를 발생시킵니다. 그러나, 펜에는 가리키기 상태(<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)도 있으며, true인 경우 이 이벤트가 발생합니다.</li>
+<li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
+<li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
+<li>和触摸一样，笔通过对元素直接按下笔或移动到该元素的绑定区域来引发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 时，将会触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
-<td align="left"><p>포인터가 요소 경계 영역을 벗어날 때 발생합니다. 터치, 터치 패드, 마우스 및 펜 입력의 경우에는 약간 다른 방식으로 발생할 수 있습니다.</p>
+<td align="left"><p>在指针离开元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
-<li>터치의 경우 손가락 접촉이 필요하며 포인터가 요소의 경계 영역을 벗어날 때 이 이벤트가 발생합니다.</li>
-<li>마우스 및 터치 패드에는 항상 표시되는 화상 커서가 있으며 마우스 또는 터치 패드 버튼을 누르지 않은 경우에도 이 이벤트가 발생합니다.</li>
-<li>터치와 마찬가지로 펜도 요소의 경계 영역을 벗어날 때 이 이벤트가 발생합니다. 그러나, 펜에는 가리키기 상태(<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)도 있으며, 상태가 True에서 False로 변경되면 이 이벤트가 발생합니다.</li>
+<li>触摸需要手指接触，并在指针移出该元素的绑定区域时引发此事件。</li>
+<li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
+<li>和触摸一样，笔在移出该元素的绑定区域时引发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当状态从 true 更改为 false 时触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
-<td align="left"><p>요소의 경계 영역 내에서 포인터가 좌표, 버튼 상태, 압력, 기울기 또는 접촉 기하(예: 너비 및 높이)를 변경할 때 발생합니다. 터치, 터치 패드, 마우스 및 펜 입력의 경우에는 약간 다른 방식으로 발생할 수 있습니다.</p>
+<td align="left"><p>在指针更改元素的绑定区域内的坐标、按钮状态、压力、倾斜或接触几何图形（例如宽度和高度）时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
-<li>터치의 경우 손가락 접촉이 필요하며 요소의 경계 영역 내에서 접촉할 경우에만 이 이벤트가 발생합니다.</li>
-<li>마우스 및 터치 패드에는 항상 표시되는 화상 커서가 있으며 마우스 또는 터치 패드 버튼을 누르지 않은 경우에도 이 이벤트가 발생합니다.</li>
-<li>터치와 마찬가지로 펜이 요소의 경계 영역 내에서 접촉할 경우 이 이벤트가 발생합니다. 그러나 펜에는 가리키기 상태([<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>](https://msdn.microsoft.com/library/windows/apps/br227977))도 있으며, true이고 요소의 경계 영역 내에 있는 경우 이 이벤트가 발생합니다.</li>
+<li>触摸需要手指接触，并且仅在与该元素的绑定区域接触时引发此事件。</li>
+<li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
+<li>和触摸一样，笔在与该元素的绑定区域接触时引发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 且位于元素的边界区域内时，将触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
-<td align="left"><p>요소의 경계 영역 내에서 포인터가 누르기 동작(예: 터치 다운, 마우스 단추 누름, 펜 누름 또는 터치 패드 단추 누름)을 나타냅니다.</p>
-<p>이 이벤트가 수행되려면 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a>가 처리기에서 호출되어야 합니다.</p></td>
+<td align="left"><p>在指针指示元素的绑定区域内发生按下操作（例如触摸按下、鼠标按钮按下、笔按下或触摸板按钮按下）时发生。</p>
+<p>必须从处理程序中对此事件调用 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a>。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
-<td align="left"><p>포인터가 요소 경계 영역 내에서 해제 동작(예: 터치 업, 마우스 단추에서 손 떼기, 펜 업 또는 터치 패드 단추에서 손 떼기)을 나타내거나 포인터가 경계 영역 외부에서 캡처되는 경우 발생합니다.</p></td>
+<td align="left"><p>在指针指示元素的绑定区域内发生释放事件（例如触摸抬起、鼠标按钮抬起、笔抬起或触摸板按钮抬起）时或在绑定区域外捕获到该指针时发生。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
-<td align="left"><p>마우스 휠이 회전할 때 발생합니다.</p>
-<p>마우스 입력이 먼저 감지되면 마우스 입력이 할당된 단일 포인터와 연결됩니다. 마우스 단추(왼쪽, 휠 또는 오른쪽)를 클릭하면 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> 이벤트를 통해 포인터와 해당 단추 간의 보조 연결이 만들어집니다.</p></td>
+<td align="left"><p>在鼠标滚轮转动时发生。</p>
+<p>鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> 事件在指针和该按钮之间创建一个辅助关联。</p></td>
 </tr>
 </tbody>
 </table> 
 
-## <a name="pointer-event-example"></a>포인터 이벤트 예제
+## <a name="pointer-event-example"></a>指针事件示例
 
-다음은 기본 포인터 추적 앱의 코드 조각으로, 여러 포인터를 위해 이벤트를 수신 대기하고 처리하며 연결된 포인터의 다양한 속성을 가져오는 방법을 보여 줍니다.
+以下是一些来自基本指针跟踪应用的代码段，演示了如何侦听和处理多个指针的事件并获取关联指针的各种属性。
 
-![포인터 응용 프로그램 UI](images/pointers/pointers1.gif)
+![指针应用程序 UI](images/pointers/pointers1.gif)
 
 **从[指针输入示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)下载此示例**
 
-### <a name="create-the-ui"></a>UI 만들기
+### <a name="create-the-ui"></a>创建 UI
 
-다음 예에서는 [사각형](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle)(`Target`)을 포인터 입력을 사용하는 개체로 사용합니다. 대상의 색상은 포인터 상태가 변경될 때 변경됩니다.
+对于此示例，我们使用一个[矩形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) 作为使用指针输入的对象。 当指针状态更改时，目标的颜色也将更改。
 
-각 포인터에 대한 세부 정보는 포인터가 이동할 때 포인터를 따라오는 부동 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)에 표시됩니다. 포인터 이벤트 자체는 사각형의 오른쪽에 있는 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)에 보고됩니다.
+每个指针的详细信息显示在随指针移动的浮动 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中。 指针事件本身在矩形右侧的 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 中报告。
 
-다음은 XAML(Extensible Application Markup Language) UI 예문입니다. 
+这是此示例中的 UI 的可扩展应用程序标记语言 (XAML)。 
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -189,13 +189,13 @@ UWP 앱은 다음과 같은 포인터 이벤트를 수신 대기할 수 있습�
 </Grid>
 ```
 
-### <a name="listen-for-pointer-events"></a>포인터 이벤트 수신
+### <a name="listen-for-pointer-events"></a>侦听指针事件
 
-대부분의 경우에는 이벤트 처리기의 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)를 통해 포인터 정보를 가져오는 것이 좋습니다.
+在大多数情况下，我们建议你通过事件处理程序的 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 获取指针信息。
 
-이벤트 인수가 필요한 포인터 정보를 표시하지 않으면 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)의 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 및 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 메서드를 통해 표시되는 확장된 [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 정보에 액세스할 수 있습니다.
+如果事件参数不公开所需的指针详细信息，则可以获取对通过 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 和 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法公开的扩展 [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 信息的访问权限。
 
-다음은 각 활성 포인터 추적용으로 전역 사전 개체를 설정하고 대상 개체용으로 다양한 포인터 이벤트 수신기를 식별하는 코드입니다.
+以下代码设置用于跟踪每个活动指针的全局字典对象，并为该目标对象标识各个指针事件侦听器。
 
 ```CSharp
 // Dictionary to maintain information about each active pointer. 
@@ -233,14 +233,14 @@ public MainPage()
 }
 ```
 
-### <a name="handle-pointer-events"></a>포인터 이벤트 처리
+### <a name="handle-pointer-events"></a>处理指针事件
 
-다음으로 UI 피드백을 사용하여 기본 포인터 이벤트 처리기에 대해 살펴봅니다.
+接下来，我们使用 UI 反馈来演示基本的指针事件处理程序。
 
--   이 처리기는 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 이벤트를 관리합니다. 이벤트 로그에 이벤트를 추가하고, 활성 포인터 사전에 포인터를 추가하고, 포인터 상세 정보를 표시합니다.
+-   此处理程序管理 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 我们将事件添加到事件日志、将指针添加活动指针字典，并显示指针详细信息。
 
     > [!NOTE]
-    > [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)和[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)事件并非始终成对出现。 앱은 포인터 다운(예: [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 및 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost))을 완료할 수도 있는 이벤트를 수신하고 처리해야 합니다.      
+    > [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)和[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)事件并非始终成对出现。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 和 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)）的所有事件。      
 
 ```csharp
 /// <summary>
@@ -282,7 +282,7 @@ void Target_PointerPressed(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   이 처리기는 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 이벤트를 관리합니다. 이벤트 로그에 이벤트를 추가하고, 포인터 모음에 포인터를 추가하고, 포인터 상세 정보를 표시합니다.
+-   此处理程序管理 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件。 我们将事件添加到事件日志、将指针添加指针集合，并显示指针详细信息。
 
 ```csharp
 /// <summary>
@@ -319,10 +319,10 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   이 처리기는 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) 이벤트를 관리합니다. 이벤트 로그에 이벤트를 추가하고 포인터 상세 정보를 업데이트합니다.
+-   此处理程序管理 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) 事件。 我们将事件添加到事件日志并更新指针详细信息。
 
     > [!Important]
-    > 마우스 입력이 먼저 감지되면 마우스 입력이 할당된 단일 포인터와 연결됩니다. 마우스 단추(왼쪽, 휠 또는 오른쪽)를 클릭하면 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 이벤트를 통해 포인터와 해당 단추 간의 보조 연결이 만들어집니다. [  **PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 이벤트는 해당하는 동일한 마우스 단추를 해제한 경우에만 발생합니다(이 이벤트가 완료될 때까지는 다른 단추를 이 포인터와 연결할 수 없음). 이 독점적인 연결 때문에 다른 마우스 단추 클릭은 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) 이벤트를 통해 라우트됩니다.     
+    > 鼠标输入与第一次检测到鼠标输入时分配的单个指针相关联。 单击鼠标按钮（左键、滚轮或右键）会通过 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件在指针和该按钮之间创建一个辅助关联。 仅当释放该鼠标按钮时才引发 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件（在完成该事件之前，其他按钮无法与指针关联）。 由于此排他性关联，会通过 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) 事件路由其他鼠标按钮单击。     
 
 ```csharp
 /// <summary>
@@ -369,7 +369,7 @@ private void Target_PointerMoved(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   이 처리기는 [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) 이벤트를 관리합니다. 이벤트 로그에 이벤트를 추가하고, 포인터 배열에 포인터를 추가(필요한 경우)하고, 포인터 상세 정보를 표시합니다.
+-   此处理程序管理 [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) 事件。 我们将事件添加到事件日志、将指针添加到指针数组（如有必要），并显示指针详细信息。
 
 ```csharp
 /// <summary>
@@ -399,7 +399,7 @@ private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   이 처리기는 디지타이저와의 접촉이 종료되는 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 이벤트를 관리합니다. 이벤트 로그에 이벤트를 추가하고, 포인터 모음에서 포인터를 제거하고, 포인터 상세 정보를 업데이트합니다.
+-   在已终止与数字化器的接触的情况下，此处理程序管理 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件。 我们将事件添加到事件日志、从指针集合删除指针，并更新指针详细信息。
 
 ```csharp
 /// <summary>
@@ -451,7 +451,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   이 처리기는 디지타이저와의 접촉이 유지 관리되는 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 이벤트를 관리합니다. 이벤트 로그에 이벤트를 추가하고, 포인터 배열에서 포인터를 제거하고, 포인터 상세 정보를 업데이트합니다.
+-   此处理程序管理 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件（在保持与数字化器的接触的情况下）。 我们将事件添加到事件日志、从指针数组删除指针，并更新指针详细信息。
 
 ```csharp
 /// <summary>
@@ -486,7 +486,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   이 처리기는 [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 이벤트를 관리합니다. 이벤트 로그에 이벤트를 추가하고, 포인터 배열에서 포인터를 제거하고, 포인터 상세 정보를 업데이트합니다.
+-   此处理程序管理 [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 事件。 我们将事件添加到事件日志、从指针数组删除指针，并更新指针详细信息。
 
 ```csharp
 /// <summary>
@@ -525,10 +525,10 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   이 처리기는 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) 이벤트를 관리합니다. 이벤트 로그에 이벤트를 추가하고, 포인터 배열에서 포인터를 제거하고, 포인터 상세 정보를 업데이트합니다.
+-   此处理程序管理 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) 事件。 我们将事件添加到事件日志、从指针数组删除指针，并更新指针详细信息。
 
     > [!NOTE]
-    > [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)可能会发生，而不是[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。 포인터 캡처는 사용자 조작, 프로그래밍 방식의 다른 포인터 캡처, [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 호출 등 다양한 이유로 잃게 될 수 있습니다.     
+    > [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)可能会发生，而不是[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。 指针捕获可能由于各种原因而丢失，包括用户交互、以编程方式捕获另一个指针、调用 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。     
 
 ```csharp
 /// <summary>
@@ -567,11 +567,11 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 }
 ```
 
-### <a name="get-pointer-properties"></a>포인터 속성 가져오기
+### <a name="get-pointer-properties"></a>获取指针属性
 
-앞에서 설명한 대로 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)의 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 및 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints)의 메서드를 통해 [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 개체에서 가장 확장된 포인터를 가져와야 합니다. 다음은 작업 방법을 보여주는 코드 조각입니다.
+如前面所述，你必须从通过 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 和 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法获取的 [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 对象获取最扩展的指针。 下面的代码段显示操作步骤。
 
--   먼저 포인터별로 새로운 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)을 만듭니다.
+-   首先，我们为每个指针创建一个新的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
 ```csharp
 /// <summary>
@@ -594,7 +594,7 @@ void CreateInfoPop(PointerPoint ptrPt)
 }
 ```
 
--   그런 다음 해당 포인터와 연결된 기존의 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)에서 포인터 정보를 업데이트하는 방법을 제공합니다.
+-   然后，我们在与该指针关联的现有 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中，提供一种更新指针信息的方式。
 
 ```csharp
 /// <summary>
@@ -624,7 +624,7 @@ void UpdateInfoPop(PointerPoint ptrPt)
 }
 ```
 
--   마지막으로 다양한 포인터 속성을 쿼리합니다.
+-   最后，我们将查询各种指针属性。
 
 ```csharp
 /// <summary>
@@ -675,29 +675,29 @@ String QueryPointer(PointerPoint ptrPt)
 }
 ```
 
-## <a name="primary-pointer"></a>기본 포인터
-터치 디지타이저나 터치 패드와 같은 일부 입력 장치는 기존에 사용하던 하나의 마우스나 펜 포인터가 아닌 여러 개의 포인터를 지원합니다(대부분의 경우 Surface Hub는 두 개의 펜 입력 지원). 
+## <a name="primary-pointer"></a>主指针
+某些输入设备（例如触控式数字化器或触摸板）并不仅仅支持鼠标或笔的典型单一指针（在大多数情况下，就像 Surface Hub 那样支持两个笔输入）。 
 
-**[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 클래스의 읽기 전용 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 속성을 사용하면 단일 기본 포인터를 식별하고 차별화할 수 있습니다(기본 포인터는 항상 입력 시퀀스 중에 탐지되는 첫 번째 포인터임). 
+使用 **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 类的只读 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 属性可以标识并区分单一主指针（主指针始终是输入序列期间检测到的第一个指针）。 
 
-기본 포인터를 식별함으로써 이를 사용하여 마우스나 펜 입력을 에뮬레이트하거나, 조작을 사용자 지정하거나 일부 다른 특정 기능 또는 UI를 제공할 수 있습니다.
+通过标识主指针，你可以用它来模拟鼠标或笔输入、自定义交互或提供一些其他的特定功能或 UI。
 
 > [!NOTE]
-> 입력 시퀀스 중에 기본 포인터가 해제되거나, 취소되거나, 손실되면, 새로운 입력 순서가 시작될 때까지 기본 입력 포인터가 생성되지 않습니다(모든 포인터가 해제, 취소 또는 손실되면 입력 시퀀스가 종료됨).
+> 如果在某个输入序列期间释放、取消或丢失了主指针，则在初始化新的输入序列之前，不会创建主输入指针（释放、取消或丢失了所有指针后，输入序列将结束）。
 
-## <a name="primary-pointer-animation-example"></a>기본 포인터 애니메이션 예제
+## <a name="primary-pointer-animation-example"></a>主指针动画示例
 
-다음은 특별한 가시적 피드백을 제공하여 사용자가 응용 프로그램에 있는 포인터 입력 간을 차별화하도록 돕는 방법을 보여주는 코드 조각입니다.
+这些代码段显示了如何提供专门的视觉反馈以帮助用户区分应用程序中的指针输入。
 
-이 특정 앱에서는 색상 및 애니메이션을 모두 사용하여 기본 포인터를 강조 표시합니다.
+这个特定应用使用颜色和动画突出显示主指针。
 
-![애니메이션 시각적 피드백을 사용하는 포인터 응용 프로그램](images/pointers/pointers-usercontrol-animation.gif)
+![具有动画视觉反馈的指针应用程序](images/pointers/pointers-usercontrol-animation.gif)
 
 **从[指针输入示例下载此示例（UserControl with 动画）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
 
-### <a name="visual-feedback"></a>시각적 피드백
+### <a name="visual-feedback"></a>视觉反馈
 
-XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 개체를 기반으로 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** 을 정의합니다. 이 개체는 캔버스에서 각 개체의 위치를 강조 표시하며 **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 를 사용하여 기본 포인터에 해당하는 타원에 애니메이션 효과를 줍니다.
+我们基于 XAML **[椭圆形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** 对象定义一个 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** ，突出显示每个指针在画布上的位置，并使用 **[故事板](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
 
 **XAML 如下：**
 
@@ -769,7 +769,7 @@ XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellip
 </UserControl>
 ```
 
-관련 코드는 다음과 같습니다.
+下面是代码隐藏：
 ```csharp
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -888,10 +888,10 @@ namespace UWP_Pointers
 }
 ```
 
-### <a name="create-the-ui"></a>UI 만들기
-이 예제의 UI는 입력 **[캔버스](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** 로 제한됩니다. 여기에서 포인터를 추적하고 포인터 카운터 및 기본 포인터 식별자가 들어 있는 헤더 막대를 따라 포인터 표시기 및 기본 포인터 애니메이션을 렌더링합니다.
+### <a name="create-the-ui"></a>创建 UI
+此示例中的 UI 限制为输入 **[画布](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** ，我们在其中跟踪所有指针并呈现指针指示器和主指针动画（如果适用），同时显示一个包含指针计数器和主指针标识符的标题栏。
 
-MainPage.xaml은 다음과 같습니다.
+下面是 MainPage.xaml：
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -940,11 +940,11 @@ MainPage.xaml은 다음과 같습니다.
 </Grid>
 ```
 
-### <a name="handle-pointer-events"></a>포인터 이벤트 처리
+### <a name="handle-pointer-events"></a>处理指针事件
 
-마지막으로, MainPage.xaml.cs 관련 코드에 기본 포인터 이벤트 처리기를 정의합니다. 이전 예제에서 기본 사항을 설명했으므로 여기에서 코드를 재현하지는 않겠지만, 원하는 경우 [포인터 입력 샘플(애니메이션이 있는 UserControl)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)에서 작업 샘플을 다운로드할 수 있습니다.
+最后，我们在 MainPage.xaml.cs 代码隐藏文件中定义基本指针事件处理程序。 我们不会在此处复制代码，因为上一个示例已经介绍了基本知识，但你可以从[指针输入示例（具有动画的 UserControl）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)下载工作示例。
 
-## <a name="related-articles"></a>관련된 문서
+## <a name="related-articles"></a>相关文章
 
 **主题示例**
 * [指针输入示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
