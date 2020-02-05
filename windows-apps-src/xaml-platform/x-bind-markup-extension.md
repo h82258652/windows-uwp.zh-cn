@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 10f601b29ff441fe8cec9261d7751ba525c7f52b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8008c652dea89b42185c9fb1d9ac42e96f16a117
+ms.sourcegitcommit: 5af282fb230765a7225e138d99e9cb1b60bf7238
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258743"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77012045"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
@@ -32,7 +32,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
 -   [XAML UI 基础示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
-## <a name="xaml-attribute-usage"></a>XAML 属性用法
+## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
 ``` syntax
 <object property="{x:Bind}" .../>
@@ -88,13 +88,13 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为绑定路径的第一部分，因为命名元素成为表示根绑定源的页或用户控件中的字段。 
 
 
-### <a name="collections"></a>集锦
+### <a name="collections"></a>集合
 
 如果数据源是一个集合，则属性路径可以按照位置或索引来指定集合中的项目。 例如，"团队\[0\]。扮演者 "，其中文本"\[\]"包含请求零索引集合中第一项的" 0 "。
 
 若要使用索引器，该模型需要在将编入索引的属性类型上实现 **IList&lt;T&gt;** 或 **IVector&lt;T&gt;** 。 （请注意，IReadOnlyList&lt;T&gt; 和 IVectorView&lt;T&gt; 不支持索引器语法。）如果已编制索引的属性的类型支持**INotifyCollectionChanged**或**IObservableVector** ，而绑定是单向或双向，则它将在这些接口上注册和侦听更改通知。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
 
-如果数据源是字典或地图，则属性路径可以按字符串名称指定集合中的项。 例如 **&lt;TextBlock Text = "{X:Bind 运动员\[" John smith "\]"/&gt;** 将在名为 "john smith" 的字典中查找一项。 名称需要使用引号括起来，单引号或双引号都可以使用。 乘幂号 (^) 可用于转义字符串中的引号。 通常最简单的做法是替换使用用于 XAML 属性的引号。 （请注意，System.collections.generic.ireadonlydictionary<tkey&lt;T&gt; 和 IMapView&lt;T&gt; 不支持索引器语法。）
+如果数据源是字典或地图，则属性路径可以按字符串名称指定集合中的项。 例如 **&lt;TextBlock Text = "{X:Bind 运动员\[" John smith "\]}"/&gt;** 将在名为 "john smith" 的字典中查找项。 名称需要使用引号括起来，单引号或双引号都可以使用。 乘幂号 (^) 可用于转义字符串中的引号。 通常最简单的做法是替换使用用于 XAML 属性的引号。 （请注意，System.collections.generic.ireadonlydictionary<tkey&lt;T&gt; 和 IMapView&lt;T&gt; 不支持索引器语法。）
 
 若要使用字符串索引器，该模型需要在将编入索引的属性类型上实现 **IDictionary&lt;string, T&gt;** 或 **IMap&lt;string, T&gt;** 。 如果已编入索引的属性类型支持 **IObservableMap** 且绑定是单向或双向，则它将针对这些接口上的更改通知进行注册和侦听。 更改检测逻辑将基于所有集合更改进行更新，即使这不会影响特定的索引值也是如此。 这是因为侦听逻辑在集合的所有实例中是通用的。
 
