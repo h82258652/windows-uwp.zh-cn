@@ -1,28 +1,28 @@
 ---
-title: 启用 GPIO、I2C 和 SPI 的用户模式访问
-description: 本教程介绍如何对 Windows 10 上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。
+title: 允许用户模式访问 GPIO、I2C 和 SPI
+description: 本教程介绍如何在 Windows 10 上启用用户模式对 GPIO、I2C、SPI 和 UART 的访问。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1356003c86040cfa51872b802ba070a685789b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 08c802154180f5577c43a3ad5f349f53e3d9b5d3
+ms.sourcegitcommit: 20ee991a1cf87ef03c158cd3f38030c7d0e483fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281838"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77037897"
 ---
-# <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>启用 GPIO、I2C 和 SPI 的用户模式访问
+# <a name="enable-user-mode-access-to-gpio-i2c-and-spi"></a>允许用户模式访问 GPIO、I2C 和 SPI
 
-Windows 10 包含的新 API 可用于直接通过用户模式访问 GPIO、I2C、SPI 和 UART。 开发板（如 Raspberry Pi 2）将公开这些连接的子集，这些连接支持用户使用自定义电路扩展基本计算模块来处理特定应用程序。 通常，只需使用 GPIO 引脚的一个子集和标头上公开的总线，即可与其他关键板载功能共享这些低级别总线。 若要保持系统稳定性，必须通过用户模式应用程序指定可供安全修改的引脚和总线。
+Windows 10 包含新的 Api，用于从通用输入/输出（GPIO）、集成线路（I2C）、串行外设接口（SPI）和通用异步接收方（UART）的用户模式进行直接访问。 开发板（如 Raspberry Pi 2）公开这些连接的一个子集，这使你能够使用自定义电路扩展基础计算模块来处理特定的应用程序。 通常，只需使用 GPIO 引脚的一个子集和标头上公开的总线，即可与其他关键板载功能共享这些低级别总线。 若要保持系统稳定性，需要指定用户模式应用程序可以安全地进行修改的 pin 和总线。
 
-本文档介绍如何在 ACPI 中指定此配置，并提供工具来验证是否正确指定了配置。
+本文档介绍如何在高级配置和电源接口（ACPI）中指定此配置，并提供用于验证是否正确指定了配置的工具。
 
 > [!IMPORTANT]
-> 本文档适用于 UEFI 和 ACPI 开发人员。 假定略微熟悉 ACPI、ASL 编写和 SpbCx/GpioClx。
+> 本文档的受众是统一可扩展固件接口（UEFI）和 ACPI 开发人员。 假定你已熟悉 ACPI、ACPI 源语言（ASL）创作和 SpbCx/GpioClx。
 
-Windows 上低级别总线的用户模式访问通过现有 `GpioClx` 和 `SpbCx` 框架实现。 称为 *RhProxy*、在 Windows IoT 核心版和 Windows 企业版上可用的新驱动程序会向用户模式公开 `GpioClx` 和 `SpbCx` 资源。 若要启用这些 API，必须在 ACPI 表（内含应向用户模式公开的每个 GPIO 和 SPB 资源）中声明用于 RhProxy 的设备节点。 本文档演示了编写和验证 ASL。
+通过现有的 `GpioClx` 和 `SpbCx` 框架查明对 Windows 上的低端总线的用户模式访问。 Windows IoT Core 和 Windows Enterprise 上提供了名为*RhProxy*的新驱动程序，它向用户模式公开 `GpioClx` 和 `SpbCx` 资源。 若要启用 Api，必须在 ACPI 表中声明用于 rhproxy 的设备节点，其中每个 GPIO 和 SPB 资源应公开给用户模式。 本文档演示了编写和验证 ASL。
 
 ## <a name="asl-by-example"></a>ASL 示例
 
@@ -208,7 +208,7 @@ I2CSerialBus\(\) 描述符的以下字段是固定的：
 
 ### <a name="gpio"></a>GPIO
 
-接下来，声明向用户模式公开的所有 GPIO 引脚。 提供以下用于确定要公开的引脚的指南：
+接下来，我们声明所有向用户模式公开的 GPIO pin。 提供以下用于确定要公开的引脚的指南：
 
 * 声明已公开标头上的所有引脚。
 * 声明连接到有用板载功能（如按钮和 LED）的引脚。
@@ -252,7 +252,7 @@ Package (2) { “GPIO-SupportedDriveModes”, 0xf },
 
 SupportedDriveModes 属性指示哪些驱动器模式受 GPIO 控制器支持。 在上述示例中，以下所有驱动器模式都受支持。 属性是以下值的位掩码：
 
-| 标志值 | 驱动器模式 | 描述 |
+| 标志值 | 驱动器模式 | 说明 |
 |------------|------------|-------------|
 | 0x1        | InputHighImpedance | 引脚支持高阻抗输入，对应于 ACPI 中的“PullNone”值。 |
 | 0x2        | InputPullUp | 引脚支持内置的上拉电阻器，对应于 ACPI 中的“PullUp”值。 |
@@ -294,9 +294,9 @@ Package (2) { “GPIO-PinCount”, 54 },
 
 ### <a name="uart"></a>UART
 
-如果你的 UART 驱动程序使用 `SerCx` 或 `SerCx2`，则可以使用 rhproxy 向用户模式公开驱动程序。 创建类型为 `GUID_DEVINTERFACE_COMPORT` 的设备接口的 UART 驱动程序无需使用 rhproxy。 收件箱 `Serial.sys` 驱动程序是这些情况之一。
+如果 UART 驱动程序使用 `SerCx` 或 `SerCx2`，则可以使用 rhproxy 将驱动程序公开给用户模式。 创建类型为 `GUID_DEVINTERFACE_COMPORT` 的设备接口的 UART 驱动程序无需使用 rhproxy。 收件箱 `Serial.sys` 驱动程序是这些情况之一。
 
-若要向用户模式公开 `SerCx` 样式的 UART，请按照如下方法声明 `UARTSerialBus` 资源。
+若要向用户模式公开 `SerCx`样式的 UART，请按如下所示声明 `UARTSerialBus` 资源。
 
 ```cpp
 // Index 2
@@ -325,7 +325,7 @@ UARTSerialBus(           // Pin 17, 19 of JP1, for SIO_UART2
 Package(2) { "bus-UART-UART2", Package() { 2 }},
 ```
 
-这会将友好名称“UART2”分配给控制器，该名称是用户将用于从用户模式访问总线的标识符。
+这会将友好名称 "UART2" 分配给控制器，该控制器是用户将用于从用户模式访问总线的标识符。
 
 ## <a name="runtime-pin-muxing"></a>运行时引脚复用
 
@@ -655,14 +655,14 @@ Device(I2C1)
 1. 使用 `ACPITABL.dat` 编译和加载 rhproxy 节点
 1. 验证 `rhproxy` 设备节点是否存在
 1. 验证 `rhproxy` 是否加载和启动
-1. 验证是否向用户模式开放了预期设备
+1. 验证所需的设备是否已向用户模式公开
 1. 验证你能否从命令行与每台设备进行交互
 1. 验证你能否从 UWP 应用与每台设备进行交互
 1. 运行 HLK 测试
 
 ### <a name="verify-controller-drivers"></a>验证控制器驱动程序
 
-由于 rhproxy 将系统上的其他设备向用户模式公开，因此它仅在这些设备运行时工作。 第一步是验证这些设备（你希望公开的 I2C、SPI、GPIO 控制器）是否已经运行。
+因为 rhproxy 会在系统上向用户模式公开其他设备，所以仅当这些设备已在工作时才起作用。 第一步是验证这些设备（你希望公开的 I2C、SPI、GPIO 控制器）是否已经运行。
 
 在命令提示符处，运行
 
@@ -740,9 +740,9 @@ devcon status *msft8000
 * 问题 51 - `CM_PROB_WAITING_ON_DEPENDENCY` - 系统未启动 rhproxy，因为它的依赖项之一加载失败。 这表明传递到 rhproxy 的资源指向无效的 ACPI 节点，或目标设备未启动。 首先，请仔细检查是否所有设备都成功运行（请参阅上方的“验证控制器驱动程序”）。 然后，仔细检查 ASL 并确保所有资源路径（例如 `\_SB.I2C1`）都是正确的，并指向 DSDT 中的有效节点。
 * 问题 10 - `CM_PROB_FAILED_START` - Rhproxy 启动失败，很可能是由于资源解析问题。 仔细检查 ASL 以及 DSD 中的资源索引，并验证 GPIO 资源是否按照引脚编号的升序顺序指定。
 
-### <a name="verify-that-the-expected-devices-are-exposed-to-usermode"></a>验证是否向用户模式开放了预期设备
+### <a name="verify-that-the-expected-devices-are-exposed-to-user-mode"></a>验证所需的设备是否已向用户模式公开
 
-现在 rhproxy 已经运行，它应该已经创建了可由用户模式访问的设备接口。 我们将使用几种命令行工具来枚举设备，并查看它们是否显示。
+现在，rhproxy 正在运行，它应该已创建可通过用户模式访问的设备接口。 我们将使用几种命令行工具来枚举设备，并查看它们是否显示。
 
 克隆[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples)存储库，并生成 `GpioTestTool`、`I2cTestTool`、`SpiTestTool`和 `Mincomm` 示例。 将工具复制到正在测试的设备，并使用以下命令枚举设备。
 
@@ -800,7 +800,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 使用下面的示例验证从 UWP 工作的设备。
 
-| 示例 | Link |
+| 示例 | 链接 |
 |------|------|
 | IoT-GPIO | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-GPIO |
 | IoT-I2C | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-I2C |
@@ -835,7 +835,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ## <a name="resources"></a>资源
 
-| 目标 | Link |
+| 目标 | 链接 |
 |-------------|------|
 | ACPI 5.0 规范 | http://acpi.info/spec.htm |
 | Asl.exe（Microsoft ASL 编译器） | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
@@ -854,7 +854,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 | MinComm (Serial) | https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## <a name="apendix"></a>附录
+## <a name="appendix"></a>附录
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>附录 A - Raspberry Pi ASL 一览
 
