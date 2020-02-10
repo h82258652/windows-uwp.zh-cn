@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 06/27/2019
 ms.author: mcleans
 author: mcleanbyron
-keywords: windows 10、uwp、windows 窗体、wpf、xaml 孤岛
+keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: de84cbb2e1927d9426eefaaf7b0d70d604427da1
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683810"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089303"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>教程：现代化 WPF 应用 
 
@@ -74,7 +74,7 @@ Contoso 希望使此应用程序具有新的 Windows 功能，使员工能够更
 3. 打开 "Visual Studio 2019"，然后双击 " **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln** " 文件以打开解决方案。
 4. 通过按 "**开始**" 按钮或按 CTRL + F5，验证您可以生成、运行和调试 CONTOSO 支出 WPF 项目。
 
-## <a name="get-started"></a>“开始”
+## <a name="get-started"></a>入门
 
 获得 Contoso 支出示例应用的源代码后，可以确认是否可以在 Visual Studio 中生成该应用程序，现在可以开始学习教程：
 
@@ -98,7 +98,7 @@ Contoso 希望使此应用程序具有新的 Windows 功能，使员工能够更
 
 ### <a name="msix-packaging"></a>.MSIX 打包
 
-[.Msix](/windows/msix/) （以前称为 AppX）是适用于 Windows 应用的新式打包模型。 .MSIX 支持 UWP 应用以及使用 Win32、WPF、Windows 窗体、Java、Electron 等技术生成的桌面应用。 在 .MSIX 包中打包桌面应用时，可以将应用发布到 Microsoft Store。 桌面应用程序在安装时也会获得包标识，这使桌面应用能够使用一组更广泛的 WinRT Api。
+[.Msix](/windows/msix/)是适用于 Windows 应用的新式打包模型。 .MSIX 支持 UWP 应用以及使用 Win32、WPF、Windows 窗体、Java、Electron 等技术生成的桌面应用。 在 .MSIX 包中打包桌面应用时，可以将应用发布到 Microsoft Store。 桌面应用程序在安装时也会获得包标识，这使桌面应用能够使用一组更广泛的 WinRT Api。
 
 有关详细信息，请参阅以下文章：
 

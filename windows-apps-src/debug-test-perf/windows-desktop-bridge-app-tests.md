@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: ec780253deb170c5dde1828add366907c403f100
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681898"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089403"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
@@ -43,7 +43,7 @@ Windows Desktop Bridge 应用的可选测试仅提供信息，不会用于在 Mi
 有关这些扩展以及如何正确使用它们的说明，请参阅[桌面到 UWP 桥：应用扩展](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)。 
 
 ### <a name="3-debug-configuration-test"></a>3. 调试配置测试
-此测试验证 appx 不是调试版本。
+此测试验证 .msix 或 .appx 是否不是调试版本。
  
 **背景**  
 若要在 Microsoft Store 中进行认证，不能编译应用以进行调试，而且不能引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
@@ -110,7 +110,7 @@ Windows Desktop Bridge 应用的可选测试仅提供信息，不会用于在 Mi
 **纠正操作**  
 使用下表作为指南。
 
-错误消息 | 说明
+错误消息 | Comments
 --------------|---------
 图像 {image name} 定义 Scale 和 TargetSize 限定符；一次只能定义一个限定符。 | 可以自定义不同分辨率的图像。 在实际消息中，{image name} 包含有错误的图像名称。 确保每个图像都将 Scale 或 TargetSize 定义为限定符。 
 图像 {image name} 不符合大小限制。  | 确保所有应用图像都符合相应的大小限制。 在实际消息中，{image name} 包含有错误的图像名称。 
@@ -150,16 +150,16 @@ Windows Desktop Bridge 应用的可选测试仅提供信息，不会用于在 Mi
 应用必须拥有格式正确的应用部件清单 (manifest)。
 
 **测试详细信息**  
-检查应用部件清单 (manifest) 以验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。 此测试中会进行以下检查：
+检查应用清单验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。 此测试中会进行以下检查：
 * **文件扩展名和协议**  
 应用可能会声明它可以关联的文件类型。 大量不常见文件类型的声明会形成较差的用户体验。 此测试会限制可以与应用关联的文件扩展名的数量。
 * **框架依赖关系规则**  
 此测试强制要求应用声明对 UWP 的适当依赖关系。 如果存在不适当的依赖关系，该测试将失败。 如果应用面向的操作系统版本和框架依赖关系采用的操作系统版本不匹配，该测试将失败。 如果应用引用了任何“预览”版的框架 DLL，该测试也将失败。
 * **进程间通信（IPC）验证**  
-此测试强制要求桌面桥应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于 `DesktopApplicationPath` 的名称指定 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的应用无法通过此测试。  
+此测试强制要求桌面桥应用不在应用容器外部与桌面组件通信。 进程间通信仅适用于旁加载应用。 使用等效于 [ 的名称指定ActivatableClassAttribute](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute)`DesktopApplicationPath` 的应用无法通过此测试。  
 
 **纠正操作**  
-针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用部件清单 (manifest)。
+针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用清单。
 
 
 #### <a name="32-application-count"></a>3.2 应用程序计数
@@ -272,7 +272,7 @@ Windows 应用认证工具包中“对被禁止文件的检查”当前会对以
 若要更正此错误，请使用 UWP 应用的最新版本的[Bing 地图 SDK](https://www.bingmapsportal.com/) 。
 
 #### <a name="82-private-code-signing"></a>8.2 私有代码签名
-测试应用包中是否存在私有代码签名二进制文件。 
+测试应用程序包中是否存在私有代码签名二进制文件。 
 
 **背景**  
 私有代码签名文件应该保持私有，因为在泄露这些文件的事件中，它们可能会被恶意使用。 

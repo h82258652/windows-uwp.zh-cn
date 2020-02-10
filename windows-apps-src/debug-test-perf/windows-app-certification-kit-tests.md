@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ab5b2ec13e0de3d234fafc6c1a32e10d35aed4f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9de761a0b127d7218c7dc2bb4c6862626b7c60e4
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681938"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089423"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
 
@@ -22,7 +22,7 @@ ms.locfileid: "75681938"
 
 在认证测试期间监视应用，记录它何时崩溃或停止响应。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 停止响应或崩溃的应用可能导致用户丢失数据和拥有糟糕的体验。
 
@@ -54,7 +54,7 @@ Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateAp
 
 检查 Windows 应用是否能在未来版本的操作系统中运行。 此测试历来都仅适用于桌面应用工作流，但现在可适用于应用商店和通用 Windows 平台工作流。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 操作系统版本信息的 Microsoft Store 的使用受到限制。 这常被应用误用于检查操作系统版本，使得该应用会向用户提供特定于操作系统版本的相关功能。
 
@@ -62,7 +62,7 @@ Windows 应用认证工具包调用 [**IApplicationActivationManager::ActivateAp
 
 Windows App 认证工具包使用 HighVersionLie 来检测应用检查操作系统版本的方式。 如果应用出现崩溃，它将无法通过此测试。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 应用应使用版本 API 帮助程序函数来检查此版本。 有关详细信息，请参阅[操作系统版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)。
 
@@ -70,7 +70,7 @@ Windows App 认证工具包使用 HighVersionLie 来检测应用检查操作系�
 
 这将验证应用是否具有一个可用于已声明后台任务的取消处理程序。 在该任务被取消后，将需要一个用于调用的专用函数。 此测试仅适用于已部署的应用。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 Windows 应用可注册一个在后台运行的进程。 例如，电子邮件应用有时可能会对服务器执行 ping 操作。 但是，如果操作系统需要这些资源，它将取消该后台任务，并且应用应当能正常处理此取消操作。 不具有取消处理程序的应用可能会出现崩溃，或者在用户试图关闭应用时无法将其关闭。
 
@@ -78,25 +78,25 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 应用启动后，其中的已暂停和非后台部分将被终止。 随后，将取消与此应用关联的后台任务。 检查应用的状态，如果它仍在运行，将无法通过此测试。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 将取消处理程序添加到你的应用。 有关详细信息，请参阅[使用后台任务支持应用](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="app-count"></a>应用计数
 
-这将验证应用包（APPX 应用程序包）中是否包含某个应用程序。 该测试在工具包中已更改为一个独立的测试。
+这会验证应用包（. .msix、.appx 或应用捆绑包）是否包含一个应用程序。 该测试在工具包中已更改为一个独立的测试。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 此测试依据应用商店策略进行实现。
 
 ### <a name="test-details"></a>测试详细信息
 
-对于 Windows Phone 8.1 应用，测试将验证程序包中 appx 包的总数是否 &lt; 512、程序包中是否只有一个主程序包，以及程序包中的主程序包体系结构是标记为 ARM 还是中性。
+对于 Windows Phone 8.1 应用，测试将验证捆绑包中的 .appx 包的总数是否 &lt; 512，捆绑包中只有一个主程序包，并且捆绑包中的主包的体系结构标记为 ARM 或中性。
 
 对于 Windows 10 应用，测试将验证程序包版本中的修订号是否设置为 0。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 确保应用包和程序包满足上述测试详细信息中的要求。
 
@@ -104,13 +104,13 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
 测试应用部件清单 (manifest) 的内容，确保它的内容是正确的。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 应用必须拥有格式正确的应用部件清单 (manifest)。
 
 ### <a name="test-details"></a>测试详细信息
 
-检查应用部件清单 (manifest) 以验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
+检查应用清单验证内容是否正确，如[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
 
 -   **文件扩展名和协议**
 
@@ -126,13 +126,13 @@ Windows 应用可注册一个在后台运行的进程。 例如，电子邮件�
 
     此测试强制执行 UWP 应用不会在应用容器外部与桌面组件通信的要求。 进程间通信仅适用于旁加载应用。 使用等效于“DesktopApplicationPath”的名称指定 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的应用无法通过此测试。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
-针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用部件清单 (manifest)。
+针对[应用包要求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的要求检查应用清单。
 
 ## <a name="windows-security-features-test"></a>Windows 安全功能测试
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 更改默认的 Windows 安全保护可能增加客户的风险。
 
@@ -284,9 +284,9 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 ### <a name="private-code-signing"></a>私有代码签名
 
-测试应用包中是否存在私有代码签名二进制文件。
+测试应用程序包中是否存在私有代码签名二进制文件。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 私有代码签名文件应该保持私有，因为在泄露这些文件的事件中，它们可能会被恶意使用。
 
@@ -302,7 +302,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 测试应用是否使用了任何不兼容的 API。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 应用必须使用适用于 UWP 应用的 Api （Windows 运行时或受支持的 Win32 Api）对 Microsoft Store 进行认证。 此测试还识别托管二进制文件依赖于批准的配置文件以外功能的情形。
 
@@ -325,7 +325,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 为了提供快速而流畅的用户体验，应用必须迅速响应用户交互和系统命令。
 
-执行测试的计算机的属性会影响测试结果。 设置应用认证的性能测试阈值，以便低能耗计算机能够满足客户快速流畅的体验预期。 为了确定你的应用性能，我们建议你在低能耗计算机上测试应用，例如基于 Intel Atom 处理器的计算机，屏幕分辨率为 1366x768（或更高），旋转硬盘驱动器（相对于固态硬盘驱动器）。
+执行测试的计算机的特性会影响测试结果。 设置应用认证的性能测试阈值，以便低能耗计算机能够满足客户快速流畅的体验预期。 为了确定你的应用性能，我们建议你在低能耗计算机上测试应用，例如基于 Intel Atom 处理器的计算机，屏幕分辨率为 1366x768（或更高），旋转硬盘驱动器（相对于固态硬盘驱动器）。
 
 ### <a name="bytecode-generation"></a>字节码的生成
 
@@ -335,7 +335,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 检查应用部署，验证所有 .js 文件已转换为字节码。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 如果此测试失败，在解决此问题时请考虑以下方法：
 
@@ -352,7 +352,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 验证 WinJS.Binding.optimizeBindingReferences 的值。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 在应用 JavaScript 中，将 WinJS.Binding.optimizeBindingReferences 设置为 **true**。
 
@@ -366,12 +366,12 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 检查应用部件清单 (manifest) 中定义的资源，确保它们是最新且有效的。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 使用下表作为指导。
 
 <table>
-<tr><th>错误消息</th><th>说明</th></tr>
+<tr><th>错误消息</th><th>Comments</th></tr>
 <tr><td>
 <p>图像 {image name} 定义 Scale 和 TargetSize 限定符；一次只能定义一个限定符。</p>
 </td><td>
@@ -495,7 +495,7 @@ UWP 应用应完整且完全正常运行。 使用默认图像（来自模板或
 
 测试应用，确保它不是一个调试版本。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 若要在 Microsoft Store 中进行认证，不能编译应用以进行调试，而且不能引用可执行文件的调试版本。 此外，你必须生成优化代码才能使应用通过此测试。
 
@@ -513,7 +513,7 @@ UWP 应用应完整且完全正常运行。 使用默认图像（来自模板或
 
 ### <a name="utf-8-file-encoding"></a>UTF-8 文件编码
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM) 的 UTF-8 格式进行编码，以便从字节码缓存中获益并避免某些运行时错误情况。
 
@@ -521,7 +521,7 @@ HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM)
 
 测试应用包的内容，确保它们使用了正确的文件编码。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 在 Visual Studio 中打开受影响的文件，并从“文件”菜单中选择“另存为”。 选择“保存”按钮旁边的下拉控件，并选择“编码保存”。 从“高级”保存选项对话框中，选择 Unicode（带签名的 UTF-8）选项，并单击“确定”。
 
@@ -531,7 +531,7 @@ HTML、CSS 和 JavaScript 文件必须使用带有相应字节顺序标记 (BOM)
 
 对 Microsoft Direct3D 应用进行测试，以确保它们不会在使用旧版图形硬件的设备上崩溃。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 图形卡上正确呈现或失败。
 
@@ -541,7 +541,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 测试将验证应用是否在功能级别 9\-1 上准确呈现。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 确保你的应用程序在 Direct3D 功能级别 9\-1 上正确呈现，即使你希望它在更高的功能级别上运行也是如此。 有关详细信息，请参阅[针对不同 Direct3D 功能级别开发](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx)。
 
@@ -549,7 +549,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 > **请注意**  此测试仅适用于为 Windows 8.1 和更高版本开发的 UWP 应用。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 如果该应用不在其 Direct3D 设备上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)，则该应用不会释放为其早期 3D 工作分配的内存。 这将增加由于系统内存压力而终止应用的风险。
 
@@ -557,15 +557,15 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 检查应用是否符合 d3d 要求，并确保应用在 Suspend 回调时调用新的 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
-每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
+每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) API。
 
 ## <a name="app-capabilities-test"></a>应用功能测试
 
 ### <a name="special-use-capabilities"></a>专用许可范围
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 专用许可范围专用于非常特定的场景。 仅允许公司帐户使用这些功能。
 
@@ -585,7 +585,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 ## <a name="windows-runtime-metadata-validation"></a>Windows 运行时元数据验证
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 确保随应用发送的组件符合 UWP 类型系统。
 
@@ -608,7 +608,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 安装混合二进制文件的应用可能崩溃或者不能正确运行，具体取决于用户的处理器体系结构。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 此测试验证应用包中的二进制文件，确定是否存在体系结构冲突。 应用包不得包含无法在部件清单 (manifest) 指定的处理器体系结构上使用的二进制文件。 包含不受支持的二进制文件可能会导致应用发生崩溃，或造成应用包大小出现不必要的增加。
 
@@ -616,7 +616,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 在与应用程序包处理器体系结构声明交叉引用时，验证 PE 标头中每个文件的“位元”是否适当。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 遵循以下指南，确保你的应用包仅包含应用部件清单 (manifest) 中指定的体系结构支持的文件。
 
@@ -634,7 +634,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 验证应用程序在安装过程中是否不会创建子目录，这超出了\-路径的最大长度。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 操作系统组件（包括 Trident、Wwahost.exe 等）在内部限制为文件系统路径的最大\-路径，并且对于更长的路径将无法正常使用。
 
@@ -642,7 +642,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 验证应用安装目录中的路径是否超出最大\-路径。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 使用较短的目录结构和/或文件名称。
 
@@ -652,7 +652,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句，因此应用不消耗电池电量。
 
-### <a name="background"></a>后台
+### <a name="background"></a>背景
 
 具有 JavaScript 后台任务的应用在后台任务中需要调用 Close() 作为最后的语句。 不执行此操作的应用可能会使系统无法返回到连接的待机模式，并导致消耗电池电量。
 
@@ -660,7 +660,7 @@ WinJS 后台任务测试可确保 JavaScript 应用具有适当的 close 语句�
 
 如果应用没有清单中指定的后台任务文件，该测试将会通过。 否则，测试将解析应用包中指定的 JavaScript 后台任务文件，并查找 Close() 语句。 如果找到，测试将通过；否则测试将失败。
 
-### <a name="corrective-action"></a>更正操作
+### <a name="corrective-action"></a>纠正措施
 
 更新后台 JavaScript 代码以正确调用 Close()。
 

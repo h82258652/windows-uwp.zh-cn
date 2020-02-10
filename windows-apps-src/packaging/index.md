@@ -6,21 +6,21 @@ ms.date: 07/22/2019
 ms.topic: article
 keywords: windows 10, uwp, 打包
 ms.localizationpriority: medium
-ms.openlocfilehash: d067511e4ceb5aaf072aabf8f74ccf186a7787dc
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: bb772007cd5c4391634f9df6ba0b6d2037a7b5de
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682669"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089473"
 ---
 # <a name="packaging-apps"></a>打包应用
 
-本部分包含或链接到一些文章，这些文章介绍了如何将通用 Windows 平台 (UWP) 应用打包到 MSIX 和 AppX 应用包中，以便进行部署和安装。 其中一些链接指向 [MSIX 文档](https://docs.microsoft.com/windows/msix/)中的相关文章。
+本部分包含或链接到一些文章，这些文章介绍了如何将通用 Windows 平台 (UWP) 应用打包到 MSIX 和 .appx 应用包中，以便进行部署和安装。 其中一些链接指向 [MSIX 文档](https://docs.microsoft.com/windows/msix/)中的相关文章。
 
 > [!NOTE]
-> Windows 10 中 UWP 应用的原始应用打包格式命名为 AppX。 从 Windows 10 版本 1809 开始，此打包格式已重命名为 MSIX 并经过扩展，以支持所有类型的 Windows 应用，包括 .NET 和 C++/Win32 桌面应用。 对 MSIX 的支持也在扩展到早期的 Windows 版本。 有关详细信息，请参阅 [MSIX 文档](https://docs.microsoft.com/windows/msix/)。
+> Windows 10 中 UWP 应用的原始应用打包格式为 .appx。 从 Windows 10 版本 1809 开始，此打包格式已重命名为 .msix 并经过扩展，以支持所有类型的 Windows 应用，包括 .NET 和 C++/Win32 桌面应用。 对 MSIX 的支持也在扩展到早期的 Windows 版本。 有关详细信息，请参阅 [MSIX 文档](https://docs.microsoft.com/windows/msix/)。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [使用 Visual Studio 打包 UWP 应用](/windows/msix/package/packaging-uwp-apps) | 要分发或销售你的通用 Windows 平台 (UWP) 应用，你需要为其创建一个应用包。 |
 | [手动打包应用](/windows/msix/package/manual-packaging-root) | 如果你想要创建应用包并对其进行签名，但你未使用 Visual Studio 开发你的应用，那么你将需要使用手动应用打包工具。 |

@@ -1,24 +1,24 @@
 ---
 title: 为已转换的桌面应用和游戏使用 MRT
-description: 通过将你的 .NET 或 Win32 应用或游戏打包为 AppX 包，你可以利用资源管理系统加载为运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
+description: 通过将 .NET 或 Win32 应用或游戏打包为 .msix 或 .appx 包，你可以利用资源管理系统加载针对运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp, mrt, pri. 资源, 游戏, centennial, desktop app converter, mui, 卫星程序集
 ms.localizationpriority: medium
-ms.openlocfilehash: 0425e7bb00e4a5be848443aa278ebaad1706cb30
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c753e9437c76c89ac6af8cedcb1f954d1ce56fe3
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683910"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089444"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在旧应用或游戏中使用 Windows 10 资源管理系统
 
-.NET 和 Win32 应用和游戏通常本地化为不同语言，从而扩展总目标市场。 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。 通过将你的 .NET 或 Win32 应用或游戏打包为 .MSIX 或 AppX 包，你可以利用资源管理系统加载定制为运行时上下文的应用资源。 本主题对方法进行了深入描述。
+.NET 和 Win32 应用和游戏通常本地化为不同语言，从而扩展总目标市场。 有关对应用进行本地化的价值主张的详细信息，请参阅[全球化和本地化](../design/globalizing/globalizing-portal.md)。 通过将 .NET 或 Win32 应用或游戏打包为 .msix 或 .appx 包，你可以利用资源管理系统加载针对运行时上下文定制的应用资源。 本主题对方法进行了深入描述。
 
 有多种方法可本地化传统的 Win32 应用程序，但 Windows 8 引入了[新资源管理系统](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))，它可以跨各种编程语言和应用程序类型进行工作，并提供超越简单本地化的功能。 本主题中，该系统将被称为“MRT”。 过去，这代表“现代资源技术”，但“现代”一词已停止使用。 资源管理器也可以被称为 MRM（现代资源管理器）或 PRI（包资源索引）。
 
-对于基于 .MSIX 或基于 AppX 的部署（例如，从 Microsoft Store），MRT.LOG 可以自动为给定用户/设备提供最适用的资源，这会将应用程序的下载和安装大小降到最低。 减小大小对于具有大量本地化内容的应用程序来说非常有意义，或许近似于 AAA 游戏的几*千兆字节*。 MRT 的其他好处包括 Windows Shell 和 Microsoft Store 的本地化列表，用户的首选语言与可用资源不匹配时的自动回退逻辑。
+对于基于 .MSIX 或 .appx 的部署（例如，从 Microsoft Store），MRT.LOG 可以自动为给定用户/设备提供最适用的资源，从而最大程度地减少应用程序的下载和安装大小。 减小大小对于具有大量本地化内容的应用程序来说非常有意义，或许近似于 AAA 游戏的几*千兆字节*。 MRT 的其他好处包括 Windows Shell 和 Microsoft Store 的本地化列表，用户的首选语言与可用资源不匹配时的自动回退逻辑。
 
 本文介绍 MRT 的高级体系结构，并提供用于帮助在进行最少量代码更改的情况下将传统 Win32 应用程序移至 MRT 的移植指南。 移至 MRT 后，开发人员还可以获得更多好处（如按比例系数或系统主题分类资源）。 请注意，基于 MRT 的本地化同时适用于桌面桥（又称“Centennial”）处理的 UWP 应用程序和 Win32 应用程序。
 
@@ -33,26 +33,26 @@ ms.locfileid: "75683910"
 <tr>
 <td>本地化包清单</td>
 <td>让本地化内容显示在 Windows Shell 和 Microsoft Store 中需要完成的最基本工作</td>
-<td>小</td>
+<td>小型</td>
 </tr>
 <tr>
 <td>使用 MRT 确定并找到资源</td>
 <td>最小化下载和安装大小的先决条件；自动语言回退</td>
-<td>中</td>
+<td>中等</td>
 </tr>
 <tr>
 <td>生成资源包</td>
 <td>最小化下载和安装大小的最后一步</td>
-<td>小</td>
+<td>小型</td>
 </tr>
 <tr>
 <td>迁移到 MRT 资源格式和 API</td>
 <td>显著减小的文件大小（具体取决于现有资源技术）</td>
-<td>大</td>
+<td>大型</td>
 </tr>
 </table>
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 
 最非比寻常的应用程序包含称为*资源*的用户界面元素，其脱离自应用程序代码（与在源代码本身编写的*硬编码值*不同）。 有几个原因将资源的优先级放在硬编码值前面 - 例如，非开发人员编辑更轻松 - 但主要原因之一是支持应用程序在运行时选取相同逻辑资源的不同表示形式。 例如，按钮上显示的文本（或图标中显示的图像）可能因用户了解的语言、显示设备的特性，或者用户是否启用了任何辅助技术而不同。
 
@@ -207,7 +207,7 @@ ms.locfileid: "75683910"
 
 在 `.resw` 文件中定义了值后，下一步是更新清单以引用资源字符串。 同样，你可以直接编辑 XML 文件，或依靠 Visual Studio 清单设计器。
 
-如果你直接编辑 XML，打开 `AppxManifest.xml` 文件，对<span style="background-color: lightgreen">突出显示值</span>进行以下更改 - 使用此*确切*文本，而不是特定于应用程序的文本。 对于使用这些具体的资源名称没有要求（你可以选择自己的名称），但不论你如何选择，所选名称都必须与 `.resw` 文件中的名称完全一致。 这些名称应与你在 `.resw` 文件中创建的 `Names` 一致，带有前缀 `ms-resource:` 架构和 `Resources/` 命名空间。 
+如果你直接编辑 XML，打开 `AppxManifest.xml` 文件，对<span style="background-color: lightgreen">突出显示值</span>进行以下更改 - 使用此*确切*文本，而不是特定于应用程序的文本。 对于使用这些具体的资源名称没有要求（你可以选择自己的名称），但不论你如何选择，所选名称都必须与 &mdash; 文件中的名称完全一致。 这些名称应与你在 `Names` 文件中创建的 `.resw` 一致，带有前缀 `ms-resource:` 架构和 `Resources/` 命名空间。 
 
 > [!NOTE]
 > 此代码段中省略了清单中的许多元素-不删除任何内容！
@@ -293,7 +293,7 @@ ms.locfileid: "75683910"
 
 现在 PRI 文件已生成，你可以生成程序包，并进行签名：
 
-1. 若要创建应用程序包，请运行以下命令，将 `contoso_demo.appx` 替换为要创建的 .MSIX/AppX 文件的名称，并确保为该文件选择不同的目录（此示例使用父目录; 可以是任何位置，但**不**应是项目目录）。
+1. 若要创建应用程序包，请运行以下命令，将 `contoso_demo.appx` 替换为要创建的 .msix/.appx 文件的名称，并确保为该文件选择不同的目录（此示例使用父目录; 它可以是任何位置，但**不**应是项目目录）。
 
     ```CMD
     makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
@@ -310,14 +310,14 @@ ms.locfileid: "75683910"
     > [!IMPORTANT]
     > 如果手动创建签名证书，请确保将这些文件放在与源项目或包源不同的目录中，否则可能包含在包中，其中包括私钥！
 
-3. 若要对包签名，请使用以下命令。 请注意，`AppxManifest.xml` 的 `Identity` 元素中指定的 `Publisher` 必须与证书的 `Subject` 匹配（这**不**是 `<PublisherDisplayName>` 元素，是向用户显示的本地化显示名称）。 像往常一样，将 `contoso_demo...` 文件名替换为适合你的项目的名称，并（**非常重要**）确保 `.pfx` 文件不在当前目录中（否则它可能被作为你的程序包的一部分创建，包括签名私钥！）：
+3. 若要对包签名，请使用以下命令。 请注意，`Publisher` 的 `Identity` 元素中指定的 `AppxManifest.xml` 必须与证书的 `Subject` 匹配（这**不**是 `<PublisherDisplayName>` 元素，是向用户显示的本地化显示名称）。 像往常一样，将 `contoso_demo...` 文件名替换为适合你的项目的名称，并（**非常重要**）确保 `.pfx` 文件不在当前目录中（否则它可能被作为你的程序包的一部分创建，包括签名私钥！）：
 
     ```CMD
     signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx
     ```
 
     你可以键入 `signtool sign /?` 查看每个参数的作用，但概括起来：
-      * `/fd` 设置文件摘要算法（SHA256 是 AppX 的默认值）
+      * `/fd` 设置文件摘要算法（SHA256 是 .appx 的默认值）
       * `/a` 将自动选择最佳证书
       * `/f` 指定包含签名证书的输入文件
 
@@ -349,7 +349,7 @@ add-appxpackage contoso_demo.appx
 3. 选择 `Local Machine` 并单击 `Next`
 4. 如果显示 "用户帐户控制" 管理提升提示，请接受该提示，并单击 `Next`
 5. 输入私钥的密码（如果有），然后单击 "`Next`
-6. 选择`Place all certificates in the following store`
+6. 选择 `Place all certificates in the following store`
 7. 单击 `Browse`，然后选择 `Trusted People` 文件夹（**不是**”受信任的发布者“）
 8. 单击 "`Next`"，然后 `Finish`
 
@@ -367,7 +367,7 @@ add-appxpackage contoso_demo.appx
 
 在 `Strings` 文件夹内，使用相应的 BCP-47 代码为你支持的每种语言创建其他文件夹（例如，`Strings\de-DE`）。 在每个文件夹内，创建包括翻译的资源值的 `resources.resw` 文件（使用 XML 编辑器或 Visual Studio 设计器）。 假设你在某处已经有可用的本地化的字符串，你只需将其插入到 `.resw` 文件；本文档不包括翻译步骤本身。 
 
-例如，`Strings\de-DE\resources.resw` 文件可能如下所示，包含从 `en-US` 翻译过来的<span style="background-color: yellow">突出显示文本</span>：
+例如，`Strings\de-DE\resources.resw` 文件可能如下所示，包含从 <span style="background-color: yellow"> 翻译过来的</span>突出显示文本`en-US`：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -433,11 +433,11 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 1. 运行 `Settings` 应用 (`Windows + I`)
 2. 转到 `Time & language`
 3. 转到 `Region & language`
-4. 单击`Add a language`
+4. 单击 `Add a language`
 5. 键入（或者选择）所需的语言（例如 `Deutsch` 或 `German`）
  * 如果有子语言，选择所需的那个（例如，`Deutsch / Deutschland`）
 6. 在语言列表中选择新的语言
-7. 单击`Set as default`
+7. 单击 `Set as default`
 
 现在，打开“开始”菜单并搜索应用程序，你应该可以看到所选语言的本地化的值（其他应用也可能显示为本地化值）。 如果你未看到本地化的名称，请立即，请等待几分钟，直到刷新开始菜单的缓存。 若要返回到你的本地语言，只需在语言列表中将其设置为默认语言。 
 
@@ -494,7 +494,7 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 
 本文假设已本地化的资源都具有相同的文件名（例如 `contoso_demo.exe.mui` 或 `contoso_strings.dll` 或 `contoso.strings.xml`），但这些资源位于具有 BCP-47 名称的不同文件夹中（`en-US`、`de-DE`等）。 你有多少资源文件、其名称是什么、其文件格式/关联的 API 是什么等，这些都不重要。唯一重要的是每一个*逻辑*资源具有相同的文件名（但放在不同的*物理*目录下）。 
 
-作为一个反例，如果你的应用程序使用平面文件结构（具有包含文件 `english_strings.dll` 和 `french_strings.dll` 的单个 `Resources` 目录），它不会很好地映射到 MRT。 更好的结构是 `Resources` 目录，有子目录和文件 `en\strings.dll` 和 `fr\strings.dll`。 也可以使用相同的基本文件名，但具有嵌入限定符，如 `strings.lang-en.dll` 和 `strings.lang-fr.dll`，不过使用具有语言代码的目录在概念上更简单，所以我们将重点关注这一点。
+作为一个反例，如果你的应用程序使用平面文件结构（具有包含文件 `Resources` 和 `english_strings.dll` 的单个 `french_strings.dll` 目录），它不会很好地映射到 MRT。 更好的结构是 `Resources` 目录，有子目录和文件 `en\strings.dll` 和 `fr\strings.dll`。 也可以使用相同的基本文件名，但具有嵌入限定符，如 `strings.lang-en.dll` 和 `strings.lang-fr.dll`，不过使用具有语言代码的目录在概念上更简单，所以我们将重点关注这一点。
 
 >[!NOTE]
 > 即使您不能遵循此文件命名约定，仍可以使用 MRT.LOG 和打包权益。只需要执行更多操作。
@@ -578,7 +578,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 
 #### <a name="loading-net-resources"></a>加载 .NET 资源
 
-因为 .NET 具有查找和加载资源的内置机制（称为“卫星集”），因此没有上方人为示例中要替换的明确代码 - 在 .NET 中，只需在相应的目录中有资源 DLL，系统将自动为你定位。 当应用使用资源包打包为 .MSIX 或 AppX 时，目录结构略有不同-而不是使资源目录成为主应用程序目录的子目录（或者，如果用户没有在其首选项中列出语言）。 
+因为 .NET 具有查找和加载资源的内置机制（称为“卫星集”），因此没有上方人为示例中要替换的明确代码 - 在 .NET 中，只需在相应的目录中有资源 DLL，系统将自动为你定位。 当使用资源包将应用打包为 .MSIX 或 .appx 时，目录结构略有不同-而不是让资源目录成为主应用程序目录的子目录（或者，如果用户没有在其首选项中列出语言）。 
 
 例如，假设 .NET 应用程序具有以下布局，其中所有文件均位于 `MainApp` 文件夹下：
 
@@ -595,7 +595,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 </pre>
 </blockquote>
 
-在转换为 AppX 后，布局外观如下所示，假设 `en-US` 是默认语言，并且用户语言列表中同时列出了德语和法语：
+转换到 .appx 后，布局将如下所示，假设 `en-US` 为默认语言，并且用户的语言列表中列出了德语和法语：
 
 <blockquote>
 <pre>
@@ -615,7 +615,7 @@ set absoluteFileName = bestCandidate.ValueAsString
 
 由于本地化的资源不再位于可执行文件安装主位置下的子目录中，所以内置 .NET 资源解决失败。 所幸，.NET 在处理失败的程序集加载尝试方面具有明确定义的机制 - `AssemblyResolve`事件。 使用 MRT 的 .NET 应用必须注册此事件，并提供 .NET 资源子系统缺少的程序集。 
 
-如何使用 WinRT API 查找 .NET 使用的卫星集的简明示例如下所示；所显示的代码被有意压缩以显示最基本的实现，虽然你可以看到它紧密映射到上方的伪代码，其中使用传入的 `ResolveEventArgs` 提供我们需要查找的程序集的名称。 此代码的可运行版本（包含详细注释和错误处理）可以在 [GitHub 中的 **.NET 程序集解析器**示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DotNetSatelliteAssemblyDemo)的 `PriResourceRsolver.cs` 文件中找到。
+如何使用 WinRT API 查找 .NET 使用的卫星集的简明示例如下所示；所显示的代码被有意压缩以显示最基本的实现，虽然你可以看到它紧密映射到上方的伪代码，其中使用传入的 `ResolveEventArgs` 提供我们需要查找的程序集的名称。 此代码的可运行版本（包含详细注释和错误处理）可以在 `PriResourceRsolver.cs`GitHub 中的 [.NET 程序集解析器**示例**的 ](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DotNetSatelliteAssemblyDemo) 文件中找到。
 
 ```csharp
 static class PriResourceResolver
@@ -630,7 +630,7 @@ static class PriResourceResolver
 
     var resource = ResourceManager.Current.MainResourceMap.GetSubtree("Files")[fileName];
 
-    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with AppX, but
+    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with .appx, but
     // in general is discouraged. The full sample provides a safer wrapper of this method
     return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
   }

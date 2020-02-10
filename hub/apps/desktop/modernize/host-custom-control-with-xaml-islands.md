@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8f22761bf535f13ae0686a9b180ee810fba61028
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 35ddf17d121a06e453e9b51e023e859f0c1cd0ab
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76813997"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089343"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
 
@@ -21,7 +21,7 @@ ms.locfileid: "76813997"
 
 尽管本文演示了如何在 WPF 应用程序中执行此操作，但此过程与 Windows 窗体应用程序类似。 有关在 WPF 中承载 UWP 控件和 Windows 窗体应用的概述，请参阅[此文](xaml-islands.md#wpf-and-windows-forms-applications)。
 
-## <a name="required-components"></a>必需的组件
+## <a name="required-components"></a>所需的组件
 
 若要在 WPF （或 Windows 窗体）应用程序中托管自定义 UWP 控件，你的解决方案中将需要以下组件。 本文提供了有关创建每个组件的说明。
 
@@ -34,7 +34,7 @@ ms.locfileid: "76813997"
     执行此操作的建议方法是将**空白应用（通用 Windows）** 项目添加到与 WPF 或 Windows 窗体项目相同的解决方案中，将此项目中的默认 `App` 类修改为从 `XamlApplication`派生，然后在应用的入口点代码中创建此对象的实例。
 
     > [!NOTE]
-    > 你的解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享相同的 `XamlApplication` 对象。 定义 `XamlApplication` 对象的项目必须包含对在 XAML 岛中承载 UWP 控件的所有其他 UWP 库和项目的引用。
+    > 你的解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享相同的 `XamlApplication` 对象。 定义 `XamlApplication` 对象的项目必须包含对 XAML 岛上用于 UWP 控件的所有其他 UWP 库和项目的引用。
 
 ## <a name="create-a-wpf-project"></a>创建 WPF 项目
 
@@ -285,7 +285,7 @@ ms.locfileid: "76813997"
 
 ## <a name="package-the-app"></a>打包应用程序
 
-可以选择将 WPF 应用打包在[.msix 包](https://docs.microsoft.com/windows/msix)中进行部署。 .MSIX 是适用于 Windows 的新式应用打包技术，它基于 MSI、APPX、App-v 和 ClickOnce 安装技术的组合。
+可以选择将 WPF 应用打包在[.msix 包](https://docs.microsoft.com/windows/msix)中进行部署。 .MSIX 是适用于 Windows 的新式应用打包技术，它基于 MSI、.appx、App-v 和 ClickOnce 安装技术的组合。
 
 以下说明介绍了如何使用 Visual Studio 2019 中的[Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)将解决方案中的所有组件打包到 .msix 包中。 仅当要将 WPF 应用打包到 .MSIX 包时，才需要执行这些步骤。 请注意，这些步骤当前包括特定于托管自定义 UWP 控件的方案的一些解决方法。
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d38464a26af0df03c1aa381b16fbddf1de55cc
-ms.sourcegitcommit: e0644abf76a2535ea24758d1904ff00dfcd86a51
+ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72008045"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089493"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>设置 UWP 应用的自动生成
 
@@ -99,7 +99,7 @@ steps:
 | UapAppxPackageBuildMode | SideloadOnly | 只为旁加载生成 **_Test**文件夹。 |
 | AppxPackageSigningEnabled | true | 启用包签名。 |
 | PackageCertificateThumbprint | 证书指纹 | 此值**必须**与签名证书中的指纹匹配，或为空字符串。 |
-| PackageCertificateKeyFile | 路径 | 要使用的证书的路径。 这是从安全文件元数据中检索到的。 |
+| PackageCertificateKeyFile | Path | 要使用的证书的路径。 这是从安全文件元数据中检索到的。 |
 | PackageCertificatePassword | 密码 | 证书中的私钥的密码。 建议在[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)中存储密码，并将密码链接到[变量组](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 可以将变量传递给此参数。 |
 
 ### <a name="configure-the-build"></a>配置生成
@@ -115,7 +115,7 @@ steps:
 
 ### <a name="configure-package-signing"></a>配置包签名
 
-若要对 .MSIX （或 APPX）包进行签名，管道需要检索签名证书。 为此，请在 VSBuild 任务之前添加 DownloadSecureFile 任务。
+若要对 .MSIX （或 .appx）包进行签名，管道需要检索签名证书。 为此，请在 VSBuild 任务之前添加 DownloadSecureFile 任务。
 这将允许通过 ```signingCert```访问签名证书。
 
 ```yml
@@ -188,7 +188,7 @@ steps:
 
 |**投影**|**属性**|
 |-------|----------|
-|应用|`<AppxBundle>Always</AppxBundle>`|
+|应用程序|`<AppxBundle>Always</AppxBundle>`|
 |UnitTests|`<AppxBundle>Never</AppxBundle>`|
 
 然后，删除生成步骤中的 `AppxBundle` MSBuild 参数。

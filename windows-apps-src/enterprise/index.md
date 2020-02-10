@@ -6,12 +6,12 @@ ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a95529f40ef5bb1cbf112c91c385e6621620a01
-ms.sourcegitcommit: 7a8aea567b26283c71420e0d305d78f675e1fba7
+ms.openlocfilehash: 7e17b155966c609537c40050edc4c11ee6935b0d
+ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125680"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77089463"
 ---
 # <a name="enterprise"></a>企业
 
@@ -88,7 +88,7 @@ Windows UI 库是一组 NuGet 程序包，它们提供了用于 UWP 应用的控
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-MSIX 是一种 Windows 应用包格式，它将 MSI、AppX、App-V 和 ClickOnce 的最佳功能组合在一起，以便向所有 Windows 应用提供新式的可靠打包体验。 MSIX 包格式保留了现有应用包和安装文件的功能，此外，它还为 Win32、WPF 和 Windows 窗体应用启用了新式的打包和部署功能。 
+MSIX 是一种 Windows 应用包格式，它将 MSI、.appx、App-V 和 ClickOnce 的最佳功能组合在一起，以便针对所有 Windows 应用提供新式的可靠打包体验。 MSIX 包格式保留了现有应用包和安装文件的功能，此外，它还为 Win32、WPF 和 Windows 窗体应用启用了新式的打包和部署功能。 
 
 ![MSIX 图标](images/MSIX-App-Package.ico)
 
@@ -155,7 +155,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 
 | 主题 | 说明 |
 |-------|-------------|
-| [MSIX 文档](https://docs.microsoft.com/windows/msix/) | MSIX 是一种 Windows 应用包格式，它将 MSI、AppX、App-V 和 ClickOnce 的最佳功能组合在一起，以提供新式的可靠打包体验。 |
+| [MSIX 文档](https://docs.microsoft.com/windows/msix/) | MSIX 是一种 Windows 应用包格式，它将 MSI、.appx、App-V 和 ClickOnce 的最佳功能组合在一起，以便提供新式的可靠打包体验。 |
 | [将 LOB 应用分配到企业](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) | 了解用于分发业务线应用而不会将应用广泛提供给公众的选项，包括基于应用安装程序的部署、Microsoft Endpoint Configuration Manager 和 Microsoft Intune，以及发布到适用于企业的 Microsoft Store。 |
 | [旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) | 旁加载应用时，你将一个已签名的应用包部署到设备。 你维护这些应用的签名、承载和部署。 旁加载应用的过程已在 Windows 10 中得到简化。             |
 | [将应用发布到 Microsoft Store](https://developer.microsoft.com/store/publish-apps) | 利用统一的 Microsoft Store，你可以针对所有 Windows 设备发布和管理你的所有应用。 通过每个市场的定价、分配和可见性控件以及其他选项自定义应用的可用性。 |
