@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 收集 API, 查看产品
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6976f8161089be1f907d85e7373fc0f3474c62
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: a5a986896ca3b2585590e11d17219106a9043204
+ms.sourcegitcommit: 2747d9266e1678fca96d3822ce47499ca91a2c70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77112237"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77252281"
 ---
 # <a name="query-for-products"></a>查询产品
 
@@ -59,7 +59,7 @@ ms.locfileid: "77112237"
 | modifiedAfter     | datetime     | 如果已指定，该服务仅返回已在此日期后修改的产品。        | 是       |
 | ParentProductID   | string       | 如果已指定，该服务仅返回对应于指定应用的加载项。      | 是       |
 | ProductSkuID     | list&lt;ProductSkuId&gt; | 如果已指定，该服务仅返回适用于所提供的产品/SKU 对的产品。 有关详细信息，请参阅下表。      | 是       |
-| ProductType      | 列出&lt;字符串&gt;       | 指定要在查询结果中返回的产品类型。 受支持的产品类型为 **Application**、**Durable** 和 **UnmanagedConsumable**。     | 是       |
+| ProductType      | 列出&lt;字符串&gt;       | 指定要在查询结果中返回的产品类型。 支持的产品类型包括**应用程序**、**持久**、**游戏**和**UnmanagedConsumable**。     | 是       |
 | ValidityType      | string       | 当设置为 **All** 时，将返回用户的所有产品，包括已过期的项目。 当设置为 **Valid** 时，仅返回在此时有效的产品（即，它们的状态为活动，开始日期 &lt; 现在，结束日期 &gt; 现在）。 | 是       |
 
 
