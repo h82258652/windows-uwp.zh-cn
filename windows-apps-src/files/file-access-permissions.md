@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: 9adc872554e0823eb0a4e1fdbebef19b876b6198
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 6a14a011971d8cea7b05758dc1a8a91ccab37edd
+ms.sourcegitcommit: b0930dfeb45e696fe4fa14bdb547de13ba5ade89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321407"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77146367"
 ---
 # <a name="file-access-permissions"></a>文件访问权限
 
@@ -167,6 +167,7 @@ ms.locfileid: "67321407"
 无法通过文件选取器访问本地、漫游或临时文件夹。
 
 ### <a name="removable-devices"></a>可移动设备
+
 此外，默认情况下你的应用可以访问连接设备上的一些文件。 如果你的应用使用在用户将设备（如相机或 U 盘）连接到系统时自动启动的[自动播放扩展](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))，可以选择此选项。 你的应用可以访问的文件限于通过应用清单中的文件类型关联声明指定的特定文件类型。
 
 当然，还可以通过调用文件选取器（使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 和 [**FolderPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FolderPicker)）并让用户选取供你的应用访问的文件和文件夹，以获得对可移动设备上的文件和文件夹的访问权。 通过[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)了解如何使用文件选取器。
@@ -175,6 +176,7 @@ ms.locfileid: "67321407"
 > 有关访问 SD 卡或其他可移动设备的详细信息，请参阅[访问 SD 卡](access-the-sd-card.md)。
 
 ## <a name="locations-that-uwp-apps-can-access"></a>UWP 应用可访问的位置
+
 ### <a name="users-downloads-folder"></a>用户的“下载”文件夹
 
 默认情况下保存下载文件的文件夹。
@@ -251,27 +253,27 @@ ms.locfileid: "67321407"
 
 ## <a name="accessing-additional-locations"></a>访问其他位置
 
-除了默认位置以外，应用还可以通过在应用清单中声明功能（请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)）或者通过调用文件选取器让用户选取供应用访问的文件和文件夹（请参阅[使用选取器打开文件和文件夹](quickstart-using-file-and-folder-pickers.md)）来访问其他文件和文件夹。
+除了默认位置以外，应用还可以通过[在应用清单中声明功能](../packaging/app-capability-declarations.md)或者通过[调用文件选取器](quickstart-using-file-and-folder-pickers.md)让用户选取供应用访问的文件和文件夹来访问其他文件和文件夹。
 
 声明 [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) 扩展的应用具有来自控制台窗口中启动的目录及下级目录的文件系统权限。
 
-下表列出了其他可通过声明某个功能（或多个功能）和使用关联的 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) API 来访问的位置：
+下表列出了其他可通过声明一项或多项功能和使用关联的 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) API 来访问的位置。
 
 | 位置 | 功能 | Windows.Storage API |
 |----------|------------|---------------------|
-| 用户有权访问的所有文件。 例如：文档、图片、照片、下载、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>此功能受限。 可以通过“设置”   > “隐私”   > “文件系统”  配置访问。 由于用户随时可以在“设置”中授予或拒绝权限，因此，你应确保应用能够弹性应对这些更改  。 如果你发现应用没有访问权限，可以选择通过提供 [Windows 10 文件系统访问权限和隐私](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy)一文的链接，来提示用户更改该设置。 请注意，用户必须关闭应用、切换设置，然后重启应用。 如果他们在应用正在运行时切换设置，则平台将挂起该应用，以便你可以保存状态，然后强制终止该应用以应用新的设置。 在 2018 年 4 月更新中，该权限默认设置为“打开”。 在 2018 年 10 月更新中，默认设置为“关闭”。<br /><br />如果向 Microsoft Store 提交声明此功能的应用，将需要额外说明应用需要此功能的原因以及打算使用它的方式。<br>此功能适用于 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空间中的 API。 请参阅本文末尾的**示例**部分，其中的某个示例演示了如何在应用中启用此功能。 | 不适用 |
-| 文档 | DocumentsLibrary <br><br>注意：必须将文件类型关联（该关联声明应用可以在此位置中访问的特定文件类型）添加到应用清单。 <br><br>你的应用使用此功能的情况：<br>- 使用有效的 OneDrive URL 或资源 ID 促进跨平台离线访问特定 OneDrive 内容<br>- 在离线时将打开的文件自动保存到用户的 OneDrive | [KnownFolders.DocumentsLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) |
-| 音乐     | MusicLibrary <br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary) |    
-| 图片  | PicturesLibrary<br> 另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary) |  
-| 视频    | VideosLibrary<br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.VideosLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary) |   
-| 可移动设备  | RemovableDevices <br><br>必须将文件类型关联（该关联声明应用可以在此位置中访问的特定文件类型）添加到应用清单。 <br><br>另请参阅[访问 SD 卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) |  
-| 家庭组库  | 至少需要下列功能之一。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.homegroup) |      
-| 媒体服务器设备 (DLNA) | 至少需要下列功能之一。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.mediaserverdevices) |
-| 通用命名约定 (UNC) 文件夹 | 需要下列功能组合。 <br><br>家庭和工作网络功能： <br>- PrivateNetworkClientServer <br><br>至少一个 Internet 和公共网络功能： <br>- InternetClient <br>- InternetClientServer <br><br>域凭据功能（如果适用）：<br>- EnterpriseAuthentication <br><br>注意：必须将文件类型关联（该关联声明应用可以在此位置中访问的特定文件类型）添加到应用清单。 | 使用以下项检索文件夹： <br>[StorageFolder.GetFolderFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderfrompathasync) <br><br>使用以下项检索文件： <br>[StorageFile.GetFileFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) |
+| 用户有权访问的所有文件。 例如：文档、图片、照片、下载、桌面、OneDrive 等。 | **broadFileSystemAccess**<br><br>此功能受限。 可以通过“设置”   > “隐私”   > “文件系统”  配置访问。 由于用户随时可以在“设置”中授予或拒绝权限，因此，你应确保应用能够弹性应对这些更改  。 如果你发现应用没有访问权限，可以选择通过提供 [Windows 10 文件系统访问权限和隐私](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy)一文的链接，来提示用户更改该设置。 请注意，用户必须关闭应用、切换设置，然后重启应用。 如果他们在应用正在运行时切换设置，则平台将挂起该应用，以便你可以保存状态，然后强制终止该应用以应用新的设置。 在 2018 年 4 月更新中，该权限默认设置为“打开”。 在 2018 年 10 月更新中，默认设置为“关闭”。<br /><br />如果向 Microsoft Store 提交声明此功能的应用，将需要额外说明应用需要此功能的原因以及打算使用它的方式。<br/><br/>此功能适用于 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空间中的 API。 请参阅本文末尾的**示例**部分，其中的某个示例演示了如何在应用中启用此功能。<br/><br/>**注意：** 此功能在 Xbox 上不受支持。 | 不适用 |
+| 文档 | **documentsLibrary**<br><br>注意：必须将文件类型关联（该关联声明应用可以在此位置中访问的特定文件类型）添加到应用清单。 <br><br>你的应用使用此功能的情况：<br>- 使用有效的 OneDrive URL 或资源 ID 促进跨平台离线访问特定 OneDrive 内容<br>- 在离线时将打开的文件自动保存到用户的 OneDrive | [KnownFolders.DocumentsLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.documentslibrary) |
+| 音乐     | **musicLibrary** <br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary) |    
+| 图片  | **picturesLibrary**<br> 另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary) |  
+| 视频    | **videosLibrary**<br>另请参阅[音乐、图片和视频库中的文件和文件夹](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.VideosLibrary](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary) |   
+| 可移动设备  | **removableStorage**  <br><br>必须将文件类型关联（该关联声明应用可以在此位置中访问的特定文件类型）添加到应用清单。 <br><br>另请参阅[访问 SD 卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.removabledevices) |  
+| 家庭组库  | 至少需要下列功能之一。 <br>- **musicLibrary** <br>- **picturesLibrary** <br>- **videosLibrary** | [KnownFolders.HomeGroup](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.homegroup) |      
+| 媒体服务器设备 (DLNA) | 至少需要下列功能之一。 <br>- **musicLibrary** <br>- **picturesLibrary** <br>- **videosLibrary** | [KnownFolders.MediaServerDevices](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.mediaserverdevices) |
+| 通用命名约定 (UNC) 文件夹 | 需要下列功能组合。 <br><br>家庭和工作网络功能： <br>- **privateNetworkClientServer** <br><br>至少一个 Internet 和公共网络功能： <br>- **internetClient** <br>- **internetClientServer** <br><br>域凭据功能（如果适用）：<br>- **enterpriseAuthentication** <br><br>**注意：** 必须将文件类型关联（该关联声明应用可以在此位置中访问的特定文件类型）添加到应用清单。 | 使用以下项检索文件夹： <br>[StorageFolder.GetFolderFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfolderfrompathasync) <br><br>使用以下项检索文件： <br>[StorageFile.GetFileFromPathAsync](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) |
 
-**示例**
+### <a name="example"></a>示例
 
-此示例添加受限的 `broadFileSystemAccess` 功能。 除了指定功能，还必须添加 `rescap` 命名空间，并将其添加到 `IgnorableNamespaces`：
+此示例添加受限的 **broadFileSystemAccess** 功能。 除了指定功能，还必须添加 `rescap` 命名空间并将其添加到 `IgnorableNamespaces`。
 
 ```xaml
 <Package
