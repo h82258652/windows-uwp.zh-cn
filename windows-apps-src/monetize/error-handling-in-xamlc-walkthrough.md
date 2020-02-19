@@ -2,18 +2,21 @@
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
 description: 了解如何在应用中捕获 AdControl 错误。
 title: XAML/C# 演练中的错误处理
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 投放广告, 错误处理, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c9f29cacd740392e3cfd4b5b4b63d1f7ce9c5cd
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ab8b34820a81334dbe6ba0e52989d86d7414c67e
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260279"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463859"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 演练中的错误处理
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本演练介绍如何在应用中捕获与广告相关的错误。 本演练使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 显示横幅广告，但其中的普通概念也适用于间隙广告和本机广告。
 
@@ -59,7 +62,7 @@ ms.locfileid: "74260279"
         ErrorOccurred="OnAdError" />
     ```
 
-4.  在 MainPage.xaml.cs 中，将以下 **OnAdError** 事件处理程序添加到 **MainPage** 类。 此事件处理程序会将信息写入 Visual Studio **输出**窗口。
+4.  在 MainPage.xaml.cs 中，将以下 **OnAdError** 事件处理程序添加到 **MainPage** 类。 此事件处理程序会将信息写入 Visual Studio“输出”窗口。
     ``` csharp
     private void OnAdError(object sender, AdErrorEventArgs e)
     {
@@ -68,7 +71,7 @@ ms.locfileid: "74260279"
     }
     ```
 
-4.  生成并运行该项目。 在应用运行后，你将在 Visual Studio 的**输出**窗口中看到与以下内容类似的消息。
+4.  生成并运行该项目。 在应用运行后，你将在 Visual Studio 的“输出”窗口中看到与以下内容类似的消息。
     ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```

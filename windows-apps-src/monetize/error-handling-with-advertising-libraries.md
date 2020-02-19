@@ -2,18 +2,21 @@
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: 了解如何处理由 Microsoft Advertising 库中的 AdControl 类生成的错误。
 title: 处理广告错误
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 错误处理, javascript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: e7b98dc583b8f7d77aa582b4c69b87c726a83129
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1804bc6b44069dccdd92d0a33fcfd48567363a33
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371815"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463839"
 ---
 # <a name="handle-ad-errors"></a>处理广告错误
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)、[InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 和 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 类均具有 **ErrorOccurred** 事件，该时间在发生广告相关错误时引发。 应用代码可以处理此事件并检查事件参数对象的 [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) 和  [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) 属性，以帮助确定错误原因。
 
@@ -45,7 +48,7 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 }
 ```
 
-有关在 XAML 和 C# 中演示 **AdControl** 错误处理的演练，请参阅 [XAML/C# 中的错误处理演练](error-handling-in-xamlc-walkthrough.md)。
+有关在 XAML 和 C# 中演示 [AdControl](error-handling-in-xamlc-walkthrough.md) 错误处理的演练，请参阅 **XAML/C# 中的错误处理演练**。
 
 <span id="bkmk-javascript"/>
 
@@ -82,4 +85,4 @@ window.errorLogger = function (sender, evt) {
 });
 ```
 
-有关在 JavaScript 中演示 **AdControl** 错误处理的演练，请参阅 [JavaScript 中的错误处理演练](error-handling-in-javascript-walkthrough.md)。
+有关在 JavaScript 中演示 [AdControl](error-handling-in-javascript-walkthrough.md) 错误处理的演练，请参阅 **JavaScript 中的错误处理演练**。

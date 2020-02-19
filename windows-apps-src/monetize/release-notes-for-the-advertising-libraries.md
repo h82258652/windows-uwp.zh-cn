@@ -2,21 +2,21 @@
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: 查看 Microsoft Advertising 库的发行说明。
 title: Advertising 库的发行说明
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, 发行说明
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d3554620cde44fc9907845a7765d023e1ed03e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50eea90dcf8ed59f420953eec5da5b7a0fe6b4b2
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260208"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463909"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 
-
-
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持适用于 Windows 10、Windows 8.1 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 应用。
 

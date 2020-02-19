@@ -2,18 +2,21 @@
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: 了解如何安装 Microsoft 广告 SDK。
 title: 安装 Microsoft 广告 SDK
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 安装, SDK, 广告库
 ms.localizationpriority: medium
-ms.openlocfilehash: 37e57d49ba40814891154aef2ec0de6b3b7e560c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: f3b63ac40041b93372544d586d3feb23940fccc5
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260262"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463383"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安装 Microsoft 广告 SDK
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 若要在面向 Windows 10 的 UWP 应用中显示广告，请安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 此 SDK 是 Visual Studio 2015 和更高版本的扩展。
 
@@ -62,7 +65,7 @@ ms.locfileid: "74260262"
     > [!NOTE]
     > 如果项目已经包含来自 SDK 的较早 MSI 安装的库引用，请从项目中删除这些引用。 这些引用的旁边将出现警告图标，因为它们引用的库已在之前的步骤中删除。
 
-4. 在 Visual Studio 中，依次单击**项目**和**管理 NuGet 包**。
+4. 在 Visual Studio 中，依次单击“项目”和“管理 NuGet 包”。
 
 5. 在搜索框中，键入 **Microsoft.Advertising.XAML**（对于 XAML 项目）或 **Microsoft.Advertising.JS**（对于 JavaScript/HTML 项目）并安装相应程序包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
@@ -80,7 +83,7 @@ ms.locfileid: "74260262"
 
 安装 Microsoft 广告 SDK 后，请按照以下说明在你的项目中引用此 SDK，以使用广告 API。
 
-1. 在 Visual Studio 中打开你的项目。
+1. 在 Visual Studio 中打开项目。
     > [!NOTE]
     > 如果你的项目面向**任何 CPU**，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 如果你的项目面向**任何 CPU**，你将无法在以下步骤中成功添加对 Microsoft 广告 SDK 的引用。 有关详细信息，请参阅[项目中由面向任何 CPU 引起的引用错误](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
@@ -88,7 +91,7 @@ ms.locfileid: "74260262"
 
 3. 在**引用管理器R**中，展开**通用 Windows**，单击**扩展**，然后选择**适用于 XAML 的 Microsoft 广告 SDK**（适用于 XAML 应用）或**适用于 JavaScript 的 Microsoft 广告 SDK**（适用于使用 JavaScript 和 HTML 构建的应用）。
 
-4.  在**引用管理器**中，单击“确定”。
+4.  在“引用管理器”中，单击“确定”。
 
 有关显示如何开始使用广告 API 的操作实例，请参阅以下文章：
 

@@ -1,18 +1,21 @@
 ---
 description: 了解如何向 UWP 应用中添加本机广告。
 title: 本机广告
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告控件, 本机广告
 ms.localizationpriority: medium
-ms.openlocfilehash: 83c174dc682af27a4811a44c826c572f91ec1f06
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7a2022db39c27453dd3c1e9e1eb63914b25a637b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260221"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463929"
 ---
 # <a name="native-ads"></a>本机广告
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本机广告是基于组件的广告格式，其中每一个广告创意元素（如标题、图像、说明和行动号召文字）都作为单独的元素提供给你。 你可以使用自己的字体、颜色、动画和其他 UI 组件将这些元素集成到你的应用中，从而组合成一种与你的应用和谐共融的用户体验，同时从广告中获得较高收益。
 
@@ -37,9 +40,9 @@ ms.locfileid: "74260221"
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
-    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
-    3.  在**引用管理器**中，单击“确定”。
+    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
+    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+    3.  在“引用管理器”中，单击“确定”。
 
 4. 在应用的相应代码文件中（例如，在 MainPage.xaml.cs 或部分其他页面的代码文件中）添加以下命名空间引用。
 

@@ -1,34 +1,37 @@
 ---
 description: 了解改进广告单元可见性的方法。
 title: 优化广告单元的可见性
-ms.date: 05/07/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 指南, 可见性
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6996b656c9bf161538e286dc4c2d63c1d2840bc8
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57662262"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463939"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>优化广告单元的可见性
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 [广告效果报告](../publish/advertising-performance-report.md)包括广告单元的可见性指标。 广告行业日趋重视可视化展示，而不只限于提供展示，所以可见性是一项重要指标。 广告厂商倾向于对可视化展示出价，因为他们的广告有更多机会被用户看到。  
 
 根据 IAB 可见性指南，横幅广告展示如果满足以下条件将被视为可查看：
 
-* 像素要求：大于或等于 50%的像素中播发已在应用程序在可视空间上。
-* 时间要求：满足像素要求的时间为大于或等于一个连续秒，发布 ad 呈现。
+* 像素要求：广告中像素的 50% 或以上位于应用的可查看空间。
+* 时间要求：像素要满足的时间要求是在广告呈现后持续一秒或以上。
 
 视频广告展示如果满足以下条件被视为可查看：
 
-* 像素要求：大于或等于播发中 50%的像素是应用程序的可查看部分上。
-* 时间要求：视频满足像素要求，post ad 呈现的两个连续秒播放。
+* 像素要求：广告中像素的 50% 或以上位于应用的可查看部分。
+* 时间要求：视频满足像素要求并在广告呈现后持续播放两秒。
 
 可见性使用以下公式计算:
 
-**在工作场所内 = [查看印记] * 100 / [总量广告印记重要]**
+**Viewability = [已查看的印象] * 100/[总 ad 印象]**
 
 ## <a name="guidelines-to-improve-ad-unit-viewability"></a>改进广告单元可见性指南
 

@@ -1,18 +1,21 @@
 ---
 description: Microsoft 广告中介能够显示多个广告网络的广告，让你最大程度地增加广告收益，并充分利用应用促销功能。
 title: Microsoft 广告中介服务
-ms.date: 06/05/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告中介
 ms.localizationpriority: medium
-ms.openlocfilehash: 700a80aff4c991f4fa3bff681ba995b113025fec
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ad2f60b6b87f81df44bc2f875a722a9e36fdd170
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259322"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463979"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 广告中介服务
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 当你使用 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)[在应用中显示广告](display-ads-in-your-app.md)时，可以选择使用 Microsoft 广告中介服务来最大程度地增加广告收益。 本文概要介绍广告中介服务及其目标。
 

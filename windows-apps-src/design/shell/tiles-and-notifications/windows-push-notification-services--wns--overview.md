@@ -7,31 +7,31 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 965d823f48cacf4af4999e45ffd02f421c8927e7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1f53dd0538e4564c50fb5cbcb6986f5cf9661cae
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259707"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463802"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述
  
 
-Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。
+Windows 推送 Notification Services （WNS）使第三方开发人员能够从他们自己的云服务发送 toast、磁贴、徽章和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。
 
 ## <a name="how-it-works"></a>工作原理
 
 
 下图显示了用于发送推送通知的完整数据流。 它涉及到以下步骤：
 
-1.  你的应用从通用 Windows 平台请求推送通知通道。
+1.  您的应用程序从 WNS 请求推送通知通道。
 2.  Windows 要求 WNS 创建通知通道。 此通道以统一资源标识符 (URI) 的形式返回到调用设备。
-3.  通知通道 URI 由 Windows 返回到应用。
+3.  WNS 向应用返回通知通道 URI。
 4.  你的应用将 URI 发送到你自己的云服务。 然后你将 URI 存储在自己的云服务上，以便在发生通知时访问该 URI。 URI 是你自己的应用与自己的服务之间的接口；它负责通过安全可靠的 Web 标准来实现此接口。
 5.  当你的云服务有要发送的更新时，它使用通道 URI 通知 WNS。 通过安全套接字层 (SSL) 发送 TTP POST 请求（包括通知负载）来执行此操作。 此步骤需要身份验证。
 6.  WNS 接收请求，并将通知路由到相应的设备。
 
-![推送通知的 WNS 数据流关系图](images/wns-diagram-01.png)
+![推送通知的 WNS 数据流关系图](images/wns-diagram-01.jpg)
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>注册你的应用，并为你的云服务接收凭据
 
@@ -49,7 +49,7 @@ Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服�
 
 应用成功创建了通道 URI 之后，会将其与任何应该与该 URI 关联的特定于应用的元数据一起发送到它的云服务。
 
-### <a name="important-notes"></a>重要说明
+### <a name="important-notes"></a>重要事项
 
 -   我们不保证应用的通知通道 URI 将始终保持相同。 我们建议应用在每次运行时均请求一个新的通道，并在 URI 更改时更新其服务。 开发人员绝不能修改该通道 URI，而应将其视作一段黑盒字符串。 此时，通道 URI 于 30 天后过期。 如果 Windows 10 应用程序将在后台定期续订其通道，则可以下载 Windows 8.1 的[推送和定期通知示例](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603)，并重复使用其源代码和/或它所演示的模式。
 -   云服务和客户端应用之间的接口由你这个开发人员来实现。 我们建议应用使用其自身的服务完成身份验证过程，并通过安全的协议（如 HTTPS）来传输数据。
@@ -59,7 +59,7 @@ Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服�
 ## <a name="authenticating-your-cloud-service"></a>验证你的云服务
 
 
-若要发送通知，云服务必须通过 WNS 进行验证。 此过程的第一步出现在使用 Microsoft Store 仪表板注册应用之时。 在注册过程中，应用会获得一个程序包安全标识符 (SID) 和一个密钥。 该信息由你的云服务用于向 WNS 进行验证。
+若要发送通知，云服务必须通过 WNS 进行验证。 此过程的第一步出现在使用 Microsoft Store 仪表板注册应用之时。 在注册过程中，你的应用会获得一个程序包安全标识符 (SID) 和一个密钥。 该信息由你的云服务用于向 WNS 进行验证。
 
 WNS 身份验证方案通过来自 [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-v2-23) 协议的客户端凭据配置文件来实现。 云服务通过提供其凭据（程序包 SID 和密钥）来向 WNS 进行验证。 反过来，云服务会获得一个访问令牌。 该访问令牌允许云服务发送通知。 每次向 WNS 发送通知请求时都必须使用该令牌。
 
@@ -68,7 +68,7 @@ WNS 身份验证方案通过来自 [OAuth 2.0](https://tools.ietf.org/html/draft
 1.  云服务遵循 OAuth 2.0 协议通过 HTTPS 将其凭据发送给 WNS。 这会向 WNS 验证该服务。
 2.  如果身份验证成功，则 WNS 会返回一个访问令牌。 此访问令牌在所有后续通知请求中使用，直到令牌过期。
 
-![云服务身份验证的 WNS 关系图](images/wns-diagram-02.png)
+![云服务身份验证的 WNS 关系图](images/wns-diagram-02.jpg)
 
 在对 WNS 进行身份验证的过程中，云服务会通过安全套接字层 (SSL) 提交一个 HTTP 请求。 参数以“application/x-www-for-urlencoded”格式提供。 在 "客户端\_id" 字段中提供包 SID，在 "客户端\_机密" 字段中提供机密密钥。 有关语法的详细信息，请参阅[访问令牌请求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))参考。
 
@@ -101,7 +101,7 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
  }
 ```
 
-### <a name="important-notes"></a>重要说明
+### <a name="important-notes"></a>重要事项
 
 -   以上过程支持的 OAuth 2.0 协议遵循草案版本 V16。
 -   OAuth 征求意见文档 (RFC) 使用术语“客户端”指示云服务。
@@ -137,9 +137,9 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 
 此关系图演示数据流：
 
-![发送通知的 WNS 关系图](images/wns-diagram-03.png)
+![发送通知的 WNS 关系图](images/wns-diagram-03.jpg)
 
-### <a name="important-notes"></a>重要说明
+### <a name="important-notes"></a>重要事项
 
 -   WNS 不保证通知的可靠性或延迟。
 -   通知绝不应包含机密或敏感数据。
@@ -148,7 +148,7 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 -   当设备脱机时，WNS 将默认为每个通道 URI 存储至多 5 个磁贴通知（如果启用了队列；否则只能存储 1 个磁贴通知）和 1 个锁屏提醒通知，不存储原始通知。 可以通过 [X-WNS-Cache-Policy 标头](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))更改这种默认缓存行为。 请注意，当设备离线时，永远不会存储 Toast 通知。
 -   在对用户个性化通知内容的方案中，WNS 建议云服务在收到这些更新时立即发送这些更新。 此方案的示例包括社交媒体源更新、即时通信邀请、新消息通知或警报。 作为备用方法，你可以使用向大部分用户频繁提供相同的通用更新的方案；例如，天气、股票和新闻更新。 WNS 指南中指定这些更新的频率最高为每 30 分钟一个。 最终用户或 WNS 可以将超过该频率的例常更新确定为滥发更新。
 
-## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知过期时间
+## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知到期时间
 
 
 默认情况下，磁贴和徽标通知在下载完成时的三天后过期。 通知过期时，此内容将从磁贴或队列中删除，且不再向用户显示。 最佳做法是在所有磁贴和锁屏提醒通知上设置过期时间（使用对你的应用有意义的时间），以便使磁贴的内容不会在它不相关时继续保留。 对于具有已定义的使用寿命的内容来说，显式过期时间是必需的。 这还确保在你的云服务停止发送通知或用户在长时间内与网络断开连接时删除过时的内容。
@@ -167,13 +167,13 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 
 此两种设置的状态无法检查，但可以检查节电模式的状态。 在 Windows 10 中，使用[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)属性检查节电程序状态。 应用也可以使用 [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) 事件侦听对节电模式的更改。
 
-如果应用严重依赖推送通知，我们建议通知用户，在节电模式打开时，他们可能无法接收通知，并让他们可以轻松地调整**节电模式设置**。 使用 Windows 10 中的节电模式设置 URI 方案 `ms-settings:batterysaver-settings`，你可以提供指向 "设置" 应用的便利链接。
+如果应用严重依赖推送通知，我们建议通知用户，在节电模式打开时，他们可能无法接收通知，并让他们可以轻松地调整“节电模式设置”。 使用 Windows 10 中的节电模式设置 URI 方案 `ms-settings:batterysaver-settings`，你可以提供指向 "设置" 应用的便利链接。
 
 **提示**   向用户通知节电的设置时，建议提供一种在以后禁止显示该消息的方法。 例如，以下示例中的 `dontAskMeAgainBox` 复选框保留用户在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中的首选项。
 
  
 
-下面的示例演示如何在 Windows 10 中检查是否打开了节电版。 此示例将通知用户，并将“设置”应用启动到**节电模式设置**。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
+下面的示例演示如何在 Windows 10 中检查是否打开了节电版。 此示例将通知用户，并将“设置”应用启动到“节电模式设置”。 `dontAskAgainSetting` 允许用户在不希望再次收到通知时阻止消息。
 
 ```cs
 using System;

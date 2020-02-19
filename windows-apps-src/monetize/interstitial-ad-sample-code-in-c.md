@@ -1,19 +1,22 @@
 ---
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: 了解如何使用 C# 启动间隙广告。
-title: C# 间隙广告示例代码
-ms.date: 03/22/2018
+title: C# 中的间隙广告示例代码
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 间隙, c#, 示例代码
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c05681d2f59c88643e8cd224bb7de554a35de8d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4179d0dde5577093a2ae30c539adf0a8c544d56b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259288"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463359"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>C\# 中的插播式 ad 示例代码 #  
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本主题提供了显示间隙视频广告的基本 C# 和 XAML 通用 Windows 平台 (UWP) 应用的完整示例代码。 有关显示如何配置项目以使用此代码的分步说明，请参阅[间隙广告](interstitial-ads.md)。 有关完整示例项目，请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 

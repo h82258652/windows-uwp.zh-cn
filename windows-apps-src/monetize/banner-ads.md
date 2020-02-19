@@ -1,18 +1,21 @@
 ---
 description: 了解如何在 UWP 应用中使用横幅广告。
 title: 横幅广告
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 投放广告, AdControl, 横幅广告
 ms.localizationpriority: medium
-ms.openlocfilehash: cd3e57ebf5a7f7770adf2a8defcd92e66ad1e3a0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d3e4715dee6c1e182ed195288cba7b96612b743b
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260340"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463519"
 ---
 # <a name="banner-ads"></a>横幅广告
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本部分中的文章显示了如何使用 Microsoft 广告 SDK 中的 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 类向 UWP 应用添加横幅广告。
 

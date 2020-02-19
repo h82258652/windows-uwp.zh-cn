@@ -2,18 +2,21 @@
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: 了解如何在应用中捕获 AdControl 错误。
 title: JavaScript 演练中的错误处理
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, AdControl, 错误处理, javascript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b68979bfa6b1f661ca7765ebc2598b201f013e2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 01b9949a17d5653bf121018dc40058b99af21719
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260293"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463849"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 演练中的错误处理
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本演练介绍如何在 JavaScript 应用中捕获与广告相关的错误。 本演练使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 显示横幅广告，但其中的普通概念也适用于间隙广告和本机广告。
 

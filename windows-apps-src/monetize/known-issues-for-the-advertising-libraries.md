@@ -2,18 +2,21 @@
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: 详细了解当前版本 Microsoft 广告 SDK 的已知问题。
 title: 有关应用内广告的已知问题和疑难解答
-ms.date: 04/16/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 已知问题, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 6701ff346f41352a108922f82da82fbf52fd7402
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 34c07a46d31ddf6c8f5b56ffd19059b4d225a72c
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685093"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463959"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>有关应用内广告的已知问题和疑难解答
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本主题列出了当前版本的 Microsoft 广告 SDK 的已知问题。 有关其他疑难解答指南，请参阅以下主题。
 
@@ -46,7 +49,7 @@ ms.locfileid: "75685093"
 
 * 如果你在过去半小时创建了新的广告单元 ID，可能无法看到广告，直到服务器通过系统传播新数据为止。 之前显示了广告的现有 ID 应会立即显示广告。
 
-如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果遇到问题，请联系[产品支持人员](https://developer.microsoft.com/windows/support)。 在该页上 **，选择 "联系我们"** 。
+如果你可以在应用中看到测试广告，则代码有效，并且能够显示广告。 如果你遇到问题，请联系[产品支持人员](https://developer.microsoft.com/windows/support)。 在该页上 **，选择 "联系我们"** 。
 
 你还可在[论坛](https://go.microsoft.com/fwlink/?LinkID=401264)发布问题。
 
@@ -65,11 +68,11 @@ ms.locfileid: "75685093"
 
 ## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>项目中通过面向任何 CPU 引起的引用错误
 
-在使用 Microsoft 广告 SDK 时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能会在添加类似于此引用的引用后看到警告。
+在使用 Microsoft 广告 SDK 时，你无法在项目中面向**任何 CPU**。 如果你的项目面向**任何 CPU** 平台，可能在添加类似于此引用的引用后会看到警告。
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 使用**配置管理器**以设置适用于调试和版本配置的平台目标。
+若要删除此警告，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 使用“配置管理器”以设置适用于调试和版本配置的平台目标。
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 

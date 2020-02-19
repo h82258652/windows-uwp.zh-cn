@@ -2,18 +2,21 @@
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: 了解如何使用 Microsoft 广告 SDK 将间隙广告纳入到面向 Windows 10 的 UWP 应用。
 title: 间隙广告
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, ad control, interstitial
 ms.localizationpriority: medium
-ms.openlocfilehash: 98800f1a9a94de20910e932032d8b949bac52dde
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: b953fe0aca3d0ab9b8ce27f2b068c3bf1b869c83
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259272"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463949"
 ---
 # <a name="interstitial-ads"></a>间隙广告
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本演练介绍如何将间隙广告纳入面向 Windows 10 的通用 Windows 平台 (UWP) 应用和游戏中。 有关演示如何使用 C# 和 C++ 向 JavaScript/HTML 应用和 XAML 应用添加间隙广告的完整示例项目，请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
@@ -52,7 +55,7 @@ ms.locfileid: "74259272"
 
 本部分提供 C# 示例，但 Visual Basic 和 C++ 也受 XAML/.NET 项目支持。 有关完整的 C# 代码示例，请参阅 [C# 中的间隙广告示例代码](interstitial-ad-sample-code-in-c.md)。
 
-1. 在 Visual Studio 中打开你的项目。
+1. 在 Visual Studio 中打开项目。
     > [!NOTE]
     > 如果你使用现有项目，请打开项目中的 Package.appxmanifest 文件并确保已选择 **Internet（客户端）** 功能。 应用需要使用此功能接收测试广告和实时广告。
 
@@ -60,9 +63,9 @@ ms.locfileid: "74259272"
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
-    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
-    3.  在**引用管理器**中，单击“确定”。
+    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
+    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+    3.  在“引用管理器”中，单击“确定”。
 
 3.  在应用的相应代码文件中（例如，在 MainPage.xaml.cs 或部分其他页面的代码文件中）添加以下命名空间引用。
 
@@ -105,15 +108,15 @@ ms.locfileid: "74259272"
 
 以下说明假设你已在 Visual Studio 中为 JavaScript 创建了通用 Windows 项目，并且面向特定的 CPU。 有关完整的代码示例，请参阅 [JavaScript 中的间隙广告示例代码](interstitial-ad-sample-code-in-javascript.md)。
 
-1. 在 Visual Studio 中打开你的项目。
+1. 在 Visual Studio 中打开项目。
 
 2. 如果你的项目面向**任何 CPU**，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 如果你的项目面向**任何 CPU**，你将无法在以下步骤中成功添加对 Microsoft Advertising 库的引用。 有关详细信息，请参阅[项目中由面向任何 CPU 引起的引用错误](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
-    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 JavaScript 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
-    3.  在**引用管理器**中，单击“确定”。
+    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
+    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+    3.  在“引用管理器”中，单击“确定”。
 
 3.  在项目的 HTML 文件的 **&lt;标题&gt;** 部分中，在项目的 JavaScript 引用 default.css 和 default.js 之后，添加对 ad.js 的引用。
 
@@ -160,13 +163,13 @@ ms.locfileid: "74259272"
 
 此示例假设你已在 Visual Studio 中创建了 C++ **DirectX 和 XAML 应用（通用 Windows）** 项目，并且面向特定的 CPU 体系结构。
  
-1. 在 Visual Studio 中打开你的项目。
+1. 在 Visual Studio 中打开项目。
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
-    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 XAML 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
-    3.  在**引用管理器**中，单击“确定”。
+    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
+    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 XAML 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+    3.  在“引用管理器”中，单击“确定”。
 
 2.  在应用的相应头文件（例如，DirectXPage.xaml.h）中，声明 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 对象和相关的事件处理程序方法。  
 
@@ -179,7 +182,7 @@ ms.locfileid: "74259272"
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
 
-4.  在要添加代码以显示间隙广告的 .cpp 文件中，添加以下命名空间引用。 以下示例假设你要将代码添加到应用的 DirectXPage.xaml.cpp 文件中。
+4.  在想要添加代码以显示间隙广告的 .cpp 文件中，添加以下命名空间引用。 以下示例假设你要将代码添加到应用的 DirectXPage.xaml.cpp 文件中。
 
     [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet3)]
 

@@ -2,18 +2,21 @@
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: 了解如何使用 AdControl 类在适用于 Windows 10 (UWP) 的 JavaScript/HTML 应用中显示横幅广告。
 title: HTML 5 和 JavaScript 中的 AdControl
-ms.date: 03/22/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, 广告控件, javascript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ce2eb259f26135f2fc5525e10673d1feb78184
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3bb6a804cbf7fa2b46020178d8a90e38d76607f1
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260345"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463499"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 本演练介绍如何使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 类在适用于 Windows 10 的通用 Windows 平台 (UWP) JavaScript/HTML 应用中显示横幅广告。
 
@@ -37,9 +40,9 @@ ms.locfileid: "74260345"
 
 3. 在你的项目中添加对 Microsoft 广告 SDK 的引用：
 
-    1. 在**解决方案资源管理器**窗口中，右键单击**引用**，然后选择**添加引用...**
-    2.  在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中**适用于 JavaScript 的 Microsoft 广告 SDK**（版本 10.0）旁边的复选框。
-    3.  在**引用管理器**中，单击“确定”。
+    1. 在“解决方案资源管理器”窗口中，右键单击“引用”，然后选择“添加引用...”
+    2.  在“引用管理器”中，展开“通用 Windows”、单击“扩展”，然后选中“适用于 JavaScript 的 Microsoft Advertising SDK”（版本 10.0）旁边的复选框。
+    3.  在“引用管理器”中，单击“确定”。
 
 6.  打开 index.html 文件（或其他适用于你项目的 html 文件）。
 
@@ -115,7 +118,7 @@ ms.locfileid: "74260345"
 
 1. 确保在应用中对横幅广告的使用遵循我们的[横幅广告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)。
 
-1.  在 "合作伙伴中心"，中转到 "[应用内广告](../publish/in-app-ads.md)" 页并[创建一个 ad 单位](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定**横幅**。 记下广告单元 ID 和应用程序 ID。
+1.  在 "合作伙伴中心"，中转到 "[应用内广告](../publish/in-app-ads.md)" 页并[创建一个 ad 单位](set-up-ad-units-in-your-app.md#live-ad-units)。 对于广告单元类型，请指定“横幅”。 记下广告单元 ID 和应用程序 ID。
     > [!NOTE]
     > 测试广告单元和实时 UWP 广告单元的应用程序 ID 值采用不同的格式。 测试应用程序 ID 值为 GUID。 当你在合作伙伴中心创建实时 UWP ad 单元时，ad 单位的应用程序 ID 值始终与你的应用的应用商店 ID 匹配（示例存储 ID 值类似于9NBLGGH4R315）。
 

@@ -2,18 +2,21 @@
 Description: 有关广告市场活动的常见问题
 title: 有关广告市场活动的常见问题
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-ms.date: 10/31/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c44f93676fd0324ef82ad7b33832bb6653409cda
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: be6759ea808e230d3cf504caf03763123babd870
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685167"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463729"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>有关广告市场活动的常见问题
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
 
 ### <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>为我的应用投放广告需要多少钱？
 
@@ -25,11 +28,11 @@ ms.locfileid: "75685167"
 
 ### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>我是否可以在我的其他应用中为我的某个应用投放广告？
 
-是 我们将其称为*自家广告*，你可以免费投放它们。 有关社区广告的详细信息，请查看[此文章](about-house-ads.md)。
+可以。 我们将其称为*自家广告*，你可以免费投放它们。 有关社区广告的详细信息，请查看[此文章](about-house-ads.md)。
 
 ### <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>我可以使用应用商店中其他开发人员的应用交叉推广我的应用吗？
 
-是 我们将其称为*社区广告*，你可以免费投放它们。 在你[选择加入社区广告](about-community-ads.md#opt-in-to-community-ads)后，你可以[创建免费的社区广告市场活动](create-an-ad-campaign-for-your-app.md)，并且你的应用将与其他同样选择加入社区广告的开发人员的应用共享推广广告空间。 有关详细信息，请查看[此文章](about-community-ads.md)。
+可以。 我们将其称为*社区广告*，你可以免费投放它们。 在你[选择加入社区广告](about-community-ads.md#opt-in-to-community-ads)后，你可以[创建免费的社区广告市场活动](create-an-ad-campaign-for-your-app.md)，并且你的应用将与其他同样选择加入社区广告的开发人员的应用共享推广广告空间。 有关详细信息，请查看[此文章](about-community-ads.md)。
 
 ### <a name="how-can-i-customize-my-ad"></a>如何自定义我的广告？
 
@@ -55,7 +58,7 @@ ms.locfileid: "75685167"
 
 如果你的帐户在你的最后计费日期之后的 30 天时间内获得小于 50 美元的费用，将在下个月月初针对这些费用对你计费。 这有助于确保你的帐户不会维持广告市场活动费用的收支状态超过一个月。
 
-如果不想等待帐单，可以通过选择**帐单摘要**页面（**促销** > **帐单历史记录**）上的**立即支付帐单**来支付帐单。 将按 **未出票金额**下列出的金额对付款方式收费。
+如果不想等待帐单，可以通过选择**帐单摘要**页面（**促销**帐单历史记录 > ）上的**立即支付帐单**来支付帐单。 将按 **未出票金额**下列出的金额对付款方式收费。
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>如何删除信用卡或编辑信用卡详细信息？
 
