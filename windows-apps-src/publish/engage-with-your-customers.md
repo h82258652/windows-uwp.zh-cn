@@ -23,7 +23,7 @@ ms.locfileid: "74057615"
         ![定义客户类别](images/engage-pie-chart.png)
     :::column-end:::
     :::column span="2":::
-**고객층 정의**
+**定义客户细分**
 
 根据所选的人口统计或收益条件，使用仪表板定义应用客户的类别。 
 
