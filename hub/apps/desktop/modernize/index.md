@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e7524605847009dae415d93794658dd08a79a3
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 0c86290c9765eba5186e777f8de7b3b86967be9e
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089393"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521338"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -20,7 +20,7 @@ Windows 10 和通用 Windows 平台 (UWP) 提供的许多功能可以用来在�
 本文介绍目前可以在桌面应用中使用的 Windows 10 和 UWP 功能。 有关演示如何实现现有应用的现代化以使用本文中所述的许多功能的教程，请参阅[实现 WPF 应用现代化](modernize-wpf-tutorial.md)教程。
 
 > [!NOTE]
-> 在将桌面应用迁移到 Windows 10 的过程中，你是否需要帮助？ [桌面应用保证](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure)服务为需要将应用移植到 Windows 10 的开发人员提供直接的免费支持。 该计划适用于所有 ISV 和合格的企业。 若要更详细地了解相关资格和计划本身，请访问 [https://aka.ms/DesktopAppAssure](https://aka.ms/DesktopAppAssure)。 若要立即开始体验，请[提交请求](https://aka.ms/DesktopAppAssureRequest)。
+> 在将桌面应用迁移到 Windows 10 的过程中，你是否需要帮助？ [桌面应用保证](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure)服务为需要将应用移植到 Windows 10 的开发人员提供直接的免费支持。 该计划适用于所有 ISV 和合格的企业。 若要更详细地了解相关资格和计划本身，请访问 [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered)。 若要立即开始体验，请[提交请求](https://fasttrack.microsoft.com/dl/daa)。
 
 ## <a name="msix-packages"></a>MSIX 包
 
