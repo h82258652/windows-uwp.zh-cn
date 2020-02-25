@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d79e65b2937e7ec6db57e00b31b44b1796203a50
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 7f7ee8f95ad1471c73d5ac9e7bb08796dadd6411
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463969"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507021"
 ---
 # <a name="manage-your-ad-campaign"></a>管理广告市场活动
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 若要在[合作伙伴中心](https://partner.microsoft.com/dashboard)管理应用的 ad 活动，请在左侧导航菜单中展开 "**吸引**"，然后选择 " **ad 市场活动**"。 可看到与应用关联的所有广告市场活动，以及每个广告市场活动的曝光量、点击次数以及安装量。 有关曝光量、点击次数和安装量的详细信息，请参阅[广告市场活动报告](promote-your-app-report.md)中关于这些术语的定义。
 

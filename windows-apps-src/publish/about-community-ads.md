@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8da380cb49d584e56f584f3ad321d601d211faf0
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 48d63dae76113c70273f6ff2cba46348b1e24a10
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463439"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507011"
 ---
 # <a name="about-community-ads"></a>有关社区广告
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 如果你的应用程序[显示横幅或横幅插播式广告](../monetize/display-ads-in-your-app.md)，则可以免费在 Microsoft Store 中将应用与其他开发人员进行交叉提升。 我们将此功能称为*社区广告*。  
 

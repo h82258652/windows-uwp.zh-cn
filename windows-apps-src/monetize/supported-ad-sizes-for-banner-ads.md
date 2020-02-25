@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 大小, 横幅
 ms.localizationpriority: medium
-ms.openlocfilehash: c3836c2d4b0c7f522db936906e2eae3ed2862b68
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: ec96d744f7a9d2e91b27feae1fe5f3b0c322a450
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463889"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506851"
 ---
 # <a name="supported-banner-ad-sizes"></a>支持的横幅广告大小
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 通用 Windows 平台 (UWP) 应用支持以下横幅广告大小。 在应用程序中实例化**adunitid**对象时，请确保将 "宽度" 和 "高度" 属性设置为与其中一个受支持的大小匹配。
 

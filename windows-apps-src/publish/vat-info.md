@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0be47e5edeee0d00843d06297857f39977e085f4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d6b90b000564c1c6929154c3ac3b79c129e3fff6
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258956"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507141"
 ---
 # <a name="vat-info"></a>VAT 信息
 
@@ -21,7 +21,7 @@ ms.locfileid: "74258956"
 ## <a name="understanding-vat-numbers"></a>了解 VAT 号码
 
 
-增值税 (VAT) 号码是一种在欧盟 (EU) 国家或地区使用的标识符。 有关详细信息，请参阅欧盟的官方 [VIES 站点](https://go.microsoft.com/fwlink/p/?LinkId=181246)。
+增值税 (VAT) 号码是一种在欧盟 (EU) 国家或地区使用的标识符。 有关详细信息，请参阅欧盟的官方 [VIES 站点](http://ec.europa.eu/taxation_customs/vies/vieshome.do)。
 
 ## <a name="accepted-formats-for-vat-numbers"></a>接受的 VAT 号码格式
 
@@ -98,7 +98,7 @@ ms.locfileid: "74258956"
 <li>示例：12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">法国</td><td data-th="VAT info">
+<tr><td data-th="Country/region">France</td><td data-th="VAT info">
 <ul>
 <li>VAT 号码格式：11 个数字</li>
 <li>国家/地区代码：FR</li>
@@ -106,7 +106,7 @@ ms.locfileid: "74258956"
 <li>注意：除了 I 或 Q 作为第一个字符或第二个字符，或者作为第一个字符和第二个字符之外，可以包含任何字母字符，之后跟随 9 个数字。</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">德国</td><td data-th="VAT info">
+<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
 <ul>
 <li>VAT 号码格式：9 个数字</li>
 <li>国家/地区代码：DE</li>

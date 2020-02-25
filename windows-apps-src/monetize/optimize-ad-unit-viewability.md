@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 指南, 可见性
 ms.localizationpriority: medium
-ms.openlocfilehash: 6996b656c9bf161538e286dc4c2d63c1d2840bc8
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 06d870fbc631611bcfc453698cd9aa4fc844da5d
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463939"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506802"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>优化广告单元的可见性
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 [广告效果报告](../publish/advertising-performance-report.md)包括广告单元的可见性指标。 广告行业日趋重视可视化展示，而不只限于提供展示，所以可见性是一项重要指标。 广告厂商倾向于对可视化展示出价，因为他们的广告有更多机会被用户看到。  
 

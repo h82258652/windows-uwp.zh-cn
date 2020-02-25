@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 市场活动, 推广
 ms.localizationpriority: medium
-ms.openlocfilehash: e804260a312c963c380f4d09b00cc276b385c2ff
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: aa5c3c160d3bb69a2ba478606a3c3e04e935088d
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463719"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507061"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>为你的应用创建广告市场活动
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 可以在[合作伙伴中心](https://partner.microsoft.com/dashboard)创建 ad 活动，以帮助提升应用并拓展其用户群。 默认情况下，我们将根据你在合作伙伴中心的应用设置来选择广告的目标受众，但你可以根据需要定义自己的受众。 你还可以使用一组默认的广告模板，或者上载你自己的广告设计。 有关广告市场活动的更多详细信息，请参阅[有关广告市场活动的常见问题](common-questions.md)。
 

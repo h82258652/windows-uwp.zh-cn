@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 397c301564c0d4799c6b41db209da9659725103d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089303"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521272"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>教程：现代化 WPF 应用 
 
@@ -69,7 +69,7 @@ Contoso 希望使此应用程序具有新的 Windows 功能，使员工能够更
 
 在开始本教程之前，请下载 Contoso 支出应用程序的源代码，并确保可以在 Visual Studio 中生成代码。
 
-1. 从[AppConsult WinAppsModernization 讨论会存储库](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)的 "**发布**" 选项卡下载应用程序源代码。 直接链接[https://aka.ms/wamwc](https://aka.ms/wamwc)。
+1. 从[AppConsult WinAppsModernization 讨论会存储库](https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop)的 "**发布**" 选项卡下载应用程序源代码。 直接链接[https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases](https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases)。
 2. 打开 zip 文件并将所有内容提取到**C：\\** 驱动器的根目录。 它将创建一个名为**C:\WinAppsModernizationWorkshop**的文件夹。
 3. 打开 "Visual Studio 2019"，然后双击 " **C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln** " 文件以打开解决方案。
 4. 通过按 "**开始**" 按钮或按 CTRL + F5，验证您可以生成、运行和调试 CONTOSO 支出 WPF 项目。

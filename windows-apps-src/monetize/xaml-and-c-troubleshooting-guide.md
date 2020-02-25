@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, AdControl, 疑难解答, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 9783036d00fc56b904e6d362f55ddaaf8375a872
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: ab8ba3930c13ffcb00d2cb9701a89cafe581b4ff
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463739"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506881"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 疑难解答指南
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 本主题包含 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
 

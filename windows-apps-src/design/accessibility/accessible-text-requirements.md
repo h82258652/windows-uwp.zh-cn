@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b566b1960435a856b82a7be605ef5e1f7ba86e2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7f794cc6f23cf3f4beaf5bc3c9558ceaf2ccc8a6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257795"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521309"
 ---
 # <a name="accessible-text-requirements"></a>辅助文本要求  
 
@@ -34,7 +34,7 @@ ms.locfileid: "74257795"
 
 装饰性文本且未传递任何信息的文本除外。 例如，如果使用随机字词创建背景，且这些字词可以在不改变含义的情况下进行重新整理或取代，则会将这些字词视为装饰性文本且无需符合此条件。
 
-使用颜色对比工具验证可见文本的对比度是否可接受。 若要了解可以测试对比率的工具，请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)。
+使用颜色对比工具验证可见文本的对比度是否可接受。 请参阅 [WCAG 2.0 G18 的技术（“资源”部分）](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)了解可以测试对比率的工具。
 
 > [!NOTE]
 > “WCAG 2.0 G18 的技术”列出的某些工具无法与 UWP 应用交互使用。 你可能需要在工具中手动输入前景和背景颜色值，或者屏幕捕获应用 UI，然后对屏幕捕获图像运行对比率工具。
@@ -126,7 +126,7 @@ _没有默认选择的示例_
 
 当字体使用的字体太小时，用户可能很难阅读应用程序中的文本，因此请确保应用程序中的任何文本在第一位置合理。
 
-完成这一显而易见后，Windows 会提供各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和读取文本的首选项。 其中包括：
+完成这一显而易见后，Windows 会提供各种辅助功能和设置，用户可利用这些工具和设置，并调整其自身需求和读取文本的首选项。 这些地方包括：
 
 * "放大镜" 工具，用于放大 UI 的选定区域。 你应确保应用中的文本布局不会使使用放大镜进行读取变得困难。
 * 设置中的全局缩放和分辨率设置 **-> 系统 > 显示-> 比例和布局**。 确切的可用大小调整选项会有所不同，具体取决于显示设备的功能。
@@ -186,6 +186,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [文本缩放](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [辅助功能](accessibility.md)
 * [基本辅助功能信息](basic-accessibility-information.md)
-* [XAML 文本显示示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
-* [XAML 文本编辑示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-* [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d) 
+* [XAML 文本显示示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
+* [XAML 文本编辑示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
+* [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) 

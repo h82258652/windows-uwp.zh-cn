@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, AdControl, AdMediatorControl, 迁移
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ccc8e9c76fc0f16bcdfc619d8048307fdfbc57
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 2fa57e02574850704b6c43853980dde32c388557
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463879"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507081"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>将应用更新到最新的横幅广告库
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 截止 2017 年 4 月 1 日，我们不再为使用不受支持的广告 SDK 版本的应用提供横幅广告。 如果你使用 **AdControl** 在通用 Windows 平台 (UWP) 应用中显示横幅广告，请使用本文中的信息来确定你使用的是否是不受支持的广告 SDK 并将应用迁移到受支持 SDK。
 

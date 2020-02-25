@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 横幅, 广告控件, 间隙
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f318a68a97e98d3da24da16778988ee40c4e1dd
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: d693b8a4e07e66eded7d1580291c552e7ab9ca64
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463779"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507221"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft 广告 SDK 在你的应用中显示广告
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 通过使用 Microsoft 广告 SDK 将广告放入面向 Windows 10 的通用 Windows 平台 (UWP) 应用中，增加收入机会。 我们的 ad 盈利平台提供各种 ad 格式，这些格式可无缝集成到你的应用中，并支持包含许多流行 ad 网络的采集。 我们的平台符合 OpenRTB、VAST 2.x、MRAID 2 和 VPAID 3 标准，并与 MOAT 和 IAS 兼容。 
 
@@ -114,7 +114,7 @@ Microsoft 广告 SDK 提供了你可以在应用中使用的多种不同类型�
 |  任务    | 资源 |               
 |----------|-------|
 | 报告错误或获取对广告的辅助支持     | 访问[支持页面](https://developer.microsoft.com/windows/support)，然后选择**应用内广告**。        |
-| 获取社区支持     | 访问[论坛](https://go.microsoft.com/fwlink/?LinkID=401264)。       |
+| 获取社区支持     | 访问[论坛](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)。       |
 | 下载演示如何向应用添加横幅和间隙广告的示例项目。     | 请参阅 [GitHub 上的广告示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。       |
 | 了解有关 Windows 应用的最新盈利机会     | 访问[获取应用收益](https://developer.microsoft.com/store/monetize)。        |
 

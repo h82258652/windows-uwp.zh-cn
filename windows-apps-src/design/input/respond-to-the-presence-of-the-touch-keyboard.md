@@ -1,20 +1,20 @@
 ---
 Description: 了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
-title: 响应触摸键盘的状态
+title: 响应触摸键盘的存在
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: 键盘, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: c752a5df96c22b945865c0c3a465f22391aa54bc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e26bbe00bba8b3d91d7ee842cb4d9c984a941f2b
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258273"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521358"
 ---
-# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的状态
+# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的存在
 
 了解如何在显示或隐藏触摸键盘时定制你的应用 UI。
 
@@ -39,7 +39,7 @@ ms.locfileid: "74258273"
 
 你应该对标准键盘交互、处理键盘输入和事件以及 UI 自动化有一个基本了解。
 
-如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请查看这些主题来熟悉此处讨论的技术。
+如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请仔细阅读这些主题来熟悉此处讨论的技术。
 
 - [创建你的第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - 借助[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
@@ -220,7 +220,7 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 **存档示例**
 
-- [输入：触控键盘示例](https://code.msdn.microsoft.com/windowsapps/Touch-keyboard-sample-43532fda)
+- [输入：触控键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 - [响应屏幕键盘的外观示例](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
 - [XAML 文本编辑示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
-- [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+- [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

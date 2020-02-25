@@ -5,17 +5,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告
 ms.localizationpriority: medium
-ms.openlocfilehash: ba5708b953efff3b4a7c52286ae1a74c43d3d211
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: 06421b92106baec5a846db5fc7adf8ef3b742bff
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463749"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507071"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows 高级广告发布者计划
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 为了继续尽力帮助 Windows 开发人员通过广告实现应用盈利，我们提供 [Windows 高级广告发布者计划](https://www.windowspremiumapps.com)。 它是一系列精选广告应用和游戏，就使用情况、参与度和体验而言，它们是同类中最好的。 这些应用和游戏经过可见性认证，在全球范围内分布有具有高参与度的可识别用户。
 

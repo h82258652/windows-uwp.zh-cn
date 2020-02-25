@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d39d2f094dd85c29b51a19e1affcf0d292183ede
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: fa9ba2b8c9b327a51218dfc5f100c147f2d566e8
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257775"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521258"
 ---
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
@@ -141,7 +141,7 @@ XAML
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>动态数据中的辅助名称  
-Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示相关数据源所提供的值的控件。 当你用数据项填充列表时，可能需要在初始列表填充之后使用一种用来为数据绑定列表项设置辅助名称的技术。 有关详细信息，请参阅 [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)中的“方案 4”。
+Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示相关数据源所提供的值的控件。 当你用数据项填充列表时，可能需要在初始列表填充之后使用一种用来为数据绑定列表项设置辅助名称的技术。 有关详细信息，请参阅 [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)中的“方案 4”。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -157,5 +157,5 @@ Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示�
 ## <a name="related-topics"></a>相关主题  
 * [辅助功能](accessibility.md)
 * [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)
-* [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
 * [辅助功能测试](accessibility-testing.md)

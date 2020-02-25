@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, uwp, 辅助功能, 游戏
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ff2c25d38f20b94f50cc05a548778ee212bad0
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 347f5c6900806ef4658b81b8db15957029d39116
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321355"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478643"
 ---
 #  <a name="making-games-accessible"></a>使游戏成为辅助游戏
 
@@ -69,7 +69,7 @@ ms.locfileid: "67321355"
 
 ## <a name="defining-disability"></a>定义残障
 
-残障定义为“个体的需求与所提供的服务、产品或环境之间的不匹配”。 ([非独占视频](https://www.microsoft.com/design/inclusive/)，Microsoft.com。)这意味着，任何人都可能会遇到为残疾人士，和它可以是短期或态势条件。 想象一下具有这些状况的玩家在玩游戏时可能遇到的挑战，并思考如何针对它们更好地设计你的游戏。 下面是需要考虑的某些残障：
+残障定义为“个体的需求与所提供的服务、产品或环境之间的不匹配”。 （[非独占视频](https://www.microsoft.com/design/inclusive/)，Microsoft.com。）这意味着任何人都可能体验残障，它可以是短期或情境式的状况。 想象一下具有这些状况的玩家在玩游戏时可能遇到的挑战，并思考如何针对它们更好地设计你的游戏。 下面是需要考虑的某些残障：
 
 ### <a name="vision"></a>视觉
 
@@ -99,7 +99,7 @@ ms.locfileid: "67321355"
 
 ## <a name="how-to-make-games-more-accessible"></a>如何提高游戏的辅助性？
 
-### <a name="design-shift-inclusive-game-design-approach"></a>设计 shift:非独占游戏设计方法
+### <a name="design-shift-inclusive-game-design-approach"></a>设计转变：非独占游戏设计方法
 
 非独占设计侧重于创建更容易供更广泛的消费者（包括残障人士）使用的产品和服务。
 
@@ -109,73 +109,73 @@ ms.locfileid: "67321355"
 
 通过识别差异，你可以优化、迭代原始设计概念，并使其更好，从而让更多人感受你的愿景。 当你花时间在游戏设计过程中更具包含性时，你最终的游戏也会变得更具辅助性。 没有游戏能够永远受到每个人的欢迎，游戏的定义需要有某种程度的挑战性，但考虑使用辅助功能，你可以确保没有人会被不必要地排除在外。
 
-### <a name="empower-gamers-give-gamers-options"></a>使游戏玩家：让游戏者选项
+### <a name="empower-gamers-give-gamers-options"></a>支持玩家：为玩家提供选择
 
 几乎所有辅助功能解决方案都会归结为两个原则中的一个。 第一个是为你的玩家提供自定义其游戏体验的选择。 如果你已经有大量粉丝群体，你的受众可能有很大一部分不希望体验发生任何形式的变化。 没关系。 为你的玩家提供打开和关闭这些功能的功能，并使这些功能可以单独配置。 你需要让用户能够以最适合自己需求和偏好的方式体验游戏。
 
-### <a name="reinforce-communicate-information-in-more-than-one-way"></a>强调：通信在多个方面的信息
+### <a name="reinforce-communicate-information-in-more-than-one-way"></a>增强：采用多种方法传达信息
 
-第二个原则正是通用设计概念发挥作用的方面，这是一种不仅能带来更多玩家同时还能改进所有用户体验的方法。 例如图像及文本、符号及颜色。 基于各种不同彩色标记的地图不仅不可能供色盲玩家使用，对于必须记住每个颜色所代表的内容的任何其他人而言也很令人沮丧。 添加符号会为每个人带来更好的体验。
+第二个原则正是通用设计概念发挥作用的方面，这是一种不仅能带来更多玩家同时还能改进所有用户体验的方法。 例如图像及文本、符号及颜色。 基于一系列不同彩色标记的地图不仅无法使用色盲游戏标记，而且每个必须记住所有内容的人都能感到沮丧。 添加符号会为每个人带来更好的体验。
 
-### <a name="innovate-be-creative"></a>创新：创新
+### <a name="innovate-be-creative"></a>创新：有创意
 
 提高游戏的辅助性有许多有创意的方式。 戴上有创意的帽子，向现存的其他辅助游戏学习。 如果你已经有一个现有的游戏，请学会识别可进行改进的当前游戏功能，同时使核心游戏机制和体验保持设计原样。 如上所述，游戏中的辅助功能的关键在于为玩家提供自定义其游戏体验的选项。 可以通过强调或以多种方式传达信息。 
 
 考虑使用辅助功能，你能够从新的角度着手设计，很有可能是你未曾想到过的想法。 这种设计方法不仅会产生有趣的概念，还会打造出被广为采用或在大众市场取得商业成功的产品。 示例包括预测文本、语音识别、路边切口、扬声器、打字机和光学字符识别 (OCR)。 这些产品的想法来自那些开始思考辅助功能解决方案的人。
 
-### <a name="adopt-quality-means-accessible-features"></a>采用：质量意味着可访问的功能
+### <a name="adopt-quality-means-accessible-features"></a>采用：质量意味着具有辅助性的功能
 
 辅助功能是一种质量措施。 这是一项功能要求，而不是一个不错的工作项。 例如，如果你的时间充裕，应将“调整适用于色盲人士的最小映射”视为优先级较高的工作项。 如果此工作项未完成，这就意味着整个最小映射功能未完成，不能交付。
 
-### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>宣传：使游戏 studio 中的可访问性的优先级
+### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>布道：使辅助功能成为游戏工作室中的优先事项
 
 游戏开发始终按照紧凑的时间线进行，因此优先安排辅助功能将使此过程更轻松。 一种方法是从一开始是就带着辅助功能的思维。 越早考虑辅助功能，它就越便利，成本也越低。 
 
 与团队共享你有关辅助功能的知识，共享商业理由，消除常见的误解 - 它不会让多数人受益，它会削弱你的机制，而且很难实现、成本也很高。
 
-### <a name="review-constantly-evaluate-your-game"></a>评审：持续评估您的游戏
+### <a name="review-constantly-evaluate-your-game"></a>审核：经常评估你的游戏
 
 在开发期间，你可以引入一个审核过程来确保你在途中的每个步骤都思考辅助功能。 制作类似如下的清单来帮助你的团队经常评估你正在创建的内容是否具有辅助性。
 
-| 清单                                         | 辅助功能                                                                                                         |
+| 检查表                                         | 辅助功能                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | 游戏内电影                                | 具有字幕和描述文字，经过光敏性测试                                                                           |
-| 整体插图（2D 和3D 图形）              | 色盲友好的颜色和选项，不完全依靠颜色来进行识别，还使用形状和图案|
+| 整体插图（2D 和3D 图形）              | 使颜色和选项完全相关，而不是完全依赖于标识，同时也使用形状和模式|
 | “开始”评估、设置菜单和其他菜单       | 朗读选项的功能、记住设置的功能、备用命令控制输入法、可调整的 UI 字体大小  |
 | 游戏玩法                                          | 广泛的可调整难度级别、字幕和描述文字、对玩家的良好视觉和听觉反馈                           |
-| HUD 屏幕                                       | 可调整的屏幕位置、可调整的字体大小、色盲友好的选项                                                  |        
+| HUD 屏幕                                       | 可调整的屏幕位置、可调整的字体大小、色盲友好选项                                                  |        
 | 控制输入                                     | 输入设备的可映射控制、自定义控制器支持、简化所允许游戏的输入                               |        
 
-### <a name="playtest-and-iterate-get-gamers-feedback"></a>Playtest 并循环访问：获取游戏玩家的反馈
+### <a name="playtest-and-iterate-get-gamers-feedback"></a>试玩和迭代：获取玩家的反馈
 
 在组织试玩会议时，邀请具有你的游戏设计所面向的残障的试玩人员，并使他们玩你的游戏。 请记住在 Beta 测试问卷中加入辅助功能问题。 本地的残疾人群体是很好的参与者来源。 观察他们如何玩，并获取他们的反馈。 确定为了使游戏更好需要进行哪些更改。
 
 使用社交媒体和游戏论坛听取有关辅助功最受关注的方面以及应该如何实现的问题。 
 
-### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>能大声说它出：让外界了解您的游戏是可访问
+### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>大声宣布：让全世界知道你的游戏是辅助游戏
 
 客户将希望知道具有残障的玩家是否可以玩你的游戏。 在游戏网站、新闻稿和包装上清楚地陈述游戏的辅助功能，以确保消费者在购买游戏时知道应该期待哪些内容。 记得使你的游戏的网站和所有销售渠道也具有辅助性。 最重要的是，向外扩展到游戏社区，告诉他们关于你的游戏的信息。
 
 ## <a name="game-accessibility-features"></a>游戏辅助功能
 
-本部分概述可使你的游戏更具辅助性的一些功能。 这些功能派生自[游戏辅助功能指南](https://gameaccessibilityguidelines.com/)中的指南，这些指南代表了由工作室、专家和学者组成的合作团体的研究成果。 有关详细信息，请参阅[游戏辅助功能指南](https://gameaccessibilityguidelines.com/)。 
+本部分概述可使你的游戏更具辅助性的一些功能。 这些功能派生自[游戏辅助功能指南](http://gameaccessibilityguidelines.com/)网站中的指导原则。 该资源代表了一组工作室、专家和学者的调查结果。
 
-### <a name="colorblind-friendly-graphics-and-user-interface"></a>色盲友好图形和用户界面
+### <a name="color-blind-friendly-graphics-and-user-interface"></a>色盲友好图形和用户界面
 
 眼睛的视网膜具有两种类型的感光细胞：用于查看光所在位置的视锥细胞和用于在弱光条件下查看的视杆细胞。 
 
-有三种类型的视锥细胞（红色、蓝色和蓝色）来使我们能够正确查看颜色。 当这三种类型的光视锥细胞中的一种或多种无法按预期运作时，会发生色盲现象。 色盲程度的范围是，从几乎正常的颜色识别（仅对红色、绿色或蓝色光的敏感度较低），到完全无法识别任何颜色。 
+有三种类型的视锥细胞（红色、蓝色和蓝色）来使我们能够正确查看颜色。 当这三种类型的一种或多种情况看不到预期时，会发生色盲。 色盲的范围可能包括几乎普通的颜色感觉，并降低了红色、绿色或蓝色的灵敏度，甚至完全无法发现任何颜色。 
 
-由于对蓝色光敏感度低的现象较少见，因此在针对色盲进行设计时，颜色的选择通常面向红色或绿色色盲：
+由于在为色盲设计时不太常见，因此在设计色盲时，为红或绿的用户提供了选择的颜色：
  
-  + 使用具有红色/绿色色盲的人士可识别的颜色组合：
+  + 使用可由具有红色/绿色色盲的人进行区分的颜色组合：
   
-    * 看起来类似的颜色：所有的红色和绿色包括 brown 和橙色阴影
-    * 突出显示的颜色：蓝色和黄色
+    * 看起来相似的颜色：红色和绿色的所有色度，包括棕色和橙色
+    * 显眼的颜色：蓝色和黄色
     
   + 不要只单独依赖颜色来传达或区分游戏对象。 还应使用形状和图案。
   + 如果只能使用颜色，请在预设中加入可自由选择的颜色，以便有需要的玩家可以进行完全自定义，同时不为不需要的玩家带来额外的麻烦。
-  + 使用色盲模拟器来测试设计，以便你可以通过色盲眼睛查看自己的设计。 这可以帮助你避免出现常见的对比度问题。 [Color Oracle](https://www.colororacle.org) 是一个免费的色盲模拟器，可模拟三类最常见的色觉缺陷 – 绿色盲、红色盲和蓝色盲。
+  + 使用色盲模拟器测试设计，以便可以通过色盲眼睛查看设计。 这可以帮助你避免出现常见的对比度问题。 [彩色 Oracle](https://www.colororacle.org)是一种免费的色盲模拟器，可以模拟三种最常见的颜色视觉缺陷类型-deuteranopia、protanopia 和 tritanopia。
   
 ### <a name="closed-captioning-and-subtitles"></a>隐藏式字幕和字幕
 
@@ -187,8 +187,8 @@ ms.locfileid: "67321355"
 *   选择足够大的字体大小，或者考虑使用可调整的字体大小选项来增加灵活性。 （理想的字体大小取决于屏幕大小、离屏幕的观看的距离等。）
 *   在背景和字体颜色之间创造高对比度。 为文本使用鲜明轮廓和阴影。 为字幕使用深色的背景覆盖层，并记住提供开关选项。 （有关详细信息，请参阅[关于对比度比率的信息](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements)。）
 * 在屏幕上显示短句，每行最多 38 个字符，每次最多 2-3 行。 （记得不要在活动发生前就显示文字，从而泄露游戏情节。）
-*   区分制造声音的物体或说话的人。 (示例："Daniel:大家好 ！"）
-*   提供打开和关闭隐藏式和字幕的选项。 (其他功能：允许您选择多少声音的信息，系统会根据重要性。）
+*   区分制造声音的物体或说话的人。 （示例：“Daniel：嗨！”）
+*   提供打开和关闭隐藏式和字幕的选项。 （其他功能：基于重要性选择显示多少声音信息的功能。）
 
 ### <a name="game-chat-transcription"></a>游戏聊天脚本
 
@@ -204,7 +204,7 @@ ms.locfileid: "67321355"
 
 *   使用 3D 音频提示来提供额外的空间信息。
 * 将音乐、语音和音效音量控件分离。
-*   设计为玩家提供有意义信息的语音。 (示例："接近敌人"vs。"敌人输入从后门。"）
+*   设计为玩家提供有意义信息的语音。 （示例：“敌人正在靠近我们”与“敌人正在从后门进入”。）
 *   确保以合理的速率说出语音，并提供语速控件以提高辅助性。
 
 ### <a name="fully-mappable-controls"></a>完全可映射控制
@@ -241,7 +241,7 @@ ms.locfileid: "67321355"
 * 超过五个可能由较小的规则单元（如圆点）组成的均匀分布的高对比度重复条纹 - 行或列（如网格和棋盘）
 * 超过五行只有大写字母格式的文本行，字母之间间距不大，而且行间距与行本身的高度相同，这有效地将它变为高对比度的均匀交替行
 
-使用自动系统检查游戏中是否有可能触发光敏性癫痫的刺激物。 (示例：[Harding 测试](https://www.hardingtest.com/index.php?page=test)并[Harding Flash 和模式分析器 (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/)剑桥研究系统 Ltd 和教授 Graham Harding 开发。) 
+使用自动系统检查游戏中是否有可能触发光敏性癫痫的刺激物。 （示例：Cambridge Research System Ltd 和 Graham Harding 教授开发的 [The Harding Test](https://www.hardingtest.com/index.php?page=test) 和 [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/)。） 
 
 加入**闪烁开/关**设置选项，并将**闪烁**设置为默认**关闭**。 这样一来，就可以保护还不知道自己容易发病的玩家。
 
@@ -252,24 +252,22 @@ ms.locfileid: "67321355"
 下面是一些提供关于游戏辅助功能的其他信息的外部站点。
 
 ### <a name="game-accessibility-guidelines"></a>游戏辅助功能指南
-* [游戏的辅助功能准则](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指南](https://accessible.games/accessible-player-experiences/)
-* [设计普遍可访问 (UA) 游戏](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [游戏辅助功能指导原则](http://gameaccessibilityguidelines.com/)（在本主题中用作参考）
+* [AbleGamers 基础指导原则](https://accessible.games/accessible-player-experiences/)（在本主题中用作参考）
+* [设计通用可访问（UA）游戏](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>自定义输入控制器
 * [特殊效果](https://www.specialeffect.org.uk/)
-* [War 战斗机卡入到位](https://www.warfighterengaged.org/)
+* [War 战斗机](https://www.warfighterengaged.org/)
 
-## <a name="references-used"></a>使用的参考
-* [游戏的辅助功能准则](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指南](https://accessible.games/accessible-player-experiences/)
-* [颜色密件意识，社区感兴趣公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [如何执行操作对白字幕格式-Gamasutra 的 Ian Hamilton 的博客文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+### <a name="other-references-used"></a>使用的其他引用
+* [盲人认知，社区权益公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [如何进行副标题良好&mdash;Ian Hamilton 上的 Gamasutra 博客文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
 * [所有计划的创新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [病人发病 foundation](https://www.epilepsy.com/)
+* [Epilepsy 基础](https://www.epilepsy.com/)
 
-## <a name="related-links"></a>相关链接
+### <a name="related-links"></a>相关链接
 * [非独占设计](https://www.microsoft.com/design/inclusive/)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [开发可访问的 UWP 应用](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
-* [工程软件的可访问性电子书](https://www.microsoft.com/download/details.aspx?id=19262)
+* [用于辅助功能的工程软件电子书](https://www.microsoft.com/download/details.aspx?id=19262)

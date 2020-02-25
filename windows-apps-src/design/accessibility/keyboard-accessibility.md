@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fd0f00d74d62816ff347265936f6b066a0316b0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 50b9f2a30f529e78773bc40671c9541ff2687b64
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257752"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521228"
 ---
 # <a name="keyboard-accessibility"></a>键盘辅助功能  
 
@@ -93,7 +93,7 @@ XAML
 <span id="keyboard_shortcuts"/>
 <span id="KEYBOARD_SHORTCUTS"/>
 
-## <a name="keyboard-shortcuts"></a>键盘快捷方式  
+## <a name="keyboard-shortcuts"></a>键盘快捷键  
 除了实现应用的键盘导航和激活外，建议实现应用功能的快捷方式。 Tab 导航提供了较好的基本级别的键盘支持，但对于复杂的表单，你可能还希望添加快捷键支持。 即便对于既使用键盘又使用指针设备的用户而言，这样也会提高应用程序的使用效率。
 
 *快捷方式*是一套键盘组合，通过为用户提供一种可访问应用功能的高效方法来提高效率。 有两种类型的快捷方式：
@@ -250,4 +250,4 @@ Windows Phone 设备通常不具有专用的硬件键盘。 但是，软输入�
 * [辅助功能](accessibility.md)
 * [键盘交互](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
 * [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML 辅助功能示例](https://code.msdn.microsoft.com/windowsapps/XAML-accessibility-sample-d63e820d)
+* [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

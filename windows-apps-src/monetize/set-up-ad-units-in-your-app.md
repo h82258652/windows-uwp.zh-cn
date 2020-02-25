@@ -6,17 +6,17 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告单元, 测试
 ms.localizationpriority: medium
-ms.openlocfilehash: 37f04e8b112df23457c46e4f535309f2fe5dd847
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: c7bafdc7d21814a03d6f7da7132d8017d7f238e5
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463899"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506723"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在应用中设置广告单元
 
 >[!WARNING]
-> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://aka.ms/ad-monetization-shutdown)
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 通用 Windows 平台 (UWP) 应用中的每个广告控件都有一个相应的*广告单元*，我们的服务使用它们向控件提供广告。 每个广告单元都由*广告单元 ID* 和*应用程序 ID* 组成，你必须将这两者分配给应用中的代码。
 

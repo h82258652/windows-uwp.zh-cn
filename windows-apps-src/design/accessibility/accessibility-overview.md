@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0065ecd39244d9cbb48bf75d474217aae249e45b
-ms.sourcegitcommit: ae288e85be682f74109510b9f52787fdc3dd2ecd
+ms.openlocfilehash: 22f614d65728c0f5121cadfdcbfb58a7b817a47d
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76860538"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521271"
 ---
 # <a name="accessibility-overview"></a>辅助功能概述
 
@@ -53,7 +53,7 @@ ms.locfileid: "76860538"
 
 许多用户辅助功能需求由用户安装的辅助技术产品或由操作系统提供的工具和设置来完成。 这包括诸如屏幕阅读器、屏幕放大以及高对比度设置等功能。
 
-辅助技术产品包括各种软件和硬件。 这些产品通过标准的键盘界面和辅助功能框架工作，这些框架向屏幕阅读器和其他辅助技术报告有关 UI 的内容和结构的信息。 辅助技术产品的示例包括：
+辅助技术产品包括大量软件和硬件。 这些产品通过标准的键盘界面和辅助功能框架工作，这些框架向屏幕阅读器和其他辅助技术报告有关 UI 的内容和结构的信息。 辅助技术产品的示例包括：
 
 * 屏幕键盘（可让用户使用指针代替键盘来键入文本）。
 * 声音识别软件（可将说词转换为键入的文本）。
@@ -107,7 +107,7 @@ ms.locfileid: "76860538"
 
 * 工具必须确定文本是在 Tab 序列遍历过程中读取，还是仅作为整个文档表示形式的一部分进行读取。 你还可以通过选择要用来显示文本的相应元素或者通过调整这些文本元素的属性来帮助控件确定上述内容。 每个文本元素都有一种特定的用途，而且该用途通常具有相应的 UI 自动化角色。 如果使用错误的元素，可能会导致向 UI 自动化报告错误的角色，而且可能会为辅助技术用户创建令人混淆的体验。
 * 除非文本与背景的对比度很大，否则，许多用户都会因视觉上的局限而很难阅读文本。 对于没有该视觉局限的应用设计人员来说，这对用户造成的影响不太直观。 例如，对于色盲用户，如果设计中的颜色选项不好，可能会使某些用户无法阅读文本。 最初为 Web 内容提出的辅助功能建议还定义了可能会避免这些应用问题的对比度标准。 有关详细信息，请参阅[辅助文本要求](accessible-text-requirements.md)。
-* 对于太小的文本，许多用户都有阅读困难。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 但是，对于显示大量文本的应用或者对于与其他视觉元素穿插在一起的文本，则具有一定的挑战性。 在这些情况下，请确保应用与能够放大显示器的系统功能正确交互，以便应用中的任何文本都能够随控件一起放大。 （某些用户可采用辅助功能选项方式更改 DPI 值。 该选项可从“轻松使用”的“放大屏幕上显示的内容”中获得，可重定向到“外观和个性化” / “屏幕”的“控制面板”UI。）
+* 对于太小的文本，许多用户都有阅读困难。 你可以通过使应用 UI 中的文本在首次出现时合理变大来避免发生此问题。 但是，对于显示大量文本的应用或者对于与其他视觉元素穿插在一起的文本，则具有一定的挑战性。 在这些情况下，请确保应用与能够放大显示器的系统功能正确交互，以便应用中的任何文本都能够随控件一起放大。 （某些用户可采用辅助功能选项方式更改 DPI 值。 该选项可从“轻松使用”的“放大屏幕上显示的内容”中获得，可重定向到“外观和个性化” **“屏幕”**  / 的“控制面板”UI。）
 
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
@@ -181,7 +181,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="verification-and-publishing"></a>验证和发布
 
-有关辅助功能声明和发布应用的详细信息，请参阅 [Microsoft Store 中的辅助功能](accessibility-in-the-store.md)。
+有关辅助功能声明和发布应用的详细信息，请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)。
 
 > [!NOTE]
 > 将应用声明为辅助应用仅与 Microsoft Store 有关。
@@ -200,7 +200,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>支持 XAML / Microsoft DirectX 互操作的应用中的辅助技术支持
 
-默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)）。 [XAML SwapChainPanel DirectX 互操作示例](https://code.msdn.microsoft.com/windowsapps/XAML-SwapChainPanel-00cb688b)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
+默认情况下，无法访问 XAML UI 中托管的 Microsoft DirectX 内容（使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)）。 [XAML SwapChainPanel DirectX 互操作示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample)显示如何为托管的 DirectX 内容创建 UI 自动化对等。 这种技术让托管的内容可通过 UI 自动化进行访问。
 
 ## <a name="related-topics"></a>相关主题
 

@@ -1,6 +1,6 @@
 ---
 Description: 了解如何向非打包桌面应用程序授予标识，以便可以在这些应用程序中使用新式 Windows 10 功能。
-title: 向非打包桌面应用程序授予标识
+title: 向未打包的桌面应用授予标识
 ms.date: 10/25/2019
 ms.topic: article
 keywords: windows 10、desktop、package、identity、.MSIX、Win32
@@ -8,14 +8,14 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f355bba3087f58ed20800052371804048bc0006c
-ms.sourcegitcommit: d7eccdb27c22bccac65bd014e62b6572a6b44602
+ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73145612"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521348"
 ---
-# <a name="grant-identity-to-non-packaged-desktop-apps"></a>向非打包桌面应用程序授予标识
+# <a name="grant-identity-to-non-packaged-desktop-apps"></a>向未打包的桌面应用授予标识
 
 <!--
 > [!NOTE]
@@ -50,7 +50,7 @@ ms.locfileid: "73145612"
 
 为了支持稀疏包，包清单架构现在支持[ **\<属性\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties)元素下的可选 **\<AllowExternalContent\>** 元素。 这允许包清单在磁盘上的特定位置引用包之外的内容。
 
-例如，如果你有在 C:\Program Files\MyDesktopApp 中安装应用可执行文件和其他内容的现有非打包桌面应用\, 则可以创建包含 **\<AllowExternalContent**的稀疏包\>清单中的元素。 在应用的安装过程中或首次应用时，可以安装稀疏包，并将 C:\Program Files\MyDesktopApp\ 声明为应用将使用的外部位置。
+例如，如果你的现有非打包桌面应用程序在 C:\Program Files\MyDesktopApp 中安装了应用可执行文件和其他内容\, 你可以创建一个包含清单中的 **\<AllowExternalContent\>** 元素的稀疏包。 在应用的安装过程中或首次应用时，可以安装稀疏包，并将 C:\Program Files\MyDesktopApp\ 声明为应用将使用的外部位置。
 
 ## <a name="create-a-package-manifest-for-the-sparse-package"></a>为稀疏包创建包清单
 
@@ -61,7 +61,7 @@ ms.locfileid: "73145612"
 * 一个[ **\<标识\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素，用于描述桌面应用的标识特性。
 * [ **\<属性\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-properties)元素下的 **\<AllowExternalContent\>** 元素。 应为此元素分配值 `true`，这允许包清单在磁盘上的特定位置引用包外的内容。 在后面的步骤中，你将在从安装程序或应用程序中运行的代码注册稀疏包时指定外部位置的路径。 在清单中引用的不在包本身中的任何内容都应安装到外部位置。
 * [ **\<y\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)元素的**MinVersion**特性应设置为 `10.0.19000.0` 或更高版本。
-* [ **\<应用程序\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)元素的**TrustLevel = mediumIL**和**RuntimeBehavior = Win32App**属性声明与稀疏包关联的桌面应用程序的运行方式类似于标准未打包桌面应用，无需注册表和文件系统虚拟化以及其他运行时间更改。
+* [ **\<应用程序\>** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)元素的**TrustLevel = mediumIL**和**RuntimeBehavior = Win32App**属性声明与稀疏包关联的桌面应用程序的运行方式与标准未打包桌面应用程序类似，无需注册表和文件系统虚拟化以及其他运行时更改。
 
 下面的示例显示稀疏包清单（Appxmanifest.xml）的完整内容。 此清单包含需要包标识的 `windows.sharetarget` 扩展。
 
@@ -196,7 +196,7 @@ private static bool registerSparsePackage(string externalLocation, string sparse
 
 ## <a name="sample"></a>示例
 
-有关演示如何使用稀疏包将包标识授予桌面应用的完全功能的示例应用，请参阅[https://aka.ms/sparsepkgsample](https://aka.ms/sparsepkgsample)。 [此博客文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)提供了有关生成和运行示例的详细信息。
+有关演示如何使用稀疏包将包标识授予桌面应用的完全功能的示例应用，请参阅[https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages)。 [此博客文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)提供了有关生成和运行示例的详细信息。
 
 此示例包含以下内容：
 
