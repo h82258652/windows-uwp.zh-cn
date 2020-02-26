@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6000773e6ac25835552ea76d220c953de5bf5475
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.openlocfilehash: d6e8704d61589731f09de7c16b0eae987d593968
+ms.sourcegitcommit: 3ceba13cb0f991f751e5a95d0f82e27631500338
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089353"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77600797"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用中托管标准 UWP 控件
 
@@ -91,7 +91,7 @@ ms.locfileid: "77089353"
     ```csharp
     namespace MyUWPApp
     {
-        sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
+        public sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
         {
             public App()
             {
