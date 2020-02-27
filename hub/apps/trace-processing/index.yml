@@ -1,0 +1,54 @@
+### YamlMime:Landing
+title: .NET TraceProcessing 文档
+summary: .NET TraceProcessing 是一个 NuGet 包，用于轻松访问 Windows 事件跟踪 (ETW) 文件中的数据。
+metadata:
+  title: 文档 - .NET TraceProcessing
+  description: .NET TraceProcessing 是一个 NuGet 包，用于轻松访问 Windows 事件跟踪 (ETW) 文件中的数据。
+  ms.prod: traceprocessor
+  ms.topic: landing-page
+  author: maiak
+  ms.author: maiak
+  ms.date: 02/20/2020
+  ms.openlocfilehash: e518ba18d21fce24f58b2dca6a28d3b48b40b06d
+  ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 02/26/2020
+  ms.locfileid: "77629118"
+landingContent:
+- title: 关于 .NET TraceProcessing
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 什么是 .NET TraceProcessing？
+      url: overview.md
+- title: 入门
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 处理第一个跟踪
+      url: quickstart.md
+- title: 开发
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 访问跟踪数据
+      url: tutorial.md
+    - text: 扩展 TraceProcessor
+      url: extensibility.md
+    - text: 加载符号
+      url: symbols.md
+    - text: 使用流式处理
+      url: streaming.md
+- title: 示例
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: 查找示例
+      url: https://github.com/microsoft/eventtracing-processing-samples
+- title: 引用
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: API 参考
+      url: reference.md

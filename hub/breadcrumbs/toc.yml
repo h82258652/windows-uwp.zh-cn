@@ -6,7 +6,7 @@
       tocHref: /windows/
       topicHref: /windows/
       items:
-        - name: 应用
+        - name: “应用”
           tocHref: /windows/apps/
           topicHref: /windows/apps/
           items:
@@ -16,6 +16,9 @@
             - name: 实现桌面应用的现代化
               tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize/
+            - name: 使用 .NET 处理 ETW 跟踪
+              tocHref: /windows/apps/trace-processing/
+              topicHref: /windows/apps/trace-processing/overview
         - name: 开发环境
           tocHref: /windows/dev-environment/
           topicHref: /windows/dev-environment/
