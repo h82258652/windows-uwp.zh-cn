@@ -5,22 +5,23 @@ metadata:
   title: 文档 - .NET TraceProcessing
   description: .NET TraceProcessing 是一个 NuGet 包，用于轻松访问 Windows 事件跟踪 (ETW) 文件中的数据。
   ms.prod: traceprocessor
+  ms.technology: ''
   ms.topic: landing-page
   author: maiak
   ms.author: maiak
   ms.date: 02/20/2020
-  ms.openlocfilehash: e518ba18d21fce24f58b2dca6a28d3b48b40b06d
-  ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+  ms.openlocfilehash: f3107b3cc9b3cc0875e2bf3a9bce1ae7f11fc276
+  ms.sourcegitcommit: 7f1b64f62bc3a82ebcd3807c809363df46919195
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 02/26/2020
-  ms.locfileid: "77629118"
+  ms.lasthandoff: 02/27/2020
+  ms.locfileid: "77705742"
 landingContent:
-- title: 关于 .NET TraceProcessing
+- title: .NET TraceProcessing 简介
   linkLists:
   - linkListType: overview
     links:
-    - text: 什么是 .NET TraceProcessing？
+    - text: 使用 .NET 处理 ETW 跟踪
       url: overview.md
 - title: 入门
   linkLists:

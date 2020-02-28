@@ -1,6 +1,6 @@
 ### YamlMime:Hub
-title: Windows 文档
-summary: 为软件开发人员、硬件工程师和 IT 专业人员提供的信息。
+title: Windows 技术文档
+summary: 为应用程序开发人员、硬件开发人员和 IT 专业人员提供的信息。
 brand: windows
 metadata:
   title: Windows 文档 | Microsoft Docs
@@ -9,61 +9,27 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: 50a82a07d74e44746858e0800e2ff2007b5385e8
-  ms.sourcegitcommit: 860e8303da3e36624f603ce3273d68911c696e5d
+  ms.openlocfilehash: 588fb1ddf7581867d705d531c3459a6962f07d56
+  ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72777257"
-highlightedContent:
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77903314"
+productDirectory:
   items:
-  - title: 获取 Visual Studio 和 Windows SDK
-    itemType: download
-    url: https://developer.microsoft.com/windows/downloads
-  - title: 下载 WDK
-    itemType: download
-    url: https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk
-  - title: 加入预览体验计划
-    itemType: overview
-    url: https://docs.microsoft.com/windows-insider
-  - title: 提高技能
-    itemType: learn
-    url: https://docs.microsoft.com/learn/browse/?products=m365%2Cwindows
-additionalContent:
-  sections:
-  - items:
-    - title: 应用开发人员
-      links:
-      - text: 开始编写 Windows 10 应用
-        url: https://docs.microsoft.com/windows/apps
-      - text: 向应用添加 Windows 10 功能
-        url: https://docs.microsoft.com/windows/apps/desktop/modernize/
-      - text: 构建桌面应用
-        url: https://docs.microsoft.com/windows/apps/desktop/
-      - text: 使用 Python、Node.js 和适用于 Linux 的 Windows 子系统进行开发
-        url: https://docs.microsoft.com/windows/dev-environment/
-      - text: 查找代码示例
-        url: https://developer.microsoft.com/windows/samples
-    - title: 硬件开发人员
-      links:
-      - text: 了解如何构建设备
-        url: https://docs.microsoft.com/windows-hardware/get-started/index
-      - text: 开发设备驱动程序
-        url: https://docs.microsoft.com/windows-hardware/drivers
-      - text: 创建 Windows 映像
-        url: https://docs.microsoft.com/windows-hardware/manufacture/
-      - text: 测试性能和兼容性
-        url: https://docs.microsoft.com/windows-hardware/test
-      - text: 查找驱动程序示例
-        url: https://docs.microsoft.com/samples/browse/?products=windows-wdk
-    - title: IT 管理员
-      links:
-      - text: 配置和部署 Windows 10
-        url: https://docs.microsoft.com/windows/windows-10/
-      - text: 查找 Windows 10 版本信息
-        url: https://docs.microsoft.com/windows/release-information/
-      - text: 管理 Windows Server
-        url: https://docs.microsoft.com/windows-server/
-      - text: 适用于企业的 Microsoft Store 入门
-        url: https://docs.microsoft.com/microsoft-store/
-  footer: '[博客](https://blogs.windows.com/) - [Twitter](https://twitter.com/windowsdocs) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows) - [开发人员社区](https://social.msdn.microsoft.com/Forums/windowsdesktop)'
+  - title: 应用程序开发人员
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: 设计、开发和部署适用于 Windows 电脑和其他设备的应用程序及其他解决方案。
+    url: /windows/apps/
+  - title: 硬件开发人员
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: 设计、开发和部署适用于 Windows 电脑和其他设备的硬件和设备驱动程序。
+    url: https://docs.microsoft.com/windows-hardware/drivers/
+  - title: 适用于 IT 专业人员的 Windows 10
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: 评估、规划、部署、保护和管理运行 Windows 10 的设备。
+    url: https://docs.microsoft.com/windows/windows-10/
+  - title: 适用于 IT 专业人员的 Windows Server
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    summary: 在 Windows Server 上构建并部署联网应用程序、网络和 Web 服务。
+    url: https://docs.microsoft.com/windows-server/

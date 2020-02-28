@@ -1,0 +1,19 @@
+- name: .NET TraceProcessing 文档
+  href: index.yml
+  items:
+    - name: 概述
+      href: overview.md
+    - name: 处理第一个跟踪
+      href: quickstart.md
+    - name: 访问跟踪数据
+      href: tutorial.md
+    - name: 扩展 TraceProcessor
+      href: extensibility.md
+    - name: 加载符号
+      href: symbols.md
+    - name: 使用流式处理
+      href: streaming.md
+    - name: 示例
+      href: 'https://github.com/microsoft/eventtracing-processing-samples'
+    - name: 引用
+      href: reference.md
