@@ -5,18 +5,21 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: bf5f7a7c1bb007b7f1a19508fa0ee7bbaf298654
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 59722f1f31364c464a8a763d28f3d15ef13609a8
+ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629138"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77903284"
 ---
 # <a name="extend-traceprocessor"></a>扩展 TraceProcessor
 
 许多类型的跟踪数据在[TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor)中都具有内置支持，但是，如果你有想要分析的其他提供程序（包括你自己的自定义提供程序），则在处理过程中也可以从实时跟踪数据。
 
-例如，下面是一种在跟踪中获取提供程序 Id 列表的简单方法：
+> [!NOTE]
+> 此部分 API 处于预览状态，并且处于活动状态。 将来的版本可能会更改。
+
+例如，下面是一种在跟踪中获取提供程序 Id 列表的简单方法。
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...
@@ -34,7 +37,7 @@ static void Run(ITraceProcessor trace)
 }
 ```
 
-下面的示例演示简化的自定义数据源：
+下面的示例显示一个简化的自定义数据源。
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...

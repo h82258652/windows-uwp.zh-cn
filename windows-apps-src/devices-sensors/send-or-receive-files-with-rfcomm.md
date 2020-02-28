@@ -1,6 +1,6 @@
 ---
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
-title: Bluetooth RFCOMM
+title: 蓝牙 RFCOMM
 description: 本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。
 ms.date: 07/19/2018
 ms.topic: article
@@ -10,19 +10,19 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: f38adc3de17c699c7a19bc28d201c6a78c000688
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 1fb1a971e897bc88d090c589b266542c6de2d1c9
+ms.sourcegitcommit: b432a639fb3d15ebd22d429ccee4dbb03e8550ca
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281811"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77778518"
 ---
-# <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
+# <a name="bluetooth-rfcomm"></a>蓝牙 RFCOMM
 
 **重要的 API**
 
--   [**Windows. 蓝牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
--   [**Rfcomm。** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
+- [**Windows. 蓝牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+- [**Rfcomm。** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。
 
@@ -40,12 +40,19 @@ RFCOMM API 使用服务标识符的概念。 尽管服务标识符只是一个 1
 
 发送文件时，最基本的方案是基于所需服务连接到配对设备。 这包括以下步骤：
 
--   使用**GetDeviceSelector\*** 功能可帮助生成一个 AQS 查询，该查询可用于枚举所需服务的成对设备实例。
--   选取一个枚举的设备，创建 [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)，并按需读取 SDP 属性（使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 解析该属性的数据）。
--   创建一个套接字并使用 [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 的 [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 属性，通过 StreamSocket.ConnectAsync 操作连接到使用适当参数的远程设备服务。
--   按照现成的数据流模式从文件读取数据区块，并在该套接字的 [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) 上将其发送到设备。
+- 使用**GetDeviceSelector\*** 功能可帮助生成一个 AQS 查询，该查询可用于枚举所需服务的成对设备实例。
+- 选取一个枚举的设备，创建 [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)，并按需读取 SDP 属性（使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 解析该属性的数据）。
+- 创建一个套接字并使用 [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 的 [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 属性，通过 StreamSocket.ConnectAsync 操作连接到使用适当参数的远程设备服务。
+- 按照现成的数据流模式从文件读取数据区块，并在该套接字的 [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) 上将其发送到设备。
 
 ```csharp
+using System;
+using System.Threading.Tasks;
+using Windows.Devices.Bluetooth.Rfcomm;
+using Windows.Networking.Sockets;
+using Windows.Storage.Streams;
+using Windows.Devices.Enumeration;
+
 Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService _service;
 Windows.Networking.Sockets.StreamSocket _socket;
 
@@ -346,11 +353,11 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 
 另一个常用的 RFCOMM 应用方案是，在电脑上托管服务并将其公开以用于其他设备。
 
--   创建一个 [**RfcommServiceProvider**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider) 以播发所需的服务。
--   根据需要设置 SDP 属性（使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 生成该属性的数据）并开始播发 SDP 记录供其他设备检索。
--   若要连接到客户端设备，请创建套接字侦听器以开始侦听传入的连接请求。
--   当收到连接时，请存储连接的套接字以便以后进行处理。
--   按照现成的数据流模式从套接字的 InputStream 读取数据区块，并将其保存到文件。
+- 创建一个 [**RfcommServiceProvider**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider) 以播发所需的服务。
+- 根据需要设置 SDP 属性（使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 生成该属性的数据）并开始播发 SDP 记录供其他设备检索。
+- 若要连接到客户端设备，请创建套接字侦听器以开始侦听传入的连接请求。
+- 当收到连接时，请存储连接的套接字以便以后进行处理。
+- 按照现成的数据流模式从套接字的 InputStream 读取数据区块，并将其保存到文件。
 
 若要在后台保持 RFCOMM 服务，请使用 [**RfcommConnectionTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.rfcommconnectiontrigger)。 该后台任务会在连接到该服务时触发。 开发人员会在该后台任务中接收到套接字的句柄。 该后台任务会长时间运行，只要套接字还在使用，就会一直运行。    
 
