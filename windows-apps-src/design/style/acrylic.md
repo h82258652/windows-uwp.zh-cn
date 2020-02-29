@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d8ed5fa1e3c4a7ffffaf47583eca3796f081cf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c6995ab6116d4e3bda8e21c397ab3b4985732763
+ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683980"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77639764"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -235,7 +235,7 @@ Acrylic 外观可自动适应各种设备和上下文。
 下面的示例显示了如何在代码中声明 AcrylicBrush。 如果你的应用支持多个操作系统目标，请务必检查以确认此 API 在用户计算机上可用。
 
 ```csharp
-if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.Xaml.Media.XamlCompositionBrushBase"))
+if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.Xaml.Media.AcrylicBrush"))
 {
     Windows.UI.Xaml.Media.AcrylicBrush myBrush = new Windows.UI.Xaml.Media.AcrylicBrush();
     myBrush.BackgroundSource = Windows.UI.Xaml.Media.AcrylicBackgroundSource.HostBackdrop;

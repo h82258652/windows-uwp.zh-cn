@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
+ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414061"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77521218"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>向 UWP 概念性文档投稿
 
@@ -56,4 +56,4 @@ ms.locfileid: "67414061"
 
 如果要提供有关文档的反馈，而不是自己进行编辑，则可以[在公共存储库中创建问题](https://github.com/MicrosoftDocs/windows-uwp/issues)。 选择“问题”  选项卡并选择“新问题”  按钮。 请务必包含主题标题和页面的 URL。 问题会被分配给 UWP 文档团队成员进行审阅。
 
-* 对于内部问题，使用 [WDG 内容请求工具](https://aka.ms/pubrequest)。
+* 对于内部问题，使用 [WDG 内容请求工具](http://sesuw2-iis02a/WSCPubRequest/WindowsContentRequestTool.aspx)。

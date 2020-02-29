@@ -1,18 +1,17 @@
 ---
 title: Microsoft Store 策略
 description: Microsoft Store 中的产品必须满足我们的认证标准，为客户提供真正有用且引人入胜的体验，并与 Microsoft Store 完美兼容。
-layout: LandingPage
-ms.date: 03/05/2019
+ms.date: 10/01/2019
 ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 5086353adbc07e265f02e12f998ae655cd512d48
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
+ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258980"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607245"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
 
