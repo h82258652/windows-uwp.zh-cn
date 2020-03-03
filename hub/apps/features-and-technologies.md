@@ -6,12 +6,12 @@ ms.date: 05/08/2019
 ms.localizationpriority: medium
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: ac779bf57e51b13051fa25293606daab05540fd1
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: 6bae7fdef4e9cdf05dfa6f56160f1021033123e6
+ms.sourcegitcommit: 7f1b64f62bc3a82ebcd3807c809363df46919195
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76726020"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77705772"
 ---
 # <a name="features-and-technologies-for-windows-apps"></a>适用于 Windows 应用的功能和技术
 
@@ -87,6 +87,12 @@ Windows 提供许多方法以将语音识别和文本到语音转换（又称 TT
 |  UWP  |  Win32 (Windows API) |  WPF  |  Windows 窗体  |
 |-------|----------------------|-------|-----------------|
 | [枚举设备](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[获取电池信息](/windows/uwp/devices-sensors/get-battery-info)<br/><br/>[线程和异步编程](/windows/uwp/threading-async/)<br/><br/>[网络和 Web 服务](/windows/uwp/networking/) | [系统服务](/windows/desktop/system-services)<br/><br/>[内存管理](/windows/desktop/memory/memory-management)<br/><br/>[电源管理](/windows/desktop/power/power-management-portal)<br/><br/>[进程和线程](/windows/desktop/procthread/processes-and-threads)<br/><br/>[网络和 Internet](/windows/desktop/networking)<br/><br/>[Windows 系统信息](/windows/desktop/sysinfo/windows-system-information) |  [线程模型](https://docs.microsoft.com/dotnet/framework/wpf/advanced/threading-model)<br/><br/>[.NET Framework 中的网络编程](https://docs.microsoft.com/dotnet/framework/network-programming/)  |  [系统信息](https://docs.microsoft.com/dotnet/framework/winforms/advanced/system-information-and-windows-forms)<br/><br/>[电源管理](https://docs.microsoft.com/dotnet/framework/winforms/advanced/power-management-in-windows-forms)<br/><br/>[.NET Framework 中的网络编程](https://docs.microsoft.com/dotnet/framework/network-programming/)<br/><br/>[Windows 窗体中的网络](https://docs.microsoft.com/dotnet/framework/winforms/advanced/networking-in-windows-forms-applications)  |
+
+### <a name="debugging-and-performance"></a>调试和性能
+
+|  UWP  |  Win32 (Windows API) |  WPF 和 Windows 窗体  |
+|-------|----------------------|-------|-----------------|
+| [调试、测试和性能](/windows/uwp/debug-test-perf)<br/><br/>[部署和调试 UWP 应用](/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)<br/><br/>[Windows 应用认证工具包](/windows/uwp/debug-test-perf/windows-app-certification-kit)<br/><br/>[性能](/windows/uwp/debug-test-perf/performance-and-xaml-ui)| [调试和错误处理](https://docs.microsoft.com/windows/win32/debugging-and-error-handling)<br/><br/>[Windows 调试工具](https://docs.microsoft.com/windows-hardware/drivers/debugger/)<br/><br/>[Windows 事件跟踪 (ETW)](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal)<br/><br/>[.NET TraceProcessing API](/windows/apps/trace-processing/)<br/><br/>[TraceLogging](https://docs.microsoft.com/windows/win32/tracelogging/trace-logging-portal)<br/><br/>[性能计数器](https://docs.microsoft.com/windows/win32/perfctrs/performance-counters-portal) |  [调试、跟踪和分析](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/)<br/><br/>[跟踪和检测应用程序](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications)<br/><br/>[使用托管调试助手诊断错误](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants)<br/><br/>[运行时分析](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/runtime-profiling)<br/><br/>[性能计数器](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/performance-counters)<br/><br/>[Windows 窗体的 ClickOnce 部署](https://docs.microsoft.com/dotnet/framework/winforms/clickonce-deployment-for-windows-forms)  |
 
 ### <a name="packaging-and-deployment"></a>打包和部署
 

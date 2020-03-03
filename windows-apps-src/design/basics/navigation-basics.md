@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6290b142eee4aff7287b9542b645df89164d173b
-ms.sourcegitcommit: 34671182c26f5d0825c216a6cededc02b0059a9e
+ms.openlocfilehash: 137dbfe6471ee4d42e2a34e24512bdb658e985d0
+ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67286935"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77463759"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP 应用的导航设计基础知识
 
@@ -27,17 +27,17 @@ ms.locfileid: "67286935"
 
 :::row:::
     :::column:::
-        ![navigation example 1](images/nav/nav-1.svg)
+        ![导航示例 1](images/nav/nav-1.svg)
 
 要求用户按顺序浏览一系列页面。
     :::column-end:::
     :::column:::
-        ![navigation example 2](images/nav/nav-2.svg)
+        ![导航示例 2](images/nav/nav-2.svg)
 
 提供一个菜单，使用户能够直接跳转到任何页面。
     :::column-end:::
     :::column:::
-        ![navigation example 3](images/nav/nav-3.svg)
+        ![导航示例 3](images/nav/nav-3.svg)
 
 将所有内容放在单个页面上，并提供查看内容的筛选机制。
     :::column-end:::
@@ -67,16 +67,16 @@ ms.locfileid: "67286935"
 
 :::row:::
     :::column:::
-        ![do example](images/nav/do.svg)
+        ![“良好导航视图”示例](images/nav/do.svg)
 
-        ![navview good](images/nav/navview-good.svg)
+        ![良好导航视图](images/nav/navview-good.svg)
 
 在常见的导航菜单中提供导航项。
     :::column-end:::
     :::column:::
-        ![don't example](images/nav/dont.svg)
+        ![“不良导航视图”示例](images/nav/dont.svg)
 
-        ![navview bad](images/nav/navview-bad.svg)
+        ![不良导航视图](images/nav/navview-bad.svg)
 
 为用户提供多个导航选项。
     :::column-end:::
@@ -106,10 +106,10 @@ ms.locfileid: "67286935"
 
 :::row:::
     :::column:::
-        ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg)
+        ![以平面结构排列的页面](images/nav/flat-lateral-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Flat/lateral
+        ### <a name="flatlateral"></a>平面/横向
 
 在平面/横向结构中，页面是并排的。 你可以按任意顺序从一个页面转到另一个页面。
 
@@ -125,10 +125,10 @@ ms.locfileid: "67286935"
 
 :::row:::
     :::column:::
-        ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg)
+        ![分层排列的页面](images/nav/hierarchical-structure.svg)
     :::column-end:::
     :::column span="2":::
-        ### Hierarchical
+        ### <a name="hierarchical"></a>分层
 
 在分层结构中，页面将组织为树状结构。 每个子页面有一个父页面，但一个父页面可以有一个或多个子页面。 若要访问子页面，必须经过父页面。
 
@@ -145,10 +145,10 @@ ms.locfileid: "67286935"
 
 :::row:::
     :::column:::
-        ![an app with a hybrid structure](images/nav/combining-structures.svg)
+        ![带有混合结构的应用](images/nav/combining-structures.svg)
     :::column-end:::
     :::column span="2":::
-        ### Combining structures
+        ### <a name="combining-structures"></a>组合结构
 
 不一定要在两种结构中二选一：许多设计合理的应用同时使用两者。 在应用中，对可以任何顺序查看的顶层页面使用平面结构，对具有更复杂关系的页面使用分层结构。
 
@@ -165,39 +165,51 @@ ms.locfileid: "67286935"
 
 :::row:::
     :::column:::
-        ![Frame image](images/nav/thumbnail-frame.svg)
+        ![框架图像](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**框架**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 除少数例外情况，具有多个页面的应用都会使用框架。 通常，应用有一个包含框架和主导航元素（如导航显示控件）的主页面。 当用户选择页面时，框架将加载并显示此页面。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![“选项卡和透视表”图像](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
     :::column span="2":::
-        [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
+        [**顶部导航**](../controls-and-patterns/navigationview.md)
 
-显示指向同级别页面的水平链接列表。 [NavigationView](../controls-and-patterns/navigationview.md) 控件实现顶部导航和选项卡模式。
+显示指向同级别页面的水平链接列表。 [NavigationView](../controls-and-patterns/navigationview.md) 控件实现顶部导航模式。
         
 在以下情况下使用顶部导航：
 
 - 想要在屏幕上显示所有导航选项。
 - 想要为应用内容提供更多空间。
 - 图标无法清楚地描述导航类别。
-        
-在以下情况下使用选项卡：
-
-- 想要保存导航历史记录和页面状态。
-- 预期用户会在选项卡之间频繁切换。
 
 :::row-end:::
 
 :::row:::
     :::column:::
-         ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
+        ![“选项卡和透视表”图像](images/nav/thumbnail-tabs-pivot.svg)
+    :::column-end:::
+    :::column span="2":::
+        [**选项卡**](../controls-and-patterns/tab-view.md)
+
+显示一组水平的选项卡及其各自的内容。 [TabView](../controls-and-patterns/tab-view.md) 控件用于显示多个页面（或文档）的内容，同时为用户提供重新排列、打开或关闭选项卡的功能。
+    
+在以下情况下使用选项卡：
+
+- 你希望用户能够动态地打开、关闭或重新排列选项卡。
+- 你预料有可能会同时打开大量的选项卡。
+- 你期望用户能够在应用程序中使用选项卡的窗口之间轻松移动选项卡，类似于 Microsoft Edge 这样的 Web 浏览器。
+
+:::row-end:::
+
+:::row:::
+    :::column:::
+         ![“选项卡和透视表”图像](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
         :::column span="2":::
     [Pivot](../controls-and-patterns/pivot.md) 
@@ -213,10 +225,10 @@ ms.locfileid: "67286935"
 
 :::row:::
     :::column:::
-        ![navview image](images/nav/thumbnail-navview.svg)
+        ![导航视图图像](images/nav/thumbnail-navview.svg)
     :::column-end:::
     :::column span="2":::
-        [**Left navigation**](../controls-and-patterns/navigationview.md)
+        [**左侧导航**](../controls-and-patterns/navigationview.md)
 
 显示指向顶层页面的垂直链接列表。 何时使用：
         
@@ -228,10 +240,10 @@ ms.locfileid: "67286935"
         
 :::row:::
     :::column:::
-        ![Master details image](images/nav/thumbnail-master-detail.svg)
+        ![大纲细节图像](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**Master/details**](../controls-and-patterns/master-details.md)
+        [**大纲/细节**](../controls-and-patterns/master-details.md)
 
 显示项目的列表（大纲视图）。 通过选择项目，可在细节部分中显示其相应的页面。 何时使用：
         
@@ -243,10 +255,10 @@ ms.locfileid: "67286935"
 
 :::row:::
     :::column:::
-        ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![“超链接和按钮”图像](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
     :::column span="2":::
-        [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
+        [**超链接**](../controls-and-patterns/hyperlinks.md)
 
 嵌入式导航元素可显示在页面的内容中。 其他导航元素在页面间应保持一致，而嵌入式导航元素在各页面是唯一的。
 :::row-end:::

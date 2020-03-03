@@ -1,19 +1,19 @@
 ---
 Description: 了解如何向非打包桌面应用程序授予标识，以便可以在这些应用程序中使用新式 Windows 10 功能。
 title: 向未打包的桌面应用授予标识
-ms.date: 10/25/2019
+ms.date: 02/28/2020
 ms.topic: article
 keywords: windows 10、desktop、package、identity、.MSIX、Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 10ed6b8e1bd5efce4c9d4429d91849b1333505b6
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: ae05a00cac19fdd349aa48160b88cde6b84e26b0
+ms.sourcegitcommit: 620e4a51e2486ec2cb7190176b3d9bf3d7b5b6af
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521348"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78222023"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>向未打包的桌面应用授予标识
 
@@ -137,7 +137,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>将包标识元数据添加到桌面应用程序清单
 
-还必须在桌面应用中包括[并行应用程序清单](https://docs.microsoft.com/windows/win32/sbscs/application-manifests)，并包含一个 **\<.msix\>** 元素，其中包含声明应用的标识特性的属性。 这些属性的值由 OS 用于在启动可执行文件时确定应用的标识。
+还必须在桌面应用中包括[并行应用程序清单](https://docs.microsoft.com/windows/win32/sbscs/application-manifests)，并包含一个[&lt;.msix&gt;](https://docs.microsoft.com/windows/win32/sbscs/application-manifests#msix)元素，其中包含声明应用的标识特性的属性。 这些属性的值由 OS 用于在启动可执行文件时确定应用的标识。
 
 下面的示例演示一个具有 **\<.msix\>** 元素的并行应用程序清单。
 
