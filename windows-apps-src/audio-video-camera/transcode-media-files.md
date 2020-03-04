@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 38aef2779908e173712bda0f35ca9e0651fb786b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 58cc932ee8801835c44282de159900e3bb167e01
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683870"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256160"
 ---
 # <a name="transcode-media-files"></a>转换媒体文件代码
 
 
 
-可以使用 [**Windows.Media.Transcoding**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding) API 将视频文件代码从一种格式转换为另一种格式。
+你可以使用 [**Windows.Media.Transcoding**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding) API 将视频文件代码从一种格式转换为另一种格式。
 
 *转换代码*是指转换数字媒体文件，例如将视频或音频文件从一种格式转换为另一种格式。 这通常是通过解码文件，然后再重新编码文件实现的。 例如，你可以将 Windows Media 文件转换为 MP4 文件，以使此文件可以在支持 MP4 格式的便携式设备上播放。 或者，你可以将高清视频文件转换为较低分辨率的文件。 在此情况下，重新编码的文件可能使用与原始文件相同的编解码器，但是其编码配置文件不同。
 
@@ -29,7 +29,7 @@ ms.locfileid: "75683870"
 
 ## <a name="select-source-and-destination-files"></a>选择源文件和目标文件
 
-应用确定要转换代码的源文件和目标文件的方式取决于实现。 此示例通过使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 和 [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 让用户能够选取源文件和目标文件。
+应用确定要转换代码的源文件和目标文件的方式取决于实现。 此示例使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 和 [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker)，以允许用户选取源文件和目标文件。
 
 [!code-cs[TranscodeGetFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeGetFile)]
 
@@ -41,7 +41,7 @@ ms.locfileid: "75683870"
 
 ### <a name="methods-for-creating-audio-only-encoding-profiles"></a>用于创建纯音频编码配置文件的方法
 
-方法  |个人资料  |
+方法  |配置文件  |
 ---------|---------|
 [**CreateAlac**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createalac)     |Apple 无损音频编解码器 (ALAC) 音频         |
 [**CreateFlac**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createflac)     |免费无损音频编解码器 (FLAC) 音频。         |
@@ -52,7 +52,7 @@ ms.locfileid: "75683870"
 
 ### <a name="methods-for-creating-audio--video-encoding-profiles"></a>用于创建音频/视频编码配置文件的方法
 
-方法  |个人资料  |
+方法  |配置文件  |
 ---------|---------|
 [**CreateAvi**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createavi) |AVI |
 [**CreateHevc**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createhevc) |高效率视频编码 (HEVC) 视频，也称为 H.265 视频 |
@@ -70,31 +70,14 @@ ms.locfileid: "75683870"
 
 ## <a name="transcode-the-file"></a>转换文件代码
 
-若要转码文件，请创建新的 [**MediaTranscoder**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.MediaTranscoder) 对象并调用 [**MediaTranscoder.PrepareFileTranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync) 方法。 传入源文件、目标文件和编码配置文件。 然后，调用从异步转换代码操作中返回的 [**PrepareTranscodeResult**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) 对象上的 [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 方法。
+若要转码文件，请创建新的 [**MediaTranscoder**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.MediaTranscoder) 对象并调用 [**MediaTranscoder.PrepareFileTranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync) 方法。 传入源文件、目标文件和编码配置文件。 然后，调用从异步转换代码操作中返回的 [**PrepareTranscodeResult**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 对象中的 [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) 方法。
 
 [!code-cs[TranscodeTranscodeFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeTranscodeFile)]
 
-## <a name="respond-to-transcoding-progress"></a>响应代码转换进度
+## <a name="respond-to-transcoding-progress"></a>响应转换代码进度
 
-你可以注册要在异步进度 [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 发生更改时响应的事件。 这些事件是通用 Windows 平台 (UWP) 应用的异步编程框架的一部分，且不特定于 API 代码转换操作。
+你可以注册要在异步进度 [**TranscodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 发生更改时响应的事件。 这些事件是通用 Windows 平台 (UWP) 应用的异步编程框架的一部分，且不特定于转换 API 代码。
 
 [!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
-
-
-## <a name="encode-a-metadata-stream"></a>对元数据流进行编码
-从 Windows 10 版本1803开始，可以在转码媒体文件时包括计时元数据。 与上面的视频转码示例（使用内置的媒体编码配置文件创建方法，如[**MediaEncodingProfile**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)）不同，你必须手动创建元数据编码配置文件以支持编码的元数据类型。
-
-创建元数据 incoding 配置文件的第一步是创建一个 [**TimedMetadataEncodingProperties**] 对象，该对象描述要转码的元数据的编码。 子类型属性是一个 GUID，用于指定元数据的类型。 每种元数据类型的编码细节都是专有的，不是由 Windows 提供的。 在此示例中，使用了 GoPro metadata （gprs）的 GUID。 接下来，调用[**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)来设置用于描述元数据格式特定流格式的数据的二进制 blob。 接下来，将从编码属性创建**TimedMetadataStreamDescriptor**（ https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor) ，并使用磁道标签和名称，使应用程序能够读取编码流以标识元数据流，并选择性地在 UI 中显示流名称。 
- 
-[!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
-
-创建**TimedMetadataStreamDescriptor**后，可以创建一个**MediaEncodingProfile** ，用于描述要在文件中编码的视频、音频和元数据。 在上一个示例中创建的**TimedMetadataStreamDescriptor**将传入此示例 helper 函数，并通过调用[**SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)添加到**MediaEncodingProfile**中。
-
-[!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
- 
-
- 
-
-
 
 

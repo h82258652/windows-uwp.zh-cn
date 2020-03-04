@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a53c03c10089856cfd738a5c071c37502a34e9a5
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 4ae87600c49b61e5ee426e8dd7ab33b3d3cf7ea3
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683620"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256150"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>使用 MediaPlayer 播放音频和视频
 
@@ -38,22 +38,22 @@ ms.locfileid: "75683620"
 
 [!code-xml[MediaPlayerElementXAML](./code/MediaPlayer_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
-可以通过调用 [**SetMediaPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.setmediaplayer)，设置绑定元素的 **MediaPlayer** 实例。
+可以通过调用SetMediaPlayer[ **，设置绑定元素的** MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.setmediaplayer) 实例。
 
 [!code-cs[SetMediaPlayer](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetMediaPlayer)]
 
-还可以在 **MediaPlayerElement** 上设置播放源，元素将自动创建可以使用 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 属性访问的新 **MediaPlayer** 实例。
+还可以在 **MediaPlayerElement** 上设置播放源，元素将自动创建可以使用MediaPlayer[**属性访问的新**MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 实例。
 
 [!code-cs[GetPlayerFromElement](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetGetPlayerFromElement)]
 
 > [!NOTE] 
-> 如果你通过将 [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) 设置为 false 禁用 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 的 [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager)，它将中断 **MediaPlayer** 和 **MediaPlayerElement** 提供的 [**TransportControls**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 之间的链接，以致内置传输控件不再自动控制播放器的播放。 作为替代方法，你必须实现自己的控件才能控制 **MediaPlayer**。
+> 如果你通过将 [**IsEnabled**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 设置为 false 禁用 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 的 [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled)，它将中断 **MediaPlayer** 和 [MediaPlayerElement**提供的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols)TransportControls 之间的链接，以致内置传输控件不再自动控制播放器的播放。 作为替代方法，你必须实现自己的控件才能控制 **MediaPlayer**。
 
 ## <a name="common-mediaplayer-tasks"></a>MediaPlayer 常见任务
 本部分介绍如何使用 **MediaPlayer** 的一些功能。
 
 ### <a name="set-the-audio-category"></a>设置音频类别
-将 **MediaPlayer** 的 [**AudioCategory**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.audiocategory) 属性设为 [**MediaPlayerAudioCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerAudioCategory) 枚举的其中一个值，让系统知道播放的媒体种类。 游戏应该将其音乐流归类为 **GameMedia**，以使游戏音乐在其他应用程序在后台播放音乐时自动静音。 音乐或视频应用程序应该将它们的流归类为 **Media** 或 **Movie**，以使它们能够优先于 **GameMedia** 流。
+将 [MediaPlayer**的**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.audiocategory)AudioCategory 属性设为 [**MediaPlayerAudioCategory**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerAudioCategory) 枚举的其中一个值，让系统知道播放的媒体种类。 游戏应该将其音乐流归类为 **GameMedia**，以使游戏音乐在其他应用程序在后台播放音乐时自动静音。 音乐或视频应用程序应该将它们的流归类为 **Media** 或 **Movie**，以使它们能够优先于 **GameMedia** 流。
 
 [!code-cs[SetAudioCategory](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioCategory)]
 
@@ -62,14 +62,14 @@ ms.locfileid: "75683620"
 
 [!code-cs[SetAudioEndpointEnumerate](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioEndpointEnumerate)]
 
-在用于设备组合框的 [**SelectionChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 事件中，**MediaPlayer** 的 [**AudioDevice**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.audiodevice) 属性设置为所选设备，该属性存储在 **ComboBoxItem** 的 [**Tag**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.tag) 属性中。
+在用于设备组合框的 [**SelectionChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 事件中，[MediaPlayer**的**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.audiodevice)AudioDevice 属性设置为所选设备，该属性存储在 [ComboBoxItem**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.tag)Tag 属性中。
 
 [!code-cs[SetAudioEndpontSelectionChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetAudioEndpontSelectionChanged)]
 
 ### <a name="playback-session"></a>播放会话
 如前文所述，许多由 **MediaElement** 类公开的函数都已移到 [**MediaPlaybackSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackSession) 类。 这包括有关播放器播放状态的信息，例如当前播放位置、播放器是已暂停还是正在播放，以及当前播放速度。 **MediaPlaybackSession** 还会提供几个事件，用于在状态更改时通知用户，这些更改包括所播放内容的当前缓冲和下载状态，以及当前播放视频内容的自然大小和纵横比。
 
-以下示例演示了如何实现向前跳过 10 秒内容的按钮单击处理程序。 首先，使用 [**PlaybackSession**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.playbacksession) 属性检索播放器的 **MediaPlaybackSession** 对象。 接下来，将 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) 属性设置为当前播放位置向后 10 秒的值。
+以下示例演示了如何实现向前跳过 10 秒内容的按钮单击处理程序。 首先，使用PlaybackSession[**属性检索播放器的**MediaPlaybackSession](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.playbacksession) 对象。 接下来，将 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) 属性设置为当前播放位置向后 10 秒的值。
 
 [!code-cs[SkipForwardClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSkipForwardClick)]
 
@@ -108,13 +108,15 @@ ms.locfileid: "75683620"
 
 如果缩放值为 1，则处理平移手势。 矩形仅根据手势的像素数除以控件的宽度和高度所得结果平移。 同样，检查生成的矩形，确保它位于 (0,0,1,1) 边界内。
 
-最后，将 **MediaPlaybackSession** 的 [**NormalizedSourceRect**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.normalizedsourcerect) 设置为新调整的矩形，从而指定视频帧中应该呈现的区域。
+最后，将 [MediaPlaybackSession**的**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.normalizedsourcerect)NormalizedSourceRect 设置为新调整的矩形，从而指定视频帧中应该呈现的区域。
 
 [!code-cs[ManipulationDelta](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
 在 [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped) 事件处理程序中，源矩形重新设为 (0,0,1,1)，以呈现整个视频帧。
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
+
+**注意**本部分介绍触控输入。 触摸板发送指针事件，并且不会发送操作事件。
 
 ### <a name="handling-policy-based-playback-degradation"></a>处理基于策略的播放降级
 
@@ -127,9 +129,9 @@ ms.locfileid: "75683620"
 ## <a name="use-mediaplayersurface-to-render-video-to-a-windowsuicomposition-surface"></a>使用 MediaPlayerSurface 将视频呈现到 Windows.UI.Composition 界面
 从 Windows 10 版本 1607 开始，可以使用 **MediaPlayer** 将视频呈现到 [**ICompositionSurface**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ICompositionSurface)，这可以支持播放器与 [**Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition) 命名空间中的 API 进行互操作。 合成框架允许你在 XAML 与低级别 DirectX 图形 API 之间的可视化层处理图形。 这可以使任意 XAML 控件都能够执行呈现视频等方案。 有关使用合成 API 的详细信息，请参阅[可视化层](https://docs.microsoft.com/windows/uwp/composition/visual-layer)。
 
-以下示例介绍了如何将视频播放器内容呈现到 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 控件。 本例中特定于媒体播放器的调用为 [**SetSurfaceSize**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.setsurfacesize) 和 [**GetSurface**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.getsurface)。 **SetSurfaceSize** 告知系统为呈现内容应该分配的缓冲区大小。 **GetSurface** 将 [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) 视作参数，并且检索 [**MediaPlayerSurface**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerSurface) 类的实例。 使用此类可以访问用于通过 [**CompositionSurface**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayersurface.compositionsurface) 属性创建表面和公开表面自身的 **MediaPlayer** 和 **Compositor**。
+以下示例介绍了如何将视频播放器内容呈现到 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 控件。 本例中特定于媒体播放器的调用为 [**SetSurfaceSize**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.setsurfacesize) 和 [**GetSurface**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.getsurface)。 **SetSurfaceSize** 告知系统为呈现内容应该分配的缓冲区大小。 **GetSurface** 将 [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) 视作参数，并且检索 [**MediaPlayerSurface**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerSurface) 类的实例。 使用此类可以访问用于通过CompositionSurface 属性创建表面和公开表面自身的 [MediaPlayer**和**Compositor](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayersurface.compositionsurface)。
 
-本例中的其余代码创建视频要呈现到的 [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual)，还将大小设为显示视觉效果的画布元素大小。 接下来，从 [**MediaPlayerSurface**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerSurface) 创建 [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush)，并将其分配到视觉效果的 [**Brush**](https://docs.microsoft.com/uwp/api/windows.ui.composition.spritevisual.brush) 属性。 然后，创建 [**ContainerVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual)，在它的可视树顶部插入 **SpriteVisual**。 最后，调用 [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual)，将容器视觉效果分配到 **Canvas**。
+本例中的其余代码创建视频要呈现到的 [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual)，还将大小设为显示视觉效果的画布元素大小。 接下来，从 [**MediaPlayerSurface**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) 创建 [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayerSurface)，并将其分配到视觉效果的 [**Brush**](https://docs.microsoft.com/uwp/api/windows.ui.composition.spritevisual.brush) 属性。 然后，创建 [**ContainerVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual)，在它的可视树顶部插入 **SpriteVisual**。 最后，调用 [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual)，将容器视觉效果分配到 **Canvas**。
 
 [!code-cs[Compositor](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCompositor)]
         
@@ -137,7 +139,7 @@ ms.locfileid: "75683620"
 如前文所述，应用可以同时使用多个 **MediaPlayer** 对象。 默认情况下，所创建的每个 **MediaPlayer** 都独立操作。 在某些情况下（例如同步视频的解说音轨），你可能希望同步多台播放器的状态、播放位置和播放速度。 从 Windows 10 版本 1607 开始，可以使用 [**MediaTimelineController**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaTimelineController) 类实现这种行为。
 
 ### <a name="implement-playback-controls"></a>实现播放控件
-以下示例展示了如何使用 **MediaTimelineController** 控制 **MediaPlayer** 的两个实例。 首先，**MediaPlayer** 的每个实例均进行实例化，并且 **Source** 设置为媒体文件。 接下来，创建新 **MediaTimelineController**。 对于每个 **MediaPlayer**，将 [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) 属性设为 False 禁用与每台播放器关联的 [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager)。 然后，将 [**TimelineController**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.timelinecontroller) 属性设置为时间线控制器对象。
+以下示例展示了如何使用 **MediaTimelineController** 控制 **MediaPlayer** 的两个实例。 首先，**MediaPlayer** 的每个实例均进行实例化，并且 **Source** 设置为媒体文件。 接下来，创建新 **MediaTimelineController**。 对于每个 **MediaPlayer**，将 [**IsEnabled**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 属性设为 False 禁用与每台播放器关联的 [**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled)。 然后，将 [**TimelineController**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.timelinecontroller) 属性设置为时间线控制器对象。
 
 [!code-cs[DeclareMediaTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaTimelineController)]
 
@@ -176,7 +178,7 @@ ms.locfileid: "75683620"
 [!code-cs[PositionChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetPositionChanged)]
 
 ### <a name="offset-the-playback-position-from-the-timeline-position"></a>使播放位置偏离时间线位置
-在某些情况下，与时间线控制器关联的一个或多个媒体播放器的播放位置可能需要偏离其他播放器。 为此，可以设置要偏离的 **MediaPlayer** 对象的 [**TimelineControllerPositionOffset**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.timelinecontrollerpositionoffset) 属性。 以下示例使用两个媒体播放器的内容持续时间设置两个滑块控件的最小值和最大值，以增加或减少项目的时间长度。  
+在某些情况下，与时间线控制器关联的一个或多个媒体播放器的播放位置可能需要偏离其他播放器。 为此，可以设置要偏离的 [MediaPlayer**对象的**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.timelinecontrollerpositionoffset)TimelineControllerPositionOffset 属性。 以下示例使用两个媒体播放器的内容持续时间设置两个滑块控件的最小值和最大值，以增加或减少项目的时间长度。  
 
 [!code-cs[OffsetSliders](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOffsetSliders)]
 
@@ -234,7 +236,7 @@ ms.locfileid: "75683620"
 2.  在窗口顶部，选择**浏览**选项卡。
 3.  在搜索框中，输入 **Win2D**。
 4.  选择 **Win2D.uwp**，然后选择右侧窗格中的**安装**。
-5.  **查看更改**对话框将向你显示要安装的程序包。 单击**确定**。
+5.  **查看更改**对话框将向你显示要安装的程序包。 单击“确定”。
 6.  接受程序包许可证。
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>检测系统的音频级别更改并做出响应
@@ -248,7 +250,7 @@ ms.locfileid: "75683620"
 
 [!code-cs[AudioStateVars](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
 
-在 **SoundLevelChanged** 事件处理程序中，检查 **AudioStateMonitor** 发件人的 [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) 属性，以确定新的音量。 此示例检查新的音量是否为完整音量，即系统已停止静音或闪避音量，或者音量是否已经降低，但正在播放非播客内容。 如果发生其中任何一种情况，并且内容以前以编程方式暂停，则恢复播放。 如果新的音量为静音，或者如果当前内容是播客，并且音量较低，则暂停播放，并将变量设置为跟踪，暂停以编程方式启动。
+在 **SoundLevelChanged** 事件处理程序中，检查 [AudioStateMonitor**发件人的**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel)SoundLevel 属性，以确定新的音量。 此示例检查新的音量是否为完整音量，即系统已停止静音或闪避音量，或者音量是否已经降低，但正在播放非播客内容。 如果发生其中任何一种情况，并且内容以前以编程方式暂停，则恢复播放。 如果新的音量为静音，或者如果当前内容是播客，并且音量较低，则暂停播放，并将变量设置为跟踪，暂停以编程方式启动。
 
 [!code-cs[SoundLevelChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSoundLevelChanged)]
 

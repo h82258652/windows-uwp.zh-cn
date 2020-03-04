@@ -1,6 +1,6 @@
 ---
 Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸进行优化，但在不同的输入设备上功能一致。
-title: 触控交互
+title: 触摸交互
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
@@ -8,24 +8,24 @@ keywords: 键盘, 指针, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 25398f0b48e88e2cebe81f62cc62ac1d9bd92d5c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2277be481326aa5ae5a76c900160108bcd29fb84
+ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258218"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78256140"
 ---
-# <a name="touch-interactions"></a>触控交互
+# <a name="touch-interactions"></a>触摸交互
 
 
 以“触摸将是用户的主要输入方法”为初衷设计应用。 如果你使用 UWP 控件，不要求额外编程，即可支持触摸板、鼠标和笔/触笔，因为 UWP 应用免费提供此类支持。
 
-但是请记住，为触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在转换到主要使用触摸的 UI 时，了解触摸（包括触摸板）、笔/触笔、鼠标和键盘输入之间的核心差别很重要。
+但是请记住，为触摸优化的 UI 并非总是优于传统 UI。 两者都具有特定于技术和应用的优缺点。 在移动到触摸优先的 UI 时，了解触摸、触摸板、笔/触笔、鼠标和键盘输入之间的核心差异非常重要。
 
 > **重要 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)、[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
 
 
-许多设备具有多点触控屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
+许多设备具有多点触摸屏幕，它们支持使用一根或多根手指（或触摸接触）作为输入。 触摸接触以及其移动会被解释为触摸手势和操作，以支持各种用户交互。
 
 通用 Windows 平台 (UWP) 包括多种处理触摸输入的不同机制，从而你可以创建用户能够放心浏览的沉浸式体验。 下面我们将介绍在 UWP 应用中使用触摸输入的基本知识。
 
@@ -56,8 +56,8 @@ ms.locfileid: "74258218"
 下表显示了设计为触摸而优化的 UWP 应用时应该考虑的一些输入设备之间的不同。
 
 <table>
-<tbody><tr><th>因素</th><th>触控交互</th><th>鼠标、键盘、笔/触笔交互</th><th>触摸板</th></tr>
-<tr><td rowspan="3">精度</td><td>指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。</td><td>鼠标和笔/触笔提供了精确的 x-y 坐标。</td><td>与鼠标相同。</td></tr>
+<tbody><tr><th>因素</th><th>触摸交互</th><th>鼠标、键盘、笔/触笔交互</th><th>触摸板</th></tr>
+<tr><td rowspan="3">Precision</td><td>指尖的接触区域大于单个 x-y 坐标，这样便增加了无意中激活命令的几率。</td><td>鼠标和笔/触笔提供了精确的 x-y 坐标。</td><td>与鼠标相同。</td></tr>
 <tr><td>接触区域的形状在整个移动过程中不断变化。  </td><td>鼠标移动和笔/触笔笔划都提供精确的 x-y 坐标。 键盘焦点非常清晰。</td><td>与鼠标相同。</td></tr>
 <tr><td>没有鼠标光标来帮助确定目标。</td><td>鼠标光标、笔/触笔光标以及键盘焦点都可以帮助确定目标。</td><td>与鼠标相同。</td></tr>
 <tr><td rowspan="3">人体解剖学</td><td>指尖移动并不精确，因为使用一个或多个手指沿直线移动非常困难。 这是由于手关节的曲率和运动涉及的关节数量导致的。</td><td>使用鼠标或笔/触笔进行直线移动就很容易，因为控制它们的手所移动的物理距离要比光标在屏幕上移动的物理距离短。</td><td>与鼠标相同。</td></tr>
@@ -72,9 +72,8 @@ ms.locfileid: "74258218"
 <tr><td>通过手势（点击、拖动、滑动、收缩和旋转）支持对象的直接操作。</td><td>不支持直接操作，因为鼠标、笔/触笔以及键盘为间接输入设备。</td><td>与鼠标相同。</td></tr>
 </tbody></table>
 
-
-
-**请注意**   间接输入具有25年以上的优化权益。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
+> [!NOTE]
+> 非直接输入的优点是已经过 25 年的优化。 设计诸如悬停触发的工具提示之类的功能，是为了解决触摸板、鼠标、笔/触笔以及键盘输入特有的 UI 浏览。 此类 UI 功能已针对触摸输入提供的丰富体验进行了重新设计，不会对这些其他设备的用户体验产生负面影响。
 
  
 
@@ -85,7 +84,7 @@ ms.locfileid: "74258218"
 当用户依赖触摸屏输入来进行要求基于位置的准确活动时，视觉反馈非常重要。 无论何时何地检测到触摸输入都显示反馈，以帮助用户了解应用及其控件定义的任何自定义目标启发。
 
 
-## <a name="targeting"></a>定位
+## <a name="targeting"></a>确定目标
 
 通过以下方式优化目标：
 
@@ -97,7 +96,7 @@ ms.locfileid: "74258218"
 
     手指的整个接触区域可以确定最可能的目标对象。
 
--   清理
+-   推移
 
     通过将手指在组中的项之间拖动可以很容易改变目标（例如，单选按钮）。 释放触摸时激活当前项。
 
@@ -132,7 +131,7 @@ ms.locfileid: "74258218"
 
     如果对精度有要求（例如文本选择），请提供偏移选择句柄以提高准确性。 有关详细信息，请参阅[选择文本和图像的指南（Windows 运行时应用）](guidelines-for-textselection.md)。
 
-## <a name="timing"></a>定时
+## <a name="timing"></a>计时
 
 在直接操作时，避免定时模式更改。 直接操作模拟对象的直接、实时的物理处理。 对象随着手指移动作出响应。
 
@@ -151,7 +150,8 @@ ms.locfileid: "74258218"
 -   交互应该支持复合操作。 例如，在拖动手指进行平移时收缩即可缩放。
 -   不应按时间来区分交互。 相同的交互应该具有相同的结果，而与执行该操作所花费的时间无关。 基于时间的激活功能为用户引入了强制延迟，因此影响了直接操作的沉浸式属性和系统响应的感知。
 
-    **请注意**，在这种情况  下，您可以使用特定的定时交互来协助学习和探索（例如，按下并保持）。
+   > [!NOTE]
+   > 出现这种情况的一个例外是，使用特定的定时交互来帮助学习和探索（例如，按下并保持）。
 
      
 
@@ -192,15 +192,15 @@ ms.locfileid: "74258218"
 
 下面是一组基本的受 UWP 支持的触摸手势。
 
-| 姓名           | 类型                 | 说明                                                                            |
+| 名称           | 类型                 | 说明                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 点击            | 静态手势       | 用一个手指触摸屏幕，然后抬起手指。                                            |
-| 长按 | 静态手势       | 用一个手指触摸屏幕并保持不动。                                      |
+| 按住 | 静态手势       | 用一个手指触摸屏幕并保持不动。                                      |
 | 滑动          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动。                   |
-| 轻扫          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动较短距离。  |
+| Swipe          | 操作手势 | 用一个或多个手指触摸屏幕并向着同一方向移动较短距离。  |
 | 转动           | 操作手势 | 用两个或多个手指触摸屏幕并沿着顺时针或逆时针的弧线移动。 |
 | 收缩          | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指并拢在一起。                         |
-| Stretch        | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指分开。                           |
+| 拉伸        | 操作手势 | 用两个或多个手指触摸屏幕，然后将手指分开。                           |
 
  
 
@@ -231,7 +231,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 | [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)               | 在指针退出元素的点击测试区时发生。  |
 | [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)           | 在异常丢失触摸接触时发生。               |
 | [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)     | 在另一个元素进行指针捕获时发生。    |
-| [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | 在鼠标滚轮的增量值更改时发生。         |
+| [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | 当鼠标滚轮的增量值改变以及触摸板 pinched 时出现。         |
 | [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | 为所有指针事件提供数据。                         |
 
  
@@ -414,6 +414,9 @@ End Sub
 
 你可以使用操作事件来检测拖动、缩放和按住之类的交互。
 
+> [!NOTE]
+> 触摸板不会引发操作事件。 相反，将为触摸板输入引发指针事件。
+
 下面提供操作事件列表及其相关的事件参数。
 
 | 事件或类                                                                                               | 说明                                                                                                                               |
@@ -436,7 +439,8 @@ End Sub
 
 接下来，引发一个或多个 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。 例如，先触摸屏幕，然后在屏幕上拖动手指。 最后，在完成交互时引发 [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) 事件。
 
-**注意**  如果没有触摸屏监视器，可以使用鼠标和鼠标滚轮界面在模拟器中测试操作事件代码。
+> [!NOTE]
+> 如果没有触摸屏监视器，可以使用鼠标和鼠标滚轮界面在模拟器中测试操作事件代码。
 
  
 
