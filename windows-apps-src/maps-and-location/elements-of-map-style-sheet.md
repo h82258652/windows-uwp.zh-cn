@@ -7,20 +7,20 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 地图, 地图样式表
 ms.localizationpriority: medium
-ms.openlocfilehash: 723426b4affec4251f26485ac7ecc1fca307c102
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: b59e8c3c6d9c4c299e441964be1afb4e02051e23
+ms.sourcegitcommit: 5264d7499ddbe21199a63d74a294206069f90f8b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867703"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78287447"
 ---
 # <a name="map-style-sheet-reference"></a>地图样式表参考
 
-Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用 JavaScript 对象表示法 (JSON) 定义地图样式表, 可以通过多种方式使用该样式表, 包括 Windows 应用商店应用程序[MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol)中的[MapStyleSheet. ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_)方法。
+Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用 JavaScript 对象表示法（JSON）定义地图样式表，可以通过多种方式使用该样式表，包括 Windows 应用商店应用程序[MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol)中的[MapStyleSheet. ParseFromJson](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet.parsefromjson#Windows_UI_Xaml_Controls_Maps_MapStyleSheet_ParseFromJson_System_String_)方法。
 
 可以使用 "[地图样式表编辑器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft)" 应用程序以交互方式创建样式表。
 
-以下 JSON 可用于使水源显示为红色, 水标签显示为绿色, 而土地区显示为蓝色:
+以下 JSON 可用于使水源显示为红色，水标签显示为绿色，而土地区显示为蓝色：
 
 ```json
     {"version":"1.*",
@@ -50,17 +50,17 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 <a id="entries" />
 
 ## <a name="entries"></a>条目
-使用此表“>”字符表示条目层次结构中的级别。  它还显示了哪些版本的 Windows 支持每个条目, 哪些版本将忽略它。
+使用此表“>”字符表示条目层次结构中的级别。  它还显示了哪些版本的 Windows 支持每个条目，哪些版本将忽略它。
 
-| Version | Windows 版本名称 |
+| 版本 | Windows 版本名称 |
 |---------|----------------------|
 |  1703   | Creators 更新      |
-|  1709   | 秋季创意者更新 |
+|  1709   | Fall Creators Update |
 |  1803   | 2018 年 4 月更新    |
 |  1809   | 2018年10月更新  |
 |  1903   | 2019月更新      |
 
-| 名称                               | 属性组            | 1703 | 1709 | 1803 | 1809 | 1903 | 描述    |
+| 名称                               | 属性组            | 1703 | 1709 | 1803 | 1809 | 1903 | 说明    |
 |------------------------------------|---------------------------|------|------|------|------|------|----------------|
 | version                            | [版本](#version)       |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 要使用的样式表版本。 |
 | 设置                           | [设置](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 应用于整个样式表的设置。 |
@@ -75,7 +75,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | >>> indigenousPeoplesReserve       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 包含 indigenous 的领域。 |
 | >>> industrial                     | [MapElement](#mapelement) |      |  ✔   |  ✔   |  ✔   |  ✔   | 用于工业用途的区域。 |
 | >>> island                         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 岛区标签。 |
-| >>> medical                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于医疗目的 (例如医院校园) 的区域。 |
+| >>> medical                        | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于医疗目的（例如医院校园）的区域。 |
 | >>> military                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 包含军事基准或具有军事使用的领域。 |
 | >>> nautical                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于与海里相关的区域。 |
 | >>> neighborhood                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 邻近区域标签。 |
@@ -90,7 +90,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | >>>> park                          | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 包含公园的领域。 |
 | >>>> playingField                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 提取的球场，如棒球场或网球场。 |
 | >>>> reserve                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 包含特性性保留的区域。 |
-| > > frozenWater                     | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 冻结水, 如 glacier。 |
+| > > frozenWater                     | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 冻结水，如 glacier。 |
 | >> point                           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 使用某种类型的图标绘制的所有点特征。 |
 | >>> address                        | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   |  ✔   | 地址编号标签。 |
 | >>> naturalPoint                   | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示自然功能的图标。 |
@@ -99,7 +99,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | >>>> waterPoint                    | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示水景位置（如瀑布）的图标。 |
 | >>> pointOfInterest                | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示任何关注位置的图标。 |
 | >>>> business                      | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示任何业务位置的图标。 |
-| > > > > > attractionPoint              | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | 表示旅游 attractions 的图标, 如博物馆、zoos 等。 |
+| > > > > > attractionPoint              | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | 表示旅游 attractions 的图标，如博物馆、zoos 等。 |
 | > > > > > > amusementPlacePoint         | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 娱乐放置图标。 |
 | > > > > > > aquariumPoint               | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 水族馆图标。 |
 | > > > > > > artGalleryPoint             | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 图片库图标。 |
@@ -123,7 +123,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | > > > > > > pollingStationPoint         | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | "轮询工作站" 图标。 |
 | > > > > > > researchPoint               | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 研究图标。 |
 | > > > > > educationPoint               | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | 表示学校和其他教育相关位置的图标。 |
-| > > > > > entertainmentPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | 表示娱乐会场的图标, 如电影院、cinemas 等。 |
+| > > > > > entertainmentPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   |  ✔   | 表示娱乐会场的图标，如电影院、cinemas 等。 |
 | > > > > > > artsPoint                   | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 美术图标。 |
 | > > > > > > bowlingPoint                | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 保龄球图标。 |
 | > > > > > > casinoPoint                 | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | Casino 图标。 |
@@ -191,7 +191,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | >>>>> countryRegionCapital         | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示国家或地区的首都/主要城市的图标。 |
 | > > > > majorPopulatedPlace           | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 表示主要填充位置大小的图标。 |
 | > > > > minorPopulatedPlace           | [PointStyle](#pointstyle) |      |      |      |      |  ✔   | 表示次要填充位置大小的图标。 |
-| >>> roadShield                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示道路的缩写名称的符号。 (例如:5)。 如果将设置条目的 **ImageFamily** 属性设置为 *Palette* 值，则仅使用面板值 |
+| >>> roadShield                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示道路的缩写名称的符号。 （例如：I-5）。 如果将设置条目的 **ImageFamily** 属性设置为 *Palette* 值，则仅使用面板值 |
 | >>> roadExit                       | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示出口（通常属于出入管制高速公路）的图标。 |
 | >>> transit                        | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示公共汽车站、火车站、机场等的图标。 |
 | >> political                       | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 政治区域（如国家、地区和州）。 |
@@ -201,8 +201,8 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | >> structure                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 建筑物和其他类似于建筑物的结构。 |
 | >>> building                       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 建筑. |
 | >>>> educationBuilding             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于教育的大楼。 |
-| >>>> medicalBuilding               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于医疗目的的大楼, 如医院。 |
-| >>>> transitBuilding               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于运输的大楼, 如机场。 |
+| >>>> medicalBuilding               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于医疗目的的大楼，如医院。 |
+| >>>> transitBuilding               | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于运输的大楼，如机场。 |
 | >> transportation                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 属于运输网络一部分的线条（例如：公路、火车和轮渡）。 |
 | >>> road                           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示所有公路的线条。 |
 | >>>> controlledAccessHighway       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 表示大型受控访问高速公路的行。 |
@@ -233,7 +233,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 
 <a id="properties" />
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>属性
 
 本部分介绍可以用于每个条目的属性。
 
@@ -241,7 +241,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 
 ### <a name="version-properties"></a>Version 属性
 
-| 属性                     | type    | 描述                                                                                                           |
+| 属性                     | 类型    | 说明                                                                                                           |
 |------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------|
 | version                      | String  | 目标样式表版本。 用于适用性。 “1.0”用于默认值，“1.*”用于其他次要功能更新。 |
 
@@ -249,7 +249,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 
 ### <a name="settings-properties"></a>Settings 属性
 
-| 属性                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | 描述 |
+| 属性                     | 类型    | 1703 | 1709 | 1803 | 1809 | 1903 | 说明 |
 |------------------------------|---------|------|------|------|------|------|-------------|
 | atmosphereVisible            | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示大气是否在 3D 控件中出现。 |
 | buildingTexturesVisible      | Bool    |      |      |  ✔   |  ✔   |  ✔   | 指示是否在具有纹理的符号 3D 建筑物上显示纹理的标志。 |
@@ -259,24 +259,22 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | landColor                    | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 在该陆地上绘制任何内容之前，陆地的 ARGB 颜色值。 |
 | logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示具有 **Organization** 属性的项目是应绘制相应徽标还是使用通用图标。 |
 | officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示具有正式颜色属性的项目（如中国的交通线）是否应绘制该颜色。 例如，为黑白地图关闭此值。 |
-| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志, 该标志指示是否绘制与矢量 (日本和韩国) 的表示形式比向量更好的光栅区。 |
+| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，该标志指示是否绘制与矢量（日本和韩国）的表示形式比向量更好的光栅区。 |
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示是否要在地图上绘制海拔底纹。 |
-| shadedReliefDarkColor        | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 晕渲地貌阴暗面的颜色。  Alpha 通道表示最大 alpha 值。 |
-| shadedReliefLightColor       | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 晕渲地貌光明面的颜色。  Alpha 通道表示最大 alpha 值。 |
 | shadowColor                  | 颜色   |      |      |      |  ✔   |  ✔   | 使用阴影的图标后面的阴影颜色。 |
 | spaceColor                   | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 地图周围的区域 ARGB 颜色值。 |
-| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志, 用于指示是否应使用 SVG 中的原始颜色, 而不是在调色板项中查找图像中的颜色。 |
+| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，用于指示是否应使用 SVG 中的原始颜色，而不是在调色板项中查找图像中的颜色。 |
 
 <a id="mapelement" />
 
 ### <a name="mapelement-properties"></a>MapElement 属性
 
-| 属性                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | 描述 |
+| 属性                     | 类型    | 1703 | 1709 | 1803 | 1809 | 1903 | 说明 |
 |------------------------------|---------|------|------|------|------|------|-------------|
 | backgroundScale              | 浮点   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 图标的背景元素应缩放的量。  例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
 | fillColor                    | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 用于填充多边形、点图标的背景和线条中心（如果已拆分）的颜色。 |
 | fontFamily                   | String  |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
-| fontWeight                   | String  |      |      |      |      |  ✔   | 字样的密度, 以笔划的亮度或笔画为依据。 可以设置 "**Light**"、"**Normal**"、"**SemiBold**" 和 "**Bold**" |
+| fontWeight                   | String  |      |      |      |      |  ✔   | 字样的密度，以笔划的亮度或笔画为依据。 可以设置 "**Light**"、"**Normal**"、"**SemiBold**" 和 "**Bold**" |
 | iconColor                    | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 在点图标中心显示的字形的颜色。 |
 | iconScale                    | 浮点   |      |  ✔   |  ✔   |  ✔   |  ✔   | 图标的字形应缩放的量。  例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
 | labelColor                   | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
@@ -284,7 +282,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | labelScale                   | 浮点   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 默认标签大小的缩放量。 例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
 | labelVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
 | overwriteColor               | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 使 **FillColor** 的 alpha 值覆盖 **StrokeColor** 而不是与它混合。 |
-| scale                        | 浮点   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 整个点的大小的缩放量。 例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
+| 小数位数                        | 浮点   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 整个点的大小的缩放量。 例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
 | strokeColor                  | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 要用于多边形周围的轮廓、点图标周围的轮廓和线条颜色的颜色。 |
 | strokeWidthScale             | 浮点   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 线条笔划的缩放量。 例如，使用 *1* 表示默认值，使用 *2* 表示两倍大。 |
 | visible                      | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   |  |
@@ -295,7 +293,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 
 此属性组继承自 [MapElement](#mapelement) 属性组。
 
-| 属性                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | 描述 |
+| 属性                     | 类型    | 1703 | 1709 | 1803 | 1809 | 1903 | 说明 |
 |------------------------------|---------|------|------|------|------|------|-------------|
 | borderOutlineColor           | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 填色多边形边框的辅助或包围线条颜色。 |
 | borderStrokeColor            | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 填色多边形边框的主线条颜色。 |
@@ -308,7 +306,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 
 此属性组继承自 [MapElement](#mapelement) 属性组。
 
-| 属性                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | 描述 |
+| 属性                     | 类型    | 1703 | 1709 | 1803 | 1809 | 1903 | 说明 |
 |------------------------------|---------|------|------|------|------|------|-------------|
 | shadowVisible                | Bool    |      |      |      |      |  ✔   | 指示图标阴影是否可见的标志 |
 | 形状-背景             | String  |      |      |      |      |  ✔   | 用作图标背景的形状-替换该处存在的任何形状。 |
@@ -325,6 +323,6 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 
 此属性组继承自 [MapElement](#mapelement) 属性组。
 
-| 属性                     | type    | 1703 | 1709 | 1803 | 1809 | 1903 | 描述 |
+| 属性                     | 类型    | 1703 | 1709 | 1803 | 1809 | 1903 | 说明 |
 |------------------------------|---------|------|------|------|------|------|------------|
 | renderAsSurface              | Bool    |      |      |  ✔   |  ✔   |  ✔   | 指示 3D 模型应象建筑一样呈现的标志 - 无对地面的深度淡入。 |
