@@ -6,14 +6,17 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e12641695dd72cddcfb6b51f6cd2f20fa66ddf41
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 96994566d19e03f1d85b751242331f04fef098ad
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258992"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78290341"
 ---
 # <a name="in-app-ads"></a>应用内广告
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 使用[合作伙伴中心](https://partner.microsoft.com/dashboard)的**盈利**&gt;**应用内广告**页来创建和管理的 ad 单位：
 
@@ -48,7 +51,7 @@ ms.locfileid: "74258992"
     * 如果你为横幅广告单元选择**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)** 设备系列，则可以选择 **Show community ads in your app** 以选择加入[社区广告](about-community-ads.md)。
 
 7.  如果还没有为所选的应用设置 COPPA 合规性，请在 [COPPA 合规性](#coppa)部分中选择一个选项。
-8.  单击**创建广告单元**。
+8.  单击“创建广告单元”。
 
 创建新的 ad 单位后，它将显示在 "**盈利**&gt;**应用程序内广告**" 页中的可用 ad 单位表中。
 
