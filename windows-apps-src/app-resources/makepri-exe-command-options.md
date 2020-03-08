@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 638de4d2795b3b248edfdcc35dc72fa21d31fc3b
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77089314"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853116"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令行选项
 
@@ -458,7 +458,7 @@ MakePri 可以将资源包特定的信息包括在索引器元数据文件中。
 
 ## <a name="output-summary"></a>输出摘要
 
-如果创建资源包，来自 MakePRI.exe 的输出摘要采用更加详细的窗体。 下面是一个示例。
+如果创建资源包，来自 MakePRI.exe 的输出摘要采用更加详细的窗体。 下面提供了一个示例。
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack

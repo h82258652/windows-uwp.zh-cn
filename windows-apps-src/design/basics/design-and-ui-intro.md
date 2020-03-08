@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72281789"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853198"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
@@ -112,7 +112,7 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 ![主题色 gif](images/intro-style.gif)
 
-## <a name="shell"></a>壳体
+## <a name="shell"></a>Shell
 
 :::row:::
     :::column:::
@@ -170,7 +170,7 @@ UWP 应用依赖于智能交互。 你可以围绕单击交互进行设计，而
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-## <a name="next-fluent-design-system"></a>下一步：Fluent Design 系统
+## <a name="next-fluent-design-system"></a>下一步：Fluent Design System
 
 如果要了解 Fluent Design（Microsoft 提供的设计系统）背后的原则，并查看可融入 UWP 应用中的更多功能，请继续参阅 [Fluent Design 系统](/windows/apps/fluent-design-system)。
 

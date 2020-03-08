@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ac23c926e0d7b517fe18321980fc322d7be5b064
-ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294826"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853485"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>设置你的付款帐户和税单
 
@@ -157,8 +157,8 @@ ms.locfileid: "76294826"
 
 - **需要哪些 PayPal 设置才能接收付款？** 必须确保你的 PayPal 帐户不会阻止 eCheck 付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。 有关详细信息，请参阅 [PayPal 的帐户设置页面](https://developer.paypal.com/webapps/developer/docs/classic/admin/setup-account/)。
 - **你的国家/地区是否受支持？** 请参阅[支付阈值、方法和](payment-thresholds-methods-and-timeframes.md)时间范围，找出 PayPal 是支持的付款方式。
-- **我的 PayPal 帐户是否需要在与合作伙伴中心帐户相同的国家/地区进行注册？** 不相同。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
-- **是否必须手动接受 PayPal 支付？** 不相同。 PayPal 帐户默认设置为需要用户手动接受付款，这意味着如果你不在 30 天内接受付款，将返回付款。 你可以更改此设置，方法是在 PayPal 的“更多设置”页面中关闭“询问我”。
+- **我的 PayPal 帐户是否需要在与合作伙伴中心帐户相同的国家/地区进行注册？** No。 设置 PayPal 帐户时，可以接受默认配置。 您不应该有任何其他国家/地区和货币的问题，除非您阻止了某些货币的付款。 此设置在 PayPal 的“付款接收首选项”页面中管理。
+- **是否必须手动接受 PayPal 支付？** No。 PayPal 帐户默认设置为需要用户手动接受付款，这意味着如果你不在 30 天内接受付款，将返回付款。 你可以更改此设置，方法是在 PayPal 的“更多设置”页面中关闭“询问我”。
 - **PayPal 支持哪些货币？** 请参阅[PayPal 的支持页面](https://developer.paypal.com/docs/classic/api/currency-codes/#paypal)了解当前列表
 
 ### <a name="specific-requirements-for-certain-countriesregions"></a>某些国家/地区的特定要求

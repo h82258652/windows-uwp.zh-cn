@@ -1,30 +1,30 @@
 ---
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: 在 Microsoft Store 提交 API 中使用这些方法来检索到合作伙伴中心帐户注册的应用的数据。
+description: 使用 Microsoft Store 提交 API 中的这些方法检索已注册到合作伙伴中心帐户的应用的数据。
 title: 获取应用数据
 ms.date: 02/28/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 应用数据
 ms.localizationpriority: medium
 ms.openlocfilehash: cfbe8df46f51b41ccdd840f609caf2c593735e1f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372139"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853344"
 ---
 # <a name="get-app-data"></a>获取应用数据
 
-在 Microsoft Store 提交 API 中使用以下方法以获取要在合作伙伴中心帐户中的现有应用程序数据。 有关 Microsoft Store 提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+使用 Microsoft Store 提交 API 中的以下方法获取合作伙伴中心帐户中现有应用的数据。 有关 Microsoft Store 提交 API 的介绍（包括使用 API 的先决条件），请参阅[使用 Microsoft Store 服务创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
-可以使用这些方法之前，应用必须已存在在合作伙伴中心帐户中。 若要创建或管理应用提交，请参阅 [管理应用提交](manage-app-submissions.md) 中的方法。
+在可以使用这些方法之前，应用必须已存在于合作伙伴中心帐户中。 若要创建或管理应用提交，请参阅 [管理应用提交](manage-app-submissions.md) 中的方法。
 
-| 方法 | URI                                                                                             | 描述                                                 |
+| 方法 | URI                                                                                             | 说明                                                 |
 |------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [获取为所有应用数据](get-all-apps.md)               |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [获取一个特定的应用程序的数据](get-an-app.md)                |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [获取外接程序的应用](get-add-ons-for-an-app.md)         |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [获取包航班的应用](get-flights-for-an-app.md) |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [获取所有应用的数据](get-all-apps.md)               |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [获取特定应用的数据](get-an-app.md)                |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [获取应用程序的外接程序](get-add-ons-for-an-app.md)         |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [获取应用的包裹航班](get-flights-for-an-app.md) |
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -62,13 +62,13 @@ ms.locfileid: "66372139"
 
 此资源具有以下值。
 
-| 值           | 在任务栏的搜索框中键入    | 描述       |
+| 值           | 类型    | 说明       |
 |-----------------|---------|---------------------|
 | id            | string  | 应用的应用商店 ID。 有关应用商店 ID 的详细信息，请参阅[查看应用标识详细信息](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
 | primaryName   | string  | 应用的显示名称。      |
 | packageFamilyName | string  | 应用的程序包系列名称。      |
 | packageIdentityName          | string  | 应用的程序包标识名称。                       |
-| publisherName       | string  | 与应用相关联的 Windows 发布者 ID。 这对应于**发布服务器标识/包/** 显示的值[应用标识](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)合作伙伴中心中的应用程序页。       |
+| publisherName       | string  | 与应用相关联的 Windows 发布者 ID。 这对应于合作伙伴中心应用的[应用标识](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)页上显示的 "**包/标识/发布服务器**" 值。       |
 | firstPublishedDate      | string  | 应用的首次发布日期，采用 ISO 8601 格式。   |
 | lastPublishedApplicationSubmission       | 对象 | 提供有关应用的上次发布提交信息的 [提交资源](#submission_object)。    |
 | pendingApplicationSubmission        | 对象  |  提供有关应用的当前挂起提交信息的 [提交资源](#submission_object)。   |   
@@ -89,7 +89,7 @@ ms.locfileid: "66372139"
 
 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述         |
+| 值           | 类型    | 说明         |
 |-----------------|---------|----------------------|
 | inAppProductId            | string  | 加载项的应用商店 ID。 此值由应用商店提供。 应用商店 ID 的一个示例是 9NBLGGH4TNMP。   |
 
@@ -121,9 +121,9 @@ ms.locfileid: "66372139"
 
 此资源具有以下值。
 
-| ReplTest1           | 在任务栏的搜索框中键入    | 描述           |
+| 值           | 类型    | 说明           |
 |-----------------|---------|------------------------|
-| flightId            | string  | 软件包外部测试版的 ID。 通过合作伙伴中心提供此值。  |
+| flightId            | string  | 软件包外部测试版的 ID。 此值由合作伙伴中心提供。  |
 | friendlyName           | string  | 软件包外部测试版的名称，如开发人员所指定。   |
 | lastPublishedFlightSubmission       | 对象 | 提供有关软件包外部测试版的上次发布提交信息的 [提交资源](#submission_object)。   |
 | pendingFlightSubmission        | 对象  |  提供有关软件包外部测试版的当前挂起提交信息的[提交资源](#submission_object)。  |    
@@ -148,7 +148,7 @@ ms.locfileid: "66372139"
 
 此资源具有以下值。
 
-| ReplTest1              | 在任务栏的搜索框中键入   | 描述               |
+| 值              | 类型   | 说明               |
 |--------------------|--------|---------------------------|
 | id                 | string | 提交的 ID。 |
 | resourceLocation   | string | 可追加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 请求 URI 的相对路径，用于检索提交的完整数据。 |
@@ -156,9 +156,9 @@ ms.locfileid: "66372139"
  
 ## <a name="related-topics"></a>相关主题
 
-* [创建和管理使用 Microsoft Store 服务的提交](create-and-manage-submissions-using-windows-store-services.md)
-* [管理使用 Microsoft Store 提交 API 提交应用程序](manage-app-submissions.md)
+* [使用 Microsoft Store services 创建和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [使用 Microsoft Store 提交 API 管理应用提交](manage-app-submissions.md)
 * [获取所有应用](get-all-apps.md)
 * [获取应用](get-an-app.md)
-* [获取外接程序的应用](get-add-ons-for-an-app.md)
-* [获取包航班的应用](get-flights-for-an-app.md)
+* [获取应用程序的外接程序](get-add-ons-for-an-app.md)
+* [获取应用的包裹航班](get-flights-for-an-app.md)

@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 37d0ca71adf43891628a02d60d6873e7934d749b
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258190"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853136"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>屏幕大小和断点
 
@@ -40,21 +40,21 @@ UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、�
 </thead>
 <tbody>
 <tr class="even">
-<td style="vertical-align:top;">小</td>
+<td style="vertical-align:top;">小型</td>
 <td style="vertical-align:top;">640px 或更小</td>
 <td style="vertical-align:top;">4&quot; 到 6&quot;；20&quot; 到 65&quot;</td>
 <td style="vertical-align:top;">手机、电视</td>
 <td style="vertical-align:top;">320x569、360x640、480x854</td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;">中</td>
+<td style="vertical-align:top;">中等</td>
 <td style="vertical-align:top;">641px 到 1007px</td>
 <td style="vertical-align:top;">7&quot; 到 12&quot;</td>
 <td style="vertical-align:top;">平板电脑</td>
 <td style="vertical-align:top;">960x540</td>
 </tr>
 <tr class="even">
-<td style="vertical-align:top;">大</td>
+<td style="vertical-align:top;">大型</td>
 <td style="vertical-align:top;">1008px 或更大</td>
 <td style="vertical-align:top;">13&quot; 以及更大</td>
 <td style="vertical-align:top;">电脑、笔记本电脑、Surface Hub</td>
@@ -76,7 +76,7 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 
 ## <a name="general-recommendations"></a>常规建议
 
-### <a name="small"></a>小
+### <a name="small"></a>小型
 - 将左右窗口边距设置为 12px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。
 - 窗口底部的扩展坞[应用栏](../controls-and-patterns/app-bars.md)用于改进可访问性。
 - 一次使用一个列/区域。
@@ -84,7 +84,7 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于覆盖模式，以节省屏幕空间。
 - 如果你使用的是[大纲细节模式](../controls-and-patterns/master-details.md)，请使用堆叠演示模式来节省屏幕空间。
 
-### <a name="medium"></a>中
+### <a name="medium"></a>中等
 - 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。
 - 将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。
 - 使用最多两个列/区域。
@@ -92,7 +92,7 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于长条模式，以便始终显示窄带的图标。
 - 请考虑针对[电视体验](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)进行进一步定制。
 
-### <a name="large"></a>大
+### <a name="large"></a>大型
 - 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。
 - 将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。
 - 使用最多三个列/区域。

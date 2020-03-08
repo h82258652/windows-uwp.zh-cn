@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 29357746b6fca2c6aae52e9516a5b7dc2fca8ef2
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684622"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853154"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>将 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
@@ -30,7 +30,7 @@ ms.locfileid: "75684622"
 ## <a name="xaml-namespace-prefix-declarations"></a>XAML 命名空间前缀声明
 
 
-如果你在视图中使用自定义类型的实例（可能是视图模型实例或值转换器），则 XAML 标记中将具有 XAML 命名空间前缀声明。 它们的语法在 Windows Phone Silverlight 和 UWP 之间有所不同。 下面提供了一些示例：
+如果你在视图中使用自定义类型的实例（可能是视图模型实例或值转换器），则 XAML 标记中将具有 XAML 命名空间前缀声明。 它们的语法在 Windows Phone Silverlight 和 UWP 之间有所不同。 下面是一些示例：
 
 ```xml
     xmlns:ContosoTradingCore="clr-namespace:ContosoTradingCore;assembly=ContosoTradingCore"
@@ -76,7 +76,7 @@ ms.locfileid: "75684622"
 
 有时只需修复少量的强制性代码，例如更改参数类型。 其他时候，你将需要使用 UWP Api，而不是 .NET Api for Windows 运行时3.x 应用。 若要确定支持的 Api，请将此移植指南的其余部分与 .Net 结合使用，以[用于 Windows 运行时3.x 应用概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))和[Windows 运行时参考](https://docs.microsoft.com/uwp/api/)。
 
-并且，如果你希望转到项目构建阶段，可以注释或去掉任何非必要的代码。 然后一次一个问题进行迭代，并参考本部分中的以下主题（和上一个主题：[疑难解答](wpsl-to-uwp-troubleshooting.md)），直到消除所有构建和运行时问题并且完成移植。
+并且，如果你希望转到项目构建阶段，可以注释或去掉任何非必要的代码。 然后一次一个问题进行迭代，并参考本部分中的以下主题（和上一主题：[疑难解答](wpsl-to-uwp-troubleshooting.md)），直到消除所有生成和运行时问题并且完成移植。
 
 ## <a name="adaptiveresponsive-ui"></a>自适应/响应式 UI
 
@@ -187,7 +187,7 @@ UWP 应用的绑定相关的功能当前具有以下限制：
 
 Windows Phone Silverlight 应用使用在**Microsoft.** control 命名空间和**system.web**命名空间中定义的控件。 XAML UWP 应用使用 [**Windows.UI.Xaml.Controls**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls) 命名空间中定义的控件。 UWP 中 XAML 控件的体系结构和设计与 Windows Phone Silverlight 控件几乎相同。 但是，进行了一些更改以改进可用的控件组并将它们与 Windows 应用统一。 以下是具体示例。
 
-| 控件名称 | “更改” |
+| 控件名称 | 更改 |
 |--------------|--------|
 | ApplicationBar | [Page.TopAppBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.topappbar) 属性。 |
 | ApplicationBarIconButton | UWP 等效项是 [Glyph](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon.glyph) 属性。 PrimaryCommands 是 CommandBar 的内容属性。 XAML 分析器将元素的内部 xml 解释为其内容属性的值。 |
@@ -197,7 +197,7 @@ Windows Phone Silverlight 应用使用在**Microsoft.** control 命名空间和*
 | 带有分组数据的 LongListSelector | Windows Phone Silverlight LongListSelector 以两种方式运行，可在音乐会中使用。 第一，它可以显示按某个键分组的数据，例如按首字母分组的名称列表。 第二，它可以在两个语义视图之间“缩放”：项（例如名称）的分组列表和只有组键（例如首字母）本身的列表。 借助 UWP，你可以按照[列表和网格视图控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists)进行操作来显示分组数据。 |
 | 带有平面数据的 LongListSelector | 出于性能原因，在非常长的列表情况下，建议使用 LongListSelector 而不是 Windows Phone Silverlight 列表框，即使对于非分组的非分组数据也是如此。 在 UWP 应用中，[GridView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 优先用于项的长列表，无论数据是否适合分组。 |
 | Panorama | Windows Phone Silverlight 全景控件映射到用于集线器控件的[Windows 运行时的应用程序](https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub)和中心控件指南。 <br/> 请注意，Panorama 控件从最后一部分环绕到第一部分，并且其背景图像相对于具体部分在视差中移动。 [Hub](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) 部分不会环绕，并且不使用视差。 |
-| 透视表 | Windows Phone Silverlight 透视控件的 UWP 等效[项为 ""。](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) 它适用于所有设备系列。 |
+| 透视 | Windows Phone Silverlight 透视控件的 UWP 等效[项为 ""。](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) 它适用于所有设备系列。 |
 
 **请注意**   PointerOver 视觉对象状态适用于 Windows 10 应用中的自定义样式/模板，但在 Windows Phone Silverlight 应用中不适用。 现有的自定义样式/模板可能不适用于 Windows 10 应用，其中包括所使用的系统资源密钥，更改了使用的可视状态集，以及对 Windows 10 默认样式/模板所做的性能改进。 建议为 Windows 10 编辑控件默认模板的全新副本，然后将样式和模板自定义重新应用到该副本。
 
@@ -219,9 +219,9 @@ Windows Phone Silverlight 应用使用**CultureInfo**类来帮助全球化应用
 
 当你阅读到有关 UWP 媒体和图形的内容时，请记住 Windows 设计准则鼓励尽量减少任何多余的内容，包括图形的复杂度和混乱度。 Windows 设计以整洁清晰的视觉效果、版式和动作为特征。 如果你的应用遵循相同的准则，那么它看起来将更像内置应用。
 
-Windows Phone Silverlight 具有不存在于 UWP 中的**RadialGradientBrush**类型，但其他[**画笔**](/uwp/api/Windows.UI.Xaml.Media.Brush)类型为。 在某些情况下，你将可以使用位图获得类似的效果。 请注意，你可以使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP [创建径向渐变画笔](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush)。
+Windows Phone Silverlight 具有不存在于 UWP 中的**RadialGradientBrush**类型，但其他[**画笔**](/uwp/api/Windows.UI.Xaml.Media.Brush)类型为。 在某些情况下，你将可以使用位图获得类似的效果。 请注意，你可以使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/how-to-create-a-radial-gradient-brush) 中的 Direct2D 和 XAML C++ UWP [创建径向渐变画笔](https://docs.microsoft.com/windows/desktop/directx)。
 
-Windows Phone Silverlight 具有**OpacityMask**属性，但该属性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)类型的成员。 在某些情况下，你将可以使用位图获得类似的效果。 并且你可以使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP 应用[创建不透明蒙板](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview)。 但是，**OpacityMask** 的常见用例是使用适应浅色和深色主题的单个位图。 对于矢量图形，你可以使用与主题有关的系统画笔（例如下面所示的饼图）。 但是，若要创建与主题有关的位图（例如下面所示的复选标记），则需要使用其他方法。
+Windows Phone Silverlight 具有**OpacityMask**属性，但该属性不是 UWP [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)类型的成员。 在某些情况下，你将可以使用位图获得类似的效果。 并且你可以使用 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/opacity-masks-overview) 中的 Direct2D 和 XAML C++ UWP 应用[创建不透明蒙板](https://docs.microsoft.com/windows/desktop/directx)。 但是，**OpacityMask** 的常见用例是使用适应浅色和深色主题的单个位图。 对于矢量图形，你可以使用与主题有关的系统画笔（例如下面所示的饼图）。 但是，若要创建与主题有关的位图（例如下面所示的复选标记），则需要使用其他方法。
 
 ![与主题有关的位图](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
@@ -257,7 +257,7 @@ Windows Phone Silverlight 具有**OpacityMask**属性，但该属性不是 UWP�
     </UIElement.Clip>
 ```
 
-请注意，你可以凭借 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 中的 Direct2D 和 XAML C++ UWP 应用[使用任意几何图形作为层中的蒙板](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview)。
+请注意，你可以凭借 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-layers-overview) 中的 Direct2D 和 XAML C++ UWP 应用[使用任意几何图形作为层中的蒙板](https://docs.microsoft.com/windows/desktop/directx)。
 
 ## <a name="navigation"></a>导航
 
@@ -364,7 +364,7 @@ UWP 应用的磁贴的行为类似于 Windows Phone Silverlight 应用的实时�
 
 Windows Phone Silverlight 应用和 Windows 10 应用的不同之处在于它们对 UI 元素的大小和布局进行抽象，远离设备实际的物理大小和分辨率。 Windows Phone Silverlight 应用使用视图像素来实现此目的。 对于 Windows 10，视图像素的概念已被优化为有效像素。 以下是该术语的解释、它的意义以及它所提供的额外价值。
 
-术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，你可以优化用户的体验。
+术语“分辨率”是指像素密度的度量，而不是通常认为的像素计数。 “有效分辨率”是构成图像或字形的物理像素对肉眼解析的方法，因为设备的观看距离和物理像素大小之间有差异（像素密度是物理像素大小的倒数）。 有效分辨率是构建周围体验的良好指标，因为它是以用户为中心的。 通过了解所有因素并控制 UI 元素的大小，即可优化用户的体验。
 
 对于 Windows Phone Silverlight 应用程序而言，所有电话屏幕都是完全480的视图像素宽，无例外，无论屏幕的物理像素数量如何，以及像素密度或物理大小是多少。 这意味着，具有 `Width="48"` 的**Image**元素将是可运行 Windows Phone Silverlight 应用的任何手机的屏幕宽度的十分之一。
 
@@ -378,7 +378,7 @@ Windows Phone Silverlight 应用和 Windows 10 应用的不同之处在于它们
 
 如果具有繁复的图案，则可能希望在更多尺寸中提供资源。 如果要从矢量图像开始，则生成采用任意比例系数的高质量资源相对容易。
 
-建议你不要尝试支持所有规模因素，但 Windows 10 应用的规模因素的完整列表为100%、125%、150%、200%、250%、300% 和400%。 如果你支持这些比例系数，应用商店将针对每台设备选取大小适合的资源，然后将仅下载这些资源。 应用商店将根据设备的 DPI 选择要下载的资源。
+建议你不要尝试支持所有规模因素，但 Windows 10 应用的规模因素的完整列表为100%、125%、150%、200%、250%、300% 和400%。 如果你支持这些比例系数，应用商店将针对每台设备选取大小适合的资源，然后将仅下载这些资源。 应用商店将根据设备的 DPI 选择要下载的资产。
 
 有关详细信息，请参阅[适用于 UWP 应用的响应式设计基础知识](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)。
 
