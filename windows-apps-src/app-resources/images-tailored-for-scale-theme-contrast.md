@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aadcb8dc3d414db7951dc571855e01bddb03a99
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683640"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852534"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>加载为比例、主题、高对比度和其他定制的图像和资产
 你的应用可以加载为[显示比例系数](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、主题、高对比度和其他运行时上下文定制的图像资源文件（或其他资产文件）。 这些图像可以从强制性代码或 XAML 标记引用，如作为 **Image** 的 **Source** 属性。 它们还可以显示在应用包清单源文件（`Package.appxmanifest` 文件）中 &mdash; 例如，作为 Visual Studio 清单设计器的“视觉资源”选项卡上应用图标的值 &mdash; 或显示在磁贴和 toast 上。 通过在图像的文件名称中使用限定符，并选择性地在 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 的帮助下动态加载它们，你可以加载与用户的显示比例、主题、高对比度、语言和其他上下文的运行时设置最匹配的最合适图像文件。
@@ -40,7 +40,7 @@ ms.locfileid: "75683640"
 </pre>
 </blockquote>
 
-接下来举例说明针对不同的显示比例、主题和高对比度设置提供一个图像资源名称为 `/Assets/Images/logo.png` 的变体。 此示例使用文件夹命名。
+接下来举例说明针对不同的显示比例、主题和高对比度设置提供一个图像资源名称为 &mdash; 的变体。 此示例使用文件夹命名。
 
 <blockquote>
 <pre>
@@ -86,7 +86,7 @@ var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsy
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-对于这些示例中所示的任何方案，请使用推断 [UriKind](https://docs.microsoft.com/dotnet/api/system.urikind) 的 [Uri 构造函数](https://docs.microsoft.com/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)重载。 指定一个包括方案和颁发机构的有效的绝对 URI，或者如上述示例所示让颁发机构默认为应用包。
+对于这些示例中所示的任何方案，请使用推断 [UriKind](https://docs.microsoft.com/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) 的 [Uri 构造函数](https://docs.microsoft.com/dotnet/api/system.urikind)重载。 指定一个包括方案和颁发机构的有效的绝对 URI，或者如上述示例所示让颁发机构默认为应用包。
 
 注意在这些示例 URI 中，方案（“`ms-appx`”或“`ms-appx-web`”）后依次跟随“`://`”和绝对路径。 在绝对路径中，前导“`/`”导致从包的根解释路径。
 
@@ -167,9 +167,9 @@ this.myXAMLImageElement.Source = new Windows.UI.Xaml.Media.Imaging.BitmapImage(n
 ```
 
 ## <a name="updating-images-in-response-to-qualifier-value-change-events"></a>响应限定符值更改事件更新图像
-你运行的应用可以响应影响默认资源上下文中的限定符值的系统设置更改。 其中任何系统设置在 [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 上调用 [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) 事件。
+你运行的应用可以响应影响默认资源上下文中的限定符值的系统设置更改。 其中任何系统设置在 [**ResourceContext.QualifierValues**](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live) 上调用 [**MapChanged**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 事件。
 
-为了响应此事件，可以在 [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 默认使用的默认 **ResourceContext** 的帮助下重新加载图像。
+为了响应此事件，可以在ResourceManager[**默认使用的默认**ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 的帮助下重新加载图像。
 
 ```csharp
 public MainPage()

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: 适用于 Windows 桌面的设备门户
-description: 了解 Windows 设备门户如何在 Windows 桌面上打开诊断和自动化。
+description: 了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。
 ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10、uwp、设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681968"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853424"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
-Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗口与你的桌面进行交互。 你可以使用设备门户执行以下操作：
+Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗口与你的桌面进行交互。 你可以使用 Device Portal 执行以下操作：
 - 查看并操作正在运行的进程的列表
 - 安装、删除、启动和终止应用
 - 更改 WLAN 配置文件、查看信号强度 并查看 ipconfig
@@ -65,25 +65,25 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 - 调试
 - Windows 事件跟踪 (ETW)
 - 性能跟踪
-- “设备管理器”，
-- 网络
+- 设备管理器
+- 联网
 - 故障数据
 - 功能
 - 混合现实
 - 流式安装调试程序
-- 位置
+- Location
 - Scratch
 
 ## <a name="more-device-portal-options"></a>更多设备门户选项
 
 ### <a name="registry-based-configuration-for-device-portal"></a>设备门户的基于注册表的配置
 
-如果你希望为设备门户选择端口号（如 80 和 443），你可以设置以下 RegKey：
+如果你希望为 Device Portal 选择端口号（如 80 和 443），你可以设置以下 RegKey：
 
 - 在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
     - `UseDynamicPorts`：必填的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
-    - `HttpPort`：必填的 DWORD。 包含设备门户将在其上侦听 HTTP 连接的端口号。    
-    - `HttpsPort`：必填的 DWORD。 包含设备门户将在其上侦听 HTTPS 连接的端口号。
+    - `HttpPort`：必填的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。    
+    - `HttpsPort`：必填的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
     
 在相同的 RegKey 路径下，你也可以关闭身份验证要求：
 - `UseDefaultAuthorizer`已禁用的  - `0`，`1` 启用。  

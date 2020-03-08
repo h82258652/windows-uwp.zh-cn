@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: d64d5c544f6ec9e1356cc024e634286336dc9f91
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506791"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852565"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
 
@@ -38,7 +38,7 @@ ms.locfileid: "77506791"
 
 以下部分针对如何使用 [AdControl](banner-ads.md) 在应用中实施[横幅广告](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)提供了一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 建议在应用中实施横幅广告时遵循下列最佳做法：
 
@@ -90,7 +90,7 @@ ms.locfileid: "77506791"
 
 以下部分针对如何使用 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 在应用中实施间隙视频广告和间隙横幅广告提供一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是，请务必记住你的应用评分与收益密切相关。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 建议你在应用中实施间隙广告时遵循下列最佳做法：
 

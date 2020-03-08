@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
 ms.openlocfilehash: 3621e9c6af0daa84a9762989a14c79f35471b73c
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787112"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852811"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
 
 Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要推出你的应用的市场，按市场或市场组自定义许多[定价和可用性](set-app-pricing-and-availability.md)功能。
 
-若要帮助使您的应用程序在世界各地适用于客户的信息，请参阅[全球化](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)并[使你的应用程序可本地化](../design/globalizing/prepare-your-app-for-localization.md)。
+有关帮助使应用适用于全球各地的客户的信息，请参阅[全球化准则](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)，并[使应用程序可本地化](../design/globalizing/prepare-your-app-for-localization.md)。
 
 > [!NOTE]
 > 虽然本主题提及应用，但加载项提交的市场选择也使用同样的过程。
@@ -34,19 +34,19 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 请注意，此处的选择仅适用于新获取的应用；如果客户已在某个市场中获取你的应用，而你之后删除了该市场，则已拥有该该市场中应用的用户可继续使用该应用，但不会获得你提交的更新，且该市场中的新客户无法获得该应用。
 
 > [!IMPORTANT]
-> 它是满足任何本地法律要求，您有责任，即使此处或在合作伙伴中心中未列出这些要求。
+> 你需要负责满足任何本地法律要求，即使这些要求未在此处或合作伙伴中心列出。
 
 请记住，即使你选择了所有市场，本地法律和限制或其他因素可能会阻止某些应用列入一些国家和地区。 此外，某些市场可能有与年龄分级相关的特定要求。 如果你的应用不满足这些要求，我们将无法在该市场中提供你的应用。 有关详细信息，请参阅[年龄分级](age-ratings.md)。
 
 > [!NOTE]
-> 对于包含 Windows 8 或 Windows 8.1 作为目标的包的以前发布的应用，一些单个市场被视为单一"世界"市场。 有关详细信息，请参阅 [Windows 8.x 的“世界其他地区”市场](#rest-of-world-markets-for-windows-8x)。
+> 对于以前发布的应用（包括面向 Windows 8 或 Windows 8.1 的包），一些单独的市场被视为单个 "世界" 市场。 有关详细信息，请参阅 [Windows 8.x 的“世界其他地区”市场](#rest-of-world-markets-for-windows-8x)。
 
 你还将看到一个复选框，指示是否向应用商店将来可能添加的任何市场推出你的应用。 如果选中此框，我们将来添加新市场时，你的提交的基本价格和公开发布日期将用于你在这些市场的应用。 如果不希望这样做，可取消选中该框，我们将不会在未来添加的市场中发布你的应用（但你可在将来随时添加这些市场）。
  
 
-## <a name="microsoft-store-consumer-markets"></a>Microsoft Store 个人消费市场
+## <a name="microsoft-store-consumer-markets"></a>Microsoft Store 使用者市场
 
-可以选择在以下一个或多个市场中列出的应用（或加载项）。 有一个星号市场支持 Xbox One; 上的 Microsoft Store你将看到**Xbox**在其姓名旁**市场选择**弹出窗口。
+可以选择在以下一个或多个市场中列出的应用（或加载项）。 带有星号的市场支持 Xbox One 上的 Microsoft Store;你将在**市场选择**弹出窗口中的名称旁看到**Xbox** 。
 
 
 <table>
@@ -61,16 +61,16 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>美属萨摩亚</td>
     <td>安道尔</td>
     <td>安哥拉</td>
-    <td>安圭拉岛</td>
+    <td>安圭拉</td>
   </tr>
   <tr>
-    <td>南极洲</td>
+    <td>南极</td>
     <td>安提瓜和巴布达</td>
     <td>阿根廷</td>
     <td>亚美尼亚</td>
   </tr>
   <tr>
-    <td>阿鲁巴岛</td>
+    <td>阿鲁巴</td>
     <td>澳大利亚</td>
     <td>奥地利</td>
     <td>阿塞拜疆</td>
@@ -78,7 +78,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   <tr>
     <td>巴哈马</td>
     <td>巴林</td>
-    <td>孟加拉国</td>
+    <td>孟加拉</td>
     <td>巴巴多斯</td>
   </tr>
   <tr>
@@ -88,7 +88,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>贝宁</td>
   </tr>
   <tr>
-    <td>百慕大</td>
+    <td>百慕大群岛</td>
     <td>不丹</td>
     <td>玻利维亚</td>
     <td>博内尔岛</td>
@@ -121,10 +121,10 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>乍得</td>
     <td>智利</td>
     <td>中国</td>
-    <td>圣延岛</td>
+    <td>圣诞岛</td>
   </tr>
   <tr>
-    <td>科科斯群岛</td>
+    <td>科科斯(基林)群岛</td>
     <td>哥伦比亚 *</td>
     <td>科摩罗</td>
     <td>刚果</td>
@@ -167,13 +167,13 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   </tr>
   <tr>
     <td>法属圭亚那</td>
-    <td>法属玻里尼西亚</td>
+    <td>法属波利尼西亚</td>
     <td>法属南半球和南极洲领地</td>
     <td>加蓬</td>
   </tr>
   <tr>
     <td>冈比亚</td>
-    <td>格鲁吉亚</td>
+    <td>佐治亚州</td>
     <td>德国 *</td>
     <td>加纳</td>
   </tr>
@@ -184,7 +184,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>格林纳达</td>
   </tr>
   <tr>
-    <td>瓜德罗普岛</td>
+    <td>瓜德罗普</td>
     <td>关岛</td>
     <td>危地马拉</td>
     <td>格恩西岛</td>
@@ -196,7 +196,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>海地</td>
   </tr>
   <tr>
-    <td>赫德岛和麦克唐纳群岛</td>
+    <td>赫德和麦克唐纳群岛</td>
     <td>洪都拉斯</td>
     <td>香港特别行政区 *</td>
     <td>匈牙利 *</td>
@@ -209,14 +209,14 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   </tr>
   <tr>
     <td>爱尔兰 *</td>
-    <td>曼岛</td>
+    <td>马恩岛</td>
     <td>以色列 *</td>
     <td>意大利 *</td>
   </tr>
   <tr>
     <td>牙买加</td>
     <td>日本 *</td>
-    <td>泽西</td>
+    <td>泽西岛</td>
     <td>约旦</td>
   </tr>
   <tr>
@@ -227,7 +227,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   </tr>
   <tr>
     <td>科威特</td>
-    <td>吉尔吉斯坦</td>
+    <td>吉尔吉斯斯坦</td>
     <td>老挝</td>
     <td>拉脱维亚</td>
   </tr>
@@ -256,7 +256,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>马绍尔群岛</td>
   </tr>
   <tr>
-    <td>马提尼克</td>
+    <td>马提尼克岛</td>
     <td>毛里塔尼亚</td>
     <td>毛里求斯</td>
     <td>马约特</td>
@@ -329,9 +329,9 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   </tr>
   <tr>
     <td>法属圣马丁</td>
-    <td>圣皮埃尔和密克隆岛</td>
+    <td>圣皮埃尔和密克隆群岛</td>
     <td>圣文森特和格林纳丁斯</td>
-    <td>萨摩亚</td>
+    <td>萨摩亚群岛</td>
   </tr>
   <tr>
     <td>圣马力诺</td>
@@ -349,24 +349,24 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>荷属圣马丁</td>
     <td>斯洛伐克 *</td>
     <td>斯洛文尼亚</td>
-    <td>所罗门群岛</td>
+    <td>索罗门群岛</td>
   </tr>
   <tr>
     <td>索马里</td>
     <td>南非 *</td>
-    <td>南乔治亚和南德桑威奇群岛</td>
+    <td>南乔治亚和南桑德威奇群岛</td>
     <td>西班牙 *</td>
   </tr>
   <tr>
     <td>斯里兰卡</td>
     <td>苏里南</td>
-    <td>斯瓦尔巴和扬马延</td>
+    <td>斯瓦尔巴岛和扬马延岛</td>
     <td>斯威士兰</td>
   </tr>
   <tr>
     <td>瑞典 *</td>
     <td>瑞士 *</td>
-    <td>中国台湾 *</td>
+    <td>台湾 *</td>
     <td>塔吉克斯坦</td>
   </tr>
   <tr>
@@ -388,8 +388,8 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>图瓦卢</td>
   </tr>
   <tr>
-    <td>美国美属外岛</td>
-    <td>美国美属维尔京群岛</td>
+    <td>美属外岛</td>
+    <td>美属维尔京群岛</td>
     <td>乌干达</td>
     <td>乌克兰</td>
   </tr>
@@ -428,7 +428,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 
 &nbsp;
 
-| 国家/地区       | 付款方式  | 商业扩张调整 | 生效日期 |
+| 国家/地区       | 支付方法  | 商业扩张调整 | 生效日期 |
 |----------------------|-----------------|-------------------------------|----------------|
 | 阿根廷            | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 澳大利亚            | 礼品卡       | 2.24%                         | 2016 年 3 月     |
@@ -442,10 +442,10 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 | 捷克共和国       | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 丹麦              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 芬兰              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
-| 法国               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
-| 德国              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| France               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| Germany              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 希腊               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
-| 香港特别行政区            | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| 香港            | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 匈牙利              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 印度                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 爱尔兰              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
@@ -476,9 +476,9 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x 的“世界其他地区”市场
 
-如果您以前发布的应用程序包含包面向 Windows 8.x，务必要注意许多市场被视为一个针对 Windows 上使用应用商店的客户的单一"世界"市场 8.x，即使这些信息显示为单独市场在合作伙伴中心。
+如果你以前发布的应用包含面向 Windows 8.x 的包，请注意，许多市场都被视为在 Windows 8.x 上使用应用商店的客户的一个 "世界上世界" 市场，即使它们显示为单独的市场在合作伙伴中心。
 
-如果将默认市场选择提交您的应用程序时，无需担心这一点，并且您的应用程序将可供所有可能的市场。 但是，如果你想要排除某些市场，保留记住，不包括甚至您的应用程序将不可用在这些"世界"市场方式之一*任何*"世界"的市场的 Windows 8 或 Windows 8.1 上的客户。
+如果在提交应用时保留默认选择市场，则无需担心这一点，你的应用将可供所有可能的市场使用。 但是，如果你想要排除某些市场，请记住，即使是其中一种 "世界各地" 市场，也不能将你的应用程序提供给 Windows 8 或 Windows 8.1 上的客户的*任何*"世界上" 市场。
 
 包含在 Windows 8.x 的“世界其他地区”中的市场如下：
 
@@ -492,25 +492,25 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   <tr>
     <td>安道尔</td>
     <td>安哥拉</td>
-    <td>安圭拉岛</td>
-    <td>南极洲</td>
+    <td>安圭拉</td>
+    <td>南极</td>
   </tr>
   <tr>
     <td>安提瓜和巴布达</td>
     <td>亚美尼亚</td>
-    <td>阿鲁巴岛</td>
+    <td>阿鲁巴</td>
     <td>阿塞拜疆</td>
   </tr>
   <tr>
     <td>巴哈马</td>
-    <td>孟加拉国</td>
+    <td>孟加拉</td>
     <td>巴巴多斯</td>
     <td>白俄罗斯</td>
   </tr>
   <tr>
     <td>伯利兹</td>
     <td>贝宁</td>
-    <td>百慕大</td>
+    <td>百慕大群岛</td>
     <td>不丹</td>
   </tr>
   <tr>
@@ -538,8 +538,8 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>乍得</td>
   </tr>
   <tr>
-    <td>圣延岛</td>
-    <td>科科斯群岛</td>
+    <td>圣诞岛</td>
+    <td>科科斯(基林)群岛</td>
     <td>科摩罗</td>
     <td>刚果</td>
   </tr>
@@ -568,20 +568,20 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>法属圭亚那</td>
   </tr>
   <tr>
-    <td>法属玻里尼西亚</td>
+    <td>法属波利尼西亚</td>
     <td>法属南半球和南极洲领地</td>
     <td>加蓬</td>
     <td>冈比亚</td>
   </tr>
   <tr>
-    <td>格鲁吉亚</td>
+    <td>佐治亚州</td>
     <td>加纳</td>
     <td>直布罗陀</td>
     <td>格陵兰</td>
   </tr>
   <tr>
     <td>格林纳达</td>
-    <td>瓜德罗普岛</td>
+    <td>瓜德罗普</td>
     <td>关岛</td>
     <td>危地马拉</td>
   </tr>
@@ -593,19 +593,19 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   </tr>
   <tr>
     <td>海地</td>
-    <td>赫德岛和麦克唐纳群岛</td>
+    <td>赫德和麦克唐纳群岛</td>
     <td>洪都拉斯</td>
     <td>冰岛</td>
   </tr>
   <tr>
-    <td>曼岛</td>
+    <td>马恩岛</td>
     <td>牙买加</td>
-    <td>泽西</td>
+    <td>泽西岛</td>
     <td>肯尼亚</td>
   </tr>
   <tr>
     <td>基里巴斯</td>
-    <td>吉尔吉斯坦</td>
+    <td>吉尔吉斯斯坦</td>
     <td>老挝</td>
     <td>莱索托</td>
   </tr>
@@ -623,7 +623,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   </tr>
   <tr>
     <td>马绍尔群岛</td>
-    <td>马提尼克</td>
+    <td>马提尼克岛</td>
     <td>毛里塔尼亚</td>
     <td>毛里求斯</td>
   </tr>
@@ -677,9 +677,9 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   </tr>
   <tr>
     <td>法属圣马丁</td>
-    <td>圣皮埃尔和密克隆岛</td>
+    <td>圣皮埃尔和密克隆群岛</td>
     <td>圣文森特和格林纳丁斯</td>
-    <td>萨摩亚</td>
+    <td>萨摩亚群岛</td>
   </tr>
   <tr>
     <td>圣马力诺</td>
@@ -690,13 +690,13 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   <tr>
     <td>塞拉利昂</td>
     <td>荷属圣马丁</td>
-    <td>所罗门群岛</td>
+    <td>索罗门群岛</td>
     <td>索马里</td>
   </tr>
   <tr>
-    <td>南乔治亚和南德桑威奇群岛</td>
+    <td>南乔治亚和南桑德威奇群岛</td>
     <td>苏里南</td>
-    <td>斯瓦尔巴和扬马延</td>
+    <td>斯瓦尔巴岛和扬马延岛</td>
     <td>斯威士兰</td>
   </tr>
   <tr>
@@ -714,8 +714,8 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   <tr>
     <td>图瓦卢</td>
     <td>乌干达</td>
-    <td>美国美属外岛</td>
-    <td>美国美属维尔京群岛</td>
+    <td>美属外岛</td>
+    <td>美属维尔京群岛</td>
   </tr>
   <tr>
     <td>乌兹别克斯坦</td>
@@ -738,4 +738,4 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 </table>
 
 > [!NOTE]
-> 国家/地区和区域可以在其中注册开发人员帐户的列表，请参阅[帐户类型、 位置和费用](account-types-locations-and-fees.md)。
+> 有关可注册开发人员帐户的国家和地区的列表，请参阅[帐户类型、位置和费用](account-types-locations-and-fees.md)。
