@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 679dde6802a2c0d27444fbcda040f2ba19039457
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259262"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852791"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 与客户互动
 
@@ -95,7 +95,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
     > [!NOTE]
     > 如果项目已经包含来自 SDK 的较早 MSI 安装的库引用，请从项目中删除这些引用。 这些引用的旁边将出现警告图标，因为它们引用的库已在之前的步骤中删除。
 
-4. 在 Visual Studio 中，依次单击**项目**和**管理 NuGet 包**。
+4. 在 Visual Studio 中，依次单击“项目”和“管理 NuGet 包”。
 
 5. 在搜索框中，键入 **Microsoft.Services.Store.Engagement** 并安装 Microsoft.Services.Store.Engagement 包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
@@ -113,7 +113,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 通过 MSI 安装程序或 NuGet 安装 Microsoft Store Services SDK 后，请按照以下说明在 UWP 项目中引用 SDK 程序集。
 
-1. 在 Visual Studio 中打开你的项目。
+1. 在 Visual Studio 中打开项目。
     > [!NOTE]
     > 如果项目是面向**任何 CPU**的 JavaScript 应用，请更新项目以使用特定于体系结构的生成输出（例如，**x86**）。
 
@@ -121,7 +121,7 @@ Microsoft 会定期发布带有性能改进和新功能的 Microsoft Store Servi
 
 3. 在**引用管理器**中，展开**通用 Windows**、单击**扩展**，然后选中 **Microsoft 协议框架**旁边的复选框。 这使你能够使用 [Microsoft.Services.Store.Engagement](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement) 命名空间中的 API。
 
-3. 单击**确定**。
+3. 单击“确定”。
 
 > [!NOTE]
 > 如果你已通过 NuGet 安装了 SDK 库，则你的项目将包含 **Microsoft.Services.Store.Engagement** 引用。 **Microsoft.Services.Store.Engagement** 引用表示 NuGet 包（而不是其中的库），因此，你可以将其忽略。

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10，uwp，azure ad 应用程序，aad，用户，组，多个用户，多用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 41467f51e02f3cc700e3759f33d6fd6eea3ac7a6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260078"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852552"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>向合作伙伴中心帐户添加用户、组和 Azure AD 应用程序
 
@@ -48,7 +48,7 @@ ms.locfileid: "74260078"
     > 如果选择将多个用户添加到合作伙伴中心帐户，则必须为它们分配相同的角色或自定义权限集。 若要添加具有不同角色/权限的多个用户，请针对每个角色或自定义权限集重复以下步骤。
 4.  当你完成选择用户时，请单击**添加选定项**。
 5.  在**角色**部分中，为选定的用户指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。
-6.  单击**保存**。
+6.  单击 **“保存”** 。
 
 ### <a name="additional-methods-for-adding-users"></a>其他用户添加方法
 
@@ -71,7 +71,7 @@ ms.locfileid: "74260078"
 4.  如果你选中了**使此用户成为 Azure AD 中的全局管理员**框，请输入用户在需要恢复密码时可以使用的电子邮件。
 5.  在**组成员身份**部分中，选择任何希望新用户加入的组。
 6.  在**角色**部分中，为用户指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。
-7.  单击**保存**。
+7.  单击 **“保存”** 。
 8.  在确认页上，你将看到新用户的登录信息，包括临时密码。 请确保记下此信息，并将其提供给新用户，因为在离开此页面后可能无法访问临时密码。
 
 
@@ -85,7 +85,7 @@ ms.locfileid: "74260078"
 1.  在 "**用户**" 页（在 "**帐户设置**" 下）中，选择 "**添加用户**"，然后选择 "**通过电子邮件邀请用户**"。
 1.  输入一个或多个电子邮件地址（最多十个），用逗号或分号隔开。
 2.  在**角色**部分中，为用户指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。
-3.  单击**保存**。
+3.  单击 **“保存”** 。
 
 你邀请的用户将获得加入你帐户的电子邮件邀请，并且会在你的 Azure AD 租户中为其创建新的[来宾用户](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帐户。 每个用户需要接受邀请才能访问帐户。
 
@@ -122,7 +122,7 @@ ms.locfileid: "74260078"
 
 3.  完成选择组后，请单击**添加选定项**。
 4.  在**角色**部分中，为选定的组指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。 组的所有成员都能够访问你的合作伙伴中心帐户，其中包含你应用于组的权限，而不考虑与其个人帐户关联的角色/权限。
-5.  单击**保存**。
+5.  单击 **“保存”** 。
 
 
 ### <a name="create-a-new-group-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account"></a>在组织的目录中创建新的组帐户，并将其添加到合作伙伴中心帐户
@@ -135,7 +135,7 @@ ms.locfileid: "74260078"
 4.  为组指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。 组的所有成员都能够访问你的合作伙伴中心帐户，其中包含你应用于组的权限，而不考虑与其个人帐户关联的角色/权限。
 5.  从出现的列表中选择要分配给新组的用户。 你可以使用搜索框来搜索特定用户。
 6.  完成选择用户后，请单击**添加选定项**将其添加到新组中。
-7.  单击**保存**。
+7.  单击 **“保存”** 。
 
 
 <span id="azure-ad-applications" />
@@ -155,7 +155,7 @@ ms.locfileid: "74260078"
 
 4.  完成选择 Azure AD 应用程序后，请单击**添加选定项**。
 5.  在**角色**部分中，为选定的 Azure AD 应用程序指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。
-6.  单击**保存**。
+6.  单击 **“保存”** 。
 
 
 ### <a name="create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account"></a>在组织的目录中创建新的 Azure AD 应用程序帐户，并将其添加到合作伙伴中心帐户
@@ -163,14 +163,14 @@ ms.locfileid: "74260078"
 如果要向合作伙伴中心授予全新 Azure AD 应用程序帐户的访问权限，则可以在 "**用户**" 部分中创建一个。 请注意，这将在你的组织的目录中创建一个新帐户，而不只是在你的合作伙伴中心帐户中。
 
 > [!TIP]
-> 如果主要使用此 Azure AD 应用程序进行合作伙伴中心身份验证，并且不需要用户直接访问该应用程序，则可以输入**回复 URL**和**应用 ID URI**的任何有效地址，前提是这些值未被任何其他 Azure 使用目录中的 AD 应用程序。
+> 如果主要使用此 Azure AD 应用程序进行合作伙伴中心身份验证，并且不需要用户直接访问该应用程序，则可以输入**回复 URL**和**应用 ID URI**的任何有效地址，前提是你的目录中的任何其他 Azure AD 应用程序都不会使用这些值。
 
 1.  在 "**用户**" 页（在 "**帐户设置**" 下）中，选择 "**添加 Azure AD 应用程序**"。
 2.  在下一页上，选择 "**新建" Azure AD 应用程序**"。
 3.  输入新的 Azure AD 应用程序的**回复 URL**。 这是用户可以登录并使用 Azure AD 应用程序的 URL（有时也称为“应用 URL”或“登录 URL”）。 **回复 URL**不能超过 256 个字符，且在你目录中必须是唯一的。
 4.  输入新 Azure AD 应用程序的**应用程序 ID URI**。 这是 Azure AD 应用程序在向 Azure AD 发送单一登录请求时所显示的逻辑标识符。 请注意，每个 Azure AD 应用程序的**应用 ID URI** 在目录中必须唯一，且长度不得超过 256 个字符。 有关**应用 ID URI** 的详细信息，请参阅[将应用程序与 Azure Active Directory 集成](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
 5.  在**角色**部分中，为 Azure AD 应用程序指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。
-6.  单击**保存**。
+6.  单击 **“保存”** 。
 
 添加或创建 Azure AD 应用程序后，可以返回到**用户**部分，然后选择应用程序名称查看应用程序的设置，包括租户 ID、客户端 ID、回复 URL 和应用 ID URI。
 
@@ -188,7 +188,7 @@ ms.locfileid: "74260078"
     > 单击 Azure AD 应用程序的名称时，将看到 Azure AD 应用程序的所有活动密钥，包括创建密钥的日期和过期时间。 若要删除不再需要的密钥，请单击“删除”。
 
 2.  若要添加新项，请选择 "**添加新项**"。
-3.  你将看到一个显示“客户端 ID”和“密钥”值的屏幕。
+3.  你将看到一个显示 **Client ID** 和 **Key** 值的屏幕。
     > [!IMPORTANT]
     > 一定要打印或复制此信息，因为离开此页面后将无法再次访问。
 
@@ -210,7 +210,7 @@ ms.locfileid: "74260078"
     -   对于 **Azure AD 应用程序**，你可以输入**回复 URL** 或**应用 ID URI** 的新值。
     请记住，这些更改将在你组织的目录中以及你的合作伙伴中心帐户中进行。
 3.  对于与合作伙伴中心访问权限相关的更改，请选择或取消选择要应用的角色，或选择 "**自定义权限**" 并进行所需的更改。 这些更改仅影响合作伙伴中心访问，不会更改组织的 Azure AD 租户内的任何权限。
-3.  单击**保存**。
+3.  单击 **“保存”** 。
 
 
 ## <a name="view-history-for-account-users"></a>查看帐户用户的历史记录

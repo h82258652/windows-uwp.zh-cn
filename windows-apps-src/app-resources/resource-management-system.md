@@ -1,5 +1,5 @@
 ---
-Description: 在生成时间，资源管理系统创建与你的应用打包在一起的资源的所有不同变体的索引。 在运行时，系统检测有效的用户和计算机设置，并加载最匹配这些设置的资源。
+Description: 在生成时，资源管理系统会创建与你的应用打包在一起的资源的所有不同变体的索引。 在运行时，系统会检测有效的用户和计算机设置，并加载最匹配这些设置的资源。
 title: 资源管理系统
 template: detail.hbs
 ms.date: 10/20/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57598622"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853115"
 ---
 # <a name="resource-management-system"></a>资源管理系统
 资源管理系统具有生成时间和运行时两种功能。 在生成时间，系统创建与你的应用打包在一起的资源的所有不同变体的索引。 此索引为包资源索引 (PRI)，它也包括在你的应用包中。 在运行时，系统检测有效的用户和计算机设置，查询 PRI 中的信息，并自动加载最匹配这些设置的资源。
@@ -24,7 +24,7 @@ ms.locfileid: "57598622"
 - 当实例化 [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 时，自动加载每个包的根目录的 resources.pri 文件。
 - 使用工具 [MakePRI.exe](compile-resources-manually-with-makepri.md) 可以创建和转储 PRI 文件。
 - 对于典型的应用开发，你无需使用 MakePRI.exe，因为它已经集成到 Visual Studio 编译工作流。 并且 Visual Studio 支持在专用的 UI 中编辑 PRI 文件。 但是，你的本地化人员以及他们使用的工具可能依赖于 MakePRI.exe。
-- 每个 PRI 文件都包含一个命名资源集合，称为资源映射。 从包加载 PRI 文件时，验证资源映射名称是否匹配包标识名称。
+- 每个 PRI 文件都包含一个命名的资源集合，也被称为资源映射。 从包加载 PRI 文件时，验证资源映射名称是否匹配包标识名称。
 - PRI 文件仅包含数据，因此它们不使用可移植可执行 (PE) 格式。 它们专门作为 Windows 中的仅数据资源格式。 它们替换 Win32 应用模型中 DLL 包含的资源。
 - PRI 文件的大小限制为 64 千字节。
 

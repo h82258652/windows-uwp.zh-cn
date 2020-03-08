@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a671a319be49e07d3a8fcdacb569c4ae76e299b
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816670"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853369"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -118,7 +118,7 @@ IAsyncOperation<int> return_123_after_5s()
 }
 ```
 
-如果对其他某个类型运行 `co_await` &mdash; 即使是在 C++/WinRT 协同例程实现中 &mdash; 则另一个库会提供适配器，你需要了解这些适配器在恢复和上下文方面的作用。
+如果对其他某个类型运行 `co_await`&mdash; 即使是在 C++/WinRT 协同例程实现中 &mdash; 则另一个库会提供适配器，你需要了解这些适配器在恢复和上下文方面的作用。
 
 为了尽量减少上下文切换次数，可以使用本主题所述的某些方法。 让我们看看该操作的几个图示。 以下伪代码示例演示了一个事件处理程序的大纲。该处理程序调用 Windows 运行时 API 来加载图像，切换到后台线程来处理该图像，然后返回到 UI 线程以在 UI 中显示该图像。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: af5d73e0a786e33aff6274cd63ee5ae6ac77c133
-ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153692"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852996"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定义 UWP 应用框架
 
@@ -308,7 +308,7 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
     * __Deactivated__：游戏窗口停用（失去焦点）或贴靠。 在发生此事件时，游戏将暂停事件处理并等待窗口获得焦点或取消贴靠。
     * __TooSmall__：游戏将更新自己的状态并呈现要显示的图形。
 
-在你的游戏获得焦点时，必须处理消息队列中到达的每个事件，因此必须使用 **ProcessAllIfPresent** 选项调用 [**CoreWindowDispatch.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)。 其他选项可能导致延迟处理消息事件，这会让人感到游戏停止响应，或者导致触摸行为反应慢和没有“粘合力”。
+在你的游戏获得焦点时，必须处理消息队列中到达的每个事件，因此必须使用 [ProcessAllIfPresent**选项调用**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)CoreWindowDispatch.ProcessEvents。 其他选项可能导致延迟处理消息事件，这会让人感到游戏停止响应，或者导致触摸行为反应慢和没有“粘合力”。
 
 当游戏不可见、暂停或贴靠时，你不希望应用使用任何资源循环去调度永不会到达的消息。 这种情况下，你的游戏必须使用 **ProcessOneAndAllPending**，它在获得事件前将进行阻止，随即在获得事件后处理该事件以及处理队列中在处理第一个事件期间到达的任何其他事件。 [**ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)在队列处理后立即返回。
 

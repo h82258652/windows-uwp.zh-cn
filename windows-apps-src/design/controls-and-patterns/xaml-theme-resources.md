@@ -12,11 +12,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: a28a32fff9d15ecf4a9d172cd0a04f4d993f9d76
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66364112"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853513"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
@@ -65,7 +65,7 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 针对 XAML 框架提供的“浅色”和“深色”资源，此表列出了该颜色的键、简单名称和字符串表示形式（使用 \#aarrggbb 格式）。 该键用于引用应用中的资源。 将“简单浅色/深色名称”用作我们后面介绍的画笔命名约定的一部分。
 
-| 键                             | 简单浅色/深色名称 | 浅色      | 深色       |
+| 键                             | 简单浅色/深色名称 | 轻型      | 深色       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -94,32 +94,32 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 :::row:::
     :::column:::
-        #### Light theme
+        #### <a name="light-theme"></a>浅色主题
     :::column-end:::
     :::column:::
-        #### Dark theme
-    :::column-end:::
-:::row-end:::
-
-#### <a name="base"></a>Base
-
-:::row:::
-    :::column:::
-        ![The base light theme](images/themes/light-base.png)
-    :::column-end:::
-    :::column:::
-        ![The base dark theme](images/themes/dark-base.png)
+        #### <a name="dark-theme"></a>深色主题
     :::column-end:::
 :::row-end:::
 
-#### <a name="alt"></a>备用
+#### <a name="base"></a>基本
 
 :::row:::
     :::column:::
-        ![The alt light theme](images/themes/light-alt.png)
+        ![基本浅色主题](images/themes/light-base.png)
     :::column-end:::
     :::column:::
-        ![The alt dark theme](images/themes/dark-alt.png)
+        ![基本深色主题](images/themes/dark-base.png)
+    :::column-end:::
+:::row-end:::
+
+#### <a name="alt"></a>Alt
+
+:::row:::
+    :::column:::
+        ![备用浅色主题](images/themes/light-alt.png)
+    :::column-end:::
+    :::column:::
+        ![备用深色主题](images/themes/dark-alt.png)
     :::column-end:::
 :::row-end:::
 
@@ -127,10 +127,10 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 :::row:::
     :::column:::
-        ![The list light theme](images/themes/light-list.png)
+        ![列表浅色主题](images/themes/light-list.png)
     :::column-end:::
     :::column:::
-        ![The list dark theme](images/themes/dark-list.png)
+        ![列表深色主题](images/themes/dark-list.png)
     :::column-end:::
 :::row-end:::
 
@@ -138,10 +138,10 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 :::row:::
     :::column:::
-        ![The chrome light theme](images/themes/light-chrome.png)
+        ![镶边浅色主题](images/themes/light-chrome.png)
     :::column-end:::
     :::column:::
-        ![The chrome dark theme](images/themes/dark-chrome.png)
+        ![镶边深色主题](images/themes/dark-chrome.png)
     :::column-end:::
 :::row-end:::
 
@@ -153,10 +153,10 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 | 键                           | 轻松使用名称            | 简单的高对比度名称 | 初始默认设置 |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **按钮文本**（背景）   | 后台               | \#FFF0F0F0      |
+| SystemColorButtonFaceColor    | **按钮文本**（背景）   | 背景               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **按钮文本**（前景）   | Foreground               | \#FF000000      |
-| SystemColorGrayTextColor      | **禁用的文本**              | Disabled                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | **选定文本**（背景） | Highlight                | \#FF3399FF      |
+| SystemColorGrayTextColor      | **禁用的文本**              | 禁用                 | \#FF6D6D6D      |
+| SystemColorHighlightColor     | **选定文本**（背景） | 突出显示                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **选定文本**（前景） | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **超链接**                 | Hyperlink                | \#FF0066CC      |
 | SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
@@ -177,7 +177,7 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 ### <a name="theme-dependent-brushes"></a>依赖于主题的画笔
 
-使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 资源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如， `SystemControlBackroundAltHighBrush`。
+使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 资源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
 
 让我们看一下如何在运行时确定此画笔的颜色值。 在“浅色”和“深色”资源字典中，定义此画笔，如下所示：
 
@@ -191,9 +191,9 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 | 主题        | 颜色简单名称 | 颜色资源             | 运行时值                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| 浅色        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| 轻型        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
 | 深色         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
-| 高对比度 | 后台        | SystemColorButtonFaceColor | 在设置中指定的按钮背景的颜色。 |
+| 高对比度 | 背景        | SystemColorButtonFaceColor | 在设置中指定的按钮背景的颜色。 |
 
 你可以使用 `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` 命名方案确定要应用到你自己的 XAML 元素的画笔。
 
@@ -396,7 +396,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
         Click="Button_Click"/>
 ```
 
-它如下所示：
+它的外观如下所示：
 
 ![按钮的样式看起来像文本](images/styles-textblock-button-style.png)
 
@@ -412,7 +412,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
 ```
 
-它如下所示：
+它的外观如下所示：
 
 ![看起来像后退按钮样式的按钮](images/styles-back-button-normal.png)
 
