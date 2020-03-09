@@ -8,11 +8,11 @@ keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
-ms.sourcegitcommit: 3e47987fb4f86a6349ffe8262675f50971c77472
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74954061"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853354"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -21,7 +21,7 @@ ms.locfileid: "74954061"
 以下步骤介绍端到端过程：
 
 1.  确保已完成所有[先决条件](#prerequisites)。
-2.  在 Microsoft Store 分析 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 分析 API。 该令牌到期后，你可以生成新的令牌。
+2.  在 Microsoft Store 分析 API 中调用某个方法之前，请先[获取 Azure AD 访问令牌](#obtain-an-azure-ad-access-token)。 获取访问令牌后，可以在 60 分钟的令牌有效期内，使用该令牌调用 Microsoft Store 分析 API。 该令牌到期后，可以重新生成一个。
 3.  [调用 Microsoft Store 分析 API](#call-the-windows-store-analytics-api)。
 
 <span id="prerequisites" />
@@ -32,7 +32,7 @@ ms.locfileid: "74954061"
 
 * 你（或你的组织）必须具有 Azure AD 目录，并且你必须具有该目录的[全局管理员](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)权限。 如果你已使用 Office 365 或 Microsoft 的其他业务服务，表示你已经具有 Azure AD 目录。 否则，你可以免费[在合作伙伴中心中创建新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)。
 
-* 必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，并检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 分析 API 的应用或服务。 你需要租户 ID、客户端 ID 和密钥以获取传递给 API 的 Azure AD 访问令牌。
+* 必须将 Azure AD 应用程序与合作伙伴中心帐户相关联，并检索应用程序的租户 ID 和客户端 ID，并生成一个密钥。 Azure AD 应用程序是指你想要从中调用 Microsoft Store 分析 API 的应用或服务。 需要租户 ID、客户端 ID 和密钥，才可以获取将传递给 API 的 Azure AD 访问令牌。
     > [!NOTE]
     > 你只需执行一次此任务。 获取租户 ID、客户端 ID 和密钥后，当你需要创建新的 Azure AD 访问令牌时，可以随时重复使用它们。
 
@@ -67,13 +67,13 @@ grant_type=client_credentials
 
 对于 POST URI 中的*租户\_id*值和客户端 *\_id*和*客户端\_机密*参数，为你在上一节中的合作伙伴中心检索的应用程序指定租户 id、客户端 id 和密钥。 对于 *resource* 参数，必须指定 ```https://manage.devcenter.microsoft.com```。
 
-在你的访问令牌到期后，你可按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
+在你的访问令牌到期后，可以按照[此处](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的说明刷新令牌。
 
 <span id="call-the-windows-store-analytics-api" />
 
 ## <a name="step-3-call-the-microsoft-store-analytics-api"></a>步骤 3：调用 Microsoft Store 分析 API
 
-获取 Azure AD 访问令牌后，可以随时调用 Microsoft Store 分析 API。 你必须将访问令牌传递到每个方法的 **Authorization** 标头。
+获取 Azure AD 访问令牌后，可以随时调用 Microsoft Store 分析 API。 必须将访问令牌传递到每个方法的 **Authorization** 标头。
 
 ### <a name="methods-for-uwp-apps-and-games"></a>UWP 应用和游戏的方法
 以下方法可用于应用和游戏收购和附加支持： 
