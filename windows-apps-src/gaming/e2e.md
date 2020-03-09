@@ -1,5 +1,5 @@
 ---
-title: Windows 10 游戏开发指南
+title: Windows 10 游戏开发指南
 description: 开发通用 Windows 平台 (UWP) 游戏的资源和信息的端到端指南。
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.date: 04/16/2018
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
 ms.openlocfilehash: a348393a02bab946a128babefc07dc48faea6cd1
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685075"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853174"
 ---
-# <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
+# <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
 
 欢迎使用 Windows 10 游戏开发指南！
@@ -33,7 +33,7 @@ ms.locfileid: "75685075"
 
 ## <a name="game-development-resources"></a>游戏开发资源
 
-从文档到开发人员计划、论坛、博客和示例，游戏开发之路上有很多资源可提供帮助。 以下是在开始开发 Windows 10 游戏时要了解的资源综述。
+从文档到开发人员计划、论坛、博客和示例，游戏开发之路上有很多资源可提供帮助。 以下是在开发 Windows 10 游戏时要了解的资源综述。
 
 > [!Note]
 > 某些功能通过各种计划进行管理。 本指南涵盖大范围资源，因此你可能会发现有些资源无法访问，具体取决于所属计划或特定的开发角色。 示例是解析为 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com 或游戏开发人员网络 (GDN) 的链接。 有关与 Microsoft 合作的信息，请参阅[开发人员计划](#developer-programs)。
@@ -77,7 +77,7 @@ ms.locfileid: "75685075"
         <td><a href="https://api.playfab.com/">完成 live 游戏的后端解决方案</a></td>
     </tr>
     <tr>
-        <td>适用于 Xbox One 的 UWP</td>
+        <td>Xbox One 上的 UWP</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/index">在 Xbox One 上构建 UWP 应用</a></td>
     </tr>
     <tr>
@@ -322,7 +322,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Visual C++ 工具团队博客</td>
-        <td><a href="https://devblogs.microsoft.com/cppblog/">Visual C++ 团队博客</a></td>
+        <td><a href="https://devblogs.microsoft.com/cppblog/">视觉C++对象团队博客</a></td>
     </tr>
     <tr>
         <td>PIX 团队博客</td>
@@ -517,7 +517,7 @@ C++/CX 是一种高性能、低开销的语言，可提供速度、兼容性和�
     </colgroup>
     <tr>
         <td>C++/CX 参考和概述</td>
-        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">Visual C++ 语言参考 (C++-CX)</a></td>
+        <td><a href="https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx">可视C++语言参考（C++/cx）</a></td>
     </tr>
     <tr>
         <td>Visual C++ 编程指南和参考</td>
@@ -622,7 +622,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
         <td><a href="https://developer.microsoft.com/windows/bridges">将代码引入 Windows</a></td>
     </tr>
     <tr>
-        <td>面向 iOS 的 Windows 桥</td>
+        <td>适用于 iOS 的 Windows 桥</td>
         <td><a href="https://developer.microsoft.com/windows/bridges/ios">将 iOS 应用程序引入 Windows</a></td>
     </tr>
     <tr>
@@ -645,7 +645,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
         <td><a href="https://playfab.com/">工具和服务概述</a></td>
     </tr>
     <tr>
-        <td>即刻体验</td>
+        <td>入门</td>
         <td><a href="https://api.playfab.com/docs/general-getting-started">常规入门指南</a></td>
     </tr>
     <tr>
@@ -653,7 +653,7 @@ Direct3D 11.3 是一个低级别图形 API，使用熟悉的 Direct3D 编程模�
         <td><a href="https://www.youtube.com/watch?v=fGNpiqVi5xU&list=PLHCfyL7JpoPbLpA_oh_T5PKrfzPgCpPT5">有关 PlayFab 核心系统的演示视频系列</a></td>
     </tr>
     <tr>
-        <td>秘诀</td>
+        <td>方案</td>
         <td><a href="https://api.playfab.com/docs/tutorials/recipes-index">热门游戏机制和设计模式示例</a></td>
     </tr>
     <tr>
@@ -1311,7 +1311,7 @@ DirectX 工具包、DirectX 纹理处理库、DirectXMesh 几何图形处理库�
 </table>
 
 
-## <a name="production"></a>Production 的虚拟 SAN 中删除具有指定全球通用节点名称和全球通用端口名称的主机总线适配器
+## <a name="production"></a>生产
 
 
 你的工作室现在完全参与并转向生产周期，并且整个团队都分配了工作。 通过优化、重构和扩展原型，使其成为完整的游戏。
