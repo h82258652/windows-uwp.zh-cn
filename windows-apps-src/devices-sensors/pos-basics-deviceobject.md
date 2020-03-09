@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: a2fa7e107d890a5be7c8d27af03289b839ec3c09
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73052010"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852454"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService 设备对象
 
 ## <a name="creating-a-device-object"></a>创建设备对象
-从更新枚举或存储的 DeviceID 确定了要使用的 PointOfService 设备后，你只需调用具有你以编程方式选择或者用户选择用来创建新服务点设备对象的 [**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id) 的 [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync)。
+从更新枚举或存储的 DeviceID 确定了要使用的 PointOfService 设备后，你只需调用具有你以编程方式选择或者用户选择用来创建新服务点设备对象的 [**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync) 的 [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)。
 
 此示例尝试通过使用 DeviceID 的 FromIdAsync 创建新的 BarcodeScanner 对象。 如果创建对象时出现问题，将写入调试消息。
 
