@@ -9,11 +9,11 @@ keywords: python, windows 10, microsoft, windows 上的 python, 使用 wsl 的 p
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
-ms.sourcegitcommit: f5bb4e35d1373b982259e61547b3b1765da0e78c
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74881295"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78853074"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>开始在 Windows 上将 Python 用于 Web 开发
 
@@ -56,7 +56,7 @@ ms.locfileid: "74881295"
 
 1. [下载和安装适用于 Windows 的 VS Code](https://code.visualstudio.com)。 VS Code 也适用于 Linux，但适用于 Linux 的 Windows 子系统不支持 GUI 应用，因此需要在 Windows 上安装它。 不必担心，仍可以使用 Remote - WSL 扩展与 Linux 命令行和工具集成。
 
-2. 在 VS Code 上安装 [Remote - WSL 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 这使你可以将 WSL 用作集成开发环境，并且会为你处理兼容性和路径。 [了解详情](https://code.visualstudio.com/docs/remote/remote-overview)。
+2. 在 VS Code 上安装 [Remote - WSL 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 这使你可以将 WSL 用作集成开发环境，并且会为你处理兼容性和路径。 [了解详细信息](https://code.visualstudio.com/docs/remote/remote-overview)。
 
 > [!IMPORTANT]
 > 如果已安装 VS Code，则需要确保具有 [1.35 5 月版本](https://code.visualstudio.com/updates/v1_35)或更高版本，以便安装 [Remote - WSL 扩展](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。 建议不要在没有 Remote - WSL 扩展的情况下在 VS Code 中使用 WSL，因为会失去对自动完成、调试、linting 等的支持。趣味事实：此 WSL 扩展安装在 $HOME/.vscode-server/extensions 中。
@@ -72,7 +72,7 @@ ms.locfileid: "74881295"
 ![Ubuntu 终端](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> 使用适用于 Linux 的 Windows 子系统 (WSL) 时要记住的一个重要事项是，现在是在两个不同文件系统之间工作  ：1) Windows 文件系统，以及 2) Linux 文件系统 (WSL)（对于我们的示例为 Ubuntu）。 需要注意安装包和存储文件的位置。 可以在 Windows 文件系统中安装一个版本的工具或包，并在 Linux 文件系统中安装完全不同的版本。 在 Windows 文件系统中更新工具不会影响 Linux 文件系统中的工具，反之亦然。 WSL 会将固定驱动器装载到计算机上 Linux 发行版本中的 `/mnt/<drive>` 文件夹下。 例如，Windows C: 驱动器装载在 `/mnt/c/` 下。 可以从 Ubuntu 终端访问 Windows 文件，并对这些文件使用 Linux 应用和工具，反之亦然。 考虑到许多 Web 工具最初是针对 Linux 所编写的，并部署在 Linux 生产环境中，因此建议在 Linux 文件系统中进行 Python Web 开发。 这还可避免混合文件系统语义（如 Windows 在文件名方面不区分大小写）。 也就是说，WSL 现在支持在 Linux 与 Windows 文件系统之间跳转，因此可以将文件托管在其中一个系统上。 [了解详情](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。 我们也很高兴地宣布 [WSL2 即将向 Windows 推出](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)，会提供一些极佳的改进。 现在可以[在 Windows 预览体验成员内部版本 18917 上试用它](https://docs.microsoft.com/windows/wsl/wsl2-install)。
+> 使用适用于 Linux 的 Windows 子系统 (WSL) 时要记住的一个重要事项是，现在是在两个不同文件系统之间工作  ：1) Windows 文件系统，以及 2) Linux 文件系统 (WSL)（对于我们的示例为 Ubuntu）。 需要注意安装包和存储文件的位置。 可以在 Windows 文件系统中安装一个版本的工具或包，并在 Linux 文件系统中安装完全不同的版本。 在 Windows 文件系统中更新工具不会影响 Linux 文件系统中的工具，反之亦然。 WSL 会将固定驱动器装载到计算机上 Linux 发行版本中的 `/mnt/<drive>` 文件夹下。 例如，Windows C: 驱动器装载在 `/mnt/c/` 下。 可以从 Ubuntu 终端访问 Windows 文件，并对这些文件使用 Linux 应用和工具，反之亦然。 考虑到许多 Web 工具最初是针对 Linux 所编写的，并部署在 Linux 生产环境中，因此建议在 Linux 文件系统中进行 Python Web 开发。 这还可避免混合文件系统语义（如 Windows 在文件名方面不区分大小写）。 也就是说，WSL 现在支持在 Linux 与 Windows 文件系统之间跳转，因此可以将文件托管在其中一个系统上。 [了解详细信息](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。 我们也很高兴地宣布 [WSL2 即将向 Windows 推出](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)，会提供一些极佳的改进。 现在可以[在 Windows 预览体验成员内部版本 18917 上试用它](https://docs.microsoft.com/windows/wsl/wsl2-install)。
 
 ## <a name="install-python-pip-and-venv"></a>安装 Python、pip 和 venv
 
@@ -99,7 +99,7 @@ Ubuntu 18.04 LTS 已安装了 Python 3.6，但不附带你可能期望随其他 
 
 ## <a name="open-a-wsl---remote-window"></a>打开 WSL - Remote 窗口
 
-VS Code 使用 Remote - WSL 扩展（之前已安装）将 Linux 子系统视为远程服务器。 这使你可以使用 WSL 作为集成开发环境。 [了解详情](https://code.visualstudio.com/docs/remote/wsl)。 
+VS Code 使用 Remote - WSL 扩展（之前已安装）将 Linux 子系统视为远程服务器。 这使你可以使用 WSL 作为集成开发环境。 [了解详细信息](https://code.visualstudio.com/docs/remote/wsl)。 
 
 1. 通过输入以下内容从 Ubuntu 终端在 VS Code 中打开项目文件夹：`code .`（“.”告知 VS Code 打开当前文件夹）。
 
@@ -115,7 +115,7 @@ VS Code 使用 Remote - WSL 扩展（之前已安装）将 Linux 子系统视为
 
 ## <a name="install-the-microsoft-python-extension"></a>安装 Microsoft Python 扩展
 
-需要安装 Remote - WSL 的所有 VS Code 扩展。 已在 VS Code 上本地安装的扩展不会自动可用。 [了解详情](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions)。
+需要安装 Remote - WSL 的所有 VS Code 扩展。 已在 VS Code 上本地安装的扩展不会自动可用。 [了解详细信息](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions)。
 
 1. 通过输入 Ctrl+Shift+X  来打开 VS Code 扩展窗口（或使用菜单导航到“视图”   > “扩展”  ）。
 
@@ -280,7 +280,7 @@ Python 是一种解释型语言，支持不同类型的解释器（Python2、Ana
 
     如果要使用与默认值 8000 不同的端口，请在命令行中指定端口号，如 `python3 manage.py runserver 5000`。
 
-10. 在终端输出窗口中 `Ctrl+click` `http://127.0.0.1:8000/` URL，以将默认浏览器打开到该地址。 如果 Django 安装正确且项目有效，则会看到默认页面。 VS Code 终端输出窗口还会显示服务器日志。
+10. 在终端输出窗口中 `Ctrl+click``http://127.0.0.1:8000/` URL，以将默认浏览器打开到该地址。 如果 Django 安装正确且项目有效，则会看到默认页面。 VS Code 终端输出窗口还会显示服务器日志。
 
 11. 完成后，关闭浏览器窗口，并按照终端输出窗口中的指示使用 `Ctrl+C` 在 VS Code 中停止服务器。
 

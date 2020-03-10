@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
 ms.openlocfilehash: 61a54edc236f94bec44420471a176a2014fcdb0d
-ms.sourcegitcommit: 50b0b6d6571eb80aaab3cc36ab4e8d84ac4b7416
+ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329568"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78852483"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -34,7 +34,7 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 
 ### <a name="topics-about-cwinrt"></a>有关 C++/WinRT 的主题
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | - | - |
 | [C++/WinRT 简介](intro-to-using-cpp-with-winrt.md) | 对 C++/WinRT（一种适用于 Windows 运行时 API 的标准 C++ 语言投影）的介绍。 |
 | [C++/WinRT 入门](get-started.md) | 为了帮助你更快地开始使用 C++/WinRT，本主题详细介绍了一个简单的代码示例。 |
@@ -72,7 +72,7 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 
 ### <a name="topics-about-the-c-language"></a>有关 C++ 语言的主题
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | - | - |
 | [值类别，以及对它们的引用](cpp-value-categories.md) | 本主题介绍了 C++ 中存在的各种值类别。 你肯定听说过左值和右值，但还有其他类型。 |
 
