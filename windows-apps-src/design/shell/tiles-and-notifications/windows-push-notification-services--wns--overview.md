@@ -3,24 +3,22 @@ Description: Windows 推送通知服务 (WNS) 使第三方开发人员可从自�
 title: Windows 推送通知服务 (WNS) 概述
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 03/06/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f53dd0538e4564c50fb5cbcb6986f5cf9661cae
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: bd6c3ec487871d18a7142489802b801120f5e7ed
+ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77463802"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79038120"
 ---
-# <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述
- 
+# <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述 
 
 Windows 推送 Notification Services （WNS）使第三方开发人员能够从他们自己的云服务发送 toast、磁贴、徽章和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。
 
 ## <a name="how-it-works"></a>工作原理
-
 
 下图显示了用于发送推送通知的完整数据流。 它涉及到以下步骤：
 
@@ -35,15 +33,52 @@ Windows 推送 Notification Services （WNS）使第三方开发人员能够从�
 
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>注册你的应用，并为你的云服务接收凭据
 
-
-在使用 WNS 发送通知之前，应用必须先向应用商店仪表板进行注册。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，请登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 创建应用后，可以按照**应用管理 - WNS/MPNS** 页面上的说明检索凭证。 如果想使用 Live 服务解决方案，请访问此页面上的 **Live 服务网站**链接。
+在使用 WNS 发送通知之前，应用必须先向应用商店仪表板进行注册。 
 
 每个应用都有其各自的一组云服务凭据。 这些凭据无法用于向其他任何应用发送通知。
 
-若要详细了解如何注册你的应用，请参阅[如何向 Windows 通知服务 (WNS) 进行验证](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))。
+### <a name="step-1-register-your-app-with-the-dashboard"></a>步骤1：将应用注册到仪表板
+
+必须先将应用注册到合作伙伴中心仪表板，然后才能通过 WNS 发送通知。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，请登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 创建应用后，请参阅[产品管理-WNS/MPNS](https://apps.dev.microsoft.com/) for instrunctions 有关如何检索凭据的详细说明（如果你想要使用 live services 解决方案，请按照本页上的 " **live 服务站点**" 链接操作）。
+
+若要注册，请执行以下操作：
+1.  中转到 "合作伙伴中心" 的 "Windows 应用商店应用" 页，并以个人 Microsoft 帐户（例如： johndoe@outlook.com、janedoe@xboxlive.com）登录。
+2.  登录后，单击 "仪表板" 链接。
+3.  在仪表板上，选择 "创建新应用"。
+
+![wns 应用注册](../images/wns-create-new-app.png)
+
+4.  通过保留应用名称创建应用。 为应用提供唯一的名称。 输入名称，并单击 "保留产品名称" 按钮。 如果名称可用，则将其保留给你的应用程序。 成功保留应用的名称后，应在此时选择要修改的其他详细信息。
+
+![wns 保留产品名称](../images/wns-reserve-poduct-name.png)
+ 
+### <a name="step-2-obtain-the-identity-values-and-credentials-for-your-app"></a>步骤2：获取应用的标识值和凭据
+
+为应用保留名称后，Windows 应用商店创建了关联的凭据。 它还分配了应用程序清单文件（appxmanifest.xml）中必须存在的关联标识值（名称和发布者）。 如果已将应用上传到 Windows 应用商店，则这些值将自动添加到清单中。 如果尚未上传应用，需要手动将标识值添加到清单中。
+
+1.  选择 "产品管理" 下拉箭头
+
+![wns 产品管理](../images/wns-product-management.png)
+
+2.  在 "产品管理" 下拉列表中，选择 "WNS/MPNS" 链接。
+
+![wns 产品管理 continuted](../images/wns-product-management2.png)
+ 
+3.  在 "WNS/MPNS" 页上，单击 "Windows 推送 Notification Services （WNS）" 和 "Microsoft Azure 移动服务" 部分下的 "Live 服务站点" 链接。
+
+![wns live 服务](../images/wns-live-services-page.png)
+ 
+4.  应用程序注册门户（以前的 "实时服务" 页）页面提供了一个标识元素，以将其包含在应用的清单中。 这包括应用程序机密、包安全标识符和应用程序标识。 在文本编辑器中打开清单，并在页面指示时添加该元素。   
+
+> [!NOTE]
+> 如果你使用 AAD 帐户登录，则需要联系注册应用的 Microsoft 帐户所有者以获取关联的应用机密。 如果需要查找此联系人的帮助，请单击屏幕右上角的齿轮，然后单击 "开发人员设置"，将在其中显示 Microsoft 帐户应用程序的创建者的电子邮件地址。
+ 
+5.  将 SID 和客户端机密上传到你的云服务器。
+
+> [!Important]
+> 你的云服务应安全地存储和访问 SID 和客户端机密。 泄露或盗窃此信息后，攻击者便可以向用户发送通知，而无需你的许可或知识。
 
 ## <a name="requesting-a-notification-channel"></a>请求通知通道
-
 
 当能够接收推送通知的应用运行时，它必须首先通过 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_) 请求通知通道。 若要查看全面介绍和示例代码，请参阅[如何请求、创建和保存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))。 此 API 会返回一个唯一链接到进行调用的应用程序及其磁贴的通道 URI，所有通知类型均可通过此 URI 发送。
 
@@ -58,7 +93,6 @@ Windows 推送 Notification Services （WNS）使第三方开发人员能够从�
 
 ## <a name="authenticating-your-cloud-service"></a>验证你的云服务
 
-
 若要发送通知，云服务必须通过 WNS 进行验证。 此过程的第一步出现在使用 Microsoft Store 仪表板注册应用之时。 在注册过程中，你的应用会获得一个程序包安全标识符 (SID) 和一个密钥。 该信息由你的云服务用于向 WNS 进行验证。
 
 WNS 身份验证方案通过来自 [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-v2-23) 协议的客户端凭据配置文件来实现。 云服务通过提供其凭据（程序包 SID 和密钥）来向 WNS 进行验证。 反过来，云服务会获得一个访问令牌。 该访问令牌允许云服务发送通知。 每次向 WNS 发送通知请求时都必须使用该令牌。
@@ -70,11 +104,10 @@ WNS 身份验证方案通过来自 [OAuth 2.0](https://tools.ietf.org/html/draft
 
 ![云服务身份验证的 WNS 关系图](images/wns-diagram-02.jpg)
 
-在对 WNS 进行身份验证的过程中，云服务会通过安全套接字层 (SSL) 提交一个 HTTP 请求。 参数以“application/x-www-for-urlencoded”格式提供。 在 "客户端\_id" 字段中提供包 SID，在 "客户端\_机密" 字段中提供机密密钥。 有关语法的详细信息，请参阅[访问令牌请求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))参考。
+在对 WNS 进行身份验证的过程中，云服务会通过安全套接字层 (SSL) 提交一个 HTTP 请求。 参数以“application/x-www-for-urlencoded”格式提供。 在 "客户端\_id" 字段中提供包 SID，在 "客户端\_机密" 字段中提供机密密钥，如以下示例中所示。 有关语法的详细信息，请参阅[访问令牌请求](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))参考。
 
-**请注意**  这只是一个示例，而不是可以在自己的代码中成功使用的剪切和粘贴代码。
-
- 
+> [!NOTE]
+> 这只是一个示例，而不是可以在自己的代码中成功使用的剪切和粘贴代码。 
 
 ``` http
  POST /accesstoken.srf HTTP/1.1
@@ -169,7 +202,8 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 
 如果应用严重依赖推送通知，我们建议通知用户，在节电模式打开时，他们可能无法接收通知，并让他们可以轻松地调整“节电模式设置”。 使用 Windows 10 中的节电模式设置 URI 方案 `ms-settings:batterysaver-settings`，你可以提供指向 "设置" 应用的便利链接。
 
-**提示**   向用户通知节电的设置时，建议提供一种在以后禁止显示该消息的方法。 例如，以下示例中的 `dontAskMeAgainBox` 复选框保留用户在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中的首选项。
+> [!TIP]
+> 当向用户通知节电的设置时，建议提供一种方法来在将来禁止显示该消息。 例如，以下示例中的 `dontAskMeAgainBox` 复选框保留用户在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中的首选项。
 
  
 

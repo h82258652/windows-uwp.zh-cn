@@ -1,22 +1,22 @@
 ---
-title: 用服务、扩展和包扩展应用
+title: 使用服务、扩展和包扩展你的应用
 description: 介绍如何创建在更新通用 Windows 平台（UWP）应用程序时运行的后台任务。
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 扩展, 组件化, 应用服务, 包, 扩展
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a98ef8e0ec53668277face05d83c08f6421cb7
-ms.sourcegitcommit: c7e10793cbef55ace959ac8fc6ddd08e683602bd
+ms.openlocfilehash: a2d12fbf1c45c05c2e9917c77c0d15f15bccaf72
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73329511"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935344"
 ---
-# <a name="extend-your-app-with-services-extensions-and-packages"></a>用服务、扩展和包扩展应用
+# <a name="extend-your-app-with-services-extensions-and-packages"></a>使用服务、扩展和包扩展你的应用
 
 Windows 10 中提供了许多用于扩展和 componentizing 应用的技术。 此表可帮助你根据需要确定应该使用哪种技术。 后面是方案和技术的简要说明。
 
-| 方案                           | 资源包   | 资产包      | 可选包   | 平面捆绑包        | 应用扩展      | 应用服务        | 流式安装  |
+| 应用场景                           | 资源包   | 资产包      | 可选包   | 平面捆绑包        | 应用扩展      | 应用服务        | 流式安装  |
 |------------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
 | 第三方代码插件            |                    |                    |                    |                    | :heavy_check_mark: |                    |                    |
 | 进程内代码插件              |                    |                    | :heavy_check_mark: |                    |                    |                    |                    |
@@ -78,7 +78,7 @@ Windows 10 中提供了许多用于扩展和 componentizing 应用的技术。 �
 可选包用于补充或扩展应用包的原始功能。 可先发布应用，晚些时候再发布可选包，或同时发布应用和可选包。 通过可选包来扩展应用，你将拥有将内容作为单独的应用包来分发和盈利的优势。 可选包通常由原始应用开发人员来开发，因为它们用主应用的标识来运行（与应用扩展不同）。 根据定义可选包的方式，你可以从可选包向主应用中加载代码、资产或代码和资产。 如果需要利用可以获取收益、许可和分发的内容来增强应用程序，则可选的包可能是正确的选择。 有关实现详细信息，请参阅[可选包和相关集创作](/windows/msix/package/optional-packages)。
 
 **平面捆绑包**
-[平面捆绑应用包](/windows/msix/package/flat-bundles.md)与常规应用程序包相似，不同之处在于平面捆绑包不在文件夹中包含所有应用包，而是只包含这些应用包的*引用*。 由于平面捆绑包包含应用包的引用而不是文件本身，因而可减少打包和下载应用所需的时间。
+[平面捆绑应用包](/windows/msix/package/flat-bundles)与常规应用程序包相似，不同之处在于平面捆绑包不在文件夹中包含所有应用包，而是只包含这些应用包的*引用*。 由于平面捆绑包包含应用包的引用而不是文件本身，因而可减少打包和下载应用所需的时间。
 
 **应用扩展**
 
