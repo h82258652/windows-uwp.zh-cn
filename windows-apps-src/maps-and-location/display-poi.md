@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 图钉
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bf8009232dbe3afcab2af28b76785fb261200f7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259379"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210293"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地图上显示目标点
 
@@ -92,7 +92,7 @@ public void AddSpaceNeedleIcon()
 
 ## <a name="add-a-3d-pushpin"></a>添加 3D 图钉
 
-你可以在地图中添加三维对象。 使用 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 类从 [3D 制造格式 (3MF)](https://3mf.io/specification/) 文件中导入 3D 对象。
+可以在地图中添加三维对象。 使用 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 类从 [3D 制造格式 (3MF)](https://3mf.io/specification/) 文件中导入 3D 对象。
 
 这张图使用 3D 咖啡杯标记邻近咖啡店的位置。
 
@@ -165,7 +165,7 @@ public void AddLandmarkPhoto()
 
 这段代码中有三个部分值得更仔细地进行检查：图像、参考照相机，以及 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 属性。
 
-### <a name="image"></a>图像
+### <a name="image"></a>映像
 
 此示例显示在项目的**资源**文件夹中保存的自定义图像。 [  **MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 属性需要类型 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) 的值。 此类型需要Windows.Storage.Streams[**命名空间的**using](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 声明。
 

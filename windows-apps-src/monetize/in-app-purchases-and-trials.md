@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 加载项, 试用, 消耗品, 耐用型, 订阅
 ms.localizationpriority: medium
 ms.openlocfilehash: 5396a8a6f02271647eb16d469853241b5717bd6e
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340281"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209773"
 ---
 # <a name="in-app-purchases-and-trials"></a>应用内购买和试用
 
@@ -34,13 +34,13 @@ Windows SDK 提供可用于实现以下功能的 API，以从通用 Windows 平�
 * **[Windows.applicationmodel.resources.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store)** &nbsp;&nbsp;windows 10 的所有版本也支持在此命名空间中进行应用内购买和试用的旧版 API。 有关 **Windows.ApplicationModel.Store** 命名空间的信息，请参阅[使用 Windows.ApplicationModel.Store 命名空间的应用内购买和试用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 命名空间不再更新新功能，如果可能，建议你的应用改用 **Windows.Services.Store** 命名空间。 使用[桌上型计算机](https://developer.microsoft.com/windows/bridges/desktop)的 windows 桌面应用程序或在合作伙伴中心使用开发沙盒的应用程序或游戏中不支持**windows.applicationmodel.resources.core**命名空间（例如，对于任何游戏，与 Xbox Live 集成）。
+> **Windows.ApplicationModel.Store** 命名空间不再更新新功能，如果可能，建议你的应用改用 **Windows.Services.Store** 命名空间。 使用[桌上型计算机](https://developer.microsoft.com/windows/bridges/desktop)的 windows 桌面应用程序或在合作伙伴中心使用开发沙盒的应用程序或游戏（例如，与 Xbox Live 集成的任何游戏的情况）不支持**windows.applicationmodel.resources.core**命名空间。
 
 <span id="concepts" />
 
 ## <a name="basic-concepts"></a>基本概念
 
-Microsoft Store 中提供的每一个项目通常称为*产品*。 大多数开发人员只处理以下类型的产品：*应用*和*加载项*。
+应用商店中提供的每一个项目通常称为*产品*。 大多数开发人员只处理以下类型的产品：*应用*和*加载项*。
 
 加载项是指你在应用的上下文中向客户提供的产品或功能：例如，要在应用或游戏中使用的货币、游戏的新地图或武器、使用无广告应用的功能，或数字内容，如应用的音乐或视频（前提是应用能够提供此类内容）。 每个应用和加载项都有关联的许可证，用于指示用户是否有权使用该应用或加载项。 如果用户有权将该应用或加载项作为试用来使用，则许可证还提供关于该试用的其他信息。
 
@@ -48,7 +48,7 @@ Microsoft Store 中提供的每一个项目通常称为*产品*。 大多数开�
 
 UWP 应用可提供以下类型的加载项。
 
-| 加载项类型 |  描述  |
+| 加载项类型 |  说明  |
 |---------|-------------------|
 | 耐用品  |  [在合作伙伴中心指定](../publish/enter-iap-properties.md)的生存期内保持的附加项。 <p/><p/>默认情况下，耐用型加载项永远不会过期，在此情况下只能购买它们一次。 如果你为加载项指定特定的持续时间，则用户可以在它过期后重新购买该加载项。 |
 | 开发人员管理的易耗品  |  可以购买、使用并在用完后再次购买的加载项。 你负责跟踪用户拥有的加载项所表示商品的余量。<p/><p/>当用户使用与该加载项关联的任何商品时，你负责维护加载项所表示的商品的用户余量，并在用户消耗完所有商品后向 Microsoft Store 将加载项购买报告为已完成。 在你的应用将之前的加载项购买报告为已完成前，用户无法再次购买该加载项。 <p/><p/>例如，如果你的加载项表示游戏中的 100 个硬币，并且用户消耗了 10 个硬币，则你的用户或服务必须为该用户保留 90 个硬币的新剩余余额。 在用户消耗完全部 100 个硬币后，你的应用必须将加载项报告为已完成，然后用户才可以再次购买 100 个硬币的加载项。    |
@@ -107,7 +107,7 @@ UWP 应用可提供以下类型的加载项。
   ```
 
 > [!NOTE]
-> 使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序必须执行额外步骤来配置 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 对象，然后才可以使用此对象。 有关详情，请参阅[本部分](#desktop)。
+> 使用[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 桌面应用程序必须执行额外步骤来配置 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 对象，然后才可以使用此对象。 有关详细信息，请参阅[此部分](#desktop)。
 
 拥有 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 对象后，可开始调用此对象的方法来获取当前应用以及加载项的应用商店产品信息、检索当前应用及其加载项的许可证信息、为当前用户购买应用或加载项以及执行其他任务。 有关可使用此对象执行的常见任务的详细信息，请参阅以下文章：
 
@@ -227,7 +227,7 @@ UWP 应用可提供以下类型的加载项。
 
 应用商店中的每个产品都至少有一个 *SKU*，而每个 SKU 都至少有一个*可用性*。 这些概念与合作伙伴中心内的大多数开发人员都是抽象的，大多数开发人员绝不会为其应用或外接程序定义 Sku 或可用性。 但是，由于 **Windows.Services.Store** 命名空间中的 Microsoft Store 产品的对象模型包括 SKU 和可用性，因此大致了解这些概念对于某些情况可能很有帮助。
 
-| 对象 |  描述  |
+| Object |  说明  |
 |---------|-------------------|
 | 产品  |  *产品*是指在 Microsoft Store 中提供的任何类型的产品，包括应用或加载项。 <p/><p/> Microsoft Store 中的每个产品都有相应的 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 对象。 此类提供可用于访问数据的属性，如产品的应用商店 ID、应用商店列表的图像和视频以及定价信息。 它还提供可用于购买产品的方法。 |
 | SKU |  *SKU* 是带有其自己的说明、价格和其他独特产品详细信息的产品特定版本。 每个应用或加载项都有默认的 SKU。 大多数开发人员拥有针对一个应用的多个 SKU 的唯一情况是，他们要发布应用的完整版和试用版（在应用商店目录中，其中每一个版本都是同一个应用的不同 SKU）。 <p/><p/> 某些发布者能够定义他们自己的 SKU。 例如，大型游戏发布者可能发布具有以下两个 SKU 的游戏：一个 SKU 在不允许红色血液的市场中显示绿色血液，另一个 SKU 在所有其他市场中显示红色血液。 另外，销售数字视频内容的发布者可能针对一个视频发布两个 SKU，一个 SKU 用于高清版本，另一个 SKU 用于标清版本。 <p/><p/> Microsoft Store 中的每个 SKU 都有相应的 [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) 对象。 每个 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 都有可用于访问产品 SKU 的 [Skus](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.skus) 属性。 |
@@ -239,7 +239,7 @@ UWP 应用可提供以下类型的加载项。
 
 Microsoft Store 中的每个应用、加载项或其他产品都有关联的 **Store ID**（有时也称为*产品 Store ID*）。 许多 API 都需要 Store ID 才能执行有关应用或加载项的操作。
 
-Microsoft Store 中的任何产品的 Store ID 都是 12 个字符的字母数字字符串，例如 ```9NBLGGH4R315```。 有多种不同的方法可用于获取 Microsoft Store 中某个产品的 Store ID：
+应用商店中的任何产品的应用商店 ID 都是 12 个字符的字母数字字符串，例如 ```9NBLGGH4R315```。 有多种不同的方法可用于获取 Microsoft Store 中某个产品的 Store ID：
 
 * 对于应用程序，可以在合作伙伴中心的 "[应用标识" 页](../publish/view-app-identity-details.md)上获取存储 ID。
 * 对于外接程序，你可以在合作伙伴中心的外接程序的 "概述" 页上获取存储 ID。
@@ -247,10 +247,10 @@ Microsoft Store 中的任何产品的 Store ID 都是 12 个字符的字母数�
 
 对于具有 SKU 和可用性的产品，SKU 和可用性还有自己的具有不同格式的 Store ID。
 
-| 对象 |  应用商店 ID 格式  |
+| Object |  应用商店 ID 格式  |
 |---------|-------------------|
 | SKU |  对于 SKU，Store ID 的格式为 ```<product Store ID>/xxxx```，其中 ```xxxx``` 是 4 个字符的字母数字字符串，用于标识产品的 SKU。 例如， ```9NBLGGH4R315/000N```。 此 ID 由 [StoreSku](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.storeid) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) 属性返回，并且有时称为 *SKU 应用商店 ID*。 |
-| 可用性  |  对于可用性，Store ID 的格式为 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是标识产品 SKU 的 4 字符数字字母字符串，而 ```yyyyyyyyyyyy``` 是标识 SKU 可用性的 12 字符字母数字字符串。 例如， ```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 此 ID 由 [StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability) 属性返回，并且有时称为*可用性 Store ID*。  |
+| 可用性  |  对于可用性，Store ID 的格式为 ```<product Store ID>/xxxx/yyyyyyyyyyyy```，其中 ```xxxx``` 是标识产品 SKU 的 4 字符数字字母字符串，而 ```yyyyyyyyyyyy``` 是标识 SKU 可用性的 12 字符字母数字字符串。 例如， ```9NBLGGH4R315/000N/4KW6QZD2VN6X```。 此 ID 由 [StoreAvailability](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability.storeid) 对象的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeavailability) 属性返回，并且有时称为*可用性应用商店 ID*。  |
 
 <span id="product-ids" />
 

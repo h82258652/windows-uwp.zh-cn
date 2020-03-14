@@ -9,11 +9,11 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302591"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209713"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -60,7 +60,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)查找完整的架构参考。
 
-|名称 | 描述 |
+|名称 | 说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.desktopAppMigration``。
 |AumID |打包后的应用的应用程序用户模型 ID。 |
@@ -120,7 +120,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
@@ -179,7 +179,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 | 文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。   |
@@ -240,14 +240,14 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 | 始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
-|谓词 |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
+|Verb |文件资源管理器上下文菜单中显示的名称。 此字符串可使用 ```ms-resource``` 进行本地化。|
 |ID |动词命令的唯一 ID。 如果你的应用程序是 UWP 应用，则会将其作为激活事件参数的一部分传递给你的应用，以便它能够相应地处理用户的选择。 如果你的应用程序是完全信任的打包应用程序，则它将改为接收参数（请参阅下一项目符号）。 |
 |参数 |与动词命令关联的实参参数和值的列表。 如果你的应用程序是完全信任的打包应用程序，则当激活应用程序时，这些参数将作为事件参数传递给应用程序。 您可以根据不同的激活谓词自定义应用程序的行为。 如果变量可包含文件路径，请用引号将参数值括起来。 这将避免路径包含空格的情况下出现的任何问题。 如果应用程序是 UWP 应用程序，则不能传递参数。 应用转而接收参数（请参阅上一项）。|
-|Extended |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 此属性是可选的，如果未列出，则默认为**False**的值（例如，始终显示谓词）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
+|扩展 |指定动词命令仅在用户右键单击文件之前按住 **Shift** 键显示上下文菜单时才显示。 此属性是可选的，如果未列出，则默认为**False**的值（例如，始终显示谓词）。 为每个动词命令逐个指定此行为（“打开”除外，它始终为 **False**）。|
 
 #### <a name="example"></a>示例
 
@@ -304,7 +304,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
@@ -370,9 +370,9 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
-|类别 |始终是 ``windows.firewallRules``|
+|类别 |始终 ``windows.firewallRules``|
 |可执行文件 |想要添加到防火墙例外列表的可执行文件名称 |
 |Direction |指示规则是传入规则还是传出规则 |
 |IPProtocol |通信协议 |
@@ -380,7 +380,7 @@ ms.locfileid: "75302591"
 |LocalPortMax |本地端口号范围内最大的端口号。 |
 |RemotePortMax |远程端口号范围内较小的端口号。 |
 |RemotePortMax |远程端口号范围内最大的端口号。 |
-|个人资料 |网络类型 |
+|配置文件 |网络类型 |
 
 #### <a name="example"></a>示例
 
@@ -430,7 +430,7 @@ ms.locfileid: "75302591"
 
 ```
 
-|名称 | 描述 |
+|名称 | 说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.loaderSearchPathOverride``。
 |FolderPath | 包含你的 dll 文件的文件夹路径。 指定相对于程序包根文件夹的路径。 你可以在一个扩展中最多指定五个路径。 如果你希望系统搜索程序包根文件夹中的文件，请为这些路径之一使用空字符串。 不要包含重复路径，并确保路径的开头和结尾不包含斜杠或反斜杠。 <br><br> 系统不搜索子文件夹，因此请务必明确列出包含你希望系统加载的 DLL 文件的每个文件夹。|
@@ -495,7 +495,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
@@ -570,7 +570,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
@@ -632,7 +632,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
@@ -697,12 +697,12 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
 |FileType |相关的文件扩展名。 |
-|value |有效的[类型值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
+|值 |有效的[类型值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>示例
 
@@ -758,7 +758,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fileTypeAssociation``。
 |名称 |文件类型关联的名称。 您可以使用此名称来组织和分组文件类型。 该名称必须是不带空格的小写字符。 |
@@ -914,14 +914,14 @@ ms.locfileid: "75302591"
 
 ```
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.cloudfiles``。
 |iconResource |代表你的云文件提供商服务的图标。 该图标显示在文件资源管理器的导航窗格中。  用户选择该图标可显示云服务中的文件。 |
 |CustomStateHandler Clsid |实现 CustomStateHandler 的应用程序的类 ID。 系统使用该类 ID 请求云文件的自定义状态和列。 |
 |ThumbnailProviderHandler Clsid |实现 ThumbnailProviderHandler 的应用程序的类 ID。 系统使用该类 ID 请求云文件的缩略图图像。 |
 |ExtendedPropertyHandler Clsid |实现 ExtendedPropertyHandler 的应用程序的类 ID。  系统使用该类 ID 请求云文件的扩展属性。 |
-|谓词 |你的云服务提供的文件在文件资源管理器上下文菜单中显示的名称。 |
+|Verb |你的云服务提供的文件在文件资源管理器上下文菜单中显示的名称。 |
 |ID |动词命令的唯一 ID。 |
 
 #### <a name="example"></a>示例
@@ -984,7 +984,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.protocol``。
 |名称 |协议的名称。 |
@@ -1036,7 +1036,7 @@ ms.locfileid: "75302591"
 </Extension>
 ```
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.appExecutionAlias``。
 |可执行文件 |调用别名时要启动的可执行文件的相对路径。 |
@@ -1099,12 +1099,12 @@ ms.locfileid: "75302591"
 </Extension>
 ```
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.startupTask``。|
 |可执行文件 |要启动的可执行文件的相对路径。 |
 |TaskId |任务的唯一标识符。 使用此标识符，你的应用程序可以调用[windows.applicationmodel.resources.core. StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask)类中的 api 以编程方式启用或禁用启动任务。 |
-|启用 |指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 |
+|已启用 |指示是启用还是禁用任务的首次启动。 启用的任务将在用户下次登录时运行（除非用户禁用它）。 |
 |DisplayName |任务管理器中显示的任务名称。 可以使用 ```ms-resource``` 本地化此字符串。 |
 
 #### <a name="example"></a>示例
@@ -1154,18 +1154,18 @@ ms.locfileid: "75302591"
   </AutoPlayHandler>
 ```
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.autoPlayHandler``。
 |ActionDisplayName |表示用户可以对其连接到电脑的设备执行的操作的字符串（例如：“导入文件”或“播放视频”）。 |
 |ProviderDisplayName | 表示应用程序或服务的字符串（例如： "Contoso 视频播放器"）。 |
 |ContentEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的内容事件的名称。 当卷设备（如相机内存卡、U 盘或 DVD）插入到电脑时，会引发内容事件。 你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到此类事件的完整列表。  |
-|谓词 |谓词设置标识为所选选项传递到应用程序的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
-|DropTargetHandler |实现[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)接口的应用程序的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 方法。  |
+|Verb |谓词设置标识为所选选项传递到应用程序的值。 你可以为自动播放事件指定多个启动操作并且可以使用谓词设置确定用户为你的应用选择的选项。 你可以通过检查传递给应用的启动事件参数的 verb 属性来标识用户选择的选项。 你可以为谓词设置使用任何值（但保留的 open 除外）。 |
+|DropTargetHandler |实现[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)接口的应用程序的类 ID。 系统会将可移动媒体中的文件传递给你的 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) 实现的 [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 方法。  |
 |参数 |你不必为所有内容事件实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于任意内容事件，你可以提供命令行参数，而不是实现 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 接口。 对于这些事件，自动播放将使用这些命令行参数来启动应用程序。 你可以在应用的初始化代码中解析这些参数，确定应用是否由自动播放启动，然后提供自定义实现。 |
 |DeviceEvent |导致向用户提示你的 ``ActionDisplayName`` 和 ``ProviderDisplayName`` 的设备事件的名称。 当有设备连接到电脑时，将引发设备事件。 设备事件以字符串 ``WPD`` 开头，你可以在[此处](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到设备事件列表。 |
 |HWEventHandler |实现[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)接口的应用程序的类 ID。 |
-|InitCmdLine |你要传递给 [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 接口的 [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) 方法的字符串参数。 |
+|InitCmdLine |你要传递给 [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize) 接口的 [Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 方法的字符串参数。 |
 
 ### <a name="example"></a>示例
 
@@ -1241,7 +1241,7 @@ ms.locfileid: "75302591"
 
 在[此处](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.appPrinter``。
 |DisplayName |希望在应用的打印目标列表中显示的名称。 |
@@ -1291,7 +1291,7 @@ ms.locfileid: "75302591"
 
 在[此处](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts)查找完整的架构参考。
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.sharedFonts``。
 |文件 |包含想要共享的字体的文件。 |
@@ -1337,7 +1337,7 @@ ms.locfileid: "75302591"
 </Extension>
 ```
 
-|名称 |描述 |
+|名称 |说明 |
 |-------|-------------|
 |类别 |始终为 ``windows.fullTrustProcess``。
 |GroupID |标识想要传递给可执行文件的参数集的字符串。 |

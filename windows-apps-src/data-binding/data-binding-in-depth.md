@@ -10,11 +10,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 0b54b04f2f36c2661de8baf58d0da1aec75ae590
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853224"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210143"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
@@ -30,7 +30,7 @@ ms.locfileid: "78853224"
 
 本主题介绍通用 Windows 平台（UWP）应用程序中的数据绑定。 此处讨论的 Api 位于[ **Windows**命名空间](/uwp/api/windows.ui.xaml.data)中。
 
-数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而可形成一个更简易的概念模型，并且使你的应用拥有更好的可读性、可测试性和可维护性。
+数据绑定是你的应用 UI 用来显示数据的一种方法，可以选择与该数据保持同步。 借助数据绑定，你可以将关注的数据从关注的 UI 中分离开来，从而形成一个更简易的概念模型，并且使应用具有更好的可读性、可测试性和可维护性。
 
 当 UI首次显示时，你可以使用数据绑定以仅显示来自数据源的值，但不会对这些值中的更改做出响应。 这是一种称为 "*一次性*" 的绑定模式，适用于在运行时不会更改的值。 或者，您可以选择 "观察" 值，并在更改时更新 UI。 此*模式称为单向的，* 它很适合用于只读数据。 最后，你可以选择观察并更新，以便用户在 UI 中对值所做的更改能自动传回数据源。 此模式*称为 "双向*"，它适用于读写数据。 下面是一些示例。
 

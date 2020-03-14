@@ -1,69 +1,69 @@
 ---
 Description: 本主题介绍 MakePri.exe 工具用于生成其资源索引的特定格式索引器。
-title: MakePri.exe 特定格式索引器
+title: MakePri.exe 格式特定索引器
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: e07c0b2730da258126465fbeea917b32ef9d23e6
-ms.sourcegitcommit: 46890e7f3c1287648631c5e318795f377764dbd9
+ms.openlocfilehash: 6d30a0321de872dac11070c52dd0598b2276bcab
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320600"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79200955"
 ---
-# <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 特定格式索引器
+# <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 格式特定索引器
 
 本主题介绍 [MakePri.exe](compile-resources-manually-with-makepri.md) 工具生成其资源索引时所使用的特定格式索引器。
 
 > [!NOTE]
-> 选中时安装 MakePri.exe**适用于 UWP 的托管应用的 Windows SDK**选项的同时，安装 Windows 软件开发工具包。 安装到路径`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他体系结构对于命名的文件夹）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 当你在安装 Windows 软件开发工具包时检查 " **UWP 托管应用的 Windows SDK** " 选项时，将安装 makepri.exe。 它安装在路径 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` （以及其他体系结构的名为的文件夹中）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 MakePri.exe 通常与 `new`、`versioned` 或 `resourcepack` 命令一起使用。 请参阅 [MakePri.exe 命令行选项](makepri-exe-command-options.md)。 在这些情况下，它索引源文件以生成资源索引。 MakePri.exe 使用各种单独的索引器读取不同的源资源文件或资源容器。 最简单的索引器是文件夹索引器，它索引文件夹的内容，如 `.jpg` 或 `.png` 图像。
 
-通过指定 [MakePri.exe 配置文件](makepri-exe-configuration.md)的 `<index>` 元素中的 `<indexer-config>` 元素标识特定格式索引器。 `type` 属性标识使用的特定格式索引器。
+通过指定 `<indexer-config>`MakePri.exe 配置文件`<index>`的 [ 元素中的 ](makepri-exe-configuration.md) 元素标识特定格式索引器。 `type` 属性标识使用的特定格式索引器。
 
 在索引过程中遇到的资源容器通常将它们的内容编入索引，而不是添加到索引自身中。 例如，文件夹索引器找到的 `.resjson` 文件可能会由 `.resjson` 索引器进一步编制索引，在这种情况下 `.resjson` 文件本身不显示在索引中。 **注意**与该容器关联的索引器的 `<indexer-config>` 元素必须包括在配置文件中才会发生这种情况。
 
-通常情况下，在包含实体（如文件夹或 `.resw` 文件）上找到的限定符应用到其中的所有资源，如文件夹中的文件，或 `.resw` 文件中的字符串。
+通常情况下，在包含实体（如文件夹或 &mdash; 文件）上找到的限定符应用到其中的所有资源，如文件夹中的文件，或 `.resw` 文件中的字符串。
 
-## <a name="folder"></a>文件夹
+## <a name="folder"></a>Folder
 
 文件夹索引器由文件夹的 `type` 属性进行标识。 它索引文件夹的内容，并从文件夹和文件名确定资源限定符。 它的配置元素符合以下架构。
 
 ```xml
-<xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\
-    <xs:simpleType name=\"ExclusionTypeList\">\
-        <xs:restriction base=\"xs:string\">\
-            <xs:enumeration value=\"path\"/>\
-            <xs:enumeration value=\"extension\"/>\
-            <xs:enumeration value=\"name\"/>\
-            <xs:enumeration value=\"tree\"/>\
-        </xs:restriction>\
-    </xs:simpleType>\
-    <xs:complexType name=\"FolderExclusionType\">\
-        <xs:attribute name=\"type\" type=\"ExclusionTypeList\" use=\"required\"/>\
-        <xs:attribute name=\"value\" type=\"xs:string\" use=\"required\"/>\
-        <xs:attribute name=\"doNotTraverse\" type=\"xs:boolean\" use=\"required\"/>\
-        <xs:attribute name=\"doNotIndex\" type=\"xs:boolean\" use=\"required\"/>\
-    </xs:complexType>\
-    <xs:simpleType name=\"IndexerConfigFolderType\">\
-        <xs:restriction base=\"xs:string\">\
-            <xs:pattern value=\"((f|F)(o|O)(l|L)(d|D)(e|E)(r|R))\"/>\
-        </xs:restriction>\
-    </xs:simpleType>\
-    <xs:element name=\"indexer-config\">\
-        <xs:complexType>\
-            <xs:sequence>\
-                <xs:element name=\"exclude\" type=\"FolderExclusionType\" minOccurs=\"0\" maxOccurs=\"unbounded\"/>\
-            </xs:sequence>\
-            <xs:attribute name=\"type\" type=\"IndexerConfigFolderType\" use=\"required\"/>\
-            <xs:attribute name=\"foldernameAsQualifier\" type=\"xs:boolean\" use=\"required\"/>\
-            <xs:attribute name=\"filenameAsQualifier\" type=\"xs:boolean\" use=\"required\"/>\
-            <xs:attribute name=\"qualifierDelimiter\" type=\"xs:string\" use=\"required\"/>\
-        </xs:complexType>\
-    </xs:element>\
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="ExclusionTypeList">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="path"/>
+            <xs:enumeration value="extension"/>
+            <xs:enumeration value="name"/>
+            <xs:enumeration value="tree"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="FolderExclusionType">
+        <xs:attribute name="type" type="ExclusionTypeList" use="required"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+        <xs:attribute name="doNotTraverse" type="xs:boolean" use="required"/>
+        <xs:attribute name="doNotIndex" type="xs:boolean" use="required"/>
+    </xs:complexType>
+    <xs:simpleType name="IndexerConfigFolderType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((f|F)(o|O)(l|L)(d|D)(e|E)(r|R))"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="indexer-config">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="exclude" type="FolderExclusionType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="IndexerConfigFolderType" use="required"/>
+            <xs:attribute name="foldernameAsQualifier" type="xs:boolean" use="required"/>
+            <xs:attribute name="filenameAsQualifier" type="xs:boolean" use="required"/>
+            <xs:attribute name="qualifierDelimiter" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
 ```
 
@@ -76,23 +76,23 @@ PRI 索引器由 PRI 的 `type` 属性进行标识。 它索引 PRI 文件的内
 PRI 文件中包含的所有资源名称、限定符和值都直接在新的 PRI 文件中进行维护。 但顶级资源映射不在最终 PRI 中进行维护。 资源映射合并。
 
 ```xml
-<xs:schema id=\"prifile\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
-    <xs:simpleType name=\"IndexerConfigPriType\">\
-        <xs:restriction base=\"xs:string\">\
-            <xs:pattern value=\"((p|P)(r|R)(i|I))\"/>\
-        </xs:restriction>\
-    </xs:simpleType>\
-    <xs:element name=\"indexer-config\">\
-        <xs:complexType>\
-            <xs:attribute name=\"type\" type=\"IndexerConfigPriType\" use=\"required\"/>\
-        </xs:complexType>\
-    </xs:element>\
-</xs:schema>\
+<xs:schema id="prifile" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:simpleType name="IndexerConfigPriType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((p|P)(r|R)(i|I))"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="indexer-config">
+        <xs:complexType>
+            <xs:attribute name="type" type="IndexerConfigPriType" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
 ```
 
 ## <a name="priinfo"></a>PriInfo
 
-PriInfo 索引器由 PRIINFO 的 `type` 属性进行标识。 它索引详细转储文件的内容。 你可以通过使用 `/dt detailed` 选项运行 `makepri dump` 的方式产生详细的转储文件。 索引器的配置元素符合以下架构。
+PriInfo 索引器由 PRIINFO 的 `type` 属性进行标识。 它索引详细转储文件的内容。 你可以通过使用 `makepri dump` 选项运行 `/dt detailed` 的方式产生详细的转储文件。 索引器的配置元素符合以下架构。
 
 ```xml
 <xs:schema id="priinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -122,94 +122,94 @@ PriInfo 索引器由 PRIINFO 的 `type` 属性进行标识。 它索引详细转
 要编入索引，转储文件必须以扩展 `.pri.xml` 结束，并且必须符合以下架构。
 
 ```xml
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >\
-  <xs:simpleType name="candidateType">\
-    <xs:restriction base="xs:string">\
-      <xs:pattern value="Path|String"/>\
-    </xs:restriction>\
-  </xs:simpleType>\
-  <xs:complexType name="scopeType">\
-    <xs:sequence>\
-      <xs:element name="ResourceMapSubtree" type="scopeType" minOccurs="0" maxOccurs="unbounded"/>\
-      <xs:element name="NamedResource" minOccurs="0" maxOccurs="unbounded">\
-        <xs:complexType>\
-          <xs:sequence>\
-            <xs:element name="Decision" minOccurs="0" maxOccurs="unbounded">\
-              <xs:complexType>\
-                <xs:sequence>\
-                  <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>\
-                </xs:sequence>\
-                <xs:anyAttribute processContents="skip" />\
-              </xs:complexType>\
-            </xs:element>\
-            <xs:element name="Candidate" minOccurs="0" maxOccurs="unbounded">\
-              <xs:complexType>\
-                <xs:sequence>\
-                  <xs:element name="QualifierSet" minOccurs="0" maxOccurs="unbounded">\
-                    <xs:complexType>\
-                      <xs:sequence>\
-                        <xs:element name="Qualifier" minOccurs="0" maxOccurs="unbounded">\
-                          <xs:complexType>\
-                            <xs:attribute name="name" type="xs:string" use="required" />\
-                            <xs:attribute name="value" type="xs:string" use="required" />\
-                            <xs:attribute name="priority" type="xs:integer" use="required" />\
-                            <xs:attribute name="scoreAsDefault" type="xs:decimal" use="required" />\
-                            <xs:attribute name="index" type="xs:integer" use="required" />\
-                          </xs:complexType>\
-                        </xs:element>\
-                      </xs:sequence>\
-                      <xs:anyAttribute processContents="skip" />\
-                    </xs:complexType>\
-                  </xs:element>\
-                  <xs:element name="Value" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>\
-                </xs:sequence>\
-                <xs:attribute name="type" type="candidateType" use="required" />\
-              </xs:complexType>\
-            </xs:element>\
-          </xs:sequence>\
-          <xs:attribute name="name" use="required" type="xs:string" />\
-          <xs:anyAttribute processContents="skip" />\
-        </xs:complexType>\
-      </xs:element>\
-    </xs:sequence>\
-    <xs:attribute name="name" use="required" type="xs:string" />\
-    <xs:anyAttribute processContents="skip" />\
-  </xs:complexType>\
-  <xs:element name="PriInfo">\
-    <xs:complexType>\
-      <xs:sequence>\
-        <xs:element name="PriHeader" >\
-          <xs:complexType>\
-            <xs:sequence>\
-              <xs:any minOccurs ="0" maxOccurs="unbounded" processContents="skip" />\
-            </xs:sequence>\
-            <xs:anyAttribute processContents="skip" />\
-          </xs:complexType>\
-        </xs:element>\
-        <xs:element name="QualifierInfo">\
-          <xs:complexType>\
-            <xs:sequence>\
-              <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />\
-            </xs:sequence>\
-          </xs:complexType>\
-        </xs:element>\
-        <xs:element name="ResourceMap">\
-          <xs:complexType>\
-            <xs:sequence>\
-              <xs:element name="VersionInfo">\
-                <xs:complexType>\
-                  <xs:anyAttribute processContents="skip" />\
-                </xs:complexType>\
-              </xs:element>\
-              <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceMapSubtree" type="scopeType" />\
-            </xs:sequence>\
-            <xs:attribute name="name" type="xs:string" use="required" />\
-            <xs:anyAttribute processContents="skip" />\
-          </xs:complexType>\
-        </xs:element>\
-      </xs:sequence>\
-    </xs:complexType>\
-  </xs:element>\
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
+  <xs:simpleType name="candidateType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="Path|String"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="scopeType">
+    <xs:sequence>
+      <xs:element name="ResourceMapSubtree" type="scopeType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="NamedResource" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Decision" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:anyAttribute processContents="skip" />
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Candidate" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="QualifierSet" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Qualifier" minOccurs="0" maxOccurs="unbounded">
+                          <xs:complexType>
+                            <xs:attribute name="name" type="xs:string" use="required" />
+                            <xs:attribute name="value" type="xs:string" use="required" />
+                            <xs:attribute name="priority" type="xs:integer" use="required" />
+                            <xs:attribute name="scoreAsDefault" type="xs:decimal" use="required" />
+                            <xs:attribute name="index" type="xs:integer" use="required" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                      <xs:anyAttribute processContents="skip" />
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="Value" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="type" type="candidateType" use="required" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="name" use="required" type="xs:string" />
+          <xs:anyAttribute processContents="skip" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" use="required" type="xs:string" />
+    <xs:anyAttribute processContents="skip" />
+  </xs:complexType>
+  <xs:element name="PriInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PriHeader" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs ="0" maxOccurs="unbounded" processContents="skip" />
+            </xs:sequence>
+            <xs:anyAttribute processContents="skip" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualifierInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ResourceMap">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VersionInfo">
+                <xs:complexType>
+                  <xs:anyAttribute processContents="skip" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceMapSubtree" type="scopeType" />
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+            <xs:anyAttribute processContents="skip" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
 ```
 
@@ -267,19 +267,19 @@ MakePri.exe 跳过 `.pri.xml` 文件的多个元素。 这些元素在索引过�
 ResFiles 索引器由 RESFILES 的 `type` 属性进行标识。 它索引 `.resfiles` 文件的内容。 它的配置元素符合以下架构。
 
 ```xml
-<xs:schema id=\"resx\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
-    <xs:simpleType name=\"IndexerConfigResFilesType\">\
-        <xs:restriction base=\"xs:string\">\
-            <xs:pattern value=\"((r|R)(e|E)(s|S)(f|F)(i|I)(l|L)(e|E)(s|S))\"/>\
-        </xs:restriction>\
-    </xs:simpleType>\
-    <xs:element name=\"indexer-config\">\
-        <xs:complexType>\
-            <xs:attribute name=\"type\" type=\"IndexerConfigResFilesType\" use=\"required\"/>\
-            <xs:attribute name=\"qualifierDelimiter\" type=\"xs:string\" use=\"required\"/>\
-        </xs:complexType>\
-    </xs:element>\
-</xs:schema>\
+<xs:schema id="resx" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:simpleType name="IndexerConfigResFilesType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((r|R)(e|E)(s|S)(f|F)(i|I)(l|L)(e|E)(s|S))"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="indexer-config">
+        <xs:complexType>
+            <xs:attribute name="type" type="IndexerConfigResFilesType" use="required"/>
+            <xs:attribute name="qualifierDelimiter" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
 ```
 
 `.resfiles` 文件是包含一个文件路径简单列表的文本文件。 `.resfiles` 文件可以包含“//”评论。 下面提供了一个示例。
@@ -298,19 +298,19 @@ Images\logo.scale-180.png
 ResJSON 索引器由 RESJSON 的 `type` 属性进行标识。 它索引 `.resjson` 文件的内容，这是字符串资源文件。 它的配置元素符合以下架构。
 
 ```xml
-<xs:schema id=\"resjson\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
-    <xs:simpleType name=\"IndexerConfigResJsonType\">\
-        <xs:restriction base=\"xs:string\">\
-            <xs:pattern value=\"((r|R)(e|E)(s|S)(j|J)(s|S)(o|O)(n|N))\"/>\
-        </xs:restriction>\
-    </xs:simpleType>\
-    <xs:element name=\"indexer-config\">\
-        <xs:complexType>\
-            <xs:attribute name=\"type\" type=\"IndexerConfigResJsonType\" use=\"required\"/>\
-            <xs:attribute name=\"initialPath\" type=\"xs:string\" use=\"optional\"/>\
-        </xs:complexType>\
-    </xs:element>\
-</xs:schema>\
+<xs:schema id="resjson" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:simpleType name="IndexerConfigResJsonType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((r|R)(e|E)(s|S)(j|J)(s|S)(o|O)(n|N))"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="indexer-config">
+        <xs:complexType>
+            <xs:attribute name="type" type="IndexerConfigResJsonType" use="required"/>
+            <xs:attribute name="initialPath" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
 ```
 
 `.resjson` 文件包含 JSON 文本（请参阅 [JavaScript 对象表示法 (JSON) 的应用程序/json 媒体类型](https://www.ietf.org/rfc/rfc4627.txt)）。 文件必须包含一个具有分层属性的简单 JSON 对象。 每个属性必须是另外一个 JSON 对象或字符串值。
@@ -319,27 +319,27 @@ ResJSON 索引器由 RESJSON 的 `type` 属性进行标识。 它索引 `.resjso
 
 文件还可以包含“//”评论，该评论在分析过程中被忽略。
 
-`initialPath` 属性通过将此初始路径追加在资源名称前面的方式将所有资源放在此初始路径下。 这通常在为类库资源编制索引时会用到。 默认值为空值。
+`initialPath` 属性通过将此初始路径追加在资源名称前面的方式将所有资源放在此初始路径下。 这通常在为类库资源编制索引时会用到。 默认为空。
 
 ## <a name="resw"></a>ResW
 
 ResW 索引器由 RESW 的 `type` 属性进行标识。 它索引 `.resw` 文件的内容，这是字符串资源文件。 它的配置元素符合以下架构。
 
 ```xml
-<xs:schema id=\"resw\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
-    <xs:simpleType name=\"IndexerConfigResxType\">\
-        <xs:restriction base=\"xs:string\">\
-            <xs:pattern value=\"((r|R)(e|E)(s|S)(w|W))\"/>\
-        </xs:restriction>\
-    </xs:simpleType>\
-    <xs:element name=\"indexer-config\">\
-        <xs:complexType>\
-            <xs:attribute name=\"type\" type=\"IndexerConfigResxType\" use=\"required\"/>\
-            <xs:attribute name=\"convertDotsToSlashes\" type=\"xs:boolean\" use=\"required\"/>\
-            <xs:attribute name=\"initialPath\" type=\"xs:string\" use=\"optional\"/>\
-        </xs:complexType>\
-    </xs:element>\
-</xs:schema>\
+<xs:schema id="resw" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:simpleType name="IndexerConfigResxType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((r|R)(e|E)(s|S)(w|W))"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="indexer-config">
+        <xs:complexType>
+            <xs:attribute name="type" type="IndexerConfigResxType" use="required"/>
+            <xs:attribute name="convertDotsToSlashes" type="xs:boolean" use="required"/>
+            <xs:attribute name="initialPath" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
 ```
 
 `.resw` 文件是符合以下方案的 XML 文件。
@@ -395,11 +395,11 @@ ResW 索引器由 RESW 的 `type` 属性进行标识。 它索引 `.resw` 文件
 
 `convertDotsToSlashes` 属性将在资源名称（数据元素名称属性）中找到的所有点（“.”）字符转换为正斜杠“/”，除非点字符位于“[”和“]”之间。
 
-`initialPath` 属性通过将此初始路径追加在资源名称前面的方式将所有资源放在此初始路径下。 这通常在为类库资源编制索引时用到。 默认值为空值。
+`initialPath` 属性通过将此初始路径追加在资源名称前面的方式将所有资源放在此初始路径下。 这通常在为类库资源编制索引时用到。 默认为空。
 
 ## <a name="related-topics"></a>相关主题
 
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)
-* [MakePri.exe 命令行选项](makepri-exe-command-options.md)
-* [MakePri.exe 配置文件](makepri-exe-configuration.md)
-* [应用程序/json 媒体类型的 JavaScript 对象表示法 (JSON)](https://www.ietf.org/rfc/rfc4627.txt)
+* [Makepri.exe 命令行选项](makepri-exe-command-options.md)
+* [Makepri.exe 配置文件](makepri-exe-configuration.md)
+* [JavaScript 对象表示法的 application/json 媒体类型（JSON）](https://www.ietf.org/rfc/rfc4627.txt)

@@ -12,11 +12,11 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.openlocfilehash: 449f0c81bdd54d99ef0977ca1c9b6ba10ba5eae7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258358"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210103"
 ---
 # <a name="keyboard-interactions"></a>键盘交互
 
@@ -58,7 +58,7 @@ ms.locfileid: "74258358"
 | 设备/工具                       | 说明     |
 |-----------------------------------|-----------------|
 |键盘（硬件和软件）   |除了标准硬件键盘，UWP 应用程序还支持两个软件键盘：[触控（或软件）键盘](#software-keyboard)和[屏幕键盘](#on-screen-keyboard)。|
-|手柄和遥控器         |Xbox 游戏板和遥控器是 [10 英尺体验](../devices/designing-for-tv.md)中的基础输入设备。 有关游戏板和遥控器的 UWP 支持的特定详细信息，请参阅[游戏板和遥控器交互](gamepad-and-remote-interactions.md)。|
+|游戏板和遥控器         |Xbox 游戏板和遥控器是 [10 英尺体验](../devices/designing-for-tv.md)中的基础输入设备。 有关游戏板和遥控器的 UWP 支持的特定详细信息，请参阅[游戏板和遥控器交互](gamepad-and-remote-interactions.md)。|
 |屏幕读取器（讲述人）          |讲述人是一款面向 Windows 的内置屏幕读取器，可提供独特的交互体验和功能，但仍依赖于基本的键盘导航和输入。 有关讲述人的详细信息，请参阅[讲述人入门](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)。|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>自定义体验和高效键盘操作
@@ -123,7 +123,7 @@ UWP 支持适合于所有输入类型和体验的单个焦点视觉对象设计�
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>将初始焦点设置为最符合逻辑的元素
 
-将初始焦点设置为用户在启动应用或导航页面时最有可能采取的第一个（或主要）操作的 UI 元素上。 一些示例如下：
+将初始焦点设置为用户在启动应用或导航页面时最有可能采取的第一个（或主要）操作的 UI 元素上。 示例包括：
 -   在照片应用中，焦点被设为库中的第一个项目
 -   在音乐应用中，焦点被设为播放按钮
 
@@ -142,7 +142,7 @@ UWP 支持适合于所有输入类型和体验的单个焦点视觉对象设计�
 默认情况下，UWP 控件遵循以下基本的键盘行为：
 -   **Tab 键**用于以 Tab 键顺序在可操作/活动控件之间导航。
 -   **Shift + Tab** 用于以与 Tab 键顺序相反的顺序导航控件。 如果用户已使用箭头键在控件内导航，则焦点将设为控件内的最后一个已知值。
--   **箭头键**显示控件特定的“内部导航”。当用户进入“内部导航”时，箭头键不会在控件外导航。 一些示例如下：
+-   **箭头键**显示控件特定的“内部导航”。当用户进入“内部导航”时，箭头键不会在控件外导航。 示例包括：
     -   向上/向下箭头键将焦点移 `ListView` 和 `MenuFlyout`
     -   修改 `Slider` 和 `RatingsControl` 的当前选定值
     -   在 `TextBox` 中移动插入符号
@@ -233,7 +233,7 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 
 ![向上和向下翻页键](images/keyboard/page-up-and-down.png)
 
-### <a name="keyboard-shortcuts"></a>键盘快捷方式
+### <a name="keyboard-shortcuts"></a>键盘快捷键
 
 键盘快捷方式可让你更轻松地使用应用程序，同时为键盘用户提供可访问性的增强支持和提高效率。
 
@@ -260,7 +260,7 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 -   当支持时，它们将在整个应用程序中生效。
 -   应一致地分配它们，因为它们是缘故的，而不是直接记录的。
 
-#### <a name="access-keys"></a>访问键
+#### <a name="access-keys"></a>访问密钥
 
 有关 UWP 中的支持访问键的更多深入信息，请参阅[访问键](access-keys.md)页面。
 
@@ -280,15 +280,15 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 
 | 操作                               | 键命令                                      |
 |--------------------------------------|--------------------------------------------------|
-| 全选                           | Ctrl+A                                           |
+| 选择全部文本                           | Ctrl+A                                           |
 | 连续选择                  | Shift+箭头键                                  |
 | 保存                                 | Ctrl+S                                           |
 | 查找                                 | Ctrl+F                                           |
 | 打印                                | Ctrl+P                                           |
 | 复制                                 | Ctrl+C                                           |
-| Cut                                  | Ctrl+X                                           |
-| 粘帖                                | Ctrl+V                                           |
-| 撤销                                 | Ctrl+Z                                           |
+| 剪切                                  | Ctrl+X                                           |
+| 粘贴                                | Ctrl+V                                           |
+| 撤消                                 | Ctrl+Z                                           |
 | 下一个选项卡                             | Ctrl+Tab                                         |
 | 关闭选项卡                            | Ctrl+F4 或 Ctrl+W                                |
 | 语义式缩放                        | Ctrl++ 或 Ctrl+-                                 |
@@ -403,10 +403,10 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 | **键盘**  | **手柄**                         | **远程控制**  |
 |---------------|-------------------------------------|---------------------|
 | 空格         | A 按钮                            | 选择按钮       |
-| Enter         | A 按钮                            | 选择按钮       |
-| Escape        | B 按钮                            | 后退按钮         |
-| Home/End      | 不适用                                 | 不适用                 |
-| 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 不适用                 |
+| 输入         | A 按钮                            | 选择按钮       |
+| 退出        | B 按钮                            | 后退按钮         |
+| Home/End      | 不可用                                 | 不可用                 |
+| 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 不可用                 |
 
 设计 UWP 应用以供与游戏板和遥控器搭配使用时应注意的一些主要差异包括：
 -   文本输入需要用户按 A 激活文本控件。
@@ -501,7 +501,7 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 
 建议在自定义控件中模拟这些相同的行为。 有关如何实现此行为的代码示例可在[编程集中导航](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element)文档中找到。
 
-## <a name="test-your-app"></a>测试应用
+## <a name="test-your-app"></a>测试应用程序
 
 使用所有受支持的输入设备测试你的应用，确保可以一致、直观的方式导航至 UI 元素并且没有意外的元素会干扰所需的 Tab 键顺序。
 
@@ -540,10 +540,10 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 -   单选按钮
 -   滚动条
 -   树
--   树项目
--   Menu
+-   树项
+-   菜单
 -   菜单栏
--   菜单项目
+-   Menu item
 -   工具栏
 -   列表
 -   列表项

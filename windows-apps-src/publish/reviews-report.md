@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10、uwp、评论、评论、审阅者
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ec883e7bcb98d69673b520df918e085182d35ec
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853234"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210983"
 ---
 # <a name="reviews-report"></a>评价报告
 

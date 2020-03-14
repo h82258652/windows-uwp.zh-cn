@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 外部测试版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e96f6d2495583fcee4d16e54a5c8a5e208fec27
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852505"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210773"
 ---
 # <a name="manage-package-flight-submissions"></a>管理软件包外部测试版提交
 
@@ -259,7 +259,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 |------------|--------|------------------------------|
 | id            | string  | 提交的 ID。  |
 | flightId           | string  |  提交相关联的软件包外部测试版的 ID。  |  
-| status           | string  | 提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>证书</li><li>CertificationFailed</li><li>发布</li><li>ReleaseFailed</li></ul>   |
+| status           | string  | 提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>发布</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>证书</li><li>CertificationFailed</li><li>发布</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 对象  |  包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。  |
 | flightPackages           | 数组  | 包含提供提交中关于每个程序包详细信息的[软件包外部测试版资源](#flight-package-object)。   |
 | packageDeliveryOptions    | 对象  | 包含提交的逐步软件包推出和强制更新设置的[软件包递送选项资源](#package-delivery-options-object)。   |
@@ -335,7 +335,7 @@ Microsoft Store 提交 API 提供可用于管理针对应用的软件包外部�
 
 | 值           | 类型    | 说明              |
 |-----------------|---------|------|
-| fileName   |   string      |  程序包的名称。    |  
+| fileName   |   string      |  程序包名称。    |  
 | fileStatus    | string    |  程序包的状态。 这可以是以下值之一： <ul><li>无</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  唯一标识程序包的 ID。 此值由合作伙伴中心使用。   |     
 | version    |  string   |  应用包的版本。 有关详细信息，请参阅[程序包版本编号](https://docs.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   

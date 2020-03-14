@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 679dde6802a2c0d27444fbcda040f2ba19039457
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852791"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210743"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>使用 Microsoft Store Services SDK 与客户互动
 
@@ -26,7 +26,7 @@ Microsoft Store Services SDK 提供了一些功能，可帮助你与通用 Windo
 
 Microsoft Store Services SDK 当前支持以下适用于 UWP 应用的方案。 有关 API 的参考文档，请参阅 [Microsoft Store Services SDK API 参考](https://docs.microsoft.com/uwp/api/overview/engagement)。
 
-|  方案  |  说明   |
+|  应用场景  |  说明   |
 |------------|----------------|
 |  [在 UWP 应用中使用 A/B 测试运行试验](run-app-experiments-with-a-b-testing.md)    |  在通用 Windows 平台 (UWP) 应用上运行 A/B 测试，测量这些功能对某些客户的有效性，之后再将它们发布给每位用户。 在伙伴中心定义试验后，请使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)类在应用中获取试验的变体，使用此数据修改正在测试的功能的行为，然后使用[LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法将查看事件和转换事件发送到合作伙伴中心。 最后，使用 "合作伙伴中心" 查看结果并管理试验。  |
 |  [从 UWP 应用启动反馈中心](launch-feedback-hub-from-your-app.md)    |  使用 UWP 应用中的 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 类将 Windows 10 客户定向到“反馈中心”，他们可以在其中提交问题、建议和赞成票。 然后，在合作伙伴中心内的[反馈报告](../publish/feedback-report.md)中管理此反馈。 |

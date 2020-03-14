@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
 ms.openlocfilehash: a348393a02bab946a128babefc07dc48faea6cd1
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853174"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210613"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
@@ -1519,7 +1519,7 @@ Windows Performance Toolkit (WPT) 包含各种性能监控工具，这些工具�
 
 以下指南和信息可帮助你尽可能顺利地完成发布和提交过程。
 
-### <a name="publishing"></a>Publishing
+### <a name="publishing"></a>发布
 
 你将使用[合作伙伴中心](https://partner.microsoft.com/dashboard)来发布和管理你的游戏包。
 

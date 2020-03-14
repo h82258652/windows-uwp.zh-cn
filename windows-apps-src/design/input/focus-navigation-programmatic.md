@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d919a86a44110d5b3b444fdf47d41f31637ccb6b
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684500"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210003"
 ---
 # <a name="programmatic-focus-navigation"></a>编程焦点导航
 
@@ -250,7 +250,7 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
 }
 ```
 
-此处，我们显示了菜单关闭时如何处理 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 的 [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件并设置焦点。
+此处，我们显示了菜单关闭时如何处理 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 的 [LosingFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 事件并设置焦点。
 
 ```XAML
 <CommandBar x:Name="MyCommandBar" LosingFocus="OnLosingFocus">

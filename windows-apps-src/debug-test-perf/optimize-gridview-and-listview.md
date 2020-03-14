@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 73da4a2a590c5f1d860bb480c6d81b01e5e93819
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853184"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210073"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 和 GridView UI 优化
 
@@ -244,7 +244,7 @@ UI 虚拟化是你可以实现的最重要改进。 这意味着按需创建表�
 
 4.  如果立即运行应用并快速在网格视图中平移/滚动，你看到的行为与使用 **x:Phase** 时相同。
 
-## <a name="container-recycling-with-heterogeneous-collections"></a>带有异类集锦的容器循环
+## <a name="container-recycling-with-heterogeneous-collections"></a>将容器回收用于异类集合
 
 在某些应用程序中，你需要为集锦中的不同类型的项目使用不同类型的 UI。 这可能造成虚拟化面板无法重复使用/循环使用用于显示项目的可视元素。 在平移期间为某个项目重新创建可视元素会撤销虚拟化所提供的许多性能优势。 但是，进行一些规划便可以允许虚拟化面板重复使用这些元素。 开发人员可以根据其方案选择一组选项：[**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件或项目模板选择器。 **ChoosingItemContainer** 方法具有更好的性能。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 加载项提交, 应用内产品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: c8204382a4e341083ce825a9424181cdd75771e1
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852506"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209643"
 ---
 # <a name="manage-add-on-submissions"></a>管理加载项提交
 
@@ -240,7 +240,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 | targetPublishDate           | string  | 提交的发布日期采用 ISO 8601 格式（如果 *targetPublishMode* 设为“SpecificDate”）。  |
 | 标记 (tag)           | string  |  加载项的[自定义开发人员数据](../publish/enter-add-on-properties.md#custom-developer-data)（此信息之前称为 *tag*）。   |
 | visibility  | string  |  加载项的可见性。 这可以是以下值之一： <ul><li>隐藏</li><li>公共</li><li>专用</li><li>NotSet</li></ul>  |
-| status  | string  |  提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>证书</li><li>CertificationFailed</li><li>发布</li><li>ReleaseFailed</li></ul>   |
+| status  | string  |  提交的状态。 这可以是以下值之一： <ul><li>无</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>发布</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>证书</li><li>CertificationFailed</li><li>发布</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 对象  |  包含有关提交状态的附加详细信息的[状态详细信息资源](#status-details-object)，其中包括任何错误的相关信息。 |
 | fileUploadUrl           | string  | 用于为提交上载任何程序包的共享访问签名 (SAS) URI。 如果要为提交添加新的程序包，请将包含这些程序包的 ZIP 存档上载到此 URI。 有关详细信息，请参阅[创建加载项提交](#create-an-add-on-submission)。  |
 | friendlyName  | string  |  提交的友好名称，如合作伙伴中心中所示。 当你创建提交时，系统会为你生成此值。  |
@@ -279,7 +279,7 @@ Microsoft Store 提交 API 将提供可用于管理针对应用的加载项（�
 |  marketSpecificPricings               |    对象     |  键值对字典，其中每个键为两个字母的 ISO 3166-1 二字母国家/地区代码，而每个值为[价格段](#price-tiers)。 这些项表示[加载项在特定市场中的自定义价格](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。 此字典中的任何项替代 *priceId* 值针对特定市场所指定的基价。     |     
 |  sales               |   数组      |  **已弃用**。 包含加载项销售信息的[销售资源](#sale-object)数组。     |     
 |  priceId               |   string      |  用于指定加载项[基价](#price-tiers)的[价格段](https://docs.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability)。    |    
-|  isAdvancedPricingModel               |   布尔值      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
+|  isAdvancedPricingModel               |   boolean      |  如果为 **true**，你的开发人员帐户可以使用从 0.99 美元到 1999.99 美元的扩展价格段。 如果为 **false**，你的开发人员帐户可以使用从 0.99 美元到 999.99 美元的原始价格段。 有关其他价格段的详细信息，请参阅[价格段](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此字段为只读字段。   |
 
 
 <span id="sale-object" />

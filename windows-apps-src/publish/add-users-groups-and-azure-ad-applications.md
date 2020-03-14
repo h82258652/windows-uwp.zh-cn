@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10，uwp，azure ad 应用程序，aad，用户，组，多个用户，多用户
 ms.localizationpriority: medium
 ms.openlocfilehash: 41467f51e02f3cc700e3759f33d6fd6eea3ac7a6
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852552"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210703"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>向合作伙伴中心帐户添加用户、组和 Azure AD 应用程序
 
@@ -168,7 +168,7 @@ ms.locfileid: "78852552"
 1.  在 "**用户**" 页（在 "**帐户设置**" 下）中，选择 "**添加 Azure AD 应用程序**"。
 2.  在下一页上，选择 "**新建" Azure AD 应用程序**"。
 3.  输入新的 Azure AD 应用程序的**回复 URL**。 这是用户可以登录并使用 Azure AD 应用程序的 URL（有时也称为“应用 URL”或“登录 URL”）。 **回复 URL**不能超过 256 个字符，且在你目录中必须是唯一的。
-4.  输入新 Azure AD 应用程序的**应用程序 ID URI**。 这是 Azure AD 应用程序在向 Azure AD 发送单一登录请求时所显示的逻辑标识符。 请注意，每个 Azure AD 应用程序的**应用 ID URI** 在目录中必须唯一，且长度不得超过 256 个字符。 有关**应用 ID URI** 的详细信息，请参阅[将应用程序与 Azure Active Directory 集成](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
+4.  输入新 Azure AD 应用程序的**应用程序 ID URI**。 这是 Azure AD 应用程序在向 Azure AD 发送单一登录请求时显示的该应用程序的逻辑标识符。 请注意，每个 Azure AD 应用程序的**应用 ID URI** 在目录中必须唯一，且长度不得超过 256 个字符。 有关**应用 ID URI** 的详细信息，请参阅[将应用程序与 Azure Active Directory 集成](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
 5.  在**角色**部分中，为 Azure AD 应用程序指定[角色或自定义权限](set-custom-permissions-for-account-users.md)。
 6.  单击 **“保存”** 。
 

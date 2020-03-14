@@ -10,11 +10,11 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302531"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209663"
 ---
 # <a name="uwp-apis-available-to-desktop-apps"></a>适用于桌面应用的 UWP Api
 
@@ -27,17 +27,17 @@ ms.locfileid: "75302531"
 | 约会、联系人和电子邮件 | 目前并不支持所有 Api。 |
 | 身份验证和用户身份 | 目前并不支持所有 Api。 |
 | 后台任务 | 虽然桌面应用可以注册后台任务，但仅完全 UWP 应用才能<i>作为</i>后台任务运行。 有关详细信息，请参阅 [GitHub 上的后台任务示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。 |
-| “蓝牙” | 目前并不支持所有 Api。 |
+| Bluetooth | 目前并不支持所有 Api。 |
 | 聊天和电话呼叫 | 桌面应用程序不能在移动设备上运行，直到它们完全移植到 UWP。 |
 | 合约激活 | 协定只能激活完全 UWP 应用。 |
 | 加密 | 目前并不支持所有 Api。 |
 | 地理位置 | 目前并不支持所有 Api。 |
 | 文件和文件夹选取器 | 具有标识的应用具有完全文件系统访问权限，且不需要 UWP 选取器。 |
-| Media | 目前并不支持所有 Api。 |
+| 媒体 | 目前并不支持所有 Api。 |
 | 服务点 | 目前并不支持所有 Api。 |
 | 智能卡 | 目前并不支持所有 Api。 |
 | PlayReady | 目前并不支持所有 Api。 |
-| “VPN” | 目前并不支持所有 Api。 |
+| VPN | 目前并不支持所有 Api。 |
 | 电子钱包 | 桌面应用程序不能在移动设备上运行，直到它们完全移植到 UWP。 |
 | XAML UI | Windows 10 版本1809及更早版本不支持在桌面应用程序中承载 UWP XAML 内容。 从 Windows 10 版本1903开始，可以使用[XAML 孤岛](xaml-islands.md)来托管 UWP XAML 内容。  |
 

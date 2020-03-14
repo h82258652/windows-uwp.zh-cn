@@ -1,5 +1,5 @@
 ---
-title: 使用 2D、3D 和街景视图方式显示地图
+title: 使用 2D、3D 和街景视图显示地图
 description: 你可以在名为地图*地点卡* 的可轻型消除窗口中或在功能齐全的地图控件中显示地图。
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ms.date: 03/19/2018
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 地图控件, 地图视图
 ms.localizationpriority: medium
 ms.openlocfilehash: cc12f6c9b9177bce9a91288fdd2c43c118be5f61
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260430"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210303"
 ---
-# <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和街景视图方式显示地图
+# <a name="display-maps-with-2d-3d-and-streetside-views"></a>使用 2D、3D 和街景视图显示地图
 
 你可以在名为地图*地点卡* 的可轻型消除窗口中或在功能齐全的地图控件中显示地图。
 
@@ -85,7 +85,7 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 
 ## <a name="display-map-in-a-control"></a>在控件中显示地图
 
-在你的应用中使用地图控件来显示丰富且可自定义的地图数据。 地图控件可以显示道路地图、鸟瞰图、3D、视图、路线、搜索结果和交通。 在地图上，你可以显示用户的位置、路线和目标点。 地图还可以显示 3D 鸟瞰图、Streetside 视图、交通、公交和本地企业。
+在你的应用中使用地图控件来显示丰富且可自定义的地图数据。 地图控件可以显示道路地图、鸟瞰图、3D、视图、路线、搜索结果和交通。 在地图上，你可以显示用户的位置、路线和目标点。 地图还可以显示 3D 鸟瞰图、街景视图、交通、公交和本地企业。
 
 当你希望应用内具有一个允许用户查看特定于应用或通用地理信息的地图时，请使用地图控件。 在应用中有一个地图控件意味着用户无需为了获取该信息而离开应用。
 
@@ -312,7 +312,7 @@ myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet,
 
 ![地图控件的街景视图的示例。](images/onlystreetside-730width.png)
 
-考虑“内部”街景视图与地图控件中最初显示的地图有所不同的体验。 例如，更改街景视图中的位置不会改变街景视图“之下”的地图的位置或外观。 在你关闭街景视图（通过单击控件右上角的 **X**）之后，原始地图将保持不变。
+考虑“内部”街景视图与地图控件中最初显示的地图有所不同的体验。 例如，更改街景视图中的位置不会改变街景视图“之下”的地图的位置或外观。 在你关闭街景视图（通过单击控件右上角的“X”）之后，原始地图将保持不变。
 
 显示街景视图
 

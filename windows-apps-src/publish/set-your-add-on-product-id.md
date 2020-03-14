@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 加载项, iap, 持久型, 消耗品, 订阅, 产品类型, 产品 ID, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ef1ca71ffcd7b2d445292bfb38a6a8d29e7a74
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852406"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210503"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>设置加载项产品类型和产品 ID
 

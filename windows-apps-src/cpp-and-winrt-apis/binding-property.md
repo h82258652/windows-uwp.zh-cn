@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
 ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853275"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209192"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件；绑定到 C++/WinRT 属性
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为“观察者模式”的软件设计模式  。 本主题介绍如何在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中实现可观测属性，以及如何将 XAML 控件绑定到这些属性（如需背景信息，请参阅[数据绑定](/windows/uwp/data-binding)）。

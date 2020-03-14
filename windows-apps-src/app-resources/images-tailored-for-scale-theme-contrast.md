@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aadcb8dc3d414db7951dc571855e01bddb03a99
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852534"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209873"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>加载为比例、主题、高对比度和其他定制的图像和资产
 你的应用可以加载为[显示比例系数](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、主题、高对比度和其他运行时上下文定制的图像资源文件（或其他资产文件）。 这些图像可以从强制性代码或 XAML 标记引用，如作为 **Image** 的 **Source** 属性。 它们还可以显示在应用包清单源文件（`Package.appxmanifest` 文件）中 &mdash; 例如，作为 Visual Studio 清单设计器的“视觉资源”选项卡上应用图标的值 &mdash; 或显示在磁贴和 toast 上。 通过在图像的文件名称中使用限定符，并选择性地在 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 的帮助下动态加载它们，你可以加载与用户的显示比例、主题、高对比度、语言和其他上下文的运行时设置最匹配的最合适图像文件。

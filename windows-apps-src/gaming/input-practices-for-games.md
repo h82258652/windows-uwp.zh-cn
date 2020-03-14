@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入
 ms.localizationpriority: medium
 ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684980"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210563"
 ---
 # <a name="input-practices-for-games"></a>游戏输入实践
 
@@ -315,7 +315,7 @@ if (buttonArrangement == buttonSelection)
 
 如果你的代码根据剩余的电池使用时间百分比执行某些操作（如绘制 UI），请确保它与上面的值相符。 例如，如果你想要警告玩家控制器的电池电量不足，则在到达 10% 时执行此操作。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 * [Windows. User 类](https://docs.microsoft.com/uwp/api/windows.system.user)
 * [IGameController 接口。](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)

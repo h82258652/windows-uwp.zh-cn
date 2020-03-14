@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
 ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684615"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210893"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
@@ -23,9 +23,9 @@ ms.locfileid: "75684615"
 
 应用商店还可以使用应用的程序包中包含的应用的图标和其他映像。 提交应用前，请运行 [Windows 应用认证工具包](../debug-test-perf/windows-app-certification-kit.md)来确定你是否缺少任何必需的图像。 有关这些映像的指南和建议，请参阅[应用图标和徽标](../design/style/app-icons-and-logos.md)。
 
-## <a name="screenshots"></a>“屏幕截图”
+## <a name="screenshots"></a>屏幕截图
 
-屏幕截图是应用在应用的 Microsoft Store 一览中向客户显示的图像。
+屏幕截图是你的应用在应用的应用商店一览中显示给你的客户的图像。
 
 你可以选择为你的应用支持的不同设备系列提供屏幕截图，以便客户在该类型的设备上查看应用的 Microsoft Store 一览时显示相应的屏幕截图。 
 
@@ -161,14 +161,14 @@ ms.locfileid: "75684615"
 
 #### <a name="mov"></a>MOV
 
-| 视频 | Audio | 
+| 视频 | 音频： | 
 | --- | --- | 
 | <ul><li>1080p ProRes (适当的位置为高质量)</li><li>原生帧率；首选 29.97 FPS</li></ul> | <ul><li>需要立体声</li><li>推荐的音频级别：-16 LKFS/LUFS</li></ul> |
 
 
 #### <a name="mp4"></a>MP4
 
-| 视频 | Audio |
+| 视频 | 音频： |
 | --- | --- |
 | <ul><li>编解码器[： h.264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) （AVC1）  </li><li>逐行扫描（无隔行）</li><li>高级画质</li><li>2 个连续的 B 帧</li><li>关闭 GOP。 一半帧率的 GOP</li><li>CABAC</li><li>50 MB/s </li><li>色彩空间：4.2.0</li></ul> | <ul><li>编解码器：AAC-LC</li><li>通道：立体声或环绕声</li><li>采样率：48 KHz</li><li>音频比特率：立体声为 384 KB/s，环绕声为 512 KB/s</li></ul> |
 
@@ -184,7 +184,7 @@ ms.locfileid: "75684615"
 
 在**windows 10 和 Xbox 映像**部分中， **16:9 的超大英雄（1920 x 1080 或 3840 x 2160 像素）** 图像用于所有 Windows 10 设备类型（包括 Xbox）的 Microsoft Store 中的各种布局。 无论你的应用针对哪种操作系统版本或设备类型，我们都建议提供此图像。
 
-如果一览包括[视频预告片](#trailers)，则*需要*使用此图像进行正确显示。 对于 Windows 10 版本 1607 或更高版本（包括 Xbox）的客户，它会作为 Microsoft Store 一览顶部的主图像（或在任何预告片播放完成后出现）。 此外它还可以在整个 Microsoft Store 的促销布局中突出显示你的应用。 注意：此图像不得包含产品的标题或其他文本消息。
+如果一览包括*视频预告片*，则[需要](#trailers)使用此图像进行正确显示。 对于 Windows 10 版本 1607 或更高版本（包括 Xbox）的客户，它会作为 Microsoft Store 一览顶部的主图像（或在任何预告片播放完成后出现）。 此外它还可以在整个 Microsoft Store 的促销布局中突出显示你的应用。 注意：此图像不得包含产品的标题或其他文本消息。
 
 下面是在设计此图像时需要牢记的一些技巧：
 
@@ -197,7 +197,7 @@ ms.locfileid: "75684615"
 - 避免显示你应用的 UI，并且请勿使用任何特定于设备的图像。
 - 避免使用政治和国家/地区主题、标志或宗教符号。
 - 请勿提供包含以下内容的图像：无礼手势、裸体、赌博、货币、毒品、烟草或酒精。
-- 请勿使用指向观众的武器或过度暴力和血腥的内容。
+- 请勿使用指向观众的武器或过度暴力和血腥内容。
 
 虽然提供此图像后，我们可以为你的应用考虑特色促销机会，但并不能保证你的应用会获得特别推荐。 有关详细信息，请参阅[轻松推广你的应用](make-your-app-easier-to-promote.md)。
 
@@ -212,7 +212,7 @@ ms.locfileid: "75684615"
 - **特别推荐的促销方块图片，1080 x 1080 像素**：*不得*包含产品的名称。
 
 > [!NOTE]
-> 要在 Xbox 上获得最佳显示效果，还必须在[应用商店徽标](#store-logos)部分中提供 **9:16（720 x 1080 或 1440 x 2160 像素）** 图像。
+> 要在 Xbox 上获得最佳显示效果，还必须在**应用商店徽标**部分中提供 [9:16（720 x 1080 或 1440 x 2160 像素）](#store-logos)图像。
 
 
 ### <a name="holographic-image"></a>全息图像

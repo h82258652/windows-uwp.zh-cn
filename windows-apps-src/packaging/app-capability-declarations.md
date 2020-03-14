@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 3951a34501b24483fb47b97450ad172a93e168e0
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852819"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209933"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
@@ -214,7 +214,7 @@ ms.locfileid: "78852819"
 | **企业云单一登录** | **enterpriseCloudSSO** 功能允许应用针对托管的 Web 视图控件内的 Azure Active Director (AAD) 资源使用单一登录。 |
 | **自动接受 VoIP 呼叫** | **BackgroundVoIP**功能允许用户自动接收和接受传入的 VoIP 呼叫，无需用户显式接受呼叫。 利用该功能的应用会被授予对相机和麦克风的完全控制，并且可以在后台使用这些资源。<br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 对于大多数开发人员而言，此功能的使用不会获得批准。 |
 | **为 VoIP 呼叫预留资源** | **OneProcessVoIP**功能允许保留单进程应用程序中 VoIP 呼叫所需的 CPU 和内存资源。<br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 对于大多数开发人员而言，此功能的使用不会获得批准。 |
-| **开发模式网络** | 当调用C++/cx UWP 应用或C++ Windows 运行时组件中的 OpenFile Win32 API 时，developmentModeNetwork 功能允许应用使用已登录用户的凭据访问网络路径。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
+| **开发模式网络** | 当**developmentModeNetwork**调用C++/cx UWP 应用或C++ Windows 运行时组件中的 OpenFile Win32 API 时，developmentModeNetwork 功能允许应用使用已登录用户的凭据访问网络路径。 <br /><br />不建议在提交到 Microsoft Store 的应用程序中声明此功能。 在大多数情况下，不会批准使用此功能。 |
 | **广泛的文件系统访问** | **broadFileSystemAccess** 功能允许应用获取与当前运行该应用的用户相同的文件系统访问权限，且在运行期间无需任何额外的文件选取器样式提示符。 需要注意的是，此功能不需要访问用户已使用文件选取器或 FolderPicker 选择的文件。<br/><br/>此功能适用于 [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) API。 由于用户可以在 "设置" 中的任何时间授予或拒绝权限，因此应确保应用对这些更改具有复原能力。 在 2018 年 4 月更新中，该权限默认设置为“打开”。 在 2018 年 10 月更新中，默认设置为“关闭”。 除该功能外，不声明任何特殊的文件夹功能（如**文档**、**图片**或**视频**）同样很重要。 可以通过将**broadFileSystemAccess**添加到清单来在应用程序中启用此功能。 有关示例，请参阅[文件访问权限](/windows/uwp/files/file-access-permissions)一文。<br/><br/>**注意：** 此功能在 Xbox 上不受支持。 |
 | **系统固件和 BIOS** | **smbios** 功能允许应用访问 BIOS 数据和系统固件数据。 |
 | **完全信任权限级别** | **RunFullTrust**受限功能允许应用在用户计算机上以完全信任权限级别运行。 使用[FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API 需要此功能。<br /><br />对于作为 appx 或 .msix 包提供的任何桌面应用程序（与[桌面桥](https://developer.microsoft.com/windows/bridges/desktop)），此功能也是必需的，当使用桌面应用转换器（DAC）或 Visual Studio 打包这些应用时，它会自动显示在清单中。 |

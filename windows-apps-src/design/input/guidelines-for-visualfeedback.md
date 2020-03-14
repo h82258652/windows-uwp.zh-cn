@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bba80403934987569c25b96eced9a610226431b5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257914"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209973"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
@@ -64,7 +64,7 @@ ms.locfileid: "74257914"
 
 **边框属性**
 
-高可见性焦点视觉分为两部分：主边框和辅助边框。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。
+高可见性焦点视觉分为两部分：主边框和辅助边框。 主边框为 2px 粗，在辅助边框的“外部”周围运行。 辅助边框为 1px 粗，在主边框的“内部”周围运行。
 ![高可见性焦点视觉对象 redlines](images/FocusRectRedlines.png)
 
 若要更改任一边框类型（主或辅助）的粗细，请分别使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**。

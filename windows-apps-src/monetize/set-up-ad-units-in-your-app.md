@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 广告, 投放广告, 广告单元, 测试
 ms.localizationpriority: medium
 ms.openlocfilehash: c7bafdc7d21814a03d6f7da7132d8017d7f238e5
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506723"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210263"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在应用中设置广告单元
 

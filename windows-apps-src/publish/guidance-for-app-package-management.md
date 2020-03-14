@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f5caa2610e19234cfd83119d570f858c540b401
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685137"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210193"
 ---
 # <a name="guidance-for-app-package-management"></a>应用包管理指南
 
@@ -33,7 +33,7 @@ ms.locfileid: "75685137"
 > 从2018年10月31日起，新创建的产品不能包含面向 Windows 8.x/Windows Phone 3.x 或更早版本的包。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 
-## <a name="removing-an-app-from-the-store"></a>从 Microsoft Store 中删除应用
+## <a name="removing-an-app-from-the-store"></a>从应用商店中删除应用
 
 有时，你可能想要停止向客户提供应用，即有效地“取消发布”它。 若要执行此操作，请从**应用概述**页上单击**禁止提供应用**。 在你对禁止提供的应用进行确认后，数小时内它不会再出现在 Microsoft Store 中，并且新客户将无法获取它（除非他们拥有[促销代码](generate-promotional-codes.md)并使用 Windows 10 设备）。
 
@@ -54,9 +54,9 @@ ms.locfileid: "75685137"
 
 如果你删除了应用以前支持的某个[设备系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)的所有包，系统将提示你确认这是你的意图，然后才能在 "**包**" 页上保存更改。
 
-如果你发布的提交将删除可以在你的应用之前支持的设备系列上运行的所有包，新客户将无法在该设备系列上获取该应用。 稍后你可以始终发布其他更新以为该设备系列重新提供程序包。
+如果你发布的提交将删除可以在你的应用之前支持的设备系列上运行的所有包，新客户将无法在该设备系列上获取该应用。 稍后您可以始终发布其他更新以为该设备系列重新提供程序包。
 
-请注意，即使你删除支持某些设备系列的所有程序包，已在该设备类型上安装应用的任何现有客户仍可以使用它，并且他们将获取你以后提供的任何更新。
+请注意，即使您删除支持某些设备系列的所有程序包，已在该设备类型上安装应用的任何现有客户仍可以使用它，并且他们将获取您以后提供的任何更新。
 
 
 <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>

@@ -8,11 +8,11 @@ keywords: Windows 10, uwp, Microsoft Store 服务, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3b732da8f92c258647f905e6939dc3cb1b9c9f87
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853354"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210783"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用应用商店服务访问分析数据
 
@@ -85,7 +85,7 @@ grant_type=client_credentials
 
 以下分析方法适用于合作伙伴中心的 UWP 应用。
 
-| 方案       | 方法      |
+| 应用场景       | 方法      |
 |---------------|--------------------|
 | 购置、转换、安装和使用 |  <ul><li>[获取应用程序](get-app-acquisitions.md)（旧版）</li><li>[获取应用获取漏斗数据](get-acquisition-funnel-data.md)（旧版）</li><li>[按频道获取应用转换](get-app-conversions-by-channel.md)</li><li>[获取附加项购置](get-in-app-acquisitions.md)</li><li>[获取订阅附加项购置](get-subscription-acquisitions.md)</li><li>[按频道获取外接程序转换](get-add-on-conversions-by-channel.md)</li><li>[获取应用安装](get-app-installs.md)</li><li>[获取每日应用使用情况](get-app-usage-daily.md)</li><li>[获取每月应用使用情况](get-app-usage-monthly.md)</li></ul> |
 | 应用错误 | <ul><li>[获取错误报告数据](get-error-reporting-data.md)</li><li>[获取应用中错误的详细信息](get-details-for-an-error-in-your-app.md)</li><li>[获取应用中错误的堆栈跟踪](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下载应用中错误的 CAB 文件](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
@@ -97,7 +97,7 @@ grant_type=client_credentials
 
 属于 [Windows 桌面应用程序计划](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的开发人员帐户可以使用以下分析方法。
 
-| 方案       | 方法      |
+| 应用场景       | 方法      |
 |---------------|--------------------|
 | 安装次数 |  <ul><li>[获取桌面应用程序安装](get-desktop-app-installs.md)</li></ul> |
 | Blocks |  <ul><li>[获取桌面应用程序的升级块](get-desktop-block-data.md)</li><li>[获取桌面应用程序的升级块详细信息](get-desktop-block-data-details.md)</li></ul> |
@@ -108,7 +108,7 @@ grant_type=client_credentials
 
 使用 [Xbox Live 服务](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md)的游戏开发人员帐户可以使用以下其他方法。
 
-| 方案       | 方法      |
+| 应用场景       | 方法      |
 |---------------|--------------------|
 | 常规分析 |  <ul><li>[获取 Xbox 实时分析数据](get-xbox-live-analytics.md)</li><li>[获取 Xbox Live 成就数据](get-xbox-live-achievements-data.md)</li><li>[获取 Xbox Live 并发使用数据](get-xbox-live-concurrent-usage-data.md)</li></ul> |
 | 运行状况分析 |  <ul><li>[获取 Xbox Live 运行状况数据](get-xbox-live-health-data.md)</li></ul> |

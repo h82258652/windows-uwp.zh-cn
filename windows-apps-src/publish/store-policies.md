@@ -7,18 +7,18 @@ keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
-ms.translationtype: MT
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853436"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209352"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
 
 
 **文档版本：7.12**
 
-**文档日期：2019年10月1日**
+**文档日期：2019 年 10 月 1 日**
 
 > [!NOTE]
 > 有关本协议近期更改的总结，请参阅[更改历史记录](store-policies-change-history.md)。

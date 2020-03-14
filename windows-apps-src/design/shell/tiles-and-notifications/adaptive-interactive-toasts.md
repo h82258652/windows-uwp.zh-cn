@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, toast 通知, 交互式 toast, 自适应 toast, toast 内容, toast 有效负载
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b424da3b9413c7528cb6f6a6a888e9fe2cc7cb7
-ms.sourcegitcommit: a4a595c485a1e4549b02b0e20ca9f56b093c5814
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74125248"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209853"
 ---
 # <a name="toast-content"></a>Toast 内容
 
@@ -25,7 +25,7 @@ ms.locfileid: "74125248"
 > 若要查看 Windows 8.1 和 Windows Phone 8.1 中的旧模板，请参阅[旧 toast 模板目录](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
 
 
-## <a name="getting-started"></a>即刻体验
+## <a name="getting-started"></a>入门
 
 **安装通知库。** 如果希望使用 C# 而不是 XML 来生成通知，请安装名为 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 程序包（搜索“notifications uwp”）。 本文中提供的 C# 示例使用 NuGet 程序包的版本 1.0.0。
 
@@ -88,7 +88,7 @@ ToastContent content = new ToastContent()
 ![Toast 通知结构](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>可视
+## <a name="visual"></a>Visual
 
 每个 toast 均必须指定一个 visual，此处必须包含带文本、图像等的通用 toast 绑定。 这些元素将在各种 Windows 设备上呈现，包括桌面设备、手机、平板电脑和 Xbox。
 
@@ -294,7 +294,7 @@ ToastContent toastContent = new ToastContent()
 ```
 
 
-## <a name="progress-bar"></a>进度条
+## <a name="progress-bar"></a>进度栏
 
 **创意者更新中的新增**内容：你可以在 toast 通知上提供一个进度条，以使用户能够了解操作（如下载）的进度。
 
@@ -303,7 +303,7 @@ ToastContent toastContent = new ToastContent()
 若要详细了解如何使用进度栏，请参阅 [Toast 进度栏](toast-progress-bar.md)。
 
 
-## <a name="headers"></a>标题
+## <a name="headers"></a>标头
 
 **创意者更新的新增功能**：可在操作中心将通知分到不同的标题下。 例如，你可以将群聊中的组消息分到一个标题下，或将常见主题的通知分到一个标题下等等。
 
@@ -806,7 +806,7 @@ ToastContent content = new ToastContent()
 
 
 
-## <a name="audio"></a>Audio
+## <a name="audio"></a>音频：
 
 移动版一直支持自定义音频，桌面版 1511（内部测试版本 10586）或更新版本也支持此功能。 可通过以下路径引用自定义音频：
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，发布，预处理，证书，发布，挂起，提交，发布，状态，时间
 ms.localizationpriority: medium
 ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78852815"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210953"
 ---
 # <a name="the-app-certification-process"></a>应用认证过程
 
@@ -41,7 +41,7 @@ ms.locfileid: "78852815"
 - 如果已使用[发布保留选项](manage-submission-options.md#publishing-hold-options)来指定要手动发布提交，则在选择 "**立即发布**" （或选择 "**更改发布日期**" 并选择特定日期）之前，将不会启动发布过程。
 
 
-## <a name="publishing"></a>Publishing
+## <a name="publishing"></a>发布
 
 你的应用包已经过数字签名，目的是防止它们在发布后遭到篡改。 一旦开始执行此阶段，你将再也无法取消提交或更改其发布日期。
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 440f758e5db8bd77d3f26290eb59d7684e5f87a3
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853048"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210023"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>游戏板和遥控器交互
 
@@ -71,7 +71,7 @@ ms.locfileid: "78853048"
 
 下表列出了所有受 UWP 应用支持的硬件按钮，以及哪些输入设备支持它们。
 
-| 按钮                    | 游戏板   | 遥控器    |
+| 按钮                    | 游戏板   | 远程控制    |
 |---------------------------|-----------|-------------------|
 | A/“选择”按钮           | 是       | 是               |
 | B/“后退”按钮             | 是       | 是               |
@@ -97,7 +97,7 @@ UWP 将现有键盘输入行为自动映射到游戏板和遥控器输入。 下
 |-----------------------|---------------------------------------|
 | 箭头键            | 方向键（以及游戏板上的左摇杆）    |
 | 空格键              | A/“选择”按钮                       |
-| Enter                 | A/“选择”按钮                       |
+| 输入                 | A/“选择”按钮                       |
 | 退出                | B/“后退”按钮*                        |
 
 \*当应用程序未处理 B 按钮的[KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)事件和[KeyUp](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)事件时，将激发[BackRequested](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.backrequested)事件，这将导致应用内的反向导航。 但是，你必须自行实现此操作，如以下代码片段中所示：

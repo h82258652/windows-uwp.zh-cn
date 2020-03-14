@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 价格, 可用, 可发现, 免费试用版, 试用版, 试用, 应用, 发布日期
 ms.localizationpriority: medium
 ms.openlocfilehash: 715e4c677b3b3e62b9ff515396d3582c3fd99184
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788253"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210553"
 ---
 # <a name="set-app-pricing-and-availability"></a>设置应用定价和可用性
 
@@ -55,9 +55,9 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 默认情况�
 
 ### <a name="time-limited"></a>限期提供
 
-选择**限时**若要允许客户特定几天的免费试用您的应用程序：**1 天**， **7 天**， **15 天**，或**30 天**。 可通过向[排除或限制试用版中的功能](../monetize/in-app-purchases-and-trials.md)中添加代码来限制功能，也可允许客户在试用期间访问完整功能。 
+选择 "**时间限制**"，以允许客户在几天内免费试用你的应用程序：**1 天**、 **7 天**、 **15 天**或**30 天**。 可通过向[排除或限制试用版中的功能](../monetize/in-app-purchases-and-trials.md)中添加代码来限制功能，也可允许客户在试用期间访问完整功能。 
 > [!NOTE]
-> 限时试用版不会显示给客户可在 Windows 10 生成 10.0.10586 或更早版本，或在 Windows Phone 8.1 及更早版本的客户。
+>对于 Windows 10 build 10.0.10586 或更早版本的客户，或 Windows Phone 8.1 及更早版本的客户，不会向客户显示  限时的试用版。
 
 ### <a name="unlimited"></a>无限制
 
@@ -70,7 +70,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 默认情况�
 >[!NOTE]
 > 这些日期仅适用于使用 Windows 10（包括 Xbox）的客户。 如果你的应用对使用更早操作系统版本的客户可用，则只要产品可用，试用版将一直向这些客户提供。 
 
-要设置何时应将试用版提供给 Windows 10 上的客户的日期，请将**开始日期**和/或**结束日期**下拉列表更改为**开始/结束时间**，然后选择日期和时间。 如果执行此操作，可选择 **UTC**，这样所选择的时间便为协调世界时 (UTC)，或选择**本地**，这样这些时间便会应用于分别与某个市场相关联的各时区。 （请注意，对于跨多个时区的市场，将仅使用该市场中的某一个时区。 对于美国，将使用东部时区。）可以选择**为特定市场进行自定义**如果你想要设置的任何 market(s) 不同日期。
+要设置何时应将试用版提供给 Windows 10 上的客户的日期，请将**开始日期**和/或**结束日期**下拉列表更改为**开始/结束时间**，然后选择日期和时间。 如果执行此操作，可选择 **UTC**，这样所选择的时间便为协调世界时 (UTC)，或选择**本地**，这样这些时间便会应用于分别与某个市场相关联的各时区。 （请注意，对于跨多个时区的市场，将仅使用该市场中的某一个时区。 对于美国，将使用东部时区。）如果要为任何市场设置不同的日期，可以选择 "**为特定市场自定义**"。
 
 
 ## <a name="sale-pricing"></a>促销价格
