@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 加载项, iap, 价格
 ms.localizationpriority: medium
-ms.openlocfilehash: c6384b5890466ff13c72a1b90eb9b27194d51fff
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
-ms.translationtype: HT
+ms.openlocfilehash: 803164c395602313bcb84331e30376efd6832731
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210993"
+ms.locfileid: "79295720"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>设置加载项定价和可用性
 
@@ -37,7 +37,7 @@ ms.locfileid: "79210993"
 -   **停止获取：任何使用直接链接的客户均可看到产品的应用商店一览，但仅当曾经拥有过该产品或拥有促销代码，同时使用的是 Windows 10 设备时，这些客户才能够下载该产品。加载项不在父产品一览中显示**：选择此选项意味着加载项将不会在应用一览中显示，并且任何新客户都无法购买该加载项。 但是，**对于 Windows 8.1 或更早版本的客户，不支持此选项**。 如果你以前发布的应用在 Windows 8.1 或更早版本上可用，则该外接程序仍可用于购买到这些客户。 若要停止向客户提供 Windows 8.1 或更早版本的外接程序，需要更新应用程序以删除提供外接程序的代码，并发布新的应用程序提交。 即使你的应用程序不面向 Windows 8.1 或更早版本，也建议这样做;如果你从来没有为客户提供已选择要使其不可用的外接程序，则它是更好的体验。
     
  > [!NOTE] 
- > 选择**停止获取**选项，和/或提供从应用代码删除该加载项的应用更新不会影响已购买该加载项的客户，无论他们的操作系统是何种版本。
+ > 选择 "**停止获取**" 选项和/或提交从应用中删除外接程序的应用更新将不会阻止客户使用该外接程序（如果他们已购买）。 现有订阅将无法续订，并随后在当前期限结束后取消。
 
 
 ## <a name="schedule"></a>计划
