@@ -1,32 +1,32 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: 适用于 HoloLens 的设备门户
-description: 了解适用于 HoloLens 的 Windows 设备门户是如何支持你远程配置和管理你的 HoloLens 设备。
+title: 适用于 HoloLens 的 Device Portal
+description: 了解适用于 HoloLens 的 Windows Device Portal 是如何支持你远程配置和管理你的 HoloLens 设备。
 ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10、uwp、设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a9cdf03aa574ea0762d73514a209367f27822ba
-ms.sourcegitcommit: 33fcf67cf96ce8574df2e50cafc4ca7c18234c4b
+ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
+ms.sourcegitcommit: 1d6d05d28358e087d9ee8829d76c5fbbac0225cb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76530779"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401966"
 ---
-# <a name="device-portal-for-hololens"></a>适用于 HoloLens 的设备门户
+# <a name="device-portal-for-hololens"></a>适用于 HoloLens 的 Device Portal
 
 
-## <a name="set-up-device-portal-on-hololens"></a>在 HoloLens 上设置设备门户
+## <a name="set-up-device-portal-on-hololens"></a>在 HoloLens 上设置 Device Portal
 
-### <a name="enable-device-portal"></a>启用设备门户
+### <a name="enable-device-portal"></a>启用 Device Portal
 
 1. 打开 HoloLens 的电源，然后戴上设备。
 2. 执行 "[开始手势](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture)" 或 "用于 HoloLens 的[布隆](https://developer.microsoft.com/mixed-reality#Bloom)手势（第一代）" 启动主菜单。
-3. 查看 "**设置**" 磁贴并在 hololens 上执行 " [air](https://developer.microsoft.com/mixed-reality#Press_and_release) " 手势（第一代），或在 hololens 2 上通过[触摸或使用手](https://docs.microsoft.com/hololens/hololens2-basic-usage)中选择它。 选择应用后，将启动 "设置" 应用。
+3. 查看 "**设置**" 磁贴，并在 hololens （第一代）上执行[点击](https://developer.microsoft.com/mixed-reality#Press_and_release)手势，或在 hololens 2 上通过[触摸或使用手](https://docs.microsoft.com/hololens/hololens2-basic-usage)中选择它。 选择应用后，将启动 "设置" 应用。
 4. 选择“更新”菜单项。
 5. 选择“面向开发人员”菜单项。
 6. 启用“开发人员模式”。
-7. [向下滚动](https://developer.microsoft.com/mixed-reality#Navigation)，然后启用设备门户。
+7. [向下滚动](https://developer.microsoft.com/mixed-reality#Navigation)，然后启用 Device Portal。
 
 
 ### <a name="pair-your-device"></a>配对设备
@@ -37,7 +37,7 @@ ms.locfileid: "76530779"
 2. 查找设备的 IP 地址。 在 "设置" 下找到设备上的 IP 地址 **> Network & Internet > wi-fi > 硬件属性**。 你还可以问“你好小娜，我的 IP 地址是多少？”
 
 3. 在电脑上的 web 浏览器中转到 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
-    - 该浏览器会显示以下消息：“此网站的安全证书存在问题”。 由于颁发给设备门户的证书是测试证书，因此会显示上述消息。 你可以暂时忽略此证书错误并继续。
+    - 该浏览器会显示以下消息：“此网站的安全证书存在问题”。 由于颁发给 Device Portal 的证书是测试证书，因此会显示上述消息。 你可以暂时忽略此证书错误并继续。
 
 #### <a name="connect-over-usb"></a>通过 USB 连接 
 
@@ -50,18 +50,18 @@ ms.locfileid: "76530779"
 
 #### <a name="connect-to-an-emulator"></a>连接到仿真器 
 
-也可以将设备门户与仿真器结合使用。 若要连接到设备门户，请使用工具栏。 单击此图标：
-- 打开设备门户：在仿真器中打开适用于 HoloLens 操作系统的 Windows 设备门户。
+也可以将 Device Portal 与仿真器结合使用。 若要连接到 Device Portal，请使用工具栏。 单击此图标：
+- 打开 Device Portal：在仿真器中打开适用于 HoloLens 操作系统的 Windows Device Portal。
 
 #### <a name="create-a-username-and-password"></a>创建用户名和密码 
 
-首次连接到 HoloLens 上的设备门户时，需要创建用户名和密码。
+首次连接到 HoloLens 上的 Device Portal 时，需要创建用户名和密码。
 1. 在电脑上的 Web 浏览器中，输入 HoloLens 的 IP 地址。 将打开“设置访问”页面。
 2. 单击或点击“请求 PIN”，然后查看 HoloLens 屏幕以获取生成的 PIN。
 3. 输入设备文本框上显示的 PIN。
-4. 输入将用于连接到设备门户的用户名。 无需使用 Microsoft 帐户 (MSA) 名称或域名作为用户名。
+4. 输入将用于连接到 Device Portal 的用户名。 无需使用 Microsoft 帐户 (MSA) 名称或域名作为用户名。
 5. 输入密码并进行确认。 密码长度必须至少为七个字符。 无需使用 MSA 密码或域密码作为密码。
-6. 单击“配对”以连接到 HoloLens 上的 Windows 设备门户。
+6. 单击“配对”以连接到 HoloLens 上的 Windows Device Portal。
 
 如果你希望能随时更改此用户名和密码，可通过以下方式访问设备的安全页面来重复此过程：单击右上角的“安全”链接或导航到 `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`。
 
@@ -77,16 +77,16 @@ ms.locfileid: "76530779"
     - 展开“受信任的根证书颁发机构”文件夹。
     - 单击“证书”文件夹。
     - 从“操作”菜单中，依次选择“所有任务”&gt;“导入...”
-    - 使用从设备门户下载的证书文件，完成“证书导入向导”。
+    - 使用从 Device Portal 下载的证书文件，完成“证书导入向导”。
 
 4. 重新启动浏览器。
 
 
-## <a name="device-portal-pages"></a>设备门户页面 
+## <a name="device-portal-pages"></a>Device Portal 页面 
 
-### <a name="home"></a>“主页” 
+### <a name="home"></a>主页 
 
-设备门户会话从主页开始。 可从主页的左侧导航栏访问其他页面。
+Device Portal 会话从主页开始。 可从主页的左侧导航栏访问其他页面。
 
 主页顶部的工具栏提供对常用状态和功能的访问。
 - **联机**：指示设备是否已连接到 WLAN。
@@ -101,7 +101,7 @@ ms.locfileid: "76530779"
 - **设备状态**：监视设备的运行状况并报告致命错误。
 - **Windows 信息**：显示 HoloLens 的名称和当前安装的 Windows 版本。
 - **首选项**部分包含以下设置：
-    - **IPD**：设置瞳孔间距 (IPD)，它是在用户直视前方时两个瞳孔中心之间的距离，以毫米为单位。 该设置将立即生效。 在设置你的设备时，会自动计算该默认值。
+    - **IPD**：设置瞳孔间距 (IPD)，它是在用户直视前方时两个瞳孔中心之间的距离，以毫米为单位。 该设置将立即生效。 在设置你的设备时，会自动计算该默认值。 **仅适用于 HoloLens （第一代），Hololens 2 用于计算眼睛位置。** 
     - **设备名称**：为 HoloLens 分配一个名称。 更改此值后，必须重新启动设备才能使该值生效。 单击“保存”后，对话框将询问是要立即重新启动设备还是稍后重新启动它。
     - **睡眠设置**：当设备已接通电源并使用电池时，设置该设备进入睡眠状态之前要等待的时长。
 
@@ -136,7 +136,7 @@ ms.locfileid: "76530779"
 - 单击或点击“拍摄照片”可从捕获流中捕获静止图像。
 - **视频和照片**：显示在设备上捕获的视频和照片列表。
 
-请注意，当你正从设备门户中录制或流处理实时预览时，HoloLens 应用将无法捕获 MRC 照片或视频。
+请注意，当你正从 Device Portal 中录制或流处理实时预览时，HoloLens 应用将无法捕获 MRC 照片或视频。
 
 ### <a name="system-performance"></a>系统性能 
 
