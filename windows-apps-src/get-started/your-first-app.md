@@ -23,7 +23,7 @@ ms.locfileid: "75685152"
 
 运用 .NET、WPF 或 Silverlight 方面的技能，使用 XAML 和 C# 生成应用。
 
-* [使用 XAML 和 C 创建“Hello, world”应用](create-a-hello-world-app-xaml-universal.md)
+* [使用 XAML 和 C# 创建“Hello, world”应用](create-a-hello-world-app-xaml-universal.md)
 
 若要了解基础知识，或只需更新记忆，请尝试阅读：
 
