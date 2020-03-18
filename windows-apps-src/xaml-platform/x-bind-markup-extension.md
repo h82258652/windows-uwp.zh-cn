@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c8fda22a565972e4157777c1db537a8f8d9ba20
-ms.sourcegitcommit: 20af365ce85d3d7d3a8d07c4cba5d0f1fbafd85d
+ms.openlocfilehash: d148df8de9086aaaec004525c3ee4865e4320c4e
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77033998"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79453357"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 标记扩展
 
@@ -30,7 +30,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 -   [{x:Bind} 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)
 -   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
--   [XAML UI 基础示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+-   [XAML 控件库](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
 
@@ -85,8 +85,7 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 对于 C++/CX， **{x:Bind}** 无法绑定到页面或数据模型中的私有字段和属性，你需要具有其可绑定的公共属性。 绑定的图面区域需显示为 CX 类/接口，以便我们可以获取相关的元数据。 不应需要 **\[可绑定的\]** 属性。
 
-使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为绑定路径的第一部分，因为命名元素成为表示根绑定源的页或用户控件中的字段。 
-
+使用 **x:Bind** 时，无需将 **ElementName=xxx** 用作绑定表达式的一部分。 相反，你可以使用元素的名称作为绑定路径的第一部分，因为命名元素成为表示根绑定源的页或用户控件中的字段。
 
 ### <a name="collections"></a>集合
 
@@ -104,10 +103,80 @@ XAML 编译时， **{x:Bind}** 将转换为从数据源上的某一属性中获�
 
 ### <a name="casting"></a>强制转换
 
-已编译的绑定为强类型，并且将解析路径中的每个步骤的类型。 如果返回的类型没有成员，则它将在编译时失败。 你可以指定转换来告知绑定对象的实际类型。 在以下用例中，**obj** 为类型对象的属性，但包含一个文本框，因此我们可以使用 **Text="{x:Bind ((TextBox)obj).Text}"** 或 **Text="{x:Bind obj.(TextBox.Text)}"** 。
-**Text = "{x:Bind （groups3） groups3\[0\]）中的字段。Title} "** 是对象的字典，因此必须将其强制转换为**数据： SampleDataGroup**。 请注意 xml **data:** 命名空间前缀的用法，可用于将对象类型映射到不是默认 XAML 命名空间组成部分的某一代码命名空间。
+已编译的绑定为强类型，并且将解析路径中的每个步骤的类型。 如果返回的类型没有成员，则它将在编译时失败。 你可以指定转换来告知绑定对象的实际类型。
+
+在以下用例中，**obj** 为类型对象的属性，但包含一个文本框，因此我们可以使用 **Text="{x:Bind ((TextBox)obj).Text}"** 或 **Text="{x:Bind obj.(TextBox.Text)}"** 。
+
+**groups3** **Text = "{x:Bind （groups3） groups3\[0\]）中的字段。Title} "** 是对象的字典，因此必须将其强制转换为**数据： SampleDataGroup**。 请注意 xml **data:** 命名空间前缀的用法，可用于将对象类型映射到不是默认 XAML 命名空间组成部分的某一代码命名空间。
 
 _注意： C#-样式强制转换语法比附加的属性语法更为灵活，并且是以后建议使用的语法。_
+
+#### <a name="pathless-casting"></a>而且强制转换
+
+本机绑定分析器不提供将 `this` 表示为函数参数的关键字，但它确实支持而且转换（例如，`{x:Bind (x:String)}`），该函数可用作函数参数。 因此，`{x:Bind MethodName((namespace:TypeOfThis))}` 是执行概念上等效于 `{x:Bind MethodName(this)}`的有效方法。
+
+示例：
+
+`Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}"`
+
+```xaml
+<Page
+    x:Class="AppSample.MainPage"
+    ...
+    xmlns:local="using:AppSample">
+
+    <Grid>
+        <ListView ItemsSource="{x:Bind Songs}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:SongItem">
+                    <TextBlock
+                        Margin="12"
+                        FontSize="40"
+                        Text="{x:Bind local:MainPage.GenerateSongTitle((local:SongItem))}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+```
+
+```csharp
+namespace AppSample
+{
+    public class SongItem
+    {
+        public string TrackName { get; private set; }
+        public string ArtistName { get; private set; }
+
+        public SongItem(string trackName, string artistName)
+        {
+            ArtistName = artistName;
+            TrackName = trackName;
+        }
+    }
+
+    public sealed partial class MainPage : Page
+    {
+        public List<SongItem> Songs { get; }
+        public MainPage()
+        {
+            Songs = new List<SongItem>()
+            {
+                new SongItem("Track 1", "Artist 1"),
+                new SongItem("Track 2", "Artist 2"),
+                new SongItem("Track 3", "Artist 3")
+            };
+
+            this.InitializeComponent();
+        }
+
+        public static string GenerateSongTitle(SongItem song)
+        {
+            return $"{song.TrackName} - {song.ArtistName}";
+        }
+    }
+}
+```
 
 ## <a name="functions-in-binding-paths"></a>绑定路径中的函数
 
