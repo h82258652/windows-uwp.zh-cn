@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: 58f6643510a27d6b9cd673da850c191ee23b813e
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701490"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209272"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
@@ -114,7 +114,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ...
 ```
 
-由于 App 类型是 IFrameworkViewSource，因此你可以传递一个到 Run     。
+由于 App 类型是 IFrameworkViewSource，因此可以直接传递一个到 Run     。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -316,7 +316,7 @@ MyType 类不是投影的一部分；它是实现  。 但是，通过这种方�
 > [!NOTE]
 > 如果你尚未安装 Windows SDK 版本 10.0.17763.0（Windows 10 版本 1809）或更高版本，则需调用 [winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)，而不是 [winrt::get_self](/uwp/cpp-ref-for-winrt/get-self)   。
 
-下面提供了一个示例。 [实现 BgLabelControl 自定义控件类](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)中还有另一示例  。
+下面是一个示例。 [实现 BgLabelControl 自定义控件类](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)中还有另一示例  。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -459,7 +459,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 ...
 ```
 
-基类构造函数需要一个 ToggleButton  。 且 MySpecializedToggleButton 即是 ToggleButton    。
+基类构造函数需要一个 ToggleButton  。 **MySpecializedToggleButton** 是一个  **ToggleButton**。
 
 在你按照上面所述进行编辑（将构造函数参数传递给基类）之前，编译器将标记构造函数并指出：在一个名为 MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt; 的类型（在此情况中）上没有适当的默认构造函数  。 这实际上是实现类型的基类的基类。
 
@@ -492,17 +492,17 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 |功能|接受|注释|
 |-|-|-|
 |`T`（表示智能指针）|投影|请参阅[命名空间：投影类型、实现类型和工厂](#namespaces-projected-types-implementation-types-and-factories)中有关错误地使用实现类型的警告。|
-|`agile_ref<T>`|两者|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
+|`agile_ref<T>`|双向|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
 |`com_ptr<T>`|实现|使用投影类型将生成错误：`'Release' is not a member of 'T'`。|
-|`default_interface<T>`|两者|如果使用实现类型，则会返回第一个已实现的接口。|
+|`default_interface<T>`|双向|如果使用实现类型，则会返回第一个已实现的接口。|
 |`get_self<T>`|实现|使用投影类型将生成错误：`'_abi_TrustLevel': is not a member of 'T'`。|
-|`guid_of<T>()`|两者|返回默认接口的 GUID。|
+|`guid_of<T>()`|双向|返回默认接口的 GUID。|
 |`IWinRTTemplateInterface<T>`<br>|投影|使用实现类型进行了编译，但这是一个错误 &mdash; 请参阅[命名空间：投影类型、实现类型和工厂](#namespaces-projected-types-implementation-types-and-factories)中的警告。|
 |`make<T>`|实现|使用投影类型将生成错误：`'implements_type': is not a member of any direct or indirect base class of 'T'`。|
-| `make_agile(T const&amp;)`|两者|如果使用实现类型，则该参数必须为 `com_ptr<T>`。|
+| `make_agile(T const&amp;)`|双向|如果使用实现类型，则该参数必须为 `com_ptr<T>`。|
 | `make_self<T>`|实现|使用投影类型将生成错误：`'Release': is not a member of any direct or indirect base class of 'T'`|
 | `name_of<T>`|投影|如果使用实现类型，则将获得默认接口的字符串化 GUID。|
-| `weak_ref<T>`|两者|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
+| `weak_ref<T>`|双向|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
 
 ## <a name="opt-in-to-uniform-construction-and-direct-implementation-access"></a>选择加入统一构造和直接实现访问
 

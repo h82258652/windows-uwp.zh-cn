@@ -5,18 +5,21 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 装箱, 标量, 值
 ms.localizationpriority: medium
-ms.openlocfilehash: 431230d3b67d7a380b4f0b20fdef1e0f918c3aa2
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 29263260217de154f1a942d37d1e18fece15e3d0
+ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270163"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79038090"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>通过 C++/WinRT 将标量值装箱到 IInspectable 和从 IInspectable 取消标量值装箱
  
 [IInspectable 接口](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)是 Windows 运行时 (WinRT) 中每个运行时类的根接口  。 这类似于位于每个 COM 接口和类的根处的 [IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)；而且类似于位于每个[通用类型系统](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system)类的根处的 System.Object   。
 
 换言之，可向任何运行时类的实例传递需要 IInspectable 的函数  。 但是你无法将标量值（如数值或文本值）直接传递到此类函数。 相反，标量值需要封装到引用类对象内。 该封装过程称为对值进行*装箱*。
+
+> [!IMPORTANT]
+> 不管将什么类型传递给 Windows 运行时 API，都可以对该类型进行装箱和取消装箱操作。 换言之，可以对 Windows 运行时类型这样做。 数字和文本值（字符串）是上面给出的示例。 另一个示例是在 IDL 中定义的 `struct`。 如果尝试对常规 C++ `struct`（未在 IDL 中定义）执行装箱操作，编译器会提醒你只能将 Windows 运行时类型装箱。 运行时类是 Windows 运行时类型，不过，我们当然可以将运行时类传递到 Windows 运行时 API，无需将其装箱。
 
 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 提供了 [winrt::box_value](/uwp/cpp-ref-for-winrt/box-value) 函数，该函数采用标量值并将装箱的值返回到 IInspectable 中   。 对于取消 IInspectable 装箱返回到标量值，提供 [winrt::unbox_value](/uwp/cpp-ref-for-winrt/unbox-value) 和 [winrt::unbox_value_or](/uwp/cpp-ref-for-winrt/unbox-value-or) 函数    。
 

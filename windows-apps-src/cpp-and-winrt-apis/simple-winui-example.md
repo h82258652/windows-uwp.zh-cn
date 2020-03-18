@@ -5,12 +5,12 @@ ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, Windows UI 库, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: aadf177bc4a44f67550dba1f6f706525b8460857
-ms.sourcegitcommit: c9bab19599c0eb2906725fd86d0696468bb919fa
+ms.openlocfilehash: 0dce8e7ea08b18921f228b3da2e679a9edb02228
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78256170"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79200975"
 ---
 # <a name="a-simple-cwinrt-windows-ui-library-example"></a>一个简单的 C++WinRT Windows UI 库示例
 
@@ -53,7 +53,7 @@ ms.locfileid: "78256170"
 
 在 `MainPage.cpp` 中删除 **MainPage::ClickHandler** 实现中的代码，因为 *myButton* 不再存在于 XAML 标记中。
 
-在 `MainPage.h` 中编辑 include，使之如以下列表所示。 若要通过多个 XAML 页面使用 WinUI，则可进入预编译的头文件（通常为 `pch.h`）中，改将这些页面包括到其中。
+在 `MainPage.h` 中编辑 include，使之如以下列表所示。
 
 ```cppwinrt
 #include "MainPage.g.h"
@@ -63,7 +63,10 @@ ms.locfileid: "78256170"
 
 现在生成此项目。
 
-将 NuGet 包（例如此前添加的 **Microsoft.UI.Xaml** 包）添加到某个 C++/WinRT 项目并生成该项目时，此工具会在项目的 `\Generated Files\winrt` 文件夹中生成一组投影头文件。 如果已按照演练进行操作，则现在会有一个 `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt` 文件夹。 对上述 `MainPage.h` 所做的更改会导致项目中包含那些投影头文件。 这是必需的，因此，对 NuGet 包中的类型的引用问题会得到解决。
+将 NuGet 包（例如此前添加的 **Microsoft.UI.Xaml** 包）添加到某个 C++/WinRT 项目并生成该项目时，此工具会在项目的 `\Generated Files\winrt` 文件夹中生成一组投影头文件。 如果已按照演练进行操作，则现在会有一个 `\HelloWinUICppWinRT\HelloWinUICppWinRT\Generated Files\winrt` 文件夹。 对上述 `MainPage.h` 所做的编辑会导致 WinUI 的那些投影头文件变得对 **MainPage** 可见。 这是必需的，目的是让 **MainPage** 中对 **Microsoft::UI::Xaml::Controls::NavigationView** 类型的引用可以解析。
+
+> [!IMPORTANT]
+> 在实际应用程序中，需要让 WinUI 投影头文件变得对项目中的所有 XAML 页可见，而不只是对 **MainPage** 可见。  在这种情况下，应将两个 WinUI 投影头文件的 include 移到预编译的头文件（通常为 `pch.h`）中。 然后，即可解析在项目的任何位置对 NuGet 包中的类型进行的引用。 对于最小单页应用程序（例如在本演练中生成的此类程序），无需使用 `pch.h`，因此可以在 `MainPage.h` 中包含头文件。
 
 现在可以运行该项目了。
 

@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d540474140e4734320b06d852933b30fa20b61be
-ms.sourcegitcommit: 2c6aac8a0cc02580df0987f0b7dba5924e3472d6
+ms.openlocfilehash: 6a0307833e996a5faba558631062c94efca3b75d
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74958967"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935358"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
@@ -28,7 +28,7 @@ ms.locfileid: "74958967"
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 Windows SDK 都在根命名空间 Windows  中声明类型。 投影到 C++/WinRT 的 Windows 类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ winrt  命名空间中。 这些不同的命名空间可让你按照自己的节奏从 C++/CX 移植到 C++/WinRT。
 
-请牢记上面提到的例外情况，将 C++/CX 项目移植到 C++/WinRT 的第一步是向它手动添加 C++/WinRT 支持（请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT  ，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 让支持处于关闭状态是一个好办法，这样生成消息可帮助你可以找到（并移植）C++/CX 上的所有依赖项，或者你可以将支持重新打开（在项目属性，“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>“是(/ZW)”  ），然后逐渐移植。
+请牢记上面提到的例外情况，将 C++/CX 项目移植到 C++/WinRT 的第一步是向它手动添加 C++/WinRT 支持（请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT  ，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 让支持处于关闭状态是一个好办法，这样生成消息可帮助你找到（并移植）C++/CX 上的所有依赖项，也可将支持重新打开（在项目属性中，单击“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>“是(/ZW)”  ），然后逐渐移植。
 
 也可使用 Visual Studio 中的 C++/WinRT 项目属性页将以下属性手动添加到 `.vcxproj` 文件。 如需类似自定义选项（用于优化 `cppwinrt.exe` 工具的行为）的列表，请参阅 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
 
@@ -186,7 +186,7 @@ class MyClass
 
 有关 C++/WinRT 中的等效项，请参阅[延迟初始化](consume-apis.md#delayed-initialization)。
 
-## <a name="properties"></a>属性
+## <a name="properties"></a>“属性”
 
 C++/CX 语言扩展包括属性概念。 编写 C++/CX 源代码时，你可以像访问字段那样访问属性。 标准 C++ 没有属性概念，因此，在 C++/WinRT 中，你调用获取和设置函数。
 
@@ -309,7 +309,18 @@ C++ 集合类型使用默认构造函数，这可能导致意外的对象构造�
 | 空引用的数组 | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | 配对 | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-没有速记可以用来创建空引用的数组。 必须针对数组中的每个元素重复执行 `nullptr`。 如果构造的数目太少，则会默认构造额外的。
+### <a name="more-about-collections-of-empty-references"></a>有关空引用集合的详细信息
+
+只要在 C++/CX 中有一个 **Platform::Array\^** （参见[移植 **Platform::Array\^** ](#port-platformarray)），即可将其移植到 C++/WinRT 中的 **std::vector**（事实上，可以将其移植到任何邻近的容器），而不是将其作为数组保留。 选择 **std::vector** 有多种优势。
+
+例如，尽管存在用于创建固定大小的空引用矢量（参见上表）的速记，但没有用于创建空引用数组  的速记。 必须针对数组中的每个元素重复执行 `nullptr`。 如果构造的数目太少，则会默认构造额外的。
+
+对于矢量，可以在初始化时使用空引用填充它（如上表所示），也可以借助如下所示的代码在初始化后使用空引用填充它。
+
+```cppwinrt
+std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
+boxes.resize(10, nullptr); // 10 empty references.
+```
 
 ### <a name="more-about-the-stdmap-example"></a>有关 **std::map** 示例的详细信息
 
@@ -531,7 +542,9 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### <a name="port-platformarray"></a>移植 Platform::Array\^ 
 
-选项包括使用初始值设定项列表、std::array  或 std::vector  。 有关详细信息和代码示例，请参阅[标准初始值设定项列表](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[标准数组和矢量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
+在 C++/CX 要求使用数组的情况下，C++/WinRT 允许使用任何相邻的容器。 请参阅[默认构造函数如何影响集合](#how-the-default-constructor-affects-collections)，了解为何可以使用 **std::vector**。
+
+因此，只要在 C++/CX 中有 **Platform::Array\^** ，移植选项中就会包括使用初始值设定项列表、**std::array** 或 **std::vector** 的选项。 有关详细信息和代码示例，请参阅[标准初始值设定项列表](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[标准数组和矢量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
 
 ### <a name="port-platformexception-to-winrthresult_error"></a>将 Platform::Exception\^  移植到 winrt::hresult_error 
 
@@ -646,7 +659,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 C++/WinRT 也支持 [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring)，但仅限数目有限的一些类型。 对于任何其他需要字符串化的类型，你需要添加重载。
 
-| 语言 | 将整数字符串化 | 将枚举字符串化 |
+| Language | 将整数字符串化 | 将枚举字符串化 |
 | - | - | - |
 | C++/CX | `String^ result = "hello, " + intValue.ToString();` | `String^ result = "status: " + status.ToString();` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |

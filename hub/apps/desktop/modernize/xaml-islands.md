@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 96705faff278c4cab31e0ab271bc31d08261401b
-ms.sourcegitcommit: 1455e12a50f98823bfa3730c1d90337b1983b711
+ms.openlocfilehash: 061ad7a3f63fc92dd2f865f8870c7de5edf862af
+ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76814007"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935349"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 UWP XAML 控件（XAML 岛）
 
@@ -53,7 +53,7 @@ WPF 和 Windows 窗体应用程序可以使用选定的 XAML 岛控件来包装�
 
 ### <a name="host-controls"></a>主机控件
 
-如果方案超出可用包装控件的涵盖范围，WPF 和 Windows 窗体应用程序也可使用 Windows 社区工具包中提供的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件。
+如果自定义控件和其他方案超出可用包装控件的涵盖范围，WPF 和 Windows 窗体应用程序也可使用 Windows 社区工具包中提供的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件。
 
 | 控件 | 支持的 OS 的最低版本 | 说明 |
 |-----------------|-------------------------------|-------------|
@@ -81,16 +81,6 @@ XAML 岛 .NET 控件需要 Windows 10 版本 1903 或更高版本。 若要使�
 
 * 若要托管自定义 UWP 控件，则 WPF 或 Windows 窗体项目必须以 .NET Core 3 为目标。 以 .NET Framework 为目标的应用不支持托管自定义 UWP 控件。 还需执行一些附加步骤才能引用自定义控件。 有关详细信息，请参阅[使用 XAML 岛在 WPF 应用中托管自定义 UWP 控件](host-custom-control-with-xaml-islands.md)。
 
-* 这些说明的早期版本已要求你将 `maxversiontested` 元素添加到 WPF 或 Windows 窗体项目中的应用程序清单。 只要你使用上面列出的最新版 NuGet 包，就不再需要将此元素添加到清单中。
-
-### <a name="architecture-of-xaml-island-net-controls"></a>XAML 岛 .NET 控件的体系结构
-
-下面从体系结构方面简要介绍了如何将不同类型的 XAML 岛控件组织到 UWP XAML 托管 API 之上。
-
-![主机控件体系结构](images/xaml-islands/host-controls.png)
-
-此图表底部所示的 API 随 Windows SDK 提供。 包装控件和主机控件可通过 Windows 社区工具包中的 NuGet 包获得。
-
 ### <a name="web-view-controls"></a>Web 视图控件
 
 Windows 社区工具包还提供了以下 .NET 控件，用于在 WPF 和 Windows 窗体应用程序中托管 Web 内容的。 这些控件通常以 XAML 岛控件形式用于类似的桌面应用现代化方案，并保留在 XAML 岛控件所在的 [Microsoft.Toolkit.Win32 存储库](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32)中。
@@ -113,6 +103,33 @@ UWP XAML 托管 API 包含多个 Windows 运行时类和 COM 接口，可供 C++
 
 > [!NOTE]
 > Windows 社区工具包中的包装控件和主机控件在内部使用 UWP XAML 托管 API，并实现你在直接使用 UWP XAML 托管 API 时需要自行处理的所有行为，包括键盘导航和布局更改。 对于 WPF 和 Windows 窗体应用程序，强烈建议使用这些控件而不是直接使用 UWP XAML 托管 API，因为它们抽象掉了使用 API 的许多实现细节。
+
+## <a name="architecture-of-xaml-islands"></a>XAML 岛的体系结构
+
+下面从体系结构方面简要介绍了如何将不同类型的 XAML 岛控件组织到 UWP XAML 托管 API 之上。
+
+![主机控件体系结构](images/xaml-islands/host-controls.png)
+
+此图表底部所示的 API 随 Windows SDK 提供。 包装控件和主机控件可通过 Windows 社区工具包中的 NuGet 包获得。
+
+## <a name="window-host-context-for-xaml-islands"></a>XAML 岛的窗口宿主上下文
+
+在桌面应用中托管 XAML 岛时，可以同时在同一线程上运行多个 XAML 内容树。 若要访问 XAML 岛中 XAML 内容树的根元素并获取在其中托管它的上下文的相关信息，请使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 类。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 类不会为 XAML 岛提供正确的信息。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 对象在线程上存在并且可供应用访问，但不会返回有意义的边界或可见性（它们始终不可见且大小为 1x1）。 有关详细信息，请参阅[窗口化宿主](/windows/uwp/design/layout/show-multiple-views#windowing-hosts)。
+
+例如，若要获取包含 XAML 岛中托管的 UWP 控件的窗口的边界矩形，请使用控件的 [XamlRoot.Size](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot.size) 属性。 由于可以在 XAML 岛中托管的每个 UWP 控件都派生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，因此可以使用控件的 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.xamlroot) 属性来访问 **XamlRoot** 对象。
+
+```csharp
+Size windowSize = myUWPControl.XamlRoot.Size;
+```
+
+不要使用 [CoreWindows.Bounds](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.bounds) 属性来获取边界矩形。
+
+```csharp
+// This will return incorrect information for a UWP control that is hosted in a XAML Island.
+Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
+```
+
+如果需要一个表，其中包含与窗口化相关的常见 API（应避免在 XAML 岛的上下文中使用）以及建议的 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 替换项，请查看[此部分](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts)中的表。
 
 ## <a name="feature-roadmap"></a>功能路线图
 

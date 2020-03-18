@@ -5,22 +5,23 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 06fadae3e33da3289726f45e7222617d51843015
-ms.sourcegitcommit: 6fbf645466278c1f014c71f476408fd26c620e01
+ms.openlocfilehash: 949f8c407e0a49c87cbb45c01117a7e2e1525010
+ms.sourcegitcommit: 5f22e596443ff4645ebf68626d8a4d275d8a865f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72816682"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79083176"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>使用 C++/WinRT 执行并发和异步操作
 
-本主题介绍如何通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 以不同的方式创建和使用 Windows 运行时异步对象。
+> [!IMPORTANT]
+> 本主题介绍协同例程  和 `co_await` 的概念，我们建议你在 UI 应用程序和非 UI 应用程序中使用它们。  为了简单起见，本介绍主题中的大多数代码示例演示了 **Windows 控制台应用程序 (C++/WinRT)** 项目。 本主题中后面的代码示例使用协同例程，但为方便起见，控制台应用程序示例还会在退出前继续使用阻止性的 **get** 函数调用，这样应用程序就不会在显示其输出之前退出。 不要通过 UI 线程这样做（调用阻止性的 **get** 函数）， 而应使用 `co_await` 语句。 [更高级的并发和异步](concurrency-2.md)主题介绍了将要在 UI 应用程序中使用的技术。
 
-在阅读本主题后，另请参阅[更高级的并发和异步](concurrency-2.md)以了解更多方案。
+本简介性主题介绍了可通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创建和使用 Windows 运行时异步对象的部分方式。 阅读本主题后，如需其他技术，尤其是将要在 UI 应用程序中使用的技术，另请参阅[更高级的并发和异步](concurrency-2.md)。
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>异步操作和 Windows 运行时“Async”函数
 
-有可能需要超过 50 毫秒才能完成的任何 Windows 运行时 API 将实现为异步函数（具有一个以“Async”结尾的名称）。 异步函数的实现将启动另一线程上的工作，并且立即返回表示异步操作的对象。 在异步操作完成后，返回的对象会包含从该工作中生成的任何值。 **Windows::Foundation** Windows 运行时命名空间包含四种类型的异步操作对象。
+有可能需要超过 50 毫秒才能完成的任何 Windows 运行时 API 将实现为异步函数（具有一个以“Async”结尾的名称）。 异步函数的实现会启动另一线程上的工作，并且会立即返回表示异步操作的对象。 在异步操作完成后，返回的对象会包含从该工作中生成的任何值。 **Windows::Foundation** Windows 运行时命名空间包含四种类型的异步操作对象。
 
 - [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)；
 - [**IAsyncActionWithProgress&lt;TProgress&gt;** ](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)；
@@ -29,7 +30,9 @@ ms.locfileid: "72816682"
 
 每种异步操作类型都将投影到 **winrt::Windows::Foundation** C++/WinRT 命名空间中的相应类型。 C++/WinRT 还包含内部 await 适配器结构。 不要直接使用它，但借助该结构，可以编写 `co_await` 语句以协作等待返回其中一种异步操作类型的任何函数的结果。 然后，可以自行创作返回这些类型的协同例程。
 
-异步 Windows 函数的示例是 [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)，其返回类型 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的异步操作对象。 让我们来看一些阻塞和不阻塞使用 C++/WinRT 来调用类似 API 的方法。
+异步 Windows 函数的示例是 [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)，其返回类型 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的异步操作对象。
+
+让我们来看一些阻塞和不阻塞使用 C++/WinRT 来调用类似 API 的方法。 我们将在接下来的几个代码示例中使用 **Windows 控制台应用程序 (C++/WinRT)** 项目，只为说明基本的概念。 更适用于 UI 应用程序的技术在[更高级的并发和异步](concurrency-2.md)中讨论。
 
 ## <a name="block-the-calling-thread"></a>阻塞调用线程
 
@@ -111,6 +114,8 @@ int main()
 可以将一个协同例程聚合到其他协同例程中。 或者，也可以调用 **get** 以阻塞和等待其完成（以及获得结果，如果有）。 或者，可以将其传递到支持 Windows 运行时的其他编程语言。
 
 也可以通过使用委托来处理异步操作的已完成和/或正在进行中的事件。 有关详细信息和代码示例，请参阅[异步操作的委托类型](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)。
+
+正如你所看到的，在上面的代码示例中，我们在退出 **main** 之前继续使用阻止性的 **get** 函数调用。 但是，这只是为了让应用程序不会在显示其输出之前退出。
 
 ## <a name="asynchronously-return-a-windows-runtime-type"></a>异步返回 Windows 运行时类型
 

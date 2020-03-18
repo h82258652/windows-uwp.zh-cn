@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 07c2d3308d204d37e246a9a56c0a7203a1340dc0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259882"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210423"
 ---
 # <a name="view-app-identity-details"></a>查看应用标识的详细信息
 
 
 可以通过**应用标识**页面上的 Microsoft Store 查看与分配给应用的唯一标识相关的详细信息。 你还可以在此页上获取应用商店列表的链接。
 
-若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的**应用管理**。 选中**应用标识**查看这些详细信息。
+若要找到此信息，请导航到其中一个应用，然后展开左侧导航菜单中的“应用管理”。 选中**应用标识**查看这些详细信息。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>要包含在应用程序包清单中的值
@@ -29,7 +29,7 @@ ms.locfileid: "74259882"
 -   **包/标识/发布服务器**
 -   **Package/Properties/PublisherDisplayName**
 
-有关详细信息，请参阅[程序包清单架构参考**中的**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)标识[](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)。
+有关详细信息，请参阅[程序包清单架构参考](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中的 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
 同时，这些元素声明应用的标识、建立了所有程序包所属于的“程序包系列”。 单个程序包将具有其他详细信息，如体系结构和版本。
 
@@ -38,8 +38,8 @@ ms.locfileid: "74259882"
 
 以下值是指应用的程序包系列的其他值，但不包含在清单内。
 
--   **程序包系列名称 (PFN)** ：此值与某些 Windows API 结合使用。
--   **程序包 SID**：需要该值才能向应用发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
+-   **包系列名称（PFN）** ：此值用于某些 Windows Api。
+-   **包 SID**：需要此值才能向应用程序发送 WNS 通知。 有关详细信息，请参阅 [Windows 推送通知服务 (WNS) 概述](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
 
 ## <a name="link-to-your-apps-listing"></a>链接到应用一览

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
 ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255103"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209132"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -44,7 +44,7 @@ Windows 运行时基于组件对象模型 (COM) API，根据设计，可通过�
 
 用于 C++/WinRT 的 Visual Studio 项目模板在下面的部分介绍。 使用已安装的最新版 VSIX 扩展创建新的 C++/WinRT 项目时，新的 C++/WinRT 项目会自动安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 **Microsoft.Windows.CppWinRT** NuGet 包提供 C++/WinRT 生成支持（MSBuild 属性和目标），使项目可以在开发计算机和生成代理（在其上仅安装了 NuGet 包，未安装 VSIX 扩展）之间移植。
 
-也可通过手动安装 **Microsoft.Windows.CppWinRT** NuGet 包来转换现有项目。 在安装（或更新到）最新版 VSIX 扩展以后，请在 Visual Studio 中打开现有项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 **Microsoft.Windows.CppWinRT**，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   添加该包后，你将获得对该项目的 C++/WinRT MSBuild 支持，包括调用 `cppwinrt.exe` 工具。
+也可通过手动安装 **Microsoft.Windows.CppWinRT** NuGet 包来转换现有项目。 在安装（或更新到）最新版 VSIX 扩展以后，请在 Visual Studio 中打开现有项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT  ，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   添加该包后，你将获得对该项目的 C++/WinRT MSBuild 支持，包括调用 `cppwinrt.exe` 工具。
 
 > [!IMPORTANT]
 > 如果项目是使用 1.0.190128.4 之前的 VSIX 扩展版本创建的（或者这些项目在升级后兼容该扩展版本），请参阅[早期版本的 VSIX 扩展](#earlier-versions-of-the-vsix-extension)。 该部分包含有关项目配置的重要信息。在升级项目以使用最新版 VSIX 扩展之前，需了解该信息。

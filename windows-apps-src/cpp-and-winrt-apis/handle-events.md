@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: b64fbe93198af95402161873c1d68d0da41f33f7
-ms.sourcegitcommit: 0426013dc04ada3894dd41ea51ed646f9bb17f6d
+ms.openlocfilehash: 664f6799d3bb6f848243820ec46e655262e8c1a7
+ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78853371"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79295710"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用委托处理事件
 
@@ -38,6 +38,9 @@ XAML 设计器会将相应的事件处理程序函数原型（和存根实现）
 ```
 
 ```cppwinrt
+// MainPage.h
+void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
 // MainPage.cpp
 void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
 {
@@ -59,6 +62,22 @@ MainPage::MainPage()
 
 > [!IMPORTANT]
 > 注册委托时，上述代码示例传递原始的 this 指针（指向当前对象）  。 若要了解如何建立对当前对象的强引用或弱引用，请参阅[如果使用成员函数作为委托](weak-references.md#if-you-use-a-member-function-as-a-delegate)。
+
+下面是一个使用静态成员函数的示例；请注意，语法更简单。
+
+```cppwinrt
+// MainPage.h
+static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+
+// MainPage.cpp
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    Button().Click( MainPage::ClickHandler );
+}
+void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+```
 
 还有其他方法可用来构建 RoutedEventHandler  。 下面是摘自 [RoutedEventHandler](/uwp/api/windows.ui.xaml.routedeventhandler) 的文档主题的语法块（从网页右上角“语言”下拉菜单中选择 C++/WinRT）    。 请注意各种构造函数：一种采用 lambda；另一种是自由函数；还有一种（我们在上面使用的）采用对象和指向成员函数的指针。
 
