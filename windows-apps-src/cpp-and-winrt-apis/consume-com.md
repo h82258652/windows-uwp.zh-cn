@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, COM, 组件, 类, 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: 88012d96b7c769094cb80d0f34b77060291a3eef
-ms.sourcegitcommit: 80ea5e05f8c15700f6c6fa3d1ed37e479568762b
+ms.openlocfilehash: 4a9bdfcee8811e52587eb4fcd59913a731b799a2
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75928817"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79511000"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 
@@ -18,7 +18,7 @@ ms.locfileid: "75928817"
 
 本主题的末尾提供了一个精简 Direct2D 应用程序的完整源代码列表。 我们将提取该代码的摘录内容，演示如何使用 C++/WinRT 库的各种工具通过 C++/WinRT 来使用 COM 组件。
 
-## <a name="com-smart-pointers-winrtcom_ptruwpcpp-ref-for-winrtcom-ptr"></a>COM 智能指针 ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
+## <a name="com-smart-pointers-winrtcom_ptr"></a>COM 智能指针 ([**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
 使用 COM 编程时，你会直接使用接口而不是对象（Windows 运行时 API 在幕后也是如此，这是 COM 的一种演进）。 若要针对 COM 类调用函数（例如，激活该类），需先获取一个接口，然后针对该接口调用该函数。 若要访问对象的状态，请不要直接访问其数据成员，而应该针对某个接口调用取值函数和赋值函数。
 
@@ -127,7 +127,7 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>采用 **IUnknown** 接口指针的 COM 函数
 
-可以调用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#get_unknown-function) 自由函数，将 **com_ptr** 传递给采用 **IUnknown** 接口指针的函数。
+可以调用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 自由函数，将 **com_ptr** 传递给采用 **IUnknown** 接口指针的函数。
 
 ```cppwinrt
 winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
