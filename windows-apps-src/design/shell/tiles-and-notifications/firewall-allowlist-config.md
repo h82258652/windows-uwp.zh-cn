@@ -4,21 +4,20 @@ Description: 许多企业使用防火墙来阻止不需要的流量。 此文档
 title: 将 WNS 流量添加到防火墙允许列表
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服务，通知，windows，防火墙，疑难解答，IP，流量，企业，网络，IPv4，VIP，FQDN，公共 IP 地址
 ms.localizationpriority: medium
-ms.openlocfilehash: fa0153a395144382aee3f764f0f7d9316afa9c5e
-ms.sourcegitcommit: ff086bae50e61a351b8c53867ed6579e43d8cf1f
+ms.openlocfilehash: 34e66249c5b44cbfecd81b9238eda2b1e5412b9a
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76265018"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080652"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支持 WNS 流量的企业防火墙和代理配置
 
-## <a name="background"></a>后台
+## <a name="background"></a>背景
 许多企业使用防火墙来阻止不需要的网络流量和端口;遗憾的是，这也会阻止 Windows 通知服务通信等重要事项。 这意味着，通过 WNS 发送的所有通知将在某些网络配置下被丢弃。 为避免出现这种情况，网络管理员可以将已批准的 WNS Fqdn 或 Vip 列表添加到其免除列表，以允许 WNS 流量通过防火墙。 下面更详细地介绍了如何以及如何添加哪些内容以及对不同代理类型的支持。
 
 ## <a name="proxy-support"></a>代理支持

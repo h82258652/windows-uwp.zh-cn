@@ -48,8 +48,6 @@
               href: apps/desktop/modernize/desktop-to-uwp-extend.md
             - name: 分发打包的应用
               href: apps/desktop/modernize/desktop-to-uwp-distribute.md
-        - name: 向未打包的桌面应用授予标识
-          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
         - name: 教程：实现 WPF 应用现代化
           items:
             - name: 概述
@@ -64,6 +62,8 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-4.md
             - name: 使用 MSIX 打包和部署
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
+        - name: 向未打包的桌面应用授予标识
+          href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
     - name: Fluent Design System
       href: apps/fluent-design-system.md
     - name: 辅助功能
@@ -71,27 +71,7 @@
     - name: 语音
       href: apps/speech.md
     - name: 功能和技术
-      items:
-        - name: 概述
-          href: apps/features-and-technologies.md
-        - name: 使用 .NET 处理 ETW 跟踪
-          items:
-            - name: 概述
-              href: apps/trace-processing/overview.md
-            - name: 处理第一个跟踪
-              href: apps/trace-processing/quickstart.md
-            - name: 访问跟踪数据
-              href: apps/trace-processing/tutorial.md
-            - name: 扩展 TraceProcessor
-              href: apps/trace-processing/extensibility.md
-            - name: 加载符号
-              href: apps/trace-processing/symbols.md
-            - name: 使用流式处理
-              href: apps/trace-processing/streaming.md
-            - name: 示例
-              href: 'https://github.com/microsoft/eventtracing-processing-samples'
-            - name: 引用
-              href: apps/trace-processing/reference.md
+      href: apps/features-and-technologies.md
     - name: 最新文档更新
       href: apps/whats-new/latest-doc-updates.md
 - name: 使用 Windows 进行生成

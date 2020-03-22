@@ -3,19 +3,18 @@ author: knicholasa
 description: Z 深度或相对深度和阴影是将深度合并到应用中的两种方式，可帮助用户自然高效地定位。
 title: 适用于 UWP 应用的 Z 深度和阴影
 template: detail.hbs
-ms.author: nichola
 ms.date: 04/19/2019
 ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e9197be38d1edfdad41a434132f318cdf3f45ea
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282412"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081390"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和阴影
 
@@ -39,7 +38,7 @@ Z 深度是指3D 应用创建者中使用的一种术语，用于表示两个曲
 
 ## <a name="themeshadow"></a>ThemeShadow
 
-ThemeShadow 类型可应用于任何 XAML 元素，以根据 x、y、z 坐标适当绘制阴影。 ThemeShadow 还自动调整其他环境规范：
+[ThemeShadow](/uwp/api/windows.ui.xaml.media.themeshadow)类型可应用于任何 XAML 元素，以根据 x、y、z 坐标适当绘制阴影。 ThemeShadow 还自动调整其他环境规范：
 
 - 适应灯光、用户主题、应用环境和 shell 中的变化。
 - 基于元素的 z 深度，自动对元素应用阴影。 
@@ -65,7 +64,7 @@ ThemeShadow 类型可应用于任何 XAML 元素，以根据 x、y、z 坐标适
 - [媒体传输控制](../controls-and-patterns/media-playback.md#media-transport-controls)， [InkToolbar](../controls-and-patterns/inking-controls.md)
 - [连贯的动画](../motion/connected-animation.md)
 
-注意:浮出控件仅在针对 Windows 10 版本1903或更高版本的 SDK 编译时应用 ThemeShadow。
+注意：浮出控件仅在针对 Windows 10 版本1903或更早版本的 SDK 进行编译时应用 ThemeShadow。
 
 ### <a name="themeshadow-in-popups"></a>弹出窗口中的 ThemeShadow
 
@@ -73,7 +72,7 @@ ThemeShadow 类型可应用于任何 XAML 元素，以根据 x、y、z 坐标适
 
 当应用于[弹出窗口](/uwp/api/windows.ui.xaml.controls.primitives.popup)中的任何 XAML 元素时，ThemeShadow 会自动强制转换阴影。 它将在其后面的应用背景内容和它下面的任何其他打开的弹出窗口之间强制转换。
 
-若要将 ThemeShadow 与弹出窗口一起使用，请使用 `Shadow` 属性将 ThemeShadow 应用到 XAML 元素。 然后，将元素从其后面的其他元素提升，例如，使用 `Translation` 属性的 z 分量。
+若要将 ThemeShadow 与弹出窗口一起使用，请使用 `Shadow` 属性将 ThemeShadow 应用于 XAML 元素。 然后，将该元素从其后面的其他元素中提升（例如，通过使用 `Translation` 属性的 z 组件）。
 对于大多数 Popup UI，相对于应用背景内容的建议默认提升为32有效像素。
 
 此示例在弹出窗口中显示一个将阴影转换到应用背景内容以及它后面的任何其他弹出窗口的矩形：
@@ -160,12 +159,12 @@ DropShadow 不会自动响应其环境，也不会使用光源。 有关示例�
 ## <a name="which-shadow-should-i-use"></a>我应该使用哪种阴影？
 
 | 属性 | ThemeShadow | DropShadow |
-| - | - | - | - |
+| - | - | - |
 | **最小 SDK** | Windows 10 版本1903 | 14393 |
-| **能力** | 是 | 否 |
-| **定义** | 否 | 是 |
+| **能力** | 是 | 是 |
+| **定义** | 是 | 是 |
 | **光源** | 自动（默认情况下为全局，但可以覆盖每个应用） | 无 |
-| **在3D 环境中受支持** | 是 | 否 |
+| **在3D 环境中受支持** | 是 | 是 |
 
 - 请记住，影子的用途是提供有意义的层次结构，而不是简单的视觉处理。
 - 通常，我们建议使用 ThemeShadow，它可自动适应其环境。
