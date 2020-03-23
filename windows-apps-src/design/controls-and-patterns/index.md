@@ -8,22 +8,22 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ecf82294614114e711483dfdc58cfad36591369
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: ea9f58c8f861be7774285c5611ad222d9587e2a1
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319562"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081712"
 ---
-# <a name="controls-for-uwp-apps"></a>适用于 UWP 应用的控件 
+# <a name="controls-for-uwp-apps"></a>适用于 UWP 应用的控件
 
 ![控制](../images/controls-2x.png)
 
 在 UWP 应用开发中，<i>控件</i>是一种显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
 
-我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。  这些控件是 Fluent Design System 的一部分，并且可以帮助你创建一个加粗、可缩放的 UI，此 UI 在所有设备和屏幕大小上都具有出色的外观。 
+我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。  这些控件是 Fluent Design System 的一部分，并且可以帮助你创建一个加粗、可缩放的 UI，此 UI 在所有设备和屏幕大小上都具有出色的外观。
 
-本部分中的文章提供了有关向 UWP 应用添加控件和模式的设计指南和编码说明。 
+本部分中的文章提供了有关向 UWP 应用添加控件和模式的设计指南和编码说明。
 
 ## <a name="intro"></a>简介
 
@@ -41,85 +41,92 @@ ms.locfileid: "67319562"
 :::row-end:::
 
 ## <a name="get-the-windows-ui-library"></a>获取 Windows UI 库
-某些控件仅在 Windows UI 库中提供。 若要获取它，请参阅 [Windows UI 库概述和安装说明](/uwp/toolkits/winui/)。
 
-## <a name="alphabetical-index"></a>按字母顺序排序的索引 
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | 某些控件仅在 Windows UI 库 (WinUI) 中提供，该库是一个包含新控件和 UI 功能的 NuGet 包。 若要获取它，请参阅 [Windows UI 库概述和安装说明](/uwp/toolkits/winui/)。<br/>从 WinUI 2.2 始，许多控件的默认样式已更新为使用圆角。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 |
 
-有关特定控件和模式的详细信息。 （有关按功能排序的列表，请参阅<a href="controls-by-function.md">按功能排序的控件索引</a>。）
+## <a name="alphabetical-index"></a>按字母顺序排序的索引
 
-<div style="column-count: 2; column-gap: 40px; margin-top: 40px;" >
-<ul style="margin-top: 0px; padding-top: 0px; list-style-type: none;">
-<li style="list-style-type: none;"><a href="auto-suggest-box.md">自动建议框</a></li>
+有关特定控件和模式的详细信息。 （有关按功能排序的列表，请参阅[按功能排序的控件索引](controls-by-function.md)。）
 
-<li style="list-style-type: none;"><a href="app-bars.md">栏</a></li>
+:::row:::
+    :::column:::
 
-<li style="list-style-type: none;"><a href="buttons.md">按钮</a></li>
+- 动画视觉播放器（请参阅 [Lottie](/windows/communitytoolkit/animations/lottie)）![WinUI 徽标](images/winui-logo-16x16.png)
+- [自动建议框](auto-suggest-box.md)
+- [Button](buttons.md)
+- [日历日期选取器](calendar-date-picker.md)
+- [日历视图](calendar-view.md)
+- [复选框](checkbox.md)
+- [颜色选取器](color-picker.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [组合框](combo-box.md)
+- [命令栏](app-bars.md)
+- [命令栏浮出控件](command-bar-flyout.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [联系人卡片](contact-card.md)
+- [内容对话框](dialogs-and-flyouts/dialogs.md)
+- [内容链接](content-links.md)
+- [上下文菜单](menus.md)
+- [日期选取器](date-picker.md)
+- [对话框和浮出控件](dialogs-and-flyouts/index.md)
+- [下拉按钮](buttons.md#create-a-drop-down-button) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [翻转视图](flipview.md)
+- [浮出控件](dialogs-and-flyouts/flyouts.md)
+- [窗体](forms.md)（模式）
+- [网格视图](listview-and-gridview.md)
+- [超链接](hyperlinks.md)
+- [超链接按钮](hyperlinks.md#create-a-hyperlinkbutton)
+- [图像和图像画笔](images-imagebrushes.md)
+- [墨迹书写控件](inking-controls.md)
+- [列表视图](listview-and-gridview.md)
+- [地图控件](../../maps-and-location/controls-map.md)
+- [大纲/细节](master-details.md)（模式）
+- [媒体播放](media-playback.md)
+- [菜单栏](menus.md#create-a-menu-bar) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [菜单浮出控件](menus.md)
+- [导航视图](navigationview.md) ![WinUI 徽标](images/winui-logo-16x16.png)
 
-<li style="list-style-type: none;"><a href="checkbox.md">复选框</a></li>
+    :::column-end:::
+    :::column:::
 
-<li style="list-style-type: none;"><a href="color-picker.md">颜色选取器</a></li>
+- [数字框](number-box.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [视差视图](..\motion\parallax.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [密码框](password-box.md)
+- [头像图片](person-picture.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [透视表](pivot.md)
+- [进度栏](progress-controls.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [进度环](progress-controls.md)
+- [单选按钮](radio-button.md)
+- [评分控件](rating.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [重复按钮](buttons.md#create-a-repeat-button)
+- [Rich Edit 框](rich-edit-box.md)
+- [RTF 块](rich-text-block.md)
+- [滚动查看器](scroll-controls.md)
+- [搜索](search.md)（模式）
+- [语义式缩放](semantic-zoom.md)
+- [形状](shapes.md)
+- [滑块](slider.md)
+- [拆分按钮](buttons.md#create-a-split-button) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [拆分视图](split-view.md)
+- [轻扫控件](swipe.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [选项卡视图](tab-view.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [教学提示](dialogs-and-flyouts/teaching-tip.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [文本块](text-block.md)
+- [文本框](text-box.md)
+- [时间选取器](time-picker.md)
+- [切换开关](toggles.md)
+- [切换按钮](buttons.md)
+- [切换拆分按钮](buttons.md#create-a-toggle-split-button)
+- [工具提示](tooltips.md)
+- [树视图](tree-view.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [双窗格视图](two-pane-view.md) ![WinUI 徽标](images/winui-logo-16x16.png)
+- [Web 视图](web-view.md)
 
-<li style="list-style-type: none;"><a href="contact-card.md">联系人卡片</a></li>
-
-<li style="list-style-type: none;"><a href="date-and-time.md">日期和时间控件</a></li>
-
-<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">对话框和浮出控件</a></li>
-
-<li style="list-style-type: none;"><a href="flipview.md">翻转视图</a></li>
-
-<li style="list-style-type: none;"><a href="forms.md">窗体</a></li>
-
-<li style="list-style-type: none;"><a href="hyperlinks.md">超链接</a></li>
-
-<li style="list-style-type: none;"><a href="images-imagebrushes.md">图像和图像画笔</a></li>
-
-<li style="list-style-type: none;"><a href="inking-controls.md">墨迹书写控件</a></li>
-
-<li style="list-style-type: none;"><a href="lists.md">列表</a></li>
-
-<li style="list-style-type: none;"><a href="../../maps-and-location/controls-map.md">地图控件</a></li>
-
-<li style="list-style-type: none;"><a href="master-details.md">大纲/细节</a></li>
-
-<li style="list-style-type: none;"><a href="media-playback.md">媒体播放</a></li>
-
-<li style="list-style-type: none;"><a href="menus.md">菜单和上下文菜单</a></li>
-
-<li style="list-style-type: none;"><a href="navigationview.md">导航视图</a></li>
-
-<li style="list-style-type: none;"><a href="person-picture.md">头像图片</a></li>
-
-<li style="list-style-type: none;"><a href="pivot.md">透视表</a></li>
-
-<li style="list-style-type: none;"><a href="progress-controls.md">进度控件</a></li>
-
-<li style="list-style-type: none;"><a href="radio-button.md">单选按钮</a></li>
-
-<li style="list-style-type: none;"><a href="rating.md">评分控件</a></li>
-
-<li style="list-style-type: none;"><a href="scroll-controls.md">滚动和平移控件</a></li>
-
-<li style="list-style-type: none;"><a href="search.md">搜索</a></li>
-
-<li style="list-style-type: none;"><a href="semantic-zoom.md">语义式缩放</a></li>
-
-<li style="list-style-type: none;"><a href="shapes.md">形状</a></li>
-
-<li style="list-style-type: none;"><a href="slider.md">滑块</a></li>
-
-<li style="list-style-type: none;"><a href="split-view.md">拆分视图</a></li>
-
-<li style="list-style-type: none;"><a href="text-controls.md">文本控件</a></li>
+    :::column-end:::
+:::row-end:::
 
 
-<li style="list-style-type: none;"><a href="toggles.md">切换</a></li>
-<li style="list-style-type: none;"><a href="tooltips.md">工具提示</a></li>
 
-<li style="list-style-type: none;"><a href="tree-view.md">树视图</a></li>
-
-<li style="list-style-type: none;"><a href="web-view.md">Web 视图</a></li>
-</ul>
-</div>
 
 ## <a name="xaml-controls-gallery"></a>XAML 控件库
 
@@ -133,6 +140,4 @@ ms.locfileid: "67319562"
 
 ## <a name="additional-controls"></a>其他控件
 
-可以从 <a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>、<a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等公司获取用于 UWP 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。  
-
-如果你有兴趣了解有关这些控件的详细信息，请查看 GitHub 上的<a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">客户订单数据库</a>示例。 此示例使用了 Telerik 的数据网格控件和数据输入验证功能，它们是 Telerik 的 UI for UWP 套件的一部分。 UI for UWP 套件是一个包含 20 多个控件的集合，通过 .NET Foundation 以开源项目的形式提供。
+可以从 <a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>、<a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等公司获取用于 UWP 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。

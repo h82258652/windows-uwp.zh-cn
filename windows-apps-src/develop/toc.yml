@@ -27,7 +27,7 @@
 - name: 音频、视频和相机
   href: ../audio-video-camera/index.md
   items:
-    - name: 相机
+    - name: 照相机
       href: ../audio-video-camera/camera.md
       items:
         - name: 使用 Windows 内置相机 UI 捕获照片和视频
@@ -299,7 +299,7 @@
           href: ../debug-test-perf/loose-file-registration.md
         - name: Beta 测试
           href: ../debug-test-perf/beta-testing.md
-        - name: Windows Device Portal
+        - name: Windows 设备门户
           href: ../debug-test-perf/device-portal.md
           items:
             - name: 适用于桌面设备的 Device Portal
@@ -432,7 +432,7 @@
               href: ../monetize/set-up-ad-units-in-your-app.md
             - name: Microsoft 广告中介服务
               href: ../monetize/ad-mediation-service.md
-            - name: 最佳做法
+            - name: 最佳实践
               href: ../monetize/best-practices-for-ads-in-apps.md
               items:
                 - name: UI 和用户体验指南
@@ -743,7 +743,7 @@
       items:
         - name: 简介
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: 立即开始行动
+        - name: 入门
           href: ../cpp-and-winrt-apis/get-started.md
         - name: 新增功能
           href: ../cpp-and-winrt-apis/news.md
@@ -811,7 +811,7 @@
           items:
             - name: 值类别和引用
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
-    - name: 安全性
+    - name: 安全
       href: ../security/index.md
       items:
         - name: 安全 Windows 应用开发简介
@@ -1095,7 +1095,7 @@
               href: ../devices-sensors/pos-basics-claim.md
             - name: 与他人共享外设
               href: ../devices-sensors/pos-basics-sharing.md
-            - name: 即刻体验
+            - name: 入门
               href: ../devices-sensors/pos-get-started.md
         - name: 硬件支持
           href: ../devices-sensors/pos-device-support.md
@@ -1115,7 +1115,7 @@
               items:
                 - name: 系统要求
                   href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-                - name: 即刻体验
+                - name: 入门
                   href: ../devices-sensors/pos-camerabarcode-get-started.md
                 - name: 托管相机预览
                   href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
@@ -1152,7 +1152,7 @@
           href: ../devices-sensors/use-the-light-sensor.md
         - name: 使用方向传感器
           href: ../devices-sensors/use-the-orientation-sensor.md
-    - name: 蓝牙
+    - name: Bluetooth
       href: ../devices-sensors/bluetooth.md
       items:
         - name: RFCOMM
@@ -1354,6 +1354,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: 创建和托管应用扩展
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: 创建托管应用
+              href: ../launch-resume/hosted-apps.md
         - name: 使用后台任务支持应用
           href: ../launch-resume/support-your-app-with-background-tasks.md
           items:

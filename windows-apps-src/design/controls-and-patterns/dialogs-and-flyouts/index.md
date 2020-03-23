@@ -11,21 +11,18 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 43d63b1831766ecdf65fe1c1d7fd15457f728f83
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 37ab62a6e6c2e294e8d6b5222eab4a1a9ae25a2e
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867440"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081010"
 ---
 # <a name="dialogs-and-flyouts"></a>对话框和浮出控件
 
-
-
 对话框和浮出控件是当发生需要通知、批准或来自用户的其他信息的操作时出现的瞬态 UI 元素。
 
-> **重要的 API**：[ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
-
+> **平台 API：** [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 :::row:::
     :::column:::
@@ -103,7 +100,7 @@ ms.locfileid: "68867440"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
     <ul>
