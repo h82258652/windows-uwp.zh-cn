@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: d0d87f8e4b6524471ff5e2ada9012a22641b06d7
-ms.sourcegitcommit: ddf0137929945eddf01041a81aa4d26038e70f46
+ms.openlocfilehash: bf8a5970d1999427023592f919ef0b92737fa934
+ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74392094"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510980"
 ---
 # <a name="choose-your-app-platform"></a>选择应用平台
 
@@ -26,9 +26,13 @@ ms.locfileid: "74392094"
 
 借助所有这些应用程序平台，你可以创建在经典 Windows 桌面上运行的 Word、Excel 和 Photoshop 等桌面应用，并充分利用该环境的特定功能。 但是，其中一些平台有一些共同的特征，更适用于某些类型的应用程序：
 
-* **UWP、WPF 和 Windows 窗体**。 这些平台使托管运行时环境（适用于 UWP 的 Windows 运行时，以及适用于 Windows 窗体和 WPF 的 .NET）具有许多优势，尤其是在开发人员的工作效率、复杂且可自定义的 UI 和应用程序安全性方面。 由于这些框架支持可视化设计器和 UI 标记以快速创建 UI，因此它们特别适用于业务线应用程序。
+* **UWP**。 此平台为所有运行 Windows 10 的设备提供通用类型系统、API 和应用程序模型。 UWP 应用程序可以是本机应用程序，也可以是托管应用程序。 
 
-* **Win32 API**。 Win32 API（也称为 Windows API）是需要直接访问 Windows 和硬件的本机 C/C++ Windows 应用程序的原始平台。 它提供一流的开发体验，无需依赖于 .NET 和 WinRT 等托管运行时环境。 这使得 Win32 API 成为需要最高级别性能和直接访问系统硬件的应用程序的首选平台。
+* **WPF 和 Windows 窗体**。 这些平台为 .NET 上运行的托管应用程序提供通用类型系统、API 和应用程序模型。
+
+* **Win32 API**。 Win32 API（也称为 Windows API）是需要直接访问 Windows 和硬件的本机 C/C++ Windows 应用程序的原始平台。 这使得 Win32 API 成为需要最高级别性能和直接访问系统硬件的应用程序的首选平台。
+
+UWP 和 .NET 都具有与 Visual Studio 的深度集成。 这提供了许多好处，尤其是在开发人员的工作效率、复杂的可自定义 UI 和应用程序安全方面。 由于这些框架支持可视化设计器和 UI 标记以快速创建 UI，因此它们特别适用于业务线应用程序。
 
 本文更详细地介绍了这些平台，并帮助确定适用于应用程序的最佳平台。 
 
@@ -43,7 +47,7 @@ UWP 不仅可以用于为 Windows 电脑创建桌面应用程序，同时，它�
 
 有关 UWP 的详细信息，请参阅以下文章：
 
-* [开始行动](/windows/uwp/get-started/)
+* [入门](/windows/uwp/get-started/)
 * [设计和 UI](/windows/uwp/design/)
 * [技术和功能](/windows/uwp/develop/)
 * [API 参考](/uwp/)
@@ -88,7 +92,7 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 
 有关详细信息，请参阅以下文章：
 
-* [开始行动](/windows/win32/desktop-programming/)
+* [入门](/windows/win32/desktop-programming/)
 * [创建首个 Win32 和 C++ 应用](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [技术和功能](/windows/win32/desktop-app-technologies)
 * [API 参考](/windows/win32/apiindex/windows-api-list/)
