@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9542151a8104ade77d8311ed1f16eba2809ecf7a
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 02cb15d948bf35b1c449bb430c9c31dd33d9eec6
+ms.sourcegitcommit: ea058c804637319f18801447fd0f7e38ce17b801
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163691"
+ms.lasthandoff: 03/19/2020
+ms.locfileid: "79543970"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -152,7 +152,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ### <a name="useful-apis"></a>有用的 API
 
-| API | 描述 |
+| API | 说明 |
 |------|---------------|
 | [对表单有用的控件](../design/controls-and-patterns/forms.md#input-controls) | 用于创建表单的有用输入控件的列表，以及在何处使用它们的基本指南。 |
 | [网格](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | 用于以多行或多列布局安排元素的面板。 |
@@ -162,7 +162,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ### <a name="useful-docs"></a>有用的文档
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|----------------|
 | [辅助功能概述](../design/accessibility/accessibility-overview.md) | 对应用中辅助功能选项的宽泛介绍。 |
 | [辅助功能清单](../design/accessibility/accessibility-checklist.md) | 确保应用符合辅助功能标准的实用清单。 |
@@ -177,7 +177,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 
-| 代码示例 | 描述 |
+| 代码示例 | 说明 |
 |-----------------|---------------|
 | [自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md) | 对于自适应布局和响应式设计的分步指导体验。 |
 | [客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | 了解布局和表单在多页企业示例中的应用。 |

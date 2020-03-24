@@ -1,21 +1,80 @@
 ---
 description: C++/WinRT 的新增功能和更改。
 title: C++/WinRT 中的新增功能
-ms.date: 04/23/2019
+ms.date: 03/16/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 新增功能, 功能, 新增
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d5a2c3d10f2cbfcc608d212a9465ca738e1ca15e
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 734544a1294c6a97e70afcbf7ce6b5efc13cf841
+ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209102"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79448581"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 中的新增功能
 
 C++/WinRT 的后续版本发布后，本主题会介绍新增功能和变更的内容。
+
+## <a name="rollup-of-recent-improvementsadditions-as-of-march-2020"></a>2020 年 3 月为止的最新改进/添加汇总
+
+### <a name="up-to-23-shorter-build-times"></a>生成时间缩短了 23%
+
+C++/WinRT 和 C++ 编译器团队共同合作，尽可能缩短生成时间。 我们全力钻研了编译器分析，以便发现如何重构 C++/WinRT 的内部机制来帮助 C++ 编译器消除编译时开销，以及如何改进 C++ 编译器本身来处理 C++/WinRT 库。 C++/WinRT 已针对编译器进行了优化；并且编译器已针对 C++/WinRT 进行了优化。
+
+下面以一个有关生成预编译标头 (PCH) 的最糟糕情况为例，该标头包含每一单个 C++/WinRT 投影命名空间标头。
+
+| 版本 | PCH 大小（字节） | 时间（秒） |
+| - | - | - |
+| 7 月版的 C++/WinRT，与 Visual C++ 16.3 配合使用 | 3,004,104,632 | 31 |
+| 2\.0.200316.3 版的 C++/WinRT，与 Visual C++ 16.5 配合使用 | 2,393,515,336 | 24 |
+
+大小减少 20%，生成时间减少 23%。
+
+### <a name="improved-msbuild-support"></a>改进的 MSBuild 支持
+
+我们投入了大量工作来改进 [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019) 支持，使其适合广泛选择的不同方案。
+
+### <a name="even-faster-factory-caching"></a>更快的工厂缓存
+
+我们改进了工厂缓存的内联，使其能够更好地内联热路径，从而提高执行速度。
+
+此改进不会影响代码大小&mdash;如下面的[优化的 EH 代码生成](#optimized-exception-handling-eh-code-generation)中所述，如果应用程序频繁使用 C++ 异常处理，则可以使用 `/d2FH4` 选项收缩二进制文件，此选项在使用 Visual Studio 2019 16.3 和更高版本创建的新项目中默认启用。
+
+### <a name="more-efficient-boxing"></a>更高效的装箱
+
+在 XAML 应用程序中使用时，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 现在会更高效（请参阅[装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)）。 执行大量装箱操作的应用程序的代码大小也会降低。
+
+### <a name="support-for-implementing-com-interfaces-that-implement-iinspectable"></a>支持实现用于实现 IInspectable 的 COM 接口
+
+如果需要实现一个只实现 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 的（非 Windows 运行时）COM 接口，现在可以使用 C++/WinRT 来完成此任务。 请参阅[实现 IInspectable 的 COM 接口](https://github.com/microsoft/xlang/pull/603)。
+
+### <a name="module-locking-improvements"></a>模块锁定改进
+
+通过对模块锁定进行控制，现在可以实现自定义宿主方案以及消除模块级锁定。 请参阅[模块锁定改进](https://github.com/microsoft/xlang/pull/583)。
+
+### <a name="support-for-non-windows-runtime-error-information"></a>对非 Windows 运行时错误消息的支持
+
+某些 API（甚至某些 Windows 运行时 API）在未使用 Windows 运行时错误源 API 的情况下报告错误。 在这种情况下，C++/WinRT 现在将回退到使用 COM 错误信息。 请参阅[对非 WinRT 错误信息的 C++/WinRT 支持](https://github.com/microsoft/xlang/pull/582)。
+
+### <a name="enable-c-module-support"></a>启用 C++ 模块支持 
+
+C++ 模块支持已恢复，但仅处于实验形式。 此功能尚未在 C++ 编译器中完成。
+
+### <a name="more-efficient-coroutine-resumption"></a>更高效的协同例程恢复
+
+C++/WinRT 协同例程的性能良好，但我们继续寻找对其进行改进的方法。 请参阅[提高协同例程恢复的可伸缩性](https://github.com/microsoft/xlang/pull/546)。
+
+### <a name="new-when_all-and-when_any-async-helpers"></a>全新 **when_all** 和 **when_any** 异步帮助程序
+
+**when_all** 帮助程序函数会创建一个 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) 对象，该对象在所有提供的 Awaitable 都已完成时完成。 当任何提供的 Awaitable 完成时，**when_any** 帮助程序将创建一个 **IAsyncAction**。 
+
+请参阅[添加 when_any async 帮助程序](https://github.com/microsoft/xlang/pull/520)和[添加 when_all 异步帮助程序](https://github.com/microsoft/xlang/pull/516)。
+
+### <a name="other-optimizations-and-additions"></a>其他优化和添加
+
+此外，还引入了许多 bug 修复以及次要优化和添加，其中包括用于简化调试和优化内部机制及默认实现的各种改进。 单击下面的链接可获得详尽的列表：[https://github.com/microsoft/xlang/pulls?q=is%3Apr+is%3Aclosed](https://github.com/microsoft/xlang/pulls?q=is%3Apr+is%3Aclosed)。
 
 ## <a name="news-and-changes-in-cwinrt-20"></a>C++/WinRT 2.0 中的新增功能和更改
 
