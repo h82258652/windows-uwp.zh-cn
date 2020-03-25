@@ -7,12 +7,12 @@ ms.date: 03/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 地图, 地图样式表
 ms.localizationpriority: medium
-ms.openlocfilehash: b59e8c3c6d9c4c299e441964be1afb4e02051e23
-ms.sourcegitcommit: 5264d7499ddbe21199a63d74a294206069f90f8b
+ms.openlocfilehash: b2e6e57721a5667a9ca38b21eee2a618353cd30b
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78287447"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218557"
 ---
 # <a name="map-style-sheet-reference"></a>地图样式表参考
 
@@ -263,6 +263,7 @@ Microsoft 映射技术使用_地图样式表_来定义地图的外观。  使用
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，指示是否要在地图上绘制海拔底纹。 |
 | shadowColor                  | 颜色   |      |      |      |  ✔   |  ✔   | 使用阴影的图标后面的阴影颜色。 |
 | spaceColor                   | 颜色   |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 地图周围的区域 ARGB 颜色值。 |
+| terrainFlat                  | Bool    |      |      |      |      |      | 一个标志，用于指示地形是否应为地图上的平面（禁用）。 |
 | useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   |  ✔   | 一个标志，用于指示是否应使用 SVG 中的原始颜色，而不是在调色板项中查找图像中的颜色。 |
 
 <a id="mapelement" />

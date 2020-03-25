@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1979e16853fc288b83f5e4216c970440300fc597
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5192177edf284d1fe6e0c6eb06bf8713fbff8b4e
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258319"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218377"
 ---
 # <a name="speech-recognition"></a>语音识别
 
@@ -208,7 +208,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 ## <a name="recognize-speech-input"></a>识别语音输入
 
-*约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，它除了能提高语音识别准确度，还能为你的应用带来其他优势。
+*约束*可定义该应用在语音输入中识别出的字词和短语（词汇）。 约束是语音识别的核心，使应用更好地控制语音识别的准确性。
 
 您可以使用以下类型的约束来识别语音输入。
 
@@ -220,7 +220,8 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 诸如听写语法等 Web 搜索语法包含了用户可能说出的大量字词和短语。 但是，优化它的目的是识别用户搜索 Web 时通常使用的术语。
 
-**请注意**  因为预定义听写和 web 搜索语法可能会很大，并且由于它们处于联机状态（不在设备上），因此性能可能不像在设备上安装了自定义语法那样快。     
+> [!NOTE]
+> ，因为预定义的听写和 web 搜索语法可能会很大，并且由于它们处于联机状态（不在设备上），因此性能可能不像在设备上安装了自定义语法那样快。     
 
 可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
@@ -315,15 +316,15 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 如果你使用基于预定义语法的约束（听写或 Web 搜索）：
 
--   **侦听**屏幕。
--   **思考**屏幕。
--   **听到你说**屏幕或错误屏幕。
+-   “侦听”屏幕。
+-   “思考”屏幕。
+-   “听到你说”屏幕或错误屏幕。
 
 如果你使用的约束基于字词或短语列表，或者基于 SRGS 语法文件：
 
--   **侦听**屏幕。
--   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
--   **听到你说**屏幕或错误屏幕。
+-   “侦听”屏幕。
+-   “你说的是”屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+-   “听到你说”屏幕或错误屏幕。
 
 下图演示了语音识别器在不同屏幕间的流程的示例，该识别器使用基于 SRGS 语法文件的约束。 在本例中，语音识别是成功的。
 

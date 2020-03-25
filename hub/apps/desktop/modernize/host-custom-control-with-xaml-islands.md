@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d881fc42e453e2ace0a44543c3e204aa154958b7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: b1ac53e0a6b6e01cd2129e2b1893f91fae2ef0fe
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209793"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218597"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 孤岛在 WPF 应用程序中托管自定义 UWP 控件
 
-本文演示如何使用 Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件在面向 .net Core 3 的 WPF 应用程序中托管自定义 UWP 控件。 自定义控件包含来自 Windows SDK 的多个第一方 UWP 控件，并将其中一个 UWP 控件中的属性绑定到 WPF 应用程序中的字符串。 本文还演示了如何从[WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)承载第一方 UWP 控件。
+本文演示如何使用 Windows 社区工具包中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控件在面向 .net Core 3 的 WPF 应用程序中托管自定义 UWP 控件。 自定义控件包含来自 Windows SDK 的多个第一方 UWP 控件，并将其中一个 UWP 控件中的属性绑定到 WPF 应用程序中的字符串。 本文还演示了如何从[WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)承载 UWP 控件。
 
 尽管本文演示了如何在 WPF 应用程序中执行此操作，但此过程与 Windows 窗体应用程序类似。 有关在 WPF 中承载 UWP 控件和 Windows 窗体应用的概述，请参阅[此文](xaml-islands.md#wpf-and-windows-forms-applications)。
 
@@ -231,7 +231,7 @@ ms.locfileid: "79209793"
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>将 WinUI 库中的控件添加到自定义控件
 
-在传统上，UWP 控件已作为 Windows 10 操作系统的一部分发布，并通过 Windows SDK 向开发人员提供。 [WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)是一种替代方法，在此方法中，Windows SDK 中第一方 UWP 控件的更新版本分发到未绑定到 Windows SDK 版本的 NuGet 包中。 此库还包括不属于 Windows SDK 和默认 UWP 平台的新控件。 有关更多详细信息，请参阅我们的[WinUI 库路线图](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
+在传统上，UWP 控件已作为 Windows 10 操作系统的一部分发布，并通过 Windows SDK 向开发人员提供。 [WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)是一种替代方法，在此方法中，WINDOWS SDK 中 UWP 控件的更新版本将分发到未绑定到 Windows SDK 版本的 NuGet 包中。 此库还包括不属于 Windows SDK 和默认 UWP 平台的新控件。 有关更多详细信息，请参阅我们的[WinUI 库路线图](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
 本部分演示如何将 WinUI 库中的 UWP 控件添加到用户控件，以便可以在 WPF 应用程序中承载此控件。
 
@@ -286,6 +286,9 @@ ms.locfileid: "79209793"
 可以选择将 WPF 应用打包在[.msix 包](https://docs.microsoft.com/windows/msix)中进行部署。 .MSIX 是适用于 Windows 的新式应用打包技术，它基于 MSI、.appx、App-v 和 ClickOnce 安装技术的组合。
 
 以下说明介绍了如何使用 Visual Studio 2019 中的[Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)将解决方案中的所有组件打包到 .msix 包中。 仅当要将 WPF 应用打包到 .MSIX 包时，才需要执行这些步骤。 请注意，这些步骤当前包括特定于托管自定义 UWP 控件的方案的一些解决方法。
+
+> [!NOTE]
+> 如果选择不将应用程序打包到用于部署的[.msix 包](https://docs.microsoft.com/windows/msix)中，则运行应用的计算机必须安装有[Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) 。
 
 1. 向解决方案添加新的[Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。 创建项目时，请选择 " **Windows 10，版本1903（10.0;版本18362）** 用于**目标版本**和**最低版本**。
 

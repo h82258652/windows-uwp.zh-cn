@@ -6,17 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08dbe9ed7aaa732172d488712aa47d6d3631508a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 2be088edd732a22acb11be5fc209ff25c84bae17
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317705"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218347"
 ---
 # <a name="share-data"></a>共享数据
 
 
 本文将说明如何在通用 Windows 平台 (UWP) 应用中支持“共享”合约。 “共享”合约是一种在应用之间快速共享文本、链接、照片和视频等数据的简便方法。 例如，用户可能希望使用社交网络应用与其好友共享网页，或者将链接保存在笔记应用中以供日后参考。
+
+> [!NOTE]
+> 本文中的代码示例是针对 UWP 应用编写的。 WPF、Windows 窗体和C++/Win32 桌面应用程序必须使用[IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop)接口来获取特定窗口的[DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager)对象。 有关详细信息，请参阅[ShareSource](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource)示例。
 
 ## <a name="set-up-an-event-handler"></a>设置事件处理程序
 
@@ -35,9 +38,9 @@ ms.locfileid: "67317705"
 -   纯文本
 -   统一资源标识符 (URI)
 -   HTML
--   带格式文本
+-   格式化的文本
 -   位图
--   文件
+-   Files
 -   自定义开发人员定义的数据
 
 [  **DataPackage**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 对象可以包含其中一种或多种格式（可任意组合）。 下面的示例演示了如何共享文本。
@@ -93,7 +96,7 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## <a name="see-also"></a>请参阅 
+## <a name="see-also"></a>另请参阅 
 
 * [应用到应用的通信](index.md)
 * [接收数据](receive-data.md)
