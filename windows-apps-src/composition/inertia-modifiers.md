@@ -5,18 +5,18 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 动画
 ms.localizationpriority: medium
-ms.openlocfilehash: 196c6d98b0944bbc22c3d0f652853ecab28bd3c6
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 46f20a4f63decfad063332d2e8e494c15563e398
+ms.sourcegitcommit: f2832e1e04cbf472f7fd51c08144489c510ff470
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061912"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80270392"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>使用 Inertia Modifier 创建吸附点
 
 本文将深入探讨如何使用 InteractionTracker 的 InertiaModifier 功能创建吸附到指定点的运动体验。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 我们在此假设你熟悉这些文章中所述的概念：
 
@@ -93,12 +93,12 @@ var snapDownModifier = InteractionTrackerInertiaRestingValue.Create(_compositor)
 ```csharp
 // Is NaturalRestingPosition less than the halfway point between Snap Points?
 snapUpModifier.Condition = _compositor.CreateExpressionAnimation(
-"this.Target.NaturalRestingPosition.y < (this.StartingValue – " + 
+"this.Target.NaturalRestingPosition.y < (this.StartingValue - " + 
 "mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
 snapUpModifier.Condition.SetReferenceParameter("prop", _propSet);
 // Is NaturalRestingPosition greater than the halfway point between Snap Points?
 snapDownModifier.Condition = _compositor.CreateExpressionAnimation(
-"this.Target.NaturalRestingPosition.y >= (this.StartingValue – " + 
+"this.Target.NaturalRestingPosition.y >= (this.StartingValue - " + 
 "mod(this.StartingValue, prop.snapDistance) + prop.snapDistance / 2)");
 snapDownModifier.Condition.SetReferenceParameter("prop", _propSet);
 ```
@@ -113,10 +113,10 @@ snapDownModifier.Condition.SetReferenceParameter("prop", _propSet);
 snapUpModifier.RestingValue = _compositor.CreateExpressionAnimation(
 "this.StartingValue - mod(this.StartingValue, prop.snapDistance)");
 snapUpModifier.RestingValue.SetReferenceParameter("prop", _propSet);
-snapForwardModifier.RestingValue = _compositor.CreateExpressionAnimation(
+snapDownModifier.RestingValue = _compositor.CreateExpressionAnimation(
 "this.StartingValue + prop.snapDistance - mod(this.StartingValue, " + 
 "prop.snapDistance)");
-snapForwardModifier.RestingValue.SetReferenceParameter("prop", _propSet);
+snapDownModifier.RestingValue.SetReferenceParameter("prop", _propSet);
 ```
 
 最后，将 InertiaModifier 添加到 InteractionTracker。 现在，当 InteractionTracker 进入 InertiaState 时，它将检查 InertiaModifier 以查看其位置是否应修改。
