@@ -1,29 +1,29 @@
 ---
-description: 获取有关向 UWP 应用添加控件 &amp; 模式的设计指南和编码说明。 为你找到了超过 45 种功能强大的控件，这些控件可与你的应用结合使用。
-title: UWP 控件和模式 - Windows 应用开发
-keywords: UWP 控件, 用户界面, 应用控件
+description: 获取有关向 Windows 应用添加控件和模式的设计指南和编码说明。 为你找到了超过 45 种功能强大的控件，这些控件可与你的应用结合使用。
+title: Windows 控件和模式 - Windows 应用开发
+keywords: UWP 控件, 用户界面, 应用控件, Windows 控件
 label: Controls & patterns
 template: detail.hbs
-ms.date: 11/16/2017
+ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ea9f58c8f861be7774285c5611ad222d9587e2a1
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081712"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218447"
 ---
-# <a name="controls-for-uwp-apps"></a>适用于 UWP 应用的控件
+# <a name="controls-for-windows-apps"></a>适用于 Windows 应用的控件
 
 ![控制](../images/controls-2x.png)
 
-在 UWP 应用开发中，<i>控件</i>是一种显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
+在 Windows 应用开发中，控件<i></i>是用于显示内容或支持交互的 UI 元素。 控件是用户界面的构建基块。 <i>模式</i>是合并多个控件来创造新内容的一种方式。
 
 我们提供了超过 45 种控件供你使用，范围从简单按钮到网格视图之类的功能强大的数据控件。  这些控件是 Fluent Design System 的一部分，并且可以帮助你创建一个加粗、可缩放的 UI，此 UI 在所有设备和屏幕大小上都具有出色的外观。
 
-本部分中的文章提供了有关向 UWP 应用添加控件和模式的设计指南和编码说明。
+本部分中的文章提供了有关向 Windows 应用添加控件和模式的设计指南和编码说明。
 
 ## <a name="intro"></a>简介
 
@@ -140,4 +140,4 @@ ms.locfileid: "80081712"
 
 ## <a name="additional-controls"></a>其他控件
 
-可以从 <a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>、<a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等公司获取用于 UWP 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。
+可以从 <a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>、<a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等公司获取用于 Windows 开发的其他控件。 这些控件通过使用自定义控件和服务扩展标准系统控件来为企业和 .NET 开发人员提供额外的支持。

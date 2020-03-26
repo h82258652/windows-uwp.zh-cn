@@ -1,42 +1,35 @@
-items:
 - name: 概述
   href: index.md
-- name: UWP 应用是什么？
+- name: 什么是 Windows 应用？
   href: ../get-started/universal-application-platform-guide.md
 - name: 准备工作
   href: ../get-started/get-set-up.md
   items:
-  - name: 启用设备进行开发
-    href: ../get-started/enable-your-device-for-development.md
-  - name: 创建一个开发者帐户
-    href: ../get-started/sign-up.md
-- name: 开始编写代码
+    - name: 启用设备进行开发
+      href: ../get-started/enable-your-device-for-development.md
+    - name: 创建一个开发者帐户
+      href: ../get-started/sign-up.md
+- name: 开始编码
   href: ../get-started/create-uwp-apps.md
   items:
-  - name: 构建窗体
-    href: construct-form-learning-track.md
-  - name: 以列表形式显示客户
-    href: display-customers-in-list-learning-track.md
-  - name: 保存并加载设置
-    href: settings-learning-track.md
-  - name: 处理文件
-    href: fileio-learning-track.md
-  - name: 你的第一个应用
-    href: ../get-started/your-first-app.md
-    items:
-    - name: 创建“Hello, world”应用 (C#)
-      href: ../get-started/create-a-hello-world-app-xaml-universal.md
-    - name: 创建“Hello, world”应用 (C++)
-      href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-    - name: 创建“Hello, world”应用 (JS)
-      href: ../get-started/create-a-hello-world-app-js-uwp.md
-  - name: 构建复杂应用
-    href: ../get-started/plan-your-app.md
-- name: 获取 UWP 应用示例
+    - name: 构建窗体
+      href: construct-form-learning-track.md
+    - name: 以列表形式显示客户
+      href: display-customers-in-list-learning-track.md
+    - name: 保存并加载设置
+      href: settings-learning-track.md
+    - name: 处理文件
+      href: fileio-learning-track.md
+    - name: 你的第一个应用
+      href: ../get-started/your-first-app.md
+      items:
+        - name: '创建“Hello, world”应用 (C#)'
+          href: ../get-started/create-a-hello-world-app-xaml-universal.md
+        - name: '创建“Hello, world”应用 (C++)'
+          href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
+        - name: '创建“Hello, world”应用 (JS)'
+          href: ../get-started/create-a-hello-world-app-js-uwp.md
+    - name: 构建复杂应用
+      href: ../get-started/plan-your-app.md
+- name: 获取 Windows 应用示例
   href: ../get-started/get-uwp-app-samples.md
-ms.openlocfilehash: 6d2635bec653e5c9f409ff6a5249ee0215276225
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582390"

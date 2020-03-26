@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 入门, Windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f78bdfec6c6e06ffc542bc7741b875e952bc169
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 9183d9e2134d376400d2d6b85901477ff7b27413
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684892"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218577"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 应用入门
 
@@ -30,7 +30,7 @@ ms.locfileid: "75684892"
                         <h3>了解 Windows 10 应用</h3>
                         <p>Windows 10 和通用 Windows 平台让你可以构建能够跨所有 Windows 设备类型使用并呈现出色外观的应用，或利用现代功能更新现有应用。</p>
                         <ul>
-                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">UWP 应用是什么？</a></li>
+                          <li><a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">什么是 Windows 应用？</a></li>
                         </ul>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ ms.locfileid: "75684892"
                     <h3>示例</h3>
                     <p>通过 Windows 10 平台获取第一手体验，查看操作中的 API。</p>
                     <br>
-                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">使用 UWP 应用示例</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples">使用 Windows 应用示例</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-customers-orders-database">客户订单数据库</a></p>
                     <p><a href="//github.com/Microsoft/Windows-appsample-remote-system-sessions">问答游戏（项目 Rome）</a></p>
                     <p><a href="//developer.microsoft.com/windows/samples">Windows 代码示例门户</a></p>
