@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bd6c3ec487871d18a7142489802b801120f5e7ed
-ms.sourcegitcommit: 0142b5a47511afa76d74015e3fd8635b6042a542
+ms.openlocfilehash: e4a0a2d532341e76d6ff74dda9b6b6a8638c77fd
+ms.sourcegitcommit: b398966fc052b232e03f2e32512a48d3a4444b8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79038120"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80367679"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推送通知服务 (WNS) 概述 
 
@@ -42,13 +42,13 @@ Windows 推送 Notification Services （WNS）使第三方开发人员能够从�
 必须先将应用注册到合作伙伴中心仪表板，然后才能通过 WNS 发送通知。 这将为应用提供凭据，云服务在向 WNS 进行验证的过程中将使用该凭据。 这些凭据由程序包安全标识符 (SID) 和密钥组成。 若要执行此注册，请登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 创建应用后，请参阅[产品管理-WNS/MPNS](https://apps.dev.microsoft.com/) for instrunctions 有关如何检索凭据的详细说明（如果你想要使用 live services 解决方案，请按照本页上的 " **live 服务站点**" 链接操作）。
 
 若要注册，请执行以下操作：
-1.  中转到 "合作伙伴中心" 的 "Windows 应用商店应用" 页，并以个人 Microsoft 帐户（例如： johndoe@outlook.com、janedoe@xboxlive.com）登录。
-2.  登录后，单击 "仪表板" 链接。
-3.  在仪表板上，选择 "创建新应用"。
+1.    中转到 "合作伙伴中心" 的 "Windows 应用商店应用" 页，并以个人 Microsoft 帐户（例如： johndoe@outlook.com、janedoe@xboxlive.com）登录。
+2.    登录后，单击 "仪表板" 链接。
+3.    在仪表板上，选择 "创建新应用"。
 
 ![wns 应用注册](../images/wns-create-new-app.png)
 
-4.  通过保留应用名称创建应用。 为应用提供唯一的名称。 输入名称，并单击 "保留产品名称" 按钮。 如果名称可用，则将其保留给你的应用程序。 成功保留应用的名称后，应在此时选择要修改的其他详细信息。
+4.    通过保留应用名称创建应用。 为应用提供唯一的名称。 输入名称，并单击 "保留产品名称" 按钮。 如果名称可用，则将其保留给你的应用程序。 成功保留应用的名称后，应在此时选择要修改的其他详细信息。
 
 ![wns 保留产品名称](../images/wns-reserve-poduct-name.png)
  
@@ -56,24 +56,24 @@ Windows 推送 Notification Services （WNS）使第三方开发人员能够从�
 
 为应用保留名称后，Windows 应用商店创建了关联的凭据。 它还分配了应用程序清单文件（appxmanifest.xml）中必须存在的关联标识值（名称和发布者）。 如果已将应用上传到 Windows 应用商店，则这些值将自动添加到清单中。 如果尚未上传应用，需要手动将标识值添加到清单中。
 
-1.  选择 "产品管理" 下拉箭头
+1.    选择 "产品管理" 下拉箭头
 
 ![wns 产品管理](../images/wns-product-management.png)
 
-2.  在 "产品管理" 下拉列表中，选择 "WNS/MPNS" 链接。
+2.    在 "产品管理" 下拉列表中，选择 "WNS/MPNS" 链接。
 
 ![wns 产品管理 continuted](../images/wns-product-management2.png)
  
-3.  在 "WNS/MPNS" 页上，单击 "Windows 推送 Notification Services （WNS）" 和 "Microsoft Azure 移动服务" 部分下的 "Live 服务站点" 链接。
+3.    在 "WNS/MPNS" 页上，单击 "Windows 推送 Notification Services （WNS）" 和 "Microsoft Azure 移动服务" 部分下的 "Live 服务站点" 链接。
 
 ![wns live 服务](../images/wns-live-services-page.png)
  
-4.  应用程序注册门户（以前的 "实时服务" 页）页面提供了一个标识元素，以将其包含在应用的清单中。 这包括应用程序机密、包安全标识符和应用程序标识。 在文本编辑器中打开清单，并在页面指示时添加该元素。   
+4.    应用程序注册门户（以前的 "实时服务" 页）页面提供了一个标识元素，以将其包含在应用的清单中。 这包括应用程序机密、包安全标识符和应用程序标识。 在文本编辑器中打开清单，并在页面指示时添加该元素。    
 
 > [!NOTE]
 > 如果你使用 AAD 帐户登录，则需要联系注册应用的 Microsoft 帐户所有者以获取关联的应用机密。 如果需要查找此联系人的帮助，请单击屏幕右上角的齿轮，然后单击 "开发人员设置"，将在其中显示 Microsoft 帐户应用程序的创建者的电子邮件地址。
  
-5.  将 SID 和客户端机密上传到你的云服务器。
+5.    将 SID 和客户端机密上传到你的云服务器。
 
 > [!Important]
 > 你的云服务应安全地存储和访问 SID 和客户端机密。 泄露或盗窃此信息后，攻击者便可以向用户发送通知，而无需你的许可或知识。
@@ -180,6 +180,7 @@ WNS 对云服务进行身份验证，如果成功，则发送“200 OK”响应�
 -   访问令牌仅允许云服务将通知发送到为其创建令牌的单个应用。 单个访问令牌无法用于在多个应用中发送通知。 因此，如果你的云服务支持多个应用，则在向每个通道 URI 推送通知时都必须提供相应应用的正确访问令牌。
 -   当设备脱机时，WNS 将默认为每个通道 URI 存储至多 5 个磁贴通知（如果启用了队列；否则只能存储 1 个磁贴通知）和 1 个锁屏提醒通知，不存储原始通知。 可以通过 [X-WNS-Cache-Policy 标头](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))更改这种默认缓存行为。 请注意，当设备离线时，永远不会存储 Toast 通知。
 -   在对用户个性化通知内容的方案中，WNS 建议云服务在收到这些更新时立即发送这些更新。 此方案的示例包括社交媒体源更新、即时通信邀请、新消息通知或警报。 作为备用方法，你可以使用向大部分用户频繁提供相同的通用更新的方案；例如，天气、股票和新闻更新。 WNS 指南中指定这些更新的频率最高为每 30 分钟一个。 最终用户或 WNS 可以将超过该频率的例常更新确定为滥发更新。
+-   Windows 通知平台使用 WNS 维护定期数据连接，使套接字保持活动状态和正常运行。 如果没有应用程序请求或使用通知通道，则不会创建套接字。
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知到期时间
 
