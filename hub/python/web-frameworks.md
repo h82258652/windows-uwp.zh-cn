@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 使用 wsl 的 python web, 使用适用于 linux 的 windows 子系统的 python web 应用, windows 上的 python web 开发, windows 上的 flask 应用, windows 上的 django 应用, python web, windows 上的 flask web 开发, windows 上的 django web 开发, 使用 python 的 windows web 开发, vs code python web 开发, 远程 wsl 扩展, ubuntu, wsl, venv, pip, microsoft python 扩展, 在 windows 上运行 python, 在 windows 上使用 python, 在 windows 上使用 python 构建
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d883007168e0baf35f8a0ab0827505b683cfd291
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 8cbc8343764e4de57bd418ecdb36bd606b037c68
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79208972"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218477"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>开始在 Windows 上将 Python 用于 Web 开发
 
@@ -325,7 +325,7 @@ Python 是一种解释型语言，支持不同类型的解释器（Python2、Ana
 
 16. 保存所有已修改的文件。
 
-17. 在 VS Code 终端中，使用 `python manage.py runserver` 运行开发服务器，并打开浏览器到 `http://127.0.0.1:8000/` 以查看呈现“Hello, Django”的页面。
+17. 在 VS Code 终端中，使用 `python3 manage.py runserver` 运行开发服务器，并打开浏览器到 `http://127.0.0.1:8000/` 以查看呈现“Hello, Django”的页面。
 
 恭喜，你已使用 VS Code 和适用于 Linux 的 Windows 子系统创建了一个 Django Web 应用程序！ 有关使用 VS Code 和 Django 的更深入教程，请参阅 [Visual Studio Code中的 Django 教程](https://code.visualstudio.com/docs/python/tutorial-django)。
 

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f276c1a4abb57c5505a39afc538cc6f7319a23d
-ms.sourcegitcommit: bf95c8b29145a224957a940512394e6aa97cb90f
+ms.openlocfilehash: faff0857679d50f6995640bbf9bf0222bb0d2e37
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71061948"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081614"
 ---
 # <a name="pull-to-refresh"></a>下拉刷新
 
@@ -38,7 +38,7 @@ ms.locfileid: "71061948"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/PullToRefresh">打开此应用，了解 PullToRefresh 的实际应用</a>。</p>
     <ul>

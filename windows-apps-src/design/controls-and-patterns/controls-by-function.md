@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 57639fc370ed7e10a427af4808e2a8a6de91b554
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 8f1717a59399fb95f7b71a38ee8d2d46de4ca765
+ms.sourcegitcommit: e11e0f65930665579d1f296861234893e82bf8fb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257707"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80301428"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -90,7 +90,7 @@ ms.locfileid: "74257707"
 
 ## <a name="buttons"></a>按钮
 
-### <a name="button"></a>按钮
+### <a name="button"></a>Button
 响应用户输入和引发 **Click** 事件的控件。
 
 ![标准按钮](images/controls/button.png)
@@ -313,7 +313,7 @@ ms.locfileid: "74257707"
 
 ## <a name="images"></a>映像
 
-### <a name="image"></a>图像
+### <a name="image"></a>映像
 显示图像的控件。
 
 ```xaml
@@ -515,7 +515,7 @@ ms.locfileid: "74257707"
 
 ## <a name="media-controls"></a>媒体控件
 
-### <a name="audio"></a>Audio
+### <a name="audio"></a>音频
 请参阅媒体元素。
 
 ### <a name="media-element"></a>媒体元素
@@ -724,10 +724,10 @@ ms.locfileid: "74257707"
 ### <a name="text-box"></a>文本框
 单行或多行纯文本字段。
 
-![文本框控件](images/controls/text-box.png) 
+![文本框控件](images/controls/text-box.png)
 
 ```xaml
-<TextBox x:Name="textBox1" Text="I am a TextBox" 
+<TextBox x:Name="textBox1" Text="I am a Text Box."
          TextChanged="TextBox_TextChanged"/>
 ```
 
@@ -779,9 +779,9 @@ ms.locfileid: "74257707"
 ```xaml
 <ListBox x:Name="listBox1" Width="100"
          SelectionChanged="ListBox_SelectionChanged">
-    <x:String>Item 1</x:String>
-    <x:String>Item 2</x:String>
-    <x:String>Item 3</x:String>
+    <x:String>List item 1</x:String>
+    <x:String>List item 2</x:String>
+    <x:String>List item 3</x:String>
 </ListBox>
 ```
 

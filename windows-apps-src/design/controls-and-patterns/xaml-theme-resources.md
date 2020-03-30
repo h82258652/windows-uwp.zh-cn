@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9544988837d44f42d963b268a2ce3d37cce83952
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: f2097a35d87594251ed2c0a04be06ccdb705902f
+ms.sourcegitcommit: 378693fe9b655fe14814d683e8d8cb2dd1380fd7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209042"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80249851"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
@@ -177,7 +177,7 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 ### <a name="theme-dependent-brushes"></a>依赖于主题的画笔
 
-使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 资源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
+使用前面部分中所示的颜色资源来设置系统主题资源字典中的 [SolidColorBrush](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 资源的 [Color](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 属性。 你可以使用画笔资源将颜色应用到 XAML 元素中。 画笔资源的键遵循以下命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackgroundAltHighBrush`。
 
 让我们看一下如何在运行时确定此画笔的颜色值。 在“浅色”和“深色”资源字典中，定义此画笔，如下所示：
 
