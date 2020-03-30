@@ -160,6 +160,8 @@
           href: ../app-to-app/receive-data.md
         - name: 复制和粘贴
           href: ../app-to-app/copy-and-paste.md
+    - name: 进程间通信 (IPC)
+      href: ../communication/interprocess-communication.md
     - name: 网络和 Web 服务
       href: ../networking/index.md
       items:
