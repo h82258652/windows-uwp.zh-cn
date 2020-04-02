@@ -2,39 +2,42 @@
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: 开设开发者帐户
 description: 下面概述了如何在合作伙伴中心为 Microsoft Store 和其他 Microsoft 程序注册 Windows 开发人员帐户。
-ms.date: 10/31/2018
+ms.date: 3/30/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d00fcee11b8cf813144a6f8ea021dc40829056d2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0ab3dcc5f774de6bd7ce422ecdcec61b26cc9a4b
+ms.sourcegitcommit: 9aef3bc26a56b8d266b3089d509f79b119234b6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259952"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80538201"
 ---
 # <a name="opening-a-developer-account"></a>开设开发者帐户
 
 本文介绍如何在[合作伙伴中心](https://partner.microsoft.com/dashboard)注册 Windows 开发人员帐户。
 
 > [!NOTE]
-> 当你注册开发人员帐户时，我们将使用你在联系人信息中提供的电子邮件地址来发送与你的帐户相关的消息。 有时，这些信息可能包含有关我们的程序的信息。 如果你选择不[](https://account.microsoft.com/account/Account?ru=https%3A%2F%2Faccount.microsoft.com%2Fprofile%2Fcontact-info&destrt=profile-landing)使用这些信息性电子邮件，请注意，我们仍会向你发送事务性消息（例如，让你知道你的应用程序已通过认证或付款正在进行）。 这些事务性电子邮件是帐户的必需部分，除非你关闭帐户，否则你将继续接收这些电子邮件。
+> 当你注册开发人员帐户时，我们将使用你在联系人信息中提供的电子邮件地址来发送与你的帐户相关的消息。 有时，这些信息可能包含有关我们的程序的信息。 如果你选择不[opt out](https://account.microsoft.com/account/Account?ru=https%3A%2F%2Faccount.microsoft.com%2Fprofile%2Fcontact-info&destrt=profile-landing)使用这些信息性电子邮件，请注意，我们仍会向你发送事务性消息（例如，让你知道你的应用程序已通过认证或付款正在进行）。 这些事务性电子邮件是帐户的必需部分，除非你关闭帐户，否则你将继续接收这些电子邮件。
 
 ## <a name="the-account-signup-process"></a>帐户注册过程
 
 > [!NOTE]
 > 在某些情况下，注册开发人员帐户时看到的屏幕和字段可能与以下步骤中所述的内容略有不同。 但基本信息和过程将匹配这些步骤所描述的内容。
 
+> [!NOTE]
+> 有一个已知问题，某些区域设置中的用户可能无法完成其注册。 在我们确认它已解决之前，建议你在 partner.microsoft.com 上开始注册过程后，手动将浏览器的区域设置标记更改为**en-us** 。
+
 1.  请在[注册页](https://developer.microsoft.com/store/register)**上**，选择 "注册"。
 2.  如果尚未使用 Microsoft 帐户登录，请立即登录，或创建新的 Microsoft 帐户。 此处使用的 Microsoft 帐户用于登录开发人员帐户。
 3.  选择您所在的[国家/地区](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)或业务所在的位置。 你将无法在以后更改此设置。
-4.  选择[开发者帐户类型](account-types-locations-and-fees.md)（个人或公司）。 之后将无法更改该设置，因此请确保选择正确的帐户类型。
-5.  输入要使用的**发布服务器显示名称**（50个字符或更少）。 客户在浏览应用时将看到此名称，并通过此名称了解应用，因此请谨慎选择该名称。 对于公司帐户，请确保使用组织的注册公司名称或商标。 如果输入其他人已选择的名称，或其他人有权使用该名称，则不允许使用该名称。
+4.  选择[开发者帐户类型](account-types-locations-and-fees.md)（个人或公司）。 你之后将无法更改该设置，因此请确保选择正确的帐户类型。
+5.  输入要使用的**发布服务器显示名称**（50个字符或更少）。 客户在浏览应用时将看到此名称，并通过此名称记住你的应用，因此请谨慎选择该名称。 对于公司帐户，请确保使用组织的注册公司名称或商标。 如果输入其他人已选择的名称，或其他人有权使用该名称，则不允许使用该名称。
 
     > [!NOTE]
     > 确保有权使用在此输入的名称。 如果其他人拥有所选名称的商标或版权，帐户可能会关闭。 有关详细信息，请参阅[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 如果其他人正在使用你对其持有商标或其他法定权利的发布者显示名称，请[联系 Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html)。    
 
-6.  输入希望用于开发者帐户的联系人信息。
+6.  为你的开发者帐户输入要使用的联系人信息。
 
     > [!NOTE]
     > 遇到帐户相关事宜时，我们将通过此信息与你联系。 例如，你将在完成注册后收到电子邮件确认。 完成此操作后，我们将在我们向你发送消息时发送消息，或者你需要通过你的帐户进行修复。 我们可能还会发送信息性电子邮件（如前文所述），除非你选择不接收非事务性电子邮件。
