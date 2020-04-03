@@ -2,18 +2,17 @@
 description: 了解如何使你的应用针对全世界用户都具有包容性和辅助性。
 keywords: uwp 应用辅助功能, 全球化, 设计包容应用, 辅助功能应用要求
 title: UWP 应用中的可用性 - Windows 应用开发
-layout: LandingPage
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: a6912932b7ad71fd3d04c038eab7e0aa4dd6cb11
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
+ms.openlocfilehash: c725839a29c093c78eb977538da4c43d906051c6
+ms.sourcegitcommit: 08cb5a4ca2e02179ad6b768c841fe3d5216bcae3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076393"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614950"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP 应用中的可用性
 
@@ -179,13 +178,24 @@ ms.locfileid: "70076393"
 
 借助应用设置，用户可以自定义你的应用，从而可以针对其个人需求和偏好来优化它。 通过提供适当的设置并妥善存储它们，可使用户体验更加出色。
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/guidelines-for-app-settings.md">指南</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">有关创建和显示应用设置的最佳做法。</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../app-settings/store-and-retrieve-app-data.md">存储和检索应用数据</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">如何存储和检索本地、漫游和临时应用数据。</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/guidelines-for-app-settings.md">指南</a></b><br/>有关创建和显示应用设置的最佳做法。</p>
+<p><b><a href="../app-settings/guidelines-for-app-settings.md">Guidelines</a></b><br/>Best practices for creating and displaying app settings.</p>
                     </div>
                 </div>
             </div>
@@ -196,13 +206,13 @@ ms.locfileid: "70076393"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/store-and-retrieve-app-data.md">存储和检索应用数据</a></b><br/>如何存储和检索本地、漫游和临时应用数据。</p>
+<p><b><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></b><br/>How to store and retrieve local, roaming, and temporary app data.</p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
-</ul>
+</ul> -->
 
 ## <a name="globalization-and-localization"></a>全球化和本地化
 
@@ -213,13 +223,34 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 ## <a name="in-app-help"></a>应用内帮助
 无论你设计的应用有多好，某些用户仍将需要一些额外帮助。
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/guidelines-for-app-help.md">应用帮助指南</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">应用程序可能会很复杂，而为用户提供有效的帮助可大幅改善他们的体验。</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/instructional-ui.md">说明性 UI</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">有时，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过 UI 向用户显示说明，以便他们可以发现并使用可能错过的功能。</p>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/in-app-help.md">应用内帮助</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
+    :::column-end:::
+    :::column:::
+        <h3 style="margin-top: 10px; margin-bottom: 0px"><a href="../in-app-help/external-help.md">外部帮助</a></h3>
+        <p style="margin-top: 0px; margin-bottom: 50px">在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
+    :::column-end:::
+:::row-end:::
+
+<!-- <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/guidelines-for-app-help.md">应用帮助指南</a></b><br/>应用程序可能会很复杂，而为用户提供有效的帮助可大幅改善他们的体验。
+<p><b><a href="../in-app-help/guidelines-for-app-help.md">Guidelines for app help</a></b><br/>Applications can be complex, and providing effective help for your users can greatly improve their experience.
 </p>
                     </div>
                 </div>
@@ -231,7 +262,7 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/instructional-ui.md">说明性 UI</a></b><br/>有时，向用户解释应用中他们不熟悉的功能（例如特定的触摸交互）会很有用。 在这些情况下，你需要通过 UI 向用户显示说明，以便他们可以发现并使用可能错过的功能。</p>
+<p><b><a href="../in-app-help/instructional-ui.md">Instructional UI</a></b><br/>Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.</p>
                     </div>
                 </div>
             </div>
@@ -242,7 +273,7 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/in-app-help.md">应用内帮助</a></b><br/>在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
+<p><b><a href="../in-app-help/in-app-help.md">In-app help</a></b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
                     </div>
                 </div>
             </div>
@@ -253,11 +284,11 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../in-app-help/external-help.md">外部帮助</a></b><br/>在大多数情况下，最好在用户选择查看时在应用程序内显示帮助。 在创建应用内帮助时，请考虑以下指南。</p>
+<p><b><a href="../in-app-help/external-help.md">External help</a></b><br/>Most of the time, it's best for help to be displayed within the app, and to be displayed when the user chooses to view it. Consider the following guidelines when creating in-app help.</p>
                     </div>
                 </div>
             </div>
         </div>
     </li>        
-</ul>
+</ul> -->
 
