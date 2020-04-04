@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 07da54dddfffe082aa5633ac8eac3f342aaa6a5c
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.openlocfilehash: 0167d1f0ed69f8354fa6ee7cd77387aee9aee842
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75302711"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081511"
 ---
 # <a name="text-box"></a>文本框
 
@@ -24,7 +24,13 @@ TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单�
 
 TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置上下文菜单，并提供对复制和粘贴文本的支持。 “清除所有”按钮使用户可以快速删除所输入的所有文本。 它还内置了拼写检查功能，并且在默认情况下处于启用状态。
 
-> **重要的 API**：[TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -45,7 +51,7 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TextBox">打开应用，了解 TextBox 的实际操作</a>。</p>
     <ul>
@@ -143,7 +149,7 @@ IsEnabled
 
 > **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 不支持其 TextWrapping 属性的“WrapWholeWords”值  。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
 
-在输入文本时多行文本框将持续在垂直方向上增长，除非它受到其 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 属性或父容器的约束。 你应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。
+在输入文本时多行文本框将持续在垂直方向上增长，除非它受到其 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 属性或父容器的约束。 应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。
 
 在需要时自动启用使用滚轮或触摸的滚动。 但是，垂直滚动条默认不可见。 你可以通过在嵌入的 ScrollViewer 上将 [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 设置为 Auto 来显示垂直滚动条，如下所示  。
 

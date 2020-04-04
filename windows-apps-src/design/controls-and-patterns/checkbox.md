@@ -12,22 +12,26 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c69c5e64d75e03ce5bb2ef0d82c3b816fe78a770
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71339421"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081240"
 ---
 # <a name="check-boxes"></a>复选框
 
- 
-
 复选框用于选择或取消选择操作项目。 它可用于单个项目或用户可以选择的多个项目列表。 该控件具有三个选择状态：未选中、已选中和不确定。 在子选择集具有未选中和已选中两种状态时，使用不确定状态。
 
-> **重要的 API**：[CheckBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
-
 ![复选框状态示例](images/templates-checkbox-states-default.png)
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [CheckBox 类](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 属性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -54,7 +58,7 @@ ms.locfileid: "71339421"
 
 <table>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CheckBox">打开此应用，了解 CheckBox 的实际应用</a>。</p>
     <ul>
@@ -185,7 +189,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 CheckBox 控件继承自 [ToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton)，可拥有三种状态： 
 
-状态 | 属性 | 值
+State | 属性 | 值
 ------|----------|------
 已选中 | IsChecked | **true** 
 取消选中 | IsChecked | **false** 

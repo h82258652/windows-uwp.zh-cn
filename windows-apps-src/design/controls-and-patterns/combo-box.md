@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 351e234577b1a07b33bdcdbb92642c3697342503
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.openlocfilehash: 31b3bcc2388a98941fc5e8aa44d18beee53de5c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163692"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081100"
 ---
 # <a name="combo-box-and-list-box"></a>组合框和列表框
 
@@ -23,11 +23,17 @@ ms.locfileid: "72163692"
 
 组合框在关闭后，会显示当前的选择或为空（如果没有选中项）。 当用户展开组合框时，它会显示可选择项的列表。
 
-> **重要的 API**：[ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
-处于紧凑状态的组合框，显示一个标题。
-
 ![处于紧凑状态的下拉列表示例](images/combo_box_collapsed.png)
+
+> 处于紧凑状态的组合框，显示一个标题。 
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -41,7 +47,7 @@ ms.locfileid: "72163692"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ComboBox">打开应用，了解 ComboBox 的实际操作</a>。</p>
     <ul>
@@ -240,13 +246,13 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 {
     if (byte.TryParse(e.Text, out double newValue))
     {
-        // Update the app’s font size.
+        // Update the app's font size.
         _fontSize = newValue;
     }
     else
     {
         // If the item is invalid, reject it and revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         sender.Text = sender.SelectedValue.ToString();
         e.Handled = true;
     }
@@ -279,7 +285,7 @@ private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSu
     else
     {
         // If the item is invalid, reject it but do not revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         e.Handled = true;
     }
 }

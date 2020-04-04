@@ -10,24 +10,30 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb08278391118215063c293b71ffde1ed4443b8
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 6276ef9bcb6b01fd557057d3d36939350314015b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684112"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081045"
 ---
 # <a name="teaching-tip"></a>教学提示
 
 教学提示是一个提供上下文信息的半持久型浮出控件，其中可显示丰富的内容。 它通常用于通知、提醒以及教授用户可改进用户体验的重要功能和新功能。
 
- 重要的 API：[TeachingTip 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.teachingtip?view=winui-2.2)
-
 教学提示可能是轻型消除提示，或需要显式操作才能关闭。 教学提示可通过其尾部指明作为其目标的特定 UI 元素，也可在没有尾部或目标的情况下使用。
 
-## <a name="is-this-the-right-control"></a>这是正确的控件吗？ 
+**获取 Windows UI 库**
 
- 使用 TeachingTip 控件，将用户注意力集中到新的或重要的更新和功能上，提醒可改进其体验的非必要选项，或者指导用户应如何完成任务。 
+|  |  |
+| - | - |
+| ![WinUI 徽标](../images/winui-logo-64x64.png) | **TeachingTip** 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [TeachingTip 类](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
+
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
+
+ 使用 TeachingTip 控件，将用户注意力集中到新的或重要的更新和功能上，提醒可改进其体验的非必要选项，或者指导用户应如何完成任务。
 
 由于教学提示是暂时性的，因此它不会成为提示用户错误或重要状态更改的推荐控件。
 
@@ -37,7 +43,7 @@ ms.locfileid: "75684112"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 XAML 控件库<strong style="font-weight: semi-bold"></strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TeachingTip">打开应用并查看教学提示的实际应用</a>。</p>
     <ul>
@@ -50,7 +56,7 @@ ms.locfileid: "75684112"
 
 教学提示可采用多种配置，包括显眼的配置。
 
-教学提示可通过其尾部指明作为其目标的特定 UI 元素，以更清楚地表明其所呈现信息是属于哪个元素的上下文。 
+教学提示可通过其尾部指明作为其目标的特定 UI 元素，以更清楚地表明其所呈现信息是属于哪个元素的上下文。
 
 ![目标为“保存”按钮的教学提示的示例应用。 该提示的标题为“自动保存”，副标题为“我们将即时保存你的所有更改 - 你无需亲自动手。” 教学提示的右上角有一个关闭按钮。](../images/teaching-tip-targeted.png)
 
@@ -58,14 +64,15 @@ ms.locfileid: "75684112"
 
 ![教学提示位于右下角的示例应用。 该提示的标题为“自动保存”，副标题为“我们将即时保存你的所有更改 - 你无需亲自动手。” 教学提示的右上角有一个关闭按钮。](../images/teaching-tip-non-targeted.png)
 
-教学提示可能要求用户通过位于顶部的“X”按钮或位于底部的“关闭”按钮进行关闭。 没有关闭按钮时，教育提示可启用轻型消失，当用户滚动到其他位置或与应用程序的其他元素进行交互时，教学提示将会消失。 由于这种行为，当需要将提示放在可滚动区域中时，轻型消除提示是最佳解决方案。 
+教学提示可能要求用户通过位于顶部的“X”按钮或位于底部的“关闭”按钮进行关闭。 没有关闭按钮时，教育提示可启用轻型消失，当用户滚动到其他位置或与应用程序的其他元素进行交互时，教学提示将会消失。 由于这种行为，当需要将提示放在可滚动区域中时，轻型消除提示是最佳解决方案。
 
 ![轻型消除教学提示位于右下角的示例应用。 该提示的标题为“自动保存”，副标题为“我们将即时保存你的所有更改 - 你无需亲自动手。”](../images/teaching-tip-light-dismiss.png)
 
 
 ### <a name="create-a-teaching-tip"></a>创建教学提示
 
-下面是定向教学提示控件的 XAML，演示了带有标题和副标题的教学提示的默认外观。 请注意，教学提示可以出现在元素树或隐藏代码中的任何位置。 在以下示例中，它位于 ResourceDictionary 中。
+下面是定向教学提示控件的 XAML，演示了带有标题和副标题的教学提示的默认外观。
+请注意，教学提示可以出现在元素树或隐藏代码中的任何位置。 在以下示例中，它位于 ResourceDictionary 中。
 
 XAML
 ```XAML
@@ -118,7 +125,7 @@ XAML
 
 ### <a name="preferred-placement"></a>首选位置
 
-教学提示通过 TeachingTipPlacementMode 属性复制浮出控件的 [FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行为。 默认放置模式尝试将定向教学提示放置在其目标上方，将非定向教学提示置于 xaml 根底部的中心位置。 与浮出控件相同，如果首选放置模式无法留出显示教学提示的空间，将自动选择另一种放置模式。 
+教学提示通过 TeachingTipPlacementMode 属性复制浮出控件的 [FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行为。 默认放置模式尝试将定向教学提示放置在其目标上方，将非定向教学提示置于 xaml 根底部的中心位置。 与浮出控件相同，如果首选放置模式无法留出显示教学提示的空间，将自动选择另一种放置模式。
 
 对于预测游戏板输入的应用程序，请参阅[游戏板和远程控制交互]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建议使用一个应用 UI 所有可能的配置对每个教学提示的游戏板辅助功能进行测试。
 
@@ -162,7 +169,7 @@ XAML
 下图描绘了所有 13 个可为非定向教学提示设置的 PreferredPlacement 模式的结果。
 ![包含 9 个教学提示的插图，每个教学提示都演示了不同的非定向放置模式。 每个教学提示都通过标签表明了其所代表的模式。 放置模式的第一个单词指示教学提示将居中显示在 xaml 根的哪一侧。 如果放置模式中有第二个单词，则教学提示将位于 xaml 根的指定角落。 例如，放置模式为“TopRight”时，教学提示显示在 xaml 根的右上角。 对于非定向放置模式，两个单词的顺序不会影响其位置。 TopRight 等效于 RightTop。 放置模式为“Center”可确定一个独特的位置，使该教学提示显示在 xaml 根的垂直和水平中心位置。](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
 
-### <a name="add-a-placement-margin"></a>添加位置边距  
+### <a name="add-a-placement-margin"></a>添加位置边距
 
 通过使用 PlacementMargin 属性，可以控制定向教学提示与其目标的距离以及非定向教学提示与 xaml 根边缘的距离。 与[边距](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin)一样，PlacementMargin 具有四个值（左、右、上和下），因此仅使用相关值。 例如，当提示位于目标左侧或 xaml 根的左边缘时，PlacementMargin.Left 适用。
 
@@ -185,7 +192,7 @@ XAML
 
 ### <a name="add-content"></a>添加内容
 
-可以使用 Content 属性向教学提示添加内容。 如果要显示的内容超出了教学提示允许的大小，则将自动启用滚动条，以便用户滚动内容区域。 
+可以使用 Content 属性向教学提示添加内容。 如果要显示的内容超出了教学提示允许的大小，则将自动启用滚动条，以便用户滚动内容区域。
 
 XAML
 ```XAML
@@ -217,7 +224,7 @@ XAML
 XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
-    <Button.Resources> 
+    <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
@@ -243,7 +250,7 @@ XAML
 XAML
 ```XAML
 <Button x:Name="SaveButton" Content="Save">
-    <Button.Resources> 
+    <Button.Resources>
         <muxc:TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
@@ -260,7 +267,7 @@ XAML
 
 ### <a name="add-an-icon"></a>添加图标
 
-可使用 IconSource 属性在标题和副标题的旁边添加一个图标。 建议图标大小为 16px、24px 和 32px。 
+可使用 IconSource 属性在标题和副标题的旁边添加一个图标。 建议图标大小为 16px、24px 和 32px。
 
 XAML
 ```XAML
@@ -282,9 +289,9 @@ XAML
 
 ### <a name="enable-light-dismiss"></a>启用轻型消除
 
-默认情况下，轻型消除功能处于禁用状态，但可以启用该功能来关闭教学提示，例如，在用户滚动到其他位置或与应用程序的其他元素进行交互时关闭。 由于这种行为，当需要将提示放在可滚动区域中时，轻型消除提示是最佳解决方案。 
+默认情况下，轻型消除功能处于禁用状态，但可以启用该功能来关闭教学提示，例如，在用户滚动到其他位置或与应用程序的其他元素进行交互时关闭。 由于这种行为，当需要将提示放在可滚动区域中时，轻型消除提示是最佳解决方案。
 
-关闭按钮将从已启用轻型消除的教学提示上自动删除，以便向用户展现其轻型消除行为。 
+关闭按钮将从已启用轻型消除的教学提示上自动删除，以便向用户展现其轻型消除行为。
 
 XAML
 ```XAML
@@ -322,7 +329,7 @@ XAML
 
 ### <a name="canceling-and-deferring-close"></a>取消和延迟关闭
 
-可使用 Closing 事件来取消和/或延迟关闭教学提示。 可使用该事件使教学提示保持打开状态，或为操作或自定义动画留出时间。 取消关闭教学提示后，IsOpen 返回到 true 状态，但在延迟期间它将保持 false 状态。 此外，还可取消编程关闭。 
+可使用 Closing 事件来取消和/或延迟关闭教学提示。 可使用该事件使教学提示保持打开状态，或为操作或自定义动画留出时间。 取消关闭教学提示后，IsOpen 返回到 true 状态，但在延迟期间它将保持 false 状态。 此外，还可取消编程关闭。
 
 **注意：如果无法通过任何位置选项来完整显示教学提示，教学提示将通过遍历其事件生命周期来强制关闭而不显示，无需可访问的关闭按钮。如果应用取消 Closing 事件，则教学提示可能因没有可访问的关闭按钮而保持打开状态。**
 
@@ -357,16 +364,16 @@ public void OnTipClosing(object sender, TeachingTipClosingEventArgs args)
 
 ## <a name="remarks"></a>备注
 
-### <a name="related-articles"></a>相关文章 
+### <a name="related-articles"></a>相关文章
 
 * [对话框和浮出控件](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
 
 ### <a name="recommendations"></a>建议
-* 提示应是临时性的，且不应包含对应用程序体验至关重要的信息或选项。 
-* 尽量避免过于频繁地显示教学提示。 教学提示在长会话或多个会话中交错出现时，每次都可能受到单独关注。    
+* 提示应是临时性的，且不应包含对应用程序体验至关重要的信息或选项。
+* 尽量避免过于频繁地显示教学提示。 教学提示在长会话或多个会话中交错出现时，每次都可能受到单独关注。
 * 保持提示简洁、主题清晰。 研究表明，用户在确定是否与提示进行交互之前平均仅阅读 3-5 个单词且仅理解 2-3 个单词。
 * 无法保证教学提示的游戏板辅助功能。 对于预测游戏板输入的应用程序，请参阅[游戏板和远程控制交互]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建议使用一个应用 UI 所有可能的配置对每个教学提示的游戏板辅助功能进行测试。
-* 在使用教学提示转义 xaml 根时，建议同时启用 IsLightDismissEnabled 属性并设置与 xaml 根中心位置最接近的 PreferredPlacement 模式。 
+* 在使用教学提示转义 xaml 根时，建议同时启用 IsLightDismissEnabled 属性并设置与 xaml 根中心位置最接近的 PreferredPlacement 模式。
 
 ### <a name="reconfiguring-an-open-teaching-tip"></a>重新配置一个打开的教学提示
 

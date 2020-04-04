@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9027362eccfb8130b181bee26a57f13ce1e1af66
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57621762"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63785434"
 ---
 # <a name="mvvm-and-language-performance-tips"></a>MVVM 和语言性能提示
 
@@ -29,12 +29,12 @@ Model-View-ViewModel (MVVM) 模式在许多 XAML 应用中很常见。 （MVVM �
 对于 MVVM 模式，有多个具体的定义，而且还存在有助于实现该模式的第三方框架。 但是严格遵循该模式的所有变体可能会导致应用的开销比调整多很多。
 
 -   设计 XAML 数据绑定（{Binding} 标记扩展）在某种程度上是为了启用模型/视图模式。 但 {Binding} 会带来非比寻常的工作集和 CPU 开销。 创建 {Binding} 会导致一系列分配，而更新绑定目标可能会引起反射和装箱。 目前正在使用 {x:Bind} 标记扩展处理这些问题，以便在生成时编译绑定。 **建议：** 使用 {x:Bind}。
--   在 MVVM 中，通常使用 ICommand 将 Button.Click 连接到视图模型，如常见的 DelegateCommand 或 RelayCommand 帮助程序。 虽然这些命令是额外的分配，但包含了 CanExecuteChanged 事件侦听器、增加了工作集和页面的启动/导航时间。 **建议：** 作为使用方便的 ICommand 界面的替代方法，请考虑将事件处理程序放入您的后台代码并将其附加到查看事件和引发这些事件时，视图模型上调用命令。 你还需要添加额外代码，以便在该命令不可用时禁用“按钮”。
--   在 MVVM 中，通常使用所有可能的 UI 配置来创建“页面”，然后通过将“可见性”属性绑定到 VM 中的属性来折叠树的某些部分。 这会不必要地增加启动时间，也可能会增加工作集（因为树的某些部分可能永远不会变得可见）。 **建议：** 使用[x： 负载特性](../xaml-platform/x-load-attribute.md)或[X:deferloadstrategy 属性](../xaml-platform/x-deferloadstrategy-attribute.md)功能将延迟的树，而不启动不必要部分。 另外，还要为页面的不同模式创建单独的用户控件，并使用代码隐藏保持仅加载必要的控件。
+-   在 MVVM 中，通常使用 ICommand 将 Button.Click 连接到视图模型，如常见的 DelegateCommand 或 RelayCommand 帮助程序。 虽然这些命令是额外的分配，但包含了 CanExecuteChanged 事件侦听器、增加了工作集和页面的启动/导航时间。 **建议：** 请考虑将事件处理程序放在代码隐藏中，同时将它们附加到视图事件，并在引发这些事件时在视图模型上调用命令，这可以作为使用便利 ICommand 接口的备用方法。 你还需要添加额外代码，以便在该命令不可用时禁用“按钮”。
+-   在 MVVM 中，通常使用所有可能的 UI 配置来创建“页面”，然后通过将“可见性”属性绑定到 VM 中的属性来折叠树的某些部分。 这会不必要地增加启动时间，也可能会增加工作集（因为树的某些部分可能永远不会变得可见）。 **建议：** 使用 [x:Load attribute](../xaml-platform/x-load-attribute.md) 或 [x:DeferLoadStrategy attribute](../xaml-platform/x-deferloadstrategy-attribute.md) 功能来延迟启动之外的树的不必要部分。 另外，还要为页面的不同模式创建单独的用户控件，并使用代码隐藏保持仅加载必要的控件。
 
 ## <a name="ccx-recommendations"></a>C++/CX 建议
 
 -   **使用最新版本**。 对 C++/CX 编译器进行连续的性能改进。 确保使用最新的工具集生成你的应用。
--   **禁用 RTTI (/ GR-)**。 在编译器中，RTTI 默认处于打开状态，因此除非你的生成环境将其关闭，否则你可能正在使用它。 RTTI 的开销非常大，如果你的代码对其没有很大的依赖性，请将其关闭。 XAML 框架对你的代码使用 RTTI 没有任何要求。
+-   **禁用 RTTI (/ GR-)** 。 在编译器中，RTTI 默认处于打开状态，因此除非你的生成环境将其关闭，否则你可能正在使用它。 RTTI 的开销非常大，如果你的代码对其没有很大的依赖性，请将其关闭。 XAML 框架对你的代码使用 RTTI 没有任何要求。
 -   **避免大量使用 ppltask**。 当调用异步 WinRT API 时，ppltask 非常便利，但它们的代码大小开销也非常大。 C++/CX 团队正致力于开发一种语言功能 await，它将提供更出色的性能。 同时，在代码的热路径中均衡使用 ppltask。
 -   **避免在应用的“业务逻辑”中使用 C++/CX**。 C++/CX 旨在为访问 C++ 应用中的 WinRT API 提供一种便捷方式。 它将使用具有开销的包装器。 你应该避免在类的业务逻辑/模型内使用 C++/CX，并进行保留以便用于你的代码和 WinRT 之间的边界。

@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 71f8298456b3c297994d6aa11d815a6b46ba7ff4
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 9f90ce11c9a35200121722f3b0a0ac7d7047e819
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340362"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081558"
 ---
 # <a name="rich-text-block"></a>RTF 块
 
@@ -24,13 +24,13 @@ ms.locfileid: "71340362"
 
 RTF 块提供了多种适用于高级文本布局的功能，你可以在需要支持段落、内联 UI 元素或复杂文本布局时使用。
 
-> **重要的 API**：[RichTextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[RichTextBlockOverflow 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)、[Paragraph 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)、[Typography 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
+> **平台 API**：[RichTextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[RichTextBlockOverflow 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlockOverflow)、[Paragraph 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)、[Typography 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 如果你需要支持多段落、多列或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。
 
-使用 **TextBlock** 显示应用中大部分只读文本。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。 TextBlock 提供较简单的内容模型，因此通常也更易于使用，并且它比 RichTextBlock 提供文本呈现性能更好。 它优先用于大部分应用 UI 文本。 虽然你可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
+使用 **TextBlock** 显示应用中大部分只读文本。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。 TextBlock 提供较简单的内容模型，因此通常也更易于使用，并且它比 RichTextBlock 提供文本呈现性能更好。 它优先用于大部分应用 UI 文本。 虽然可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
 
 有关选择正确的文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
@@ -39,7 +39,7 @@ RTF 块提供了多种适用于高级文本布局的功能，你可以在需要�
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RichTextBlock">打开此应用，了解 RichTextBlock 的实际应用</a>。</p>
     <ul>

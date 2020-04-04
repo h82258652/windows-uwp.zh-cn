@@ -11,21 +11,24 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ff6031878b9189ca3794e2a9c68c85b76e5d21a7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ef17fdc69f7a9f25831c5c17419768ff32874f80
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257444"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080937"
 ---
 # <a name="flip-view"></a>翻转视图
 
- 
-
 使用翻转视图浏览集合中的图像或其他项目（例如相册中的照片或产品详细信息页中的项目），一次显示一个项目。 对于触摸设备，轻扫某个项将在整个集合中进行浏览。 对于鼠标，导航按钮显示在鼠标悬停位置上。 对于键盘，使用箭头键移动浏览该集合。
 
-> **重要的 API**：[FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类），[ItemsSource 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)，[ItemTemplate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+**获取 Windows UI 库**
 
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类），[ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)，[ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -36,7 +39,7 @@ ms.locfileid: "74257444"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/FlipView">打开此应用，了解 FlipView 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>

@@ -7,20 +7,26 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c7bd8828ec036135233f569ee7add5d39ffb32
-ms.sourcegitcommit: 136416e8e2eb0565bb6eb99e42482c1723ccb8c7
+ms.openlocfilehash: ce9e3775f4b0f78d17f0ffdf3d6381f2e8a233d9
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890422"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081526"
 ---
 # <a name="tabview"></a>TabView
 
 可以通过 TabView 控件显示一组选项卡及其相应的内容。 用户可以使用 TabView 来显示多个页面（或文档）的内容，以及重新排列、打开或关闭新选项卡。
 
-> **重要的 API**：[TabView 类](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 类](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
-
 ![TabView 示例](images/tabview/tab-introduction.png)
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | **TabView** 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API**：[TabView 类](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 类](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 

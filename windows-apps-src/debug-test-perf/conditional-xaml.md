@@ -7,16 +7,16 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d02c75775dfd63281dbf46c7f9fc58f48ac1e20
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66359970"
 ---
 # <a name="conditional-xaml"></a>条件 XAML
 
-*条件 XAML* 提供在 XAML 标记中使用 [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) 方法的一种途径。 你可以基于 API 的存在在标记中设置属性和实例化对象，无需使用背后的代码。 它选择性地分析元素或属性来确定在运行时是否可用。 条件语句在运行时进行评估，如果评估为 **true**，则对使用条件 XAML 标记进行限定的元素进行分析；否则忽略。
+条件 XAML  提供在 XAML 标记中使用 [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) 方法的一种途径。 可以在 API 存在的情况下在标记中设置属性和实例化对象，无需使用代码隐藏。 它选择性地分析元素或属性来确定它们在运行时是否可用。 条件语句在运行时进行评估。如果评估为 **true**，则会对使用条件 XAML 标记进行限定的元素进行分析；否则会忽略它们。
 
-条件 XAML 从创意者更新（版本 1703，内部版本 15063）开始提供。 若要使用条件 XAML，Visual Studio 项目的最低版本必须设置为内部版本 15063（创意者更新）或更高版本，且目标版本设置为比最低版本更高的版本。 请参阅[版本自适应应用](version-adaptive-apps.md)以获取有关配置 Visual Studio 项目的详细信息。
+条件 XAML 从 Creators Update（版本 1703，内部版本 15063）开始提供。 若要使用条件 XAML，Visual Studio 项目的最低版本必须设置为内部版本 15063 (Creators Update) 或更高版本，且目标版本必须设置为比最低版本更高的版本。 请参阅[版本自适应应用](version-adaptive-apps.md)，详细了解如何配置 Visual Studio 项目。
 
 > [!NOTE]
 > 若要使用低于内部版本 15063 的最低版本创建版本自适应应用，则必须使用[版本自适应代码](version-adaptive-code.md)，而不是 XAML。
@@ -34,7 +34,7 @@ xmlns:myNamespace="schema?conditionalMethod(parameter)"
 条件命名空间可以分为两部分，用“?”分隔符分隔。 
 
 - 分隔符前面的内容指示命名空间或架构含有被引用的 API。 
-- 分隔符“?”后的内容表示条件方法，该方法确定是否将条件命名空间评估为 **true** 或 **false**。
+- 分隔符“?”后的内容表示条件方法，该方法确定是将条件命名空间评估为 **true** 还是 **false**。
 
 在大多数情况下，架构将是默认的 XAML 命名空间：
 
@@ -44,7 +44,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
 条件 XAML 支持以下条件方法：
 
-方法 | 反函数
+方法 | 反转
 ------ | -------
 IsApiContractPresent(ContractName, VersionNumber) | IsApiContractNotPresent(ContractName, VersionNumber)
 IsTypePresent(ControlType) | IsTypeNotPresent(ControlType)
@@ -57,11 +57,11 @@ IsPropertyPresent(ControlType, PropertyName) | IsPropertyNotPresent(ControlType,
 
 ## <a name="create-a-namespace-and-set-a-property"></a>创建命名空间并设置一个属性
 
-在此示例中，如果在 Fall Creators Update 或更高版本上运行应用，将显示“Hello, Conditional XAML”作为文本块的内容，如果在以前的版本上运行，则默认显示无内容。
+在此示例中，如果在 Fall Creators Update 或更高版本上运行应用，将显示“Hello, Conditional XAML”作为文本块的内容；如果在以前的版本上运行，则默认显示无内容。
 
-首先，使用前缀“contract5Present”定义自定义命名空间并使用默认 XAML 命名空间 (https://schemas.microsoft.com/winfx/2006/xaml/presentation) 作为含有 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) 属性的架构。 若要使其成为一个条件命名空间，添加“?” 架构后的分隔符。
+首先，使用前缀“contract5Present”定义自定义命名空间并使用默认 XAML 命名空间 (https://schemas.microsoft.com/winfx/2006/xaml/presentation) 作为含有 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) 属性的架构。 若要使其成为一个条件命名空间，请在架构后添加“?” 分隔符。
 
-然后定义在运行 Fall Creators Update 或更高版本的设备上返回 **true** 的条件。 使用 ApiInformation 方法 **IsApiContractPresent** 来检查 UniversalApiContract 的第 5 个版本。 UniversalApiContract 版本 5 是和 Fall Creators Update (SDK 16299) 一起发布的。
+然后定义在运行 Fall Creators Update 或更高版本的设备上返回 **true** 的条件。 使用 ApiInformation 方法 **IsApiContractPresent** 来检查 UniversalApiContract 的第 5 个版本。 UniversalApiContract 版本 5 和 Fall Creators Update (SDK 16299) 一起发布。
 
 ```xaml
 xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract,5)"
@@ -103,20 +103,20 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 
 ## <a name="use-ifelse-conditions"></a>使用 if/else 条件
 
-在上面的示例中，仅当在 Fall Creators Update 上运行应用时设置 Text 属性。 但如果在不同文本在创意者更新上运行时想要显示这些文本，应该怎么做？ 你可以尝试不使用条件限定符设置 Text 属性，就像这样。
+在上面的示例中，仅当在 Fall Creators Update 上运行应用时设置 Text 属性。 但是，当它在 Creators Update 上运行时，如果你想要显示不同的文本，应该怎么做？ 可以尝试在不使用条件限定符的情况下设置 Text 属性，如下所示。
 
 ```xaml
 <!-- DO NOT USE -->
 <TextBlock Text="Hello, World" contract5Present:Text="Hello, Conditional XAML"/>
 ```
 
-当它在 Creators Update 上运行时会有效，但当在 Fall Creators Update 上运行时，你会收到错误消息，指出多次设置 Text 属性。
+当它在 Creators Update 上运行时，这会有效；但在 Fall Creators Update 上运行时，你会收到错误消息，指出 Text 属性已设置多次。
 
-若要设置在不同版本的 Windows 10 上运行应用时的不同文本，你需要另一个条件。 条件 XAML 提供每种受支持的 ApiInformation 方法的反转，让你创建像这样的 if/else 条件方案。
+当应用在不同版本的 Windows 10 上运行时，若要设置不同的文本，你需要另一个条件。 条件 XAML 提供每种受支持的 ApiInformation 方法的反转，让你创建类似这样的 if/else 条件方案。
 
-如果当前设备包含指定合同和版本号，IsApiContractPresent 方法返回 **true**。 例如，假设在创意者更新上运行应用，它具有通用 API 协定第 4 版。
+如果当前设备包含指定合同和版本号，IsApiContractPresent 方法会返回 **true**。 例如，假设在 Creators Update 上运行应用，它具有通用 API 协定第 4 版。
 
-对 IsApiContractPresent 的不同调用将产生以下结果：
+对 IsApiContractPresent 的不同调用会产生以下结果：
 
 - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 5) = **false**
 - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 4) = true
@@ -124,7 +124,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 2) = true
 - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 1) = true。
 
-IsApiContractNotPresent 返回 IsApiContractPresent 的反转。 调用 IsApiContractNotPresent 将产生以下结果：
+IsApiContractNotPresent 返回 IsApiContractPresent 的反转。 调用 IsApiContractNotPresent 会产生以下结果：
 
 - IsApiContractNotPresent(Windows.Foundation.UniversalApiContract, 5) = **true**
 - IsApiContractNotPresent(Windows.Foundation.UniversalApiContract, 4) = false
@@ -132,7 +132,7 @@ IsApiContractNotPresent 返回 IsApiContractPresent 的反转。 调用 IsApiCon
 - IsApiContractNotPresent(Windows.Foundation.UniversalApiContract, 2) = false
 - IsApiContractNotPresent(Windows.Foundation.UniversalApiContract, 1) = false
 
-若要使用反转条件，你可以创建第二个使用 **IsApiContractNotPresent** 条件的条件 XAML 命名空间。 在这里，其中包含前缀“contract5NotPresent”。
+若要使用反转条件，可以创建第二个使用 **IsApiContractNotPresent** 条件的条件 XAML 命名空间。 在这里，其中包含前缀“contract5NotPresent”。
 
 ```xaml
 xmlns:contract5NotPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractNotPresent(Windows.Foundation.UniversalApiContract,5)"
@@ -140,14 +140,14 @@ xmlns:contract5NotPresent="http://schemas.microsoft.com/winfx/2006/xaml/presenta
 xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract,5)"
 ```
 
-定义两个命名空间后，可以将 Text 属性设置两次，前提是在它们前面添加限定符，确保在运行时仅使用一个属性设置，如：
+定义两个命名空间后，可以将 Text 属性设置两次，前提是在它们前面添加限定符，确保在运行时仅使用一个属性设置，如下所示：
 
 ```xaml
 <TextBlock contract5NotPresent:Text="Hello, World"
            contract5Present:Text="Hello, Fall Creators Update"/>
 ```
 
-下面介绍了设置按钮背景的另一个示例。 [亚克力材料](../design/style/acrylic.md) 功能从 Fall Creators Update 开始提供，因此当在 Fall Creators Update 上运行应用时，你将为背景使用亚克力。 它在更早的版本中不可用，因此在这些情况下，要将背景设置为红色。
+下面介绍了设置按钮背景的另一个示例。 [亚克力材料](../design/style/acrylic.md)功能从 Fall Creators Update 开始提供，因此当在 Fall Creators Update 上运行应用时，你将为背景使用亚克力。 它在更早的版本中不可用，因此在这些情况下，要将背景设置为红色。
 
 ```xaml
 <Button Content="Button"
@@ -172,7 +172,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
                               VerticalAlignment="Center">
 ```
 
-你可以使用具有不同形式的 [XAML 属性语法](../xaml-platform/xaml-syntax-guide.md) 的条件限定符。 在这里，使用用于 Fall Creators Update 的属性元素句法和用于较早版本的属性句法设置矩形的 Fill 属性。
+可以使用具有不同形式的 [XAML 属性语法](../xaml-platform/xaml-syntax-guide.md)的条件限定符。 在这里，使用用于 Fall Creators Update 的属性元素句法和用于较早版本的属性句法设置矩形的 Fill 属性。
 
 ```xaml
 <Rectangle x:Name="colorRectangle" Width="200" Height="200"
@@ -183,7 +183,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 </Rectangle>
 ```
 
-将属性绑定到取决于条件命名空间的另一个属性时，你必须对这两个属性使用相同的条件。 在这里，`colorPicker.Color` 取决于“contract5Present”条件命名空间，因此你必须将“contract5Present”前缀放在 SolidColorBrush.Color 属性的前面。 （或者，可以在颜色属性上而不是 SolidColorBrush 上放置 contract5Present 前缀。）如果不这样做，您将收到编译时错误。
+将属性绑定到取决于条件命名空间的另一个属性时，必须对这两个属性使用相同的条件。 在这里，`colorPicker.Color` 取决于“contract5Present”条件命名空间，因此必须将“contract5Present”前缀放在 SolidColorBrush.Color 属性的前面。 （或者将“contract5Present”前缀放在 SolidColorBrush 的前面，而不是放在 Color 属性的前面。）否则会出现编译时间错误。
 
 ```xaml
 <SolidColorBrush contract5Present:Color="{x:Bind colorPicker.Color, Mode=OneWay}"/>
@@ -245,5 +245,5 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 ## <a name="related-articles"></a>相关文章
 
 - [UWP 应用指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [动态检测使用 API 协定的功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-- [API 协定](https://channel9.msdn.com/Events/Build/2015/3-733)（版本 2015 视频）
+- [使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [API 协定](https://channel9.msdn.com/Events/Build/2015/3-733)（Build 2015 视频）

@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c171a431180ee63956bae1c235224f64642601a
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 7f2421316be30d24ef44784974fc2c6c199a6570
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340220"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081490"
 ---
 # <a name="text-controls"></a>文本控件
 
@@ -37,7 +37,7 @@ ms.locfileid: "71340220"
 
 TextBlock 相比 RichTextBlock 通常更易于使用，并且提供更好的文本呈现性能，因此它优先用于大部分应用 UI 文本。 你可以通过获取 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 属性的值轻松地访问和使用应用的 TextBlock 中的文本。
 
-它还提供许多用于自定义文本呈现方式的相同格式设置选项。 虽然你可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
+它还提供许多用于自定义文本呈现方式的相同格式设置选项。 虽然可以在文本中放入换行符，但 TextBlock 旨在显示一个段落且不支持文本缩进。
 
 如果你需要支持多段落、多列文本或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。 RichTextBlock 提供适用于高级文本布局的若干功能。
 
@@ -45,7 +45,7 @@ RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 
 ### <a name="text-input"></a>文本输入
 
-使用 **TextBox** 控件允许用户输入和编辑无格式文本（例如在表单中）。 你可以使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 属性在 TextBox 中获取和设置文本。
+使用 TextBox 控件允许用户输入和编辑无格式文本（例如在表单中）  。 你可以使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 属性在 TextBox 中获取和设置文本。
 
 你可以使 TextBox 只读，但只应是临时的、有条件的状态。 如果文本永远不可编辑，请考虑改用 TextBlock。
 
@@ -75,7 +75,7 @@ RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/category/Text">打开此应用，了解文本控件的实际应用</a>。</p>
     <ul>
@@ -133,11 +133,11 @@ RichTextBlock 的内容属性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 
 >提示 此信息仅适用于 SIP。 它不适用于硬件键盘或 Windows“轻松使用”选项中提供的屏幕键盘。
 
-当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
+当应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
+例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 Number  。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
->重要  
+>要点  
 >输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
 
 有关详细信息，请参阅[使用输入范围更改触摸键盘](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
