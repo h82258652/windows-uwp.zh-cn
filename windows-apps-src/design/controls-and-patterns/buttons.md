@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a3cd8a0c988df08047b10911a4d4f55e3ba1cb6e
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: e098283bae6f58b927892c680a4981d83f9e31e8
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209302"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081365"
 ---
 # <a name="buttons"></a>按钮
 
@@ -33,18 +33,20 @@ ms.locfileid: "79209302"
 [Button](/uwp/api/windows.ui.xaml.controls.button) | 用于启动即时操作的按钮。 可以与 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件或 [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) 绑定配合使用。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 一种按钮，在被按下时会持续引发 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | 一种按钮，其样式设置类似于超链接，用于导航。 有关超链接的详细信息，请参阅[超链接](hyperlinks.md)。
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 一种带 V 形图标的按钮，用于打开附加的浮出控件。
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 一种按钮，分为两端。 一端启动操作，另一端打开菜单。
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 一种切换按钮，分为两端。 一端进行开/关切换，另一端打开菜单。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | ![WinUI 徽标](images/winui-logo-16x16.png) 一种带 V 形图标的按钮，用于打开附加的浮出控件。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | ![WinUI 徽标](images/winui-logo-16x16.png) 一种按钮，分为两端。 一端启动操作，另一端打开菜单。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | ![WinUI 徽标](images/winui-logo-16x16.png) 一种切换按钮，分为两端。 一端进行开/关切换，另一端打开菜单。
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | 可以打开或关闭的按钮。
 
-| **获取 Windows UI 库** |
-| - |
-| **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+**获取 Windows UI 库**
 
-| **平台 API** | **Windows UI 库** |
+|  |  |
 | - | - |
-| [Click 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)<br/> [Command 属性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) | [DropDownButton 类](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)<br/> [SplitButton 类](/uwp/api/microsoft.ui.xaml.controls.splitbutton)<br/> [ToggleSplitButton 类](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton) |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [DropDownButton 类](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)、[SplitButton 类](/uwp/api/microsoft.ui.xaml.controls.splitbutton)、[ToggleSplitButton 类](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
+>
+> **平台 API：** [Click 事件](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)、[Command 属性](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -68,7 +70,7 @@ ms.locfileid: "79209302"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>，请单击此处<a href="xamlcontrolsgallery:/item/Button">打开此应用，了解 Button 的实际作用</a>。</p>
     <ul>
