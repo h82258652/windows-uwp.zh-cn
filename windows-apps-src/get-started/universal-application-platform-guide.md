@@ -41,7 +41,7 @@ Windows 10 引入了通用 Windows 平台 (UWP)，这在运行 Windows 10 的每
 
 ## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>扩展 SDK 公开特定设备类型的特殊能力
 
-如果你要使用通用 API，你的应用可以在运行 Windows 10 的所有设备上运行。 但是如果你希望 UWP 应用利用设备特定的 API，这也可以。
+如果以通用 API 为目标，你的应用可以在运行 Windows 10 的所有设备上运行。 但如果希望 UWP 应用利用设备特定的 API，也同样可行。
 
 扩展 SDK 让你可以为不同设备调用专用的 API。 例如，如果你的 UWP 应用面向 IoT 设备，则可以在项目中添加 IoT 扩展 SDK 以利用特定于 IoT 设备的功能。 有关添加扩展 SDK 的详细信息，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#extension-sdks)的**扩展 SDK** 部分。
 
