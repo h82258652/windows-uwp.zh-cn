@@ -64,7 +64,7 @@ Windows 通过以下功能帮助你的 UI 面向多个设备：
 
 你的应用 UI 的某些方面将自动适应不同的设备。 但是，你的应用的用户体验设计可能需要根据正在运行该应用的设备进行调整。 例如，照片应用在手持式小型设备上运行时可以调整其 UI，以确保该用法是单手使用的理想之选。 当照片应用在台式机上运行时，UI 应进行调整以充分利用额外的屏幕空间。
 
-## <a name="theres-one-store-for-all-devices"></a>有一个适用于所有设备的应用商店。
+## <a name="theres-one-store-for-all-devices"></a>有一个适用于所有设备的应用商店
 
 统一的 App Store 让你的应用在 Windows 10 设备（如电脑、平板电脑、Xbox、HoloLens、Surface Hub 和物联网 (IoT) 设备）上可用。 可以向 Microsoft Store 提交应用，并使其对所有类型的设备或仅对所选设备类型可用。 你将在一个位置上提交和管理适用于 Windows 设备的所有应用。 想要使用 UWP 功能实现 C++ 桌面应用的现代化并将其在 Microsoft store 内出售？ 这同样可以实现。
 
