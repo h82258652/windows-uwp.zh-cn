@@ -4,12 +4,12 @@ description: 了解圆角原则、设计方法和自定义选项。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 角半径, 圆
-ms.openlocfilehash: 84cd27bf8c65ed65a6ee2b0f044e0ffb3ef86bf0
-ms.sourcegitcommit: 49af415e4eefea125c023b7071adaa5dc482e223
+ms.openlocfilehash: a83473b5ad836633bc195aa2b5afe87fa092e0ee
+ms.sourcegitcommit: 3c3730e968fba89b21459390735614cd4c9d9c67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74799921"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320431"
 ---
 # <a name="corner-radius"></a>角半径
 
@@ -40,7 +40,7 @@ ms.locfileid: "74799921"
 **控件**
 
 - AutoSuggestBox
-- 按钮
+- Button
   - ContentDialog 按钮
 - CalendarDatePicker
 - CheckBox
@@ -180,9 +180,21 @@ ms.locfileid: "74799921"
 
 如果只希望更改选定数量的控件的圆度，则可直接修改控件上的 [CornerRadius](/uwp/api/windows.ui.xaml.controls.control.cornerradius) 属性。
 
-|默认 | 修改的属性 |
+|默认值 | 修改的属性 |
 |:-- |:-- |
 |![DefaultCheckBox](images/rounded-corner/default-checkbox.png)| ![CustomCheckBox](images/rounded-corner/custom-checkbox.png)|
 |`<CheckBox Content="Checkbox"/>` | `<CheckBox Content="Checkbox" CornerRadius="5"/> ` |
 
 并非所有控件的角都会响应其被修改的 `CornerRadius` 属性。 若要确保你要将其角部圆化的控件会真正地按你期望的方式响应其 `CornerRadius` 属性，请先检查 `ControlCornerRadius` 或 `OverlayCornerRadius` 全局资源是否会影响相关控件。 如果它们不影响，请检查要圆化的控件是否有角。 我们的许多控件不渲染实际的边缘，因此不能正确使用 `CornerRadius` 属性。
+
+### <a name="basing-custom-styles-on-winui"></a>基于 WinUI 创建自定义样式
+
+在样式中指定正确的 `BasedOn`，可以使自定义样式以 WinUI 圆角样式为基础。 例如，若要创建以 WinUI 按钮样式为基础的自定义按钮样式，请执行以下操作：
+
+```xaml
+<Style x:Key="MyCustomButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}">
+   ...
+</Style>
+```
+
+通常，WinUI 控件样式遵循一致的命名约定：“DefaultXYZStyle”，其中“XYZ”是控件的名称。 如需完整的参考，可以浏览 WinUI 存储库中的 XAML 文件。

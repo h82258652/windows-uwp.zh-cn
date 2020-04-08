@@ -1,16 +1,15 @@
 ---
 title: 通用 Windows 平台 (UWP) 应用中的命令控制
 description: 如何使用 XamlUICommand 和 StandardUICommand 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
-author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: cd34c9444c68b8e959f449124fe4ae294ec14fc4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 57e4a135e97c0a8f5d09834f2eb8c729c6422af0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257710"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081747"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 在通用 Windows 平台 (UWP) 应用中进行命令控制
 
