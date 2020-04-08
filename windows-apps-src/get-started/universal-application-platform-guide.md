@@ -58,7 +58,7 @@ UI 元素通过调整其布局和比例响应应用所运行屏幕的尺寸和 D
 
 Windows 通过以下功能帮助你的 UI 面向多个设备：
 
-- 通用控件和布局面板可帮助你针对设备的屏幕分辨率优化 UI。 例如，按钮和滑块等控件将自动适应设备屏幕的尺寸和 DPI 密度。 布局面板根据屏幕尺寸帮助调整内容的布局。 自适应缩放根据不同设备的分辨率和 DPI 自动进行调整。
+- 通用控件和布局面板可帮助你针对设备的屏幕分辨率优化 UI 例如，按钮和滑块等控件将自动适应设备屏幕的尺寸和 DPI 密度。 布局面板根据屏幕尺寸帮助调整内容的布局。 自适应缩放用于调整以适应不同设备的分辨率和 DPI
 - 通过常用的输入处理功能，可通过触摸、使用笔、鼠标、键盘或控制器（如 Microsoft Xbox 控制器）接收输入。
 - 工具可以帮助你设计出能够适应不同屏幕分辨率的 UI。
 
@@ -150,7 +150,7 @@ Microsoft 的设计系统名为 Fluent。 Fluent Design 系统是一套结合了
 ## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>通用 Windows 平台与 Windows 运行时 API 之间的关系
 如果你正在生成一个通用 Windows 平台 (UWP) 应用，将“通用 Windows 平台 (UWP)”和“Windows 运行时 (WinRT)”视为一定意义上同义可以获得诸多的好处和便利。 但是，我们不妨揭秘这两种技术的背景，确定这些概念之间存在什么差别  。 如果你对这些概念感到好奇，本部分提供了终极解答。
 
-Windows 运行时和 WinRT API 是在 Windows API 基础上的演进。 Windows 最初是通过简单的 C 式 Win32 API 编写的。 后来又加入了 COM API（[DirectX](https://docs.microsoft.com/windows/desktop/directx ) 就是一个典型例子）。 Windows 窗体、WPF、.NET 和托管语言引入了自身的 Windows 应用编写方式，并形成了自身的 API 技术风格。 Windows 运行时其实是 COM 的下一个阶段。 在实际的应用程序二进制接口 (ABI) 层，可以明显看出 Windows 运行时根植于 COM。 但是，Windows 运行时的设计旨在使其能够从众多不同的编程语言中进行调用。 并且可用一种对所有语言而言都非常自然的方式进行调用。 为此，可以通过所谓的语言投射来访问 Windows 运行时。 Windows 运行时可以投射到 C#、Visual Basic、标准 C++、JavaScript 等语言。 此外，经过适当的打包后（请参阅[桌面桥](/windows/uwp/porting/desktop-to-uwp-root)），可以从基于某个应用程序模型生成的应用来调用 WinRT API，这个模型可以是 Win32、.NET、WinForms 和 WPF。
+Windows 运行时和 WinRT API 是 Windows API 是的演进。 Windows 最初是通过扁平的 C 式 Win32 API 编写的。 后来又加入了 COM API（[DirectX](https://docs.microsoft.com/windows/desktop/directx) 就是一个突出的例子）。 Windows 窗体、WPF、.NET 和托管语言引入自身的 Windows 应用编写方式，并形成了自身的 API 技术风格。 Windows 运行时在幕后在 COM 的下一阶段。 在实际的应用程序二进制接口 (ABI) 层，Windows 运行时在 COM 中的根基是可见的。 但是，Windows 运行时在设计上可以从众多不同的编程语言调用。 并且可让其中的每种语言非常自然地调用。 为此，可以通过所谓的语言投影来访问 Windows 运行时。 Windows 运行时可以投影到 C#、Visual Basic、标准 C++、JavaScript 等语言。 此外，经过适当的打包后（请参阅[桌面桥](/windows/uwp/porting/desktop-to-uwp-root)），可以从众多应用程序模型中的一个模型生成的应用调用 WinRT API：Win32、.NET、WinForms 和 WPF。
 
 当然，也可以从 UWP 应用调用 WinRT API。 UWP 是构建在 Windows 运行时基础之上的应用程序模型。 从技术上讲，UWP 应用程序模型基于 [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication)，不过，根据所选的编程语言，你可能看不到这种细节。 如本主题所述，从价值主张的角度看，UWP 致力于帮助编写单个二进制应用，如果需要，你可以将此应用发布到 Microsoft Store，并在众多不同外形规格的设备上运行。 UWP 应用的适用设备范围取决于限制应用调用的或者按条件调用的 UWP API 子集。
 

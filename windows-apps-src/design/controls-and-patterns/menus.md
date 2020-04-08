@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 31371c2b2a4826939de428fb6d7c082b78d05843
-ms.sourcegitcommit: 6951827b7d0948618e1fbb082c28794c7f23f83c
+ms.openlocfilehash: b008b12c5f92d56c127c5ec8026d305d3d57a869
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923146"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081681"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -26,13 +26,15 @@ ms.locfileid: "70923146"
 
 ![典型上下文菜单示例](images/contextmenu_rs2_icons.png)
 
-| **获取 Windows UI 库** |
-| - |
-| 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+**获取 Windows UI 库**
 
-| **平台 API** | **Windows UI 库** |
+|  |  |
 | - | - |
-| [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) | [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | MenuBar 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含 UWP 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar)
+>
+> **平台 API：** [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -57,7 +59,7 @@ MenuBar 和 CommandBar 都表示可用于向用户公开命令的表面。 MenuB
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/MenuFlyout">打开此应用，了解 MenuFlyout 的实际应用</a>。</p>
     <ul>

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ae05a00cac19fdd349aa48160b88cde6b84e26b0
-ms.sourcegitcommit: 620e4a51e2486ec2cb7190176b3d9bf3d7b5b6af
+ms.openlocfilehash: 6b77cc7b2f39a987df4c832f7a8daeb7e2722def
+ms.sourcegitcommit: f2f61a43f5bc24b829e8db679ffaca3e663c00e9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78222023"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80588705"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>向未打包的桌面应用授予标识
 
@@ -124,7 +124,7 @@ ms.locfileid: "78222023"
 下面的示例演示如何从命令行创建稀疏包。  
 
 ```Console
-MakeAppx.exe  pack  /d  <path to directory that contains manifest>  /p  <output path>\MyPackage.msix  /nv
+MakeAppx.exe pack /d <path to directory that contains manifest> /p <output path>\MyPackage.msix /nv
 ```
 
 在目标计算机上成功安装稀疏包之前，必须使用目标计算机上受信任的证书对其进行签名。 可以出于开发目的创建新的自签名证书，并使用 Windows SDK 中提供的 [SignTool](https://docs.microsoft.com/windows/msix/package/sign-app-package-using-signtool) 为稀疏包签名。
@@ -132,7 +132,7 @@ MakeAppx.exe  pack  /d  <path to directory that contains manifest>  /p  <output 
 下面的示例演示如何从命令行对稀疏包进行签名。
 
 ```Console
-SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx  /p <certificate password>  <path to sparse package>\MyPackage.msix
+SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <certificate password> <path to sparse package>\MyPackage.msix
 ```
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>将程序包标识符元数据添加到桌面应用程序清单
