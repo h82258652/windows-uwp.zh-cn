@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 新增功能, 功能, 新增
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 734544a1294c6a97e70afcbf7ce6b5efc13cf841
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.openlocfilehash: 3057a3d13ba1e7d368dd6bf8820710030687a04d
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "79448581"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662400"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 中的新增功能
 
@@ -89,7 +89,7 @@ C++/WinRT 协同例程的性能良好，但我们继续寻找对其进行改进�
 
 - `cppwinrt.exe` 工具现在包含在 Microsoft.Windows.CppWinRT NuGet 包中，并且该工具会按需为每个项目生成平台投影标头。 因此，`cppwinrt.exe` 工具不再依赖于 Windows SDK（不过由于兼容性原因，该工具仍附带 SDK）。
 - `cppwinrt.exe` 现在会在每个特定于平台/配置的中间文件夹 ($IntDir) 下生成投影标头以实现并行生成。
-- C++/WinRT 生成支持（属性/目标）现在可完整记录，以防要手动自定义项目文件。 请参阅 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
+- C++/WinRT 生成支持（属性/目标）现在可完整记录，以防要手动自定义项目文件。 请参阅 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
 - 进行了大量 bug 修复。
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>版本 2.0 的 C++/WinRT 更改
@@ -98,7 +98,7 @@ C++/WinRT 协同例程的性能良好，但我们继续寻找对其进行改进�
 
 `cppwinrt.exe` 工具采用 Windows 运行时元数据 (`.winmd`) 文件，通过它生成基于头文件的标准 C++ 库，该库可投影  元数据中所述的 API。 这样便可以从 C++/WinRT 代码使用这些 API。
 
-此工具现在是完全开放源代码的项目，可在 GitHub 上获取。 访问 [Microsoft\/xlang](https://github.com/Microsoft/xlang)，然后单击进入“src”   > “工具”   > “cppwinrt”  。
+此工具现在是完全开放源代码的项目，可在 GitHub 上获取。 访问 [Microsoft\/cppwinrt](https://github.com/microsoft/cppwinrt)。
 
 #### <a name="xlang-libraries"></a>xlang 库
 

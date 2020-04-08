@@ -11,18 +11,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a9ff0acd46ef7efa92239b0a3ef07b507850a66
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 315edbddccc51b7e742bf9beffad8497a104ce03
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081523"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614094"
 ---
 # <a name="swipe"></a>轻扫
 
 轻扫命令是上下文菜单的加速键。通过它，用户无需在应用中更改状态即可以触控方式轻松访问常见菜单操作。
 
-> **重要的 API**：[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **Windows UI 库 API**：[SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+>
+> **平台 API**：[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、[SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、[ListView 类](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![“执行”和“显示”浅色主题](images/LightThemeSwipe.png)
 

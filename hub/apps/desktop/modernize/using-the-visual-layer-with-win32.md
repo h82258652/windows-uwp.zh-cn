@@ -1,92 +1,92 @@
 ---
-title: 可视化层中使用 Win32
-description: 使用可视化层以增强您的 Win32 桌面应用程序的 UI。
+title: 将视觉层与 Win32 结合使用
+description: 使用视觉层增强 Win32 桌面应用的 UI。
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
-keywords: UWP，呈现，组合，win32
+keywords: UWP, 呈现, 合成, win32
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: c9b4ec38b0dd1f6eca3f43cfded74c6292c08100
 ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/24/2019
 ms.locfileid: "66215191"
 ---
-# <a name="using-the-visual-layer-with-win32"></a>可视化层中使用 Win32
+# <a name="using-the-visual-layer-with-win32"></a>将视觉层与 Win32 结合使用
 
-可以使用 Windows 运行时组合 Api (也称为[可视化层](/windows/uwp/composition/visual-layer)) 在 Win32 应用程序以创建现代的轻型注册 Windows 10 用户体验。
+可以在 Win32 应用中使用 Windows 运行时 Composition API（也称为[视觉层](/windows/uwp/composition/visual-layer)）来创建面向 Windows 10 用户的现代特色体验。
 
 GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition)。
 
-需要精确地控制其 UI 复合的通用 Windows 应用程序有权访问[Windows.UI.Composition](/uwp/api/windows.ui.composition)命名空间进行细化的控制它们的 UI 是组成和呈现方式。 此组合 API 但是并不局限于 UWP 应用。 Win32 桌面应用程序可以充分利用 UWP 和 Windows 10 中的现代组合系统。
+需要精确控制其 UI 合成的通用 Windows 应用程序可以访问 [Windows.UI.Composition](/uwp/api/windows.ui.composition) 命名空间，以便对其 UI 的合成和呈现方式进行精细控制。 但是，此 Composition API 并不局限于 UWP 应用。 Win32 桌面应用程序可以利用 UWP 和 Windows 10 中的现代合成系统。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-托管 API UWP 具有这些系统必备组件。
+UWP 宿主 API 的先决条件如下。
 
-- 我们假定您已具备一定的使用 Win32 和 UWP 应用开发。 有关详细信息，请参阅：
-  - [开始使用 Win32 和C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
-  - [开始使用 Windows 10 应用](/windows/uwp/get-started/)
-  - [增强适用于 Windows 10 桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance)
-- Windows 10 版本 1803 版或更高版本
+- 假设你对使用 Win32 和 UWP 进行应用开发有一定的了解。 有关详细信息，请参阅：
+  - [Win32 和 C++ 入门](/windows/desktop/learnwin32/learn-to-program-for-windows)
+  - [Windows 10 应用入门](/windows/uwp/get-started/)
+  - [增强适用于 Windows 10 的桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance)
+- Windows 10 版本 1803 或更高版本
 - Windows 10 SDK 17134 或更高版本
 
-## <a name="how-to-use-composition-apis-from-a-win32-desktop-application"></a>如何使用组合 Api 从 Win32 桌面应用程序
+## <a name="how-to-use-composition-apis-from-a-win32-desktop-application"></a>如何从 Win32 桌面应用程序使用 Composition API
 
-在本教程中，创建简单的 Win32C++应用程序并向其添加 UWP 组合元素。 重点是正确配置的项目、 创建互操作代码，以及绘制简单使用 Windows 组合 Api。 已完成的应用外观如下所示。
+在本教程中，你将创建一个简单的 Win32 C++ 应用，并在其中添加 UWP 合成元素。 重点在于正确配置项目、创建互操作代码，并使用 Windows Composition API 绘制一些简单内容。 完成的应用如下所示。
 
-![在正在运行的应用程序 UI](images/visual-layer-interop/win32-comp-interop-app-ui.png)
+![正在运行的应用 UI](images/visual-layer-interop/win32-comp-interop-app-ui.png)
 
-## <a name="create-a-c-win32-project-in-visual-studio"></a>创建C++Visual Studio 中的 Win32 项目
+## <a name="create-a-c-win32-project-in-visual-studio"></a>在 Visual Studio 中创建 C++ Win32 项目
 
-第一步是在 Visual Studio 中创建 Win32 应用程序项目。
+第一步是在 Visual Studio 中创建 Win32 应用项目。
 
-若要创建新的 Win32 应用程序项目中C++名为_HelloComposition_:
+若要在 C++ 中创建名为 HelloComposition 的新 Win32 应用程序项目： 
 
-1. 打开 Visual Studio 并选择**文件** > **新建** > **项目**。
+1. 打开 Visual Studio 并选择“文件” > “新建” > “项目”。   
 
-    **新的项目**对话框随即打开。
-1. 下**已安装**类别中，展开**Visual C++** 节点，，然后选择**Windows Desktop**。
-1. 选择**Windows 桌面应用程序**模板。
-1. 输入的名称_HelloComposition_，然后单击**确定**。
+    此时会打开“新建项目”对话框。 
+1. 在“安装”类别下展开“Visual C++”节点，然后选择“Windows 桌面”。   
+1. 选择“Windows 桌面应用程序”模板。 
+1. 输入名称 HelloComposition，然后单击“确定”。  
 
-    Visual Studio 创建项目并打开主应用程序文件的编辑器。
+    Visual Studio 将创建该项目，并打开主应用文件的编辑器。
 
-## <a name="configure-the-project-to-use-windows-runtime-apis"></a>将项目配置为使用 Windows 运行时 Api
+## <a name="configure-the-project-to-use-windows-runtime-apis"></a>将项目配置为使用 Windows 运行时 API
 
-若要使用 Windows 运行时 (WinRT) Api 在 Win32 应用程序中，我们使用C++/WinRT。 你需要配置 Visual Studio 项目添加C++/WinRT 支持。
+为了在 Win32 应用中使用 Windows 运行时 (WinRT) API，我们将使用 C++/WinRT。 需要配置 Visual Studio 项目才能添加 C++/WinRT 支持。
 
-(有关详细信息，请参阅[入门C++/WinRT-修改 Windows 桌面应用程序项目，以添加C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support))。
+（有关详细信息，请参阅 [C++/WinRT 入门 - 修改 Windows 桌面应用程序项目以添加 C++/WinRT 支持](/windows/uwp/cpp-and-winrt-apis/get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support)）。
 
-1. 从**项目**菜单中，打开项目属性 (_HelloComposition 属性_)，并确保以下设置是否设为指定的值：
+1. 在“项目”菜单中，打开项目属性（HelloComposition 属性），并确保对以下设置使用指定值：  
 
-    - 有关**配置**，选择_所有配置_。 有关**平台**，选择_所有平台_。
-    - **配置属性** > **常规** > **Windows SDK 版本** = _10.0.17763.0_或更高版本
+    - 对于“配置”，请选择“所有配置”。   对于“平台”，请选择“所有平台”。  
+    - “配置属性” > “常规” > “Windows SDK 版本” = “10.0.17763.0 或更高版本”    
 
     ![设置 SDK 版本](images/visual-layer-interop/sdk-version.png)
 
-    - **C /C++** > **语言** >   **C++语言标准** = _ISO C++ 17 标准 (/ stf:c + + 17)_
+    - “C/C++” > “语言” > “C++ 语言标准” = “ISO C++ 17 标准(/stf:c++17)”    
 
-    ![设置的语言标准](images/visual-layer-interop/language-standard.png)
+    ![设置语言标准](images/visual-layer-interop/language-standard.png)
 
-    - **链接器** > **输入** > **附加依赖项**必须包括"_windowsapp.lib_"。 如果它不包含在列表中，请将其添加。
+    - “链接器” > “输入” > “其他依赖项”必须包括“windowsapp.lib”。     如果列表中不包括此项，请添加它。
 
     ![添加链接器依赖项](images/visual-layer-interop/linker-dependencies.png)
 
-1. 更新预编译标头
+1. 更新预编译的标头
 
-    - 重命名`stdafx.h`并`stdafx.cpp`到`pch.h`和`pch.cpp`分别。
-    - 设置项目属性**C /C++** > **预编译标头** > **预编译头文件**到*pch.h*.
-    - 查找和替换`#include "stdafx.h"`与`#include "pch.h"`中的所有文件。
+    - 将 `stdafx.h` 和 `stdafx.cpp` 分别重命名为 `pch.h` 和 `pch.cpp`。
+    - 将项目属性“C/C++” > “预编译的标头” > “预编译的标头文件”设置为 pch.h。    
+    - 在所有文件中找到 `#include "stdafx.h"` 并将其替换为 `#include "pch.h"`。
 
-        (**编辑** > **查找和替换** > **在文件中查找**)
+        （“编辑” > “查找和替换” > “在文件中查找”）   
 
-        ![查找和替换 stdafx.h](images/visual-layer-interop/replace-stdafx.png)
+        ![查找并替换 stdafx.h](images/visual-layer-interop/replace-stdafx.png)
 
-    - 在中`pch.h`，包括`winrt/base.h`和`unknwn.h`。
+    - 在 `pch.h` 中包含 `winrt/base.h` 和 `unknwn.h`。
 
         ```cppwinrt
         // reference additional headers your program requires here
@@ -94,28 +94,28 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
         #include <winrt/base.h>
         ```
 
-它是一个好办法生成项目，在这里以确保在继续之前没有任何错误。
+此时最好是生成项目，以确保在继续操作之前不会出错。
 
-## <a name="create-a-class-to-host-composition-elements"></a>创建类中的，以便主机组合元素
+## <a name="create-a-class-to-host-composition-elements"></a>创建一个类用于承载合成元素
 
-承载内容创建和可视化层，创建一个类 (_CompositionHost_) 来管理互操作以及创建组合元素。 这是您可以执行操作的大多数托管组合 Api，包括配置：
+若要使用视觉层承载创建的内容，请创建一个类 (CompositionHost) 用于管理互操作并创建合成元素。  将在此类中完成用于承载 Composition API 的大部分配置，包括：
 
-- 获取[复合器](/uwp/api/windows.ui.composition.compositor)，其用于创建和管理中的对象[Windows.UI.Composition](/uwp/api/windows.ui.composition)命名空间。
-- 创建[DispatcherQueueController](/uwp/api/windows.system.dispatcherqueuecontroller)/[DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) WinRT Api 的管理任务。
-- 创建[DesktopWindowTarget](/uwp/api/windows.ui.composition.desktop.desktopwindowtarget)和撰写容器以显示组合对象。
+- 获取用于创建和管理 [Windows.UI.Composition](/uwp/api/windows.ui.composition) 命名空间中的对象的 [Compositor](/uwp/api/windows.ui.composition.compositor)。
+- 创建一个 [DispatcherQueueController](/uwp/api/windows.system.dispatcherqueuecontroller)/[DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) 用于管理 WinRT API 的任务。
+- 创建一个 [DesktopWindowTarget](/uwp/api/windows.ui.composition.desktop.desktopwindowtarget) 和合成容器用于显示合成对象。
 
-我们将此类的单一实例，以避免线程处理问题。 例如，你只能创建一个调度程序队列，每个线程，以便实例化 CompositionHost 同一线程上的第二个实例会导致错误。
+我们将此类设为单一实例，以免出现线程问题。 例如，只能为每个线程创建一个调度程序队列，因此，在同一线程中实例化 CompositionHost 的另一个实例会导致出错。
 
 > [!TIP]
-> 如果需要检查的教程，请确保所有代码都都在正确位置放置在演练本教程末尾的完整代码。
+> 如果需要，请检查本教程末尾的完整代码，确保在完成本教程的过程中，所有代码位于正确的位置。
 
 1. 向你的项目中添加一个新类文件。
-    - 在中**解决方案资源管理器**，右键单击_HelloComposition_项目。
-    - 在上下文菜单中，选择**外** > **类...** .
-    - 在中**添加类**对话框中，类命名_CompositionHost.cs_，然后单击**添加**。
+    - 在“解决方案资源管理器”中右键单击“HelloComposition”项目。  
+    - 在上下文菜单中，选择“添加” > “类...”。  
+    - 在“添加类”对话框中，将类命名为 CompositionHost.cs，然后单击“添加”。   
 
-1. 包含标头和_using_所需的组合互操作。
-    - 在中 CompositionHost.h，添加以下_包括_文件的顶部。
+1. 包含合成互操作所需的标头和 using 语句。 
+    - 在 CompositionHost.h 文件的顶部，添加这些 include 语句。 
 
     ```cppwinrt
     #pragma once
@@ -124,7 +124,7 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     #include <DispatcherQueue.h>
     ```
 
-    - 在中 CompositionHost.cpp，添加以下_using_后任何文件的顶部_包括_。
+    - 在 CompositionHost.cpp 文件顶部的任何 include 语句后面添加这些 using 语句。  
 
     ```cppwinrt
     using namespace winrt;
@@ -135,9 +135,9 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     using namespace Windows::Foundation::Numerics;
     ```
 
-1. 编辑要使用单一实例模式的类。
-    - 在 CompositionHost.h，请在构造函数专用。
-    - 声明为公共静态_GetInstance_方法。
+1. 编辑该类以使用单一实例模式。
+    - 在 CompositionHost.h 中，将构造函数设为专用构造函数。
+    - 声明公共静态 GetInstance 方法。 
 
     ```cppwinrt
     class CompositionHost
@@ -151,7 +151,7 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     };
     ```
 
-    - 在 CompositionHost.cpp，添加的定义_GetInstance_方法。
+    - 在 CompositionHost.cpp 中，添加 GetInstance 方法的定义。 
 
     ```cppwinrt
     CompositionHost* CompositionHost::GetInstance()
@@ -161,7 +161,7 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     }
     ```
 
-1. CompositionHost.h，在声明私有成员变量的复合器、 DispatcherQueueController，和 DesktopWindowTarget。
+1. 在 CompositionHost.h 中，声明 Compositor、DispatcherQueueController 和 DesktopWindowTarget 的专用成员变量。
 
     ```cppwinrt
     winrt::Windows::UI::Composition::Compositor m_compositor{ nullptr };
@@ -169,17 +169,17 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     winrt::Windows::UI::Composition::Desktop::DesktopWindowTarget m_target{ nullptr };
     ```
 
-1. 添加一个公共方法来初始化组合互操作对象。
+1. 添加一个公共方法用于初始化合成互操作对象。
     > [!NOTE]
-    > 在_初始化_，则调用_EnsureDispatcherQueue_， _CreateDesktopWindowTarget_，以及_CreateCompositionRoot_方法。 在下一步骤中创建这些方法。
+    > 在 Initialize 中，调用 EnsureDispatcherQueue、CreateDesktopWindowTarget 和 CreateCompositionRoot 方法。     将在后续步骤中创建这些方法。
 
-    - 在 CompositionHost.h，声明一个名为的公共方法_初始化_采用 HWND 作为自变量。
+    - 在 CompositionHost.h 中，声明采用 HWND 作为参数的、名为 Initialize 的公共方法。 
 
     ```cppwinrt
     void Initialize(HWND hwnd);
     ```
 
-    - 在 CompositionHost.cpp，添加的定义_初始化_方法。
+    - 在 CompositionHost.cpp 中，添加 Initialize 方法的定义。 
 
     ```cppwinrt
     void CompositionHost::Initialize(HWND hwnd)
@@ -192,17 +192,17 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     }
     ```
 
-1. 将使用 Windows 组合的线程上创建一个调度程序队列。
+1. 在要使用 Windows Composition 的线程中创建调度程序队列。
 
-    必须具有的调度程序队列，因此此方法在初始化期间调用第一个线程上创建排序器。
+    必须在包含调度程序队列的线程中创建 Compositor，因此在初始化期间首先会调用此方法。
 
-    - 在 CompositionHost.h，声明一个名为私有方法_EnsureDispatcherQueue_。
+    - 在 CompositionHost.h 中，声明名为 EnsureDispatcherQueue 的专用方法。 
 
     ```cppwinrt
     void EnsureDispatcherQueue();
     ```
 
-    - 在 CompositionHost.cpp，添加的定义_EnsureDispatcherQueue_方法。
+    - 在 CompositionHost.cpp 中，添加 EnsureDispatcherQueue 方法的定义。 
 
     ```cppwinrt
     void CompositionHost::EnsureDispatcherQueue()
@@ -225,14 +225,14 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     }
     ```
 
-1. 将在应用程序窗口注册为一个组合目标。
-    - 在 CompositionHost.h，声明一个名为私有方法_CreateDesktopWindowTarget_采用 HWND 作为自变量。
+1. 将应用的窗口注册为合成目标。
+    - 在 CompositionHost.h 中，声明采用 HWND 作为参数的、名为 CreateDesktopWindowTarget 的专用方法。 
 
     ```cppwinrt
     void CreateDesktopWindowTarget(HWND window);
     ```
 
-    - 在 CompositionHost.cpp，添加的定义_CreateDesktopWindowTarget_方法。
+    - 在 CompositionHost.cpp 中，添加 CreateDesktopWindowTarget 方法的定义。 
 
     ```cppwinrt
     void CompositionHost::CreateDesktopWindowTarget(HWND window)
@@ -246,14 +246,14 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     }
     ```
 
-1. 创建用于保存视觉对象的根 visual 容器。
-    - 在 CompositionHost.h，声明一个名为私有方法_CreateCompositionRoot_。
+1. 创建一个根视觉容器用于保存视觉对象。
+    - 在 CompositionHost.h 中，声明名为 CreateCompositionRoot 的专用方法。 
 
     ```cppwinrt
     void CreateCompositionRoot();
     ```
 
-    - 在 CompositionHost.cpp，添加的定义_CreateCompositionRoot_方法。
+    - 在 CompositionHost.cpp 中，添加 CreateCompositionRoot 方法的定义。 
 
     ```cppwinrt
     void CompositionHost::CreateCompositionRoot()
@@ -265,24 +265,24 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     }
     ```
 
-生成项目现在以确保没有任何错误。
+立即生成项目以确保不会出错。
 
-这些方法将设置为可视化层 UWP 和 Win32 Api 之间的互操作所需的组件。 现在可以将内容添加到您的应用程序。
+这些方法将设置 UWP 视觉层与 Win32 API 之间的互操作所需的组件。 现在，可将内容添加到应用。
 
-### <a name="add-composition-elements"></a>添加组合元素
+### <a name="add-composition-elements"></a>添加合成元素
 
-与基础结构，您现在可以生成你想要显示的组合内容。
+准备好基础结构后，接下来可以生成要显示的合成内容。
 
-对于此示例中，添加代码，将创建一个随机颜色的正方形[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)通过后，即可删除一小段延迟后将动画。
+对于本示例，你将添加用于创建随机色彩的正方形 [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) 的代码，经过短暂的延迟后，该正方形将通过动画效果落下。
 
-1. 添加组合元素。
-    - 在 CompositionHost.h，声明一个名为的公共方法_AddElement_采用 3 **float**值作为参数。
+1. 添加合成元素。
+    - 在 CompositionHost.h 中，声明采用 3 个浮点值作为参数的、名为 AddElement 的公共方法。  
 
     ```cppwinrt
     void AddElement(float size, float x, float y);
     ```
 
-    - 在 CompositionHost.cpp，添加的定义_AddElement_方法。
+    - 在 CompositionHost.cpp 中，添加 AddElement 方法的定义。 
 
     ```cppwinrt
     void CompositionHost::AddElement(float size, float x, float y)
@@ -320,11 +320,11 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     }
     ```
 
-## <a name="create-and-show-the-window"></a>创建和显示窗口
+## <a name="create-and-show-the-window"></a>创建并显示窗口
 
-现在，可以向你 Win32 的 UI 中添加一个按钮和 UWP 组合内容。
+现在，可以在 Win32 UI 中添加一个按钮和 UWP 合成内容。
 
-1. 在 HelloComposition.cpp，顶部的文件，包括_CompositionHost.h_、 定义 BTN_ADD，并获取 CompositionHost 的实例。
+1. 在 HelloComposition.cpp 文件的顶部包含 CompositionHost.h，定义 BTN_ADD，并获取 CompositionHost 的实例。 
 
     ```cppwinrt
     #include "CompositionHost.h"
@@ -335,14 +335,14 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     CompositionHost* compHost = CompositionHost::GetInstance();
     ```
 
-1. 在`InitInstance`方法中，更改已创建的窗口的大小。 (在这行内容，更改`CW_USEDEFAULT, 0`到`900, 672`。)
+1. 在 `InitInstance` 方法中，更改创建的窗口的大小。 （在此行中，将 `CW_USEDEFAULT, 0` 更改为 `900, 672`。）
 
     ```cppwinrt
     HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, 900, 672, nullptr, nullptr, hInstance, nullptr);
     ```
 
-1. 在 WndProc 函数中，添加`case WM_CREATE`到_消息_switch 块。 在这种情况下，您初始化 CompositionHost 并创建按钮。
+1. 在 WndProc 函数中，将 `case WM_CREATE` 添加到 message 开关块。  在本例中，你将初始化 CompositionHost 并创建按钮。
 
     ```cppwinrt
     case WM_CREATE:
@@ -358,9 +358,9 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     break;
     ```
 
-1. 此外在 WndProc 函数中，处理按钮单击以向 UI 添加组合元素。 
+1. 另外，在 WndProc 函数中，处理按钮单击以将合成元素添加到 UI。 
 
-    添加`case BTN_ADD`到_wmId_ WM_COMMAND 块中的 switch 块。
+    将 `case BTN_ADD` 添加到 WM_COMMAND 块中的 wmId 开关块。 
 
     ```cppwinrt
     case BTN_ADD: // addButton click
@@ -373,17 +373,17 @@ GitHub 上提供了本教程的完整代码：[Win32 HelloComposition 示例](ht
     }
     ```
 
-你现在可以生成并运行您的应用程序。 如果需要检查以确保所有代码都是正确的位置在本教程的结尾处的完整代码。
+现在，可以生成并运行你的应用。 如果需要，请检查本教程末尾的完整代码，确保所有代码位于正确的位置。
 
-当运行应用并单击按钮时，应看到添加到 UI 中的动画的方块。
+运行应用并单击按钮时，应会看到已添加到 UI 中的动画正方形。
 
 ## <a name="additional-resources"></a>其他资源
 
 - [Win32 HelloComposition 示例 (GitHub)](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition)
-- [开始使用 Win32 和C++](/windows/desktop/learnwin32/learn-to-program-for-windows)
-- [开始使用 Windows 10 应用](/windows/uwp/get-started/)(UWP)
-- [增强适用于 Windows 10 桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance)(UWP)
-- [Windows.UI.Composition 命名空间](/uwp/api/windows.ui.composition)(UWP)
+- [Win32 和 C++ 入门](/windows/desktop/learnwin32/learn-to-program-for-windows)
+- [Windows 10 应用入门](/windows/uwp/get-started/) (UWP)
+- [增强适用于 Windows 10 的桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Windows.UI.Composition 命名空间](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>完成代码
 
@@ -530,7 +530,7 @@ void CompositionHost::AddElement(float size, float x, float y)
 }
 ```
 
-### <a name="hellocompositioncpp-partial"></a>HelloComposition.cpp （部分）
+### <a name="hellocompositioncpp-partial"></a>HelloComposition.cpp（部分）
 
 ```cppwinrt
 #include "pch.h"

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ffd5481fec0ebf6db24d9af95b8a11d05a043170
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 5340c8375be9cf33a8f56fdba7bd36e9743767ab
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521218"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482315"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>向 UWP 概念性文档投稿
 
@@ -22,7 +22,7 @@ ms.locfileid: "77521218"
 
 如果已处于公共内容存储库中，请首先导航到要更改的文件。 在此处，选择显示的内容上方的铅笔图标以开始编辑。
 
-或者，如果在 docs.microsoft.com 中查看页面，则可以选择页面右上角的“编辑”  按钮。 这会使你重定向到存储库中的关联源文件。
+或者，如果在 [docs.microsoft.com](https://docs.microsoft.com) 中查看页面，则可以选择页面右上角的“编辑”按钮。  这会使你重定向到存储库中的关联源文件。
 
 开始编辑时，GitHub 会自动将官方存储库分叉到你的个人 GitHub 帐户中，在其中可以进行更改。 完成后，将拉取请求提交回“文档”  分支。
 

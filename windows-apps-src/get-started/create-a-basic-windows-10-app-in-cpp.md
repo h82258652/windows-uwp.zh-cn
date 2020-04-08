@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 13e6f4ac59a99463cd891e936f51449baf4ea7c2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4c388b9b81744c0d27d96c1f97b4e405af63eaef
+ms.sourcegitcommit: fc5db2e26db65be025e9f62044b4d29bb1744f8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259541"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80524086"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 创建“Hello world”应用
 
