@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, COM, 组件, 类, 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9bdfcee8811e52587eb4fcd59913a731b799a2
-ms.sourcegitcommit: cab95379459ad378163aa4469c9dc6c509cc8c43
+ms.openlocfilehash: 6a286056fc0c44d01482e23e52df0fa80eca0515
+ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79511000"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80218517"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 
@@ -127,14 +127,7 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>采用 **IUnknown** 接口指针的 COM 函数
 
-可以调用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 自由函数，将 **com_ptr** 传递给采用 **IUnknown** 接口指针的函数。
-
-```cppwinrt
-winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
-    ...
-    winrt::get_unknown(CoreWindow::GetForCurrentThread()),
-    ...));
-```
+可以调用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 自由函数，将 **com_ptr** 传递给采用 **IUnknown** 接口指针的函数。 有关代码示例，请参阅该主题。
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>传递和返回 COM 智能指针
 
@@ -171,7 +164,7 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 若要生成并运行此源代码示例，请先在 Visual Studio 中创建一个新的 **Core 应用 (C++/WinRT)** 。 `Direct2D` 是项目的合理名称，但你可以指定任意名称。
 
-打开 `pch.h`，并在包含 `windows.h` 后立即添加 `#include <unknwn.h>`。
+打开 `pch.h`，并在包含 `windows.h` 后立即添加 `#include <unknwn.h>`。 这是因为我们使用的是 [winrt::get_unknown  ](/uwp/cpp-ref-for-winrt/get-unknown)。 在使用 winrt::get_unknown  时，即使该标头已包含在另一个标头中，显式执行 `#include <unknwn.h>` 仍是不错的做法。
 
 打开 `App.cpp`，删除其整个内容，然后粘贴以下列表。
 

@@ -1,6 +1,6 @@
 ---
 description: 用于调试和测试应用如何与进程周期管理配合使用的工具和技术。
-title: 测试和调试进程生存期管理
+title: 测试和调试进程周期管理
 ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,7 +8,7 @@ ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
 ms.openlocfilehash: 6912d7faa3a86dade13b60eac5654aef8a52173d
 ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/03/2019
 ms.locfileid: "74735012"

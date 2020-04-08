@@ -1,19 +1,19 @@
 ---
 description: 本指南介绍如何直接在 WPF 和 Windows 窗体应用程序中创建基于 Fluent 的 UWP UI
 title: 桌面应用中的 UWP 控件
-ms.date: 01/24/2020
+ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, windows 窗体, wpf, xaml 岛
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 061ad7a3f63fc92dd2f865f8870c7de5edf862af
-ms.sourcegitcommit: 756217c559155e172087dee4d762d328c6529db6
+ms.openlocfilehash: 0f596047cfdd01fcfca568ea1c63b1e2cc14c272
+ms.sourcegitcommit: 1670eec29b4360ec37cde2910b76078429273cb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/09/2020
-ms.locfileid: "78935349"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80329506"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 UWP XAML 控件（XAML 岛）
 
@@ -21,7 +21,7 @@ ms.locfileid: "78935349"
 
 可以托管派生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的任何 UWP 控件，其中包括：
 
-* Windows SDK 或 WinUI 库提供的任何第一方 UWP 控件。
+* Windows SDK 提供的任何第一方 UWP 控件。
 * 任何自定义 UWP 控件（例如，包含多个可一起使用的 UWP 控件的用户控件）。 必须有自定义控件的源代码，才能通过应用程序对其进行编译。
 
 从根本上讲，XAML 岛使用 UWP XAML 托管 API  创建。 此 API 包含 Windows 10 版本 1903 SDK 中引入的几个 Windows 运行时类和 COM 接口。 我们还在 [Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中提供了一组 XAML 岛 .NET 控件（此工具包在内部使用 UWP XAML 托管 API），并针对 WPF 和 Windows 窗体应用提供了更方便的开发体验。
@@ -30,6 +30,13 @@ ms.locfileid: "78935349"
 
 > [!NOTE]
 > 如果有关于 XAML 岛的反馈，请在 [Microsoft.Toolkit.Win32 存储库](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)中创建一个新问题，将你的意见留在那里。 若要私下提交反馈，可将其发送到 XamlIslandsFeedback@microsoft.com。 你的意见和方案对我们至关重要。
+
+## <a name="requirements"></a>要求
+
+XAML 岛具有以下运行时要求：
+
+* Windows 10 版本 1903 或更高版本。
+* 如果你的应用程序未打包到 [MSIX 包](https://docs.microsoft.com/windows/msix)中用于部署，则必须在计算机上安装 [Visual C++ 运行时](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF 和 Windows 窗体应用程序
 
@@ -99,7 +106,11 @@ Windows 社区工具包还提供了以下 .NET 控件，用于在 WPF 和 Window
 
 C++ Win32 应用程序不支持 XAML 岛 .NET 控件。 这些应用程序必须改用 Windows 10 SDK（版本 1903 及更高版本）提供的 UWP XAML 托管 API  。
 
-UWP XAML 托管 API 包含多个 Windows 运行时类和 COM 接口，可供 C++ Win32 应用程序用来托管派生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的任何 UWP 控件。 可以在具有关联窗口句柄 (HWND) 的应用程序的任何 UI 元素中托管 UWP 控件。 有关此 API 的详细信息（包括先决条件），请参阅[在 C++ Win32 应用中使用 UWP XAML 托管 API](using-the-xaml-hosting-api.md)。
+UWP XAML 托管 API 包含多个 Windows 运行时类和 COM 接口，可供 C++ Win32 应用程序用来托管派生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 的任何 UWP 控件。 可以在具有关联窗口句柄 (HWND) 的应用程序的任何 UI 元素中托管 UWP 控件。 有关此 API 的详细信息，请参阅以下文章。
+
+* [在 C++ Win32 应用中使用 UWP XAML 托管 API](using-the-xaml-hosting-api.md)
+* [在 C++ Win32 应用中托管标准 UWP 控件](host-standard-control-with-xaml-islands-cpp.md)
+* [在 C++ Win32 应用中托管自定义 UWP 控件](host-custom-control-with-xaml-islands-cpp.md)
 
 > [!NOTE]
 > Windows 社区工具包中的包装控件和主机控件在内部使用 UWP XAML 托管 API，并实现你在直接使用 UWP XAML 托管 API 时需要自行处理的所有行为，包括键盘导航和布局更改。 对于 WPF 和 Windows 窗体应用程序，强烈建议使用这些控件而不是直接使用 UWP XAML 托管 API，因为它们抽象掉了使用 API 的许多实现细节。
@@ -112,7 +123,33 @@ UWP XAML 托管 API 包含多个 Windows 运行时类和 COM 接口，可供 C++
 
 此图表底部所示的 API 随 Windows SDK 提供。 包装控件和主机控件可通过 Windows 社区工具包中的 NuGet 包获得。
 
-## <a name="window-host-context-for-xaml-islands"></a>XAML 岛的窗口宿主上下文
+## <a name="limitations-and-workarounds"></a>限制和解决方法
+
+以下各节讨论使用 XAML 岛的桌面应用中某些 UWP 开发方案的限制和解决方法。 
+
+### <a name="supported-only-with-workarounds"></a>仅通过使用变通方法支持
+
+:heavy_check_mark:若要访问 XAML 岛中 XAML 内容树的根元素并获取在其中托管它的上下文的相关信息，请勿使用 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 类。 相反，请使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 类。 有关详情，请参阅[本部分](#window-host-context-for-xaml-islands)。
+
+:heavy_check_mark:若要支持来自 WPF、Windows 窗体或 C++ Win32 应用的[共享协定](/windows/uwp/app-to-app/share-data)，应用必须使用 [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) 接口获取 [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) 对象，以便为特定窗口启动共享操作。 有关演示如何在 WPF 应用中使用此接口的示例，请参阅 [ShareSource 示例](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource)。
+
+:heavy_check_mark:不支持在 XAML 岛中使用具有托管控件的 `x:Bind`。 必须在 .NET 标准库中声明数据模型。
+
+### <a name="not-supported"></a>不支持
+
+:no_entry_sign:使用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控件在面向 .NET Framework 的 WPF 和 Windows 窗体应用中托管基于 C# 的第三方 UWP 控件。 面向 .NET Core 3 的应用不支持此方案。
+
+:no_entry_sign:XAML 岛中的 UWP XAML 内容在运行时不响应 Windows 主题从深到浅的变化，反之亦然。 内容会响应运行时的高对比度更改。
+
+:no_entry_sign:将 WebView  控件添加到自定义用户控件（无论是线程上、线程下还是进程外）。
+
+:no_entry_sign:在全屏模式下不支持 [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 控件和 [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) 主机控件。
+
+:no_entry_sign:带手写视图的文本输入。 有关此功能的详细信息，请参阅[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/text-handwriting-view)。
+
+:no_entry_sign:使用 `@Places` 和 `@People` 内容链接的文本控件。 有关此功能的详细信息，请参阅[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links)。
+
+### <a name="window-host-context-for-xaml-islands"></a>XAML 岛的窗口宿主上下文
 
 在桌面应用中托管 XAML 岛时，可以同时在同一线程上运行多个 XAML 内容树。 若要访问 XAML 岛中 XAML 内容树的根元素并获取在其中托管它的上下文的相关信息，请使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 类。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 类不会为 XAML 岛提供正确的信息。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 对象在线程上存在并且可供应用访问，但不会返回有意义的边界或可见性（它们始终不可见且大小为 1x1）。 有关详细信息，请参阅[窗口化宿主](/windows/uwp/design/layout/show-multiple-views#windowing-hosts)。
 
@@ -131,9 +168,11 @@ Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
 
 如果需要一个表，其中包含与窗口化相关的常见 API（应避免在 XAML 岛的上下文中使用）以及建议的 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 替换项，请查看[此部分](/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts)中的表。
 
+有关演示如何在 WPF 应用中使用此接口的示例，请参阅 [ShareSource 示例](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource)。
+
 ## <a name="feature-roadmap"></a>功能路线图
 
-下面是从 Windows 10 版本 1903 和 Windows 社区工具包发布版 6.0 开始推出的 XAML 岛相关功能的当前状态：
+下面是与 XAML 岛相关的功能的当前状态：
 
 * **C++ Win32 应用：** 从 Windows 10 版本 1903 开始推出的 UWP XAML 托管 API 被视为 1.0 版。
 * **以 .NET Framework 4.6.2 及更高版本为目标的托管应用：** 对于以 .NET Framework 4.6.2 及更高版本为目标的应用，在 [6.0.0 版 NuGet 包](#configure-your-project-to-use-the-xaml-island-net-controls)中提供的 XAML 岛控件被视为 1.0 版。
