@@ -11,29 +11,36 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a3bf48da5fdfff205b2013341aaf6869064ce341
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: c73414e897cde652d03c9ebb92528b4504241ba3
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684377"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081640"
 ---
 # <a name="person-picture-control"></a>个人图片控件
 
-如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 可以使用该控件来显示 [Contact 对象](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），也可以手动提供联系信息，例如显示名称和个人资料图片。  
+如果用户头像可用，个人图片控件将显示用户头像；否则，将显示该用户的姓名缩写或通用字形。 可以使用该控件来显示 [Contact 对象](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)（该对象管理用户的联系信息），也可以手动提供联系信息，例如显示名称和个人资料图片。
 
-> **重要的 API**：[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
-
-该图显示两个人图片控件，附带两个显示用户名的[文本块](text-block.md)元素。 
 ![个人图片控件](images/person-picture/person-picture_hero.png)
 
+ > 两个头像图片控件，附带两个显示用户名的[文本块](text-block.md)元素。
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | PersonPicture 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，包含 UWP 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[PersonPicture 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 当你想要表示用户及其联系信息时，请使用个人图片。 下面是可能使用该控件的一些示例：
+
 * 显示当前用户
 * 显示通讯簿中的联系人
-* 显示消息的发送者 
+* 显示消息的发送者
 * 显示社交媒体联系人
 
 该图在联系人列表中显示个人图片控件：![个人图片控件](images/person-picture/person-picture-control.png)
@@ -43,7 +50,7 @@ ms.locfileid: "75684377"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/PersonPicture">打开此应用，了解 PersonPicture 的实际应用</a>。</p>
     <ul>
@@ -79,7 +86,7 @@ ms.locfileid: "75684377"
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>使用个人图片控件来显示 Contact 对象
 
-可以使用用户选取器控件来显示 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象： 
+可以使用用户选取器控件来显示 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象：
 
 ```xaml
 <Page
@@ -95,7 +102,7 @@ ms.locfileid: "75684377"
 
         <PersonPicture
             Contact="{x:Bind CurrentContact, Mode=OneWay}" />
-            
+
         <Button Click="LoadContactButton_Click">Load contact</Button>
     </StackPanel>
 </Page>
@@ -127,7 +134,7 @@ namespace SampleApp
             this.InitializeComponent();
         }
 
-        private Windows.ApplicationModel.Contacts.Contact _currentContact; 
+        private Windows.ApplicationModel.Contacts.Contact _currentContact;
         public Windows.ApplicationModel.Contacts.Contact CurrentContact
         {
             get => _currentContact;
@@ -149,7 +156,7 @@ namespace SampleApp
             contact.LastName = "Sherman";
 
             // Get the app folder where the images are stored.
-            var appInstalledFolder = 
+            var appInstalledFolder =
                 Windows.ApplicationModel.Package.Current.InstalledLocation;
             var assets = await appInstalledFolder.GetFolderAsync("Assets");
             var imageFile = await assets.GetFileAsync("betsy.png");
@@ -167,11 +174,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> 为使代码简单，此示例中创建一个新的 Contact 对象。 在实际应用中，你会让用户选择一个联系人或使用 [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 查询联系人列表。 有关检索和管理联系人的信息，请参阅[联系人和日历文章](../../contacts-and-calendar/index.md)。 
+> 为使代码简单，此示例中创建一个新的 Contact 对象。 在实际应用中，你会让用户选择一个联系人或使用 [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 查询联系人列表。 有关检索和管理联系人的信息，请参阅[联系人和日历文章](../../contacts-and-calendar/index.md)。
 
 ## <a name="determining-which-info-to-display"></a>确定要显示的信息
 
-提供 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象时，个人图片控件将对其进行评估，以确定它可以显示哪些信息。 
+提供 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 对象时，个人图片控件将对其进行评估，以确定它可以显示哪些信息。
 
 如果图像可用，该控件将显示它找到的第一个图像，顺序如下：
 
@@ -181,7 +188,7 @@ namespace SampleApp
 
 通过将 PreferSmallImage 设置为 true 可以更改所选的图像；这将使 SmallDisplayPicture 的优先级比 LargeDisplayPicture 高。
 
-如果没有图像，该控件将显示联系人的姓名或缩写；如果没有任何姓名数据，该控件将显示联系人数据，如电子邮件地址或电话号码。 
+如果没有图像，该控件将显示联系人的姓名或缩写；如果没有任何姓名数据，该控件将显示联系人数据，如电子邮件地址或电话号码。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 

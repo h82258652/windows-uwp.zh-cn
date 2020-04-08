@@ -12,22 +12,22 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f623c18db5af8e503965c0c4518e35e263791a51
-ms.sourcegitcommit: 61194375c0889b73ee2b978c444c4b90a576b3e4
+ms.openlocfilehash: ad18426a36503c9a540343565c20297502810b76
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039158"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081650"
 ---
 # <a name="radio-buttons"></a>单选按钮
-
-> **重要的 API**：[RadioButton 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)、[Checked 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)、[IsChecked 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 单选按钮允许用户从一组中选择一个选项。 每个选项都表示为一个单选按钮，用户只能选择单选按钮组中的一个单选按钮。
 
 （如果你对名称感到好奇，单选按钮是根据收音机上的频道预设按钮命名的。）
 
 ![单选按钮](images/controls/radio-button.png)
+
+> **平台 API**：[RadioButton 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton)、[Checked 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)、[IsChecked 属性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -55,14 +55,14 @@ ms.locfileid: "71039158"
 
 ![组合框](images/combo_box_scroll.png)
 
-如果可用选项基于应用的当前上下文或可以动态变化，请改用单选[列表框](lists.md)。
+如果可用选项基于应用的当前上下文或可以根据其他条件动态变化，请改用单选[列表框](lists.md)。
 
 ## <a name="examples"></a>示例
 
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RadioButton">打开此应用，了解 RadioButton 的实际应用</a>。</p>
     <ul>
@@ -174,7 +174,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 ## <a name="recommendations"></a>建议
 
 -   请确保一组单选按钮的目的和当前状态十分明确。
--   将单选按钮的文本内容限制为单行。
+-   将单选按钮的文本内容限制在一行以内。
 -   如果文本内容是动态的，请考虑如何调整按钮大小，以及它周围的视觉对象将发生什么情况。
 -   请使用默认字体，除非你的品牌指南告诉你使用另一种字体。
 -   不要并排放置两个单选按钮组。 当两个两个单选按钮组并排放置时，很难确定哪些按钮属于哪个组。

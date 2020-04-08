@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 59397f12ec66bfa2864d830eaf80a9dcaaf06592
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74257884"
@@ -31,13 +31,13 @@ ms.locfileid: "74257884"
 
 考虑用户若要在应用中完成其任务，（*交互类*）所用时间的可接受范围。 为每个交互类分配一个标签、感知的用户情绪以及理想和最长持续时间。 下面是一些建议。
 
-| 交互类标签 | 用户感知                 | 理想时间            | 最大值          | 示例                                                                     |
+| 交互类标签 | 用户感知                 | 理想时间            | 最高配置          | 示例                                                                     |
 |-------------------------|---------------------------------|------------------|------------------|------------------------------------------------------------------------------|
-| 快速                    | 可察觉的最低延迟      | 100 毫秒 | 200 毫秒 | 显示应用栏；按一个按钮（第一个响应）                        |
+| 迅速                    | 可察觉的最低延迟      | 100 毫秒 | 200 毫秒 | 显示应用栏；按一个按钮（第一个响应）                        |
 | 一般                 | 快，但不够迅速             | 300 毫秒 | 500 毫秒 | 调整大小；语义缩放                                                        |
 | 响应              | 不够快，但是感觉到响应 | 500 毫秒 | 1 秒         | 导航到不同页面；从已暂停状态恢复应用          |
-| Launch                  | 有竞争优势的体验          | 1 秒         | 3 秒        | 首次启动应用，或者在应用先前已终止之后 |
-| 连续              | 不再感觉到有响应      | 500 毫秒 | 5 秒        | 从 Internet 下载文件                                            |
+| 启动                  | 有竞争优势的体验          | 1 秒         | 3 秒        | 首次启动应用，或者在应用先前已终止之后 |
+| 连续的              | 不再感觉到有响应      | 500 毫秒 | 5 秒        | 从 Internet 下载文件                                            |
 | 卡住                 | 时间长；用户可能切换    | 500 毫秒 | 10 秒       | 从应用商店安装多个应用                                         |
 
  
@@ -79,12 +79,12 @@ ms.locfileid: "74257884"
 
 你现在可以使用性能目标来影响你的应用设计。 以餐饮应用为例，当用户导航到食谱页面后，你可以选择[以增量方式更新](optimize-gridview-and-listview.md#update-items-incrementally)，这样便首先呈现食谱名称、原料延后显示，图像再进一步延后显示。 这样在平移/滚动时可保持响应速度和流畅的 UI，在交互后高保真的呈现速度将会减慢以使 UI 线程跟上步伐。 下面是要考虑的某些其他方面。
 
-**无**
+**UI**
 
 -   通过[优化 XAML 标记](optimize-xaml-loading.md)最大程度地为应用每个页面（尤其初始页面）的 UI 提高分析和加载时间效率以及内存效率。 简而言之，在需要 UI 和代码之前先将其延迟加载。
 -   对于 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)，使所有项目都保持相同大小并尽可能多地使用 [ListView 和 GridView 优化技术](optimize-gridview-and-listview.md)。
 -   采用框架可以在区块中加载并重用的标记形式声明 UI，而不是在代码中以命令方式构建。
--   在用户需要 UI 元素之前延迟创建这些元素。 请参阅 [**x:Load**](../xaml-platform/x-load-attribute.md) 属性。
+-   在用户需要 UI 元素之前延迟创建这些元素。 请参阅 [x:Load](../xaml-platform/x-load-attribute.md) 属性  。
 -   首选主题过渡和动画而不是情节提要动画。 有关详细信息，请参阅[动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)。 请记住，情节提要动画需要持续更新屏幕，并保持 CPU 和图形管道处于活动状态。 若要维持电池电量，当用户未与应用交互时，请不要运行动画。
 -   你加载的图像的大小应适合将使用 [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) 方法显示它的视图。
 
@@ -165,13 +165,13 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   针对各种不同硬件配置进行测试，包括一体机和台式电脑、笔记本电脑、超极本和平板电脑以及其他移动设备。
 -   针对各种不同屏幕尺寸进行测试。 尽管更大的屏幕可以显示更多的内容，但呈现所有额外内容可能会对性能产生负面影响。
 -   尽量消除测试因素。
-    -   在测试设备上关闭后台应用。 为此，请在 Windows 中从 "开始" 菜单中选择 "**设置**" &gt;**个性化**&gt;**锁屏**。 选择每个活动应用，然后选择“无”。
+    -   在测试设备上关闭后台应用。 若要在 Windows 中执行此操作，请在“开始”菜单中选择“设置”&gt;“个性化”&gt;“锁屏界面”    。 选择每个活动应用，然后选择“无”  。
     -   在将应用部署到测试设备之前，通过使用发布配置生成应用将其编译为本机代码。
-    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”。 在“维护”区域的“自动维护”下，选择“开始维护”并等待状态从“正在进行维护”发生变化。
+    -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”  。 在“维护”  区域的“自动维护”  下，选择“开始维护”  并等待状态从“正在进行维护”  发生变化。
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。
 -   测试降低功能可用性。 用户设备的功率可能明显低于你的开发计算机。 Windows 设计时考虑到了低功率设备，例如移动电脑。 在平台上运行的应用应确保在这些设备上也可以良好地执行。 提示：预期低功率设备的运行速度大约是台式机的四分之一，请相应地设置你的目标。
 -   使用 Microsoft Visual Studio 和 Windows Performance Analyzer 等工具的组合衡量应用性能。 Visual Studio 可以提供侧重于应用的分析，如源代码链接。 Windows Performance Analyzer 可以提供侧重于系统的分析，如提供系统信息、关于触摸操作事件以及关于磁盘输入/输出 (I/O) 和图形处理单元 (GPU) 开销的信息。 这两个工具都会跟踪捕获和导出，并且都可以重新打开共享跟踪和事后跟踪。
--   在将应用提交到应用商店进行认证之前，请确保将性能相关的测试用例合并到了[Windows 应用认证包测试](windows-app-certification-kit-tests.md)的 "性能测试" 部分中描述的，以及[UWP 应用测试事例](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10))的 "性能和稳定性" 部分。
+-   在将你的应用提交到应用商店以进行认证之前，请确保将你的测试计划合并到性能相关测试案例中，如 [Windows 应用认证工具包测试](windows-app-certification-kit-tests.md)中的“性能测试”部分以及 [UWP 应用测试案例](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10))中的“性能和稳定性”部分所述。
 
 有关详细信息，请参阅以下资源和分析工具。
 

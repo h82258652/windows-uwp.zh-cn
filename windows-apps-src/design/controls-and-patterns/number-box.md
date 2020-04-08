@@ -7,21 +7,28 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bcabe0867e21b20f97405d514b16bef2165821fb
-ms.sourcegitcommit: be25b7628b1ff22175a682e670539947db2fa85a
+ms.openlocfilehash: 5307448b6209228cd8c4550a739c6db15091ba54
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852859"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081672"
 ---
 # <a name="number-box"></a>数字框
 
 表示一个可以用来显示和编辑数字的控件。 它支持验证、递增步进以及对基本等式进行内联计算，例如加减乘除。
 
+![典型上下文菜单示例](images/contextmenu_rs2_icons.png)
 
- 重要的 API：[NumberBox 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+**获取 Windows UI 库**
 
-## <a name="is-this-the-right-control"></a>这是正确的控件吗？ 
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | NumberBox 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，包含用于 UWP 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+**Windows UI 库 API：** [NumberBox 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+
+## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 可以使用 NumberBox 控件来捕获和显示数学输入。 如果需要一个可编辑文本框来接受数字以外的输入，请使用 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控件。 如果需要一个可编辑文本框来接受密码或其他敏感输入，请参阅 [PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox)。 如果需要一个文本框来输入搜索词，请参阅 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。 如果需要输入或编辑带格式的文本，请参阅 [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)。
 
@@ -30,7 +37,7 @@ ms.locfileid: "74852859"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TextBox">打开此应用，了解 NumberBox 的实际应用</a>。</p>
     <ul>

@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f4d2443370d285322e94c4ca21e7d616f96794b7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 6b85177e5d3d0f4a2a37010ba9122861216a4b6b
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257734"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081959"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
@@ -25,17 +25,24 @@ ms.locfileid: "74257734"
 
 ![扩展的文本命令栏浮出控件](images/command-bar-flyout-header.png)
 
-> CommandBarFlyout 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
-
-> - **平台 API**：[CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **Windows UI 库 API**：[CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
-
 与 [CommandBar](app-bars.md) 一样，CommandBarFlyout 的 **PrimaryCommands** 和 **SecondaryCommands** 属性可以用来添加命令。 可以将命令置于这两个集合中，或者置于其中的一个中。 主要命令和辅助命令何时显示以及以何种方式显示取决于显示模式。
 
 命令栏浮出控件有两个显示模式：折叠和展开。  
 
-- 在折叠模式下，仅显示主要命令。 如果命令栏浮出控件包含主要命令和辅助命令，则会显示由省略号 \[•••\] 表示的“查看更多”按钮。 这样用户就可以通过切换到展开模式来访问辅助命令。
+- 在折叠模式下，仅显示主要命令。 如果命令栏浮出控件包含主要命令和辅助命令，则会显示由省略号 \[***\] 表示的“查看更多”按钮。 这样用户就可以通过切换到展开模式来访问辅助命令。
 - 在展开模式下，主要命令和辅助命令都会显示。 （如果此控件只有辅助项，则这些辅助项的显示方式类似于 MenuFlyout 控件。）
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) |  CommandBarFlyout 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，包含用于 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+>**Windows UI 库 API**：[CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>
+>**平台 API**：[CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>
+> CommandBarFlyout 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -56,7 +63,7 @@ TextCommandBarFlyout 在 TextBox、TextBlock、RichEditBox、RichTextBlock 和 P
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CommandBarFlyout">打开此应用，了解 CommandBarFlyout 的实际应用</a>。</p>
     <ul>
@@ -386,14 +393,14 @@ CommandBarFlyout 控件有 2 个可用于添加命令和内容的属性：[Prima
 
 | 命令 | 在以下情况下显示... |
 | ------- | -------- |
-| Bold | 当文本控件不是只读时（仅 RichEditBox）。 |
-| Italic | 当文本控件不是只读时（仅 RichEditBox）。 |
-| Underline | 当文本控件不是只读时（仅 RichEditBox）。 |
+| 粗体 | 当文本控件不是只读时（仅 RichEditBox）。 |
+| 斜体 | 当文本控件不是只读时（仅 RichEditBox）。 |
+| 下划线 | 当文本控件不是只读时（仅 RichEditBox）。 |
 | 校对 | 当 IsSpellCheckEnabled 为 **true** 且拼写错误的文本处于选中状态时。 |
 | 剪切 | 当文本控件不是只读且文本处于选中状态时。 |
 | 复制 | 当文本处于选中状态时。 |
 | 粘贴 | 当文本控件不是只读且剪贴板有内容时。 |
-| 撤销 | 当存在可以撤消的操作时。 |
+| 撤消 | 当存在可以撤消的操作时。 |
 | 全选 | 当文本可以选择时。 |
 
 ### <a name="custom-text-command-bar-flyouts"></a>自定义文本命令栏浮出控件

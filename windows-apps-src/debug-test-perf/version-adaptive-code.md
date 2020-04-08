@@ -1,6 +1,6 @@
 ---
 title: 版本自适应代码
-description: 使用 ApiInformation 类以在保持与以前版本的兼容性的同时利用新 API
+description: 使用 ApiInformation 类，利用新 API 并保持与以前的版本兼容
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,7 +8,7 @@ ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
 ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/06/2020
 ms.locfileid: "75681978"
@@ -21,14 +21,14 @@ ms.locfileid: "75681978"
 
 ### <a name="runtime-api-checks"></a>运行时 API 检查
 
-有条件地在代码中使用 [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) 类，测试是否存在要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 **True**，从而可调用该 API。 这将允许你编写版本自适应代码，以便创建相关应用，它们使用仅在特定操作系统版本上提供的 API。
+有条件地在代码中使用 [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) 类，测试是否存在要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 **True**，从而可调用该 API。 因此，你可以编写版本自适应代码以创建这样的应用，它们使用仅在特定 OS 版本上可用的 API。
 
-下面我们看一下面向 Windows Insider Preview 中的新功能的特定示例。 有关使用 **ApiInformation** 的总体概述，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code)和博客文章[使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)。
+下面我们看一下面向 Windows Insider Preview 中的新功能的特定示例。 有关使用 ApiInformation  的总体概述，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code)和博客文章[使用 API 协定动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)。
 
 > [!TIP]
 > 许多运行时 API 检查可能会影响你的应用的性能。 在这些示例中，我们将以内联形式演示检查。 在生产代码中，应执行检查一次并缓存结果，然后在整个应用中使用缓存的结果。 
 
-### <a name="unsupported-scenarios"></a>不受支持的情形
+### <a name="unsupported-scenarios"></a>不支持的方案
 
 在大多数情况下，你可以将应用的最低版本设置为 SDK 版本 10240 并使用运行时检查，以便在应用运行在更高的版本上时启用任何新的 API。 但在某些情况下，必须提高应用的最低版本才能使用新功能。
 
@@ -71,9 +71,9 @@ ms.locfileid: "75681978"
 
 在本部分中，我们将显示多个使用 Windows 10 版本 1607 (Windows Insider Preview) 中新增 API 的自适应代码的示例。
 
-### <a name="example-1-new-enum-value"></a>示例 1：新的枚举值
+### <a name="example-1-new-enum-value"></a>示例 1：新枚举值
 
-Windows 10 版本 1607 向 [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) 枚举添加了一个新值：**ChatWithoutEmoji**。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
+Windows 10 版本 1607 向 [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) 枚举添加了一个新值：ChatWithoutEmoji  。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
 
 此示例显示了如何检查是否存在 **ChatWithoutEmoji** 枚举值，并设置 **TextBox** 的 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性（如果存在该枚举值）。 如果在应用运行所在的系统上不存在该枚举值，则改为将 **InputScope** 设置为 **Chat**。 所示代码可放置在 Page 构造函数或 Page.Loaded 事件处理程序中。
 
@@ -371,7 +371,7 @@ Windows 10 版本 1607 在 [FrameworkElement](https://docs.microsoft.com/uwp/api
 </Grid>
 ```
 
-### <a name="example-2-new-enum-value"></a>示例 2：新的枚举值
+### <a name="example-2-new-enum-value"></a>示例 2：新枚举值
 
 此示例演示了如何基于是否存在某个值设置不同的枚举值。 它使用自定义状态触发器来实现与之前的 chat 示例相同的效果。 在此示例中，使用新的 ChatWithoutEmoji 输入范围（如果设备运行的是 Windows 10 版本 1607），否则使用 **Chat** 输入范围。 使用此触发器的视觉状态可采用 *if-else* 样式进行设置，其中输入范围基于是否存在新的枚举值进行选择。
 
@@ -445,5 +445,5 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 ## <a name="related-articles"></a>相关文章
 
-- [设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-- [利用 API 协定动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)（设备系列概述）
+- [使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

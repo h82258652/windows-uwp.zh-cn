@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0d12b3b043546cd908fb474fa8ca9656d8dc56e
-ms.sourcegitcommit: bac5574a1f47a5b38c984a5482272c9e49a9c91e
+ms.openlocfilehash: 17eb1a2f24e9fd893fee1a0aff349989577375c7
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71100853"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081695"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -25,7 +25,13 @@ NavigationView 控件可为应用提供顶级导航。 它适应各种屏幕大�
 ![顶部导航](images/nav-view-header.png)<br/>
 导航视图支持顶部和左侧导航窗格或菜单 
 
-> 平台 API  ：[Windows.UI.Xaml.Controls.NavigationView 类](/uwp/api/windows.ui.xaml.controls.navigationview)
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | NavigationView  控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，包含用于 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[Windows.UI.Xaml.Controls.NavigationView 类](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > Windows UI 库 API  ：[Microsoft.UI.Xaml.Controls.NavigationView 类](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
@@ -46,7 +52,7 @@ NavigationView 是非常适合于以下功能的自适应导航控件：
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/XAML-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td><img src="images/XAML-controls-gallery-app-icon-sm.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/NavigationView">打开此应用，了解 NavigationView 的实际应用</a>。</p>
     <ul>
@@ -83,7 +89,7 @@ NavigationView 是非常适合于以下功能的自适应导航控件：
 
 :::row:::
     :::column:::
-    ### <a name="left"></a>向左
+    ### <a name="left"></a>左
     窗格会展开并位于内容左侧。</br>
     `PaneDisplayMode="Left"`
     :::column-end:::
@@ -119,7 +125,7 @@ NavigationView 是非常适合于以下功能的自适应导航控件：
     :::column-end:::
 :::row-end:::
 
-### <a name="auto"></a>自动
+### <a name="auto"></a>Auto
 
 默认情况下，PaneDisplayMode 设置为 Auto。在 Auto 模式下，导航视图会进行自适应，在窗口狭窄时为 LeftMinimal，接下来为 LeftCompact，随后在窗口变宽时为 Left。 有关更多信息，请参阅[自适应行为](#adaptive-behavior)部分。
 
@@ -226,7 +232,7 @@ NavigationView 窗格可以包含：
     :::column-end:::
 :::row-end:::
 
-### <a name="header"></a>标头
+### <a name="header"></a>Header
 
 可以通过设置 [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) 属性来添加页面标题。
 
@@ -250,7 +256,7 @@ NavigationView 窗格可以包含：
 
 默认情况下，导航视图会根据可用的屏幕空间自动更改显示模式。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) 和 [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) 属性指定显示模式更改的断点。 可以修改这些值以自定义自适应显示模式行为。
 
-### <a name="default"></a>默认
+### <a name="default"></a>默认值
 
 当 PaneDisplayMode 设置为其默认值 Auto  时，自适应行为是：
 
@@ -379,12 +385,12 @@ NavigationView 具有内置后退按钮；但是与向前导航一样，它不�
 
 :::row:::
     :::column:::
-        ![Navigation view back button in the left navigation pane](images/leftnav-back.png)<br/>
-        _The back button in the left navigation pane_
+        ![左侧导航窗格中的导航视图后退按钮](images/leftnav-back.png)<br/>
+        左侧导航窗格中的后退按钮 
     :::column-end:::
     :::column:::
-        ![Navigation view back button in the top navigation pane](images/topnav-back.png)<br/>
-        _The back button in the top navigation pane_
+        ![顶部导航窗格中的导航视图后退按钮](images/topnav-back.png)<br/>
+        顶部导航窗格中的后退按钮 
     :::column-end:::
 :::row-end:::
 
@@ -658,7 +664,7 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 
 | 显示模式 | 主题资源 |
 | ------------ | -------------- |
-| 向左 | NavigationViewExpandedPaneBackground |
+| 左 | NavigationViewExpandedPaneBackground |
 | LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
 | 顶部 | NavigationViewTopPaneBackground |
 
