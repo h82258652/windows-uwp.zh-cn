@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: b665145eac8599bae69aaf4b1951d267bf79f7a7
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 892e8e9bdeed562a83e566266a7391e9c24b2ad3
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73062099"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081731"
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
@@ -54,7 +54,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/InkCanvas">打开此应用，了解 InkCanvas 的实际应用</a>。</p>
     <ul>
@@ -139,7 +139,7 @@ InkToolbar 由两组不同的按钮类型组成：
 > [!NOTE]
 > 你无法更改内置按钮的显示顺序。 默认的显示顺序为：圆珠笔、铅笔、荧光笔、橡皮擦和标尺。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
 
-尽管 InkToolbar 可以是顶级项目，但它通常通过“墨迹书写”按钮或命令公开。 我们建议使用 Segoe MLD2 Assets 字体中的 EE56 字形作为顶级图标。
+尽管 InkToolbar 可以是最高级别项目，但它通常通过“墨迹书写”按钮或命令公开。 我们建议使用 Segoe MLD2 Assets 字体中的 EE56 字形作为顶级图标。
 
 ## <a name="inktoolbar-interaction"></a>InkToolbar 交互
 
@@ -157,8 +157,8 @@ InkToolbar 由两组不同的按钮类型组成：
 - InkCanvas 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，我们建议支持使用鼠标和触控（包括被动笔）输入的墨迹书写。
 - 将 InkToolbar 控件与 InkCanva 结合使用来提供基本墨迹书写功能和设置。 InkCanvas 和 InkToolbar 均可以采用编程方式自定义。
 - InkToolbar 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，可以支持使用鼠标和触控的墨迹书写。
-- 如果支持使用触控输入的墨迹书写，我们建议为切换按钮使用 Segoe MLD2 Assets 字体中的 ED5F 图标，并附带“触控书写”工具提示。
-- 如果提供笔划选择，我们建议为工具按钮使用 Segoe MLD2 Assets 字体中的 EF20 图标，并附带“选择工具”工具提示。
+- 如果支持使用触控输入的墨迹书写，我们建议为切换按钮使用“Segoe MLD2 Assets”中的“ED5F”图标，并附带“触摸写入”工具提示。
+- 如果提供笔划选择，我们建议为工具按钮使用“Segoe MLD2 Assets”字体中的“EF20”图标，并附带“选择”工具提示。
 - 如果使用多个 InkCanvas，我们建议使用单个 InkToolbar 控制跨画布的墨迹书写。
 - 为了实现最佳性能，我们建议更改默认的浮出控件，而不是为默认和自定义工具都创建一个自定义浮出控件。
 

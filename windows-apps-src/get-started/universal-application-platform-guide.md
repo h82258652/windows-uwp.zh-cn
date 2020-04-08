@@ -22,7 +22,7 @@ UWP 应用的特点：
 - 安全：UWP 应用声明其访问哪些设备资源和数据 用户必须对该访问授权。
 - 能够在运行 Windows 10 的所有设备上使用常见的 API。
 - 可以使用设备的特定功能并让 UI 适应不同的设备屏幕尺寸、分辨率和 DPI。
-- 通过运行 Windows 10 的所有设备（或只是你指定的设备）上的 Microsoft Store 提供。 Microsoft Store 提供了多种利你的应用赚钱的方式。
+- 可通过所有 Windows 10 设备（或仅指定的 Windows 10 设备）上的 Microsoft Store 获取。 Microsoft Store 提供多种可帮助你的应用赚钱的方法。
 - 能够在不对计算机构成风险或引起“计算机腐烂”的情况下安装和卸载。
 - 互动：使用动态磁贴、推送通知以及与 Windows 时间线和 Cortana 的“Pick Up Where I Left Off”交互的用户活动吸引用户。
 - 可使用 C#、C++、Visual Basic 和 Javascript 编程。 对于 UI，使用 XAML、HTML 或 DirectX。
@@ -41,7 +41,7 @@ Windows 10 引入了通用 Windows 平台 (UWP)，这在运行 Windows 10 的每
 
 ## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>扩展 SDK 公开特定设备类型的特殊能力
 
-如果你要使用通用 API，你的应用可以在运行 Windows 10 的所有设备上运行。 但是如果你希望 UWP 应用利用设备特定的 API，则可以。
+如果以通用 API 为目标，你的应用可以在运行 Windows 10 的所有设备上运行。 但如果希望 UWP 应用利用设备特定的 API，也同样可行。
 
 扩展 SDK 让你可以为不同设备调用专用的 API。 例如，如果你的 UWP 应用面向 IoT 设备，则可以在项目中添加 IoT 扩展 SDK 以利用特定于 IoT 设备的功能。 有关添加扩展 SDK 的详细信息，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#extension-sdks)的**扩展 SDK** 部分。
 
@@ -58,13 +58,13 @@ UI 元素通过调整其布局和比例响应应用所运行屏幕的尺寸和 D
 
 Windows 通过以下功能帮助你的 UI 面向多个设备：
 
-- 通用控件和布局面板可帮助你针对设备的屏幕分辨率优化 UI 例如，按钮和滑块等控件将自动适应设备屏幕的尺寸和 DPI 密度。 布局面板根据屏幕尺寸帮助调整内容的布局。 自适应缩放用于调整以适应不同设备的分辨率和 DPI
-- 常用的输入处理允许你通过触摸、笔、鼠标或键盘或者控制器（如 Microsoft Xbox 控制器）接收输入
+- 通用控件和布局面板可帮助你针对设备的屏幕分辨率优化 UI。 例如，按钮和滑块等控件将自动适应设备屏幕的尺寸和 DPI 密度。 布局面板根据屏幕尺寸帮助调整内容的布局。 自适应缩放根据不同设备的分辨率和 DPI 自动进行调整。
+- 通过常用的输入处理功能，可通过触摸、使用笔、鼠标、键盘或控制器（如 Microsoft Xbox 控制器）接收输入。
 - 工具可以帮助你设计出能够适应不同屏幕分辨率的 UI。
 
 你的应用 UI 的某些方面将自动适应不同的设备。 但是，你的应用的用户体验设计可能需要根据正在运行该应用的设备进行调整。 例如，照片应用在手持式小型设备上运行时可以调整其 UI，以确保该用法是单手使用的理想之选。 当照片应用在台式机上运行时，UI 应进行调整以充分利用额外的屏幕空间。
 
-## <a name="theres-one-store-for-all-devices"></a>有一个适用于所有设备的应用商店。
+## <a name="theres-one-store-for-all-devices"></a>有一个适用于所有设备的应用商店
 
 统一的 App Store 让你的应用在 Windows 10 设备（如电脑、平板电脑、Xbox、HoloLens、Surface Hub 和物联网 (IoT) 设备）上可用。 可以向 Microsoft Store 提交应用，并使其对所有类型的设备或仅对所选设备类型可用。 你将在一个位置上提交和管理适用于 Windows 设备的所有应用。 想要使用 UWP 功能实现 C++ 桌面应用的现代化并将其在 Microsoft store 内出售？ 这同样可以实现。
 

@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 320586fb8fe7f71eaea2d4b12c0dd731a1f721db
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63793790"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80080970"
 ---
 # <a name="flyouts"></a>浮出控件
 
@@ -24,20 +24,26 @@ ms.locfileid: "63793790"
 
 ![嵌套在浮出控件内的上下文菜单](../images/flyout-nested.png)
 
-> **重要的 API**：[Flyout 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](../images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 * 不要使用浮出控件替代[工具提示](../tooltips.md)或[上下文菜单](../menus.md)。 使用工具提示显示在指定时间后隐藏的简短描述。 针对与 UI 元素相关的上下文操作（如复制和粘贴）使用上下文菜单。
 
-有关何时使用浮出控件以及何时使用对话框（类似控件）的建议，请参阅[对话框和浮出控件](index.md)。 
+有关何时使用浮出控件以及何时使用对话框（类似控件）的建议，请参阅[对话框和浮出控件](index.md)。
 
 ## <a name="examples"></a>示例
 
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
     <ul>
@@ -74,7 +80,7 @@ ms.locfileid: "63793790"
   <FlyoutBase.AttachedFlyout>
     <Flyout>
       <TextBlock Text="This is some text in a flyout."  />
-    </Flyout>        
+    </Flyout>
   </FlyoutBase.AttachedFlyout>
 </Image>
 ````
@@ -121,7 +127,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 ````csharp
 private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 {
-    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);  
+    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
 }
 ````
 
@@ -157,10 +163,10 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ## <a name="light-dismiss-behavior"></a>轻型消除行为
 可通过快速的轻型消除操作来关闭浮出控件，这些操作包括
--   在浮出控件之外点击
--   按 Esc 键盘键
--   按硬件或软件系统后退按钮
--   按游戏板 B 按钮
+-    在浮出控件之外点击
+-    按 Esc 键盘键
+-    按硬件或软件系统后退按钮
+-    按游戏板 B 按钮
 
 通过点击消除时，此手势通常会被吸收，不会传递到下面的 UI。 例如，如果在开放式浮出控件后有一个按钮可见，则用户的第一次点击会消除浮出控件，但不会激活此按钮。 按下该按钮需要第二次点击。
 
@@ -177,7 +183,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
                 OverlayInputPassThroughElement="{x:Bind FavoritesBar}">
             <StackPanel>
                 <HyperlinkButton Content="Washington Trails Association"/>
-                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>  
+                <HyperlinkButton Content="Washington Cascades - Go Northwest! A Travel Guide"/>
             </StackPanel>
         </Flyout>
     </Page.Resources>
@@ -188,7 +194,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel x:Name="FavoritesBar" Orientation="Horizontal">
-            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>  
+            <HyperlinkButton x:Name="PageLinkBtn">Bing</HyperlinkButton>
             <Button x:Name="Folder1" Content="Travel" Flyout="{StaticResource TravelFlyout}"/>
             <Button x:Name="Folder2" Content="Entertainment" Click="Folder2_Click"/>
         </StackPanel>

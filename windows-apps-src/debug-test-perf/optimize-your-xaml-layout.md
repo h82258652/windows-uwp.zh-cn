@@ -1,14 +1,14 @@
 ---
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: 优化 XAML 布局
-description: 布局可以是一个 XAML 应用的一个成本高昂部分 &\#8212; 这两个在 CPU 使用率和内存开销。 以下是可为提高 XAML 应用的布局性能而采取的步骤。
+description: 布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率方面还是内存开销方面。 以下是可为提高 XAML 应用的布局性能而采取的步骤。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92dca27a4cfb02f5d1bcb722683eca89ec16a6d6
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66362214"
@@ -16,9 +16,9 @@ ms.locfileid: "66362214"
 # <a name="optimize-your-xaml-layout"></a>优化 XAML 布局
 
 
-**重要的 Api**
+**重要的 API**
 
--   [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+-   [**面板**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
 
 布局是为 UI 定义可视结构的过程。 描述 XAML 中的布局的主要机制是通过面板，面板是可使你在其中定位和安排 UI 元素的容器对象。 布局可能是 XAML 应用中最耗费资源的部分，无论在 CPU 使用率还是内存开销方面。 以下是可为提高 XAML 应用的布局性能而采取的步骤。
 
@@ -42,7 +42,7 @@ ms.locfileid: "66362214"
 
 这些示例显示了实现相同 UI 的 3 种方法。 每个实现选择都会在屏幕上产生几乎相同的像素，但在实现细节方面截然不同。
 
-选项 1：嵌套[ **StackPanel** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)元素
+选项 1：嵌套 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 元素
 
 虽然这是最简单的模型，它仍然使用 5 个面板元素并导致大量的开销。
 
@@ -70,7 +70,7 @@ ms.locfileid: "66362214"
 </StackPanel>
 ```
 
-选项 2：将单个[**网格**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
+选项 2：单个 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
 
 [  **Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 增加了一些复杂性，但仅使用单个面板元素。
 
@@ -103,7 +103,7 @@ ms.locfileid: "66362214"
 </Grid>
 ```
 
-选项 3：将单个[ **RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel):
+选项 3：单个 [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)：
 
 此单个面板同样比使用嵌套面板更复杂一些，但可能比 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 更易于理解和维护。
 
@@ -134,7 +134,7 @@ ms.locfileid: "66362214"
 
 常见的 UI 要求是具有元素互相重叠的布局。 通常填充、边距、对齐和转换用于以这种方式定位元素。 已优化 XAML [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 控件以提高重叠元素的布局性能。
 
-**重要**  若要查看改进，使用单个单元格[**网格**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)。 不要定义 [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions)。
+**重要提示**  若要查看改进，请使用单个单元 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)。 不要定义 [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions)。
 
 ### <a name="examples"></a>示例
 
@@ -160,7 +160,7 @@ ms.locfileid: "66362214"
 
 ## <a name="use-a-panels-built-in-border-properties"></a>使用面板的内置边框属性
 
-[**网格**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)， [ **StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)， [ **RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)，和[ **ContentPresenter** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)控件具有内置的边框属性，可周围绘制边框它们而无需添加额外[**边框**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)元素在 XAML 中。 支持内置的边框的新属性包括：**BorderBrush**， **BorderThickness**， **CornerRadius**，并且**填充**。 其中每一属性都是 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)，因此你可以将其用于绑定和动画。 它们设计为一个单独 **Border** 元素的完整替代。
+[**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)、[**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)、[**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) 和 [**ContentPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter) 控件具有内置边框属性，可用于在其周围绘制边框，而无需向 XAML 添加额外的 [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 元素。 支持内置边框的新属性是：**BorderBrush**、**BorderThickness**、**CornerRadius** 和 **Padding**。 其中每一属性都是 [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)，因此你可以将其用于绑定和动画。 它们设计为一个单独 **Border** 元素的完整替代。
 
 如果你的 UI 具有围绕这些面板的 [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 元素，请改用内置边框，这可以在应用的布局结构中节省额外的元素。 如前面所述，这可以节省大量资源，在重复 UI 的情况下尤其如此。
 
@@ -175,11 +175,11 @@ ms.locfileid: "66362214"
 
 ## <a name="use-sizechanged-events-to-respond-to-layout-changes"></a>使用 **SizeChanged** 事件响应布局更改
 
-[ **FrameworkElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement)类公开两个类似事件进行响应布局更改：[**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated)并[ **SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)。 当在布局期间调整元素大小时，你可能正在使用其中一个事件接收通知。 两个事件的语义是不同的，因为在两者之间进行选择时有重要的性能注意事项。
+[**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 类公开两个相似的事件，用于响应布局更改：[**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)。 当在布局期间调整元素大小时，你可能正在使用其中一个事件接收通知。 两个事件的语义是不同的，因为在两者之间进行选择时有重要的性能注意事项。
 
 若要获取良好性能，选择 [**SizeChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 在大多数情况下都没有错。 **SizeChanged** 具有直观的语义。 当 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 的大小已更新时，将在布局期间引发它。
 
-[**LayoutUpdated** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated)也会在布局期间引发，但它具有全局语义 — 每次更新任何元素时引发的每个元素上。 通常只在事件处理程序中进行本地处理，在此情况下将以多于必需的频率运行代码。 仅当你需要知道元素何时在不更改大小的情况下重新定位（此情况不常见）时使用 **LayoutUpdated**。
+[**LayoutUpdated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated) 还会在布局期间引发，但它具有全局语义，无论何时更新元素，都会将其引发。 通常只在事件处理程序中进行本地处理，在此情况下将以多于必需的频率运行代码。 仅当你需要知道元素何时在不更改大小的情况下重新定位（此情况不常见）时使用 **LayoutUpdated**。
 
 ## <a name="choosing-between-panels"></a>在面板之间选择
 

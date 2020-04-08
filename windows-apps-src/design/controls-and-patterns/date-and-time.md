@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 13901e044cbf6a14ac0ede6e9ed0f451859e49a1
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 202c1cb16e461d7cfbbe82cea999f1ed17523850
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629148"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081055"
 ---
 # <a name="calendar-date-and-time-controls"></a>日历、日期和时间控件
 
@@ -30,7 +30,7 @@ ms.locfileid: "77629148"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/category/DataInput">打开此应用，了解这些控件的实际应用</a>。</p>
     <ul>
@@ -63,7 +63,7 @@ ms.locfileid: "77629148"
 ![日历日期选取器示例](images/calendar-view-3-views.png)
 
 - 如果需要允许用户选择多个日期，则必须使用 **CalendarView**。
-- 如果需要仅允许用户选取一个日期并且不需要日历始终可见，请考虑使用 **CalendarDatePicker** 或 **DatePicker** 控件。
+- 如果需要让用户仅选取单个日期并且不需要日历始终可见，请考虑使用 **CalendarDatePicker** 或 **DatePicker** 控件。
 
 ### <a name="calendar-date-picker"></a>日历日期选取器
 

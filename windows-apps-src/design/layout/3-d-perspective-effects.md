@@ -8,7 +8,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8db56882833b9d3bd8a6d2932d04e07a72b205e2
 ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/29/2019
 ms.locfileid: "66365253"
@@ -89,7 +89,7 @@ ms.locfileid: "66365253"
 
 你可以使用 [**CenterOfRotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx)、[**CenterOfRotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy) 和 [**CenterOfRotationZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationz) 属性移动旋转中心的位置。 在默认情况下，旋转的轴正好位于对象的中心，所以对象会绕着中心旋转。 但是，如果你将旋转中心移动到对象的外侧边，它将会绕着该侧边进行旋转。 **CenterOfRotationX** 和 **CenterOfRotationY** 的默认值为 0.5，而 **CenterOfRotationZ** 的默认值为 0。 对于 **CenterOfRotationX** 和 **CenterOfRotationY**，0 和 1 之间的值设置对象中某些位置的透视点。 0 值表示对象的一条边，1 表示相对的边。 允许使用超出此范围的值，并且会相应地移动旋转中心。 由于旋转中心的 z 轴穿过对象面板的中心，所以，如果你使用负值，则可以将旋转中心移到对象后；如果你使用正值，则可以将旋转中心移到对象前（面向你的方向）。
 
-[**CenterOfRotationX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx)沿 x 轴平行于的对象时旋转的中心移[ **CenterOfRotationY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy)移动中心或沿 y 轴的旋转对象。 下图演示了为 **CenterOfRotationY** 使用不同的值。
+[**CenterOfRotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationx) 沿着对象的 x 轴平行移动旋转中心，而 [**CenterOfRotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.centerofrotationy) 则沿着对象的 y 轴移动旋转中心。 下图演示了为 **CenterOfRotationY** 使用不同的值。
 
 ```xml
 <Image Source="kid.png">
@@ -99,7 +99,7 @@ ms.locfileid: "66365253"
 </Image>
 ```
 
-**CenterOfRotationY = "0.5" (default)**
+**CenterOfRotationY = "0.5"（默认值）**
 
 ![CenterOfRotationY 等于 0.5](images/3drotatexminus35.png)
 ```xml
@@ -124,7 +124,7 @@ ms.locfileid: "66365253"
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (default)**
+**CenterOfRotationX = "0.5"（默认值）**
 
 ![CenterOfRotationX 等于 0.5](images/3drotateyminus35.png)
 ```xml
@@ -135,7 +135,7 @@ ms.locfileid: "66365253"
 </Image>
 ```
 
-**CenterOfRotationX = "0.9" (right-hand edge)**
+**CenterOfRotationX = "0.9"（右边）**
 
 ![CenterOfRotationX 等于 0.9](images/3dcenterofrotationx0point9.png)
 
@@ -145,26 +145,26 @@ ms.locfileid: "66365253"
 
 至此，你了解了如何在一个空间内转动对象。 通过以下属性，你可以相对于其他对象定位一个空间内的旋转对象。
 
--   [**LocalOffsetX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx)移动沿 x 轴旋转的对象的平面的对象。
--   [**LocalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety)移动沿 y 轴旋转的对象的平面的对象。
--   [**LocalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz)移动沿 z 轴旋转的对象的平面的对象。
--   [**GlobalOffsetX** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetx)移动对象沿屏幕对齐 x 轴。
--   [**GlobalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsety)移动对象沿屏幕对齐 y 轴。
--   [**GlobalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetz)移动对象沿屏幕对齐 z 轴。
+-   [**LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx) 沿着旋转对象面板的 x 轴移动对象。
+-   [**LocalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) 沿着旋转对象面板的 y 轴移动对象。
+-   [**LocalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) 沿着旋转对象面板的 z 轴移动对象。
+-   [**GlobalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetx) 沿着屏幕的 x 轴移动对象。
+-   [**GlobalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsety) 沿着屏幕的 y 轴移动对象。
+-   [**GlobalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetz) 沿着屏幕的 z 轴移动对象。
 
-**本地偏移量**
+**局部偏移**
 
 [  **LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx)、[**LocalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) 和 [**LocalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) 属性可以在对象旋转后，沿着对象面板的相应轴转换对象。 因此，对象的旋转决定对象的转换方向。 为了介绍此概念，下一个示例使 **LocalOffsetX** 从 0 转到 400 度，使 [**RotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationy) 从 0 转到 65 度。
 
 注意，在上述示例中，对象沿着自己的 x 轴移动。 在动画最开始的位置，当 [**RotationY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationy) 值接近于零（与屏幕平行）时，对象沿着屏幕 x 轴方向移动，但是随着对象向你的方向旋转，对象会沿着面向你的对象面板的 x 轴移动。 另一方面，如果将 **RotationY** 属性转动到 -65 度，则该对象会朝远离你的方向呈曲线移动。
 
-[**LocalOffsetY** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety)工作原理类似于[ **LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx)，只不过它将沿垂直轴，因此更改[ **RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx)影响方向**LocalOffsetY**将对象移动。 在下一示例中，**LocalOffsetY** 从 0 转动到 400 度，而 **RotationX** 从 0 转动到 65 度。
+[**LocalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsety) 与 [**LocalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetx) 的工作原理相似，只不过该属性是沿着纵轴移动，所以更改 [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) 会影响 **LocalOffsetY** 移动对象的方向。 在下一示例中，**LocalOffsetY** 从 0 转动到 400 度，而 **RotationX** 从 0 转动到 65 度。
 
-[**LocalOffsetZ** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz)像直接通过从朝向自己出对象后面的中心绘制一个向量，将为与该对象的平面垂直的对象。 为了介绍 **LocalOffsetZ** 的工作原理，下一个示例使 **LocalOffsetZ** 从 0 转到 400 度，使 [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) 从 0 转到 65 度。
+[**LocalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.localoffsetz) 以垂直于对象平面的方向转换对象，就好像从对象后面直接通过平面中心向你画一条垂线一样。 为了介绍 **LocalOffsetZ** 的工作原理，下一个示例使 **LocalOffsetZ** 从 0 转到 400 度，使 [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) 从 0 转到 65 度。
 
 在动画的开始位置，当 [**RotationX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.rotationx) 值接近于零（与屏幕平行）时，对象直接向你移动，但是随着对象的表面向下旋转，该对象会向下移动。
 
-**全局偏移量**
+**全局偏移**
 
 [  **GlobalOffsetX**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetx)、[**GlobalOffsetY**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsety) 和 [**GlobalOffsetZ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.planeprojection.globaloffsetz) 属性沿着相对屏幕的轴转换对象。 也就是说，与局部偏移属性不同，对象沿着移动的轴与应用到对象的任何旋转无关。 如果你只想让对象沿着屏幕的 x-、y- 或 z- 轴移动，而不考虑应用到对象的旋转，那么，这些属性会非常有用。
 

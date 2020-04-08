@@ -74,6 +74,10 @@
               href: apps/desktop/modernize/modernize-wpf-tutorial-5.md
         - name: 向未打包的桌面应用授予标识
           href: apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md
+    - name: 针对 Windows 10 进行开发
+      items:
+        - name: Windows 10X 开发常见问题解答
+          href: apps/10x/faq.md
     - name: Fluent Design System
       href: apps/fluent-design-system.md
     - name: 辅助功能

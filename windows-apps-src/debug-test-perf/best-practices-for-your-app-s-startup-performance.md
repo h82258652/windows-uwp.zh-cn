@@ -1,14 +1,14 @@
 ---
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: 应用启动性能的最佳实践
-description: 通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。
+description: 通过用户改进处理启动和激活的方式，创建启动时间得到优化的通用 Windows 平台 (UWP) 应用。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
 ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74254687"
@@ -16,7 +16,7 @@ ms.locfileid: "74254687"
 # <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
 
-通过改进你处理启动和激活的方式，创建启动时间最短的通用 Windows 平台 (UWP) 应用。
+通过用户改进处理启动和激活的方式，创建启动时间得到优化的通用 Windows 平台 (UWP) 应用。
 
 ## <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
@@ -35,16 +35,16 @@ ms.locfileid: "74254687"
 **运行 Ngen.exe**
 
 1.  至少运行你的应用一次，以确保 Ngen.exe 能检测到它。
-2.  通过执行以下操作之一，打开“任务计划程序”：
+2.  通过执行以下操作之一，打开“任务计划程序”  ：
     -   从开始屏幕中搜索“任务计划程序”。
     -   运行“taskschd.msc”。
-3.  在“任务计划程序”的左侧窗格，展开 "任务计划程序库"。
-4.  展开 "Microsoft."
-5.  展开 "Windows."
-6.  选择 ".NET Framework"。
-7.  从任务列表中选择 ".NET Framework NGEN 4.x"。
+3.  在  “任务计划程序”的左侧窗格，展开  "任务计划程序库"。
+4.  展开  "Microsoft."
+5.  展开  "Windows."
+6.  选择  ".NET Framework"。
+7.  从任务列表中选择  ".NET Framework NGEN 4.x"。
 
-    如果你使用的是 64 位计算机，还有一个 **.NET Framework NGEN v4.x 64**。 如果你要构建 64 位应用，选择 ".NET Framework NGEN v4.x 64"。
+    如果你使用的是 64 位计算机，还有一个 **.NET Framework NGEN v4.x 64**。 如果你要构建 64 位应用，选择  ".NET Framework NGEN v4.x 64"。
 
 8.  在 **“操作”** 菜单上，单击 **“运行”** 。
 
@@ -54,7 +54,7 @@ Ngen.exe 编译计算机上所有已被使用和不拥有本机映像的应用�
 
 ### <a name="defer-work-as-long-as-possible"></a>尽量推迟工作
 
-要增加应用的启动时间，请仅处理必须要完成的工作，以让用户开始与应用交互。 如果你可延迟加载其他程序集，这样会十分有利。 常见语言运行时间加载首次使用的程序集。 如果你能将所加载的程序集数目降至最低，则应该能够改善应用的启动时间及其内存消耗。
+要改善应用的启动时间，请仅处理必须要完成的工作，以让用户开始与应用交互。 如果你可延迟加载其他程序集，这样会十分有利。 常见语言运行时间加载首次使用的程序集。 如果你能将所加载的程序集数目降至最低，则应该能够改善应用的启动时间及其内存消耗。
 
 ### <a name="do-long-running-work-independently"></a>独立执行长时间的运行工作
 

@@ -10,25 +10,35 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6cc29260f5891cda74879618b59bb3762b7f18
-ms.sourcegitcommit: f561efbda5c1d47b85601d91d70d86c5332bbf8c
+ms.openlocfilehash: edeebf177cf438931bb318ea19cd292a9c9b27c0
+ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690413"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80081603"
 ---
 # <a name="rating-control"></a>评分控件
 
 评分控件使用户能够查看和设置反映内容和服务满意度的评分。 用户可以使用触摸、笔、鼠标、游戏板或键盘操作评分控件。 下列指南介绍了如何使用分级控件的功能提供灵活性和自定义功能。
 
-> **重要的 API**：[RatingControl 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+![评分控件示例](images/rating_rs2_doc_ratings_intro.png)
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | RatingControl 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，包含用于 UWP 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [RatingControl 类](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)
+>
+> **平台 API：** [RatingControl 类](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ## <a name="examples"></a>示例
 
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RatingControl">打开此应用，了解 RatingControl 的实际应用</a>。</p>
     <ul>
@@ -38,8 +48,6 @@ ms.locfileid: "72690413"
 </td>
 </tr>
 </table>
-
-![评分控件示例](images/rating_rs2_doc_ratings_intro.png)
 
 ### <a name="editable-rating-with-placeholder-value"></a>带占位符值的可编辑评分
 
@@ -73,7 +81,7 @@ private void RatingChanged(RatingControl sender, object args)
 
 ### <a name="read-only-rating-mode"></a>只读评分模式
 
-有时，你需要显示辅助内容评分，如在推荐内容中显示或在显示评论及其相应评分的列表时显示的内容。 在这种情况下，用户不应编辑评分，所以可以将此控件设置为只读。
+有时，你需要显示辅助内容评分，如在推荐内容中显示或在显示评论及其相应评分的列表时显示的内容。 在这种情况下，用户应该不能编辑评分，所以你可以将此控件设置为只读。
 出于 UI 设计和性能原因，在非常大的虚拟化内容列表中使用评分控件时，也建议使用只读模式。
 
 ![只读长列表](images/rating_rs2_doc_reviews.png)

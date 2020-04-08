@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: fd267f96ca6931252ab3130d363447ae79820108
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 250e3626c5abee43cf3b8ca3320c78ec4f8f9751
+ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209132"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80662408"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -62,7 +62,7 @@ Windows 运行时基于组件对象模型 (COM) API，根据设计，可通过�
 
 通过 C++/WinRT，你还可以使用标准 C++ 实现自己的运行时类，而不必求助于 COM 样式的编程。 对于运行时类，你只需在 IDL 文件中描述类型，`midl.exe` 和 `cppwinrt.exe` 将为你生成实现样板源代码文件。 也可以从 C++/WinRT 基类派生，这样就可以只实现接口。 有关详细信息，请参阅[使用 C++/WinRT 创作 API](author-apis.md)。
 
-如需 `cppwinrt.exe` 工具的自定义选项的列表，请通过项目属性进行设置，详见 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
+如需 `cppwinrt.exe` 工具的自定义选项的列表，请通过项目属性进行设置，详见 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
 
 可以通过项目中安装的 **Microsoft.Windows.CppWinRT** NuGet 包来标识使用 C++/WinRT MSBuild 支持的项目。
 
