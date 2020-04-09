@@ -6,20 +6,20 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 878a598c8a0b71e4ee394f7f98c215e5462b44e7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: df93fbeb3a879a84873827a5ead926f96b02adcc
+ms.sourcegitcommit: 8ee0752099170aaf96c7cb105f7cc039b6e7ff06
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368435"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80968053"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中缺少的 .NET API
 
 在使用 .NET 生成 UWP 游戏时，你可能会发现你在 Unity 编辑器中可能使用的或用于独立电脑游戏的一些 API 对于 UWP 不存在。 这是因为适用于 UWP 应用的 .NET 包括每个命名空间的完整 .NET Framework 中提供的类型子集。
 
-此外，某些游戏引擎使用与适用于 UWP 的 .NET 不完全兼容的不同 .NET 风格，如 Unity 的 Mono。 因此当您正在编写您的游戏，所有内容可能正常在编辑器中，但适用于 UWP 生成时，可能会收到如下错误：**命名空间 System.Runtime.Serialization 中不存在类型或命名空间格式化程序 （是否缺少程序集引用？）**
+此外，某些游戏引擎使用与适用于 UWP 的 .NET 不完全兼容的不同 .NET 风格，如 Unity 的 Mono。 因此在你编写游戏时，编辑器中可能完全正常，但当你针对 UWP 进行构建时，你可能会看到如下错误：**类型或命名空间“格式化程序”在命名空间“System.Runtime.Serialization”中不存在（你是否缺少程序集引用？）**
 
-幸运的是，Unity 提供了其中一些缺少 Api 的扩展方法和中所述的替代类型为[通用 Windows 平台：缺少.NET 脚本编写后端上的.NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)。 但是，如果你需要的功能不在此处，则[适用于 Windows 8.x 应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))中讨论了转换代码以使用适用于 UWP API 的 WinRT 或 .NET 的方法。 （它讨论的是 Windows 8，但也适用于 Windows 10 UWP 应用。）
+幸运的是，Unity 提供这些缺失的 API 的一部分作为扩展方法和替代类型，在[通用 Windows 平台：在 .NET 脚本后端缺少的 .NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)对此进行了描述。 但是，如果你需要的功能不在此处，则[适用于 Windows 8.x 应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))中讨论了转换代码以使用适用于 UWP API 的 WinRT 或 .NET 的方法。 （它讨论的是 Windows 8，但也适用于 Windows 10 UWP 应用。）
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -43,7 +43,7 @@ Unity 脚本后端使用**脚本运行时版本**来允许你获取你选择的 
 
 一般情况下，对于**脚本运行时版本**和 **API 兼容性级别**，你应该选择可用的最新版本，以便提高与 .NET Framework 的兼容性，你也可以使用更多的 .NET API。
 
-![配置：脚本运行时版本;脚本编写后端;Api 兼容性级别](images/missing-dot-net-apis-in-unity-1.png)
+![配置：脚本运行时版本；脚本后端；API 兼容性级别](images/missing-dot-net-apis-in-unity-1.png)
 
 ## <a name="platform-dependent-compilation"></a>依赖于平台的编译
 
@@ -60,7 +60,7 @@ Unity 脚本后端使用**脚本运行时版本**来允许你获取你选择的 
 ```
 
 > [!NOTE]
-> `NETFX_CORE` 仅用来检查是否您正在编译C#针对.NET 脚本编写后端的代码。 如果你使用不同的脚本后端，如 IL2CPP，请改用 `UNITY_WSA_10_0`。
+> `NETFX_CORE` 仅用于检查是否正在针对 .NET 脚本编写C#后端编译代码。 如果你使用的是不同的脚本后端（例如 IL2CPP），请改用[`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) 。
 
 若要获取依赖于平台的编译指令的完整列表，请参阅[依赖于平台的编译](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)。
 
@@ -136,14 +136,14 @@ private async void GetCertificatesAsync(string certStoreName)
 
 有关使用 WinRT 安全 API 的详细信息，请参阅[安全性](https://docs.microsoft.com/windows/uwp/security/)。
 
-### <a name="networking"></a>网络
+### <a name="networking"></a>联网
 
 有些 **System&period;Net.** * 命名空间（如 [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0)）在为 UWP 生成 Unity 游戏时同样不可用。 对于这些 API 的大多数，请使用相应的 **Windows.Networking.** * 和**Windows.Web.** * WinRT API 来获取类似的功能。 有关详细信息，请参阅[网络和 Web 服务](https://docs.microsoft.com/windows/uwp/networking/)。
 
 对于 **System.Net.Mail**，请使用 [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email) 命名空间。 有关详细信息，请参阅[发送电子邮件](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-* [通用 Windows 平台：缺少.NET 脚本编写后端上的.NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [适用于 UWP 应用概述的.NET](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
+* [通用 Windows 平台： .NET 脚本后端缺少 .NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [适用于 UWP 应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [Unity UWP 移植指南](https://unity3d.com/partners/microsoft/porting-guides)
