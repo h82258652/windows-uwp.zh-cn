@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2f34c9c56cf9db5dfcfd702b97f2d34273b86e6a
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 23d7fbf129e9cf53a9510200aa4e3836dffa602f
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80226311"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482647"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管自定义 UWP 控件
 
@@ -45,20 +45,20 @@ ms.locfileid: "80226311"
 4. 在“管理 NuGet 包”窗口中，额外安装以下 NuGet 包  ：
 
     * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK)（版本 v6.0.0 或更高版本）。 此包提供了多个版本和运行时资产，可使 XAML 岛在你的应用中正常工作。
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)（版本 v6.0.0 或更高版本）。
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication)（版本 v6.0.0 或更高版本）。 此包定义 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类，你将在本演练中的后面部分使用该类。
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140)。
 
 5. 生成解决方案并确认生成成功。
 
 ## <a name="create-a-uwp-app-project"></a>创建 UWP 应用项目
 
-接下来，将 UWP (C++/WinRT)  应用项目添加到解决方案，并对此项目进行某些配置更改。 在本演练的后面部分，你将向此项目添加代码，以实现自定义 UWP XAML 控件并定义 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类（由 Windows 社区工具包提供）的实例。 你的应用将使用此类作为根元数据提供程序，以加载自定义 UWP XAML 类型的元数据。
+接下来，将 UWP (C++/WinRT)  应用项目添加到解决方案，并对此项目进行某些配置更改。 在本演练中的后面部分，你将向此项目添加代码，以实现自定义 UWP XAML 控件并定义 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类的实例。 
 
 1. 在“解决方案资源管理器”中，右键单击解决方案节点，然后选择“添加” -> “新建项目”    。
 
 2. 将空白应用 (C++/WinRT) 项目添加到你的解决方案  。 将项目命名为 MyUWPApp，并确保目标版本和最低版本均设置为 Windows 10 版本 1903 或更高版本   。
 
-3. 在 MyUWPApp 项目中安装 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 包  ：
+3. 在 MyUWPApp 项目中安装 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 包  。 此包定义 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类，你将在本演练中的后面部分使用该类。
 
     1. 右键单击 MyUWPApp 项目，然后选择“管理 NuGet 包”   。
     2. 选择“浏览”选项卡，搜索 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) 包，并安装此包的 v6.0.0 或更高版本  。
@@ -150,7 +150,7 @@ ms.locfileid: "80226311"
 你现在可以将代码添加到 MyUWPApp 项目以执行以下任务  ：
 
 * 实现自定义 UWP XAML 控件。 在本演练的后面部分，你将在 MyDesktopWin32App 项目中添加托管此控件的代码  。
-* 定义派生自 Windows 社区工具包中的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类的类型。 此类充当根元数据提供程序，用于为自定义 UWP XAML 类型加载元数据。
+* 定义派生自 Windows 社区工具包中的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类的类型。
 
 ### <a name="define-a-custom-uwp-xaml-control"></a>定义自定义 UWP XAML 控件
 
@@ -181,7 +181,7 @@ ms.locfileid: "80226311"
 
 ### <a name="define-a-xamlapplication-class"></a>定义 XamlApplication 类
 
-接下来，将 MyUWPApp 项目中的默认 App 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类   。 在本演练的后面部分，你将更新桌面项目，以创建此类的实例作为根元数据提供程序，用于加载自定义 UWP XAML 类型的元数据。
+接下来，将 MyUWPApp 项目中的默认 App 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类   。 此类支持 [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 接口，该接口使应用能够在运行时发现和加载应用程序的当前目录内程序集中的自定义 UWP XAML 控件的元数据。 此类还为当前线程初始化 UWP XAML 框架。 在本演练中的后面部分，你将更新桌面项目以创建此类的实例。
 
   > [!NOTE]
   > 使用 XAML 岛的每个解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP XAML 控件共享相同的 `XamlApplication` 对象。 
