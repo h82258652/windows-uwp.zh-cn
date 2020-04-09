@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19b473ea964ee9c6cb82098e142f066258bcf30b
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: e151e06f0ebc838671aa1100d96e8e6f14de0739
+ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081435"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80614127"
 ---
 # <a name="two-pane-view"></a>双窗格视图
 
@@ -32,20 +32,11 @@ TwoPaneView 控件旨在帮助你自动充分利用双屏设备（尽管它适�
 | ![WinUI 徽标](images/winui-logo-64x64.png) | **TwoPaneView** 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [TwoPaneView 类](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
+
+> [!TIP]
+> 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
-> **平台 API：** [TwoPaneView 类](/uwp/api/windows.ui.xaml.controls.twopaneview)
-
-在本文档中，我们将使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-```
-
-在后面的代码中，我们还将使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：
-
-```csharp
-using muxc = Microsoft.UI.Xaml.Controls;
-```
+>在后面的代码中，我们还使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：`using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 

@@ -5,11 +5,11 @@ description: 了解 Windows Device Portal 核心 REST API，可用于访问数�
 ms.custom: 19H1
 ms.date: 04/19/2019
 ms.topic: article
-keywords: windows 10、uwp、设备门户
+keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
 ms.sourcegitcommit: 8d945e0406818e614eacdc962493e570cc7615ed
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/15/2020
 ms.locfileid: "75955311"
@@ -22,7 +22,7 @@ ms.locfileid: "75955311"
 
 ### <a name="install-an-app"></a>安装应用
 
-Request
+**请求**
 
 可以使用以下请求格式安装应用。
 
@@ -34,7 +34,7 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | 包   | （**必需**）要安装的程序包的文件名。 |
 
@@ -53,16 +53,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 | 200 | 已接受和正在处理的部署请求 |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -71,7 +71,7 @@ Request
 
 ### <a name="install-a-related-set"></a>安装相关集
 
-Request
+**请求**
 
 可以使用以下请求格式安装[相关集](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
 
@@ -83,9 +83,9 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
-| 包   | （**必需**）要安装的程序包的文件名。 |
+| 包   | （必需  ）要安装的程序包的文件名。 |
 
 **请求标头**
 
@@ -102,16 +102,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 | 200 | 已接受和正在处理的部署请求 |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -120,7 +120,7 @@ Request
 
 ### <a name="register-an-app-in-a-loose-folder"></a>注册 Loose 文件夹中的应用
 
-Request
+**请求**
 
 你可以利用以下请求格式来注册 Loose 文件夹中的应用。
 
@@ -155,26 +155,26 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 | 200 | 已接受和正在处理的部署请求 |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-### <a name="register-a-related-set-in-loose-file-folders"></a>注册 Loose 文件夹中的相关集
+### <a name="register-a-related-set-in-loose-file-folders"></a>注册松散文件夹中的相关集
 
-Request
+**请求**
 
-可以使用以下请求格式注册 Loose 文件夹中的[相关集](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
+可以使用以下请求格式注册松散文件夹中的[相关集](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
 
 | 方法      | 请求 URI |
 | :------     | :----- |
@@ -216,15 +216,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 | 200 | 已接受和正在处理的部署请求 |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -233,13 +233,13 @@ Request
 
 ### <a name="get-app-installation-status"></a>获取应用安装状态
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取当前正在进行的应用安装状态。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/app/packagemanager/state |
+| GET | /api/app/packagemanager/state |
 
 **URI 参数**
 
@@ -259,16 +259,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 | 200 | 最后一个部署的结果 |
 | 204 | 安装正在运行 |
 | 404 | 未找到任何安装操作 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -277,17 +277,17 @@ Request
 
 ### <a name="uninstall-an-app"></a>卸载应用
 
-Request
+**请求**
 
 可以通过使用以下请求格式来卸载应用。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/app/packagemanager/package |
+| DELETE | /api/app/packagemanager/package |
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | 包   | （**必需**）目标应用的 PackageFullName（来自 GET /api/app/packagemanager/packages） |
 
@@ -305,16 +305,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -323,13 +323,13 @@ Request
 
 ### <a name="get-installed-apps"></a>获取已安装应用
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取系统上已安装应用的列表。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/app/packagemanager/packages |
+| GET | /api/app/packagemanager/packages |
 
 
 **URI 参数**
@@ -375,35 +375,35 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="bluetooth"></a>“蓝牙”
+## <a name="bluetooth"></a>Bluetooth
 
 <hr>
 
 ### <a name="get-the-bluetooth-radios-on-the-machine"></a>获取计算机上的蓝牙无线收发器
 
-Request
+**请求**
 
-可以通过使用以下请求格式来获取计算机上的蓝牙无线收发器的列表。 也可以使用相同的 JSON 数据升级到 WebSocket 连接。
+可以通过使用以下请求格式来获取计算机上的蓝牙无线收发器的列表。 也可以使用相同的 JSON 数据将其升级为 WebSocket 连接。
  
 | 方法        | 请求 URI |
 | :------          | :------ |
-| 获取           | /api/bt/getradios |
+| GET           | /api/bt/getradios |
 | GET/WebSocket | /api/bt/getradios |
 
 
@@ -439,15 +439,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码 | 描述 |
+| HTTP 状态代码 | 说明 |
 | :------             | :------ |
 | 200              | “确定” |
 | 4XX              | 错误代码 |
 | 5XX              | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -455,7 +455,7 @@ Request
 
 ### <a name="turn-the-bluetooth-radio-on-or-off"></a>打开或关闭蓝牙无线收发器
 
-Request
+**请求**
 
 将特定的蓝牙无线收发器设置为开或关。
  
@@ -467,10 +467,10 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
-| ID            | （**必需**）蓝牙无线收发器的设备 ID，必须经过 base 64 编码。 |
-| State         | （**必需**）这可以是 `"On"` 或 `"Off"`。 |
+| ID            | （必需  ）蓝牙无线收发器的设备 ID，必须经过 base 64 编码。 |
+| State         | （必需  ）这可以是 `"On"` 或 `"Off"`。 |
 
 **请求标头**
 
@@ -486,28 +486,28 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码 | 描述 |
+| HTTP 状态代码 | 说明 |
 | :------             | :------ |
 | 200              | “确定” |
 | 4XX              | 错误代码 |
 | 5XX              | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
 ---
-### <a name="get-a-list-of-paired-bluetooth-devices"></a>获取配对的蓝牙设备的列表
+### <a name="get-a-list-of-paired-bluetooth-devices"></a>获取配对的蓝牙设备列表
 
-Request
+**请求**
 
-你可以使用以下请求格式获取当前配对的蓝牙设备的列表。 这可以升级到具有相同 JSON 数据的 WebSocket 连接。 在 WebSocket 连接的生存期内，设备列表可能会更改。 每次有更新时，将通过 WebSocket 连接发送设备的完整列表。
+你可以使用以下请求格式获取当前配对的蓝牙设备列表。 可以使用相同的 JSON 数据将其升级为 WebSocket 连接。 在 WebSocket 连接的生存期内，设备列表可能会更改。 每次有更新时，将通过 WebSocket 连接发送完整的设备列表。
 
 | 方法        | 请求 URI       |
 | :---          | :---              |
-| 获取           | /api/bt/getpaired |
+| GET           | /api/bt/getpaired |
 | GET/WebSocket | /api/bt/getpaired |
 
 **URI 参数**
@@ -534,18 +534,18 @@ Request
     },...
 ]}
 ```
-如果设备可用于此系统上的音频，则会出现 " *AudioConnectionStatus* " 字段。 （策略和可选组件可能会影响此情况。）*AudioConnectionStatus*将为 "已连接" 或 "已断开连接"。
+如果设备可用于此系统上的音频，则 AudioConnectionStatus  字段将存在。 （策略和可选组件可能会影响此情况。）AudioConnectionStatus  将为“已连接”或“已断开连接”。
 
 ---
-### <a name="get-a-list-of-available-bluetooth-devices"></a>获取可用蓝牙设备的列表
+### <a name="get-a-list-of-available-bluetooth-devices"></a>获取可用的蓝牙设备列表
 
-Request
+**请求**
 
-可以使用以下请求格式获取可用于配对的蓝牙设备的列表。 这可以升级到具有相同 JSON 数据的 WebSocket 连接。 在 WebSocket 连接的生存期内，设备列表可能会更改。 每次有更新时，将通过 WebSocket 连接发送设备的完整列表。
+可以使用以下请求格式获取可用于配对的蓝牙设备的列表。 可以使用相同的 JSON 数据将其升级为 WebSocket 连接。 在 WebSocket 连接的生存期内，设备列表可能会更改。 每次有更新时，将通过 WebSocket 连接发送完整的设备列表。
 
 | 方法        | 请求 URI          |
 | :---          | :---                 |
-| 获取           | /api/bt/getavailable |
+| GET           | /api/bt/getavailable |
 | GET/WebSocket | /api/bt/getavailable |
 
 **URI 参数**
@@ -575,7 +575,7 @@ Request
 ---
 ### <a name="connect-a-bluetooth-device"></a>连接蓝牙设备
 
-Request
+**请求**
 
 如果设备可用于此系统上的音频，将连接到设备。 （策略和可选组件可能会影响此情况。）
 
@@ -585,9 +585,9 @@ Request
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
-| ID            | （**必需**）蓝牙设备的关联终结点 ID 必须采用 Base64 编码。 |
+| ID            | （必需  ）蓝牙设备的关联终结点 ID，必须采用 Base64 编码。 |
 
 **请求标头**
 
@@ -603,25 +603,25 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码 | 描述 |
+| HTTP 状态代码 | 说明 |
 | :---             | :--- |
 | 200              | “确定” |
 | 4XX              | 错误代码 |
 | 5XX              | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
 
 ---
-### <a name="disconnect-a-bluetooth-device"></a>断开蓝牙设备的连接
+### <a name="disconnect-a-bluetooth-device"></a>断开蓝牙设备
 
-Request
+**请求**
 
-如果设备可用于此系统上的音频，会断开设备的连接。 （策略和可选组件可能会影响此情况。）
+如果设备可用于此系统上的音频，将断开设备。 （策略和可选组件可能会影响此情况。）
 
 | 方法       | 请求 URI              |
 | :---         | :---                     |
@@ -629,9 +629,9 @@ Request
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
-| ID            | （**必需**）蓝牙设备的关联终结点 ID 必须采用 Base64 编码。 |
+| ID            | （必需  ）蓝牙设备的关联终结点 ID，必须采用 Base64 编码。 |
 
 **请求标头**
 
@@ -647,31 +647,31 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码 | 描述 |
+| HTTP 状态代码 | 说明 |
 | :---             | :--- |
 | 200              | “确定” |
 | 4XX              | 错误代码 |
 | 5XX              | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
 ---
-## <a name="device-manager"></a>“设备管理器”，
+## <a name="device-manager"></a>设备管理器
 <hr>
 
 ### <a name="get-the-installed-devices-on-the-machine"></a>获取计算机上已安装的设备
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取计算机上已安装设备的列表。
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/devicemanager/devices |
+| GET | /api/devicemanager/devices |
 
 **URI 参数**
 
@@ -706,29 +706,29 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="get-data-on-connected-usb-deviceshubs"></a>在已连接的 USB 设备/集线器上获取数据
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取已连接的 USB 设备和集线器的 USB 描述符的列表。
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /ext/devices/usbdevices |
+| GET | /ext/devices/usbdevices |
 
 
 **URI 参数**
@@ -793,14 +793,14 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
@@ -811,13 +811,13 @@ Request
 
 ### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>获取应用的所有故障转储列表
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取所有旁加载应用的所有可用故障转储列表。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/debug/dump/usermode/dumps |
+| GET | /api/debug/dump/usermode/dumps |
 
 
 **URI 参数**
@@ -840,16 +840,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -857,20 +857,20 @@ Request
 
 ### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>获取应用的故障转储集合设置
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取旁加载应用的故障转储集合设置。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/debug/dump/usermode/crashcontrol |
+| GET | /api/debug/dump/usermode/crashcontrol |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | packageFullname   | （**必需**）旁加载的应用的程序包的完整名称。 |
 
@@ -893,16 +893,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -910,20 +910,20 @@ Request
 
 ### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>删除旁加载应用的故障转储
 
-Request
+**请求**
 
 可以通过使用以下请求格式来删除旁加载应用的故障转储。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/debug/dump/usermode/crashdump |
+| DELETE | /api/debug/dump/usermode/crashdump |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | packageFullname   | （**必需**）旁加载的应用的程序包的完整名称。 |
 | fileName   | （**必需**）应该删除的转储文件的名称。 |
@@ -942,16 +942,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -959,20 +959,20 @@ Request
 
 ### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>禁用旁加载应用的故障转储
 
-Request
+**请求**
 
 可以通过使用以下请求格式来禁用旁加载应用的故障转储。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/debug/dump/usermode/crashcontrol |
+| DELETE | /api/debug/dump/usermode/crashcontrol |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | packageFullname   | （**必需**）旁加载的应用的程序包的完整名称。 |
 
@@ -990,16 +990,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1007,20 +1007,20 @@ Request
 
 ### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>下载旁加载应用的故障转储
 
-Request
+**请求**
 
 可以通过使用以下请求格式来下载旁加载应用的故障转储。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/debug/dump/usermode/crashdump |
+| GET | /api/debug/dump/usermode/crashdump |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | packageFullname   | （**必需**）旁加载的应用的程序包的完整名称。 |
 | fileName   | （**必需**）要下载的转储文件的名称。 |
@@ -1041,16 +1041,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1058,7 +1058,7 @@ Request
 
 ### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>启用旁加载应用的故障转储
 
-Request
+**请求**
 
 可以通过使用以下请求格式来启用旁加载应用的故障转储。
  
@@ -1071,7 +1071,7 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | packageFullname   | （**必需**）旁加载的应用的程序包的完整名称。 |
 
@@ -1089,14 +1089,14 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 
-**可用设备家族**
+**可用设备系列**
 
 * Windows 移动版（在 Windows 预览体验计划计划中）
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1104,13 +1104,13 @@ Request
 
 ### <a name="get-the-list-of-bugcheck-files"></a>获取检测错误文件列表
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取检测错误小型转储文件列表。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/debug/dump/kernel/dumplist |
+| GET | /api/debug/dump/kernel/dumplist |
 
 
 **URI 参数**
@@ -1141,33 +1141,33 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="download-a-bugcheck-dump-file"></a>下载检测错误转储文件
 
-Request
+**请求**
 
 可以通过使用以下请求格式来下载检测错误转储文件。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/debug/dump/kernel/dump |
+| GET | /api/debug/dump/kernel/dump |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | filename   | （**必需**）转储文件的文件名。 通过使用该 API 获取转储列表，可以找到此文件名。 |
 
@@ -1188,28 +1188,28 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="get-the-bugcheck-crash-control-settings"></a>获取检测错误故障控制设置
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取检测错误故障控制设置。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/debug/dump/kernel/crashcontrol |
+| GET | /api/debug/dump/kernel/crashcontrol |
 
 
 **URI 参数**
@@ -1238,7 +1238,7 @@ Request
 
 **转储类型**
 
-0：已禁用
+0：禁用
 
 1：完成内存转储（收集所有正在使用的内存）
 
@@ -1250,28 +1250,28 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="get-a-live-kernel-dump"></a>获取实时内核转储
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取实时内核转储。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/debug/dump/livekernel |
+| GET | /api/debug/dump/livekernel |
 
 
 **URI 参数**
@@ -1294,35 +1294,35 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="get-a-dump-from-a-live-user-process"></a>从实时用户进程中获取转储
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取实时用户进程的转储。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/debug/dump/usermode/live |
+| GET | /api/debug/dump/usermode/live |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | pid   | （**必需**）关注的进程的唯一进程 ID。 |
 
@@ -1342,22 +1342,22 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="set-the-bugcheck-crash-control-settings"></a>设置检测错误故障控制设置
 
-Request
+**请求**
 
 可以通过使用以下请求格式来设置收集检测错误数据的设置。
  
@@ -1370,7 +1370,7 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | autoreboot   | （**可选**）True 或 False。 这指示系统在出现故障或锁定后是否自动重新启动。 |
 | dumptype   | （**可选**）转储类型。 有关支持的值，请参阅 [CrashDumpType 枚举](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100))。|
@@ -1391,15 +1391,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
@@ -1410,7 +1410,7 @@ Request
 
 ### <a name="create-a-realtime-etw-session-over-a-websocket"></a>通过 WebSocket 创建实时 ETW 会话
 
-Request
+**请求**
 
 可以通过使用以下请求格式来创建实时 ETW 会话。 这将通过 WebSocket 进行管理。  ETW 事件会在服务器上进行批处理，并以每秒一次的速度发送到客户端。 
  
@@ -1439,23 +1439,23 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
 ### <a name="etw-websocket-commands"></a>ETW WebSocket 命令
 这些命令将从客户端发送到服务器。
 
-| 命令 | 描述 |
+| 命令 | 说明 |
 | :----- | :----- |
 | 提供程序 *{guid}* 启用 *{level}* | 在指定的级别上启用由 *{guid}* （不带括号）标记的提供程序。 *{level}* 是从 1（最少细节）到 5（详细）的 **int**。 |
 | 提供程序 *{guid}* 禁用 | 禁用由 *{guid}* 标记（不带括号）的提供程序。 |
@@ -1480,7 +1480,7 @@ Request
 
 负载对象是在原始 ETW 事件中提供的额外键值对 (string:string)。
 
-示例
+例如：
 ```json
 {
     "ID" : 42, 
@@ -1505,13 +1505,13 @@ Request
 
 ### <a name="enumerate-the-registered-etw-providers"></a>枚举已注册的 ETW 提供程序
 
-Request
+**请求**
 
 可以通过使用以下请求格式来枚举已注册的提供程序。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/etw/providers |
+| GET | /api/etw/providers |
 
 
 **URI 参数**
@@ -1542,14 +1542,14 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 |  200 | “确定” | 
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1557,13 +1557,13 @@ Request
 
 ### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>枚举由平台公开的自定义 ETW 提供程序。
 
-Request
+**请求**
 
 可以通过使用以下请求格式来枚举已注册的提供程序。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/etw/customproviders |
+| GET | /api/etw/customproviders |
 
 
 **URI 参数**
@@ -1595,10 +1595,10 @@ Request
 
 - 标准状态代码。
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -1610,13 +1610,13 @@ Request
 
 ### <a name="get-location-override-mode"></a>获取位置替代模式
 
-Request
+**请求**
 
 可以使用以下请求格式来获取设备的位置堆栈替代状态。 开发人员模式必须处于打开状态才能成功进行此调用。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /ext/location/override |
+| GET | /ext/location/override |
 
 
 **URI 参数**
@@ -1643,23 +1643,23 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 |  200 | “确定” | 
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ### <a name="set-location-override-mode"></a>设置位置替代模式
 
-Request
+**请求**
 
 可以使用以下请求格式来设置设备的位置堆栈替代状态。 启用后，位置堆栈允许执行位置插入。 开发人员模式必须处于打开状态才能成功进行此调用。
 
@@ -1694,29 +1694,29 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ### <a name="get-the-injected-position"></a>获取插入的位置
 
-Request
+**请求**
 
 可以使用以下请求格式来获取设备的插入（伪）位置。 必须设置插入的位置，否则将引发错误。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /ext/location/position |
+| GET | /ext/location/position |
 
 
 **URI 参数**
@@ -1746,23 +1746,23 @@ Request
 
 此 API 具有以下预期状态代码。
 
-|  HTTP 状态代码      | 描述 | 
+|  HTTP 状态代码      | 说明 | 
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ### <a name="set-the-injected-position"></a>设置插入的位置
 
-Request
+**请求**
 
 可以使用以下请求格式来设置设备的插入（伪）位置。 必须首先在设备上启用位置替代模式，并且设置的位置必须是有效位置，否则将引发错误。
 
@@ -1803,16 +1803,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -1825,13 +1825,13 @@ Request
 
 ### <a name="get-the-machine-name"></a>获取计算机名称
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取计算机的名称。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/os/machinename |
+| GET | /api/os/machinename |
 
 
 **URI 参数**
@@ -1858,16 +1858,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -1876,13 +1876,13 @@ Request
 
 ### <a name="get-the-operating-system-information"></a>获取操作系统信息
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取计算机的操作系统信息。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/os/info |
+| GET | /api/os/info |
 
 
 **URI 参数**
@@ -1915,16 +1915,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -1933,13 +1933,13 @@ Request
 
 ### <a name="get-the-device-family"></a>获取设备系列 
 
-Request
+**请求**
 
 可以使用以下请求格式来获取设备系列（Xbox、手机、台式计算机等）。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/os/devicefamily |
+| GET | /api/os/devicefamily |
 
 
 **URI 参数**
@@ -1970,16 +1970,16 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -1988,7 +1988,7 @@ DeviceType 将类似于“Windows.Xbox”、“Windows.Desktop”等。
 
 ### <a name="set-the-machine-name"></a>设置计算机名称
 
-Request
+**请求**
 
 可以通过使用以下请求格式来设置计算机的名称。
  
@@ -2001,7 +2001,7 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | name | （**必需**）计算机的新名称。 这应采用 base64 编码。 |
 
@@ -2019,14 +2019,14 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2039,13 +2039,13 @@ Request
 
 ### <a name="get-the-active-user"></a>获取活动用户
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取设备上的活动用户的名称。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/users/activeuser |
+| GET | /api/users/activeuser |
 
 
 **URI 参数**
@@ -2085,15 +2085,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2105,13 +2105,13 @@ Request
 
 ### <a name="get-the-list-of-running-processes"></a>获取正在运行的进程列表
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取当前正在运行的进程列表。  这也可以升级到 WebSocket 连接，其中相同的 WebSocket 数据将以每秒一次的速度推送到客户端。 
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/resourcemanager/processes |
+| GET | /api/resourcemanager/processes |
 | GET/WebSocket | /api/resourcemanager/processes |
 
 
@@ -2150,16 +2150,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2167,13 +2167,13 @@ Request
 
 ### <a name="get-the-system-performance-statistics"></a>获取系统性能统计信息
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取系统性能统计信息。 这包括诸如读写周期和已使用的内存等信息。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/resourcemanager/systemperf |
+| GET | /api/resourcemanager/systemperf |
 | GET/WebSocket | /api/resourcemanager/systemperf |
 
 这还可以升级到 WebSocket 连接。  它以每秒一次的速度提供以下相同的 JSON 数据。 
@@ -2229,35 +2229,35 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 <hr>
 
-## <a name="power"></a>“电源”
+## <a name="power"></a>强力
 
 <hr>
 
 ### <a name="get-the-current-battery-state"></a>获取当前的电池状态
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取电池的当前状态。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/power/battery |
+| GET | /api/power/battery |
 
 
 **URI 参数**
@@ -2292,16 +2292,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2309,13 +2309,13 @@ Request
 
 ### <a name="get-the-active-power-scheme"></a>获取活动的电源方案
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取活动的电源方案。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/power/activecfg |
+| GET | /api/power/activecfg |
 
 
 **URI 参数**
@@ -2341,28 +2341,28 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="get-the-sub-value-for-a-power-scheme"></a>获取电源方案的子值
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取电源方案的子值。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/power/cfg/ *<power scheme path>* |
+| GET | /api/power/cfg/ *<power scheme path>* |
 
 选项：
 - SCHEME_CURRENT
@@ -2385,28 +2385,28 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="get-the-power-state-of-the-system"></a>获取系统的电源状态
 
-Request
+**请求**
 
 可以通过使用以下请求格式来检查系统的电源状态。 这可让你查看它是否处于低功耗状态。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/power/state |
+| GET | /api/power/state |
 
 
 **URI 参数**
@@ -2432,15 +2432,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2448,7 +2448,7 @@ Request
 
 ### <a name="set-the-active-power-scheme"></a>设置活动的电源方案
 
-Request
+**请求**
 
 可以通过使用以下请求格式来设置活动的电源方案。
  
@@ -2461,7 +2461,7 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | scheme | （**必需**）要设置为系统的活动电源方案的方案 GUID。 |
 
@@ -2479,22 +2479,22 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="set-the-sub-value-for-a-power-scheme"></a>设置电源方案的子值
 
-Request
+**请求**
 
 可以通过使用以下请求格式来设置电源方案的子值。
  
@@ -2507,7 +2507,7 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | valueAC | （**必需**）用于交流电源的值。 |
 | valueDC | （**必需**）用于电池电源的值。 |
@@ -2526,29 +2526,29 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="get-a-sleep-study-report"></a>获取睡眠分析报告
 
-Request
+**请求**
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/power/sleepstudy/report |
+| GET | /api/power/sleepstudy/report |
 
 可以通过使用以下请求格式来获取睡眠分析报告。
 
 **URI 参数**
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | FileName | （**必需**）要下载的文件的完整名称。 此值应采用 hex64 编码。 |
 
@@ -2568,28 +2568,28 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="enumerate-the-available-sleep-study-reports"></a>枚举可用的睡眠分析报告
 
-Request
+**请求**
 
 可以通过使用以下请求格式来枚举可用的睡眠分析报告。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/power/sleepstudy/reports |
+| GET | /api/power/sleepstudy/reports |
 
 
 **URI 参数**
@@ -2620,28 +2620,28 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
 ### <a name="get-the-sleep-study-transform"></a>获取睡眠分析转换
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取睡眠分析转换。 此转换为 XSLT，可将睡眠分析报告转换为用户可以读取的 XML 格式。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/power/sleepstudy/transform |
+| GET | /api/power/sleepstudy/transform |
 
 
 **URI 参数**
@@ -2664,26 +2664,26 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * IoT
 
 <hr>
 
-## <a name="remote-control"></a>遥控器
+## <a name="remote-control"></a>远程控制
 
 <hr>
 
 ### <a name="restart-the-target-computer"></a>重新启动目标计算机
 
-Request
+**请求**
 
 可以通过使用以下请求格式来重新启动目标计算机。
  
@@ -2710,14 +2710,14 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2726,7 +2726,7 @@ Request
 
 ### <a name="shut-down-the-target-computer"></a>关闭目标计算机
 
-Request
+**请求**
 
 可以通过使用以下请求格式来关闭目标计算机。
  
@@ -2753,16 +2753,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2775,7 +2775,7 @@ Request
 
 ### <a name="start-a-modern-app"></a>启动现代应用
 
-Request
+**请求**
 
 可以通过使用以下请求格式来启动现代应用。
  
@@ -2788,7 +2788,7 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | appid   | （**必需**）要启动的应用的 PRAID。 此值应采用 hex64 编码。 |
 | 包   | （**必需**）要启动的应用包的完整名称。 此值应采用 hex64 编码。 |
@@ -2807,16 +2807,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2825,20 +2825,20 @@ Request
 
 ### <a name="stop-a-modern-app"></a>停止现代应用
 
-Request
+**请求**
 
 可以通过使用以下请求格式来停止现代应用。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/taskmanager/app |
+| DELETE | /api/taskmanager/app |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 包   | （**必需**）要停止的应用包的完整名称。 此值应采用 hex64 编码。 |
 | forcestop   | （**可选**）值为 **yes** 指示系统应强制停止所有进程。 |
@@ -2857,16 +2857,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -2875,22 +2875,22 @@ Request
 
 ### <a name="kill-process-by-pid"></a>终止 PID 进程
 
-Request
+**请求**
 
 可以使用以下请求格式终止进程。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/taskmanager/process |
+| DELETE | /api/taskmanager/process |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
-| pid   | （**必需**）要终止的进程的唯一进程 ID。 |
+| pid   | （必需  ）要终止的进程的唯一进程 ID。 |
 
 **请求标头**
 
@@ -2906,15 +2906,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -2926,13 +2926,13 @@ Request
 
 ### <a name="get-the-current-ip-configuration"></a>获取当前的 IP 配置
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取当前的 IP 配置。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/networking/ipconfig |
+| GET | /api/networking/ipconfig |
 
 
 **URI 参数**
@@ -2995,16 +2995,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3013,9 +3013,9 @@ Request
 
 ### <a name="set-a-static-ip-address-ipv4-configuration"></a>设置静态 IP 地址（IPV4 配置）
 
-Request
+**请求**
 
-设置具有静态 IP 和 DNS 的 IPV4 配置。 如果未指定静态 IP，则会启用 DHCP。 如果指定了静态 IP，则还必须指定 DNS。
+设置具有静态 IP 和 DNS 的 IPV4 配置。 如果未指定静态 IP，则会启用 DHCP。 如果指定了静态 IP，还必须指定 DNS。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
@@ -3024,14 +3024,14 @@ Request
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
-| 适配器名称 | （**必需**）网络接口 GUID。 |
+| 适配器名称 | （必需  ）网络接口 GUID。 |
 | IPAddress | 要设置的静态 IP 地址。 |
-| SubnetMask | （如果*IPAddress*不为 null，则为**必需**）静态子网掩码。 |
-| DefaultGateway | （如果*IPAddress*不为 null，则为**必需**）静态默认网关。 |
-| PrimaryDNS | （如果*IPAddress*不为 null，则为**必需**）要设置的静态主 DNS。 |
-| SecondayDNS | （如果*PrimaryDNS*不为 null，则为**必需**）要设置的静态辅助 DNS。 |
+| SubnetMask | （如果 IPAddress  不为 null，则为必需项  ）静态子网掩码。 |
+| DefaultGateway | （如果 IPAddress  不为 null，则为必需项  ）静态默认网关。 |
+| PrimaryDNS | （如果 IPAddress  不为 null，则为必需项  ）要设置的静态主 DNS。 |
+| SecondayDNS | （如果 PrimaryDNS  不为 null，则为必需项  ）要设置的静态辅助 DNS。 |
 
 为清楚起见，若要设置 DHCP 接口，只需在网络上序列化 `AdapterName`：
 
@@ -3055,16 +3055,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3073,13 +3073,13 @@ Request
 
 ### <a name="enumerate-wireless-network-interfaces"></a>枚举无线网络接口
 
-Request
+**请求**
 
 可以通过使用以下请求格式来枚举可用的无线网络接口。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wifi/interfaces |
+| GET | /api/wifi/interfaces |
 
 
 **URI 参数**
@@ -3118,16 +3118,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3136,20 +3136,20 @@ Request
 
 ### <a name="enumerate-wireless-networks"></a>枚举无线网络
 
-Request
+**请求**
 
 可以通过使用以下请求格式来枚举指定接口上的无线网络列表。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wifi/networks |
+| GET | /api/wifi/networks |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | 接口   | （**必需**）用于搜索无线网络的网络接口的 GUID，不带括号。 |
 
@@ -3189,16 +3189,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3207,7 +3207,7 @@ Request
 
 ### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>建立和断开与 WLAN 网络的连接。
 
-Request
+**请求**
 
 可以通过使用以下请求格式来建立或断开与 WLAN 网络的连接。
  
@@ -3220,12 +3220,12 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | 接口   | （**必需**）用于连接到网络的网络接口的 GUID。 |
 | op   | （**必需**）指示要执行的操作。 可能的值为 connect 或 disconnect。|
-| ssid   | （**如果 *op* == connect，则为必需项**）要连接到的 SSID。 |
-| 键   | （**如果 *op* == connect 并且网络需要身份验证，则为必需项**）共享的密钥。 |
+| ssid   | （如果 op  == connect，则为必需项  ）要连接到的 SSID。 |
+| 键   | （如果 op  == connect 并且网络需要身份验证，则为必需项  ）共享的密钥。 |
 | createprofile | （**必需**）在设备上为网络创建配置文件。  这将导致设备在将来自动连接到该网络。 这可以是**是**或**否**。 |
 
 **请求标头**
@@ -3242,14 +3242,14 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3258,23 +3258,23 @@ Request
 
 ### <a name="delete-a-wi-fi-profile"></a>删除 WLAN 配置文件
 
-Request
+**请求**
 
 可以通过使用以下请求格式来删除与特定接口上的网络关联的配置文件。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/wifi/profile |
+| DELETE | /api/wifi/profile |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | 接口   | （**必需**）与要删除的配置文件关联的网络接口的 GUID。 |
-| 配置文件   | （**必需**）要删除的配置文件名称。 |
+| profile   | （**必需**）要删除的配置文件名称。 |
 
 **请求标头**
 
@@ -3290,14 +3290,14 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -3310,20 +3310,20 @@ Request
 
 ### <a name="download-a-windows-error-reporting-wer-file"></a>下载 Windows 错误报告 (WER) 文件
 
-Request
+**请求**
 
 可以通过使用以下请求格式来下载 WER 相关的文件。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wer/report/file |
+| GET | /api/wer/report/file |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | 用户   | （**必需**）与报告关联的用户名。 |
 | 类型   | （**必需**）报告的类型。 这可以是 **queried**，也可以是 **archived**。 |
@@ -3346,15 +3346,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3362,20 +3362,20 @@ Request
 
 ### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>枚举 Windows 错误报告 (WER) 报告中的文件
 
-Request
+**请求**
 
 可以通过使用以下请求格式来枚举 WER 报告中的文件。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wer/report/files |
+| GET | /api/wer/report/files |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | 用户   | （**必需**）与报告关联的用户。 |
 | 类型   | （**必需**）报告的类型。 这可以是 **queried**，也可以是 **archived**。 |
@@ -3402,15 +3402,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3418,13 +3418,13 @@ Request
 
 ### <a name="list-the-windows-error-reporting-wer-reports"></a>列出 Windows 错误报告 (WER) 报告
 
-Request
+**请求**
 
 可以通过使用以下请求格式来获取 WER 报告。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wer/reports |
+| GET | /api/wer/reports |
 
 
 **URI 参数**
@@ -3461,15 +3461,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 桌面版
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3481,7 +3481,7 @@ Request
 
 ### <a name="start-tracing-with-a-custom-profile"></a>使用自定义配置文件开始跟踪
 
-Request
+**请求**
 
 可以通过使用以下请求格式来上载 WPR 配置文件，并使用该配置文件开始跟踪。  一次只能运行一个跟踪。 配置文件将不保留在设备上。 
  
@@ -3517,16 +3517,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3534,7 +3534,7 @@ Request
 
 ### <a name="start-a-boot-performance-tracing-session"></a>开始启动性能跟踪会话
 
-Request
+**请求**
 
 可以通过使用以下请求格式来开始启动 WPR 跟踪会话。 这也称为性能跟踪会话。
  
@@ -3547,9 +3547,9 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
-| 配置文件   | （**必需**）开始时必须使用此参数。 开始性能跟踪会话应使用的配置文件的名称。 可能的配置文件存储在 perfprofiles/profiles.json 中。 |
+| profile   | （**必需**）开始时必须使用此参数。 开始性能跟踪会话应使用的配置文件的名称。 可能的配置文件存储在 perfprofiles/profiles.json 中。 |
 
 **请求标头**
 
@@ -3574,16 +3574,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3591,13 +3591,13 @@ Request
 
 ### <a name="stop-a-boot-performance-tracing-session"></a>停止启动性能跟踪会话
 
-Request
+**请求**
 
 可以通过使用以下请求格式来停止启动 WPR 跟踪会话。 这也称为性能跟踪会话。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wpr/boottrace |
+| GET | /api/wpr/boottrace |
 
 
 **URI 参数**
@@ -3620,16 +3620,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3637,7 +3637,7 @@ Request
 
 ### <a name="start-a-performance-tracing-session"></a>开始性能跟踪会话
 
-Request
+**请求**
 
 可以通过使用以下请求格式来开始 WPR 跟踪会话。 这也称为性能跟踪会话。  一次只能运行一个跟踪。 
  
@@ -3650,9 +3650,9 @@ Request
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
-| 配置文件   | （**必需**）开始性能跟踪会话应使用的配置文件的名称。 可能的配置文件存储在 perfprofiles/profiles.json 中。 |
+| profile   | （**必需**）开始性能跟踪会话应使用的配置文件的名称。 可能的配置文件存储在 perfprofiles/profiles.json 中。 |
 
 **请求标头**
 
@@ -3677,16 +3677,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3694,13 +3694,13 @@ Request
 
 ### <a name="stop-a-performance-tracing-session"></a>停止性能跟踪会话
 
-Request
+**请求**
 
 可以通过使用以下请求格式来停止 WPR 跟踪会话。 这也称为性能跟踪会话。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wpr/trace |
+| GET | /api/wpr/trace |
 
 
 **URI 参数**
@@ -3723,16 +3723,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3740,13 +3740,13 @@ Request
 
 ### <a name="retrieve-the-status-of-a-tracing-session"></a>检索跟踪会话的状态
 
-Request
+**请求**
 
 可以通过使用以下请求格式来检索当前 WPR 会话的状态。
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wpr/status |
+| GET | /api/wpr/status |
 
 
 **URI 参数**
@@ -3776,16 +3776,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3793,13 +3793,13 @@ Request
 
 ### <a name="list-completed-tracing-sessions-etls"></a>列出已完成的跟踪会话 (ETL)
 
-Request
+**请求**
 
 可以使用以下请求格式来获取设备上的 ETL 跟踪列表。 
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wpr/tracefiles |
+| GET | /api/wpr/tracefiles |
 
 
 **URI 参数**
@@ -3834,16 +3834,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3851,20 +3851,20 @@ Request
 
 ### <a name="download-a-tracing-session-etl"></a>下载跟踪会话 (ETL)
 
-Request
+**请求**
 
 可以使用以下请求格式来下载跟踪文件（启动跟踪或用户模式跟踪）。 
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/wpr/tracefile |
+| GET | /api/wpr/tracefile |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | filename   | （**必需**）要下载的 ETL 跟踪的名称。  可以在 /api/wpr/tracefiles 中找到它们 |
 
@@ -3884,16 +3884,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3901,20 +3901,20 @@ Request
 
 ### <a name="delete-a-tracing-session-etl"></a>删除跟踪会话 (ETL)
 
-Request
+**请求**
 
 可以使用以下请求格式来删除跟踪文件（启动跟踪或用户模式跟踪）。 
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/wpr/tracefile |
+| DELETE | /api/wpr/tracefile |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------          | :------ |
 | filename   | （**必需**）要删除的 ETL 跟踪的名称。  可以在 /api/wpr/tracefiles 中找到它们 |
 
@@ -3934,16 +3934,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * IoT
 
@@ -3955,13 +3955,13 @@ Request
 
 ### <a name="view-tags"></a>查看标记
 
-Request
+**请求**
 
 查看当前应用的设备标记。  这些标记通过 T 项中的 DNS-SD TXT 记录公布。  
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/dns-sd/tags |
+| GET | /api/dns-sd/tags |
 
 
 **URI 参数**
@@ -3991,16 +3991,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 5XX | 服务器错误 |
 
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -4009,13 +4009,13 @@ Request
 
 ### <a name="delete-tags"></a>删除标记
 
-Request
+**请求**
 
 删除当前由 DNS-SD 公布的所有标记。   
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/dns-sd/tags |
+| DELETE | /api/dns-sd/tags |
 
 
 **URI 参数**
@@ -4037,16 +4037,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 5XX | 服务器错误 |
 
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -4055,18 +4055,18 @@ Request
 
 ### <a name="delete-tag"></a>删除标记
 
-Request
+**请求**
 
 删除当前由 DNS-SD 公布的标记。   
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/dns-sd/tag |
+| DELETE | /api/dns-sd/tag |
 
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------     | :----- |
 | tagValue | （**必需**）要删除的标记。 |
 
@@ -4085,15 +4085,15 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -4102,7 +4102,7 @@ Request
 
 ### <a name="add-a-tag"></a>添加标记
 
-Request
+**请求**
 
 将标记添加到 DNS-SD 广告。   
  
@@ -4113,7 +4113,7 @@ Request
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------     | :----- |
 | tagValue | （**必需**）要添加的标记。 |
 
@@ -4132,16 +4132,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 401 | 标记空间溢出。  当建议的标记对于生成的 DNS-SD 服务记录而言过长时，将出现此情形。 |
 
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
@@ -4152,13 +4152,13 @@ Request
 
 ### <a name="get-known-folders"></a>获取已知文件夹
 
-Request
+**请求**
 
 获取可访问的顶级文件夹列表。
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/filesystem/apps/knownfolders |
+| GET | /api/filesystem/apps/knownfolders |
 
 
 **URI 参数**
@@ -4184,17 +4184,17 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | 已接受和正在处理的部署请求 |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4203,21 +4203,21 @@ Request
 
 ### <a name="get-files"></a>获取文件
 
-Request
+**请求**
 
 获取文件夹中的文件列表。
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/filesystem/apps/files |
+| GET | /api/filesystem/apps/files |
 
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------     | :----- |
 | knownfolderid | （**必需**）要获取文件列表的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 |
-| packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的应用的程序包全名。 |
+| packagefullname | （如果 knownfolderid  == LocalAppData，则为必需项  ）你感兴趣的应用的程序包全名。 |
 | path | （**可选**）上面指定的文件夹或程序包内的子目录。 |
 
 **请求标头**
@@ -4246,16 +4246,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | “确定” |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4264,21 +4264,21 @@ Request
 
 ### <a name="download-a-file"></a>下载文件
 
-Request
+**请求**
 
 从已知文件夹或 appLocalData 中获取文件。
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 获取 | /api/filesystem/apps/file |
+| GET | /api/filesystem/apps/file |
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------     | :----- |
 | knownfolderid | （**必需**）要下载文件的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 |
 | filename | （**必需**）要下载的文件名称。 |
-| packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的程序包全名。 |
+| packagefullname | （如果 knownfolderid  == LocalAppData，则为必需项  ）你感兴趣的程序包全名。 |
 | path | （**可选**）上面指定的文件夹或程序包内的子目录。 |
 
 **请求标头**
@@ -4295,16 +4295,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
 | 200 | 请求的文件 |
 | 404 | 找不到文件 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4313,7 +4313,7 @@ Request
 
 ### <a name="rename-a-file"></a>重命名文件
 
-Request
+**请求**
 
 重命名文件夹中的文件。
 
@@ -4324,12 +4324,12 @@ Request
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------     | :----- |
 | knownfolderid | （**必需**）文件所在的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 |
 | filename | （**必需**）要重命名的文件的原始名称。 |
 | newfilename | （**必需**）文件的新名称。|
-| packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的应用的程序包全名。 |
+| packagefullname | （如果 knownfolderid  == LocalAppData，则为必需项  ）你感兴趣的应用的程序包全名。 |
 | path | （**可选**）上面指定的文件夹或程序包内的子目录。 |
 
 **请求标头**
@@ -4348,16 +4348,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
-| 200 | “确定” |。 文件已重命名
+| 200 | “确定” |. 文件已重命名
 | 404 | 找不到文件 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4366,21 +4366,21 @@ Request
 
 ### <a name="delete-a-file"></a>删除文件
 
-Request
+**请求**
 
 删除文件夹中的文件。
 
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 删除 | /api/filesystem/apps/file |
+| DELETE | /api/filesystem/apps/file |
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------     | :----- |
 | knownfolderid | （**必需**）要删除文件的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 |
 | filename | （**必需**）要删除的文件名称。 |
-| packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的应用的程序包全名。 |
+| packagefullname | （如果 knownfolderid  == LocalAppData，则为必需项  ）你感兴趣的应用的程序包全名。 |
 | path | （**可选**）上面指定的文件夹或程序包内的子目录。 |
 
 **请求标头**
@@ -4399,16 +4399,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
-| 200 | “确定” |。 文件已删除 |
+| 200 | “确定” |. 文件已删除 |
 | 404 | 找不到文件 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT
@@ -4417,7 +4417,7 @@ Request
 
 ### <a name="upload-a-file"></a>上载文件
 
-Request
+**请求**
 
 将文件上载到文件夹。  这将覆盖具有相同名称的现有文件，但不会创建新的文件夹。 
 
@@ -4427,10 +4427,10 @@ Request
 
 **URI 参数**
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :------     | :----- |
 | knownfolderid | （**必需**）要上载文件的顶级目录。 将 **LocalAppData** 用于访问旁加载的应用。 |
-| packagefullname | （**如果 *knownfolderid* == LocalAppData，则为必需项**）你感兴趣的应用的程序包全名。 |
+| packagefullname | （如果 knownfolderid  == LocalAppData，则为必需项  ）你感兴趣的应用的程序包全名。 |
 | path | （**可选**）上面指定的文件夹或程序包内的子目录。 |
 
 **请求标头**
@@ -4447,16 +4447,16 @@ Request
 
 此 API 具有以下预期状态代码。
 
-| HTTP 状态代码      | 描述 |
+| HTTP 状态代码      | 说明 |
 | :------     | :----- |
-| 200 | “确定” |。 文件已上载 |
+| 200 | “确定” |. 文件已上载 |
 | 4XX | 错误代码 |
 | 5XX | 错误代码 |
 
-**可用设备家族**
+**可用设备系列**
 
-* Windows 移动版
-* Windows 桌面版
+* Windows Mobile
+* Windows 桌面
 * HoloLens
 * Xbox
 * IoT

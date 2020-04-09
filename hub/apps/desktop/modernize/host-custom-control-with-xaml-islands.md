@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b1ac53e0a6b6e01cd2129e2b1893f91fae2ef0fe
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: fa8dd744120d5751dcf8c10a090ccc31094000d2
+ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218597"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80482503"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管自定义 UWP 控件
 
@@ -29,7 +29,7 @@ ms.locfileid: "80218597"
 
 * **自定义 UWP 控件**。 必须有要托管的自定义 UWP 控件的源代码，才能通过应用程序对其进行编译。 通常，在 UWP 类库项目中定义自定义控件，WPF 或 Windows 窗体项目的同一解决方案会引用此项目。
 
-* **定义派生自 XamlApplication 的根应用程序类的 UWP 应用项目**。 WPF 或 Windows 窗体项目必须有权访问 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类的实例。 建议使用 WPF 或 Windows 窗体应用解决方案中单独的 UWP 应用项目定义此对象，来实现访问。 此对象充当根元数据提供程序，用于在应用程序当前目录的程序集中加载自定义 UWP XAML 类型的元数据。
+* **定义派生自 XamlApplication 的根应用程序类的 UWP 应用项目**。 WPF 或 Windows 窗体项目必须有权访问 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类的实例，以便它能够发现和加载自定义 UWP XAML 控件。 建议使用 WPF 或 Windows 窗体应用解决方案中单独的 UWP 应用项目定义此对象，来实现访问。 
 
     > [!NOTE]
     > 解决方案只能包含一个定义 `XamlApplication` 对象的项目。 应用中的所有自定义 UWP 控件共享同一个 `XamlApplication` 对象。 定义 `XamlApplication` 对象的项目必须包含在 XAML 岛上托管 UWP 控件所用的所有其他 UWP 库和项目的引用。
@@ -67,7 +67,7 @@ ms.locfileid: "80218597"
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 应用项目中定义 XamlApplication 类
 
-接下来，将 UWP 应用项目添加到解决方案，并将此项目中的默认 `App` 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类。 应用会将此类用作根元数据提供程序，用于在应用程序当前目录的程序集中加载自定义 UWP XAML 类型的元数据。
+接下来，将 UWP 应用项目添加到解决方案，并将此项目中的默认 `App` 类修改为派生自 Windows 社区工具包提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 类。 此类支持 [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 接口，该接口使应用能够在运行时发现和加载应用程序的当前目录内程序集中的自定义 UWP XAML 控件的元数据。 此类还为当前线程初始化 UWP XAML 框架。 
 
 1. 在“解决方案资源管理器”中，右键单击解决方案节点，然后选择“添加” -> “新建项目”    。
 2. 向你的解决方案中添加一个空白应用（通用 Windows）  项目。 确保目标版本和最低版本均设置为 Windows 10 版本 1903 或更高版本  。
@@ -105,7 +105,7 @@ ms.locfileid: "80218597"
 
 ## <a name="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app"></a>在 WPF 应用入口点中实例化 XamlApplication 对象
 
-接下来，将代码添加到 WPF 应用入口点，用于创建刚刚在 UWP 项目中定义的 `App` 类的实例（现在此类派生自 `XamlApplication`）。 此对象充当根元数据提供程序，用于在应用程序当前目录的程序集中加载自定义 UWP XAML 类型的元数据。
+接下来，将代码添加到 WPF 应用入口点，用于创建刚刚在 UWP 项目中定义的 `App` 类的实例（现在此类派生自 `XamlApplication`）。
 
 1. 在 WPF 项目中，右键单击项目节点，选择“添加” -> “新建项目”，然后选择“类”    。 将类命名为“Program”，然后单击“添加”   。
 
