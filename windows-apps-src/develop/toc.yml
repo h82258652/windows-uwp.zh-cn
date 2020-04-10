@@ -181,6 +181,8 @@
           href: ../networking/web-feeds.md
         - name: 后台传输
           href: ../networking/background-transfers.md
+    - name: 共享命名对象
+      href: ../communication/sharing-named-objects.md
 - name: 数据和文件
   items:
     - name: 应用资源
