@@ -1,0 +1,1118 @@
+---
+title: 将 Clipboard 示例从 C# 移植到 C++/WinRT（案例研究）
+description: 本主题提供了一个有关将[通用 Windows 平台 (UWP) 应用示例](https://github.com/microsoft/Windows-universal-samples)之一从 [C#](/visualstudio/get-started/csharp) 移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的案例研究。
+ms.date: 03/20/2020
+ms.topic: article
+keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#, 示例, 剪贴板, 案例, 研究
+ms.localizationpriority: medium
+ms.openlocfilehash: e770d92af4b0bece9e25bdc4d4dc3b26537524a9
+ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80290096"
+---
+# <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>将 Clipboard 示例从 C# 移植到 C++/WinRT&mdash;案例研究
+
+本主题提供了一个有关将[通用 Windows 平台 (UWP) 应用示例](https://github.com/microsoft/Windows-universal-samples)之一从 [C#](/visualstudio/get-started/csharp) 移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的案例研究。 可以通过按照本演练并自行移植示例，获取移植实践和体验。
+
+另请参阅[从 C# 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)，其中包含许多关于从 C# 移动到 C++/WinRT 所涉及的特定技术细节的部分。
+
+## <a name="download-and-test-the-clipboard-sample"></a>下载和测试 Clipboard 示例
+
+请访问 [Clipboard 示例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/clipboard/)网页，然后单击“下载 ZIP”  。 解压缩下载的文件，并查看文件夹结构。
+
+- C# 版本的示例源代码包含在名为 `cs` 的文件夹中。 可以在 `shared` 和 `SharedContent` 文件夹中找到 C# 版本使用的其他文件。
+- 可以在 GitHub 上的示例存储库中的 [cppwinrt](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt) 文件夹中找到 C++/WinRT 版本的示例源代码。
+
+本主题中的演练演示如何通过从 C# 源代码移植 C++/WinRT 版本来重新创建该版本。 这样，你就可以了解如何将你自己 C# 的项目移植到 C++/WinRT。
+
+若要了解示例的作用，请打开 C# 解决方案 (`\Clipboard_sample\cs\Clipboard.sln`)，根据需要更改配置（可能更改为 x64），然后生成并运行  。 示例的用户界面 (UI) 会逐步指导你了解各种功能。
+
+## <a name="createablankappcwinrt-named-clipboard"></a>创建名为“Clipboard”的空白应用 (C++/WinRT)
+
+> [!NOTE]
+> 有关安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅 [适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+
+通过在 Microsoft Visual Studio 中创建新的 C++/WinRT 项目，开始移植过程。 使用“空白应用(C++/WinRT)”项目模板创建新项目  。 将其名称设置为 Clipboard，然后确保取消选中“将解决方案和项目放在同一目录中”（使文件夹结构与此演练匹配）   。
+
+若是为了获取基线，请确保这一新的空项目生成并运行。
+
+## <a name="packageappxmanifest-and-asset-files"></a>Package.appxmanifest 和资产文件
+
+如果不需要在同一台计算机上并行安装此示例的 C# 和 C++/WinRT 版本，则两个项目的应用包清单源文件 (`Package.appxmanifest`) 可能相同。 在这种情况下，只需将 `Package.appxmanifest` 从 C# 项目复制到 C++/WinRT 项目，即可完成。
+
+为了使示例的两个版本共存，它们需要不同的标识符。 在这种情况下，在 C++/WinRT 项目中，在 XML 编辑器中打开 `Package.appxmanifest` 文件，并记下这三个值。
+
+- 在 /Package/Identity 元素中，记下 Name 属性的值   。 这就是“程序包名称”  。 对于新创建的项目，该项目将为其提供唯一 GUID 的初始值。
+- 在 /Package/Applications/Application 元素中，记下 ID 属性的值   。 这就是“应用程序 ID”  。
+- 在 /Package/mp:PhoneIdentity 元素中，记下“PhoneProductId”属性的值   。 同样，对于新创建的项目，这将设置为与包名称相同的 GUID。
+
+然后，将 `Package.appxmanifest` 从 C# 项目复制到 C++/WinRT 项目。 最后，可以还原记下的三个值。 或者，你可以编辑复制的值，使其成为唯一的和/或适用于应用程序和组织（通常对于新项目也是执行此操作）。 例如，在这种情况下，可以将复制的值从 Microsoft.SDKSamples.Clipboard.CS 改为 Microsoft.SDKSamples.Clipboard.CppWinRT，而不是还原包名称的值   。 并且，我们可以将应用程序 ID 设置保留为“App”  。 只要包名称或应用程序 ID 不同，这两个应用程序就会有不同的应用程序用户模型 ID (AUMID)  。
+
+在本演练中，需要对 `Package.appxmanifest` 进行一些其他更改。 字符串“Clipboard C# Sample”出现三次  。 将其更改为“Clipboard C++/WinRT Sample”  。
+
+在 C++/WinRT 项目中，`Package.appxmanifest` 文件和项目现在与它们引用的资产文件不同步。 若要解决此问题，请先选择 `Assets` 文件夹中的所有文件（在 Visual Studio 的解决方案资源管理器中）并删除这些文件（选择对话框中的“删除”），从 C++/WinRT 项目中删除这些资产  。
+
+C# 项目引用共享文件夹中的资产文件。 可以在 C++/WinRT 项目中执行相同的操作，也可以按照本演练中的操作来复制文件。
+
+导航到 `\Clipboard_sample\SharedContent\media` 文件夹。 选择 C# 项目包含的七个文件（`microsoft-sdk.png` 到 `windows-sdk.png`），复制这些文件，然后将它们粘贴到新项目的 `\Clipboard\Clipboard\Assets` 文件夹中。
+
+右键单击 `Assets` 文件夹（在 C++/WinRT 项目的解决方案资源管理器中）>“添加”> *“现有项…”，然后导航到 `\Clipboard\Clipboard\Assets`   。 在文件选取器中选择这七个文件，然后单击“添加”  。
+
+`Package.appxmanifest` 现在与项目的资产文件重新同步。
+
+## <a name="mainpage-including-the-sample-configuration-functionality"></a>MainPage，包括示例配置功能 
+
+&mdash;类似于所有[通用 Windows 平台 (UWP) 应用示例](https://github.com/microsoft/Windows-universal-samples)&mdash;，Clipboard 示例包含一个方案集合，用户一次可以单步执行一个方案。 给定示例中的方案集合在示例的源代码中进行配置。 集合中的每个方案都是一个数据项，其中存储了标题以及项目中实现该方案的类的类型。
+
+在示例的 C# 版本中，如果你查看 `SampleConfiguration.cs` 源代码文件，将会看到两个类。 大多数配置逻辑位于 MainPage 类中，该类是一个分部类（在与 `MainPage.xaml` 中的标记和 `MainPage.xaml.cs` 中的强制性代码结合使用时，它会形成完整的类）  。 此源代码文件中的另一个类是 Scenario，具有 Title 和 ClassType 属性    。
+
+在接下来的几个子部分中，我们将介绍如何移植 MainPage 和 Scenario   。
+
+### <a name="idl-for-the-mainpage-type"></a>MainPage 类型的 IDL 
+
+同时实现 MainPage 类型的 C# 源代码文件包括：`MainPage.xaml`（我们将通过复制它来快速移植）、`MainPage.xaml.cs` 和 `SampleConfiguration.cs`  。
+
+在 C++/WinRT 版本中，我们以类似的方式将 MainPage 类型纳入源代码文件中  。 我们将在 `MainPage.xaml.cs` 中采用逻辑，并将大部分转换为 `MainPage.h` 和 `MainPage.cpp`。 对于 `SampleConfiguration.cs` 中的逻辑，我们会将其转换为 `SampleConfiguration.h` 和 `SampleConfiguration.cpp`。
+
+C# 通用 Windows 平台 (UWP) 应用程序中的类是 Windows 运行时类型。 但在 C++/WinRT 应用程序中创作类型时，可以选择该类型是 Windows 运行时类型还是常规类/结构/枚举。
+
+在 C++/WinRT 项目中，MainPage 已是 Windows 运行时类型，因此我们不需要更改这部分  。 具体而言，它是运行时类  。
+
+- 有关是否创作运行时类的更多详细信息，请参阅主题[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
+- 实现类型和投影类型的概念在 C++/WinRT 中非常重要   。 可以在上述主题中了解相关信息，也可以通过[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/consume-apis) 来了解相关信息。
+- 有关运行时类和 `.idl` 文件之间的连接的信息，请参阅主题 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。 本主题分步介绍创作新运行时类的过程，第一步是将新的 Midl 文件 (.idl) 项添加到项目  。
+
+对于 MainPage，在 C++/WinRT 项目中已有必要的 `MainPage.idl` 文件  。 但在本演练中，我们会将新的 `.idl` 文件添加到项目  。
+
+我们很快就会看到一个列表，其中列出了需要添加到现有 `MainPage.idl` 文件的 IDL。 在此之前，我们要确定需要在 IDL 中添加哪些项以及不需要在其中添加哪些项。
+
+为了确定 MainPage 的哪些成员需要在 `MainPage.idl` 中声明（以便它们成为 MainPage 运行时类的一部分），以及哪些成员可以是 MainPage 实现类型的成员，应创建 C# MainPage 类的成员列表     。 通过在 `MainPage.xaml.cs` 和 `SampleConfiguration.cs` 中查找，找到这些成员。
+
+我们总共找到了十二个 `protected` 和 `private` 字段和方法。 我们发现以下 `public` 成员。
+
+- 默认构造函数 `MainPage()`。
+- 静态字段 Current 和 FEATURE_NAME   。
+- 属性 IsClipboardContentChangedEnabled 和 Scenarios   。
+- 方法 BuildClipboardFormatsOutputString、DisplayToast、EnableClipboardContentChangedNotifications 和 NotifyUser     。
+
+那些 `public` 成员，是在 `MainPage.idl` 中声明的候选人。 接下来，让我们逐一检查，看它们是否需要成为 MainPage 运行时类的一部分，或者是否只需成为其实现的一部分  。
+
+- 默认构造函数 `MainPage()`。 对于 XAML 页面，通常在其 IDL 中声明默认构造函数  。 这样，XAML UI 框架便可以激活该类型。
+- 从各个方案 XAML 页面中，使用静态字段 Current 来访问应用程序的 MainPage 实例   。 由于 Current 未用于与 XAML 框架进行互操作（也没有跨编译单元使用），因此我们可以将其保留为仅为实现类型的成员  。 在此类情况下，对自己的项目可以选择执行此操作。 但由于字段是投影类型的实例，因此在 IDL 中声明它是合乎逻辑的。 这就是我们在此要执行的操作（这样做还会使代码略微整洁一些）。
+- 这种情况类似于静态 FEATURE_NAME 字段，可在 MainPage 类型中进行访问   。 同样，选择在 IDL 中声明它会使代码略微整洁。
+- IsClipboardContentChangedEnabled 属性仅在 OtherScenarios 类中使用   。 因此，在移植过程中，我们将稍微简化操作，并使其成为 OtherScenarios 运行时类的专用字段  。 这样一来，就不会传入 IDL。
+- Scenarios 属性是 Scenario 类型（我们前面提到的类型）的对象集合   。 我们将在下一子部分讨论 Scenario，因此，让我们也暂时保留 Scenarios 属性   。
+- BuildClipboardFormatsOutputString、DisplayToast 和 EnableClipboardContentChangedNotifications 方法是实用工具函数，与主页相比，这些函数与示例的常规状态更相关    。 因此，在移植过程中，我们会将这三个方法重构到名为 SampleState 的新实用工具类型（无需是 Windows 运行时类型）  。 因此，这三种方法不会进入 IDL。
+- 从各个方案 XAML 页面中，对从静态 Current 字段返回的 MainPage 实例调用 NotifyUser 方法    。 因为 Current 是投影类型的实例（如前面所述），所以需要在 IDL 中声明 NotifyUser   。 NotifyUser 采用 NotifyType 类型的参数   。 在下一子部分中，我们将对此进行讨论。
+
+当前进度：我们正在生成一个列表，其中列出哪些成员添加到 `MainPage.idl` 文件，以及哪些成员不添加到该文件。 但我们仍必须讨论 Scenarios 属性和 NotifyType 类型   。 接下来让我们开始讨论吧。
+
+### <a name="idl-for-the-scenario-and-notifytype-types"></a>Scenario 和 NotifyType 类型的 IDL  
+
+Scenario 类是在 `SampleConfiguration.cs` 中定义的  。 我们需要决定如何将该类移植到 C++/WinRT。 默认情况下，我们可能会将其设为普通的 C++ `struct`。 但如果在二进制文件中使用 Scenario，或与 XAML 框架进行互操作，则需要在 IDL 中将其声明为 Windows 运行时类型  。
+
+研究 C# 源代码，我们发现此上下文中使用 Scenario  。
+
+```xaml
+<ListBox x:Name="ScenarioControl" ... >
+```
+
+```csharp
+var itemCollection = new List<Scenario>();
+int i = 1;
+foreach (Scenario s in scenarios)
+{
+    itemCollection.Add(new Scenario { Title = $"{i++}) {s.Title}", ClassType = s.ClassType });
+}
+ScenarioControl.ItemsSource = itemCollection;
+```
+
+Scenario 对象的集合将分配给 **ListBox**（这是项目控件）的 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 属性   。 由于 Scenario 需要与 XAML 进行互操作，因此它需要是 Windows 运行时类型   。 因此需要在 IDL 中定义它。 定义 IDL 中的 Scenario 类型会导致 C++/WinRT 生成系统在后台头文件（该文件的名称和位置对于本演练不重要）中为你生成 Scenario 的源代码定义   。
+
+你应该记得 MainPage.Scenarios 是 Scenario 对象的集合，我们刚才说过这些对象需要位于 IDL 中   。 因此，也需要在 IDL 中声明 MainPage.Scenarios  。
+
+NotifyType 是在 C# 的 `MainPage.xaml.cs` 中声明的 `enum`  。 由于我们将 NotifyType 传递到属于 MainPage 运行时类的方法，因此 NotifyType 也需要是 Windows 运行时类型，并且需要在 `MainPage.idl` 中进行定义    。
+
+现在，让我们向 `MainPage.idl` 文件添加已决定在 IDL 中声明的 Mainpage 的新类型和新成员  。 同时，我们将从 IDL 中删除 Visual Studio 项目模板提供的 Mainpage 的占位符成员  。
+
+因此，在 C++/WinRT 项目中，打开 `MainPage.idl`，并对其进行编辑，使其类似于下面的列表。 请注意，其中一项编辑是将命名空间名称从 Clipboard 更改为 SDKTemplate   。 如果需要，只需删除 `MainPage.idl` 的当前内容，然后粘贴到下面的列表中即可。 需要注意的另一个调整是，我们要将名称 Scenario::ClassType 更改为 Scenario::ClassName   。
+
+```idl
+// MainPage.idl
+namespace SDKTemplate
+{
+    struct Scenario
+    {
+        String Title;
+        Windows.UI.Xaml.Interop.TypeName ClassName;
+    };
+
+    enum NotifyType
+    {
+        StatusMessage,
+        ErrorMessage
+    };
+
+    [default_interface]
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+
+        static MainPage Current{ get; };
+        static String FEATURE_NAME{ get; };
+
+        static Windows.Foundation.Collections.IVector<Scenario> scenarios{ get; };
+
+        void NotifyUser(String strMessage, NotifyType type);
+    };
+}
+```
+
+> [!NOTE]
+> 有关 C++/WinRT 项目中 `.idl` 文件内容的详细信息，请参阅 [Microsoft 接口定义语言 3.0](/uwp/midl-3/)。
+
+对于自己的移植工作，你可能不希望也不需要像上述操作一样更改命名空间名称。 我们在此处执行此操作，只是因为我们正在移植的 C# 项目的默认命名空间是 SDKTemplate，而项目和程序集的名称为 Clipboard   。
+
+但在本演练中继续进行迁移操作时，我们会将 Clipboard 命名空间名称的源代码中的每个匹配项更改为 SDKTemplate   。 在 C++/WinRT 项目属性中，还有一个地方会出现 Clipboard 命名空间名称，因此我们现在借此机会进行更改  。
+
+在 Visual Studio 中，对于 C++/WinRT 项目，将项目属性“公共属性”\>“C++/WinRT”\>根命名空间”设置为值“SDKTemplate” ****  ****  ****  。
+
+### <a name="save-the-idl-and-re-generate-stub-files"></a>保存 IDL 并重新生成存根文件
+
+如果已阅读 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)主题，则会遇到“存根文件”的概念  。 生成 C++/WinRT 项目时，将为你生成存根文件（通过名为 `cppwinrt.exe` 的工具，基于 `.idl` 文件的内容）。 该主题包含有关这些文件的更多详细信息。
+
+此时，我们暂时完成了对 `MainPage.idl` 文件的编辑，因此应立即进行保存。 此时，项目目前无法完成生成，但现在执行生成是一项有用的操作，因为它会为 MainPage 重新生成存根文件  。
+
+对于此 C++/WinRT 项目，这些存根文件将在 `\Clipboard\Clipboard\Generated Files\sources` 文件夹中生成。 在部分生成完成后，你会在此处找到它们（同样，生成不会完全成功。 但我们关注的&mdash;生成存根&mdash;步骤会成功）  。 我们需要的文件是 `MainPage.h` 和 `MainPage.cpp`。
+
+在这两个存根文件中，你将看到添加到 IDL 的 MainPage 的新成员的存根实现（例如 Current 和 FEATURE_NAME）    。 我们会将这些存根实现复制到项目中已存在的 `MainPage.h` 和 `MainPage.cpp` 文件。 同时，就像我们对 IDL 进行的操作一样，我们将从这些现有的文件中删除 Visual Studio 项目模板提供的 Mainpage 的占位符成员（名为 MyProperty 的虚拟属性和名为 ClickHandler 的事件处理程序）    。
+
+事实上，我们要保留的 MainPage 当前版本的唯一成员是构造函数  。
+
+从存根文件复制新成员、删除不需要的成员并更新命名空间后，项目中的 `MainPage.h` 和 `MainPage.cpp` 文件应如下所示。 请注意，我们对 factory_implementation 类型的唯一更改是更新其命名空间  。
+
+```cppwinrt
+// MainPage.h
+#pragma once
+#include "MainPage.g.h"
+
+namespace winrt::SDKTemplate::implementation
+{
+    struct MainPage : MainPageT<MainPage>
+    {
+        MainPage();
+
+        static SDKTemplate::MainPage Current();
+        static hstring FEATURE_NAME();
+        static Windows::Foundation::Collections::IVector<SDKTemplate::Scenario> scenarios();
+        void NotifyUser(hstring const& strMessage, SDKTemplate::NotifyType const& type);
+    };
+}
+namespace winrt::SDKTemplate::factory_implementation
+{
+    struct MainPage : MainPageT<MainPage, implementation::MainPage>
+    {
+    };
+}
+```
+
+```cppwinrt
+// MainPage.cpp
+#include "pch.h"
+#include "MainPage.h"
+#include "MainPage.g.cpp"
+
+namespace winrt::SDKTemplate::implementation
+{
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+    }
+    SDKTemplate::MainPage MainPage::Current()
+    {
+        throw hresult_not_implemented();
+    }
+    hstring MainPage::FEATURE_NAME()
+    {
+        throw hresult_not_implemented();
+    }
+    Windows::Foundation::Collections::IVector<SDKTemplate::Scenario> MainPage::scenarios()
+    {
+        throw hresult_not_implemented();
+    }
+    void MainPage::NotifyUser(hstring const& strMessage, SDKTemplate::NotifyType const& type)
+    {
+        throw hresult_not_implemented();
+    }
+}
+```
+
+对于字符串，C# 将使用 System.String  。 有关示例，请参阅 MainPage.NotifyUser 方法  。 在 IDL 中，我们使用 String 声明一个字符串，当 `cppwinrt.exe` 工具为我们生成 C++/WinRT 代码时，它将使用 [winrt::hstring](/uw/cpp-ref-for-winrt/hstring) 类型   。 每当在 C# 代码中遇到字符串时，我们会将其移植到 winrt::hstring  。 有关详细信息，请参阅 [C++/WinRT 中的字符串处理](/windows/uwp/cpp-and-winrt-apis/strings)。
+
+有关方法签名中 `const&` 参数的说明，请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)。
+
+### <a name="update-all-remaining-namespace-declarationsreferences-and-build"></a>更新所有剩余的命名空间声明/引用，然后生成
+
+在生成 C++/WinRT 项目之前，查找 Clipboard 命名空间的任何声明或引用，然后将其更改为 SDKTemplate   。
+
+- `MainPage.xaml` 和 `App.xaml`。 命名空间显示在 `x:Class` 和 `xmlns:local` 属性的值中。
+- `App.idl`”。
+- `App.h`”。
+- `App.cpp`”。 有两个 `using namespace` 指令（搜索子字符串 `using namespace Clipboard`）以及两个 MainPage 类型的限定（搜索 `Clipboard::MainPage`）  。 这些都需要更改。
+
+由于我们从 MainPage 中删除了事件处理程序，因此还需要进入 `MainPage.xaml`，并从标记中删除 Button 元素   。
+
+保存所有文件。 清理解决方案（“生成” > “清理剪贴板”），然后进行生成   。 如果目前所做的更改有效，则生成将成功。
+
+### <a name="implement-the-mainpage-members-that-we-declared-in-idl"></a>实现在 IDL 中声明的 MainPage 成员 
+
+#### <a name="the-constructor-current-and-feature_name"></a>构造函数 Current 和 FEATURE_NAME  
+
+下面是我们需要移植的相关代码（来自 C# 项目）。
+
+```xaml
+<!-- MainPage.xaml -->
+...
+<TextBlock x:Name="SampleTitle" ... />
+...
+```
+
+```csharp
+// MainPage.cs
+...
+public sealed partial class MainPage : Page
+{
+    public static MainPage Current;
+
+    public MainPage()
+    {
+        InitializeComponent();
+        Current = this;
+        SampleTitle.Text = FEATURE_NAME;
+    }
+...
+}
+...
+
+// SampleConfiguration.cs
+...
+public partial class MainPage : Page
+{
+    public const string FEATURE_NAME = "Clipboard C# sample";
+...
+}
+...
+```
+
+不久，我们将完全重复使用 `MainPage.xaml`（通过复制）。 现在，我们将使用适当的名称将 TextBlock 元素临时添加到 C++/WinRT 项目的 `MainPage.xaml` 中  。
+
+FEATURE_NAME 是 MainPage 的静态字段（在其行为中，C# `const` 字段实质上是静态的），在 `SampleConfiguration.cs` 中定义   。 对于 C++/WinRT（而不是（静态）字段），我们会将其设置为（静态）只读属性的 C++/WinRT 表达式。 表示属性 getter 的 C++/WinRT 方式是使用返回属性值的函数，不使用任何参数（访问器）。 因此，C# FEATURE_NAME 静态字段变成 C++/WinRT FEATURE_NAME 静态访问器函数（在这种情况下，返回字符串文本）   。
+
+我们偶尔会在移植 C# 只读属性时执行相同的操作。 对于 C# 可写属性，表示属性 setter 的 C++/WinRT 方法是使用 `void` 函数，该函数将属性值作为参数（转变器）。 无论哪种情况，如果 C# 字段或属性是静态的，则 C++/WinRT 访问器和/或转变器也是静态的。
+
+Current 是 MainPage 的静态（不是常量）字段   。 同样，我们将它设置为只读属性（的 C++/WinRT 表达式），并再次将其设置为静态。 其中 FEATURE_NAME 是常量，Current 不是常量   。 因此在 C++/WinRT 中，我们将需要一个支持字段，并且我们的访问器将返回该字段。 因此，在 C++/WinRT 项目中，我们将在 `MainPage.h` 中声明名为“current”的专用静态字段，在 `MainPage.cpp` 中定义/初始化 current（因为它具有静态存储持续时间），并且通过名为“Current”的公共静态访问器函数进行访问    。
+
+构造函数本身执行几个赋值，这些赋值可以直接移植。
+
+在 C++/WinRT 项目中，添加一个名称为 `SampleConfiguration.cpp` 的新的“Visual C++” > “代码” > “C++ 文件 (.cpp)”项目    。
+
+编辑 `MainPage.xaml`、`MainPage.h`、`MainPage.cpp` 和 `SampleConfiguration.cpp` 以与以下列表相匹配。
+
+```xaml
+<!-- MainPage.xaml -->
+...
+<StackPanel ...>
+    <TextBlock x:Name="SampleTitle" />
+</StackPanel>
+...
+```
+
+```cppwinrt
+// MainPage.h
+...
+namespace winrt::SDKTemplate::implementation
+{
+    struct MainPage : MainPageT<MainPage>
+    {
+...
+        static SDKTemplate::MainPage Current() { return current; }
+...
+    private:
+        static SDKTemplate::MainPage current;
+...
+    };
+...
+}
+
+// MainPage.cpp
+...
+namespace winrt::SDKTemplate::implementation
+{
+    SDKTemplate::MainPage MainPage::current{ nullptr };
+...
+    MainPage::MainPage()
+    {
+        InitializeComponent();
+        MainPage::current = *this;
+        SampleTitle().Text(FEATURE_NAME());
+    }
+...
+}
+
+// SampleConfiguration.cpp
+#include "pch.h"
+#include "MainPage.h"
+
+using namespace winrt;
+using namespace SDKTemplate;
+
+hstring implementation::MainPage::FEATURE_NAME()
+{
+    return L"Clipboard C++/WinRT Sample";
+}
+```
+
+此外，请务必从 `MainPage.cpp` 中删除 MainPage::Current() 和 MainPage::FEATURE_NAME() 的现有函数主体，因为现在我们在其他位置定义这些方法   。
+
+正如你所看到的，MainPage::current 声明为 SDKTemplate::MainPage 类型（投影类型）   。 不是 SDKTemplate::implementation::MainPage 类型（实现类型）  。 投影类型是设计为在 XAML 互操作的项目中或跨二进制文件使用的类型。 实现类型是用于实现对投影类型公开的设施的类型。 由于 MainPage::current 的声明（在 `MainPage.h` 中）显示在实现命名空间 (winrt::SDKTemplate::implementation) 中，因此非限定的 MainPage 将引用实现类型    。 因此，我们使用 SDKTemplate:: 进行限定，以清楚地表明，我们希望 MainPage::current 成为投影类型 winrt::SDKTemplate::MainPage 的实例    。
+
+在构造函数中，有一些与 `MainPage::current = *this;` 相关的点，需要对这些点进行说明。
+- 当你在实现类型的成员内使用 `this` 指针时，`this` 指针当然是指向实现类型的指针  。
+- 若要将 `this` 指针转换为相应的投影类型，请将其取消引用。 如果从 IDL 生成实现类型（如下所示），则实现类型具有转换为投影类型的转换运算符。 这就是此处赋值有效的原因。
+
+有关这些细节的详细信息，请参阅[实例化和返回实现类型和接口](/windows/uwp/cpp-and-winrt-apis/author-apis#instantiating-and-returning-implementation-types-and-interfaces)。
+
+`SampleTitle().Text(FEATURE_NAME());` 也在构造函数中。 `SampleTitle()` 部分是对名为 SampleTitle 的简单访问器函数的调用，它将返回添加到 XAML 的 TextBlock   。 每当 `x:Name` XAML 元素，XAML 编译器就会生成一个以该元素命名的访问器。 `.Text(...)` 部分对 SampleTitle 访问器返回的 TextBlock 对象调用 Text 赋值函数    。 而且 `FEATURE_NAME()` 调用静态 MainPage::FEATURE_NAME 访问器函数以返回字符串文本  。 总而言之，这一行代码将设置名为 SampleTitle 的 TextBlock 的 Text 属性    。
+
+请注意，由于 Windows 运行时中的字符串很宽，因此若要移植字符串文本，请使用宽字符编码前缀 `L` 作为前缀。 因此，我们将（例如）“字符串文本”更改为 L“字符串文本”。 另请参阅[宽字符串文本](/cpp/cpp/string-and-character-literals-cpp#wide-string-literals)。
+
+#### <a name="scenarios"></a>**方案**
+
+下面是我们需要移植的相关 C# 代码。
+
+```csharp
+// MainPage.cs
+...
+public sealed partial class MainPage : Page
+{
+...
+    public List<Scenario> Scenarios
+    {
+        get { return this.scenarios; }
+    }
+...
+}
+...
+
+// SampleConfiguration.cs
+...
+public partial class MainPage : Page
+{
+...
+    List<Scenario> scenarios = new List<Scenario>
+    {
+        new Scenario() { Title = "Copy and paste text", ClassType = typeof(CopyText) },
+        new Scenario() { Title = "Copy and paste an image", ClassType = typeof(CopyImage) },
+        new Scenario() { Title = "Copy and paste files", ClassType = typeof(CopyFiles) },
+        new Scenario() { Title = "Other Clipboard operations", ClassType = typeof(OtherScenarios) }
+    };
+...
+}
+...
+```
+
+从我们以前的调查中，我们知道 Scenario 对象的此集合将显示在 ListBox 中   。 在 C++/WinRT 中，针对可分配给项目控件 ItemsSource 属性的此类集合类型有一些限制   。 集合必须为矢量或可观察的矢量，而且其元素必须为以下其中之一。
+
+- 运行时类或
+- [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)  。
+
+对于 IInspectable 情况，如果元素本身不是运行时类，则这些元素的类型需为可以装箱和取消装箱，并来自 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的类型   。 这意味着它们必须是 Windows 运行时类型（请参阅[将标量值装箱到 IInspectable 和对其取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)）。
+
+对于此案例研究，我们不会将 Scenario 设置为运行时类  。 但这仍是一个合理的选择。 在你自己的移植过程中，有时必须使用运行时类。 例如，如果需要使元素类型为“可观察”（请参阅 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)），或者，如果元素出于任何其他原因而需要使用方法，则该元素不仅仅是一组数据成员  。
+
+由于在本演练中，我们不打算对 Scenario 类型使用运行时类，因此，我们需要考虑装箱   。 如果 Scenario 为常规 C++ `struct`，那么我们就无法对其进行装箱  。 但如果将 Scenario 声明为 IDL 中的 `struct`，那就可以对其进行装箱   。
+
+我们可以选择提前对 Scenario 进行装箱，或等到我们将要分配到 ItemsSource 时，实时对它们进行装箱   。 下面是有关这两个选项的一些注意事项。
+
+- 提前装箱。 对于此选项，数据成员是可分配给 UI 的 IInspectable 集合  。 初始化时，将 Scenario 对象装箱到该数据成员中  。 我们只需要该集合的一个副本，但每次需要读取其字段时，都必须对元素进行取消装箱。
+- 实时装箱。 对于此选项，数据成员是 Scenario 的集合  。 当需要分配给 UI 时，我们会将 Scenario 对象从数据成员装箱到 IInspectable 的新集合中   。 我们可以在不取消装箱的情况下读取数据成员中的元素字段，但需要集合的两个副本。
+
+正如你所看到的，对于这样的小型集合，优点和缺点参半。 因此，对于此案例研究，我们将选择实时选项。
+
+scenarios 成员是在 `SampleConfiguration.cs` 中定义和初始化的 MainPage 字段   。 Scenarios 是 MainPage 的只读属性，在 `MainPage.xaml.cs` 中定义（并且实现为仅返回 scenarios 字段）    。 我们将在 C++/WinRT 项目中执行类似操作；但我们会将这两个成员设为静态成员（因为我们只需要在应用程序中使用一个实例，因此，无需类实例即可访问这些成员）。 我们会将它们分别命名为 scenariosInner 和 scenarios   。 我们将在 `MainPage.h` 中声明 scenariosInner  。 而且，因为它具有静态存储持续时间，我们将在 `.cpp` 文件（在本例中为 `SampleConfiguration.cpp`）中进行定义/初始化。
+
+编辑 `MainPage.h` 和 `SampleConfiguration.cpp` 以与以下列表相匹配。
+
+```cppwinrt
+// MainPage.h
+...
+struct MainPage : MainPageT<MainPage>
+{
+...
+    static Windows::Foundation::Collections::IVector<Scenario> scenarios() { return scenariosInner; }
+...
+private:
+    static winrt::Windows::Foundation::Collections::IVector<Scenario> scenariosInner;
+...
+};
+
+// SampleConfiguration.cpp
+...
+using namespace Windows::Foundation::Collections;
+...
+IVector<Scenario> implementation::MainPage::scenariosInner = winrt::single_threaded_observable_vector<Scenario>(
+{
+    Scenario{ L"Copy and paste text", xaml_typename<SDKTemplate::CopyText>() },
+    Scenario{ L"Copy and paste an image", xaml_typename<SDKTemplate::CopyImage>() },
+    Scenario{ L"Copy and paste files", xaml_typename<SDKTemplate::CopyFiles>() },
+    Scenario{ L"History and roaming", xaml_typename<SDKTemplate::HistoryAndRoaming>() },
+    Scenario{ L"Other Clipboard operations", xaml_typename<SDKTemplate::OtherScenarios>() },
+});
+```
+
+此外，请务必从 `MainPage.cpp` 中删除 MainPage::scenarios() 的现有函数主体，因为我们现在正在头文件中定义该方法  。
+
+正如你所看到的，在 `SampleConfiguration.cpp` 中，我们通过调用名为 [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 的 C++/WinRT 帮助程序函数，初始化静态数据成员 scenariosInner  。 该函数为我们创建一个新的 Windows 运行时集合对象，并将其作为 [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_) 接口返回  。 由于在此示例中，集合不是“可观察的”（不需要，因为它不会在初始化后添加或删除元素），因此可以改为选择调用 [winrt::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector)  。 该函数返回作为 [IVector](/uwp/api/windows.foundation.collections.ivector_t_) 接口的集合  。
+
+有关集合以及对它们进行绑定的详细信息，请参阅 [XAML 项目控件；绑定到 C++/WinRT 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)以及[使用 C++/WinRT 的集合](/windows/uwp/cpp-and-winrt-apis/collections)。
+
+刚添加的初始化代码引用项目中尚未使用的类型（例如 winrt::SDKTemplate::CopyText  。 为了解决此情况，让我们继续，并向项目添加五个新的空白 XAML 页。
+
+#### <a name="add-five-new-blank-xaml-pages"></a>添加五个新的空白 XAML 页
+
+向项目添加新的“XAML” > “空白页(C++/WinRT)”项（确保它是“空白页(C++/WinRT)”项目模板，而不是“空白页”）     。 将其命名为  `CopyText`。 新的 XAML 页在 SDKTemplate 命名空间中定义，这正是我们所需要的  。
+
+再重复上述步骤四次，并将 XAML 页命名为 `CopyImage`、`CopyFiles`、`HistoryAndRoaming` 和 `OtherScenarios`。
+
+如果需要，现在可以重新生成。
+
+#### <a name="notifyuser"></a>**NotifyUser**
+
+在 C# 项目中，你将在 `MainPage.xaml.cs` 中找到 MainPage.NotifyUser 方法的实现  。 MainPage.NotifyUser 依赖于 MainPage.UpdateStatus，而该方法反过来又依赖于尚未移植的 XAML 元素   。 现在，我们将只是在 C++/WinRT 项目中剔除 UpdateStatus 方法，稍后会进行移植  。
+
+下面是我们需要移植的相关 C# 代码。
+
+```csharp
+// MainPage.cs
+...
+public void NotifyUser(string strMessage, NotifyType type)
+if (Dispatcher.HasThreadAccess)
+{
+    UpdateStatus(strMessage, type);
+}
+else
+{
+    var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => UpdateStatus(strMessage, type));
+}
+private void UpdateStatus(string strMessage, NotifyType type) { ... }{
+...
+```
+
+NotifyUser 使用 [Windows.UI.Core.CoreDispatcherPriority](/uwp/api/windows.ui.core.coredispatcherpriority) 枚举   。 在 C++/WinRT 中，每当需要使用 Windows 命名空间中的类型时，都需要包含相应的 C++/WinRT Windows 命名空间头文件（有关详细信息，请参阅 [C++/WinRT 入门](/windows/uwp/cpp-and-winrt-apis/get-started)）。 在这种情况下，你将在下面的代码清单中看到该标头是 `winrt/Windows.UI.Core.h`，并且我们会将其包含在 `pch.h` 中。
+
+UpdateStatus 是专用的  。 因此，我们会将其设置为针对 MainPage 实现类型的专用方法  。 不应对运行时类调用 UpdateStatus，因此我们不会在 IDL 中声明它  。
+
+移植 MainPage.NotifyUser 并剔除 MainPage.UpdateStatus 后，这就是 C++/WinRT 项目中的内容   。 在此代码清单后，我们将查看一些详细信息。
+
+```cppwinrt
+// pch.h
+...
+#include <winrt/Windows.UI.Core.h>
+...
+
+// MainPage.h
+...
+struct MainPage : MainPageT<MainPage>
+{
+...
+    void NotifyUser(hstring const& strMessage, SDKTemplate::NotifyType const& type);
+...
+private:
+    void UpdateStatus(hstring const& strMessage, SDKTemplate::NotifyType const& type);
+...
+};
+
+// MainPage.cpp
+...
+void MainPage::NotifyUser(hstring const& strMessage, SDKTemplate::NotifyType const& type)
+{
+    if (Dispatcher().HasThreadAccess())
+    {
+        UpdateStatus(strMessage, type);
+    }
+    else
+    {
+        Dispatcher().RunAsync(Windows::UI::Core::CoreDispatcherPriority::Normal, [strMessage, type, this]()
+            {
+                UpdateStatus(strMessage, type);
+            });
+    }
+}
+void MainPage::UpdateStatus(hstring const& strMessage, SDKTemplate::NotifyType const& type)
+{
+    throw hresult_not_implemented();
+}
+...
+```
+
+在 C# 中，可点入嵌套属性  。 因此，C# MainPage 类型可使用语法 `Dispatcher` 访问其自己的 Dispatcher 属性   。 C# 可以通过语法（比如 `Dispatcher.HasThreadAccess`）进一步点入该值  。 在 C++/WinRT 中，属性是作为访问器函数实现的，因此，语法的不同之处仅在于为每个函数调用添加括号。
+
+|C#|C++/WinRT|
+|-|-|
+|`Dispatcher.HasThreadAccess`|`Dispatcher().HasThreadAccess()`|
+
+当 NotifyUser 的 C# 版本调用 [CoreDispatcher.RunAsync](/uwp/api/windows.ui.core.coredispatcher.runasync) 时，会将异步回调委托实现为 lambda 函数   。 C++/WinRT 版本具有相同的功能，但语法略有不同。 在 C++/WinRT 中，捕获要使用的两个参数以及 `this` 指针（因为我们将调用成员函数）  。 有关将委托实现为 lambda 的详细信息和代码示例，请参阅[在 C++/WinRT 中使用委托处理事件](/windows/uwp/cpp-and-winrt-apis/handle-events)主题。 此外，在这种特定情况下，我们可以忽略 `var task =` 部分。 我们不会等待返回的异步对象，因此无需存储它。 
+
+### <a name="implement-the-remaining-mainpage-members"></a>实现其余的 MainPage 成员 
+
+接下来，我们将完整列出 MainPage 的成员（跨 `MainPage.xaml.cs` 和 `SampleConfiguration.cs` 实现），以便我们可以看到目前移植了哪些成员，以及哪些成员尚未移植  。
+
+|成员|访问|状态|
+|-|-|-|
+|MainPage 构造函数 |`public`|已移植|
+|Current 属性 |`public`|已移植|
+|FEATURE_NAME 属性 |`public`|已移植|
+|IsClipboardContentChangedEnabled 属性 |`public`|未开始|
+|Scenarios 属性 |`public`|已移植|
+|BuildClipboardFormatsOutputString 方法 |`public`|未开始|
+|DisplayToast 方法 |`public`|未开始|
+|EnableClipboardContentChangedNotifications 方法 |`public`|未开始|
+|NotifyUser 方法 |`public`|已移植|
+|OnNavigatedTo 方法 |`protected`|未开始|
+|isApplicationWindowActive 字段 |`private`|未开始|
+|needToPrintClipboardFormat 字段 |`private`|未开始|
+|scenarios 字段 |`private`|已移植|
+|Button_Click 方法 |`private`|未开始|
+|DisplayChangedFormats 方法 |`private`|未开始|
+|Footer_Click 方法 |`private`|未开始|
+|HandleClipboardChanged 方法 |`private`|未开始|
+|OnClipboardChanged 方法 |`private`|未开始|
+|OnWindowActivated 方法 |`private`|未开始|
+|ScenarioControl_SelectionChanged 方法 |`private`|未开始|
+|UpdateStatus 方法 |`private`|已剔除|
+
+然后在接下来的几个子部分，我们将讨论目前尚未移植的成员。
+
+> [!NOTE]
+> 有时，我们将在源代码中遇到 XAML 标记（在 `MainPage.xaml` 中）中 UI 元素的引用。 对于这些引用，我们将通过向 XAML 添加简单的占位符元素暂时绕过这些问题。 这样一来，项目将在每个子部分后继续生成。 另一种方法是通过将 `MainPage.xaml` 的整个内容从 C# 项目复制到 C++/WinRT 项目来解析引用  。 但如果这样做，则可能需要很长一段时间才能暂时停止并再次生成（因此可能会隐藏在此过程中所产生的拼写错误或其他错误）。
+>
+> 完成 MainPage 类的强制性代码的移植后，需要复制 XAML 文件的内容，确保项目仍会生成   。
+
+#### <a name="isclipboardcontentchangedenabled"></a>**IsClipboardContentChangedEnabled**
+
+这是默认为 `false` 的 get-set C# 属性。 它是 MainPage 的成员，在 `SampleConfiguration.cs` 中定义  。
+
+对于 C++/WinRT，我们将需要一个访问器函数、一个赋值函数和一个字段形式的支持数据成员。 由于 IsClipboardContentChangedEnabled 表示示例中某个方案的状态，而不是 MainPage 本身的状态，因此，我们将针对名为 SampleState 的新实用工具类型创建新成员    。 我们将在 `SampleConfiguration.cpp` 源代码文件中实现该操作，并将成员设置为 `static`（因为我们只需要在应用程序中使用一个实例，因此，无需类实例即可访问这些成员）。
+
+若要在 C++/WinRT 项目中附带 `SampleConfiguration.cpp`，请添加一个名称为 `SampleConfiguration.h` 的新的“Visual C++” > “代码” > “头文件 (.h)”项目    。 编辑 `SampleConfiguration.h` 和 `SampleConfiguration.cpp` 以与以下列表相匹配。
+
+```cppwinrt
+// SampleConfiguration.h
+#pragma once 
+#include "pch.h"
+
+namespace winrt::SDKTemplate
+{
+    struct SampleState
+    {
+        static bool IsClipboardContentChangedEnabled();
+        static void IsClipboardContentChangedEnabled(bool checked);
+    private:
+        static bool isClipboardContentChangedEnabled;
+    };
+}
+
+// SampleConfiguration.cpp
+...
+#include "SampleConfiguration.h"
+...
+bool SampleState::isClipboardContentChangedEnabled = false;
+...
+bool SampleState::IsClipboardContentChangedEnabled()
+{
+    return isClipboardContentChangedEnabled;
+}
+void SampleState::IsClipboardContentChangedEnabled(bool checked)
+{
+    if (isClipboardContentChangedEnabled != checked)
+    {
+        isClipboardContentChangedEnabled = checked;
+    }
+}
+```
+
+同样，必须在应用程序中定义一次带有 `static` 存储的字段（如 SampleState::isClipboardContentChangedEnabled），并且 `.cpp` 文件是一个好地方（在本例中为 `SampleConfiguration.cpp`）  。
+
+#### <a name="buildclipboardformatsoutputstring"></a>**BuildClipboardFormatsOutputString**
+
+此方法是 MainPage 的公共成员，并且在 `SampleConfiguration.cs` 中进行定义  。
+
+```csharp
+// SampleConfiguration.cs
+...
+public string BuildClipboardFormatsOutputString()
+{
+    DataPackageView clipboardContent = Windows.ApplicationModel.DataTransfer.Clipboard.GetContent();
+    StringBuilder output = new StringBuilder();
+
+    if (clipboardContent != null && clipboardContent.AvailableFormats.Count > 0)
+    {
+        output.Append("Available formats in the clipboard:");
+        foreach (var format in clipboardContent.AvailableFormats)
+        {
+            output.Append(Environment.NewLine + " * " + format);
+        }
+    }
+    else
+    {
+        output.Append("The clipboard is empty");
+    }
+    return output.ToString();
+}
+...
+```
+
+在 C++/WinRT 中，我们将 BuildClipboardFormatsOutputString 设置为 SampleState 的公共静态方法   。 我们可以将其设置为 `static`，因为它不会访问任何实例成员。
+
+若要在 C++/WinRT 中使用 Clipboard 和 DataPackageView 类型，需要包含 C++/WinRT Windows 命名空间头文件 `winrt/Windows.ApplicationModel.DataTransfer.h`   。
+
+在 C# 中，DataPackageView.AvailableFormats 属性是 IReadOnlyList，因此我们可以访问它的 Count 属性    。 在 C++/WinRT 中，DataPackageView::AvailableFormats 访问器函数返回 IVectorView，该函数具有可调用的 Size 访问器函数    。
+
+若要移植 C# System.Text.StringBuilder 类型的使用，我们将使用标准 C++类型 [std::wostringstream](/cpp/standard-library/sstream-typedefs#wostringstream)   。 该类型是宽字符串的输出流（若要使用它，则需要包含 `sstream` 头文件）。 不要像对 StringBuilder 那样使用 Append 方法，应该对输出流（如 wostringstream）使用[插入运算符](/cpp/standard-library/using-insertion-operators-and-controlling-format) (`<<`)    。 有关详细信息，请参阅 [iostream 编程](/cpp/standard-library/iostream-programming)和[设置 C++/WinRT 字符串格式](/windows/uwp/cpp-and-winrt-apis/strings#formatting-strings)。
+
+C# 代码使用 `new` 关键字构造 StringBuilder  。 在 C# 中，对象默认为引用类型，使用 `new` 在堆上声明。 在新式标准 C++ 中，对象默认为值类型，在堆栈上声明（不使用 `new`）。 这样，我们就可以将 `StringBuilder output = new StringBuilder();` 移植到 C++/WinRT，仅作为 `std::wostringstream output;`。
+
+编辑 `pch.h`、`SampleConfiguration.h` 和 `SampleConfiguration.cpp` 以与以下列表相匹配。
+
+```cppwinrt
+// pch.h
+...
+#include <sstream>
+#include "winrt/Windows.ApplicationModel.DataTransfer.h"
+...
+
+// SampleConfiguration.h
+...
+static hstring BuildClipboardFormatsOutputString();
+...
+
+// SampleConfiguration.cpp
+...
+using namespace Windows::ApplicationModel::DataTransfer;
+...
+hstring SampleState::BuildClipboardFormatsOutputString()
+{
+    DataPackageView clipboardContent = Clipboard::GetContent();
+    std::wostringstream output;
+
+    if (clipboardContent && clipboardContent.AvailableFormats().Size() > 0)
+    {
+        output << L"Available formats in the clipboard:";
+        for (auto&& format : clipboardContent.AvailableFormats())
+        {
+            output << std::endl << L" * " << std::wstring_view(format);
+        }
+    }
+    else
+    {
+        output << L"The clipboard is empty";
+    }
+
+    return hstring{ output.str() };
+}
+```
+
+#### <a name="displaytoast"></a>**DisplayToast**
+
+DisplayToast 是 C# MainPage 类的公共静态方法，你会发现它在 `SampleConfiguration.cs` 中进行定义   。 在 C++/WinRT 中，我们将其设置为 SampleState 的公共静态方法  。
+
+我们已了解与移植此方法相关的大部分细节和技术。 要注意的一个新项是，将 C# 逐字字符串文本 (`@`) 移植到标准 C++ [原始字符串文本](/cpp/cpp/string-and-character-literals-cpp#raw-string-literals-c11) (`LR`)。
+
+此外，当你在 C++/WinRT 中引用 [ToastNotification](/uwp/api/windows.ui.notifications.toastnotification) 和 [XmlDocument](/uwp/api/windows.data.xml.dom.xmldocument) 类型时，可以按命名空间名称限定它们，也可以编辑 `SampleConfiguration.cpp` 并添加 `using namespace` 指令，如以下示例   。
+
+```cppwinrt
+using namespace Windows::UI::Notifications;
+```
+
+当引用 [XmlDocument](/uwp/api/windows.data.xml.dom.xmldocument) 类型以及引用任何其他 Windows 运行时类型时，可以选择相同的选项  。
+
+除了这些项目外，只需遵循与之前相同的指导，即可完成以下步骤。
+
+- 在 `SampleConfiguration.h` 中声明方法，并在 `SampleConfiguration.cpp` 中进行定义。
+- 编辑 `pch.h` 以包含任何必需的 C++/WinRT Windows 命名空间头文件。
+- 在堆栈上构造 C++/WinRT 对象，而不是在堆上构造。
+- 将对属性 get 访问器的调用替换为函数调用语法 (`()`)。
+
+编译器/链接器错误的一个常见原因是忘记包含所需的 C++/WinRT Windows 命名空间头文件。 有关一个可能的错误的详细信息，请参阅[为什么链接器出现“LNK2019:未解析的外部符号”错误？](/windows/uwp/cpp-and-winrt-apis/faq#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)。
+
+如果想要按照本演练并自行移植 DisplayToast ，可以将结果与下载的 Clipboard 示例源代码的 C++/WinRT 版本中的代码进行比较（位于 [`Windows-universal-samples/Samples/Clipboard/cppwinrt`](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt)`/Clipboard.sln`）  。
+
+#### <a name="enableclipboardcontentchangednotifications"></a>**EnableClipboardContentChangedNotifications**
+
+EnableClipboardContentChangedNotifications 是 C# MainPage 类的公共静态方法，它在 `SampleConfiguration.cs` 中定义   。
+
+```csharp
+// SampleConfiguration.cs
+...
+public bool EnableClipboardContentChangedNotifications(bool enable)
+{
+    if (IsClipboardContentChangedEnabled == enable)
+    {
+        return false;
+    }
+
+    IsClipboardContentChangedEnabled = enable;
+    if (enable)
+    {
+        Clipboard.ContentChanged += OnClipboardChanged;
+        Window.Current.Activated += OnWindowActivated;
+    }
+    else
+    {
+        Clipboard.ContentChanged -= OnClipboardChanged;
+        Window.Current.Activated -= OnWindowActivated;
+    }
+    return true;
+}
+...
+private void OnClipboardChanged(object sender, object e) { ... }
+private void OnWindowActivated(object sender, WindowActivatedEventArgs e) { ... }
+...
+```
+
+在 C++/WinRT 中，我们将其设置为 SampleState 的公共静态方法  。
+
+在 C# 中，可以使用 `+=` 和 `-=` 运算符语法来注册和撤销事件处理委托。 在 C++/WinRT 中，可以使用多个语法选项注册/撤销委托，如[在 C++/WinRT 中使用委托处理事件](/windows/uwp/cpp-and-winrt-apis/handle-events)中所述。 但一般的形式是，通过调用以事件命名的函数进行注册和撤销。 若要注册，请将委托传递给该函数，然后在返回中检索撤销令牌。 若要撤销，请将令牌传递给函数。 在这种情况下，处理程序是静态的，而且（如下面的代码清单中所示）函数调用语法非常简单。
+
+object 类型将显示在 C# 事件处理程序签名中  。 在 C# 语言中，object 是 .NET [System.Object](/dotnet/api/system.object) 类型的[别名](/dotnet/csharp/language-reference/builtin-types/reference-types)   。 C++/WinRT 中的等效项是 [winrt::Windows::Foundation::IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable)  。 因此，你会在 C++/WinRT 事件处理程序中看到 IInspectable  。
+
+编辑 `SampleConfiguration.h` 和 `SampleConfiguration.cpp` 以与以下列表相匹配。
+
+```cppwinrt
+// SampleConfiguration.h
+...
+private:
+    static event_token clipboardContentChangedToken;
+    static event_token activatedToken;
+    static void OnClipboardChanged(Windows::Foundation::IInspectable const& sender, Windows::Foundation::IInspectable const& e);
+    static void OnWindowActivated(Windows::Foundation::IInspectable const& sender, Windows::UI::Core::WindowActivatedEventArgs const& e);
+...
+
+// SampleConfiguration.cpp
+...
+using namespace Windows::Foundation;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml;
+...
+event_token SampleState::clipboardContentChangedToken;
+event_token SampleState::activatedToken;
+...
+bool SampleState::EnableClipboardContentChangedNotifications(bool enable)
+{
+    if (isClipboardContentChangedEnabled == enable)
+    {
+        return false;
+    }
+
+    IsClipboardContentChangedEnabled(enable);
+    if (enable)
+    {
+        clipboardContentChangedToken = Clipboard::ContentChanged(OnClipboardChanged);
+        activatedToken = Window::Current().Activated(OnWindowActivated);
+    }
+    else
+    {
+        Clipboard::ContentChanged(clipboardContentChangedToken);
+        Window::Current().Activated(activatedToken);
+    }
+    return true;
+}
+void SampleState::OnClipboardChanged(IInspectable const&, IInspectable const&){}
+void SampleState::OnWindowActivated(IInspectable const&, WindowActivatedEventArgs const& e){}
+```
+
+暂时将事件处理委托本身（OnClipboardChanged 和 OnWindowActivated）保留为存根   。 它们已在要移植的成员列表中，我们将在后面的子部分中介绍它们。
+
+#### <a name="onnavigatedto"></a>**OnNavigatedTo**
+
+OnNavigatedTo 是 C# MainPage 类的受保护的方法，并且在 `MainPage.xaml.cs` 中进行定义   。 示例如下所示，另外还有它所引用的 XAML ListBox  。
+
+```xaml
+<!-- MainPage.xaml -->
+...
+<ListBox x:Name="ScenarioControl" ... />
+...
+```
+
+```csharp
+// MainPage.cs
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    // Populate the scenario list from the SampleConfiguration.cs file
+    var itemCollection = new List<Scenario>();
+    int i = 1;
+    foreach (Scenario s in scenarios)
+    {
+        itemCollection.Add(new Scenario { Title = $"{i++}) {s.Title}", ClassType = s.ClassType });
+    }
+    ScenarioControl.ItemsSource = itemCollection;
+
+    if (Window.Current.Bounds.Width < 640)
+    {
+        ScenarioControl.SelectedIndex = -1;
+    }
+    else
+    {
+        ScenarioControl.SelectedIndex = 0;
+    }
+}
+```
+
+这是一种重要且有趣的方法，因为我们在其中将 Scenario 对象的集合分配给 UI  。 此 C# 代码将生成 Scenario 对象的 [System.Collections.Generic.List](/dotnet/api/system.collections.generic.list-1)，并将其分配给 ListBox（它是项目控件）的 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 属性     。 在 C# 中，我们使用[字符串内插](/dotnet/csharp/language-reference/tokens/interpolated)为每个 Scenario 对象生成标题（请注意 `$` 特殊字符的使用）  。
+
+在 C++/WinRT 中，我们将 OnNavigatedTo 设置为 MainPage的公共方法   。 接下来，我们会将一个存根 ListBox 元素添加到 XAML 中，使生成成功  。 在代码清单后，我们将查看一些详细信息。
+
+```xaml
+<!-- MainPage.xaml -->
+...
+<StackPanel ...>
+    ...
+    <ListBox x:Name="ScenarioControl" />
+</StackPanel>
+...
+```
+
+```cppwinrt
+// MainPage.h
+...
+void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const& e);
+...
+
+// MainPage.cpp
+...
+using namespace winrt::Windows::UI::Xaml;
+using namespace winrt::Windows::UI::Xaml::Navigation;
+...
+void MainPage::OnNavigatedTo(NavigationEventArgs const& /* e */)
+{
+    auto itemCollection = winrt::single_threaded_observable_vector<IInspectable>();
+    int i = 1;
+    for (auto s : MainPage::scenarios())
+    {
+        s.Title = winrt::to_hstring(i++) + L") " + s.Title;
+        itemCollection.Append(winrt::box_value(s));
+    }
+    ScenarioControl().ItemsSource(itemCollection);
+
+    if (Window::Current().Bounds().Width < 640)
+    {
+        ScenarioControl().SelectedIndex(-1);
+    }
+    else
+    {
+        ScenarioControl().SelectedIndex(0);
+    }
+}
+...
+```
+
+同样，我们将调用 [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 函数，但这一次是创建 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 的集合  。 这就是对 Scenario 对象执行实时装箱的这一决定的一部分  。
+
+我们只使用 winrt::hstring 的[串联运算符](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)，而不是 C# 的字符串内插  。
+
+#### <a name="isapplicationwindowactive"></a>**isApplicationWindowActive**
+
+在 C# 中，isApplicationWindowActive 是一个简单的专用 `bool` 字段，属于 MainPage 类，并且在 `SampleConfiguration.cs` 中进行定义   。 默认为 `false`。 在 C++/WinRT 中，我们在 `SampleConfiguration.h` 和 `SampleConfiguration.cpp` 文件中将其设为 SampleState 的公共静态字段（原因已描述），并且默认值相同  。
+
+我们已了解如何对静态字段进行声明、定义和初始化。 若要复习，请回顾我们对 isClipboardContentChangedEnabled 字段执行的操作，对 isApplicationWindowActive 亦是如此   。
+
+#### <a name="needtoprintclipboardformat"></a>**needToPrintClipboardFormat**
+
+与 isApplicationWindowActive 的模式相同（请参阅上一标题）  。
+
+#### <a name="button_click"></a>**Button_Click**
+
+Button_Click 是 C# MainPage 类的专用（事件处理）方法，并且在 `MainPage.xaml.cs` 中进行定义   。 示例如下所示，另外还有它所引用的 XAML SplitView  。
+
+```xaml
+<!-- MainPage.xaml -->
+...
+<SplitView x:Name="Splitter" ... />
+...
+```
+
+```csharp
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    Splitter.IsPaneOpen = !Splitter.IsPaneOpen;
+}
+```
+
+移植到 C++/WinRT 中的等效项。 请注意，在 C++/WinRT 版本中，事件处理程序是 `public`（如你所见，可在 `private:` 声明之前进行声明）  。
+
+```xaml
+<!-- MainPage.xaml -->
+...
+<StackPanel ...>
+    ...
+    <SplitView x:Name="Splitter" />
+</StackPanel>
+...
+```
+
+```cppwinrt
+// MainPage.h
+...
+    void Button_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e);
+private:
+...
+
+// MainPage.cpp
+void MainPage::Button_Click(Windows::Foundation::IInspectable const& /* sender */, Windows::UI::Xaml::RoutedEventArgs const& /* e */)
+{
+    Splitter().IsPaneOpen(!Splitter().IsPaneOpen());
+}
+```
+
+#### <a name="displaychangedformats"></a>**DisplayChangedFormats**
+
+在 C# 中，DisplayChangedFormats 是属于 MainPage 类的专用方法，在 `SampleConfiguration.cs` 中进行定义   。
+
+```csharp
+private void DisplayChangedFormats()
+{
+    string output = "Clipboard content has changed!" + Environment.NewLine;
+    output += BuildClipboardFormatsOutputString();
+    NotifyUser(output, NotifyType.StatusMessage);
+}
+```
+
+在 C++/WinRT 中，我们在 `SampleConfiguration.h` 和 `SampleConfiguration.cpp` 文件中将其设置为 SampleState 的专用静态字段（它不会访问任何实例成员）  。 此方法的 C# 代码不使用 System.Text.StringBuilder；但它可以进行足够的字符串格式设置，对于 C++/WinRT 版本，这是使用 std::wostringstream 的另一个好地方   。
+
+我们将在输出流中插入标准 C++ `std::endl`（一个换行符），而不是在 C# 代码中使用静态 [System.Environment.NewLine](/dotnet/api/system.environment.newline) 属性  。
+
+```cppwinrt
+// SampleConfiguration.h
+...
+private:
+    static void DisplayChangedFormats();
+...
+
+// SampleConfiguration.cpp
+void SampleState::DisplayChangedFormats()
+{
+    std::wostringstream output;
+    output << L"Clipboard content has changed!" << std::endl;
+    output << BuildClipboardFormatsOutputString().c_str();
+    MainPage::Current().NotifyUser(output.str(), NotifyType::StatusMessage);
+}
+```
+
+上面的 C++/WinRT 版本的设计效率有点低。 首先，我们创建一个 std::wostringstream  。 但我们也会调用 BuildClipboardFormatsOutputString 方法（前面已移植）  。 该方法将创建自己的 std::wostringstream  。 它会将流转换为 winrt::hstring 并返回  。 我们调用 [hstring::c_str](/uwp/cpp-ref-for-winrt/hstring#hstringc_str-function) 函数将返回的 hstring 返回到 C 样式字符串，然后将其插入到流中   。 更高效的方式是只创建一个 std::wostringstream 并进行传递（引用），以便方法可以直接将字符串插入其中  。
+
+这就是我们在 Clipboard 示例[源代码](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt)的 C++/WinRT 版本中所执行的操作。 在该源代码中，有一个名为 SampleState::AddClipboardFormatsOutputString 的新专用静态方法，该方法采用对输出流的引用并对其进行操作  。 然后，重构 SampleState::DisplayChangedFormats 和 SampleState::BuildClipboardFormatsOutputString 方法，以调用该新方法   。 它在功能上等效于本主题中的代码清单，但效率更高。
+
+#### <a name="footer_click"></a>**Footer_Click**
+
+Footer_Click 是属于 C# MainPage 类的异步事件处理程序，在 `MainPage.xaml.cs` 中进行定义   。 下面的代码清单在功能上等效于你下载的源代码中的方法。 但在这里，我们将其从一行解压缩到了四行，以便更轻松地查看它的功能，进而找到它的移植方式。
+
+```csharp
+async void Footer_Click(object sender, RoutedEventArgs e)
+{
+    var hyperlinkButton = (HyperlinkButton)sender;
+    string tagUrl = hyperlinkButton.Tag.ToString();
+    Uri uri = new Uri(tagUrl);
+    await Windows.System.Launcher.LaunchUriAsync(uri);
+}
+```
+
+技术上讲，方法是异步的，但它不会在 `await` 后执行任何操作，因此不需要 `await`（也不需要 `async` 关键字）。 它可能会使用它们，以避免在 Visual Studio 中使用 IntelliSense 消息。
+
+等效的 C++/WinRT 方法也将是异步的（因为它调用 [Launcher.LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync)）  。 但不需要 `co_await`，也不需要返回异步对象。 有关 `co_await` 和异步对象的信息，请参阅[利用 C++/WinRT 实现的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+
+现在，让我们讨论一下该方法的作用。 由于这是 HyperlinkButton 的 Click 事件的事件处理程序，因此名为 sender 的对象实际上是 HyperlinkButton     。 因此，强制转换是安全的（也可以将此强制转换表示为 `sender as HyperlinkButton`）。 接下来，我们将检索 Tag 属性的值（如果查看 C# 项目中的 XAML 标记，你会看到此项设置为表示 web url 的字符串）  。 尽管 FrameworkElement.Tag 属性（HyperlinkButton 是 FrameworkElement）的类型为 object，但在 C# 中，我们可以使用 [Object.ToString](/dotnet/api/system.object.tostring) 对其进行字符串化      。 在生成的字符串中，构造 Uri 对象  。 最后（通过 Shell 的帮助），启动一个浏览器并导航到该 url。
+
+下面是移植到 C++/WinRT 的方法（同样，为清楚起见进行了扩展），之后是详细信息的说明。
+
+```cppwinrt
+// pch.h
+...
+#include "winrt/Windows.System.h"
+...
+
+// MainPage.h
+...
+    void Footer_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e);
+private:
+...
+
+// MainPage.cpp
+...
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::UI::Xaml::Controls;
+...
+void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const&)
+{
+    auto hyperlinkButton{ sender.as<HyperlinkButton>() };
+    hstring tagUrl{ winrt::unbox_value<hstring>(hyperlinkButton.Tag()) };
+    Uri uri{ tagUrl };
+    Windows::System::Launcher::LaunchUriAsync(uri);
+}
+```
+
+与往常一样，我们将事件处理程序设置为 `public`。 对 sender 对象使用 [as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 函数将其强制转换为 HyperlinkButton    。 在 C++/WinRT 中，Tag 属性为 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（等效于 [Object](/dotnet/api/system.object)）    。 但 IInspectable 上没有 Tostring   。 我们必须将 IInspectable 取消装箱为标量值（在本例中为字符串）  。 同样，有关装箱和取消装箱的详细信息，请参阅[将标量值装箱和取消装箱到 IInspectable](/windows/uwp/cpp-and-winrt-apis/boxing)。
+
+最后两行重复我们之前看到过的移植模式，它们几乎与 C# 版本相对应。
+
+#### <a name="handleclipboardchanged"></a>**HandleClipboardChanged**
+
+移植此方法并不涉及任何新内容。 你可以比较示例源代码中的 C# 和 C++/WinRT 版本。
+
+#### <a name="onclipboardchanged-and-onwindowactivated"></a>**OnClipboardChanged** 和 **OnWindowActivated**
+
+目前只有这两个事件处理程序的空存根。 但移植它们非常简单，无需讨论新内容。
+
+#### <a name="scenariocontrol_selectionchanged"></a>**ScenarioControl_SelectionChanged**
+
+这是属于 C# MainPage 类的另一个专用事件处理程序，并在 `MainPage.xaml.cs` 中进行定义  。 在 C++/WinRT 中，将其设置为公共，并在 `MainPage.h` 和 `MainPage.cpp` 中实现。
+
+对于此方法，我们需要 MainPage::navigating，它是一个初始化为 `false` 的专用布尔字段  。 需要在 `MainPage.xaml` 中有一个名为 ScenarioFrame 的 Frame   。 但除这些细节外，移植此方法无需任何新技术。
+
+#### <a name="updatestatus"></a>**UpdateStatus**
+
+目前只有 MainPage.UpdateStatus 的存根  。 再次移植其实现涉及的很多是旧技术。 需要注意的一点是，在 C# 中，我们可以将 string 与 String.Empty 进行比较，而在 C++/WinRT 中，我们改为调用 [winrt::hstring::empty](/uwp/cpp-ref-for-winrt/hstring#hstringempty-function) 函数    。 另一种情况是 `nullptr` 是 C# 的 `null` 的标准 C++ 等效项。
+
+你可以通过已介绍的技术来执行其余的移植。 下面列出了在此方法的移植版本编译之前需要执行的操作类型。
+
+- 对于 `MainPage.xaml`，请添加名为 StatusBorder 的 Border   。
+- 对于 `MainPage.xaml`，请添加名为 StatusBlock 的 TextBlock   。
+- 对于 `MainPage.xaml`，请添加名为 StatusPanel 的 StackPane  l  。
+- 对于 `pch.h`，请添加 `#include "winrt/Windows.UI.Xaml.Media.h"`。
+- 对于 `pch.h`，请添加 `#include "winrt/Windows.UI.Xaml.Automation.Peers.h"`。
+- 对于 `MainPage.cpp`，请添加 `using namespace winrt::Windows::UI::Xaml::Media;`。
+- 对于 `MainPage.cpp`，请添加 `using namespace winrt::Windows::UI::Xaml::Automation::Peers;`。
+
+### <a name="copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage"></a>复制完成移植 MainPage所需的 XAML 和样式 
+
+对于 XAML，理想情况是可以在 C# 和 C++/WinRT 项目中使用相同的 XAML 标记  。 Clipboard 示例是其中一种情况。
+
+在其 `Styles.xaml` 文件中，Clipboard 示例具有一个 XAML ResourceDictionary 样式，该样式应用于应用程序 UI 上的按钮、菜单和其他 UI 元素  。 `Styles.xaml` 页面将合并到 `App.xaml` 中。 接下来是 UI 的标准 `MainPage.xaml` 起点，我们已经对其进行了简要说明。 现在，在项目的 C++/WinRT 版本中，我们可以重复使用这三个不变的 `.xaml` 文件。
+
+与资产文件一样，你可以选择从应用程序的多个版本中引用相同的共享 XAML 文件。 在本演练中，为了简单起见，我们将文件复制到 C++/WinRT 项目中并以这种方式添加它们。
+
+导航到 `\Clipboard_sample\SharedContent\xaml` 文件夹，选择并复制 `App.xaml` 和 `MainPage.xaml`，然后将这两个文件粘贴到 C++/WinRT 项目的 `\Clipboard\Clipboard` 文件夹中，并在出现提示时选择替换文件。
+
+在项目节点下向 C++/WinRT 项目添加新文件夹，并将其命名为 `Styles`。 导航到 `\Clipboard_sample\SharedContent\xaml` 文件夹，选择并复制 `Styles.xaml`，然后将其粘贴到 C++/WinRT 项目的 `\Clipboard\Clipboard\Styles` 文件夹中。 右键单击 `Styles` 文件夹（在 C++/WinRT 项目的解决方案资源管理器中）>“添加” > “现有项…”，然后导航到 `\Clipboard\Clipboard\Styles`   。 在文件选取器中选择 `Styles`，然后单击“添加”  。
+
+现在，我们已完成 MainPage 的移植，如果你按照步骤进行操作，则 C++/WinRT 项目现在将生成并运行  。
+
+## <a name="the-remaining-xaml-pages"></a>其余 XAML 页
+
+可移植的其余 XAML 页&mdash;`CopyFiles.xaml`、`CopyImage.xaml`、`CopyText.xaml`、`HistoryAndRoaming.xaml` 和 `OtherScenarios.xaml`。
+
+本主题提供了充足的移植信息和技术，现在你可以根据需要自行移植其余的 XAML 页。 或者，仅查看 Clipboard 示例[源代码](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard/cppwinrt)中的 C++/WinRT 项目，并将其与 C# 等效项进行比较。
+
+## <a name="related-topics"></a>相关主题
+* [从 C# 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)
