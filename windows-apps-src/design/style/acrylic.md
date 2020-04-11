@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c6995ab6116d4e3bda8e21c397ab3b4985732763
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 9739933f9fd23c6f169c24c4f789e53ba894708d
+ms.sourcegitcommit: 252dbf4483d58dd7093a79726a29923109eebee5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77639764"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80696633"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -76,15 +76,6 @@ Acrylic 最明显的特征是其透明度。 有两种 Acrylic 混合类型可�
 如果在导航图面上使用的是应用内 Acrylic，则考虑扩展 Acrylic 窗格下的内容，以改善应用上的流。 使用 NavigationView 将自动为你执行此操作。 但为避免产生条纹效果，尽量不要边对边放置多个 Acrylic - 这可能会在两个模糊图面之间产生多余接缝。 Acrylic 这种工具可让设计在视觉上更加协调，但使用不当可能会导致视觉干扰。
 
 考虑以下使用模式，确定将 Acrylic 融入应用的最佳方式：
-
-### <a name="horizontal-navigation-or-commanding"></a>水平导航或命令
-
-如果你的应用无法使用 NavigationView，而你计划自行添加 Acrylic，我们建议使用相对半透明的 Acrylic（色调不透明度 60%）。
- - 窗格以覆盖形式在其他应用内容上打开时，应设置为 [60% 应用内 Acrylic](#acrylic-theme-resources)
-
-![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
-
-此外，在顶部的 Acrylic 下扩展或滚动内容将为应用带来更为沉浸式和无缝的体验。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
@@ -202,7 +193,7 @@ Acrylic 外观可自动适应各种设备和上下文。
 
 若要添加 Acrylic 画笔，请定义用于深色、浅色和高对比度主题的三个资源。 请注意，在高对比度主题中，我们建议使用 x:Key 与深色/浅色 AcrylicBrush 相同的 SolidColorBrush。
 
-> [!Note] 
+> [!Note]
 > 如果未指定 TintLuminosityOpacity 值，系统将根据 TintColor 和 TintOpacity 自动调整其值。
 
 ```xaml
