@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ab62a6e6c2e294e8d6b5222eab4a1a9ae25a2e
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: c61d1478c38df315a3fe3c20151de8c2bfbca4e2
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081010"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123565"
 ---
 # <a name="dialogs-and-flyouts"></a>对话框和浮出控件
 
@@ -24,15 +24,12 @@ ms.locfileid: "80081010"
 
 > **平台 API：** [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout 类](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-:::row:::
-    :::column:::
 **对话框**
 
 ![对话框示例](../images/dialogs/dialog_RS2_delete_file.png)
 
 对话框是用于提供上下文应用信息的模式 UI 覆盖。 除非明确取消对话框，否则它会阻止与应用窗口的交互。 它们通常会请求用户进行某种类型的操作。
-    :::column-end:::
-    :::column::: 
+
 **浮出控件**
 
 ![浮出控件示例](../images/flyout-example2.png)
@@ -40,9 +37,6 @@ ms.locfileid: "80081010"
 浮出控件是轻量级上下文弹出窗口，用于显示与用户正在执行的操作相关的 UI。 它包含放置和大小调整逻辑，可用于显示辅助控件或显示关于某个项目的更多详细信息。
 
 和对话框不同，浮出控件可通过点击或单击浮出控件之外的某处、按 Escape 键或后退按钮、调整应用窗口大小或更改设备的方向来快速取消。
-    :::column-end:::
-:::row-end:::
-
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -52,8 +46,6 @@ ms.locfileid: "80081010"
 
 鉴于对话框会阻止交互而浮出控件不会，因此对话框应专门用于你希望用户放下一切事务专注于特定的部分信息或回答问题的情况。 另一方面，当你希望将注意力吸引到某些内容，但如果用户想要忽略它也无妨时，可以使用浮出控件。
 
-:::row:::
-    :::column:::
    <p><b>将对话框用于...</b> <br/>
 <ul>
 <li>表明用户在继续操作之前<b>必须</b>阅读并确认的重要信息。 示例包括：
@@ -69,17 +61,14 @@ ms.locfileid: "80081010"
 <li>问题，在应用需要询问用户阻止问题时（例如当应用不能代表用户进行选择时）。 阻止问题不能忽略或延迟，并应该向用户提供明确定义的选项。</li>
 </ul>
 </p>
-    :::column-end:::
-    :::column:::
+
+
    <p><b>将浮出控件用于...</b> <br/>
 <ul>
 <li>收集在可以完成某个操作前所需的其他信息。</li>
 <li>显示仅在一些时间内相关的信息。 例如，在照片库应用中，当用户单击某个图像缩略图时，你可以使用浮出控件显示图像的大型版本。</li>
 <li>显示详细信息，例如页面上某个项目的详细信息或较长说明。</li>
 </ul></p>
-    :::column-end:::
-:::row-end:::
-
 
 ## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>如何避免使用对话框和浮出控件
 
