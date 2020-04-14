@@ -3,23 +3,23 @@ Description: 了解如何生成继承主机应用的可执行文件、入口点�
 title: 创建托管应用
 ms.date: 01/28/2020
 ms.topic: article
-keywords: windows 10、desktop、package、identity、.MSIX、Win32
+keywords: Windows 10, 桌面, 包, 标识, MSIX, Win32
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 870042f3a7737e5caf646d4d14ffd49af39a079f
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: a3017073b15ea18214e9c78263fb212bb192132b
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80108140"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266925"
 ---
 # <a name="create-hosted-apps"></a>创建托管应用
 
 从 Windows 10 版本2004开始，你可以创建*托管应用*。 托管应用与父*主机*应用共享相同的可执行文件和定义，但其外观和行为类似于系统上的单独应用。
 
-如果你希望组件（如可执行文件或脚本文件）的行为类似于 Windows 10 应用程序，但组件需要主机进程才能执行，则托管应用程序非常有用。 例如，可以将 PowerShell 或 Python 脚本作为托管应用传递，该应用需要安装主机才能运行。 托管应用可以具有其自己的开始磁贴、标识以及与 Windows 10 功能（如后台任务、通知、磁贴和共享目标）的深度集成。
+托管应用适用于希望组件（如可执行文件或脚本文件）的行为类似于独立 Windows 10 应用的方案，但组件需要主机进程才能执行。 例如，可以将 PowerShell 或 Python 脚本作为托管应用传递，该应用需要安装主机才能运行。 托管应用可以具有其自己的开始磁贴、标识以及与 Windows 10 功能（如后台任务、通知、磁贴和共享目标）的深度集成。
 
 包清单中的几个元素和属性支持托管应用功能，包清单中的这些元素和特性使托管应用可以在主机应用包中使用可执行文件和定义。 当用户运行托管应用程序时，操作系统会自动以托管应用程序的标识启动主机可执行文件。 然后，宿主可以将视觉资产、内容或调用 Api 作为托管应用程序加载。 托管应用获取主机和托管应用之间声明的功能的交集。 这意味着，托管应用无法请求比主机提供的功能更多的功能。
 
