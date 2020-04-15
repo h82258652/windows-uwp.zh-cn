@@ -1,5 +1,5 @@
 ---
-Description: 本文介绍了四个通知选项 &\#8212; 本地计划，定期，和推送 （& a)\#8212; 提供磁贴和徽章更新和 toast 通知内容。
+Description: 本文介绍了四种通知选项 &\#8212; "本地"、"计划"、"定期" 和 "推送"\#&，它们可提供磁贴和徽章更新和 toast 通知内容。
 title: 选择通知传递方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ea41a509b1673b7c4f5812d34db93dd6b0c93e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 80a06f5199c49f5fcd7a08dc9c9baef18ee19db9
+ms.sourcegitcommit: 017f2f1492f3220da0fae8b4c99de7206a185dff
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365946"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81385851"
 ---
 # <a name="choose-a-notification-delivery-method"></a>选择通知传递方法
 
@@ -27,9 +27,9 @@ ms.locfileid: "66365946"
 
 应用可使用 4 种机制传递通知：
 
--   **Local**
--   **计划**
--   **Periodic**
+-   **地方**
+-   **好**
+-   **中间**
 -   **推送**
 
 下表总结了通知传递类型。
@@ -45,13 +45,13 @@ ms.locfileid: "66365946"
 <tr class="header">
 <th align="left">传递方法</th>
 <th align="left">使用场景</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 <th align="left">示例</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">本地</td>
+<td align="left">Local</td>
 <td align="left">磁贴、锁屏提醒、Toast</td>
 <td align="left">一组在应用运行时发送通知的 API 调用，直接更新磁贴或锁屏提醒，或者发送 Toast 通知。</td>
 <td align="left"><ul>
@@ -79,7 +79,7 @@ ms.locfileid: "66365946"
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">推送</td>
+<td align="left">推</td>
 <td align="left">磁贴、锁屏提醒、Toast、原始</td>
 <td align="left">从一个云服务器发送的通知，即使应用未运行也是如此。</td>
 <td align="left"><ul>
@@ -103,8 +103,8 @@ ms.locfileid: "66365946"
 
 尽管这些 API 调用是本地的，但通知可引用 Web 图像。 如果 Web 图像不可供下载、已损坏或不符合图像规范，磁贴和 Toast 的反应会有所不同：
 
--   图块：更新不会显示
--   Toast 通知：将显示通知，但在删除你的映像
+-   磁贴：不会显示更新
+-   Toast：显示通知，但会丢弃图像
 
 默认情况下，本地 toast 通知在三天后过期，而本地磁贴通知永远不会过期。 我们建议使用适合你的通知的明确过期时间（toast 的最长有效期为三天）替代这些默认值。 
 
@@ -112,7 +112,7 @@ ms.locfileid: "66365946"
 
 -   [发送本地磁贴通知](sending-a-local-tile-notification.md)
 -   [发送本地 toast 通知](send-local-toast.md)
--   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平台（UWP）通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>计划通知
 
@@ -125,7 +125,8 @@ ms.locfileid: "66365946"
 
 有关详细信息，请参阅以下主题：
 
--   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [计划 toast 通知](scheduled-toast.md)
+-   [通用 Windows 平台（UWP）通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="periodic-notifications"></a>定期通知
 
@@ -139,7 +140,7 @@ ms.locfileid: "66365946"
 有关详细信息，请参阅以下主题：
 
 -   [定期通知概述](periodic-notification-overview.md)
--   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平台（UWP）通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="push-notifications"></a>推送通知
 
@@ -153,8 +154,8 @@ ms.locfileid: "66365946"
 有关详细信息，请参阅：
 
 -   [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
--   [推送通知指导原则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
--   [通用 Windows 平台 (UWP) 通知的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [推送通知准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+-   [通用 Windows 平台（UWP）通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
 ## <a name="related-topics"></a>相关主题
@@ -162,11 +163,11 @@ ms.locfileid: "66365946"
 
 * [发送本地磁贴通知](sending-a-local-tile-notification.md)
 * [发送本地 toast 通知](send-local-toast.md)
-* [推送通知指导原则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [推送通知准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
 * [Toast 通知准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-badges-notifications)
 * [定期通知概述](periodic-notification-overview.md)
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
-* [通用 Windows 平台 (UWP) 通知的代码在 GitHub 上的示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [GitHub 上的通用 Windows 平台（UWP）通知代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
