@@ -362,6 +362,8 @@
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL 应用
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: 计划 toast
+              href: shell/tiles-and-notifications/scheduled-toast.md
             - name: 自定义音频
               href: shell/tiles-and-notifications/custom-audio-on-toasts.md
             - name: 进度条
