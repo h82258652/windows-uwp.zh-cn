@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 提问, 问题, 常见问题解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 592458c6e6157e8cef0d1312ebf6e5c9f15b7919
-ms.sourcegitcommit: 7dcf74b11aa0cb2f3ff4ab10caf26ba769f96dfb
+ms.openlocfilehash: d942fd58619c12192fd8429c0e8aeb5aa070fd4d
+ms.sourcegitcommit: 2a80888843bb53cc1f926dcdfc992cf065539a67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80662380"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81005447"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有关 C++/WinRT 的常见问题解答
 对你可能存疑的关于通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作和使用 Windows 运行时 API 的问题的解答。
@@ -78,7 +78,10 @@ C++/WinRT 生成支持（属性/目标）记录在 Microsoft.Windows.CppWinRT Nu
 如果你有在其构造函数中释放资源的运行时类，而且有旨在从其实现编译单元外部所使用的运行时类（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件），则我们建议你还要实现 **IClosable**，以支持缺乏确定性终止化的语言对运行时类的使用。 确保资源得到释放，无论调用的是析构函数 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) 还是两者。 可调用 **IClosable::Close** 任意次数。
 
 ## <a name="do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume"></a>我是否需要对所使用的运行时类调用 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)？
-**IClosable** 存在以支持缺乏确定性终止化的语言。 所以，不应通过 C++/WinRT 调用 **IClosable::Close**，涉及关闭竞争或半死锁的极少数情况除外。 例如，如果使用的是 **Windows.UI.Composition** 类型，则可能会遇到按照设定的顺序释放对象的情况，作为允许 C++/WinRT 包装器的析构为你执行该工作的替代方式。
+**IClosable** 存在以支持缺乏确定性终止化的语言。 因此，通常不需从 C++/WinRT 调用 **IClosable::Close**。 但是，对于该通用规则，需考虑以下例外。
+- 在涉及关闭竞争或半死锁的极罕见情况下，需调用 **IClosable::Close**。 例如，如果使用的是 **Windows.UI.Composition** 类型，则可能会遇到按照设定的顺序释放对象的情况，作为允许 C++/WinRT 包装器的析构为你执行该工作的替代方式。
+- 如果无法保证你具有对某个对象的最后一个引用（因为你将它传递给其他 API，后者可能会保留某个引用），则最好调用 **IClosable::Close**。
+- 如果不能肯定，则为了安全起见，可以手动调用 **IClosable::Close**，而不是等待包装器在析构时调用它。
 
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>C++/WinRT 可以使用 LLVM/Clang 编译吗？
 C++/WinRT 不支持 LLVM 和 Clang 工具链，但我们在内部使用 LLVM 和 Clang 验证 C++/WinRT 的合规性。 例如，如果想模拟内部执行的操作，可以尝试进行如下所述的试验。

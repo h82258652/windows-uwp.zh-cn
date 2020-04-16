@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e95a9a1f6a0d34e377f48c5b19497eb638fb186e
-ms.sourcegitcommit: 27cb7c4539bb6417d32883824ccea160bb948c15
+ms.openlocfilehash: c130505ec79ca83698fd79df26464969afe79c36
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830821"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893467"
 ---
 # <a name="list-view-and-grid-view"></a>列表视图和网格视图
 
@@ -26,7 +26,7 @@ ms.locfileid: "74830821"
 > **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)、[GridView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview)、[ItemsSource 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)、[Items 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items)
 
 > [!NOTE]
-> ListView 和 GridView 都从 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) 类派生，因此它们的功能相同，但数据显示方式不同。 在本文中，涉及到列表视图时，信息适用于 ListView 和 GridView 控件，除非另行指定。 我们可能会引用 ListView 或 ListViewItem 等类，但 *List* 前缀可使用相应网格等效项（GridView 或 GridViewItem）的 *Grid* 代替。 
+> ListView 和 GridView 都从 [ListViewBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase) 类派生，因此它们的功能相同，但数据显示方式不同。 在本文中，涉及到列表视图时，信息适用于 ListView 和 GridView 控件，除非另行指定。 我们可能会引用 ListView 或 ListViewItem 等类，但 List 前缀可使用相应网格等效项（GridView 或 GridViewItem）的 Grid 代替   。 
 
 ListView 和 GridView 提供使用集合的许多好处。 它们都易于实施且提供基本 UI、交互和滚动，同时仍可以轻松自定义。 ListView 和 GridView 可以绑定到现有的动态数据源，也可以绑定到 XAML 本身/代码隐藏中提供的硬编码数据。 
 
@@ -36,7 +36,7 @@ ListView 和 GridView 提供使用集合的许多好处。 它们都易于实施
 ## <a name="differences-between-listview-and-gridview"></a>ListView 和 GridView 之间的差异
 
 ### <a name="listview"></a>ListView
-ListView 采用垂直堆叠的方式在单个列中显示数据。 ListView 更适用于将文本作为焦点的项以及应从上到下读取的集合（即按字母顺序排列）。 ListView 的几个常见用例包括消息列表和搜索结果。
+ListView 采用垂直堆叠的方式在单个列中显示数据。 ListView 更适用于将文本作为焦点的项以及应从上到下读取的集合（即按字母顺序排列）。 ListView 的几个常见用例包括消息列表和搜索结果。 需要在多个列中显示的集合或以类似于表的格式显示的集合  不应使用 ListView，而应考虑改用 [DataGrid](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid)。
 
 ![具有分组数据的列表视图](images/listview-grouped-example-resized-final.png)
 
@@ -207,12 +207,12 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ## <a name="customizing-the-look-of-items-with-a-datatemplate"></a>使用 DataTemplate 自定义项的外观
 
-ListView 或 GridView 中的数据模板定义可视化项/数据的方式。 在默认情况下，数据项以绑定到的数据对象的字符串表现形式显示在 ListView 中。 通过将 [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) 设置到特定的属性，你可以显示数据项的该属性的字符串表现形式。
+ListView 或 GridView 中的数据模板定义可视化项/数据的方式。 在默认情况下，数据项以绑定到的数据对象的字符串表现形式显示在 ListView 中。 通过将 [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) 设置到特定的属性，你可以显示数据项的特定属性的字符串表现形式。
 
 但是，你通常会希望更丰富地呈现你的数据。 若要具体地指定 ListView/GridView 中项的显示方式，可以创建 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 DataTemplate 中的 XAML 定义用于显示各项的控件的布局和外观。 该布局中的控件可绑定到数据对象的属性，或者具有在内联中定义的静态内容。 
 
 > [!NOTE]
-> 在 DataTemplate 中使用 [x:Bind 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，你必须指定 DataTemplate 中的 DataType (`x:DataType`)。
+> 在 DataTemplate 中使用 [x:Bind 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)时，必须指定 DataTemplate 中的 DataType (`x:DataType`)。
 
 #### <a name="simple-listview-data-template"></a>简单的 ListView 数据模板
 在此示例中，数据项是简单的字符串。 数据模板在 ListView 定义中内联定义，将图像添加到字符串左侧，并用青色显示字符串。 这是使用上面所示的方法 1 和选项 1 创建的相同 ListView。
@@ -285,7 +285,7 @@ ListView 或 GridView 中的数据模板定义可视化项/数据的方式。 �
 
 有关如何使用数据模板和项目容器定义列表或网格中的项目的外观的更多信息和示例，请参阅[项目容器和模板](item-containers-templates.md)。 
 
-## <a name="change-the-layout-of-items"></a>更改项目的布局
+## <a name="change-the-layout-of-items"></a>更改项的布局
 
 当你将项目添加到 ListView 或 GridView 时，控件会使每个项目在项目容器中自动换行，然后设置所有项目容器的布局。 这些项目容器的布局方式取决于控件的 [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)。  
 - 默认情况下，“ListView”使用 [ItemsStackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemsstackpanel)，这可以生成垂直列表，如下所示  。

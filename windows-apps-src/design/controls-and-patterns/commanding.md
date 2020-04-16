@@ -4,12 +4,12 @@ description: 如何使用 XamlUICommand 和 StandardUICommand 类（以及 IComm
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 57e4a135e97c0a8f5d09834f2eb8c729c6422af0
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 2ad2a84a78006eafcdfa47d1faef533bea2224ff
+ms.sourcegitcommit: 23c5d8dfaeb6edbca780637ffd26fe892db27519
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081747"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123609"
 ---
 # <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 在通用 Windows 平台 (UWP) 应用中进行命令控制
 
@@ -37,7 +37,7 @@ ms.locfileid: "80081747"
 
 下图显示两个共享某些相同命令的命令界面（一个 [CommandBar](app-bars.md) 和一个浮出式上下文 [CommandBarFlyout](command-bar-flyout.md)）。
 
-![Microsoft 照片中的命令栏](images/control-examples/command-bar-photos.png)<br>*Microsoft 照片中的命令栏*
+![展开的命令栏](images/control-examples/command-bar-photos.png)<br>*命令栏*
 
 ![Microsoft 照片库中的上下文菜单](images/ContextMenu_example.png)<br>*Microsoft 照片库中的上下文菜单*
 

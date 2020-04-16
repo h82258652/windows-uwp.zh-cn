@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 23d7fbf129e9cf53a9510200aa4e3836dffa602f
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 93badc28c9c4fa1684836fc4a883e54661e8d4dc
+ms.sourcegitcommit: 7112e4ec3f19d46a1fc4d81d1c29fd9c01522610
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80482647"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80986977"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管自定义 UWP 控件
 
@@ -83,7 +83,7 @@ ms.locfileid: "80482647"
       ![添加文本文件](images/xaml-islands/xaml-island-cpp-3.png)
     3. 在“解决方案资源管理器”中，选择 placeholder.exe 文件   。 在“属性”窗口中，确保“内容”属性已设置为 True    。
     4. 在“解决方案资源管理器”中，右键单击 MyUWPApp 项目中的 Package.appxmanifest 文件，选择“打开方式”，并选择“XML (文本)编辑器”，然后单击“确定”       。
-    5. 查找 &lt;Application&gt; 元素，并将 Executable 属性更改为值 `placeholder.exe`   。 完成后，&lt;Application&gt; 元素应类似如下  。
+    5. 查找 &lt;Application&gt; 元素，并将 Executable 属性更改为值 `placeholder.exe`  。 完成后，&lt;Application&gt; 元素应类似如下  。
 
         ```xml
         <Application Id="App" Executable="placeholder.exe" EntryPoint="MyUWPApp.App">
@@ -377,9 +377,11 @@ MyDesktopWin32App 应用必须先配置为使用 MyUWPApp 项目中的自定义�
 4. 在“解决方案资源管理器”中，右键单击“MyDesktopWin32App (已卸载)”，然后选择“重载项目”    。
 
 5. 右键单击 MyDesktopWin32App，选择“属性”，然后单击左侧窗格中的“C/C++”节点    。 确认你在上一步的项目文件更改中定义了“附加包含目录”宏  。
+
     ![C/C++ 项目设置](images/xaml-islands/xaml-island-cpp-7.png)
 
 6. 在“属性页”对话框中，展开“清单工具” -> “输入和输出”    。 将“DPI 感知”属性设置为“按监视器高 DPI 感知”   。 如果未设置此属性，则在某些高 DPI 场景中可能会遇到清单配置错误。
+
     ![C/C++ 项目设置](images/xaml-islands/xaml-island-cpp-8.png)
 
 ## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>在桌面项目中托管自定义 UWP XAML 控件

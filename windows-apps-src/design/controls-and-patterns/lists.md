@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e198e65052e9ef79ee38863260bce1c1f798ba38
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 75bc81f4295fb76f5a7cc61b3cadd1496f57dc4c
+ms.sourcegitcommit: 1b06c27e7fa4726fd950cbeaf05206c0a070e3c7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081740"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80893477"
 ---
 # <a name="collections-and-lists"></a>集合和列表
 
@@ -38,6 +38,8 @@ ms.locfileid: "80081740"
 这些控件（ItemsRepeater 除外）都提供内置的样式设置和交互。 但是，若要进一步自定义集合视图以及其中的项的视觉外观，需使用 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 若要详细了解数据模板以及如何自定义集合视图的外观，可参阅[项目容器和模板](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/item-containers-templates)页。
 
 这些控件（ItemsRepeater 除外）都还有内置的行为，允许选择单个或多个项。 请参阅 [Selection modes overview](selection-modes.md)（选择模式概述）以了解详细信息。
+
+本文未介绍的方案之一是在表中显示集合，或跨多个列显示集合。 如果希望以这种格式显示集合，请考虑使用 [Windows 社区工具包](https://docs.microsoft.com/windows/communitytoolkit/)中的 [DataGrid 控件](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid)。 
 
 > **Windows 10 Fall Creators Update - 行为更改** 默认情况下，主动笔现在可在 UWP 应用中滚动/平移列表，而不是进行选择（与触摸、触摸板和被动笔一样）。
 > 如果你的应用取决于以前的行为，你可以替代笔滚动，并还原为以前的行为。 有关详细信息，请参阅 [ScrollViewer 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)的 API 参考主题。
