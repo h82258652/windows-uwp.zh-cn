@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
-ms.openlocfilehash: af682d2a17e10bf1c3b3cdcb3485315a6972eb9f
-ms.sourcegitcommit: e38946d8228293fca7d6c2b4d66e8e8f0d349e92
+ms.openlocfilehash: 77e157698203b5f55c3fd2ce9dd59e8c94051f5b
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76258349"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545027"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
@@ -31,11 +31,11 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 奥地利              | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
 | 比利时              | Base、Proximus                                          |
 | 加拿大               | Telus                                                   |
-| 捷克共和国       | T-Mobile                                                |
+| Czechia              | T-Mobile                                                |
 | 丹麦              | 3、TDC / YouSee、Telenor、Telia                         |
 | 芬兰              | DNA、Elisa                                              |
-| 法国               | Orange                                                  |
-| 德国              | O2、Telekom Deutschland、Vodafone                       |
+| France               | Orange                                                  |
+| Germany              | O2、Telekom Deutschland、Vodafone                       |
 | 匈牙利              | Telenor                                                 |
 | 意大利                | Wind Tre                                               |
 | 马来西亚             | Digi                                                    |
@@ -48,7 +48,7 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 西班牙                | Orange                                                  |
 | 瑞典               | Telenor、3                                              |
 | 瑞士          | Swisscom, 日出                                       |
-| 中国台湾地区               | FarEasTone                                              |
+| 中国台湾               | FarEasTone                                              |
 | 土耳其               | Turkcell                                                |
 | 阿拉伯联合酋长国 | Etisalat                                                |
 | 美国        | Sprint、Verizon                                         |

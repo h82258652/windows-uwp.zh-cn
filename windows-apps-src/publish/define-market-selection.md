@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 市场, 国家, 地区
 ms.localizationpriority: medium
-ms.openlocfilehash: 3621e9c6af0daa84a9762989a14c79f35471b73c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 0b1a51a98746594a8563de2f309bec9cb5dda0b3
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210963"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545047"
 ---
 # <a name="define-market-selection"></a>定义市场选择
 
@@ -91,7 +91,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>百慕大群岛</td>
     <td>不丹</td>
     <td>玻利维亚</td>
-    <td>博内尔岛</td>
+    <td>博内尔</td>
   </tr>
   <tr>
     <td>波斯尼亚和黑塞哥维那</td>
@@ -139,7 +139,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
     <td>克罗地亚</td>
     <td>库拉索岛</td>
     <td>塞浦路斯</td>
-    <td>捷克共和国 *</td>
+    <td>Czechia *</td>
   </tr>
   <tr>
     <td>丹麦 *</td>
@@ -439,7 +439,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 | 智利                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 中国                | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 哥伦比亚             | 礼品卡       | 2.24%                         | 2016 年 3 月     |
-| 捷克共和国       | 礼品卡       | 2.24%                         | 2016 年 3 月     |
+| Czechia              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 丹麦              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | 芬兰              | 礼品卡       | 2.24%                         | 2016 年 3 月     |
 | France               | 礼品卡       | 2.24%                         | 2016 年 3 月     |
@@ -476,7 +476,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>Windows 8.x 的“世界其他地区”市场
 
-如果你以前发布的应用包含面向 Windows 8.x 的包，请注意，许多市场都被视为在 Windows 8.x 上使用应用商店的客户的一个 "世界上世界" 市场，即使它们显示为单独的市场在合作伙伴中心。
+如果你以前发布的应用包含面向 Windows 8.x 的包，请注意，许多市场被视为在 Windows 8. x 上使用应用商店的客户的一个 "世界各地" 市场，即使它们显示为 "合作伙伴中心" 中的单个市场，也是如此。
 
 如果在提交应用时保留默认选择市场，则无需担心这一点，你的应用将可供所有可能的市场使用。 但是，如果你想要排除某些市场，请记住，即使是其中一种 "世界各地" 市场，也不能将你的应用程序提供给 Windows 8 或 Windows 8.1 上的客户的*任何*"世界上" 市场。
 
@@ -515,7 +515,7 @@ Microsoft Store 的客户遍及世界 200 多个国家和地区。 可选择要�
   </tr>
   <tr>
     <td>玻利维亚</td>
-    <td>博内尔岛</td>
+    <td>博内尔</td>
     <td>波斯尼亚和黑塞哥维那</td>
     <td>博茨瓦纳</td>
   </tr>

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac6c3e7c89c091d1080364b8fbbb35d484aee49
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: a7ab3d40b48caecc82fafef4df964b7a1dbf8071
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210903"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545087"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
@@ -93,7 +93,7 @@ ms.locfileid: "79210903"
 | 科特迪瓦                     | 19 USD              | 99 USD           |  
 | 克罗地亚                           | 107 HRK             | 500 HRK          |  
 | 塞浦路斯                            | 14 EUR              | 75 EUR           |  
-| 捷克共和国                    | 365 CZK             | 1720 CZK         |  
+| Czechia                           | 365 CZK             | 1720 CZK         |  
 | 丹麦                           | 106 DKK             | 530 DKK          |  
 | 吉布提                          | 19 USD              | 99 USD           | 
 | 多米尼加                          | 19 USD              | 99 USD           | 

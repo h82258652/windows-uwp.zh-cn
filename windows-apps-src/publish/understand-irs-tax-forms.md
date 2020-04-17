@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 55143f109398aae1988b7ac0d060cda138e7e48e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: e01e1615cb05ab7b0f3d3fa12861e46b231642a8
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258970"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545067"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -33,18 +33,18 @@ ms.locfileid: "74258970"
 
 **美国公民：**
 <table>
-<tr><th>业务组</th><th>法律实体</th><th>地址</th></tr>
+<tr><th>业务组</th><th>法律实体</th><th>Address</th></tr>
 <tr><td>Windows、Office、Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>美国华盛顿特区98052</td></tr>
 <tr><td>广告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno、NV 89511 USA</td></tr>
 <table> 
 
 **非美国公民：**
 <table>
-<tr><th>业务组</th><th>法律实体</th><th>地址</th></tr>
+<tr><th>业务组</th><th>法律实体</th><th>Address</th></tr>
 <tr><td>Windows、Office、Azure</td><td>Microsoft 爱尔兰运营限制（由 microsoft Corporation 通过 microsoft 爱尔兰，由 microsoft corporation 作为合格中介）</td><td>一个 Microsoft 地方<br>南部&nbsp;县&nbsp;Business&nbsp;公园<br>Leopardstown，都柏林18爱尔兰</td></tr>
 <tr><td>广播</td><td>Microsoft 爱尔兰运营限制（由 microsoft Online Inc. 支付，由 microsoft 爱尔兰担任，作为 Microsoft Online Inc. 的支出代理。）</td><td>一个 Microsoft 地方<br>南部&nbsp;县&nbsp;Business&nbsp;公园<br>Leopardstown，都柏林18爱尔兰</td></tr>
 <tr><td>广告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno、NV 89511 USA</td></tr>
-<tr><td colspan="3">* 以下国家/地区的公民将通过 Microsoft 爱尔兰运营限制：奥地利、比利时、保加利亚、克罗地亚、塞浦路斯、捷克共和国、丹麦、爱沙尼亚、芬兰、法国、德国、希腊、匈牙利、爱尔兰Isle、意大利、拉脱维亚、列支敦士登、立陶宛、卢森堡、马耳他、摩纳哥、荷兰、挪威、波兰、葡萄牙、罗马尼亚、斯洛伐克、斯洛文尼亚、南非、西班牙、瑞典、瑞士、英国</td></tr>
+<tr><td colspan="3">* 以下国家/地区的公民将通过 Microsoft 爱尔兰运营限制来支付广告收入：奥地利、比利时、保加利亚、克罗地亚、塞浦路斯、Czechia、丹麦、爱沙尼亚、芬兰、法国、德国、希腊、匈牙利、爱尔兰、Isle 的男士、意大利、拉脱维亚、列支敦士登、立陶宛、卢森堡、马耳他、摩纳哥、荷兰、挪威、波兰、葡萄牙、葡萄牙、斯洛伐克、斯洛文尼亚、葡萄牙、西班牙、瑞典、瑞士、英国</td></tr>
 </table>
 
 ## <a name="for-developers-located-in-the-united-states"></a>针对位于美国的开发人员

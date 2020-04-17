@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 计划, 发布日期, 日期, 启动
 ms.localizationpriority: medium
-ms.openlocfilehash: eebd98d8e1ce39ef8d9876ab4749bcc76012f9fa
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 98f4ca9cb1b0b9bf2178fc0b80d0819e15448d24
+ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210383"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81545037"
 ---
 # <a name="configure-precise-release-scheduling"></a>配置精确的发布计划
 
@@ -76,9 +76,9 @@ ms.locfileid: "79210383"
 
 ## <a name="global-time-zones"></a>全局时区
 
-下面是一个表格，其中显示了每个市场中使用了哪些特定时区，因此当你的提交使用当地时间（例如，在本地上午9点发布）时，你可以了解在每个市场中发布的时间，特别是有多个时间的市场区域，如加拿大。
+下面是一个表格，其中显示了每个市场中使用了哪些特定时区，因此当你的提交使用当地时间（例如，在本地上午9点发布）时，可以找出在每个市场中发布的时间，特别适用于具有多个时区的市场，如加拿大。
 
-| Market | 时区 |
+| 市场 | 时区 |
 |--------|-----------|
 | 阿富汗  |  （UTC + 04：30）喀布尔 |
 | 阿尔巴尼亚  |  （UTC + 01：00）萨拉热窝，斯科普里，华沙，萨格勒布 |
@@ -139,7 +139,7 @@ ms.locfileid: "79210383"
 | 克罗地亚  |  （UTC + 01：00）萨拉热窝，斯科普里，华沙，萨格勒布 |
 | CuraÃ§ ao  |  （UTC-04:00）库亚巴 |
 | 塞浦路斯  |  （UTC + 02：00）Chisinau |
-| 捷克共和国  |  （UTC + 01：00）贝尔格莱德，Bratislava，布达佩斯，卢布尔雅那，布拉格 |
+| Czechia  |  （UTC + 01：00）贝尔格莱德，Bratislava，布达佩斯，卢布尔雅那，布拉格 |
 | 丹麦  |  （UTC + 01：00）布鲁塞尔，哥本哈根，马德里，巴黎 |
 | 吉布提  |  （UTC + 03：00）内罗毕 |
 | 多米尼加  |  （UTC-04:00）大西洋时间（加拿大） |
