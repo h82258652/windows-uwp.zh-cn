@@ -7,18 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eada4c65933151eb6d40b7e3cfdbf31369d6d35
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: d0e4a290da0d67560715f80bf20fc6ae4d44a8f6
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614120"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266955"
 ---
 # <a name="number-box"></a>数字框
 
 表示一个可以用来显示和编辑数字的控件。 它支持验证、递增步进以及对基本等式进行内联计算，例如加减乘除。
-
-![典型上下文菜单示例](images/contextmenu_rs2_icons.png)
 
 **获取 Windows UI 库**
 

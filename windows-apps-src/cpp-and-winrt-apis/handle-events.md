@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 664f6799d3bb6f848243820ec46e655262e8c1a7
-ms.sourcegitcommit: 912146681b1befc43e6db6e06d1e3317e5987592
+ms.openlocfilehash: fa97c99f14eee1cb76148c717b1e126a3f406fd1
+ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79295710"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81266915"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用委托处理事件
 
@@ -218,7 +218,7 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>异步操作和运算的委托类型
 
-前面的示例使用的是 RoutedEventHandler 委托类型，但当然还有很多其他委托类型  。 例如，异步操作和运算（带进度和不带进度）具有期望相应类型的委托的已完成和/或进度事件。 例如，带进度的异步运算进度事件（可以是实现 [IAsyncOperationWithProgress](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_) 的任何内容）需要 [AsyncOperationProgressHandler](/uwp/api/windows.foundation.asyncoperationprogresshandler) 类型的委托   。 下面是使用 lambda 函数创作该类型的委托的代码示例。 该示例还演示了如何创作 [AsyncOperationWithProgressCompletedHandler](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler) 代理  。
+前面的示例使用的是 RoutedEventHandler 委托类型，但当然还有很多其他委托类型  。 例如，异步操作和运算（带进度和不带进度）具有期望相应类型的委托的已完成和/或进度事件。 例如，带进度的异步运算进度事件（可以是实现 [IAsyncOperationWithProgress](/uwp/api/windows.foundation.iasyncoperationwithprogress-2) 的任何内容）需要 [AsyncOperationProgressHandler](/uwp/api/windows.foundation.asyncoperationprogresshandler) 类型的委托   。 下面是使用 lambda 函数创作该类型的委托的代码示例。 该示例还演示了如何创作 [AsyncOperationWithProgressCompletedHandler](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler) 代理  。
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
