@@ -8,25 +8,20 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b77cc7b2f39a987df4c832f7a8daeb7e2722def
-ms.sourcegitcommit: f2f61a43f5bc24b829e8db679ffaca3e663c00e9
+ms.openlocfilehash: d997c6109256974f17bc0f86a518e34ef55960a7
+ms.sourcegitcommit: ecd7bce5bbe15e72588937991085dad6830cec71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588705"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81224270"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>向未打包的桌面应用授予标识
 
-<!--
-> [!NOTE]
-> The features described in this article require Windows 10 Insider Preview Build 10.0.19000.0 or a later release.
--->
-
 许多 Windows 10 可扩展性功能需要在非 UWP 桌面应用中使用[程序包标识符](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)，包括后台任务、通知、动态磁贴和共享目标。 对于这些情况，OS 需要使用标识来识别相应 API 的调用方。
 
-在 Windows 10 Insider Preview 版本 10.0.19000.0 之前的 OS 版本中，向桌面应用授予标识的唯一方式是[在签名的 MSIX 包中将其打包](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。 对于这些应用，将在程序包清单中指定标识，并由 MSIX 部署管道根据清单中的信息处理标识注册。 程序包清单中引用的所有内容都存在于 MSIX 包中。
+在 Windows 10 版本 2004 之前的 OS 发行版中，向桌面应用授予标识符的唯一方式是[将该应用打包到已签名的 MSIX 包中](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。 对于这些应用，将在程序包清单中指定标识，并由 MSIX 部署管道根据清单中的信息处理标识注册。 程序包清单中引用的所有内容都存在于 MSIX 包中。
 
-从 Windows 10 Insider Preview 版本 10.0.19000.0 开始，可以通过生成稀疏包并将其注册到应用  ，向未打包在 MSIX 包中的桌面应用授予程序包标识符。 通过此支持，尚不能采用 MSIX 打包方式进行部署的桌面应用可以使用需要程序包标识符的 Windows 10 可扩展性功能。 有关更多背景信息，请参阅[此博客文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
+从 Windows 10 版本 2004 开始，可以通过生成稀疏包并将其注册到应用  ，向未打包到 MSIX 包中的桌面应用授予包标识符。 通过此支持，尚不能采用 MSIX 打包方式进行部署的桌面应用可以使用需要程序包标识符的 Windows 10 可扩展性功能。 有关更多背景信息，请参阅[此博客文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
 
 要生成并注册稀疏包以向桌面应用授予程序包标识符，请按照以下步骤操作。
 
@@ -162,9 +157,9 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ## <a name="register-your-sparse-package-at-run-time"></a>在运行时注册稀疏包
 
-若要向桌面应用授予程序包标识符，应用必须使用 [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) 类注册稀疏包。 可以在首次运行应用时向应用添加代码以注册稀疏包，也可以在安装桌面应用时运行代码以注册该稀疏包（例如，如果你使用 MSI 安装桌面应用，可以通过自定义操作运行此代码）。
+若要向桌面应用授予包标识符，应用必须使用 [PackageManager](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager) 类的 AddPackageByUriAsync  方法注册稀疏包。 从 Windows 10 版本 2004 开始已提供此方法。 可以在首次运行应用时向应用添加代码以注册稀疏包，也可以在安装桌面应用时运行代码以注册该稀疏包（例如，如果你使用 MSI 安装桌面应用，可以通过自定义操作运行此代码）。
 
-下面的示例演示如何注册稀疏包。 此代码创建一个 AddPackageOptions  对象，该对象包含程序包清单可以引用包外部内容的外部位置的路径。 然后，代码将此对象传递给 PackageManager.AddPackageByUriAsync  方法以注册稀疏包。 此方法还以 URI 形式接收已签名的稀疏包的位置。 有关更完整的示例，请参阅相关[示例](#sample)的 `StartUp.cs` 代码文件。
+下面的示例演示如何注册稀疏包。 此代码创建一个 AddPackageOptions  对象，该对象包含程序包清单可以引用包外部内容的外部位置的路径。 然后，代码将此对象传递给 AddPackageByUriAsync  方法以注册稀疏包。 此方法还以 URI 形式接收已签名的稀疏包的位置。 有关更完整的示例，请参阅相关[示例](#sample)的 `StartUp.cs` 代码文件。
 
 ```csharp
 private static bool registerSparsePackage(string externalLocation, string sparsePkgPath)

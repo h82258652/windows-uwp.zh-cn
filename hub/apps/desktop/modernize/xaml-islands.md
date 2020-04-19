@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 0f596047cfdd01fcfca568ea1c63b1e2cc14c272
-ms.sourcegitcommit: 1670eec29b4360ec37cde2910b76078429273cb0
+ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
+ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80329506"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81441862"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 UWP XAML 控件（XAML 岛）
 
@@ -40,7 +40,7 @@ XAML 岛具有以下运行时要求：
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF 和 Windows 窗体应用程序
 
-我们的建议是让 WPF 和 Windows 窗体应用程序使用 Windows 社区工具包中提供的 XAML 岛 .NET 控件。 这些控件提供一个对象模型，用于模拟相应 UWP 控件的属性、方法和事件（或提供对它们的访问权限）。 它们还处理键盘导航和布局更改等行为。
+我们的建议是让 WPF 和 Windows 窗体应用程序使用 Windows 社区工具包中提供的 XAML 岛 .NET 控件。 这些控件提供一个对象模型，用于模拟相应 UWP 控件的属性、方法和事件（或提供对它们的访问）。 它们还处理键盘导航和布局更改等行为。
 
 有两组用于 WPF 和 Windows 窗体应用程序的 XAML 岛控件：包装控件  和主机控件  。 
 
@@ -149,9 +149,11 @@ UWP XAML 托管 API 包含多个 Windows 运行时类和 COM 接口，可供 C++
 
 :no_entry_sign:使用 `@Places` 和 `@People` 内容链接的文本控件。 有关此功能的详细信息，请参阅[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links)。
 
+:no_entry_sign:XAML Islands 不支持托管一个包含接受文本输入的控件（例如 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)、[RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) 或 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)）的 [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)。 如果你托管了这样的 ContentDialog，输入控件将无法正确响应按键操作。 若要使用 XAML Islands 实现类似的功能，建议托管一个包含输入控件的 [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup)。
+
 ### <a name="window-host-context-for-xaml-islands"></a>XAML 岛的窗口宿主上下文
 
-在桌面应用中托管 XAML 岛时，可以同时在同一线程上运行多个 XAML 内容树。 若要访问 XAML 岛中 XAML 内容树的根元素并获取在其中托管它的上下文的相关信息，请使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 类。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 类不会为 XAML 岛提供正确的信息。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 对象在线程上存在并且可供应用访问，但不会返回有意义的边界或可见性（它们始终不可见且大小为 1x1）。 有关详细信息，请参阅[窗口化宿主](/windows/uwp/design/layout/show-multiple-views#windowing-hosts)。
+在桌面应用中托管 XAML 岛时，可以同时在同一线程上运行多个 XAML 内容树。 若要访问 XAML 岛中 XAML 内容树的根元素并获取在其中托管它的上下文的相关信息，请使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 类。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 类不会为 XAML 岛提供正确的信息。 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 对象在线程上存在并且可供应用访问，但它们不会返回有意义的边界或可见性（它们始终不可见且大小为 1x1）。 有关详细信息，请参阅[窗口化宿主](/windows/uwp/design/layout/show-multiple-views#windowing-hosts)。
 
 例如，若要获取包含 XAML 岛中托管的 UWP 控件的窗口的边界矩形，请使用控件的 [XamlRoot.Size](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot.size) 属性。 由于可以在 XAML 岛中托管的每个 UWP 控件都派生自 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，因此可以使用控件的 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.xamlroot) 属性来访问 **XamlRoot** 对象。
 
