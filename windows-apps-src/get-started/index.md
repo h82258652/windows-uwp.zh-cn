@@ -36,7 +36,7 @@ ms.locfileid: "80614987"
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/team-services-dev-ops-test.svg" alt="Code illustration" />
-        <h3 style="margin-top: 10px; margin-bottom: 0px">开始编写代码</h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px">开始编码</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">不论你是经验丰富的开发人员还是刚开始构建首个应用，都可以通过 Windows 10 平台和文档获取实操经验。</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">开始编写代码</a><br/>
