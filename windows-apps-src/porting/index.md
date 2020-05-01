@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 937d165d9305a3f4909383e872f49fcf08a3115c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66371593"
 ---
 # <a name="porting-apps-to-windows10"></a>将应用移植到 Windows 10
@@ -22,7 +22,7 @@ Windows 运行时 (WinRT) 是可让你生成通用 Windows 平台 (UWP) 应用�
 
 此移植指南介绍当前应用的技术和通用 Windows 平台 (UWP) 之间的差异。 了解技术之间的差异后，将能够深入了解开发人员中心的其余部分，它是用于开发 UWP 应用的综合性资源。 实现此目的一个好方法是从[如何开发应用商店应用](https://docs.microsoft.com/previous-versions/windows/apps/dn726537(v=win.10))开始。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [从桌面版移动到 UWP](desktop-to-uwp-migrate.md) | 选择多个选项中的一个，将 UWP 体验引入 Win32 和 .NET 桌面应用程序中。 |
 | [从 Windows 运行时 8.x 移动到 UWP](w8x-to-uwp-root.md) | 如果你有一个通用 8.1 应用（无论它是面向 Windows 8.1、Windows Phone 8.1 还是同时面向这两者），你会发现你的源代码和技能将顺利地移植到 Windows 10。 借助 Windows 10，你可以创建 UWP 应用，该应用是可供客户安装到各种设备的单个应用包。 |

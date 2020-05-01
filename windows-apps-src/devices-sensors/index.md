@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a734c5cbf95bb7ddfad9199c5d1a983c10650e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66369994"
 ---
 # <a name="devices-sensors-and-power"></a>设备、传感器和电源
 
 
-为了向用户提供丰富的体验，你可能会发现有必要将外部设备或传感器集成到你的应用中。 下面是一些功能示例，你可以使用本节所述技术将其添加到你的应用中。
+为了向用户提供丰富的体验，你可能会发现有必要将外部设备或传感器集成到你的应用中。 下面是一些功能示例，你可以使用本部分所述技术将其添加到应用中。
 
 -   提供增强的打印体验
 -   将动作和方向传感器集成到你的游戏中
 -   直接连接到设备或通过网络协议连接
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [启用设备功能](enable-device-capabilities.md) | 本教程介绍如何在 Microsoft Visual Studio 中声明设备功能。 这允许你的应用使用相机、麦克风、位置传感器以及其他设备。 | 
 | [为 Windows IoT 启用用户模式访问](enable-usermode-access.md) | 本教程介绍如何对 Windows 10 IoT 核心版上的 GPIO、I2C、SPI 和 UART 启用用户模式访问。 |

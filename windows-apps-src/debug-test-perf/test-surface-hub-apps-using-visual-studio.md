@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 37c7f9edbaee008b6e16ef2ca202ff5cbcf39ca2
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67317506"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 测试 Surface Hub 应用
@@ -85,7 +85,7 @@ Visual Studio 模拟器提供了你可以在其中设计、开发、调试以及
    > [!NOTE]
    > 访问 Surface Hub 上的“设置”应用需要管理权限。
 
-2. 导航到“更新和安全”\>“针对开发人员”  。
+2. 导航到“更新和安全” **“针对开发人员”\>** 。
 
 3. 选择“开发人员模式”  并接受警告提示。
 

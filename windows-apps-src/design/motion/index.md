@@ -13,10 +13,10 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 31cf2134fb8f77809b75a5abf3e6980443452059
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867407"
 ---
 # <a name="motion-for-uwp-apps"></a>适用于 UWP 应用的动作
@@ -74,21 +74,21 @@ Fluent 动作在应用中有其用途。 它基于用户行为提供智能反馈
 
 :::row:::
     :::column:::
-### <a name="timing-and-easingtiming-and-easingmd"></a>[计时和缓动](timing-and-easing.md)
+### <a name="timing-and-easing"></a>[计时和缓动](timing-and-easing.md)
 “计时和缓动”是让对象进入 UI、退出 UI 或在 UI 内移动的运动感觉很自然的重要元素。
     :::column-end:::
     :::column:::
-### <a name="directionality-and-gravitydirectionality-and-gravitymd"></a>[方向性和重力](directionality-and-gravity.md)
+### <a name="directionality-and-gravity"></a>[方向性和重力](directionality-and-gravity.md)
 方向信号有助于用户在体验过程中建立坚实的心理模型。 方向性移动受制于各种力，例如重力，这种力会增强运动的自然感觉。
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-### <a name="page-transitionspage-transitionsmd"></a>[页面过渡](page-transitions.md)
+### <a name="page-transitions"></a>[页面过渡](page-transitions.md)
 页面过渡可使用户在应用中的各个页面之间导航，并提供有关页面之间的关系的反馈。 它们可帮助用户了解其在导航层次结构中所处的位置。
     :::column-end:::
     :::column:::
-### <a name="connected-animationconnected-animationmd"></a>[连贯的动画](connected-animation.md)
+### <a name="connected-animation"></a>[连贯的动画](connected-animation.md)
 连贯的动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态且引人入胜的导航体验。
     :::column-end:::
 :::row-end:::
