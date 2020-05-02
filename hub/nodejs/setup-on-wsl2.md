@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: c987f5bea387c630a1b9ef23c928d7a1bb8fadfc
-ms.sourcegitcommit: cf4bf0ab4ea9019c1edc2bb96387ce6cedbe91dd
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75835383"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 设置 Node.js 开发环境
@@ -188,4 +188,4 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 - [适用于初学者的 Node.js 入门](./beginners.md)
 - [开始在 Windows 上使用 Node.js Web 框架](./web-frameworks.md)
 - [开始将 Node.js 应用连接到数据库](./databases.md)
-- [开始将 Docker 容器与 Node.js 配合使用](./containers.md)
+- [开始将 Docker 容器与 Node.js 结合使用](./containers.md)

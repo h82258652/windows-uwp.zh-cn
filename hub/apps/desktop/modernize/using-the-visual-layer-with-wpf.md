@@ -8,10 +8,10 @@ ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
 ms.openlocfilehash: a2f30ba67acc12d622acd09f9fae872ee2058a2f
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66215156"
 ---
 # <a name="using-the-visual-layer-with-wpf"></a>将视觉层与 WPF 结合使用
@@ -642,7 +642,7 @@ WPF 应用默认可以感知系统 DPI，但需要在 app.manifest 文件中将�
 - [增强适用于 Windows 10 的桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
 - [Windows.UI.Composition 命名空间](/uwp/api/windows.ui.composition) (UWP)
 
-## <a name="complete-code"></a>完整代码
+## <a name="complete-code"></a>完成代码
 
 下面是本教程的完整代码。
 

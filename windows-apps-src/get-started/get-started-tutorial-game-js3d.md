@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67321088"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 创建 3D JavaScript 游戏
@@ -38,7 +38,7 @@ ms.locfileid: "67321088"
 -   一份 Visual Studio 副本。 可以从 [Visual Studio 主页](https://visualstudio.com/) 下载免费的社区版 Visual Studio。
 此项目使用了 three.js JavaScript 库  。 three.js 使用 MIT 许可证发布  。 此项目已包含该库（在解决方案资源管理器视图中查找 `js/libs`）。 有关此库的更多信息，请参阅 [three.js](https://threejs.org/) 主页  。
 
-## <a name="getting-started"></a>即刻体验
+## <a name="getting-started"></a>入门
 
 此应用的完整源代码存储于 [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js3d) 中。
 
@@ -422,7 +422,7 @@ PoinerLockControls.js 库使用鼠标来按鼠标移动的方向旋转摄像头�
 
 此外，你还需要使用本节最后的 CodePen 中的所有 CSS。 你应将其粘帖到 stylesheet.css 文件  。
 
-切换回 main.js，添加一些新的全局变量：用于存储控制器的 `controls`、用于跟踪控制器状态的`controlsEnabled` 以及用于掌握 index.html 中的 `blocker` 元素的 `blocker`   ：
+切换回 main.js，添加一些新的全局变量：用于存储控制器的 `controls`、用于跟踪控制器状态的`controlsEnabled` 以及用于掌握 index.html 中的 `blocker` 元素的 `blocker`  ：
 
 ```javascript
 var controls;
@@ -638,7 +638,7 @@ function animatePlayer(delta) {
 
 ---
 
-祝贺你！ 你现在已拥有一个可四处移动和查看、由玩家控制的摄像头。 我们仍然会穿墙而过，但这就是我们后续该担心的事情了。 接下来，我们将添加恐龙。
+恭喜！ 你现在已拥有一个可四处移动和查看、由玩家控制的摄像头。 我们仍然会穿墙而过，但这就是我们后续该担心的事情了。 接下来，我们将添加恐龙。
 
 <iframe height='300' scrolling='no' title='移动' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>请参阅 Pen <a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>四处移动</a>，Microsoft Edge 文档 (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>)（位于 <a href='https://codepen.io'>CodePen</a> 上）。
 </iframe>

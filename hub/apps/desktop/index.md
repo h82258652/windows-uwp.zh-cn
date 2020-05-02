@@ -8,10 +8,10 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.openlocfilehash: c27826980127674b4a4356af8a3c36056e86bd83
-ms.sourcegitcommit: cf88f5e8e1de476ed2635e791a5e5e82ae4bd8cf
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74056862"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
@@ -35,7 +35,7 @@ ms.locfileid: "74056862"
 <thead>
 <tr class="header">
 <th>平台</th>
-<th>描述</th>
+<th>说明</th>
 <th>文档和资源</th>
 </tr>
 </thead>
@@ -43,22 +43,22 @@ ms.locfileid: "74056862"
 <tr class="odd">
 <td><a href="https://docs.microsoft.com/windows/uwp/">通用 Windows 平台 (UWP)</a></td>
 <td><p>适合 Windows 10 应用和游戏的领先平台。 可构建仅使用 UWP 控件和 API 的 UWP 应用，也可在桌面应用中使用 UWP 控件和 API，这些应用根据设计可使用其他平台之一。</p></td>
-<td><a href="/windows/uwp/get-started/">开始行动</a><br/><a href="/uwp/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">示例</a></td>
+<td><a href="/windows/uwp/get-started/">入门</a><br/><a href="/uwp/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">示例</a></td>
 </tr>
 <tr class="even">
 <td><a href="https://docs.microsoft.com/windows/win32/">Win32</a></td>
 <td><p>适合需要直接访问 Windows 和硬件的本机 C/C++ Windows 应用的首选平台。</p></td>
-<td><a href="/windows/win32/desktop-programming/">开始行动</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">示例</a></td>
+<td><a href="/windows/win32/desktop-programming/">入门</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">示例</a></td>
 </tr>
 <tr class="odd">
 <td><a href="https://docs.microsoft.com/dotnet/framework/wpf/">WPF</a></td>
 <td><p>已建立的基于 .NET 的平台，它适合带有 XAML UI 模型的图形丰富的托管 Windows 应用。 这些应用可面向 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework。</p></td>
-<td><a href="/dotnet/framework/wpf/getting-started/">开始行动</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 参考 (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">示例</a></td>
+<td><a href="/dotnet/framework/wpf/getting-started/">入门</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 参考 (.NET)</a><br/><a href="https://github.com/Microsoft/WPF-Samples">示例</a></td>
 </tr>
 <tr class="even">
 <td><a href="https://docs.microsoft.com/dotnet/framework/winforms/">Windows 窗体</a></td>
 <td><p>基于 .NET 的平台，它专用于具有轻量级 UI 模型的托管业务线应用。 这些应用可面向 <a href="https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0">.NET Core 3</a> 或完整的 .NET Framework。</p></td>
-<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">开始行动</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 参考 (.NET)</a><br/><a href="https://code.msdn.microsoft.com/windowsdesktop/site/search?f%5B0%5D.Type=Technology&f%5B0%5D.Value=Windows%20Forms">示例</a></td>
+<td><a href="/dotnet/framework/winforms/getting-started-with-windows-forms">入门</a><br/><a href="https://docs.microsoft.com/dotnet/api/index">API 参考 (.NET)</a><br/><a href="https://code.msdn.microsoft.com/windowsdesktop/site/search?f%5B0%5D.Type=Technology&f%5B0%5D.Value=Windows%20Forms">示例</a></td>
 </tr>
 </tbody>
 </table>
@@ -77,7 +77,7 @@ ms.locfileid: "74056862"
 
 <br/>
 
-| 文章 | 描述 |
+| 文章 | 说明 |
 |---------|-------------|
 | [实现桌面应用的现代化](/windows/apps/desktop/modernize) | 介绍可在 WPF、Windows 窗体和 C++ Win32 应用等任何桌面应用中使用的最新 Windows 10 和 UWP 开发功能。 |
 | [教程：实现 WPF 应用现代化](/windows/apps/desktop/modernize/modernize-wpf-tutorial) | 按照分步说明将 UWP 墨迹和日历控件添加到应用中并将其打包到 MSIX 包中，从而将现有 WPF 业务线示例应用现代化。  |
@@ -88,7 +88,7 @@ ms.locfileid: "74056862"
 
 <br/>
 
-| 文章 | 描述 |
+| 文章 | 说明 |
 |---------|-------------|
 | [选择应用平台](choose-your-platform.md) | 提供对主要桌面应用的深入比较，并可帮助你选择适合你的需求的平台。 本文还提供了介绍每个平台的文档的有用链接。 |
 | [实现桌面应用的现代化](/windows/apps/desktop/modernize) | 介绍可在 WPF、Windows 窗体和 C++ Win32 应用等任何桌面应用中使用的最新 Windows 10 和 UWP 开发功能。 |
@@ -96,7 +96,7 @@ ms.locfileid: "74056862"
 
 ## <a name="related-documentation-and-technologies"></a>相关文档和技术
 
-| 资源 | 描述 |
+| 资源 | 说明 |
 |---------|-------------|
 | [.NET Core 3.0](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0) | 了解 .NET Core 3.0 的最新功能，包括对 WPF 和 Windows 窗体应用的增强功能。 |
 | [关于 WPF 和 .NET Core 3.0 的桌面指南](https://docs.microsoft.com/dotnet/desktop-wpf/overview/index) | 开发面向 .NET Core 3.0 而不是整个 .NET Framework 的 WPF 应用。  |

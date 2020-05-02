@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a07fc5c669d3c9cd374a4a031fba2ee6ef6d5756
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74257280"
 ---
 # <a name="images-and-image-brushes"></a>图像和图像画笔
@@ -44,7 +44,7 @@ ms.locfileid: "74257280"
 
 ## <a name="create-an-image"></a>创建图像
 
-### <a name="image"></a>图像
+### <a name="image"></a>映像
 本示例显示了如何使用 [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 对象创建图像。
 
 
@@ -80,7 +80,7 @@ ms.locfileid: "74257280"
 
 如果你没有设置 Image 的 [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) 或 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 值，将以 Source 指定的图像的尺寸显示   。 设置 **Width** 和 **Height** 可创建显示图像所在的封闭矩形区域。 你可通过使用 [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.stretch) 属性指定图像填充此封闭区域的方式。 Stretch 属性接受 [Stretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch) 枚举定义的以下值：
 
--   **无**：该图像未拉伸以适合输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) 一样。
+-   **None**：该图像未拉伸以适合输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) 一样。
 -   **Uniform**：缩放图像以适应输出尺寸。 但是会保留内容的纵横比。 这是默认值。
 -   **UniformToFill**：缩放图像以完全填满输出区域，但保留其原始的纵横比。
 -   **填充**：缩放图像以适应输出尺寸。 因为内容的高度和宽度是独立缩放的，所以可能不能保留图像的原始纵横比。 即，图像可能为了完全填满输出区域而失真。

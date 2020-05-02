@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42913aae69e5d049530d649c031351f4f3ab9ace
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684977"
 ---
 # <a name="sockets"></a>套接字
@@ -1280,7 +1280,7 @@ private:
 -   在其他情况下，用 [Task.WaitAll ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) 来代替 FlushAsync 模式   。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的端口共享
-可以配置 [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket)，与绑定到相同地址/端口的其他 Win32 或 UWP 多播套接字共存  。 要执行该操作，请在绑定或连接套接字前将 [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) 设置为 `true`  。 可以通过 DatagramSocket 对象的 [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket.Control) 属性从该对象本身访问 DatagramSocketControl 实例    。
+可以配置 [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket)，与绑定到相同地址/端口的其他 Win32 或 UWP 多播套接字共存  。 要执行该操作，请在绑定或连接套接字前将 [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) 设置为 `true` 。 可以通过 DatagramSocket 对象的 [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket.Control) 属性从该对象本身访问 DatagramSocketControl 实例    。
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
 [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket) 支持使用 SSL/TLS 对客户端应用正在与其交互的服务器进行身份验证  。 在某些情况下，客户端应用需要使用 SSL/TLS 客户端证书对服务器进行身份验证。 在绑定或连接套接字前，可以使用 [StreamSocketControl.ClientCertificate](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) 属性提供客户端证书（必须在启动 SSL/TLS 握手前设置）  。 可以通过 StreamSocket 对象的 [StreamSocket.Control](/uwp/api/windows.networking.sockets.streamsocket.Control) 属性从该对象本身访问 StreamSocketControl 实例    。 如果服务器请求客户端证书，Windows 将通过提供的客户端证书做出响应。

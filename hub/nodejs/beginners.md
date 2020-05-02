@@ -9,10 +9,10 @@ keywords: NodeJS, Node.js, windows 10, microsoft, 学习 nodejs, windows 上的 
 ms.localizationpriority: medium
 ms.date: 09/19/2019
 ms.openlocfilehash: 433eb5701696f590f10d8b3276481098b9ec073d
-ms.sourcegitcommit: 8f9cea69f33b06166fec22677eaa43466352c14d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75657079"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>开始在 Windows 上使用 Node.js（初学者）
@@ -84,12 +84,12 @@ Express 是一个灵活精简的小型 Node.js 框架，通过它可以更轻松
 
    Express 生成的文件将创建一个 Web 应用，该应用使用的体系结构最初可能会显得有点复杂。 VS Code“资源管理器”  窗口（按 Ctrl+Shift+E 可查看）会显示已创建以下文件和文件夹：
 
-   - `bin` - 包含启动应用的可执行文件。 它将启动服务器（如果未提供任何替代项，则在端口 3000 上），并设置基本的错误处理。 
-   - `public` - 包含所有公开访问的文件，具体包括 JavaScript 文件、CSS 样式表、字体文件、图像和用户连接到网站时所需的任何其他资产。
-   - `routes` - 包含应用程序的所有路线处理程序。 此文件夹中会自动创建两个文件（`index.js` 和 `users.js`），作为说明如何分离应用程序路线配置的示例。
-   - `views` - 包含模板引擎使用的文件。 Express 被配置为在调用 render 方法时在此文件夹中查找匹配的视图。 默认模板引擎是 Jade，但为支持 Pug，现已弃用 Jade，因此我们使用 `--view` 标记更改视图（模板）引擎。 使用 `express --help` 可查看 `--view` 标记选项及其他内容。
-   - `app.js` - 这是应用的起始点。 它加载所有内容并开始传送用户请求。 它基本充当着胶水的角色，把所有部件组织在一起。
-   - `package.json` - 包含项目说明、脚本管理器和应用清单。 其主要用途是跟踪应用的依赖项及其各自的版本。
+   - `bin`”。 包含启动应用的可执行文件。 它将启动服务器（如果未提供任何替代项，则在端口 3000 上），并设置基本的错误处理。 
+   - `public`”。 包含所有公开访问的文件，具体包括 JavaScript 文件、CSS 样式表、字体文件、图像和用户连接到网站时所需的任何其他资产。
+   - `routes`”。 包含应用程序的所有路线处理程序。 此文件夹中会自动创建两个文件（`index.js` 和 `users.js`），作为说明如何分离应用程序路线配置的示例。
+   - `views`”。 包含模板引擎使用的文件。 Express 被配置为在调用 render 方法时在此文件夹中查找匹配的视图。 默认模板引擎是 Jade，但为支持 Pug，现已弃用 Jade，因此我们使用 `--view` 标记更改视图（模板）引擎。 使用 `express --help` 可查看 `--view` 标记选项及其他内容。
+   - `app.js`”。 这是应用的起始点。 它加载所有内容并开始传送用户请求。 它基本充当着胶水的角色，把所有部件组织在一起。
+   - `package.json`”。 包含项目说明、脚本管理器和应用清单。 其主要用途是跟踪应用的依赖项及其各自的版本。
 
 5. 为构建和运行 HelloWorld Express 应用，现在需要安装 Expres 使用的依赖项（`package.json` 文件中定义的用于运行服务器等任务的包）。 在 VS Code 中，选择“视图”   >   “终端”（或选择 Ctrl+`，注意使用反引号）以打开终端，并确保你仍然位于“HelloWorld”项目目录中。 安装 Express 包依赖项：
 

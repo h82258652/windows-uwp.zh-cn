@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 78d9760c5ef21b29d09babaace0f4379b6a51209
-ms.sourcegitcommit: cc108c791842789464c38a10e5d596c9bd878871
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75302601"
 ---
 # <a name="call-uwp-apis-in-desktop-apps"></a>在桌面应用中调用 UWP API
@@ -38,12 +38,12 @@ ms.locfileid: "75302601"
 
 1. 确保已启用[包引用](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)：
 
-    1. 在 Visual Studio 中，单击“工具”->“NuGet 包管理器”->“包管理器设置”  。
+    1. 在 Visual Studio 中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器设置”  。
     2. 确保为“默认包管理格式”选择 PackageReference   。
 
 2. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”   。
 
-3. 在“NuGet 包管理器”窗口中，选择“浏览”选项卡，然后搜索 `Microsoft.Windows.SDK.Contracts`   。
+3. 在“NuGet 包管理器”窗口中，选择“浏览”选项卡，然后搜索 `Microsoft.Windows.SDK.Contracts`  。
 
 4. 找到 `Microsoft.Windows.SDK.Contracts` 包后，在“NuGet 包管理器”窗口的右窗格中，根据要面向的 Windows 10 版本，选择要安装的包的“版本”   ：
 

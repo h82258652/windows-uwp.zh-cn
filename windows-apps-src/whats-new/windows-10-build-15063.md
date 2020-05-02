@@ -7,10 +7,10 @@ ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
 ms.openlocfilehash: 53604de72eb32f7f6a8162b0cdb9cf481f6e9537
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258874"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>面向开发人员的 Windows 10 内部版本 15063 中的新增功能
@@ -21,7 +21,7 @@ Windows 10 内部版本 15063（又称 Creators Update 或版本 1703）与 Visu
 
 ## <a name="windows-10-build-15063---march-2017"></a>Windows 10 内部版本 15063 - 2017 年 3 月
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 后台任务 | 现在可在[组](../launch-resume/group-background-tasks.md)中注册后台任务，组为后台任务提供命名空间的大致等效项。 可将后台任务注册/取消注册为组的一部分，以便隔离这些注册。 这种隔离很有用，可确保应用的不同组件或不同的库之间不会相互干扰对方的后台任务注册。 </br></br> 企业可基于包的易记名称[启用或禁用 UWP 应用的后台活动](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider)。 </br></br> 后台任务现可为[多实例](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)任务。 可指定每个实例在一个具有自己的 CPU 和内存限制的新进程中运行。
 低耗电蓝牙 | 前台 [GattServiceProvider 类](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceprovider)和后台 [GattServiceProviderTrigger 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.gattserviceprovidertrigger)现支持发布通用特性 (GATT) 服务。 </br></br>现可在支持的收音机上使用蓝牙外设角色。 使用 [IsPeripheralRoleSupported](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothadapter) 检查支持信息。 </br></br> 无需配对设备即可与蓝牙低功耗设备通信。 请参阅 [Windows.Devices.Bluetooth.BluetoothLEDevice](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice) 及 [GenericAttributeProfile 命名空间](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceprovider)中为未配对连接启用的 API。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a87fe2bbff1768da43d6cb366b173077555270f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582339"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "63806981"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>适用于 UWP 应用的磁贴、锁屏提醒和通知
  
@@ -34,7 +34,7 @@ ms.locfileid: "57582339"
 
  
 ## <a name="tiles"></a>磁贴
-| 文章 | 描述 |
+| 文章 | 说明 |
 | --- | --- |
 | [创建磁贴](creating-tiles.md) | 为你的应用自定义默认磁贴，并提供适用于不同屏幕大小的资源。 |
 | [应用图标资源](app-assets.md) | 应用图标资源（它以各种形式出现在整个 Windows 10 操作系统中）是通用 Windows 平台 (UWP) 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。 |
@@ -47,7 +47,7 @@ ms.locfileid: "57582339"
 
 ## <a name="notifications"></a>通知
 
-| 文章 | 描述 |
+| 文章 | 说明 |
 | --- | --- |
 | [Toast 通知](adaptive-interactive-toasts.md) | 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。 |
 | [发送本地 toast 通知](send-local-toast.md) | 了解如何发送交互式的 toast 通知。 |

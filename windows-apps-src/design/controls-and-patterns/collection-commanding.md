@@ -13,10 +13,10 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63801121"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>用于集合和列表的上下文命令
@@ -55,7 +55,7 @@ ms.locfileid: "63801121"
 > [!NOTE]
 > 用户应能够从任何类型的设备访问所有命令。 例如，如果应用的命令仅通过悬停按钮指针快捷方式进行公开，则触控用户无法访问它们。 至少使用上下文菜单提供对所有命令的访问。  
 
-## <a name="example-the-podcastobject-data-model"></a>示例：PodcastObject 数据模型
+## <a name="example-the-podcastobject-data-model"></a>例如：PodcastObject 数据模型
 
 为了演示命令建议，本文为一个播客应用创建播客列表。 示例代码演示如何使用户可以从列表中“收藏”特定播客。
 
@@ -234,11 +234,11 @@ public sealed partial class PodcastUserControl : UserControl
 
 用户可以使用以下这些“上下文操作”调用上下文菜单：
 
-| Input    | 上下文操作                          |
+| 输入    | 上下文操作                          |
 | -------- | --------------------------------------- |
 | 鼠标    | 右键单击                             |
-| 键盘 | Shift+F10、“菜单”按钮                  |
-| 触控    | 长按项                      |
+| Keyboard | Shift+F10、“菜单”按钮                  |
+| 触摸    | 长按项                      |
 | 笔      | 按筒状按钮、长按项 |
 | 游戏板  | “菜单”按钮                             |
 
@@ -370,7 +370,7 @@ protected override void OnPointerExited(PointerRoutedEventArgs e)
 
 ### <a name="touch-accelerators"></a>触控快捷方式
 
-#### <a name="swipe"></a>Swipe
+#### <a name="swipe"></a>轻扫
 
 ![轻扫某个项以显示命令](images/ContextualCommand_Swipe.png)
 

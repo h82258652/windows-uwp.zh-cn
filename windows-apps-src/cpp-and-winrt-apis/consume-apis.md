@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c162b7ae9cd588bea1062ed8c953d94d1b691c
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "70393767"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
@@ -79,7 +79,7 @@ int main()
 ## <a name="accessing-members-via-the-object-via-an-interface-or-via-the-abi"></a>通过对象、接口或通过 ABI 访问成员
 使用 C++/WinRT 投影，Windows 运行时类的运行时表示形式将只是基础 ABI 接口。 不过，为方便起见，你可以通过类作者预期的方式根据类编码。 例如，你可以调用 [Uri  ](/uwp/api/windows.foundation.uri) 的 ToString  方法，就像它是该类的方法（实际上，再深入一层，它是单独的 IStringable  接口上的方法）。
 
-`WINRT_ASSERT` 是宏定义，并且它扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
+`WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
 ```cppwinrt
 Uri contosoUri{ L"http://www.contoso.com" };

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d8a4c354eff34edb0c97e9d95828d4287f9c4b99
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282488"
 ---
 # <a name="background-transfers"></a>后台传输
@@ -44,7 +44,7 @@ ms.locfileid: "72282488"
 
 下表指示在电话的当前给定状态下，对于每个 [**BackgroundTransferCostPolicy**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) 值，允许在电话上进行后台传输的时间。 你可以使用 [**ConnectionCost**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionCost) 类确定电话的当前状态。
 
-| 设备状态                                                                                                                      | UnrestrictedOnly | 默认 | 始终 |
+| 设备状态                                                                                                                      | UnrestrictedOnly | 默认值 | 始终 |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
 | 已连接到 WiFi                                                                                                                 | 允许            | 允许   | 允许  |
 | 按流量计费的连接、未漫游、受数据限制、计划不超出限制                                                   | 拒绝             | 允许   | 允许  |

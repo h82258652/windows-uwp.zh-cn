@@ -6,10 +6,10 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 707c2ed110498f4ef18fea31ace87d1fd2434112
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67820346"
 ---
 # <a name="create-data-bindings"></a>创建数据绑定
@@ -240,7 +240,7 @@ Images 属性值永远不会更改，但是由于属性的类型为 ObservableCo
     > 
     > 相反，x:Bind 的默认表达式是一次性表达式，这意味着对绑定属性所做的任何更改都将被忽略   。 这是默认设置，因为这是最高性能选项，并且大多数绑定会绑定到静态只读数据。 
     >
-    > 由此得出的经验是，如果将 x:Bind 与可能会更改值的属性配合使用，请务必添加 ```Mode=OneWay``` 或 ```Mode=TwoWay```  。 你将在下一个部分中看到这方面的示例。
+    > 由此得出的经验是，如果将 x:Bind 与可能会更改值的属性配合使用，请务必添加 ```Mode=OneWay``` 或 ```Mode=TwoWay``` 。 你将在下一个部分中看到这方面的示例。
 
 运行该应用并使用滑块更改图像模板尺寸。 如你所见，效果非常好，无需大多的代码。 
 

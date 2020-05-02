@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a161a5e26bd647a37b06a270ef6714d54bc16d80
-ms.sourcegitcommit: ac9fb37fe58cc728df2fa0495e36ee4d7b811a23
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74467417"
 ---
 # <a name="create-a-hello-world-app-js"></a>创建“Hello, world”应用 (JS)
@@ -35,7 +35,7 @@ ms.locfileid: "74467417"
 -   若要完成本教程，需要 Windows 10 和 Visual Studio。 [准备工作](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 若要更改默认布局，可以在“窗口”菜单中，使用“重置窗口布局”命令来重置它   。
 
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>第 1 步：在 Visual Studio 中创建新项目
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目
 
 1.  启动 Visual Studio 2017。
 

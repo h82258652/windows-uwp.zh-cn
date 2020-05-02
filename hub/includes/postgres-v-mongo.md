@@ -4,10 +4,10 @@ author: mattwojo
 ms.author: mattwoj
 ms.date: 10/04/2019
 ms.openlocfilehash: 0e144789531e43e3561e7b82830c2b78249c294b
-ms.sourcegitcommit: 13faf9dab9946295986f8edd79b5fae0db4ed0f6
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72314871"
 ---
 [MongoDB](https://www.mongodb.com/what-is-mongodb) 和 [PostgreSQL](https://www.postgresql.org/about/) 是数据库系统的两个[热门选择](https://insights.stackoverflow.com/survey/2019#technology-_-databases)。 

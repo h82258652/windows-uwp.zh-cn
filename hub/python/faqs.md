@@ -9,10 +9,10 @@ keywords: python, windows 10, microsoft, pip, py.exe, file paths, PYTHONPATH, py
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: 6dbf86e0f9435e44140159ebb2bcbc3d67928999
-ms.sourcegitcommit: c8634b15b10bd196e7e2f876ae26e1205e160c91
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74663554"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>有关在 Windows 上使用 Python 的常见问题解答
@@ -39,7 +39,7 @@ ms.locfileid: "74663554"
 
 使用任何命令行参数运行快捷方式可执行文件都将返回错误代码，指示未安装 Python。 这是为了防止批处理文件和脚本意外打开 Store 应用。
 
-如果使用 [python.org](https://www.python.org/downloads/windows/) 中的安装程序安装 Python 并选择“添加到 PATH”选项，则新的 `python` 命令将优先于快捷方式。 请注意，其他安装程序可能以低于内置快捷方式的优先级添加 `python`  。
+如果使用 [python.org](https://www.python.org/downloads/windows/) 中的安装程序安装 Python 并选择“添加到 PATH”选项，则新的 `python` 命令将优先于快捷方式。 请注意，其他安装程序可能以低于内置快捷方式的优先级添加 `python` 。
 
 通过从“开始”打开“管理应用执行别名”，找到“应用安装程序”Python 条目并将其切换为“关闭”，无需安装 Python 即可禁用快捷方式。
 

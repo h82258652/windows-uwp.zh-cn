@@ -6,21 +6,21 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c54321d1d9db95a33d2de6363a79d93243c07d1f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258891"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 内部版本 16299 中的新增功能
 
 Windows 10 内部版本 16299（又称 Fall Creators Update 或版本 1709）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 16299 API 更改](windows-10-build-16299-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 16299 API 更改](windows-10-build-16299-api-diff.md)。 有关 Windows 10 中亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
 ## <a name="design--ui"></a>设计和 UI
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 条件 XAML | 现在可以使用[条件 XAML](../debug-test-perf/conditional-xaml.md) 以创建[版本自适应应用](../debug-test-perf/version-adaptive-apps.md)。 使用条件 XAML，可以在 XAML 标记中使用 **ApiInformation.IsApiContractPresent** 方法，这样就可以基于是否存在 API 在标记中设置属性并例示对象，而无需在之后使用代码。
 设计工具包 | [适用于 UWP 应用的设计工具包和资源](../design/downloads/index.md)已通过添加草图和 Adobe XD 工具包进行扩展。 之前存在的工具包也已更新和改进，为 UWP 应用提供更强大的控件和布局模板。 此外还添加了新的工具和样本，以便提供示例和灵感。
@@ -35,7 +35,7 @@ UI 控件 | 使用这些新控件能够更快速轻松地构建美观的 UI。 <
 
 ## <a name="gaming"></a>游戏
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 游戏广播 | **[Windows.Media.AppBroadcasting](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting)** 命名空间中的新 API 允许应用启动系统提供的游戏广播 UI。 </br>也可以登记通知应用广播何时开始或停止的事件。 使用 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空间中的新 API，你可以录制音频和视频并且捕获游戏截图。 </br>也可以提供系统将嵌入广播和捕获流中的元数据，以便应用提供与游戏事件同步的查看体验。 有关这些功能的更多信息，请参阅[游戏广播和捕获](../gaming/game-broadcast-and-capture.md)。
 游戏聊天覆盖 | [GameChatOverlay 类](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlay)提供了用于获取默认游戏聊天覆盖实例、设置希望的覆盖位置以及添加消息的方法。
@@ -47,7 +47,7 @@ Xbox Live | 我们添加了面向 Xbox Live 开发人员、适用于 UWP 和 Xbo
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 激活 UWP 应用 | 以下新功能现在可用： </br>* 使用 [StartupTask 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.startuptask)指定 UWP 应用在用户登录时或者在系统启动时开始。 </br> * 确定 UWP 应用是否[从命令行启动](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind)。 </br>* 以编程方式，使用 [RequestRestartAsync() 和 RequestRestartForUserAsync()](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication) API 请求 UWP 应用重启。 </br>* [启动 Windows 设置应用](../launch-resume/launch-settings-app.md)已更新，以反映 `ms-settings:storagesense`、`ms-settings:cortana-notifications` 等新的 URI 方案。
 应用打包 | 应用安装程序已扩展，支持从网页下载 UWP 应用包。 此外，现在可以使用应用安装程序下载相关的应用包。 查看新的[使用应用安装程序安装 UWP 应用](../packaging/appinstaller-root.md)部分以了解详细信息。
@@ -76,7 +76,7 @@ EdgeHTML 16 | 支持 Microsoft Edge 以及基于 JS 的通用 Windows 平台应�
 
 在此部分中的功能自发布以往版本 Windows 1703 之后已经添加。 这些功能适用于所有的 Windows 开发人员，并且不需要更新的 SDK。
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 帐户管理 | 现在，我们在[将 Azure AD 租户与合作伙伴中心帐户关联](../publish/associate-azure-ad-with-dev-center.md)时提供更大的灵活性，以便添加多个帐户用户。 可以将多个 Azure AD 租户与一个合作伙伴中心帐户关联，也可以将一个 Azure AD 租户与多个合作伙伴中心帐户关联。
 广告 | Microsoft 广告 SDK 现在支持在应用中显示[本机广告](../monetize/native-ads.md)。 本机广告是基于组件的广告格式，其中每一个广告创意元素（如标题、图像、说明和行动号召文字）都作为单独的元素提供给你。 本机广告目前仅适用于加入试验计划的开发人员，但我们计划不久后将此功能提供给所有的开发人员。

@@ -7,10 +7,10 @@ keywords: 入门, uwp, windows 10, 了解轨迹, 数据绑定, 列表
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3cebf51bdf9fa9942a0b88ed7b4cf66204671781
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71340334"
 ---
 # <a name="display-customers-in-a-list"></a>以列表形式显示客户
@@ -163,7 +163,7 @@ public class Customer : INotifyPropertyChanged
 
 ### <a name="useful-apis"></a>有用的 API
 
-| API | 描述 |
+| API | 说明 |
 |------|---------------|
 | [数据模板](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | 描述数据对象的可视结构，以允许在 UI 中显示特定元素。 |
 | [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 有关推荐的 x:Bind 标记扩展的文档。 |
@@ -175,7 +175,7 @@ public class Customer : INotifyPropertyChanged
 
 ### <a name="useful-docs"></a>有用的文档
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|----------------|
 | [深入了解数据绑定](../data-binding/data-binding-in-depth.md) | 数据绑定原则的基本概述 |
 | [数据绑定概述](../data-binding/data-binding-quickstart.md) | 有关数据绑定的详细概念信息。 |
@@ -183,7 +183,7 @@ public class Customer : INotifyPropertyChanged
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 
-| 代码示例 | 描述 |
+| 代码示例 | 说明 |
 |-----------------|---------------|
 | [数据绑定教程](../data-binding/xaml-basics-data-binding.md) | 数据绑定基础知识的分步指南体验。 |
 | [ListView 和 GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) | 通过数据绑定探索更复杂的 ListView。 |

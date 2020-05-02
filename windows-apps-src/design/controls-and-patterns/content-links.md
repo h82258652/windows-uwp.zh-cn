@@ -11,10 +11,10 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 81e29e66f0cb1e13c3daa3a239e4dcc4dd674a66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68796715"
 ---
 # <a name="content-links-in-text-controls"></a>文本控件中的内容链接
@@ -154,7 +154,7 @@ Places 选取器创建 Uri 根为 https://maps.windows.com/ 的 ContentLinkInfo�
 - 如果 LinkContentKind 不是 "Places"，则将打开**地图**应用到指定的位置。 例如，如果在 ContentLinkChanged 事件处理程序中修改了 LinkContentKind，就会发生这种情况。
 - 如果 Uri 在“地图”应用中无法打开，则会在默认浏览器中打开地图。 这通常发生在用户的网站应用  设置不允许使用**地图**应用打开 Uri 的情况下。
 
-##### <a name="people"></a>人脉
+##### <a name="people"></a>人员
 
 People 选取器创建 Uri 使用 **ms-people** 协议的 ContentLinkInfo。
 

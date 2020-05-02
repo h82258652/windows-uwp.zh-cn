@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282411"
 ---
 # <a name="typography"></a>版式
@@ -19,7 +19,7 @@ ms.locfileid: "72282411"
 
 作为语言的视觉表示形式，版式的主要任务是传达信息。 它的样式应永远不妨碍该目标。 本文介绍如何在 UWP 应用中设计版式以帮助用户轻松高效地了解内容。
 
-## <a name="font"></a>Font
+## <a name="font"></a>字体
 
 应在应用的全部 UI 中使用同一种字体，建议始终使用 UWP 应用的默认字体 Segoe UI  。 其设计目的是为保持不同字体大小和像素密度下的最佳可读性，并提供可润色系统内容的清晰、明朗的美学效果。
 
@@ -104,7 +104,7 @@ UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻�
     :::column-end:::
 :::row-end:::
 
-## <a name="alignment"></a>对齐
+## <a name="alignment"></a>符合方式
 
 默认 [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) 是左对齐，在大多数情况下，左边对齐但右边不对齐可提供一致的内容编排效果和统一的布局。 有关 RTL 语言，请参阅[调整布局和字体以支持全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
