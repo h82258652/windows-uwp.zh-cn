@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 字符串
 ms.localizationpriority: medium
 ms.openlocfilehash: 1771c3754e8e9580514f646ae8589b1982911fc7
-ms.sourcegitcommit: eb24481869d19704dd7bcf34e5d9f6a9be912670
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/17/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79448560"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字符串处理

@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: ed6aa406cd1372819c25bd43b59cd416130b09e0
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80482508"
 ---
 # <a name="host-a-standard-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管标准 UWP 控件
@@ -164,7 +164,7 @@ ms.locfileid: "80482508"
             Title="MainWindow" Height="800" Width="800">
     ```
 
-3. 在 MainWindow.xaml  文件中，将现有的 `<Grid>` 元素替换为以下 XAML。 此 XAML 将 [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 控件（使用前面作为命名空间定义的 Controls 关键字作为前缀）添加到 `<Grid>`  。
+3. 在 MainWindow.xaml  文件中，将现有的 `<Grid>` 元素替换为以下 XAML。 此 XAML 将 [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 控件（使用前面作为命名空间定义的 Controls 关键字作为前缀）添加到 `<Grid>` 。
 
     ```xml
     <Grid Margin="10,50,10,10">

@@ -8,19 +8,19 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: c05991a0f40e98259f035495367deb47c9b688b8
-ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81441882"
 ---
 # <a name="app-capability-declarations"></a>应用功能声明
 
 功能必须在 Windows 应用的[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中声明，以便可用于访问某些 Windows 10 API 或资源（如图片、音乐）或者设备（如相机或麦克风）。 这些功能由 UWP 应用以及在 Windows 10 的 .MSIX 或 AppX 包中打包的其他类型的桌面应用使用。
 
-可以通过在应用的[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中声明功能来请求对特定资源或 API 的访问。 可以使用 Visual Studio 中的[清单设计器](/windows/msix/package/packaging-uwp-apps#configure-an-app-package)来声明常用功能，也可以手动添加它们。 有关详细信息，请参阅[如何在程序包清单中指定功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest)。 请务必了解，当客户从应用商店获取你的应用时，会向它们告知该应用声明的所有功能。 请避免声明你的应用不需要的功能。
+可以通过在应用的[程序包清单](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)中声明功能来请求对特定资源或 API 的访问权限。 可以使用 Visual Studio 中的[清单设计器](/windows/msix/package/packaging-uwp-apps#configure-an-app-package)来声明常用功能，也可以手动添加它们。 有关详细信息，请参阅[如何在程序包清单中指定功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-capabilities-in-a-package-manifest)。 请务必了解，当客户从应用商店获取你的应用时，会向它们告知该应用声明的所有功能。 请避免声明你的应用不需要的功能。
 
-某些功能为应用提供对*敏感资源*的访问。 由于这些资源可用于访问用户私人数据或花费用户金钱，因此它们被认为是敏感资源。 由“设置”应用管理的隐私设置允许用户动态控制对敏感资源的访问。 因此，你的应用不会假设敏感资源始终可用，这一点很重要。 有关访问敏感资源的详细信息，请参阅[隐私感知应用指南](https://docs.microsoft.com/windows/uwp/security/index)。 用于为应用提供对敏感资源  的访问的功能已通过此类功能应用场景旁边的星号 (\*) 进行了标注。
+某些功能为应用提供对*敏感资源*的访问权限。 由于这些资源可用于访问用户私人数据或花费用户金钱，因此它们被认为是敏感资源。 由“设置”应用管理的隐私设置允许用户动态控制对敏感资源的访问权限。 因此，你的应用不会假设敏感资源始终可用，这一点很重要。 有关访问敏感资源的详细信息，请参阅[隐私感知应用指南](https://docs.microsoft.com/windows/uwp/security/index)。 已注释用于为应用提供对敏感资源  的访问权限的功能，即此类功能应用场景的旁边会有一个星号 (\*)。
 
 有多种类型的功能。
 
@@ -43,9 +43,9 @@ ms.locfileid: "81441882"
 | **视频**\* | **videosLibrary** 功能提供对用户视频的编程访问权限，让应用无需用户交互即可枚举和访问库中的所有文件。 此功能通常用在使用整个视频库的电影播放应用中。<br /><br />[  **文件选取器**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。 仅当应用需要进行编程访问，而使用**文件选取器**无法实现编程访问时，才声明 **videosLibrary** 功能。<br /><br />当在应用的程序包清单中声明 **videosLibrary** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="videosLibrary"/></Capabilities>```
 | **可移动存储** | **removableStorage** 功能提供对可移动存储（如 U 盘和外部硬盘驱动器）中文件的编程访问权限，这些文件将按照程序包清单中声明的文件类型关联进行筛选。 例如，如果某个文档阅读器应用声明了 .doc 文件类型关联，则它可以打开可移动存储设备中的 .doc 文件，但无法打开其他类型的文件。 声明此功能时请务必小心，因为用户的可移动存储设备中可能包含多种信息，他们将期待你的应用提供有效的理由，以便对该可移动存储中属于已声明类型的所有文件进行编程访问。<br /><br />用户将期待你的应用处理你所声明的所有文件关联。 因此，请勿声明你的应用无法可靠处理的文件关联。 [  **文件选取器**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)提供了一种强大的 UI 机制，让用户可以打开要通过某个应用处理的文件。<br /><br />仅当应用需要进行编程访问，而使用[**文件选取器**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)无法实现编程访问时，才声明 **removableStorage** 功能。<br /><br />当在应用的程序包清单中声明 **removableStorage** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="removableStorage"/></Capabilities>```
 | **Internet 和公共网络**\* | 存在两种提供对 Internet 和公共网络的不同级别访问权限的功能。<br /><br />**internetClient** 功能指示应用可以接收从 Internet 传入的数据。 无法充当服务器。 无法访问本地网络。<br />**internetClientServer** 功能指示应用可以接收从 Internet 传入的数据。 可以充当服务器。 无法访问本地网络。<br /><br />具有 Web 服务组件的大多数应用都将使用 **internetClient**。 如果应用支持需要在其中侦听传入的网络连接的对等 (P2P) 方案，则应该使用 **internetClientServer**。 **internetClientServer** 功能包括 **internetClient** 功能所提供的访问权限，因此，在指定 **internetClientServer** 时无需指定 **internetClient**。
-| **家庭和工作网络**\* | **privateNetworkClientServer** 功能提供通过防火墙对家庭和工作网络的入站和出站访问权限。 此功能通常用于通过局域网 (LAN) 通信的游戏和在各种本地设备上共享数据的应用。 如果你的应用指定了 **musicLibrary**、**picturesLibrary** 或 **videosLibrary**，则无需使用此功能即可访问家庭组中相应的库。 在 Windows 上，此功能不提供对 Internet 的访问。
-| **约会** | appointments  功能提供对用户的约会存储的访问。 此功能允许对从同步的网络帐户获得的约会以及写入约会存储的其他应用进行读取访问。 通过此功能，你的应用可以创建新的日历并向所创建的日历写入约会。<br /><br />当在应用的程序包清单中声明 **appointments** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="appointments"/></Capabilities>```
-| **通讯录**\* | **contacts** 功能提供了对各种联系人存储中的联系人聚合视图的访问。 此功能向已在各种网络和本地联系人存储中同步的联系人提供了对该应用的受限访问权限（应用网络许可规则）。<br /><br />当在应用的程序包清单中声明 **contacts** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="contacts"/></Capabilities>```
+| **家庭和工作网络**\* | **privateNetworkClientServer** 功能提供通过防火墙对家庭和工作网络的入站和出站访问权限。 此功能通常用于通过局域网 (LAN) 通信的游戏和在各种本地设备上共享数据的应用。 如果你的应用指定了 **musicLibrary**、**picturesLibrary** 或 **videosLibrary**，则无需使用此功能即可访问家庭组中相应的库。 在 Windows 上，此功能不提供对 Internet 的访问权限。
+| **约会** | appointments  功能提供对用户的约会存储的访问。 此功能允许读取对从同步的网络帐户获得的约会以及写入约会存储的其他应用的访问权限。 通过此功能，你的应用可以创建新的日历并向所创建的日历写入约会。<br /><br />当在应用的程序包清单中声明 **appointments** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="appointments"/></Capabilities>```
+| **通讯录**\* | **contacts** 功能提供了对各种联系人存储中的联系人聚合视图的访问权限。 此功能向已在各种网络和本地联系人存储中同步的联系人提供了对该应用的受限访问权限（应用网络许可规则）。<br /><br />当在应用的程序包清单中声明 **contacts** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="contacts"/></Capabilities>```
 | **代码生成** | **codeGeneration** 功能允许应用访问以下功能，可向应用提供 JIT 功能。<br /><br />[**VirtualProtectFromApp**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-virtualprotectfromapp)<br />[**CreateFileMappingFromApp**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-createfilemappingfromapp)<br />[**OpenFileMappingFromApp**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-openfilemappingfromapp)<br />[**MapViewOfFileFromApp**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffilefromapp)
 | **AllJoyn** | **allJoyn** 功能允许网络上支持 AllJoyn 的应用和设备发现彼此并进行交互。<br /><br />在 [**Windows.Devices.AllJoyn**](https://docs.microsoft.com/uwp/api/Windows.Devices.AllJoyn) 命名空间中访问 API 的所有应用都必须使用此功能。
 | **电话呼叫** | **phoneCall** 功能允许应用访问设备上的所有电话线并执行以下功能。<ul><li>通过电话线发出呼叫并显示系统拨号器，而不提示用户。</li><li>访问与线相关的元数据。</li><li>访问与线相关的触发器。</li><li>允许用户选择的垃圾邮件筛选器应用设置并检查阻止列表和呼叫来源信息。</li></ul>当在应用的程序包清单中声明 **phoneCall** 功能时，该功能必须包含 **uap** 命名空间，如下所示。<br /><br />```<Capabilities><uap:Capability Name="phoneCall"/></Capabilities>```<br /><br />phoneCallHistoryPublic<b></b> 功能允许应用读取设备上的手机网络和某些 VoIP 呼叫历史记录信息。 此功能还允许应用编写 VoIP 呼叫历史记录项。 若要访问 <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls.PhoneCallHistoryStore"><b>PhoneCallHistoryStore</b></a> 类的所有成员，则需要此功能。
@@ -70,10 +70,10 @@ ms.locfileid: "81441882"
 
 | 功能应用场景 | 功能用法 |
 |---------------------|------------------|
-| **定位**\* | **location** 功能提供对定位功能的访问，定位功能通常从专用硬件（如电脑中的 GPS 传感器）检索获得或从可用的网络信息中获得。 应用必须处理用户从“设置”  超级按钮禁用定位服务的情况。 |
+| **定位**\* | **location** 功能提供对定位功能的访问权限，定位功能通常从专用硬件（如电脑中的 GPS 传感器）检索获得或从可用的网络信息中获得。 应用必须处理用户从“设置”  超级按钮禁用定位服务的情况。 |
 | **麦克风** | microphone  功能提供对麦克风音频源的访问，从而使应用可以录制来自已连接的麦克风的音频。 应用必须处理用户从“设置”  超级按钮禁用麦克风的情况。 |
 | **邻近感应** | **proximity** 功能支持临近的多台设备彼此通信。 此功能通常用在一般的多玩家游戏和交换信息的应用中。 设备会尝试使用可提供最佳连接的通信技术，包括蓝牙、Wi-Fi 和 Internet。 此功能仅用于在设备之间发起通信。 |
-| **网络摄像头** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从“设置”  超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
+| **网络摄像头** | **webcam** 功能提供对内置相机或外部摄像头的视频源的访问权限，这使应用可以捕获照片和视频。 在 Windows 上，应用必须处理用户从“设置”  超级按钮禁用相机的情况。<br/>**webcam** 功能仅授予对视频流的访问权限。 若要也授予对音频流的访问权限，必须添加 **microphone** 功能。 |
 | **USB** | **usb** 设备功能允许访问[为 USB 设备更新应用清单程序包](https://msdn.microsoft.com/library/windows/hardware/dn303351(v=vs.85).aspx)中的 API。 |
 | **人机接口设备 (HID)** | **humaninterfacedevice** 设备功能允许访问[如何为 HID 指定设备功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid)中的 API。 |
 | **服务点 (POS)** | **pointOfService** 设备功能允许访问 [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) 命名空间中的 API。 该命名空间允许你的应用访问服务点 (POS) 条码扫描仪和磁条阅读器。 该命名空间提供一个独立于供应商的接口，可用于从 UWP 应用访问由各种制造商提供的 POS 设备。 |
@@ -84,7 +84,7 @@ ms.locfileid: "81441882"
 | **运动记录** | **activity** 设备功能允许应用检测设备的当前运动。<br/>若要使用 [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors) 命名空间中的某些 API，则需要此功能。 |
 | **串行通信** | serialcommunication  设备功能提供对 Windows.Devices.SerialCommunication 命名空间中的 API 的访问，这样 Windows 应用便可与公开了串行端口或串行端口的某些抽象的设备进行通信。 若要使用 [Windows.Devices.SerialCommnication  ](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) 命名空间中的 API，则需要该功能。 |
 | **眼动追踪仪** | 在连接了兼容的眼动跟踪设备时，gazeInput  功能允许应用在应用程序边界内检测用户正在查看的位置。 若要使用 [Windows.Devices.Input.Preview  ](https://docs.microsoft.com/uwp/api/windows.devices.input.preview) 命名空间中的某些 API，则需要该功能。 |
-| **GPIO、I2C、SPI 和 PWM** | lowLevel  设备功能提供对 GPIO、I2C、SPI 和 PWM 设备的访问。 若要使用以下命名空间中的 API，则需要此功能：[Windows.Devices.Gpio  ](https://docs.microsoft.com/uwp/api/windows.devices.gpio)、[Windows.Devices.I2c  ](https://docs.microsoft.com/uwp/api/windows.devices.i2c)、[Windows.Devices.Spi  ](https://docs.microsoft.com/uwp/api/windows.devices.spi)、[Windows.Devices.Pwm  ](https://docs.microsoft.com/uwp/api/windows.devices.pwm)。<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
+| **GPIO、I2C、SPI 和 PWM** | lowLevel  设备功能提供对 GPIO、I2C、SPI 和 PWM 设备的访问权限。 若要使用以下命名空间中的 API，则需要此功能：[Windows.Devices.Gpio  ](https://docs.microsoft.com/uwp/api/windows.devices.gpio)、[Windows.Devices.I2c  ](https://docs.microsoft.com/uwp/api/windows.devices.i2c)、[Windows.Devices.Spi  ](https://docs.microsoft.com/uwp/api/windows.devices.spi)、[Windows.Devices.Pwm  ](https://docs.microsoft.com/uwp/api/windows.devices.pwm)。<br /><br />```<Capabilities><DeviceCapability Name="lowLevel"/></Capabilities>``` |
 
 
 <span id="special-and-restricted-capabilities" />

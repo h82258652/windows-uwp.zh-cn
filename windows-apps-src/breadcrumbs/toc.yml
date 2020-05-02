@@ -1,10 +1,10 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: “应用”
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
         - name: UWP
           tocHref: /windows/uwp/
@@ -13,7 +13,7 @@
             - name: 新增功能
               tocHref: /windows/uwp/whats-new/
               topicHref: /windows/uwp/whats-new/windows-10-version-latest
-            - name: 立即开始行动
+            - name: 入门
               tocHref: /windows/uwp/get-started/
               topicHref: /windows/uwp/get-started/
             - name: 设计和 UI
@@ -127,7 +127,7 @@
                 - name: 将应用移植到 Windows 10
                   tocHref: /windows/uwp/porting/
                   topicHref: /windows/uwp/porting/index
-                - name: 安全性
+                - name: 安全
                   tocHref: /windows/uwp/security/
                   topicHref: /windows/uwp/security/index
                 - name: 线程和异步编程

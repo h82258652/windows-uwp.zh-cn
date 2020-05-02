@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 适用于企业的 store, 适用于教育的 store, 组织, 批量许可, 企业, 教育 store, 企业 store, 批量购买, 批量
 localizationpriority: high
 ms.openlocfilehash: 880e472b9a6ed19bae85c00b4014b431e3185f61
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81545017"
 ---
 # <a name="organizational-licensing-options"></a>组织许可选项

@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
 ms.openlocfilehash: 06934c1c3b23c244fb32ffa957cffb926ffd1bb0
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79209192"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件；绑定到 C++/WinRT 属性
@@ -208,7 +208,7 @@ namespace Bookstore
 
 如果未包含 `BookstoreViewModel.idl`（请参阅上述 `MainPage.idl` 的列表），在“MainViewModel”附近预期 \<  将会发生此错误。 另一个小提示是确保所有类型都保留在同一命名空间中：代码列表中所显示的命名空间。
 
-若要解决预期发生的错误，则现在需要将 MainViewModel 属性的访问器存根从生成的文件（`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` 和 `MainPage.cpp`）复制到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp`  。 操作步骤如下所示。
+若要解决预期发生的错误，则现在需要将 MainViewModel 属性的访问器存根从生成的文件（`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` 和 `MainPage.cpp`）复制到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp` 。 操作步骤如下所示。
 
 在 `\Bookstore\Bookstore\MainPage.h` 中包括 `BookstoreViewModel.h`，它为 BookstoreViewModel 声明实现类型（即 winrt::Bookstore::implementation::BookstoreViewModel）   。 添加私有成员以存储视图模型。 注意，属性访问器函数（以及成员 m_mainViewModel）根据 BookstoreViewModel 的投影类型（即 Bookstore::BookstoreViewModel）实现   。 实现类型与应用程序位于同一项目（编译单元），因此我们通过采用 **std::nullptr_t** 的构造函数重载来构造 m_mainViewModel。 此外删除 MyProperty 属性  。
 

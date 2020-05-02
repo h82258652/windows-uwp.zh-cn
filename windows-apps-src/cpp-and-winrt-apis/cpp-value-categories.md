@@ -7,10 +7,10 @@ keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 移动, 转发, 值�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1312b84ded26859cd4b83ffbe3e8a75bfdef6950
-ms.sourcegitcommit: 20ee991a1cf87ef03c158cd3f38030c7d0e483fa
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77037877"
 ---
 # <a name="value-categories-and-references-to-them"></a>值类别以及对它们的引用

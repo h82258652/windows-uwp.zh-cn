@@ -13,10 +13,10 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2445f1b718532fd0862c276e8fadf12e88fe36ac
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79209072"
 ---
 # <a name="item-containers-and-templates"></a>项目容器和模板
@@ -90,7 +90,7 @@ ListView 和 GridView 控件用于管理其项目的排列方式（水平、垂�
 
 ## <a name="the-data"></a>数据
 
-在更深入地了解如何以列表视图形式显示数据项之前，我们需要了解要显示的数据。 在此示例中，将创建名为 `NamedColor` 的数据类型。 该数据类型将合并颜色名称、颜色值和颜色的 SolidColorBrush，它们作为以下 3 个属性公开：`Name`、`Color` 和 `Brush`  。
+在更深入地了解如何以列表视图形式显示数据项之前，我们需要了解要显示的数据。 在此示例中，将创建名为 `NamedColor` 的数据类型。 该数据类型将合并颜色名称、颜色值和颜色的 SolidColorBrush，它们作为以下 3 个属性公开：`Name`、`Color` 和 `Brush` 。
  
 然后，对于 [Colors](https://docs.microsoft.com/uwp/api/windows.ui.colors) 类中的每种命名颜色，用 `NamedColor` 对象来填充“List”  。 列表视图的列表将设置为 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)。
 

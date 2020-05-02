@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c0e9315950541e51bf49f5c0eec370f3188c4d
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: fcdeaec3728306de420baa4a2aea06ef1952641e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209272"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255261"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
@@ -239,7 +239,7 @@ Visual Studio 项目和项模板为每个运行时类生成一个单独的 IDL �
 下面是一些示例。
 
 - 可以放宽对参数类型的要求。 例如，如果在 IDL 中，你的方法接受 **SomeClass**，那么可以选择在实现中将其更改为 **IInspectable**。 这会起作用，因为任何 **SomeClass** 均可转发到 **IInspectable**（当然，反之则不然）。
-- 可以按值（而不是按引用）接受可复制的参数。 例如，将 `SomeClass` 更改为 `SomeClass const&`。 这在你需要避免将引用捕获到协同例程时是必要的（请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)）。
+- 可以按值（而不是按引用）接受可复制的参数。 例如，将 `SomeClass const&` 更改为 `SomeClass`。 这在你需要避免将引用捕获到协同例程时是必要的（请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)）。
 - 可以放宽对返回值的要求。 例如，可以将 **void** 更改为 [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget)。
 
 编写异步事件处理程序时，最后两个都非常有用。

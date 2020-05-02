@@ -353,11 +353,13 @@
             - name: Toast 内容架构
               href: shell/tiles-and-notifications/toast-schema.md
             - name: 发送本地 Toast
-              href: shell/tiles-and-notifications/send-local-toast.md
               items:
+                - name: UWP 应用
+                  href: shell/tiles-and-notifications/send-local-toast.md
                 - name: 桌面应用
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
                   items:
+                    - name: 概述
+                      href: shell/tiles-and-notifications/toast-desktop-apps.md
                     - name: 'C# 应用'
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL 应用

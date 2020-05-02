@@ -9,10 +9,10 @@ author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
 ms.openlocfilehash: 08308c7bca3cd7f39b08c836e43d791a3fda048f
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80226271"
 ---
 # <a name="host-a-standard-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 应用中托管标准 UWP 控件
@@ -307,12 +307,12 @@ ms.locfileid: "80226271"
 
 许多托管 XAML 岛的桌面应用程序需要处理其他方案以提供流畅的用户体验。 例如，桌面应用程序可能需要处理 XAML 岛中的键盘输入、XAML 岛与其他 UI 元素之间的焦点导航以及布局更改。
 
-有关处理这些方案和指向相关代码示例的指针的详细信息，请参阅 [C++ Win32 应用中 XAML 岛的高级方案](advanced-scenarios-xaml-islands-cpp.md)。
+有关处理这些场景的详细信息和指向相关代码示例的指针，请参阅 [C++ Win32 应用中 XAML 岛的高级应用场景](advanced-scenarios-xaml-islands-cpp.md)。
 
 ## <a name="related-topics"></a>相关主题
 
 * [在桌面应用中托管 UWP XAML 控件（XAML 岛）](xaml-islands.md)
 * [在 C++ Win32 应用中使用 UWP XAML 托管 API](using-the-xaml-hosting-api.md)
 * [在 C++ Win32 应用中托管自定义 UWP 控件](host-custom-control-with-xaml-islands-cpp.md)
-* [C++ Win32 应用中 XAML 岛的高级方案](advanced-scenarios-xaml-islands-cpp.md)
+* [C++ Win32 应用中 XAML 岛的高级应用场景](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML 岛代码示例](https://github.com/microsoft/Xaml-Islands-Samples)

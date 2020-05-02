@@ -9,10 +9,10 @@ keywords: python, windows 10, microsoft, python 系统管理, python 文件自�
 ms.localizationpriority: medium
 ms.date: 07/19/2019
 ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79208992"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>开始在 Windows 上将 Python 用于脚本和自动化
