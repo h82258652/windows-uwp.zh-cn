@@ -25,7 +25,7 @@ ms.locfileid: "75685152"
 
 * [使用 XAML 和 C# 创建“Hello, world”应用](create-a-hello-world-app-xaml-universal.md)
 
-若要了解基础知识，或只需更新记忆，请尝试阅读：
+若要了解基础知识，或只是复习一下，请尝试阅读：
 
 * [面向完全初学者的 C# 基础知识](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
 * [面向完全初学者的 VB 基础知识](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
