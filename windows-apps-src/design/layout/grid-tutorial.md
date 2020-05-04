@@ -8,10 +8,10 @@ keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: f7c5eb595f3347eb4670e4f7c0a50aa930341d3e
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74735032"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教程：使用 Grid 和 StackPanel 创建简单的天气应用
@@ -56,7 +56,7 @@ ms.locfileid: "74735032"
 如果现在运行该应用程序，只会看到一个空白页面，因为任何**网格**区域都没有内容。 若要显示**网格**，让我们添加一些颜色。
 
 ## <a name="step-3-color-the-grid"></a>步骤 3:为网格着色
-为了为**网格**着色，我们添加了三个**边框**元素，每个都带有不同的背景色。 通过使用 **Grid.Row** 和 **Grid.Column** 属性，也将每个元素分配到父**网格**中的行和列。 这些属性的值默认为 0 时，因此无需将其分配给第一个**边框**。 定义行和列后，将以下代码添加到**网格**元素。
+为了为**网格**着色，我们添加了三个**边框**元素，每个都带有不同的背景色。  通过使用 **Grid.Row** 和 **Grid.Column** 属性，也将每个元素分配到父**网格**中的行和列。 这些属性的值默认为 0 时，因此无需将其分配给第一个**边框**。 定义行和列后，将以下代码添加到**网格**元素。
 
 ```xml
 <Border Background="#2f5cb6"/>

@@ -1,16 +1,16 @@
 ---
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: 获取文件属性
-description: 获取由 StorageFile 对象表示的文件的属性 - 顶级、基本和扩展属性。
+description: 获取由 StorageFile\#对象表示的文件的属性 - \#顶级、基本和扩展属性。
 ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 81fcb4b62f9a10e8ff1fcb233c95317746cdb3b0
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259589"
 ---
 # <a name="get-file-properties"></a>获取文件属性
