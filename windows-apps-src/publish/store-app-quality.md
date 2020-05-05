@@ -7,15 +7,15 @@ keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
 ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77607259"
 ---
 # <a name="app-quality"></a>应用质量
 
-上次更新时间：2017 年 7 月 25日
+上次更新时间：2017 年 7 月 25 日
 
 Microsoft Store 向全世界客户提供大量各种各样的应用。 Microsoft Store 中的应用要有观赏性、娱乐性且值得购买，这对客户和开发人员而言都很重要。 为了帮助开发人员达成该目标，我们在此提供关于应用质量的某些关键方面的概述。
 

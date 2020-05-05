@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b9a129e8b780e85df2c38c50ab712641d3849a34
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71339859"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>保持 UI 线程有响应
@@ -101,7 +101,7 @@ public class AsyncExample
 
 在此示例中，`NextMove_Click` 处理程序将在 **await** 返回，以便保持 UI 线程有响应。 但在 `ComputeNextMove`（在后台线程上执行）完成后，执行过程将再次调用该处理程序。 该处理程序中的其余代码将使用结果更新 UI。
 
-> **注意**：还存在适用于 UWP 的 [ThreadPool  ](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool) 和 [ThreadPoolTimer  ](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) API，可用于类似场景。   有关详细信息，请参阅[线程和异步编程](https://docs.microsoft.com/windows/uwp/threading-async/index)。
+> **注意**：还存在适用于 UWP 的   ThreadPool[  和 ](https://docs.microsoft.com/uwp/api/Windows.System.Threading.ThreadPool)ThreadPoolTimer[  API，可用于类似场景。](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer) 有关详细信息，请参阅[线程和异步编程](https://docs.microsoft.com/windows/uwp/threading-async/index)。
 
 ## <a name="related-topics"></a>相关主题
 

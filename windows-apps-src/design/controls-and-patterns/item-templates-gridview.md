@@ -6,10 +6,10 @@ ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
 ms.openlocfilehash: 17c14d7147cafa17e78bd13bf6684a99d87cbdfd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684411"
 ---
 # <a name="item-templates-for-grid-view"></a>网格视图项模板
@@ -19,7 +19,7 @@ ms.locfileid: "75684411"
 为了演示数据绑定，这些模板将 **GridViewItems** 绑定到[数据绑定概述](../../data-binding/data-binding-quickstart.md)中的示例 Recording 类。
 
 > [!NOTE] 
-> 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），则屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 **DataTemplate** 的根元素上设置 [**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties)。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
+> 目前，如果一个 **DataTemplate** 包含多个控件（例如多个 **TextBlock**），则屏幕阅读器的默认可访问名称来自于项上的 .ToString()。 为方便起见，可以在 [DataTemplate**的根元素上设置**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties)AutomationProperties.Name  。 有关辅助功能的详细信息，请参阅[辅助功能概述](../accessibility/accessibility-overview.md)。
 
 ## <a name="icon-and-text"></a>图标和文本
 使用这些模板在一个网格中显示带图标和文本的应用的集合。

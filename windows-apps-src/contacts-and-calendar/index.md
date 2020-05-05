@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 联系人, 日历, 约会, 电子邮件
 ms.localizationpriority: medium
 ms.openlocfilehash: 8abb3773b2fa18a25716baf641d04c7ad37a293c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74255441"
 ---
 # <a name="contacts-my-people-and-calendar"></a>联系人、我的人脉和日历
@@ -20,7 +20,7 @@ ms.locfileid: "74255441"
 
 若要查看你的应用访问联系人和约会的几种不同方法，请参阅以下主题：
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [选择联系人](selecting-contacts.md) | [  <strong>Windows.ApplicationModel.Contacts</strong>](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。 |
 | [发送电子邮件](sending-email.md) | 显示如何启动撰写电子邮件对话框以允许用户发送电子邮件。 你可以在显示该对话框之前，使用数据预填充电子邮件的字段。 该消息将在用户点击发送按钮后发出。 |

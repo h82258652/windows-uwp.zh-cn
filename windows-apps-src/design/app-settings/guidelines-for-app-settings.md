@@ -9,10 +9,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72163706"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
@@ -83,7 +83,7 @@ ms.locfileid: "72163706"
 
 
 如果你的应用允许用户选择应用的颜色模式，请使用[单选按钮](../controls-and-patterns/radio-button.md)或[组合框](../controls-and-patterns/combo-box.md)提供这些选项，标头为“选择应用模式”。 选项应包括以下内容
-- 浅色
+- 轻型
 - 深色
 - Windows 默认值
 
@@ -143,4 +143,4 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 * [命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
 * [进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
 * [存储和检索应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [EntranceThemeTransition](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 
+* [EntranceThemeTransition  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

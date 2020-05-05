@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15e6ebd45d4f7069e09169a437476b0f785ea959
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259592"
 ---
  # <a name="files-folders-and-libraries"></a>文件、文件夹和库
@@ -18,7 +18,7 @@ ms.locfileid: "74259592"
 
 使用 [Windows.Storage](https://docs.microsoft.com/uwp/api/Windows.Storage)、[Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 和 [Windows.Storage.Pickers](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) 命名空间中的 API，以在文件中读取和写入文本和其他数据格式并管理文件和文件夹。 在本部分中，你还将了解有关读取和写入应用设置、文件和文件夹选取器、特殊沙盒式位置（如视频/音乐库）的信息。
 
-| 主题 | 描述  |
+| 主题 | 说明  |
 |-------|--------------|
 | [枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md) | 访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。 |
 | [创建、写入和读取文件](quickstart-reading-and-writing-files.md) | 使用 [StorageFile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象读取和写入文件。 |

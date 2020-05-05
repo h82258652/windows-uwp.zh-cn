@@ -9,15 +9,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258112"
 ---
 #  <a name="ui-considerations-for-uwp-devices"></a>UWP 设备的 UI 注意事项
 
-![设备](../images/devices-2x.png)
+![资源协议转换请求](../images/devices-2x.png)
 
 了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。
 
@@ -47,12 +47,12 @@ UI 注意事项
 
 输入
 -   鼠标
--   键盘
+-   Keyboard
 -   笔记本电脑和一体机上的触摸。
 -   有时会使用游戏板，如 Xbox 控制器。
 
 典型设备功能
--   相机
+-   照相机
 -   麦克风
 
 ## <a name="tablets-and-2-in-1s"></a>平板电脑和二合一设备
@@ -77,14 +77,14 @@ UI 注意事项
 -   系统返回位于导航栏上。
 
 输入
--   触控
+-   触摸
 -   触笔
 -   外部键盘（有时）
 -   鼠标（有时）
 -   语音（有时）
 
 典型设备功能
--   相机
+-   照相机
 -   麦克风
 -   移动传感器
 -   位置传感器
@@ -118,7 +118,7 @@ UI 注意事项
 
 输入
 - 游戏板（例如 Xbox 手柄）
-- 遥控器
+- 远程
 - 语音（有时，如果客户有 Kinect 或耳机）
 
 典型设备功能
@@ -155,12 +155,12 @@ UI 注意事项
 -   在横向和纵向方向中，确保在显示屏幕键盘时有足够的屏幕空间用于应用栏。
 
 输入
--   触控
+-   触摸
 -   语音
 
 典型设备功能
 -   麦克风
--   相机
+-   照相机
 -   移动传感器
 -   位置传感器
 
@@ -187,14 +187,14 @@ UI 注意事项
 -   系统返回是可选的。 当应用开发人员选择显示它时，它显示在应用标题栏中。
 
 输入
--   触控
+-   触摸
 -   笔
 -   语音
 -   键盘（屏幕上/远程）
 -   触摸板（远程）
 
 典型设备功能
--   相机
+-   照相机
 -   麦克风
 
  

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 盈利, 参与, 促销, Microsoft Store 服务
 ms.localizationpriority: medium
 ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259294"
 ---
 # <a name="monetization-engagement-and-store-services"></a>盈利、参与度和 Microsoft Store 服务
@@ -108,7 +108,7 @@ Windows SDK、Microsoft 广告 SDK、Microsoft Store Services SDK 和 Microsoft 
 
 还在寻求其他增加盈利的方法？ 不妨请考虑以下几个选项。
 
- 主题                | 描述                 |
+ 主题                | 说明                 |
 |--------------------|-----------------------------|
 | [Microsoft 联盟计划](https://www.microsoftaffiliates.com/)。 | 通过从应用、博客、网页或其他通讯产品链接到 Microsoft 产品，来赚取佣金。 你可以链接到 Microsoft Store 中出售的应用、游戏、音乐、电影、硬件、配件和其他商品。
 | [A/B 试验](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing) | 在应用中运行 A/B 测试，衡量面向部分客户进行的功能更改的成效，然后再针对所有用户执行更改。

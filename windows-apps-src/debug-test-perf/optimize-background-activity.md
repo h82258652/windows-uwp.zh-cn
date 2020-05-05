@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: eb3ff12e4b616edd7b87cab7f13aa060f301fc52
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75683830"
 ---
 # <a name="optimize-background-activity"></a>优化后台活动
@@ -39,7 +39,7 @@ ms.locfileid: "75683830"
 
 ![后台任务权限关闭](images/background-task-permissions-off.png)
 
-在应用中，可以使用 [BackgroundExecutionManager.RequestAccessAsync()  ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 方法调用返回的 [BackgroundAccessStatus  ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 枚举值来确定其当前后台活动权限设置。
+在应用中，可以使用 [BackgroundExecutionManager.RequestAccessAsync()  ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 方法调用返回的 [BackgroundAccessStatus  ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 枚举值来确定其当前后台活动权限设置。
 
 这表示如果你的应用不实现负责的后台活动管理，用户可能完全拒绝应用的后台权限，这对任何一方都是不想看到的。 如果已拒绝应用在后台运行，但是需要后台活动才能为用户完成操作，可以通知用户并引导其进入“设置”应用。 可以通过[启动“设置”应用](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)并打开“后台应用”或“电池使用详细信息”页面来完成此操作。
 

@@ -6,10 +6,10 @@ ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cac61f398fff17ecfb824f2d869364097f38d5d
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258812"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 开发人员文档中的新增功能

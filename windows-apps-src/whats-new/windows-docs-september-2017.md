@@ -6,10 +6,10 @@ ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: fb63a5f7cefbccbedc09b0c74d9daea9d26b63a8
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74734952"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 开发人员文档中的新增功能
@@ -36,10 +36,10 @@ Xbox Live 创意者计划现已推出，可以通过该计划轻松构建和发�
 
 以下是新文章的快速概览：
 
-+ [创建用户界面](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)介绍如何创建基本照片库界面  。
-+ [创建数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding)介绍如何将数据绑定添加到照片库中并为其填充实际图像数据  。
-+ [创建自定义样式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style)介绍如何向照片编辑菜单添加奇特的自定义样式  。
-+ [创建自适应布局](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout)介绍如何让照片库实现自适应，以便适用于每台设备和尺寸各异的屏幕  。
++ [创建用户界面**介绍如何创建基本照片库界面**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)。
++ [创建数据绑定**介绍如何将数据绑定添加到照片库中并为其填充实际图像数据**](https://docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding)。
++ [创建自定义样式**介绍如何向照片编辑菜单添加奇特的自定义样式**](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style)。
++ [创建自适应布局**介绍如何让照片库实现自适应，以便适用于每台设备和尺寸各异的屏幕**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout)。
 
 ### <a name="get-started-tutorials"></a>入门教程
 

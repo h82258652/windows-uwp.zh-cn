@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
 ms.openlocfilehash: 048d6fe455f7c3e77922ef8b937a9cb1d6cbb21c
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81266895"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>使用 C++/WinRT 执行并发和异步操作
@@ -119,7 +119,7 @@ int main()
 
 ## <a name="asynchronously-return-a-windows-runtime-type"></a>异步返回 Windows 运行时类型
 
-在下一个示例中，我们将针对特定 URI 封装对 **RetrieveFeedAsync** 的调用，以为我们提供异步返回 [**SyndicationFeed**](/uwp/api/windows.web.syndication.syndicationfeed) 的 **RetrieveBlogFeedAsync** 函数。
+在下一个示例中，我们将针对特定 URI 封装对 **RetrieveFeedAsync** 的调用，以为我们提供异步返回  SyndicationFeed[**的**RetrieveBlogFeedAsync](/uwp/api/windows.web.syndication.syndicationfeed) 函数。
 
 ```cppwinrt
 // main.cpp
@@ -177,7 +177,7 @@ IAsyncOperation<winrt::hstring> ReadAsync()
 
 ## <a name="asynchronously-return-a-non-windows-runtime-type"></a>异步返回非 Windows 运行时类型
 
-如果要异步返回非 Windows 运行时类型的类型，则应返回并行模式库 (PPL) [**concurrency::task**](/cpp/parallel/concrt/reference/task-class)。  建议使用 **concurrency::task**，因为它将提供比 **std::future** 更好的性能（以及更好的兼容性）。
+如果要异步返回非 Windows 运行时类型的类型，则应返回并行模式库 (PPL)  concurrency::task[ **。** ](/cpp/parallel/concrt/reference/task-class) 建议使用 **concurrency::task**，因为它将提供比 **std::future** 更好的性能（以及更好的兼容性）。
 
 > [!TIP]
 > 如果包含 `<pplawait.h>`，则可以使用 **concurrency::task** 作为协同例程类型。
@@ -237,7 +237,7 @@ IASyncAction DoWorkAsync(Param const& value)
 }
 ```
 
-在协同程序中，在第一个暂停点之前，执行是同步的；到达第一个暂停点时，控制返回到调用方，调用帧超出范围。 在协同例程恢复时，引用参数引用的源值可能已发生更改。 从协同例程的角度来看，引用参数具有不受控制的生命周期。 因此，在上面的示例中，在 `co_await` 之前，我们可以安全地访问 *value*，但之后就无法保证安全了。 如果调用方销毁了 *value*，则尝试在协同例程中访问它会导致内存损坏。 如果 **DoOtherWorkAsync** 函数有可能暂停并在恢复后尝试使用 *value*，我们也无法安全地将 *value* 传递给 DoOtherWorkAsync。
+在协同程序中，在第一个暂停点之前，执行是同步的；到达第一个暂停点时，控制返回到调用方，调用帧超出范围。 在协同例程恢复时，引用参数引用的源值可能已发生更改。 从协同例程的角度来看，引用参数具有不受控制的生命周期。 因此，在上面的示例中，在 *之前，我们可以安全地访问*value`co_await`，但之后就无法保证安全了。 如果调用方销毁了 *value*，则尝试在协同例程中访问它会导致内存损坏。 如果 *DoOtherWorkAsync* 函数有可能暂停并在恢复后尝试使用 **value**，我们也无法安全地将 *value* 传递给 DoOtherWorkAsync。
 
 为了能够在暂停和恢复后安全地使用参数，默认情况下，协同例程应使用按值传递，以确保按值进行捕获并避免生命周期问题。 确信不遵从该指引也能安全进行操作的情况是很少见的。
 

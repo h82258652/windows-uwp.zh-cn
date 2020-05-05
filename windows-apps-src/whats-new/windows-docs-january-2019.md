@@ -6,10 +6,10 @@ ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7947fb6e71a9f2ddbedcd8e3ee8bab7b720dc444
-ms.sourcegitcommit: 6169660ea437915265165c4631d9702587e4793d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74902471"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>2019 年 1 月 Windows 开发人员文档中的新增功能
@@ -28,7 +28,7 @@ Microsoft Learn 为 Microsoft 开发人员提供新的动手学习和培训机�
 
 ### <a name="direct-3d-12"></a>Direct 3D 12
 
-如果呈现器基于“基于磁贴的延迟渲染”(TBDR) 以及其他技术，则 [Direct3D 12 呈现器通道](/windows/desktop/direct3d12/direct3d-12-render-passes)可提高呈现器的性能。 该技术通过使应用程序更好地识别资源呈现排序要求和数据依赖项，并因此减少与芯片外内存之间的内存流量，来帮助呈现器提高 GPU 效率。
+如果渲染器基于“基于磁贴的延迟渲染”(TBDR) 以及其他技术，则 [Direct3D 12 渲染器通道](/windows/desktop/direct3d12/direct3d-12-render-passes)可提高渲染器的性能。 该技术通过使应用程序更好地识别资源呈现排序要求和数据依赖项，并因此减少与芯片外内存之间的内存流量，来帮助呈现器提高 GPU 效率。
 
 ### <a name="msix-modification-packages"></a>MSIX 修改包
 

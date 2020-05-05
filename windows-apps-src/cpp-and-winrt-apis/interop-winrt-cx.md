@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e54937391d3317f1b37415036aabc88a6cfaa41
-ms.sourcegitcommit: f288bcc108f9850671662c7b76c55c8313e88b42
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80290019"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
@@ -55,7 +55,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 - 在项目属性中，“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>“是(/ZW)”  。 这会打开对 C++/CX 的项目支持。
 - 将 `App.cpp` 中的内容替换为下面列出的代码。
 
-`WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
+`WINRT_ASSERT` 是宏定义，并且它扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
 ```cppwinrt
 // App.cpp

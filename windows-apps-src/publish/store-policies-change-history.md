@@ -7,10 +7,10 @@ keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ms.openlocfilehash: 3fbdc8e4831a39386396dc2c1dad25581f12fbf9
-ms.sourcegitcommit: 5309019fa2a7c02e4e3f0c4076b75fc63546b6f0
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/25/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77607277"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 策略更改历史记录

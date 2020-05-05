@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f2cb92dca3da2d1f8e3eccfade6558f363c5b13
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257870"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148694"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
@@ -54,7 +54,7 @@ RAM
 ### <a name="installing"></a>安装
 适用于 Windows 10 移动版的 Microsoft 模拟器作为 Windows 10 SDK 的一部分进行提供。 Windows 10 SDK 和模拟器可随 Visual Studio 安装。 请参阅 [Visual Studio 下载页](https://developer.microsoft.com/windows/downloads)。
 
-你还可以使用 [Microsoft 模拟器安装程序](https://go.microsoft.com/fwlink/p/?LinkID=615095)来安装适用于 Windows 10 移动版的 Microsoft 模拟器。
+你还可以使用 [Microsoft 模拟器安装程序](https://download.microsoft.com/download/E/3/4/E347E8C5-BD79-49AF-941C-D08893A45268/emulator/EmulatorSetup.exe)来安装适用于 Windows 10 移动版的 Microsoft 模拟器。
 
 ### <a name="uninstalling"></a>卸载
 
@@ -144,7 +144,7 @@ RAM
 
 请注意，在仿真器中内部版本 10.0.14332 中，计算机硬件键映射已更改。 下表第二列中的值表示这些新键。 
 
-计算机硬件键（仿真器内部版本 10.0.14295 及更早版本） | 计算机硬件键（仿真器内部版本 10.0.14332 及更早版本） | Windows Phone 硬件按钮 | 注释
+计算机硬件键（仿真器内部版本 10.0.14295 及更早版本） | 计算机硬件键（仿真器内部版本 10.0.14332 及更早版本） | Windows Phone 硬件按钮 | 注意
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ESC | BACK | 长按可实现预期效果。
 F2 | WIN + F2 | START | 长按可实现预期效果。
@@ -635,7 +635,7 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>卸载 Windows 10 移动版映像
 
-当你安装仿真器时，Windows 10 移动版 VHD 映像已安装，它在控制面板的“程序和功能”  列表中获取自己的条目。 如果你想要卸载该映像，请在已安装的程序列表中找到“Windows 10 移动版映像 - \<版本\>”，右键单击它，然后选择“卸载”   。
+当你安装仿真器时，Windows 10 移动版 VHD 映像已安装，它在控制面板的“程序和功能”  列表中获取自己的条目。 如果你想要卸载该映像，请在已安装的程序列表中找到“Windows 10 移动版映像 - **版本\<”，右键单击它，然后选择“卸载”\>**  。
 
 在当前版本中，必须随后手动删除模拟器的 VHD 文件。 如果已将模拟器安装到默认路径，则 VHD 文件位于 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd。
 
@@ -646,13 +646,13 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 若要禁用硬件加速，请执行以下操作：
 
 1. 启动“注册表编辑器”。
-2. 如果以下注册表子项不存在，请创建它：HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
+2. 创建以下注册表子项（如果不存在）：HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
 3. 右键单击 10.0 文件夹、指向“新建”  ，然后单击“DWORD 值”  。
 4. 键入DisableRemoteFx  ，然后按 Enter。
 5. 双击DisableRemoteFx  、在“值”  数据框中输入 1、选择“十进制”  选项，然后单击“确定”  。
 6. 关闭注册表编辑器。
 
-**注意：** 设置此注册表值后，必须在 Hyper-V 管理器删除虚拟机以使用你在 Visual Studio 中启动的配置，然后重新启动模拟器以显示由软件呈现的图形。
+**注意：** 设置此注册表值后，必须针对你在 Visual Studio 中启动的配置删除 Hyper-V 管理器中的虚拟机，然后重新启动使用软件呈现图形的仿真器。
 
 ## <a name="support-resources"></a>支持资源
 

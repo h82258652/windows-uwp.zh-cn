@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e17b155966c609537c40050edc4c11ee6935b0d
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77089463"
 ---
 # <a name="enterprise"></a>企业
@@ -128,7 +128,7 @@ Windows 10 为应用开发人员提供一套用于保护用户身份、公司�
 | [XML 和 SOAP 序列化](https://docs.microsoft.com/dotnet/framework/serialization/xml-and-soap-serialization) | XML 序列化将对象转换为符合特定的 XML 架构定义语言 (XSD) 的 XML 流。 若要在 XML 和强类型的类之间进行转换，可以使用本机 [XDocument](https://docs.microsoft.com/dotnet/api/system.xml.linq.xdocument) 类或外部库。 |
 | [JSON 序列化](https://docs.microsoft.com/uwp/api/Windows.Data.Json) | JSON（JavaScript 对象表示法）序列化是用于与 REST API 进行通信的流行格式。 [Newtonsoft Json.NET](https://www.newtonsoft.com/json)，在 UWP 应用中受到完全支持。 |
 
-## <a name="devices"></a>设备
+## <a name="devices"></a>资源协议转换请求
 
 你可能会发现，为了与业务线工具（如打印机、条形码扫描仪或智能卡读卡器）集成，有必要将外部设备或传感器集成到应用中。 下面是一些功能示例，你可以使用本部分所述技术将其添加到应用中。
 

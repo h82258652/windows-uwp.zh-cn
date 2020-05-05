@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 应用认证
 ms.localizationpriority: medium
 ms.openlocfilehash: 9de761a0b127d7218c7dc2bb4c6862626b7c60e4
-ms.sourcegitcommit: 3e7a4f7605dfb4e87bac2d10b6d64f8b35229546
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "77089423"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 应用认证工具包测试
@@ -268,11 +268,11 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 **Windows 应用认证工具包错误消息：** WXCheck 测试失败。
 
-此项检查有助于确保二进制文件不包含任何映射为可写和可映射的页面。 如果二进制文件包含可写和可执行的部分，或者如果二进制文件的 SectionAlignment  小于 PAGE\-SIZE  ，则可能会发生这种情况。
+此项检查有助于确保二进制文件不包含任何映射为可写和可映射的页面。 如果二进制文件包含可写和可执行的部分，或者如果二进制文件的 SectionAlignment  小于 PAGE*SIZE\-* ，则可能会发生这种情况。
 
 **在应用未通过此测试时怎么办**
 
-确保二进制文件不包含可写或可执行部分，并且二进制文件的 SectionAlignment  值至少等于 PAGE\-SIZE  。
+确保二进制文件不包含可写或可执行部分，并且二进制文件的 SectionAlignment  值至少等于 PAGE*SIZE\-* 。
 
 **备注**
 
@@ -280,7 +280,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 如果已在启用“编辑”和“继续”(/ZI) 的情况下构建可执行文件，则其中可能包含可写和可执行部分。 禁用“编辑”和“继续”将导致无效部分无法呈现。
 
-PAGE\-SIZE  是可执行文件的默认 SectionAlignment  值。
+PAGE*SIZE\-* 是可执行文件的默认 SectionAlignment  值。
 
 ### <a name="private-code-signing"></a>私有代码签名
 
@@ -559,7 +559,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 ### <a name="corrective-action"></a>更正操作
 
-每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
+每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) API。
 
 ## <a name="app-capabilities-test"></a>应用功能测试
 
@@ -596,7 +596,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 ### <a name="corrective-actions"></a>更正操作
 
 -   **ExclusiveTo 属性测试：** 确保 UWP 类未实现标记为 ExclusiveTo 其他类的接口。
--   **类型位置测试：** 确保所有 UWP 类型的元数据位于在应用包中具有最长命名空间匹配名称的 .winmd 文件中。
+-   **类型位置测试：** 确保所有 UWP 类型的元数据位于在应用包中具有最长命名空间匹配名称的 winmd 文件中。
 -   **类型名称区分大小写测试：** 确保所有 UWP 类型在应用包中具有不区分大小写的唯一名称。 还要确保没有任何 UWP 类型名称在应用包中用作命名空间名称。
 -   **类型名称正确性测试：** 确保在全局命名空间或 Windows 顶级命名空间中没有 UWP 类型。
 -   **一般元数据正确性测试：** 确保用于生成相应类型的编译器符合最新的 UWP 规范。

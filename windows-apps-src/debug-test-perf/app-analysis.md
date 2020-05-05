@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e2977877b839f40e07b3eaa03b8349fb8439a401
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73062755"
 ---
 # <a name="app-analysis-overview"></a>应用分析概述
@@ -209,7 +209,7 @@ ResourceDictionaries 通常用于在某种程度的全局级别上存储资源�
 
 ## <a name="collections-control-is-using-a-non-virtualizing-panel"></a>集合控件正在使用非虚拟化面板
 
-如果你提供自定义项目面板模板（请参阅 ItemsPanel），请确保使用虚拟化面板，如 ItemsWrapGrid 或 ItemsStackPanel。 如果使用 VariableSizedWrapGrid、WrapGrid 或 StackPanel，将不会获得虚拟化。 此外，仅在使用 ItemsWrapGrid 或 ItemsStackPanel 时，才会引发以下 ListView 事件：ChoosingGroupHeaderContainer、ChoosingItemContainer 和 ContainerContentChanging。
+如果你提供自定义项目面板模板（请参阅 ItemsPanel），请确保使用虚拟化面板，如 ItemsWrapGrid 或 ItemsStackPanel。 如果使用 VariableSizedWrapGrid、WrapGrid 或 StackPanel，将不会获得虚拟化。 此外，只有当使用 ItemsWrapGrid 或 ItemsStackPanel 时才会引发以下 ListView 事件：ChoosingGroupHeaderContainer、ChoosingItemContainer 和 ContainerContentChanging。
 
 UI 虚拟化是你可以对提升集合性能所做出的最重要的改进。 这意味着按需创建表示项目的 UI 元素。 对于绑定到 1000 个项目的集合的项目控件，同时为所有项目创建 UI 会造成资源浪费，因为它们不可能全部同时显示。 ListView 和 GridView（及其他标准 ItemsControl 派生的控件）可为你执行 UI 虚拟化。 当项目即将滚动到视图中时（只距离几页），框架将为这些项目生成 UI 并缓存它们。 当这些项目不太可能再次显示时，框架将回收内存。
 
@@ -245,7 +245,7 @@ Element 的 UIA 名称为 null 或为空。 此规则检查 UIA 看到的内容�
 
 有时正确的应用程序修复不是提供名称，而是从原始树以外的所有位置删除 UIA 元素。 在 XAML 中，可以通过设置 `AutomationProperties.AccessibilityView = "Raw"` 来实现此操作。
 
-## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>辅助功能：具有相同 Controltype 的 UIA 元素不应具有相同的名称
+## <a name="accessibility-uia-elements-with-the-same-controltype-should-not-have-the-same-name"></a>辅助功能：具有相同 Controltype 的 UIA 元素不应具有相同的名称。
 
 具有相同 UIA 父元素的两个 UIA 元素不得具有相同的 Name 和 ControlType。 如果 ControlType 不同，则可以存在具有相同 Name 的两个控件。 
 

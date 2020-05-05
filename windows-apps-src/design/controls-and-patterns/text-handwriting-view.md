@@ -12,10 +12,10 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 9b9d409718a157c55b28fdb3ccaa28caaa295adf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684287"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>带手写视图的文本输入
@@ -50,7 +50,7 @@ XAML 文本输入框默认支持使用 [Windows Ink](../input/pen-and-stylus-int
 
 在以下情况下，可能需要禁用手写视图：已经在应用程序中提供等效的墨迹转文本功能，或者文本输入体验依赖于无法通过手写获取的某类格式设置或特殊字符（例如制表符）。
 
-在此示例中，我们禁用手写视图的方式是将 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) 控件的 [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) 属性设置为 false。 所有支持手写视图的文本控件都支持一个类似的属性。
+在此示例中，我们禁用手写视图的方式是将 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.ishandwritingviewenabled) 控件的 [IsHandwritingViewEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) 属性设置为 false。 所有支持手写视图的文本控件都支持一个类似的属性。
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -67,7 +67,7 @@ XAML 文本输入框默认支持使用 [Windows Ink](../input/pen-and-stylus-int
 
 应用程序 UI 不会针对较大的控件来重新排列，因此系统可能会导致此视图遮蔽重要 UI。
 
-在这里，我们演示如何使用 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 的 [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment) 属性来指定使用基础文本控件上的哪个定位点来对齐手写视图。
+在这里，我们演示如何使用 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.placementalignment) [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) 的 [PlacementAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 属性来指定使用基础文本控件上的哪个定位点来对齐手写视图。
 
 ```xaml
 <TextBox Name="SampleTextBox"
@@ -107,7 +107,7 @@ XAML 文本输入框默认支持使用 [Windows Ink](../input/pen-and-stylus-int
 
 应用可以访问此设置，并在文本控件中使用所识别文本的选定字体。
 
-在以下示例中，我们侦听 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) 的 [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) 事件，并在文本更改源自 HandwritingView 的情况下应用用户的选定字体（否则应用默认字体）。
+在以下示例中，我们侦听 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged) 的 [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox) 事件，并在文本更改源自 HandwritingView 的情况下应用用户的选定字体（否则应用默认字体）。
 
 ```csharp
 private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -136,7 +136,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 </AutoSuggestBox>
 ```
 
-在相应的代码隐藏中，我们演示了如何禁用 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox) 上的 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)。
+在相应的代码隐藏中，我们演示了如何禁用 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 上的 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。
 
 1. 首先，我们处理应用程序的 Loaded 事件，调用 FindInnerTextBox 函数来启动可视化树遍历。
 
@@ -275,7 +275,7 @@ private void SampleTextBox_TextChanged(object sender, TextChangedEventArgs e)
 
 ![带自定义 UI 的 TextBox](images/handwritingview/textbox-with-customui.png)
 
-以下示例演示了如何侦听 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 的 [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened)、[Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed) 和 [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 事件，以便设置[弹出窗口](https://docs.microsoft.com/uwp/api/windows.ui.popups)的位置。
+以下示例演示了如何侦听 [HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.opened) 的 [Opened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview.closed)、[Closed](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.sizechanged) 和 [SizeChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview) 事件，以便设置[弹出窗口](https://docs.microsoft.com/uwp/api/windows.ui.popups)的位置。
 
 ```csharp
 private void Search_HandwritingViewOpened(

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 59397f12ec66bfa2864d830eaf80a9dcaaf06592
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74257884"
 ---
 # <a name="planning-for-performance"></a>规划性能
@@ -84,7 +84,7 @@ ms.locfileid: "74257884"
 -   通过[优化 XAML 标记](optimize-xaml-loading.md)最大程度地为应用每个页面（尤其初始页面）的 UI 提高分析和加载时间效率以及内存效率。 简而言之，在需要 UI 和代码之前先将其延迟加载。
 -   对于 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)，使所有项目都保持相同大小并尽可能多地使用 [ListView 和 GridView 优化技术](optimize-gridview-and-listview.md)。
 -   采用框架可以在区块中加载并重用的标记形式声明 UI，而不是在代码中以命令方式构建。
--   在用户需要 UI 元素之前延迟创建这些元素。 请参阅 [x:Load](../xaml-platform/x-load-attribute.md) 属性  。
+-   在用户需要 UI 元素之前延迟创建这些元素。 请参阅 [x:Load **属性**](../xaml-platform/x-load-attribute.md)。
 -   首选主题过渡和动画而不是情节提要动画。 有关详细信息，请参阅[动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)。 请记住，情节提要动画需要持续更新屏幕，并保持 CPU 和图形管道处于活动状态。 若要维持电池电量，当用户未与应用交互时，请不要运行动画。
 -   你加载的图像的大小应适合将使用 [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) 方法显示它的视图。
 
@@ -165,7 +165,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   针对各种不同硬件配置进行测试，包括一体机和台式电脑、笔记本电脑、超极本和平板电脑以及其他移动设备。
 -   针对各种不同屏幕尺寸进行测试。 尽管更大的屏幕可以显示更多的内容，但呈现所有额外内容可能会对性能产生负面影响。
 -   尽量消除测试因素。
-    -   在测试设备上关闭后台应用。 若要在 Windows 中执行此操作，请在“开始”菜单中选择“设置”&gt;“个性化”&gt;“锁屏界面”    。 选择每个活动应用，然后选择“无”  。
+    -   在测试设备上关闭后台应用。 若要在 Windows 中执行此操作，请在“开始”菜单中选择“设置” **“个性化”** “锁屏界面”&gt;  &gt;  。 选择每个活动应用，然后选择“无”  。
     -   在将应用部署到测试设备之前，通过使用发布配置生成应用将其编译为本机代码。
     -   若要确保自动维护不会影响测试设备的性能，请手动将其触发并等待完成。 在 Windows 的“开始”菜单中，搜索“安全和维护”  。 在“维护”  区域的“自动维护”  下，选择“开始维护”  并等待状态从“正在进行维护”  发生变化。
     -   多次运行应用有助于消除随机测试变量，并且有助于确保一致的测量结果。

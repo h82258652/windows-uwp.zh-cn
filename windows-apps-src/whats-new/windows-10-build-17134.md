@@ -6,21 +6,21 @@ ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cce2c6c36918a117ba6aee25987be9060b3ec148
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258862"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>面向开发人员的 Windows 10 内部版本 17134 中的新增功能
 
 Windows 10 内部版本 17134（又称 4 月更新或版本 1803）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17134 API 更改](windows-10-build-17134-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17134 API 更改](windows-10-build-17134-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的高级概述。
 
 ## <a name="design--ui"></a>设计和 UI
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 自适应和交互式 Toast 通知 | 使用自适应和交互式通知增强你的应用。 使用我们的[更新的 Toast 通知指南](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)开始，并了解有关图像大小限制、进度栏和添加输入选项的新信息。<br><br>计划的 Toast 通知现在支持 [ExpirationTime](https://docs.microsoft.com/uwp/api/windows.ui.notifications.scheduledtoastnotification.expirationtime#Windows_UI_Notifications_ScheduledToastNotification_ExpirationTime)。
 内容链接 | 新[内容链接](../design/controls-and-patterns/content-links.md)控件提供了访问文本控件中的丰富的嵌入数据的方法，让用户无需离开应用上下文即可查找和使用有关人员或位置的更多信息。
@@ -39,18 +39,18 @@ Fluent Design 更新 | 我们已经更新了许多 Fluent Design 页面，增加
 写入样式 | 我们已升级并扩充了有关语音和声调的文章内容，现在变为[编写样式指南](../design/style/writing-style.md)。 这些新信息提供在应用中创建有效文本的准则，并为控件编写（如错误消息或对话）推荐最佳做法。
 
 ## <a name="gaming"></a>游戏
-功能 | 描述
+功能 | 说明
  :------ | :------
 游戏开发入门 | 对开发适用于 Windows 10 的游戏感兴趣？ 新的[游戏开发入门](../gaming/getting-started.md)页面为你提供了自行完成设置、注册并准备好提交应用和游戏所需完成事项的完整概述。
 图形适配器 | 已添加以下 DXGI API，它们是关于图形适配器的首选项和删除： </br> * [IDXGIFactory6](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 接口支持根据给定的 GPU 首选项枚举图形适配器的单一方法。 </br> * [DXGIDeclareAdapterRemovalSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-dxgideclareadapterremovalsupport) 函数允许执行指示恢复任何正在删除的图形设备的进程。 </br> * [DXGI_GPU_PREFERENCE](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_gpu_preference) 枚举描述应用在其上运行的 GPU 的首选项。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 自适应卡片 | [自适应卡](https://docs.microsoft.com/adaptive-cards/)是一种开放的卡交换格式，让开发人员可以通过常见且一致的方式交换 UI 内容。 它们将内容描述为可以自动呈现以适应主机应用程序的外观和感觉的 JSON 对象。
 应用资源组 | [AppResourceGroupInfo](https://docs.microsoft.com/uwp/api/windows.system.appresourcegroupinfo) 类有新的方法，你可以用来启动向已暂停、活动（已恢复）和已终止状态应用的转换。
-广泛的文件系统访问 | **broadFileSystemAccess** 功能授予应用与当前运行该应用的用户相同的文件系统访问权限，而无需文件选取器样式提示符。 有关详细信息，请参阅[文件访问权限](../files/file-access-permissions.md)和[应用功能声明](../packaging/app-capability-declarations.md)中的 **broadFileSystemAccess** 条目。
+广泛的文件系统访问 | **broadFileSystemAccess** 功能授予应用与当前运行该应用的用户相同的文件系统访问权限，而无需文件选取器样式提示符。 有关详细信息，请参阅[文件访问权限](../files/file-access-permissions.md)和**应用功能声明**中的 [broadFileSystemAccess](../packaging/app-capability-declarations.md) 条目。
 C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) 是适用于 Windows 运行时 (WinRT) API 的全新、完全标准的现代 C++17 语言投影。 它仅在标头文件中实现，旨在为你提供对现代 Windows API 的一流访问。 通过 C++/WinRT，可以使用任何符合标准的 C++17 编译器编写和使用 WinRT API。 对于 C++ 应用程序（从 Win32 到 UWP），使用 C++/WinRT 来保持代码的标准、现代和干净，并且使应用程序轻量且快速。
 控制台 UWP 应用 | 现在可以编写在控制台窗口（如 DOS 或 PowerShell 控制台窗口）中运行的 C++ /WinRT 或 /CX UWP 控制台应用。 控制台应用使用控制台窗口进行输入和输出。 UWP 控制台应用可以发布到 Microsoft Store，在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 有关详细信息，请参阅[创建通用 Windows 平台控制台应用](../launch-resume/console-uwp.md)
 扩展应用清单功能 | 应用程序包清单架构中添加了几项功能，包括：广泛的文件系统访问、为服务点设备启用条形码扫描程序、定义 UWP 控制台应用等等。 请参阅[应用清单在 Windows 10 中的更改](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10)了解详细信息。
@@ -73,7 +73,7 @@ Windows Mixed Reality 文档 | Windows Mixed Reality 开发人员指南[现在�
 
 ## <a name="publish--monetize-windows-apps"></a>发布 Windows 应用并实现盈利
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 从 Microsoft Store 下载并安装程序包更新 | 我们已更新[下载和安装来自 Microsoft Store 的程序包更新](../packaging/self-install-package-updates.md)，并提供关于如何下载和安装程序包更新而不向用户显示通知 UI 的新指南和示例，卸载可选程序包，以及获取关于应用的下载和安装队列中的程序包的信息。
 使用特定市场的当地货币输入自由格式价格 | 在覆盖特定市场的应用基价后，将不再受限于选择其中一个标准价格段；现在可以选择使用市场的当地货币输入自由格式价格。 有关详细信息，请参阅[设置和计划应用定价](../publish/set-and-schedule-app-pricing.md)。 **此功能适用于所有的 Windows 开发人员，并且不需要更新的 SDK。**

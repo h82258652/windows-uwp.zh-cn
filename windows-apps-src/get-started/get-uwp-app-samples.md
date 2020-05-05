@@ -7,10 +7,10 @@ keywords: windows 10, uwp, 示例代码, 代码示例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: ac3c99bc364e81386a362f1d1b5530bee9d462c4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74259516"
 ---
 # <a name="get-uwp-app-samples"></a>获取 UWP 应用示例
@@ -39,7 +39,7 @@ ms.locfileid: "74259516"
 
 下载 .zip 文件之后，在 Visual Studio 中打开示例。
 
-1.  在解压缩存档之前，右键单击该文件，然后选择“属性” > “取消阻止” > “应用”    。 然后，将该存档解压缩到计算机上的本地文件夹中。
+1.  在解压缩存档之前，右键单击该文件，然后选择“属性” **“取消阻止”** “应用” >    >   。 然后，将该存档解压缩到计算机上的本地文件夹中。
 
     ![解压缩的存档](images/SamplesUnzip1.png)
 2.  Samples 文件夹中的每个文件夹都包含一个 UWP 功能示例。

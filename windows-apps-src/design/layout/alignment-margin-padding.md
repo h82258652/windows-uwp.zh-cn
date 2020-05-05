@@ -7,10 +7,10 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0d7f702d145740703b9fbc4ca2e7fd8eba8957cc
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684466"
 ---
 # <a name="alignment-margin-padding"></a>对齐、边距和填充
@@ -71,7 +71,7 @@ ms.locfileid: "75684466"
 -   [Control.Padding  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.padding)：继承到所有 [Control  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls) 派生类。 并非所有控件都有内容，对于没有内容的控件，设置属性没有任何效果。 如果控件有边框，填充将应用到该边框以内。
 -   [Border.Padding  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.padding)：定义由 [BorderThickness  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[BorderBrush  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.borderbrush) 创建的矩形线和 [Child  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.border.child) 元素之间的空间。
 -   [ItemsPresenter.Padding  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemspresenter.padding)：在每个项目周围设置指定的填充，影响项目控件中项目的外观。
--   [TextBlock.Padding  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) 和 [RichTextBlock.Padding  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding)：扩展文本元素的文本周围的边界框。 这些文本元素没有背景  ，因此视觉上很难看清。 出于这个原因，请改为在 [Block  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block) 容器上使用 [Margin  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin) 设置。
+-   [TextBlock.Padding  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.padding) 和 [RichTextBlock.Padding  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.padding)：扩展文本元素的文本周围的边界框。 这些文本元素没有背景  ，因此视觉上很难看清。 出于这个原因，请改为在 [Block  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block.margin) 容器上使用 [Margin  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block) 设置。
 
 在以上的每一种情况下，元素都还有 Margin 属性。 如果同时应用了 Margin 和 Padding，它们可以累加：外部容器和任何内部内容之间显示的距离是边距与填充之和。
 

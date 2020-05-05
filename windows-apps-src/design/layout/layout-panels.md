@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9322ba847aeb7eb64c2654e1105582478a0d3b47
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79210203"
 ---
 # <a name="layout-panels"></a>布局面板
@@ -182,7 +182,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 通过使用 **Auto** 缩放或比例缩放，你可以分配列或行中的空间。 自动调整大小可用于 UI 元素调整大小以适应其内容或父容器。 还可以将自动调整大小用于网格的行和列。 若要使用自动调整大小，请将 UI 元素的高度和/或宽度设置为**自动**。
 
-你可以使用成比例调整大小（也称为*比例缩放*）以按加权比例来分配网格的行和列的可用空间。 在 XAML 中，比例缩放值用 \* 表示（或使用  n\* 表示加权比例缩放）。 例如，若要在一个两列布局中指定一列比另一列宽五倍，则在 [ColumnDefinition](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) 元素中对 [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) 属性分别使用“5\*”和“\*”   。
+你可以使用成比例调整大小（也称为*比例缩放*）以按加权比例来分配网格的行和列的可用空间。 在 XAML 中，比例缩放值用 \* 表示（或使用 n *表示加权比例缩放）* \*。 例如，若要在一个两列布局中指定一列比另一列宽五倍，则在 \*ColumnDefinition\* 元素中对 [Width **属性分别使用“5**”和“](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width)”[  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition)。
 
 此示例在具有 4 列的 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 中，结合使用了固定、自动、成比例调整大小。
 

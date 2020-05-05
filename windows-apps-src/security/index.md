@@ -1,5 +1,5 @@
 ---
-title: 安全性
+title: 安全
 description: 本部分包含有关为 Windows 10 生成安全的通用 Windows 平台 (UWP) 应用的文章。
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 ms.date: 02/08/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: cb5687c1a6744c34231c9b368da7c691c8e77642
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72282440"
 ---
-# <a name="security"></a>安全性
+# <a name="security"></a>安全
 
 
 
@@ -28,10 +28,10 @@ ms.locfileid: "72282440"
 [身份验证和用户身份部分](authentication-and-user-identity.md)包含与用户登录和身份相关的方案的操作实例。 应用提供了多个选项用于用户身份验证，范围从使用 [Web 身份验证代理](web-authentication-broker.md)的简单单一登录 (SSO) 到高度安全的双重身份验证。
 
 <table>
-<tr><th>主题</th><th>描述</th></tr>
+<tr><th>主题</th><th>说明</th></tr>
 <tr><td><a href="credential-locker.md">凭据保险箱</a></td><td>本文介绍了应用可如何使用凭据保险箱安全存储和检索用户凭据，并使用用户的 Microsoft 帐户在设备间漫游用户凭据</td></tr>
 
-<tr><td><a href="fingerprint-biometrics.md">指纹生物识别</a> </td><td>本文介绍了如何将指纹生物识别添加到应用。 在用户必须同意特定操作时将指纹身份验证请求囊括在内，将提升应用的安全性。 例如，可在授权应用内购买或对受限资源的访问权限之前要求指纹身份验证。 指纹身份验证使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI</a> 命名空间中的 <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a> 类进行管理。</td></tr>
+<tr><td><a href="fingerprint-biometrics.md">指纹生物识别</a> </td><td>本文介绍了如何将指纹生物识别添加到应用。 在用户必须同意特定操作时将指纹身份验证请求囊括在内，将提升应用的安全性。 例如，可在授权应用内购买或对受限资源的访问权限之前要求指纹身份验证。 指纹身份验证使用 <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">Windows.Security.Credentials.UI</a> 命名空间中的 <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI">UserConsentVerifier</a> 类进行管理。</td></tr>
 <tr><td><a href="microsoft-passport.md">Microsoft Passport 和 Windows Hello</a></td><td>本文介绍了新的 Windows 10 Microsoft Passport 技术，并讨论了开发人员可如何实现此技术来保护其应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解来自传统凭据的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。 </td></tr>
 <tr><td><a href="microsoft-passport-login.md">创建 Microsoft Passport 登录应用</a></td><td>有关如何创建 Windows 10 UWP（通用 Windows 平台）应用的完整演练中的第 1 部分，将使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项。</td></tr>
 <tr><td><a href="microsoft-passport-login-auth-service.md">创建 Microsoft Passport 登录服务</a></td><td>有关如何在 Windows 10 UWP（通用 Windows 平台）应用中使用 Microsoft Passport 作为传统用户名和密码身份验证系统的替代项的完整演练中的第 2 部分。</td></tr>
@@ -46,11 +46,11 @@ ms.locfileid: "72282440"
 
 加密部分包含与加密相关的更复杂主题的信息。 
 
-| 主题                                                                         | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 主题                                                                         | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |-------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [证书简介](certificates.md)                                      | 本文将讨论如何在应用中使用证书。 在公钥加密中使用数字证书将公钥绑定到个人、计算机或组织。 绑定身份主要用于针对一个实体来验证另一个。 例如，证书通常用来为用户验证 Web 服务器和为 Web 服务器验证用户。 你可以创建证书请求并安装或导入已颁发的证书。 还可以按照证书层次结构注册证书。 |
 | [加密密钥](cryptographic-keys.md)                                   | 本文显示了如何使用标准密钥派生函数来派生密钥以及如何使用对称密钥和非对称密钥来加密内容。                                                                                                                                                                                                                                                                                                                                                                         |
-| [数据保护](data-protection.md)                                         | 本文介绍了如何在 UWP 应用中使用 [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空间中的 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 类加密和解密数字数据。                                                                                                                                                                                                              |
+| [数据保护](data-protection.md)                                         | 本文介绍了如何在 UWP 应用中使用 [Windows.Security.Cryptography.DataProtection](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 命名空间中的 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 类加密和解密数字数据。                                                                                                                                                                                                              |
 | [MAC、哈希以及签名](macs-hashes-and-signatures.md)               | 本文讨论如何在应用中使用消息验证代码 (MAC)、哈希以及签名来检测消息篡改。                                                                                                                                                                                                                                                                                                                                                                                |
 | [有关加密的导出限制](export-restrictions-on-cryptography.md) | 使用此信息可以确定应用使用加密的方式是否会阻止其在 Windows 应用商店中列出。                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [常见的加密任务](common-cryptography-tasks.md)                     | 这些文章提供常见的加密任务的示例代码，这些任务包括创建随机数、比较缓冲区、在字符串和二进制数据之间转换、复制到字节数组和从字节数组复制，以及编码和解码数据等。                                                                                                                                                                                                                                                                                    |

@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 579772bba55c93de38c3c43538ad14253dbc2572
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71339894"
 ---
 # <a name="optimize-animations-media-and-images"></a>优化动画、媒体和图像
@@ -32,7 +32,7 @@ UWP 应用的一个重要方面就是流畅的交互。 这包括“粘住你的
 -   零持续时间动画
 -   [  **Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 属性的动画
 -   [  **UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 属性的动画
--   针对 [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 子属性时类型 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 的属性的动画
+-   针对 [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.Brush) 子属性时类型 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 的属性的动画
 -   针对这些返回值类型的子属性时下列 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 属性的动画：
 
     -   [RenderTransform  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.rendertransform)
@@ -54,7 +54,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 对 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 进行动画处理似乎不是一个好方法。 除了有损性能，它还可能导致要播放的视频内容中出现断裂或其他痕迹。
 
-> **注意**：本文中对 MediaPlayerElement  的建议也适用于 [MediaElement  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。   **MediaPlayerElement** 仅在 Windows 10 版本 1607 中可用，因此如果你要创建适用于以前版本的 Windows 的应用，则需要使用 **MediaElement**。
+> **注意**：本文中对 MediaPlayerElement  **的建议也适用于**MediaElement[  。](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) **MediaPlayerElement** 仅在 Windows 10 版本 1607 中可用，因此如果你要创建适用于以前版本的 Windows 的应用，则需要使用 **MediaElement**。
 
 ### <a name="use-infinite-animations-sparingly"></a>尽量少使用无限动画
 
@@ -85,7 +85,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 ### <a name="display-full-screen-video-playback-when-possible"></a>尽可能显示全屏视频播放
 
-在 UWP 应用中，始终使用 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 上的 [**IsFullWindow**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.isfullwindow) 属性来启用和禁用全屏呈现。 此操作可以确保在媒体播放期间使用系统级别优化。
+在 UWP 应用中，始终使用 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.isfullwindow) 上的 [**IsFullWindow**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 属性来启用和禁用全屏呈现。 此操作可以确保在媒体播放期间使用系统级别优化。
 
 当视频内容是唯一要呈现的内容时，XAML 框架可以优化视频内容的显示，从而提供使用更少能耗、产生更高帧速率的体验。 若要获得最有效的媒体播放，请将 **MediaPlayerElement** 的大小设置为屏幕的宽度和高度，并且不显示其他 XAML 元素
 
@@ -117,7 +117,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 ### <a name="delay-setting-the-source-for-a-mediaplayerelement"></a>延迟设置 MediaPlayerElement 的源
 
-媒体引擎是很耗费资源的对象，并且 XAML 框架会尽可能延迟加载 dll 和创建大型对象。 通过 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 属性设置 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的源之后，会强制它执行此工作。 在用户真正准备好播放媒体时进行此设置将尽可能延迟大多数与 **MediaPlayerElement** 相关联的成本。
+媒体引擎是很耗费资源的对象，并且 XAML 框架会尽可能延迟加载 dll 和创建大型对象。 通过 [**Source**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 属性设置 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 的源之后，会强制它执行此工作。 在用户真正准备好播放媒体时进行此设置将尽可能延迟大多数与 **MediaPlayerElement** 相关联的成本。
 
 ### <a name="set-mediaplayerelementpostersource"></a>设置 MediaPlayerElement.PosterSource
 
@@ -127,7 +127,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 若要使媒体平台做出真正的响应，清理一直是一项艰巨的任务。 通常，人们通过更改滑块的值来执行此操作。 以下是关于如何使此操作尽可能有效的几个提示：
 
--   基于查询 [**MediaPlayerElement.MediaPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 上的 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) 的计时器更新 [**Slider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 的值。 确保为你的计时器使用合理的更新频率。 **Position** 属性在播放期间仅每 250 毫秒更新一次。
+-   基于查询 [**MediaPlayerElement.MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider) 上的 [**Position**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.position) 的计时器更新 [**Slider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 的值。 确保为你的计时器使用合理的更新频率。 **Position** 属性在播放期间仅每 250 毫秒更新一次。
 -   滑块上的步进频率的大小必须随视频的长度进行缩放。
 -   当用户拖动滑块的缩略图时，请订阅到滑块上的 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)、[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件以将 [**PlaybackRate**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate) 属性设置为 0。
 -   在 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件处理程序中，手动将媒体位置设置为滑块位置值以在清理时实现最佳的缩略图对齐。
@@ -185,10 +185,10 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 如果你未设置显式的解码大小，则 XAML 将通过根据包含页面的初始布局将图像解码为它显示在屏幕上的相同大小，尽量尝试节省内存。 建议你在编写应用程序时尽量充分利用此功能。 如果满足任何以下条件，将禁用此功能。
 
--   在使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 或 [**UriSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.urisource) 设置内容后，[**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 连接到活动 XAML 树。
+-   在使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 或 [**UriSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 设置内容后，[**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.urisource) 连接到活动 XAML 树。
 -   使用异步解码（如 [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource)）解码图像。
 -   通过在主机图像元素或画笔或者任何父元素上将 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 设置为 0 或将 [**Visibility**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.visibility) 设置为 **Collapsed** 来隐藏该图像。
--   图像控件或画笔使用 **None** 的 [**Stretch**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch)。
+-   图像控件或画笔使用 [None**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch)Stretch  。
 -   图像将用作 [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid)。
 -   在图像元素或任何父元素上设置 `CacheMode="BitmapCache"`。
 -   图像画笔是非矩形（例如当应用到某个形状或文本时）。

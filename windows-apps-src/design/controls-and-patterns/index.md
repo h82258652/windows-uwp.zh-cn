@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: 63907b3bfe3fc6dece900f1a7c09ac535e859471
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80218447"
 ---
 # <a name="controls-for-windows-apps"></a>适用于 Windows 应用的控件
@@ -32,7 +32,7 @@ ms.locfileid: "80218447"
 :::row:::
     :::column:::
       <p><b><a href="controls-and-events-intro.md">添加控件并处理事件</a></b> <br/>
-向应用中添加控件有 3 个关键步骤：将控件添加到应用 UI、在控件上设置属性，然后将代码添加到控件的事件处理程序，以使其执行某个操作。</p>
+向应用添加控件有 3 个关键步骤：将控件添加到应用 UI、在控件上设置属性，然后将代码添加到控件的事件处理程序，以使其执行某个操作。</p>
     :::column-end:::
     :::column:::
       <p><b><a href="xaml-styles.md">设置控件样式</a></b> <br/>

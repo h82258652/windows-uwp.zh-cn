@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c75bd62fb5548cc03247772427fb5aabac4fb5a
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74735072"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音乐、图片和视频库中的文件和文件夹
@@ -19,7 +19,7 @@ ms.locfileid: "74735072"
 
 库是虚拟的文件夹集合，其中包括一个默认的已知文件夹，以及用户通过使用你的应用或任一内置应用添加到库的任何其他文件夹。 例如，图片库默认包含“图片”已知文件夹。 用户可以通过使用你的应用或内置的“照片”应用，将文件夹添加到图片库或从中删除它们。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -86,7 +86,7 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 当你调用 [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 时，用户将看到确认对话框，指出该文件夹“再也不会在‘图片’中显示，但不会被删除。” 这意味着该文件夹仍保留在其在磁盘上的原始位置上、会从 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 属性中删除，并且将不再包含在内置的“照片”应用中。
 
-以下示例假设用户已从名为 **lvPictureFolders** 的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控件中选择要删除的文件夹。
+以下示例假设用户已从名为 [lvPictureFolders**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)ListView  控件中选择要删除的文件夹。
 
 
 ```cs

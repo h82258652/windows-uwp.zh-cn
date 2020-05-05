@@ -12,10 +12,10 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b781e6074468fbe73446e4057e36ff31266d05
-ms.sourcegitcommit: 9625f8fb86ff6473ac2851e600bc02e996993660
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72165094"
 ---
 # <a name="selection-mode-overview"></a>“选择模式”概述
@@ -25,9 +25,9 @@ ms.locfileid: "72165094"
 ## <a name="different-selection-modes"></a>不同的选择模式
 有以下三种选择模式：
 
-- Single：用户一次只能选择一个项目。
-- Multiple：用户无需使用修改器即可选择多个项目。
-- Extended：用户可以使用修改器选择多个项目，例如长按 Shift。
+- 单选：用户一次只能选择一个项目。
+- 多选：用户无需使用修改器即可选择多个项目。
+- 展开：用户可以使用修改器选择多个项目，例如长按 SHIFT 键。
 
 ## <a name="selection-mode-examples"></a>选择模式示例
 ### <a name="here-is-a-listview-with-single-selection-mode-enabled"></a>下面是启用了单选模式的 ListView。

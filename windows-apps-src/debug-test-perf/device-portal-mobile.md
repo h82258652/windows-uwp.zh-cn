@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72281889"
 ---
 # <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
@@ -31,7 +31,7 @@ ms.locfileid: "72281889"
 
 ![开发人员模式设备发现设置](images/device-portal/mob-dev-mode-pairing.png)
 
-可以通过 3 种方式连接到设备门户：USB、本地主机以及本地网络（包括 VPN 和 Tethering）。
+你可以从 3 种方法中选择一种方法连接到 Device Portal：USB、本地主机和通过本地网络（包括 VPN 和网络共享）。
 
 **连接到设备门户**
 
@@ -78,7 +78,7 @@ Windows 移动版 Device Portal 中并未包含可以终止任意进程的功能
 - 性能图表
 - Windows 事件跟踪 (ETW)
 - 性能跟踪 (WPR) 
-- 设备
+- 资源协议转换请求
 - 网络
 
 ## <a name="see-also"></a>另请参阅

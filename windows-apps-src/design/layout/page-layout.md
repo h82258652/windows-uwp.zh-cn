@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
 ms.openlocfilehash: 7333cebc945715412e3ff1140ca26e1ed5368704
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75684538"
 ---
 # <a name="page-layout"></a>页面布局
 
 在 UWP 应用中，每个[页面  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)通常都有导航、命令和内容元素。 
 
-应用可以有多个页面：当用户启动 UWP 应用时，应用程序代码会创建一个[帧  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)放置在应用程序的[窗口  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window)内。 然后，帧可以在应用程序的[页面  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)实例之间[导航](../basics/navigate-between-two-pages.md)。 
+应用可以有多个页面：当用户启动 UWP 应用时，应用程序代码会创建一个[帧  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)放置在应用程序的[窗口  ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window)内。 然后，帧可以在应用程序的[页面](../basics/navigate-between-two-pages.md)[**实例之间**导航](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)。 
 
 大多数页面都遵循常见的布局结构，本文介绍了需要哪些 UI 元素以及它们在页面上的位置。 
 

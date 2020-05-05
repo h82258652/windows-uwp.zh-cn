@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f08c2cc39bb4cdf9a49351f70143a0f86df1fb7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74254727"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
@@ -44,7 +44,7 @@ public MainPage()
 
 ![稀疏的设计 UI。](images/displaying-data-in-the-designer-01.png)
 
-第一个补救方法是尝试注释掉该 **DataContext** 分配，改为在页面标记中设置 **DataContext**。 这样，你的实时数据在设计时和运行时都会显示出来。 若要执行此操作，请首先打开你的 XAML 页面。 然后，在“文档大纲”窗口中，单击根可设计元素（通常带有标签 \[Page\]）来选择它   。 在 **“属性”** 窗口中，查找**DataContext**属性（位于“通用”类别内），然后单击 **“新建”** 。 从 **“选择对象”** 对话框中单击你的视图模型类型，然后单击 **“确定”** 。
+第一个补救方法是尝试注释掉该 **DataContext** 分配，改为在页面标记中设置 **DataContext**。 这样，你的实时数据在设计时和运行时都会显示出来。 若要执行此操作，请首先打开你的 XAML 页面。 然后，在“文档大纲”窗口中，单击根可设计元素（通常带有标签 **Page**）来选择它 **\[\]** 。 在 **“属性”** 窗口中，查找**DataContext**属性（位于“通用”类别内），然后单击 **“新建”** 。 从 **“选择对象”** 对话框中单击你的视图模型类型，然后单击 **“确定”** 。
 
 ![用于设置 DataContext 的 UI。](images/displaying-data-in-the-designer-02.png)
 
@@ -99,7 +99,7 @@ else
 
 **d:DataContext** 属性及所有其他设计时属性都已记录在[设计时属性](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx)主题中，这对通用 Windows 平台 (UWP) 应用仍然有效。
 
-[CollectionViewSource](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 没有 DataContext 属性，不过它有 Source 属性    。 因此，你可以使用 **d:Source** 属性在 **CollectionViewSource** 上设置仅设计时示例数据。
+[CollectionViewSource **没有 DataContext 属性，不过它有 Source 属性**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)   。 因此，你可以使用 **d:Source** 属性在 **CollectionViewSource** 上设置仅设计时示例数据。
 
 ``` xaml
     <Page.Resources>
