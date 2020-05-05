@@ -1,16 +1,16 @@
 ---
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: 转换概述
-description: 了解如何通过更改 UI 中元素的相对坐标系，在 Windows 运行时 API 中使用转换。
+description: 了解如何通过更改 UI 中元素的相对坐标系，在 Windows 运行时 \#API 中使用转换。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: aa60db28003c4f231cf36b653c5e69b422978c1a
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71340064"
 ---
 # <a name="transforms-overview"></a>转换概述
