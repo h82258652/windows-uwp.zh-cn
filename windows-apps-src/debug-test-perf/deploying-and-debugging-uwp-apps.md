@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp, 调试, 测试, 性能
 ms.localizationpriority: medium
 ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75683850"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和调试 UWP 应用
@@ -65,7 +65,7 @@ ms.locfileid: "75683850"
 
 ![“远程连接”对话框](images/debug-remote-connections.png)
 
-若要返回到此对话框，可以打开项目属性，然后转到“调试”  选项卡。从此处，选择“远程计算机:”  旁边的“查找” 
+若要返回到此对话框，可以打开项目属性，然后转到“调试”  选项卡。从此处，选择“**远程计算机**:”旁边的“查找” 
 
 ![“调试”选项卡](images/debug-remote-machine-config.png)
 

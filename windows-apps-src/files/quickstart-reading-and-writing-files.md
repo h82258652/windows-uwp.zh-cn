@@ -12,10 +12,10 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 0dbe5e2f1cc32a3d1b52572f71fba7547af99f17
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74258567"
 ---
 # <a name="create-write-and-read-a-file"></a>创建、写入和读取文件
@@ -29,7 +29,7 @@ ms.locfileid: "74258567"
 使用 [**StorageFile**](/uwp/api/windows.storage.storagefile) 对象读取和写入文件。
 
 > [!NOTE]
-> 有关完整示例，请参阅[文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)。
+>有关完整示例，请参阅[文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)。
 
 ## <a name="prerequisites"></a>必备条件
 
