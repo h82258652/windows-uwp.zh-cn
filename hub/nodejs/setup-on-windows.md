@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js, windows 10, 本机 windows, 直接在 windows 上
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 456aac17f61ab0add3d35a48c74e151fa15e9e83
-ms.sourcegitcommit: 8efeb6672f759b1ea7e3e9e2f90e764480791142
+ms.openlocfilehash: fe1943da8c1de4f4fced5dec67079522d83f9a19
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728468"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82173463"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>直接在 Windows 上设置 Node.js 开发环境
 
@@ -38,6 +38,7 @@ ms.locfileid: "75728468"
     ![显示无 Node 版本的 NVM 列表](../images/windows-nvm-powershell-no-node.png)
 
 6. 安装 Node.js 的当前版本（用于测试最新的功能改进，但比 LTS 版本更容易出现问题）：`nvm install latest`
+
 7. 若要安装 Node.js 的最新稳定 LTS 版本（建议），首先通过 `nvm list available` 查找当前的 LTS 版本号，然后使用 `nvm install <version>` 安装 LTS 版本号（将 `<version>` 替换为版本号 `nvm install 12.14.0`）。
 
     ![可用版本的 NVM 列表](../images/windows-nvm-list.png)
@@ -46,8 +47,10 @@ ms.locfileid: "75728468"
 
     ![显示已安装的 Node 版本的 NVM 列表](../images/windows-nvm-node-installs.png)
 
-9. 若要查看当前默认的 Node.js 版本，请输入：`node --version`
+9. 在安装所需的 Node.js 版本后，通过输入 `nvm use <version>`（请将 `<version>` 替换为版本号，即 `nvm use 12.9.0`）来选择要使用的版本。
+
 10. 若要更改要用于项目的 Node.js 版本，请创建新的项目目录 `mkdir NodeTest`，输入目录 `cd NodeTest`，然后输入 `nvm use <version>`，将 `<version>` 替换为要使用的版本号（即 v10.16.3`）。
+
 11. 验证哪个 npm 版本安装了 `npm --version`，此版本号将自动更改为与当前版本的 Node.js 关联的 npm 版本。
 
 ## <a name="alternative-version-managers"></a>替代版本管理器

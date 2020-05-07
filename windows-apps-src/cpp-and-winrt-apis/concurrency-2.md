@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: bbdce669faa73b1db2071173014dec474160affb
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.openlocfilehash: 26a0ea1ec70f4ae4255030541a6513541db1fb99
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266945"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82267498"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -673,7 +673,7 @@ IAsyncAction Async(HANDLE event)
 IAsyncAction Async(winrt::handle event)
 {
     co_await DoWorkAsync();
-    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+    co_await resume_on_signal(event); // The incoming handle *is* valid here.
 }
 ```
 
@@ -717,7 +717,7 @@ IAsyncAction SampleCaller()
 
 ## <a name="asynchronous-timeouts-made-easy"></a>异步超时变得很简单
 
-我们对 C++/WinRT 的 C++ 协同程序的投入很大。 协同程序对编写并发代码的影响是变革性的。 就此部分讨论的示例来说，异步的详情并不重要，重要的是当场获得的结果。 因此，C++/WinRT 在实现 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows 运行时异步操作接口时会使用一个 **get** 函数，这与 **std::function** 提供的类似。
+我们对 C++/WinRT 的 C++ 协同程序的投入很大。 协同程序对编写并发代码的影响是变革性的。 就此部分讨论的示例来说，异步的详情并不重要，重要的是当场获得的结果。 因此，C++/WinRT 在实现 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows 运行时异步操作接口时会提供一个 **get** 函数（与 **std::future** 提供的 get 函数类似）。
 
 ```cppwinrt
 using namespace winrt::Windows::Foundation;
@@ -731,7 +731,7 @@ int main()
 
 当异步对象正在完成其操作时，**get** 函数会实施无限期的阻止。 异步对象的生存期往往很短，因此通常情况下这正是你所需要的。
 
-但有时候，你还有其他要求：在超过一定的时间后，你不能再等待。 由于 Windows 运行时提供了构建基块，因此始终可以编写那样功能的代码。 不过，现在 C++/WinRT 提供的 **wait_for** 函数使之变得容易得多。 它还在 **IAsyncAction** 上实现。同样，它与 **std::function** 提供的类似。
+但有时候，你还有其他要求：在超过一定的时间后，你不能再等待。 由于 Windows 运行时提供了构建基块，因此始终可以编写那样功能的代码。 不过，现在 C++/WinRT 提供的 **wait_for** 函数使之变得容易得多。 它也在 **IAsyncAction** 上进行了实现。同样，它与 **std::future** 提供的 wait_for 函数类似。
 
 ```cppwinrt
 using namespace std::chrono_literals;

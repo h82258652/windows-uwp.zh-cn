@@ -6,10 +6,10 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c23a9539d0fc3902f715917b380e8b6b3e132c15
-ms.sourcegitcommit: 1d868968297d0d6d02cc38fe84d0a3ab5bccfb60
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68974451"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教程：创建用户界面
@@ -183,7 +183,7 @@ ms.locfileid: "68974451"
 
     有关使用 **RelativePanel** 的布局的详细信息，请参阅[布局面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel)。
 
-2. 在 **TextBlock** 元素下面，添加名为“ImageGridView”的 **GridView** 控件。  设置 **RelativePanel** _附加属性_以将此控件放在标题文本下面，并使其横跨整个屏幕宽度。
+2. 在 **TextBlock** 元素下面，添加名为“ImageGridView”的 **GridView** 控件。  设置 **RelativePanel** 附加的属性  可将此控件放在标题文本下面，并使其横跨整个屏幕宽度。
 
     **添加以下 XAML**
 

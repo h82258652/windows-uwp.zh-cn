@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 入门, 开始使用
 ms.localizationpriority: medium
 ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74255132"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
@@ -71,7 +71,7 @@ int main()
 这些标头包含投影到 C++/WinRT 的 Windows API。 换言之，对于每个 Windows 类型，C++/WinRT 都会定义 C++ 友好等效项（称为“投影类型”）  。 投影类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 将这些内容放置在预编译标头中将减少增量生成时间。
 
 > [!IMPORTANT]
-> 如果希望使用来自 Windows 命名空间的类型，请包括对应的 C++/WinRT Windows 命名空间标头文件，如上所示。 对应的标头是与该类型的命名空间具有相同名称的标头  。 例如，若要为 [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) 运行时类使用 C++/WinRT 投影，则应包含 `#include <winrt/Windows.Foundation.Collections.h>`。 如果包含 `winrt/Windows.Foundation.Collections.h`，则不需要同时包含 `winrt/Windows.Foundation.h`。  每个 C++/WinRT 投影标头将自动包括其父命名空间标头文件；因此你不需要显式包含它  。 不过，这样做也不会出现错误。
+> 如果希望使用来自 Windows 命名空间的类型，请包括对应的 C++/WinRT Windows 命名空间头文件，如上所示。 对应的标头是与该类型的命名空间具有相同名称的标头  。 例如，若要为 [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) 运行时类使用 C++/WinRT 投影，则应包含 `#include <winrt/Windows.Foundation.Collections.h>`。 如果包含 `winrt/Windows.Foundation.Collections.h`，则不需要同时包含 `winrt/Windows.Foundation.h`。  每个 C++/WinRT 投影标头将自动包括其父命名空间头文件；因此你不需要显式包含它  。 不过，这样做也不会出现错误。
 
 ```cppwinrt
 using namespace winrt;
@@ -133,7 +133,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 ### <a name="the-precompiled-header"></a>预编译的标头
 
-默认项目模板将为你创建名为 `framework.h` 或 `stdafx.h` 的预编译标头。 请将它重命名为 `pch.h`。 如果已有一个 `stdafx.cpp` 文件，请将它重命名为 `pch.cpp`。 将项目属性“C/C++” > “预编译标头” > “预编译标头”设置为“创建(/Yc)”，将“预编译标头文件”设置为“pch.h”。      
+默认项目模板将为你创建名为 `framework.h` 或 `stdafx.h` 的预编译标头。 请将它重命名为 `pch.h`。 如果已有一个 `stdafx.cpp` 文件，请将它重命名为 `pch.cpp`。 将项目属性“C/C++” > “预编译标头” > “预编译标头”设置为“创建(/Yc)”，将“预编译头文件”设置为“pch.h”。      
 
 查找所有 `#include "framework.h"`（或 `#include "stdafx.h"`）并将其替换为 `#include "pch.h"`。
 
@@ -149,7 +149,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 C++/WinRT 语言投影依赖于某些 Windows 运行时自由（非成员）函数和入口点，需要链接到 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) 伞型库。 本部分介绍满足链接器要求的三种方式。
 
-第一种做法是将所有 C++/WinRT MSBuild 属性和目标添加到 Visual Studio 项目。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 **Microsoft.Windows.CppWinRT**，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。  
+第一种做法是将所有 C++/WinRT MSBuild 属性和目标添加到 Visual Studio 项目。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT  ，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。  
 
 也可以使用项目链接设置来显式链接 `WindowsApp.lib`。 或者，可以在源代码中（例如，在 `pch.h` 中）按如下所示执行此操作。
 

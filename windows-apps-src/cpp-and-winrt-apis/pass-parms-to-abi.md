@@ -5,12 +5,12 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 传递, 参数, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: c1e172fc4dbd5b865add1828a98dc1a030d5dc6f
-ms.sourcegitcommit: 8b4c1fdfef21925d372287901ab33441068e1a80
+ms.openlocfilehash: 9c5ce6a30e68fe6fc26316bc2f41c6e2556b98ef
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67844355"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255251"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>将参数传递到 ABI 边界
 
@@ -45,7 +45,7 @@ ms.locfileid: "67844355"
 
 Windows 运行时集合已是 **IIterable** 类型。
 
-|可以传递的类型|Sync|Async|注释|
+|可以传递的类型|同步|Async|注释|
 |-|-|-|-|
 | `nullptr` | 是 | 是 | 你必须验证基础方法是否支持 `nullptr`。|
 | **IIterable\<T\>** | 是 | 是 | 或可转换为它的任何内容。|
@@ -81,7 +81,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 如果迭代器为 `RandomAcessIt`，[**IIterator\<T\>.GetMany(T\[\])** ](/uwp/api/windows.foundation.collections.iiterator-1.getmany) 的实现会更高效。 否则，它会在该范围上进行多次传递。
 
-|可以传递的类型|Sync|Async|注释|
+|可以传递的类型|同步|Async|注释|
 |-|-|-|-|
 | `nullptr` | 是 | 是 | 你必须验证基础方法是否支持 `nullptr`。|
 | **IIterable\<IKeyValuePair\<K, V\>\>** | 是 | 是 | 或可转换为它的任何内容。|
@@ -98,7 +98,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 可以使用 [**IVector\<T\>.GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview) 从 **IVector** 获取 **IVectorView**。
 
-|可以传递的类型|Sync|Async|注释|
+|可以传递的类型|同步|Async|注释|
 |-|-|-|-|
 | `nullptr` | 是 | 是 | 你必须验证基础方法是否支持 `nullptr`。|
 | **IVectorView\<T\>** | 是 | 是 | 或可转换为它的任何内容。|
@@ -115,7 +115,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 可以使用 **IMap::GetView** 从**IMap** 获取 **IMapView**。
 
-|可以传递的类型|Sync|Async|注释|
+|可以传递的类型|同步|Async|注释|
 |-|-|-|-|
 | `nullptr` | 是 | 是 | 你必须验证基础方法是否支持 `nullptr`。|
 | **IMapView\<K, V\>** | 是 | 是 | 或可转换为它的任何内容。|
@@ -164,3 +164,5 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 | **std::vector<C>** | **C** 的 C++ **std::vector**，其中 **C** 可转换为 **T**，并且 `sizeof(C) == sizeof(T)`。 |
 | `{ T*, T* }` | 一对表示范围 [开始, 结束) 的指针。|
 | **std::initializer_list\<T\>** ||
+
+另请参阅博客文章[跨 Windows 运行时 ABI 边界传递 C 样式数组的多种模式](https://devblogs.microsoft.com/oldnewthing/20200205-00/?p=103398)。

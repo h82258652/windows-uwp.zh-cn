@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac 转到 Windows, 快捷键映射, 从 Unix 转到 Windows, 从 Mac 转到 Windows, 从 MacBook 转到 Surface 的帮助, Macintosh 用户如何使用 Windows, 从 Macintosh 切换到 Windows, 开发环境更改帮助, Mac OS X 转到 Windows, 从 Mac 转到电脑的帮助
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 8c23fa3e6791a3cd78d259b40e68606a30fd9395
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 457abcec97247afcc0d63c983c8a6cda2de51c66
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218437"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643692"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>将开发环境从 Mac 改为 Windows 的指南
 
@@ -82,11 +82,11 @@ Windows 命令行会接受 DOS 命令，是 Windows 上最常用的命令行工�
 
 3. 适用于 Linux 的 Windows 子系统 (WSL)
 
-通过 WSL 可以在 Windows 中运行 Linux shell。 这意味着，你可以运行 bash 或其他 shell，具体取决于选择和安装的特定 Linux 发行版  。 使用 WSL 可提供 Mac 用户最熟悉的环境类型。 例如，你可以使用 ls 列出当前目录中的文件，而不是像在 Windows 命令行中使用 dir   。 若要了解如何安装和使用 WSL，请参阅[适用于 Linux 的 Windows 子系统安装指南 (Windows 10)](https://docs.microsoft.com/windows/wsl/install-win10)。
+通过 WSL 可以在 Windows 中运行 Linux shell。 这意味着，你可以运行 **bash** 或其他 shell，具体取决于选择和安装的特定 Linux 发行版。 使用 WSL 可提供 Mac 用户最熟悉的环境类型。 例如，你可以使用 ls 列出当前目录中的文件，而不是像在 Windows 命令行中使用 dir   。 若要了解如何安装和使用 WSL，请参阅[适用于 Linux 的 Windows 子系统安装指南 (Windows 10)](https://docs.microsoft.com/windows/wsl/install-win10)。
 
 4. Windows 终端（预览）
 
-Windows 终端是一个结合命令行工具和多个来源的 shell 的应用程序，包括传统的 Windows 命令行、PowerShell 以及适用于 Linux 的 Windows 子系统。 尽管仍处于预览版，但它已经包含多个实用的功能，例如支持多个选项卡、拆分窗格、自定义主题和样式和完整的 Unicode 支持。 可以从 [Windows 10 上的 Microsoft Store](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) 安装 Windows 终端。
+Windows 终端是一个结合命令行工具和多个来源的 shell 的应用程序，包括传统的 Windows 命令行、PowerShell 以及适用于 Linux 的 Windows 子系统。 尽管目前仍以预览版提供，但它已经包含多个实用的功能，例如对多个选项卡、拆分窗格、自定义主题和样式的支持以及完整的 Unicode 支持。 可以从 [Windows 10 上的 Microsoft Store](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) 安装 Windows 终端。
 
 ## <a name="apps-and-utilities"></a>应用和实用程序
 

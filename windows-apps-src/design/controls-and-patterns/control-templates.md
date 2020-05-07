@@ -12,10 +12,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f5d0c2f5c5aa6c5d5bfcaee8e9b0ec14bbcd4ff3
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71339371"
 ---
 # <a name="control-templates"></a>控件模板
@@ -173,9 +173,9 @@ ms.locfileid: "71339371"
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | 状态转换                     | 引发的结果                                                                                                                                                                                                                                                                                                                                   | 转换完成时的 CheckBox 外观 |
-| 从 `Unchecked` 到 `Checked`。       | 应用 `Checked` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，因此 `CheckGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。                                                                                                                                                         | 显示 X。                                |
-| 从 `Checked` 到 `Indeterminate`。   | 应用 `Indeterminate` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 删除 `Checked` **VisualState** 的 **Setter** 值，因此 `CheckGlyph` 的 [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity) 为 0。 | 显示一个圆形。                            |
-| 从 `Indeterminate` 到 `Unchecked`。 | 删除 `Indeterminate` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 0。                                                                                                                                           | 不显示任何符号。                             |
+| 从 `Unchecked` 到 `Checked`。       | `Checked` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值已应用，因此 `CheckGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。                                                                                                                                                         | 显示 X。                                |
+| 从 `Checked` 到 `Indeterminate`。   | `Indeterminate` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值已应用，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 1。 `Checked` **VisualState** 的 **Setter** 值已删除，因此 `CheckGlyph` 的 [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity) 为 0。 | 显示一个圆形。                            |
+| 从 `Indeterminate` 到 `Unchecked`。 | `Indeterminate` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值已删除，因此 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 为 0。                                                                                                                                           | 不显示任何符号。                             |
 
  
 有关如何创建控件的视觉状态（尤其是如何使用 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 类和动画类型）的详细信息，请参阅[视觉状态的情节提要动画](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))。

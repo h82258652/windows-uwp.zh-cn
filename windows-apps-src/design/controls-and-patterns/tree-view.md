@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: ab5b509aa69dc54d18ef3643d7ccd46bc2984676
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: 68682d7b47e42995060601f5ae1c9b8d891aa3ff
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614104"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81643715"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -472,7 +472,7 @@ End Sub
 
 启用多选后，每个树节点旁会显示一个复选框，选中的项突出显示。 用户可以使用复选框选择或取消选择项；单击项仍将导致项被调用。
 
-选择或取消选择父节点时，会选择或取消选择该节点下的所有子节点。 如果父节点下的部分（但并非所有）子节点处于选中状态，则父节点的复选框会显示为不确定（在其中填充黑框）。
+选择或取消选择父节点时，会选择或取消选择该节点下的所有子节点。 如果父节点下的部分（但并非所有）子节点处于选中状态，则父节点的复选框会以非确定的状态显示。
 
 ![树视图中的多选](images/treeview-selection.png)
 

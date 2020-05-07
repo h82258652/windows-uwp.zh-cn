@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 强, 弱, 引用
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 781b63f9f32a0fdf7edee6479b60fd82822cc745
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: dc991ff485d9e4ba90264e1b8082a40e0f4ab801
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209232"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82267481"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的强引用和弱引用
 
@@ -359,7 +359,7 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 
 ## <a name="weak-references-in-cwinrt"></a>C++/WinRT 中的弱引用
 
-在上面，我们看到使用了弱引用。 一般情况下，弱引用非常适合用于中断循环引用。 例如，对于基于 XAML 的 UI 框架的本机实现 &mdash; 由于框架的历史设计原因 &mdash; 需要使用 C++/WinRT 中的弱引用来处理循环引用。 不过，在 XAML 的外部，可能不需要使用弱引用（因为弱引用没有固有的 XAML 相关信息）。 你通常应该能够设计自己的 C++/WinRT API，以避免需要进行循环引用和弱引用。 
+在上面，我们看到使用了弱引用。 一般情况下，弱引用非常适合用于中断循环引用。 例如，对于基于 XAML 的 UI 框架的本机实现 &mdash; 由于框架的历史设计原因 &mdash; 需要使用 C++/WinRT 中的弱引用机制来处理循环引用。 不过，在 XAML 的外部，可能不需要使用弱引用（因为弱引用没有固有的 XAML 相关信息）。 你通常应该能够设计自己的 C++/WinRT API，以避免需要进行循环引用和弱引用。 
 
 对于声明的任何给定类型，在 C++/WinRT 中，是否或者何时需要弱引用并不是显而易见的。 因此，C++/WinRT 在结构模板 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)（你自己的 C++/WinRT 类型将从中直接或间接派生）上自动提供弱引用支持。 它是付费使用的，除非针对 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) 实际查询对象，否则不会收取任何费用。 你可以明确选择[退出该支持](#opting-out-of-weak-reference-support)。
 
