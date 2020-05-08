@@ -354,7 +354,7 @@
               href: shell/tiles-and-notifications/toast-schema.md
             - name: 发送本地 Toast
               items:
-                - name: UWP 应用
+                - name: Windows 应用
                   href: shell/tiles-and-notifications/send-local-toast.md
                 - name: 桌面应用
                   items:

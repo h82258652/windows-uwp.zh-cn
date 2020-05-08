@@ -8,16 +8,16 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 671f33cf106eabf11b317b00d5c2a6cd9abcf3d0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: af04bfcc9b105b19ace18086921a17cc609e5d71
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66363038"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969982"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控件和模式简介
 
-在 UWP 应用开发中，*控件*是一种显示内容或支持交互的 UI 元素。 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。
+在 Windows 应用开发中，控件  是用于显示内容或支持交互的 UI 元素。 通过使用如按钮、文本框和组合框等控件显示数据并获取用户输入，你可以为你的应用创建 UI。
 
 > **重要的 API**：[Windows.UI.Xaml.Controls 命名空间](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
 
