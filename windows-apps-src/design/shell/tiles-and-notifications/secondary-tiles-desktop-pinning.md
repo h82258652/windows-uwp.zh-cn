@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, 桌面桥, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile, 桌面应用程序, win32, winforms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6debb076aac4286c8cb9a33730ade4942b5030
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 7ddcd96eadbb6d2edbc3a72fa58ff3cc8931a09b
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209913"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730367"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>从桌面应用程序固定辅助磁贴
 
@@ -29,7 +29,7 @@ ms.locfileid: "79209913"
 
 ## <a name="package-your-app-with-desktop-bridge"></a>用桌面桥打包应用
 
-如果你未使用桌面桥打包你的应用，则在使用任何 UWP API 之前，[你必须先执行此操作](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)。
+如果尚未使用桌面桥打包应用程序，[则必须先执行此操作](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)，然后才能使用任何 Windows 运行时 api。
 
 
 ## <a name="enable-access-to-iinitializewithwindow-interface"></a>启用对 IInitializeWithWindow 接口的访问
@@ -97,8 +97,8 @@ bool isPinned = await tile.RequestCreateAsync();
 
 ## <a name="resources"></a>资源
 
-* [完整的代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
+* [完整代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [辅助磁贴概述](secondary-tiles.md)
-* [固定辅助磁贴（UWP）](secondary-tiles-pinning.md)
-* [桌面桥](https://developer.microsoft.com/windows/bridges/desktop)
+* [固定辅助磁贴 (UWP)](secondary-tiles-pinning.md)
+* [桌面桥接](https://developer.microsoft.com/windows/bridges/desktop)
 * [桌面桥代码示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

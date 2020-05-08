@@ -1,6 +1,6 @@
 ---
 Description: 了解如何使用磁贴、锁屏提醒、Toast 以及通知提供应用入口点并使用户了解最新信息。
-title: 适用于 UWP 应用的锁屏提醒通知
+title: Windows 应用的徽章通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
@@ -8,14 +8,14 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0c3802f0b6163ad5f0e179d90148bae543aeab
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1d3aa9658e8a57a7993eb79d164b1e17ac23b9ac
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320845"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970872"
 ---
-# <a name="badge-notifications-for-uwp-apps"></a>适用于 UWP 应用的锁屏提醒通知
+# <a name="badge-notifications-for-windows-apps"></a>Windows 应用的徽章通知
 
  
 
@@ -34,8 +34,8 @@ ms.locfileid: "67320845"
 
 <table>
     <tr>
-        <th>ReplTest1</th>
-        <th>Badge</th>
+        <th>值</th>
+        <th>徽章</th>
         <th>XML</th>
     </tr>
     <tr>
@@ -56,7 +56,7 @@ ms.locfileid: "67320845"
 <table>
 <tr>
     <th>状态</th>
-    <th>字形</th>
+    <th>标志符号</th>
     <th>XML</th>
 </tr>
 <tr>
@@ -65,7 +65,7 @@ ms.locfileid: "67320845"
     <td>`<badge value="none"/>`</td>
 </tr>
 <tr>
-    <td>活动</td>
+    <td>activity</td>
     <td><img src="images/badges/badge-activity.png" alt="Glyph" /></td>
     <td>`<badge value="activity"/>`</td>
 </tr>
@@ -85,7 +85,7 @@ ms.locfileid: "67320845"
     <td>`<badge value="attention"/>`</td>
 </tr>
 <tr>
-    <td>有空</td>
+    <td>可用</td>
     <td><img src="images/badges/badge-available.png" alt="Glyph" /></td>
     <td>`<badge value="available"/>`</td>
 </tr>
@@ -105,7 +105,7 @@ ms.locfileid: "67320845"
     <td>`<badge value="error"/>`</td>
 </tr>
 <tr>
-    <td>新邮件</td>
+    <td>newMessage</td>
     <td><img src="images/badges/badge-newMessage.png" alt="Glyph" /></td>
     <td>`<badge value="newMessage"/>`</td>
 </tr>
@@ -128,7 +128,7 @@ ms.locfileid: "67320845"
 
 ## <a name="create-a-badge"></a>创建锁屏提醒
 
-这些示例演示了如何创建锁屏提醒更新。
+这些示例演示如何创建徽章更新。
 
 ### <a name="create-a-numeric-badge"></a>创建数字锁屏提醒
 
