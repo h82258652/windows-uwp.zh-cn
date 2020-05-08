@@ -1,17 +1,17 @@
 ---
-description: 了解如何设计和编码在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用。
-title: 适用于 UWP 应用的布局概述
+description: 了解如何设计在各种设备和屏幕大小上易于导航且外观优美的 UWP 应用，以及如何为其编写代码。
+title: 适用于 Windows 应用的布局概述
 keywords: uwp 应用布局, 通用 windows 平台, 应用设计, 界面
 ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ab0344acc40103620da5164faa397c081a4a079
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: c3647f6a4c3bbc3951fab45380762de472d13533
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867338"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970772"
 ---
 # <a name="layout"></a>布局
 

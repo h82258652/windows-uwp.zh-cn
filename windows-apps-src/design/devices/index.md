@@ -1,6 +1,6 @@
 ---
-Description: 了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。
-title: UWP 设备的 UI 注意事项
+Description: 了解支持 Windows 应用的设备，将会帮助你针对每个外形规格提供最佳用户体验。
+title: Windows 设备的 UI 注意事项
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -8,18 +8,18 @@ keywords: 设备, 输入, 交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0808b5173f697fcca8d5e117f857d3861c327ae3
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 121025dc5e87e7e3953b9517144e36ab382795bb
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258112"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968203"
 ---
-#  <a name="ui-considerations-for-uwp-devices"></a>UWP 设备的 UI 注意事项
+#  <a name="ui-considerations-for-windows-devices"></a>Windows 设备的 UI 注意事项
 
-![资源协议转换请求](../images/devices-2x.png)
+![设备](../images/devices-2x.png)
 
-了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。
+了解支持 Windows 应用的设备，将会帮助你针对每个外形规格提供最佳用户体验。
 
 ![支持 Windows 的设备](images/device-primer/device-primer-ramp.png)
 
@@ -96,7 +96,7 @@ UI 注意事项
 
 坐在房间中的沙发上使用游戏板或遥控器与电视交互的体验称为 **10 英尺体验**。 如此命名是因为用户通常坐在离屏幕大约 10 英尺的位置。 这提出了 *2 英尺*体验（假设）中或与电脑交互时所不存在的独特挑战。 如果你要为 Xbox One 或任何连接到电视屏幕并且可能使用游戏板或遥控器进行输入的其他设备开发应用，应始终牢记这一点。
 
-针对 10 英尺体验设计 UWP 应用与针对此处所列的任何其他设备类别进行设计大不相同。 有关详细信息，请参阅 [针对 Xbox 和电视进行设计](designing-for-tv.md)。
+针对 10 英尺体验设计 Windows 应用与针对此处所列的任何其他设备类别进行设计大不相同。 有关详细信息，请参阅 [针对 Xbox 和电视进行设计](designing-for-tv.md)。
 
 屏幕尺寸
 - 24 英寸及更大
