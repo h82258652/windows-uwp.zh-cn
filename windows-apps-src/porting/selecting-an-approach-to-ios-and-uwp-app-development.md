@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a76b451a3d268e418ae24998afdd29d32bb43ed6
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 538fbc33d161f5f91033427af76438f49d3d3b68
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260140"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148586"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>选择一种方法进行 iOS 和 UWP 应用开发
 
@@ -46,7 +46,7 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
 使用现有的 iOS 应用，你的选项将受到稍多限制。 但是，一切都肯定不会丢失。
 
--   [适用于 iOS 的 Windows 桥](https://github.com/Microsoft/WinObjC)
+-   [面向 iOS 的 Windows 桥](https://github.com/Microsoft/WinObjC)
 
     也称为 Project Islandwood，它是一种可以直接将 Xcode 项目导入到 Visual Studio 的工具，现在仍处于开发中。 OBJECTIVE-C 代码可以在 Visual Studio 中生成并调试。 如果你的项目要为图形使用诸如 Cocos 此类的库，你可能会发现这一种快速移植应用的方法。
 
@@ -54,7 +54,7 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     如果你的核心业务逻辑采用 C++（而不是 OBJECTIVE-C 或 Swift）编写，通常在你的项目中仅需细微的改动就可以使用此代码。 然后可以使用 XAML 定义 UI（与其他的 Windows 应用一样），并在必要时调用 C++ 代码。
 
--   [使用 ANGLE 在 Windows 上运行 OpenGL ES](https://github.com/microsoft/angle/wiki)
+-   [在 Windows 上使用 ANGLE 运行 OpenGL ES](https://github.com/microsoft/angle/wiki)
 
     移植 OpenGL ES 2.0 项目的中间步骤是使用 ANGLE。 ANGLE 通过将 OpenGL ES API 调用转换为 DirectX 11 API 调用，允许你在 Windows 上运行 OpenGL ES 内容。
 
@@ -64,23 +64,23 @@ Windows 和 iOS 这二者似乎完全不同，但如果你需要编写支持这�
 
     一个游戏创作环境。
 
--   [构造2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( https://www.scirra.com/)
 
     一个游戏创作环境。
 
--   [钛金 Studio](https://www.appcelerator.com/platform/titanium-studio/)
+-   [Titanium Studio](https://www.appcelerator.com/platform/titanium-studio/)
 
     一个跨平台创作环境。
 
--   [Cocos2d 为后盾-x](https://www.cocos2d-x.org/)
+-   [Cocos2D-x](https://www.cocos2d-x.org/)
 
     一个用于子画面处理和力学建模的跨平台代码库。
 
--   [影响 .js](https://impactjs.com/)
+-   [Impact.js](https://impactjs.com/)
 
     一个基于 HTML 的游戏库。
 
--   [果子](http://madewithmarmalade.com/)
+-   [Marmalade](http://madewithmarmalade.com/)
 
     一个跨平台 SDK。
 

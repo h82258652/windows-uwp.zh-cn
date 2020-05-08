@@ -9,12 +9,12 @@ ms.date: 12/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: d180621736e79daec91a11a6932e80633962d6c7
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: d60f0e825cefec0ba6ad5bcdd6a705f0992019b4
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684525"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82967912"
 ---
 # <a name="globalization-and-localization"></a>全球化和本地化
 
@@ -55,18 +55,18 @@ Windows 的使用遍及世界各地，用户的语言、区域及文化背景各
 
 大多数本地化团队在专用工具的帮助下完成这一过程。 例如，循环利用重复文本的翻译。
 
-| 文章 | 描述 |
+| 文章 | 说明 |
 |---------|-------------|
-| [全球化准则](guidelines-and-checklist-for-globalizing-your-app.md) | 设计和开发应用，使其能够在具有不同语言和文化配置的系统上正常运行。 |
-| [了解用户配置文件语言和应用程序清单语言](manage-language-and-region.md) | 本主题定义了术语“用户配置文件语言列表”、“应用清单语言列表”和“应用运行时语言列表”。 我们将在此主题和此功能区域中的其他主题中使用以上术语，因此了解它们的含义非常重要。 |
+| [全球化指南](guidelines-and-checklist-for-globalizing-your-app.md) | 设计和开发应用，使其能够在具有不同语言和文化配置的系统上正常运行。 |
+| [了解用户配置文件语言和应用清单语言](manage-language-and-region.md) | 本主题定义了术语“用户配置文件语言列表”、“应用清单语言列表”和“应用运行时语言列表”。 我们将在此主题和此功能区域中的其他主题中使用以上术语，因此了解它们的含义非常重要。 |
 | [全球化日期/时间/数字格式](use-global-ready-formats.md) | 通过适当设置日期、时间、数字、电话号码和货币的格式，设计全球通用的应用。 稍后即可调整应用，以适应全球市场中更多的文化、区域和语言。 |
-| [使用模板和模式设置日期和时间的格式](use-patterns-to-format-dates-and-times.md) | 结合使用 [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 命名空间中的类及自定义模板和模式，以严格按照所需格式显示日期和时间。 |
+| [使用模板和模式设置日期和时间格式](use-patterns-to-format-dates-and-times.md) | 结合使用 [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 命名空间中的类及自定义模板和模式，以严格按照所需格式显示日期和时间。 |
 | [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md) | 设计应用，使其支持多种语言布局和字体，包括 RTL（从右到左）排列方向。 |
-| [NumeralSystem 值](glob-numeralsystem-values.md) | 本主题列出了可用于 [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) 命名空间中各种类的 **NumeralSystem** 属性的值。 |
-| [使应用程序可本地化](prepare-your-app-for-localization.md) | 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。 |
-| [国际字体](loc-international-fonts.md) | 本主题列出的字体可用于已本地化为除美国英语以外的其他语言的 UWP 应用。 |
-| [为双向文本设计应用](design-for-bidi-text.md) | 设计应用，使其提供双向文本支持（双向），以便组合从左到右和从右到左写入系统的脚本。 |
-| [使用多语言应用工具包4。0](use-mat.md) | 多语言应用工具包（材料）4.0 与 Microsoft Visual Studio 2017 及更高版本集成，以通过翻译支持、翻译文件管理和编辑器工具提供 UWP 应用。 |
+| [NumeralSystem 值](glob-numeralsystem-values.md) | 本主题列出了[**Windows**](/uwp/api/windows.globalization?branch=live) NumeralSystem 命名空间中各种类的**NumeralSystem**属性可用的值。 |
+| [使应用可本地化](prepare-your-app-for-localization.md) | 本地化应用是一种可针对其他市场、语言或地区进行本地化且未发现应用中的任何功能性缺陷的应用。 可本地化应用最重要的属性是其可执行代码与其可本地化资源完全分隔。 |
+| [国际字体](loc-international-fonts.md) | 本主题列出了已本地化为美国英语以外的其他语言的 Windows 应用的可用字体。 |
+| [针对双向文本设计应用](design-for-bidi-text.md) | 设计应用，使其提供双向文本支持（双向），以便组合从左到右和从右到左写入系统的脚本。 |
+| [使用多语言应用工具包 4.0](use-mat.md) | 多语言应用工具包（材料）4.0 与 Microsoft Visual Studio 2017 及更高版本集成，以便为 Windows 应用提供翻译支持、翻译文件管理和编辑器工具。 |
 | [多语言应用工具包4.0 常见问题 & 疑难解答](mat-faq-troubleshooting.md) | 本主题提供有关多语言应用工具包 (MAT) 4.0 的常见问题解答。 |
 | [使用 UTF-8 代码页](use-utf8-code-page.md) | UTF-8 是国际化的通用代码页。 |
-| [准备应用程序以进行日本时代更改](japanese-era-change.md) | 了解 2019 年 5 月日本纪元更改以及如何使你的应用程序准备就绪。 |
+| [准备你的应用程序以进行日本纪元更改](japanese-era-change.md) | 了解 2019 年 5 月日本纪元更改以及如何使你的应用程序准备就绪。 |

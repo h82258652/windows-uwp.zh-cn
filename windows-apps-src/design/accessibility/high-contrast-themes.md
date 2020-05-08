@@ -1,5 +1,5 @@
 ---
-description: 介绍了为确保通用 Windows 平台 (UWP) 应用在高对比度主题处于活动状态时可用所需的步骤。
+description: 描述在高对比度主题处于活动状态时，确保 Windows 应用应用程序可用所需的步骤。
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: 高对比度主题
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 634f85ec64597f14210cf83fd67189f2f54bad4d
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 118f604b8c8c95a863773270825ff4db5c5a1b3a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521248"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969452"
 ---
 # <a name="high-contrast-themes"></a>高对比度主题  
 
@@ -20,9 +20,9 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 ![在浅色主题和高对比度黑色主题下显示的计算器。](images/high-contrast-calculators.png)
 
-*浅色主题中显示的计算器和高对比度黑色主题。*
+*在浅色主题和高对比度黑色主题下显示的计算器。*
 
-你可以使用“设置”&gt;“轻松使用”&gt;“高对比度”切换到高度比度主题。
+你可以使用“设置”&gt;“轻松使用”&gt;“高对比度”** 切换到高度比度主题。
 
 > [!NOTE]
 > 不要将高对比度主题与浅色和深色主题混为一谈，浅色和深色主题的调色板更大，但是不被视为拥有高对比度。 有关更多浅色和深色主题，请参阅有关[颜色](../style/color.md)的文章。
@@ -39,14 +39,14 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 在第一个示例中，当 `#E6E6E6` 颜色设置为内联时，网格将在所有主题中保留该背景色。 如果用户切换到高对比度黑色主题，他们希望你的应用有一个黑色背景。 由于 `#E6E6E6` 几乎为白色，所以有些用户可能无法与你的应用进行交互。
 
-在第二个示例中，[ **{ThemeResource} 标记扩展**](../../xaml-platform/themeresource-markup-extension.md)用来引用 [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)（[**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 元素中的一个专用属性）集合中的颜色。 **ThemeDictionaries** 允许 XAML 根据用户的当前主题自动为你切换颜色。
+在第二个示例中，[**{ThemeResource} 标记扩展**](../../xaml-platform/themeresource-markup-extension.md)用来引用 [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)（[**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 元素中的一个专用属性）集合中的颜色。 **ThemeDictionaries**允许 XAML 根据用户的当前主题自动为你交换颜色。
 
 ## <a name="theme-dictionaries"></a>主题字典
 
 当你需要从其系统默认值更改颜色时，可为你的应用创建 ThemeDictionaries 集合。
 
-1. 首先创建正确的管道（如果尚不存在）。 在 App.xaml 中，创建 **ThemeDictionaries** 集合，其中至少要包含 **Default** 和 **HighContrast**。
-2. 在 **Default** 中，创建所需的 [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) 类型，通常为 **SolidColorBrush**。 为它提供特定于其用途的 *x:Key* 名称。
+1. 首先创建正确的管道（如果尚不存在）。 在 app.xaml 中，创建一个**ThemeDictionaries**集合，其中至少包括**默认值**和**system.windows.forms.systeminformation.highcontrast** 。
+2. 在 **Default** 中，创建所需的 [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) 类型，通常为 **SolidColorBrush**。 为其提供特定于其用途的 " *x：Key*名称"。
 3. 为它分配所需的**颜色**。
 4. 将 **Brush** 复制到 **HighContrast** 中。
 
@@ -78,16 +78,16 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 最后一步是确定要在高对比度中使用哪种颜色，这将在下一节中进行介绍。
 
 > [!NOTE]
-> **HighContrast** 不是唯一可用的项名。 另外，还有 **HighContrastBlack**、**HighContrastWhite** 和 **HighContrastCustom**。 在大多数情况下，只需使用 **HighContrast**。
+> **System.windows.forms.systeminformation.highcontrast**不是唯一可用的密钥名称。 还存在**HighContrastBlack**、 **HighContrastWhite**和**HighContrastCustom**。 在大多数情况下，只需使用 **HighContrast**。
 
 ## <a name="high-contrast-colors"></a>高对比度颜色
 
-在“设置”&gt;“轻松使用”&gt;“高对比度”页面上，默认有 4 个高对比度主题。 
+在*设置 > 轻松访问 > 高对比度*页面上，默认有 4 个高对比度主题。 
 
 
 ![高对比度设置](images/high-contrast-settings.png)  
 
-*用户选择某个选项后，该页面会显示预览。*  
+*在用户选择某一选项后，该页面将显示预览。*  
 
 ![高对比度资源](images/high-contrast-resources.png)  
 
@@ -114,7 +114,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 * 当应用正在运行时，在 4 个高对比度主题中都进行测试。 用户切换主题时，应无需重新启动你的应用。
 * 保持一致。
 
-**不要**
+**禁止做法**
 
 * 硬编码 **HighContrast** 主题中的颜色；使用 **SystemColor*Color** 资源。
 * 选择具有美学效果的颜色资源。 请记住，它们会随主题变化而变化！
@@ -154,7 +154,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-请注意如何使用 **\{ThemeResource\}** 两次，一次是引用**SystemColorWindowColor**并再次引用**BrandedPageBackgroundBrush**。 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
+请注意** \{，\} ThemeResource**如何使用两次，一次引用**SystemColorWindowColor**并再次引用**BrandedPageBackgroundBrush**。 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
 
 ## <a name="when-to-use-borders"></a>何时使用边框
 

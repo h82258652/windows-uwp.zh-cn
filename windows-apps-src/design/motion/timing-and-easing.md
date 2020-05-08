@@ -1,6 +1,6 @@
 ---
-Description: 了解如何 Fluent motion 使用计时和缓动函数。
-title: 计时和缓动 - UWP 应用中的动画
+Description: 了解流畅运动如何使用计时和缓动函数。
+title: 计时和缓动
 label: Timing and easing
 template: detail.hbs
 ms.date: 05/19/2017
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b736a10a7284e3cc9aa193e082dc654e908afe40
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 098a75da573a977aa393197a61a62b0337f0dc06
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444180"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970502"
 ---
 # <a name="timing-and-easing"></a>计时和缓动
 
@@ -28,7 +28,7 @@ ms.locfileid: "65444180"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/EasingFunction">打开应用并查看在操作中的缓动函数</a>。</p>
+    <p>如果安装了<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/EasingFunction">打开应用，并查看缓动函数的操作</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -55,11 +55,11 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 :::row:::
     :::column:::
-用于对象或退出场景或关闭页面。
+用于正在退出场景或关闭的对象或页面。
 允许计时不会妨碍帧速率实现流畅动画的退出 UI 呈现非常快速的方向反馈。
     :::column-end:::
     :::column:::
-        ![150ms motion](images/150msAlt.gif)
+        ![150ms 动作](images/150msAlt.gif)
     :::column-end:::
 :::row-end:::
 
@@ -67,11 +67,11 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 :::row:::
     :::column:::
-用于对象或输入在场景或打开的页面。
+用于进入场景或打开的对象或页面。
 允许内容进入场景时留有欢迎内容的合理时间量。
     :::column-end:::
     :::column:::
-        ![300ms motion](images/300ms.gif)
+        ![300 ms 运动](images/300ms.gif)
     :::column-end:::
 :::row-end:::
 
@@ -79,10 +79,10 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 :::row:::
     :::column:::
-用于在一个场景或多个场景之间转换的对象。 
+用于在单个场景或多个场景间平移的对象。 
     :::column-end:::
     :::column:::
-        ![500ms motion](images/500ms.gif)
+        ![500毫秒动作](images/500ms.gif)
     :::column-end:::
 :::row-end:::
 
@@ -102,13 +102,13 @@ Fluent 的运动计时以 500 毫秒（或二分之一秒）作为基准，因�
 
 :::row:::
     :::column:::
-使用 UI 或在退出场景的对象。
+用于 UI 或正在退出场景的对象。
 
-对象成为提供支持，并获得动力，直到其达到转义速度。
-生成的感觉是对象尝试难度最大利用用户的方式，并为新内容进入留出空间。
+对象处于开启状态并获得动力，直到达到 escape 速度。
+所产生的结果是，该对象正在尝试最难进入用户的方式，并为新内容留出空间。
     :::column-end:::
     :::column:::
-        ![accelerate easing](images/accelEase.gif)
+        ![加速缓动](images/accelEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -141,15 +141,15 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 :::row:::
     :::column:::
-用于对象或 UI 输入场景中，导航或生成。
+用于对象或 UI 进入场景，即导航或生成。
 
-一旦场景，该对象是满足极端阻力，这会降低 rest 的对象。
-该对象从长时间距离之外的行程和极端的速度，在输入或是快速回到 rest 状态，生成的感觉。
+一旦出现在场景中，就会通过极端的摩擦来满足对象，这会减缓对象的静止。
+产生的结果是，对象从远处开始，并以极快的速度进入，或快速返回到 rest 状态。
 
-即使它前面有片刻无响应，传入对象的速度起作用的感觉快速且高度可响应。
+即使前面有无响应，传入对象的速度也会影响感觉速度快且响应迅速。
     :::column-end:::
     :::column:::
-        ![decelerate easing](images/decelEase.gif)
+        ![减速缓动](images/decelEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -182,13 +182,13 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 :::row:::
     :::column:::
-这是在系统内任何经过动画处理的参数更改缓动的基线。
+这是系统内任何动画参数更改的基线缓动。
 为屏幕上发生状态改变（如简单的位置改变）的对象使用标准缓动。 此外，为在场景内变形（如生长的对象）的对象使用此缓动。
 
-生成的感觉是更改状态从 A 到 B 的对象用来解决，并会强制执行由，自然。
+结果就是，将状态从 A 更改为 B 的对象会得到克服，并被自然力接管。
     :::column-end:::
     :::column:::
-        ![standard easing](images/standardEase.gif)
+        ![标准缓动](images/standardEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -219,5 +219,5 @@ CubicBezierEasingFunction standard =
 
 ## <a name="related-articles"></a>相关文章
 
-- [Motion 概述](index.md)
+- [运动概述](index.md)
 - [方向性和重力](directionality-and-gravity.md)

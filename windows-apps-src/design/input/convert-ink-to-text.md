@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Ink 书写, DirectInk, InkPresenter, InkCanvas, �
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 825b13fe4b854a7a792ce11dd50a2da34ac40c76
-ms.sourcegitcommit: d7d509fe0f636e798adb2fa6e2299ba692847dd2
+ms.openlocfilehash: d496051a066ffcf9e8df5d4798415e6089cad4d1
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74906928"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970912"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>将 Windows Ink 笔划识别为文本和形状
 
@@ -67,7 +67,7 @@ ms.locfileid: "74906928"
 2. 在 UI 代码隐藏文件 (MainPage.xaml.cs) 中，添加墨迹和墨迹分析功能所需的命名空间类型引用：
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
     - ["UI"。](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
-    - [Windows。](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes)
+    - [Windows.UI.Xaml.Shapes](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes)
 
 3. 然后，我们指定全局变量：
 
@@ -330,7 +330,7 @@ ms.locfileid: "74906928"
     ```
 
 2. 对于本示例，你需要首先添加墨迹功能所需的命名空间类型引用：
-    - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
+    - [Windows UI 输入](https://docs.microsoft.com/uwp/api/windows.ui.input)
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
 
 3. 然后，我们设置一些基本墨迹输入行为。
@@ -361,7 +361,7 @@ ms.locfileid: "74906928"
 
 4. 最后，执行基本手写识别。 在本例中，我们使用“识别”按钮的单击事件处理程序来执行手写识别。
 
-   - [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 将所有笔划墨迹存储在 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 对象中。 笔划通过 **InkPresenter** 的 [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) 属性公开，并使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法检索。 
+   - [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 将所有笔划墨迹存储在 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 对象中。 笔划通过 **InkPresenter** 的 [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) 属性公开，并使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法检索。 
 
     ```csharp
     // Get all strokes on the InkCanvas.
@@ -481,15 +481,15 @@ ms.locfileid: "74906928"
 
 你的应用可以查询已安装的手写识别引擎的集合，并使用其中一个引擎或让用户选择其首选语言。
 
-**请注意**   用户可以通过转到 "**设置-&gt; 时间 & 语言**" 来查看已安装语言的列表。 已安装的语言在**语言**下列出。
+**注意**  用户可以通过转到 "**设置-&gt;时间 & 语言**" 来查看已安装语言的列表。 已安装的语言列在 "**语言**" 下。
 
 若要安装新语言包并为该语言启用手写识别：
 
 1. 转到**设置&gt;时间和语言&gt;区域和语言**。
-2. 选择**添加语言**。
+2. 选择 "**添加语言**"。
 3. 从列表中选择某种语言，然后选择区域版本。 该语言现在在**区域和语言**页面上列出。
-4. 单击该语言，然后选择**选项**。
-5. 在**语言选项**页面上，下载**手写识别引擎**（也可以在此处下载完整的语言包、语音识别引擎和键盘布局）。
+4. 单击 "语言"，然后选择 "**选项**"。
+5. 在 "**语言选项**" 页面上，下载**手写识别引擎**（他们还可以在此处下载完整语言包、语音识别引擎和键盘布局）。
 
 我们在此处演示如何使用手写识别引擎基于所选的识别器来解释 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 上的一组笔划。
 
@@ -616,7 +616,7 @@ ms.locfileid: "74906928"
 
 5. 最后，我们基于所选的手写识别器执行手写识别。 在本例中，我们使用“识别”按钮的单击事件处理程序来执行手写识别。
 
-   - [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 将所有笔划墨迹存储在 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 对象中。 笔划通过 **InkPresenter** 的 [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) 属性公开，并使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法检索。
+   - [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 将所有笔划墨迹存储在 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 对象中。 笔划通过 **InkPresenter** 的 [**StrokeContainer**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.strokecontainer) 属性公开，并使用 [**GetStrokes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.getstrokes) 方法检索。
 
     ```csharp
     // Get all strokes on the InkCanvas.
@@ -872,14 +872,14 @@ ms.locfileid: "74906928"
 
 ### <a name="topic-samples"></a>主题示例
 
-- [Ink 分析示例（基本）（C#）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-- [手写识别示例（C#）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+- [墨迹分析示例（基本）(C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+- [墨迹手写识别示例 (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 ### <a name="other-samples"></a>其他示例
 
-- [简单墨迹示例（C#/C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
-- [复杂墨迹示例（C++）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
-- [Ink 示例（JavaScript）](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-- [入门教程：在 UWP 应用中支持墨迹](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
-- [着色书籍示例](https://github.com/Microsoft/Windows-appsample-coloringbook)
-- [家庭说明示例](https://github.com/Microsoft/Windows-appsample-familynotes)
+- [简单墨迹示例 (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+- [复杂墨迹示例 (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+- [墨迹示例 (JavaScript)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208))
+- [入门教程： Windows 应用中的支持墨迹](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+- [Coloring Book 示例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+- [系列说明示例](https://github.com/Microsoft/Windows-appsample-familynotes)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 53fb8c0b213705a5a79680356bb4f1773594dcdc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 32472f698381f4b109f280f0b964f00cdbcec66a
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260489"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606196"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在应用程序清单中声明后台任务
 
@@ -90,7 +90,7 @@ ms.locfileid: "74260489"
 
 2.  更改 Task Type 属性列表以指示该后台任务所使用的任务注册类型。 如果后台任务注册了多个触发器类型，需要为每个触发器类型添加附加的 Task 元素和 Type 属性。
 
-    **请注意**  请确保列出你正在使用的每个触发器类型，否则，将不会使用未声明的触发器类型注册后台任务（ [**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法将失败并引发异常）。
+    **注意**  请确保列出你正在使用的每个触发器类型，否则，后台任务将不会注册到未声明的触发器类型（ [**register**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register)方法将失败并引发异常）。
 
     此代码段示例指示使用系统事件触发器和推送通知：
 
@@ -107,7 +107,7 @@ ms.locfileid: "74260489"
 
 对你的应用注册的每个额外的后台任务类重复步骤 2。
 
-下面的示例是来自[后台任务示例]( https://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 它显示使用了两个后台任务类，触发器类型总数为 3。 复制此示例的“扩展”部分，并根据需要进行修改，以在应用程序清单中声明后台任务。
+下面的示例是来自[后台任务示例]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9)的完整 Application 元素。 它显示使用了两个后台任务类，触发器类型总数为 3。 复制此示例的“扩展”部分，并根据需要进行修改，以在应用程序清单中声明后台任务。
 
 ```xml
 <Applications>
@@ -213,7 +213,7 @@ ms.locfileid: "74260489"
 
 ```xml
 <Package
-    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    xmlns:uap4="https://schemas.microsoft.com/appx/manifest/uap/windows10/4"
     ...
     <Applications>
         <Application ...>
@@ -230,7 +230,7 @@ ms.locfileid: "74260489"
 ```
 
 > [!NOTE]
-> 不能与 `ResourceGroup` 一起指定 `ServerName` 或 `SupportsMultipleInstances`。
+> 不能与 `SupportsMultipleInstances` 一起指定 `ResourceGroup` 或 `ServerName`。
 
 ## <a name="related-topics"></a>相关主题
 

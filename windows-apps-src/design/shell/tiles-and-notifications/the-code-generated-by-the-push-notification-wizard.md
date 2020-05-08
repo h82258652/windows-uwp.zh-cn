@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a91052adf29e6628ad70c1c004fdbaabe671d62
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 9651af0c9caaae58bad82b2e33c1b0621b205054
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258670"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970452"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推送通知向导生成的代码
  
@@ -220,7 +220,7 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 由于 Windows 响应推送通知，因此在应用未运行时，Windows 也可以处理大部分此类通知。 例如，即便本地邮件应用不处于运行状态，当收到新邮件时，推送通知也可以提醒客户。 Windows 对 toast 通知的处理方式是显示信息，例如显示短信的第一行内容。 Windows 对磁贴通知或锁屏提醒通知的处理方式是更新应用的动态磁贴，使其反映新邮件的数量。 通过这种方式，你可以提示应用的用户到应用中查看新信息。 应用在运行时可以接收原始通知，你可以使用原始通知向你的应用发送数据。 如果应用未运行，可以设置后台任务，用于监视推送通知。
 
-由于推送通知可能会耗尽用户的资源，并且在过度使用的情况下会打扰用户，因此在使用推送通知时，应该遵循通用 Windows 平台 (UWP) 应用的指南。 请参阅[推送通知指南和清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)。
+应根据 Windows 应用程序应用的准则使用推送通知，因为这些通知会占用用户的资源，如果使用过度，可能会分散注意力。 请参阅[推送通知指南和清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)。
 
 如果你使用推送通知更新动态磁贴，那么你还应该遵循[磁贴和锁屏提醒指南和清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)中的指南。
 
@@ -233,7 +233,7 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 你还可以通过在移动服务中运行计划的任务来发送推送通知。 请参阅[在移动服务中计划定期作业](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/)。
 
-**警告**  一旦你运行了一次推送通知向导，就不要再次运行向导来为另一移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将向导生成的代码移到 register 来实现此目的。在 OnLaunched 事件外\* （包括对**CreatePushNotificationChannelForApplicationAsync**的调用），但这具体取决于你的应用程序的体系结构。
+**警告**  一旦你运行了一次推送通知向导，就不要再次运行向导来为另一移动服务添加注册代码。 针对每个项目多次运行该向导会生成导致对 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法的重叠调用的代码，从而导致运行时异常。 如果你要为多个移动服务注册推送通知，请运行该向导一次，然后重新编写该注册代码以确保对 **CreatePushNotificationChannelForApplicationAsync** 的调用不会同时运行。 例如，你可以通过将向导生成的代码移到 register 来实现此目的。\* （包括对**CreatePushNotificationChannelForApplicationAsync**的调用），但具体情况取决于应用程序的体系结构。
 
  
 
@@ -242,9 +242,9 @@ Toast 通知易于使用，你可以在为你生成的通道表的 Insert.js 代
 
 * [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md)
 * [原始通知概述](raw-notification-overview.md)
-* [连接到 Windows Azure 移动服务（JavaScript）](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
-* [连接到 Windows Azure 移动服务（C#/C++/VB）](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
-* [快速入门：添加移动服务的推送通知（JavaScript）](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
+* [连接到 Windows Azure 移动服务 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
+* [连接到 Windows Azure 移动服务 (C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
+* [快速入门：为移动服务添加推送通知 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

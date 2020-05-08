@@ -1,5 +1,5 @@
 ---
-Description: 在通用 Windows 平台（UWP）应用程序中接收、处理和管理指针设备（如触摸、鼠标、笔/触笔和触摸板）中的输入数据。
+Description: 在 Windows 应用程序应用程序中接收、处理和管理指针设备，如触摸、鼠标、笔/触笔和触摸板等。
 title: 处理指针输入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,28 +8,28 @@ keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 97c4941a6ec694b3bb23864ede3119d6f76113d2
-ms.sourcegitcommit: 8a88a05ad89aa180d41a93152632413694f14ef8
+ms.openlocfilehash: db3b87bd187c64b04615fb6722e4e1f2b666b7dc
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725990"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970062"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 
-在通用 Windows 平台 (UWP) 应用程序中接收、处理和管理来自指针设备（例如触控、鼠标、笔/触笔和触摸板）的输入数据。
+在 Windows 应用程序应用程序中接收、处理和管理指针设备（例如触摸、鼠标、笔/触笔和触摸板）中的输入数据。
 
 > [!Important]
 > 仅当要求清楚、定义良好且平台控件支持的交互不支持你的方案时才创建自定义交互。  
-> 如果你在 Windows 应用程序中自定义交互体验，用户需要的是一致、直观且可发现的体验。 出于这些原因，我们建议你基于[平台控件](../controls-and-patterns/controls-by-function.md)支持的交互进行自定义交互建模。 平台控件提供完整的通用 Windows 平台 (UWP) 用户交互体验，包括标准交互、动态显示的物理效果、视觉反馈和辅助功能。 
+> 如果你在 Windows 应用程序中自定义交互体验，用户需要的是一致、直观且可发现的体验。 出于这些原因，我们建议你基于[平台控件](../controls-and-patterns/controls-by-function.md)支持的交互进行自定义交互建模。 平台控件提供完整的 Windows 应用用户交互体验，包括标准交互、动画物理学效果、视觉反馈和辅助功能。 
 
 ## <a name="important-apis"></a>重要的 API
 - [Windows.Devices.Input](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
-- [Windows.UI.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+- [Windows UI 输入](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 - [Windows.UI.Xaml.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
-## <a name="pointers"></a>Pointers
-大多数交互体验通常涉及到用户通过使用输入设备（如触控、鼠标、笔/触笔和触摸板）指向要与其进行交互的对象来标识该对象。 由于这些输入设备所提供的原始人体学接口设备 (HID) 数据包括许多常用属性，因此将该数据升级并整合到一个统一的输入堆栈，并公开为独立于设备的指针数据。 然后，你的 UWP 应用程序可以使用此数据，而无需担心所使用的输入设备。
+## <a name="pointers"></a>指针
+大多数交互体验通常涉及到用户通过使用输入设备（如触控、鼠标、笔/触笔和触摸板）指向要与其进行交互的对象来标识该对象。 由于这些输入设备所提供的原始人体学接口设备 (HID) 数据包括许多常用属性，因此将该数据升级并整合到一个统一的输入堆栈，并公开为独立于设备的指针数据。 你的 Windows 应用程序随后可以使用这些数据，而无需担心使用的输入设备。
 
 > [!NOTE]
 > 如果你的应用需要，也可以从原始 HID 数据升级特定于设备的信息。
@@ -40,10 +40,10 @@ ms.locfileid: "76725990"
 
 指针事件可公开诸如输入设备类型和检测状态（范围内或相互接触）之类的基本信息，以及诸如位置、压力和接触几何图形之类的扩展信息。 此外，还提供特定设备属性，例如用户按了哪一个鼠标按钮或是否正在使用笔尖橡皮擦。 如果你的应用需要在输入设备与其功能之间进行区分，请参阅[标识输入设备](identify-input-devices.md)。
 
-UWP 应用可以侦听以下指针事件：
+Windows 应用可以侦听以下指针事件：
 
 > [!NOTE]
-> 通过在指针事件处理程序内对该元素调用 [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer)，将指针输入约束到特定的 UI 元素。 当指针由元素捕获时，仅该对象接收指针输入事件，即使指针移动到该对象的边界区域之外也是如此。 若要使 [CapturePointer **成功，** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact)IsInContact（鼠标按钮已按下，触控或触笔相互接触）必须为 true。
+> 通过在指针事件处理程序内对该元素调用 [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer)，将指针输入约束到特定的 UI 元素。 当指针由元素捕获时，仅该对象接收指针输入事件，即使指针移动到该对象的边界区域之外也是如此。 若要使 **CapturePointer** 成功，[**IsInContact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact)（鼠标按钮已按下，触控或触笔相互接触）必须为 true。
 
 <table>
 <colgroup>
@@ -61,7 +61,7 @@ UWP 应用可以侦听以下指针事件：
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
 <td align="left"><p>在指针由平台取消时发生。 在以下条件下，可能会发生这种情况：</p>
 <ul>
-<li>当在输入图面的范围内检测到笔时，将取消触摸指针。</li>
+<li>当在输入图面的范围内检测到笔时，将取消触控指针。</li>
 <li>超过 100 毫秒未检测到活动的接触点。</li>
 <li>监视器/显示器已更改（分辨率、设置、多监视器配置）。</li>
 <li>桌面已锁定或用户已注销。</li>
@@ -72,7 +72,7 @@ UWP 应用可以侦听以下指针事件：
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
-<strong>请注意</strong>  没有相应的指针捕获事件。
+<strong>请注意</strong>  ，没有对应的指针捕获事件。
 </div>
 <div>
  
@@ -80,7 +80,7 @@ UWP 应用可以侦听以下指针事件：
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
-<td align="left"><p>在指针进入元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
+<td align="left"><p>在指针进入元素的边界区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触才能引发此事件，无论是从对元素直接触摸按下还是移动到该元素的绑定区域。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
@@ -89,11 +89,11 @@ UWP 应用可以侦听以下指针事件：
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
-<td align="left"><p>在指针离开元素的绑定区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
+<td align="left"><p>在指针离开元素的边界区域时发生。 对于触摸、触摸板、鼠标和笔输入，可能会以略有不同的方式发生此情况。</p>
 <ul>
 <li>触摸需要手指接触，并在指针移出该元素的绑定区域时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔在移出该元素的绑定区域时引发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当状态从 true 更改为 false 时触发此事件。</li>
+<li>和触控一样，笔在移出该元素的边界区域时触发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当状态从 true 更改为 false 时触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -102,7 +102,7 @@ UWP 应用可以侦听以下指针事件：
 <ul>
 <li>触摸需要手指接触，并且仅在与该元素的绑定区域接触时引发此事件。</li>
 <li>鼠标和触摸板都有一个屏幕光标，该光标始终可见并且可引发此事件，即使未按下任何鼠标或触摸板按钮也是如此。</li>
-<li>和触摸一样，笔在与该元素的绑定区域接触时引发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 且位于元素的边界区域内时，将触发此事件。</li>
+<li>和触控一样，笔在与该元素的边界区域接触时触发此事件。 但是，笔也有悬停状态 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，当为 true 且位于元素的边界区域内时，将触发此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -132,7 +132,7 @@ UWP 应用可以侦听以下指针事件：
 
 ### <a name="create-the-ui"></a>创建 UI
 
-对于此示例，我们使用一个[矩形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) 作为使用指针输入的对象。 当指针状态更改时，目标的颜色也将更改。
+在此示例中，我们使用[矩形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle)（`Target`）作为使用指针输入的对象。 当指针状态更改时，目标的颜色也将更改。
 
 每个指针的详细信息显示在随指针移动的浮动 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中。 指针事件本身在矩形右侧的 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 中报告。
 
@@ -240,7 +240,7 @@ public MainPage()
 -   此处理程序管理 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 我们将事件添加到事件日志、将指针添加活动指针字典，并显示指针详细信息。
 
     > [!NOTE]
-    > [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)和[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)事件并非始终成对出现。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 和 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)）的所有事件。      
+    > [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件并不总是成对出现。 你的应用应该侦听和处理可能会结束指针向下（如 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 和 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)）的所有事件。      
 
 ```csharp
 /// <summary>
@@ -528,7 +528,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   此处理程序管理 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) 事件。 我们将事件添加到事件日志、从指针数组删除指针，并更新指针详细信息。
 
     > [!NOTE]
-    > [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)可能会发生，而不是[**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。 指针捕获可能由于各种原因而丢失，包括用户交互、以编程方式捕获另一个指针、调用 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。     
+    > 可能会发生 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)，而不是 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。 指针捕获可能由于各种原因而丢失，包括用户交互、以编程方式捕获另一个指针、调用 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)。     
 
 ```csharp
 /// <summary>
@@ -678,7 +678,7 @@ String QueryPointer(PointerPoint ptrPt)
 ## <a name="primary-pointer"></a>主指针
 某些输入设备（例如触控式数字化器或触摸板）并不仅仅支持鼠标或笔的典型单一指针（在大多数情况下，就像 Surface Hub 那样支持两个笔输入）。 
 
-使用 **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 类的只读 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 属性可以标识并区分单一主指针（主指针始终是输入序列期间检测到的第一个指针）。 
+使用 **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 类的只读 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 属性可以标识并区分单一主指针（主指针始终是输入序列期间检测到的第一个指针）。 
 
 通过标识主指针，你可以用它来模拟鼠标或笔输入、自定义交互或提供一些其他的特定功能或 UI。
 
@@ -697,9 +697,9 @@ String QueryPointer(PointerPoint ptrPt)
 
 ### <a name="visual-feedback"></a>视觉反馈
 
-我们基于 XAML **[椭圆形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** 对象定义一个 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** ，突出显示每个指针在画布上的位置，并使用 **[故事板](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
+我们基于 XAML **[椭圆形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 对象定义一个 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)**，突出显示每个指针在画布上的位置，并使用**[故事板](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 来动画显示与主指针对应的椭圆形。
 
-**XAML 如下：**
+**下面是 XAML：**
 
 ```xaml
 <UserControl
@@ -889,7 +889,7 @@ namespace UWP_Pointers
 ```
 
 ### <a name="create-the-ui"></a>创建 UI
-此示例中的 UI 限制为输入 **[画布](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** ，我们在其中跟踪所有指针并呈现指针指示器和主指针动画（如果适用），同时显示一个包含指针计数器和主指针标识符的标题栏。
+此示例中的 UI 限制为输入**[画布](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)**，我们在其中跟踪所有指针并呈现指针指示器和主指针动画（如果适用），同时显示一个包含指针计数器和主指针标识符的标题栏。
 
 下面是 MainPage.xaml：
 
@@ -946,20 +946,23 @@ namespace UWP_Pointers
 
 ## <a name="related-articles"></a>相关文章
 
-**主题示例**
-* [指针输入示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
-* [指针输入示例（UserControl with 动画）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
+### <a name="topic-samples"></a>主题示例
 
-**其他示例**
-* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+- [指针输入示例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
+- [指针输入示例（具有动画的 UserControl）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
-**存档示例**
-* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [输入：操作和手势（C++）示例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [输入：触控命中测试示例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [输入：简化墨迹示例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
+### <a name="other-samples"></a>其他示例
+
+- [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+
+### <a name="archive-samples"></a>存档示例
+
+- [输入：XAML 用户输入事件示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [输入：设备功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [输入：触摸点击测试示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [输入：简化的墨迹示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)

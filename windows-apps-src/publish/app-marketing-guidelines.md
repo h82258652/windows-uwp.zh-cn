@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 610e9758de3a00c112b10b463f678efc53a79e0c
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 124bb3a5c0b372e48f7b40dd15ae60d578a0de11
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259049"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606376"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 应用的营销指导原则
 
@@ -21,7 +21,7 @@ ms.locfileid: "74259049"
 
 我们创建了特殊的促销徽章，帮助你将更多客户加入到 Microsoft Store 中的应用列表。 这些锁屏提醒在 44 种语言中可用。 请记住，使用这些图像时需要遵循一些要求；这些要求以及使用示例和指南将以 PDF 文件形式提供。
 
-[![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=529769) **Microsoft Store 徽章准则（PDF、英语）**
+下载按钮**Microsoft Store 徽章准则（PDF、英语）** [ ![](images/downloadbutton.png)](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf)
 
 
 ## <a name="badge-generator-and-images"></a>锁屏提醒生成器和图像
@@ -30,14 +30,14 @@ ms.locfileid: "74259049"
 
 你也可以从以下链接中下载完整的锁屏提醒图像集（格式为 PNG 和 PDF）。
 
-[![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=529771)**所有照片**
+下载按钮**所有徽章图像** [ ![](images/downloadbutton.png)](https://download.microsoft.com/download/6/6/6/66641831-E662-4898-BB21-75D6C193A8F9/All Badges.zip)
 
 
 ## <a name="device-images"></a>设备图像
 
-若要推广应用，你可能会想展示其在 Windows 设备上运行时的外观。 我们提供了各种设备底盘图像供你选择，包括手机、平板电脑、笔记本电脑和 PC。 有关如何使用这些映像的最佳实践和技术规范，请参阅[Microsoft Store 营销指导原则](https://go.microsoft.com/fwlink/p/?LinkId=529769)。
+若要推广应用，你可能会想展示其在 Windows 设备上运行时的外观。 我们提供了各种设备底盘图像供你选择，包括手机、平板电脑、笔记本电脑和 PC。 有关如何使用这些映像的最佳实践和技术规范，请参阅[Microsoft Store 营销指导原则](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf)。
 
-[![下载按钮](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows 设备艺术**
+下载按钮 **Windows 设备艺术** [ ![](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip)
 
 ## <a name="license-to-microsoft-marks"></a>Microsoft 商标授权
 
@@ -49,7 +49,7 @@ ms.locfileid: "74259049"
 
 -   如果你未在合作伙伴中心注册为应用开发人员，Microsoft 将向你授予全球范围内非专用的 nontransferable、免费许可，以仅根据 Microsoft Store 徽章准则中所述来使用徽章。 Microsoft 可能会更改这些指南，如果要更改，Microsoft 会通过合理的方式将你重定向到任何发布这些规范的新 URL。 Microsoft 保留此处未明确授予的所有权利。
 
--   按照[Microsoft Store 徽章指导原则](https://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的徽标使用规范。
+-   按照[Microsoft Store 徽章指导原则](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf)中所述的徽标使用规范。
 
 Microsoft 是 Microsoft 标志及相关商誉的唯一所有者，也是使用 Microsoft 标志获得的有关商誉的唯一受益公司。 Microsoft 可能会随时自行撤销此许可证。
 

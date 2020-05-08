@@ -1,5 +1,5 @@
 ---
-Description: 标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
+Description: 确定连接到 Windows 应用设备的输入设备，并识别它们的功能和属性。
 title: 标识输入设备
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
@@ -8,26 +8,26 @@ keywords: 设备、数字化器、输入、交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b2a17d1f4664326cb54d9c53d828eb372ef93fe4
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 792b2f71408928de0278dd0c623f13923a2165a8
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257887"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970022"
 ---
 # <a name="identify-input-devices"></a>标识输入设备
 
 
-标识连接到通用 Windows 平台 (UWP) 设备的输入设备，并标识其功能和属性。
+确定连接到 Windows 应用设备的输入设备，并识别它们的功能和属性。
 
 > **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
 
 ## <a name="retrieve-mouse-properties"></a>检索鼠标属性
 
 
-[  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
+[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities) 类，用于检索由一个或多个连接的鼠标公开的属性。 只需创建新的 **MouseCapabilities** 对象并获取感兴趣的属性。
 
-**请注意**，此处所述的属性所返回的值  基于所有检测到的鼠标：如果至少有一个鼠标支持特定功能，则布尔属性返回非零，数值属性返回由任意一鼠标显示的最大值。
+**请注意**  ，此处所述的属性所返回的值基于所有检测到的鼠标：如果至少有一个鼠标支持特定功能，则布尔属性返回非零值，数值属性返回由任意一鼠标显示的最大值。
 
  
 
@@ -48,7 +48,7 @@ private void GetMouseProperties()
 ## <a name="retrieve-keyboard-properties"></a>检索键盘属性
 
 
-[  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**KeyboardCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities) 类，用于检索是否已连接键盘。 只需创建新的 **KeyboardCapabilities** 对象并获取 [**KeyboardPresent**](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent) 属性。
+[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**KeyboardCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.KeyboardCapabilities) 类，用于检索是否已连接键盘。 只需创建新的 **KeyboardCapabilities** 对象并获取 [**KeyboardPresent**](https://docs.microsoft.com/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent) 属性。
 
 以下代码使用 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素来显示键盘属性和值。
 
@@ -63,9 +63,9 @@ private void GetKeyboardProperties()
 ## <a name="retrieve-touch-properties"></a>检索触摸属性
 
 
-[  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
+[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**TouchCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.TouchCapabilities) 类，用于检索是否已连接任何触摸数字化器。 只需创建新的 **TouchCapabilities** 对象并获取感兴趣的属性。
 
-**请注意**，此处所述的属性所返回的值  基于所有检测到的触控数字化器：如果至少有一个数字化器支持特定功能，则布尔属性返回非零值，数值属性返回任何一个数字化仪公开的最大值。
+**请注意**  ，此处所述的属性所返回的值基于所有检测到的触控数字化器：如果至少有一个数字化器支持特定的功能，则布尔属性返回非零值，数值属性返回任何一个数字化仪公开的最大值。
 
  
 
@@ -83,9 +83,9 @@ private void GetTouchProperties()
 ## <a name="retrieve-pointer-properties"></a>检索指针属性
 
 
-[  **Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
+[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input) 命名空间包含 [**PointerDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice) 类，用于检索是否所有检测到的设备都支持指针输入（触摸、触摸板、鼠标或笔）。 只需创建新的 **PointerDevice** 对象并获取感兴趣的属性。
 
-**请注意**  此处所述的属性所返回的值基于所有检测到的指针设备：如果至少有一台设备支持特定的功能，则布尔属性返回非零，数值属性返回任何一个指针设备公开的最大值。
+**请注意**  ，此处所述的属性所返回的值基于所有检测到的指针设备：如果至少有一台设备支持特定的功能，则布尔属性返回非零值，数值属性返回任何一个指针设备公开的最大值。
 
 以下代码使用一个表格来显示每个指针设备的属性和值。
 
@@ -176,18 +176,12 @@ private void GetPointerDevices()
 
 ## <a name="related-articles"></a>相关文章
 
+### <a name="samples"></a>示例
 
-**示例**
-* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 
-**存档示例**
-* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
- 
+### <a name="archive-samples"></a>存档示例
 
- 
-
-
-
-
+- [输入：设备功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))

@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: d3dcd162e0a139328ef5885ac26edec04a279134
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a9da63e05380987d69d97a74123e593acd0b8cb1
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259807"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619341"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
-适用于 Windows 10 上的 UWP 应用的 \[ 更新。 有关 Windows 2.x 的文章，请参阅[存档](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
+\[已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 2.x 的文章，请参阅[存档](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
 
 <b>重要的 API</b>
 
@@ -28,7 +28,7 @@ ms.locfileid: "74259807"
 
 通过调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 创建工作项。 提供委派来完成工作（你可使用一个 lambda 或 delegate 函数）。 请注意，**RunAsync** 返回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) 对象；存储此对象以用于下一个步骤。
 
-[  **RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
+[**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
 
 >[!NOTE]
 >使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)可访问 UI 线程并显示工作项的进度。
@@ -348,9 +348,9 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 请注意，完成处理程序在分派 UI 更新之前会检查工作项是否已被取消。
 
-## <a name="summary-and-next-steps"></a>摘要和后续步骤
+## <a name="summary-and-next-steps"></a>总结和后续步骤
 
-若要了解详细信息，可在创建为 Windows 8.1 编写的[ThreadPool 工作项示例](https://code.msdn.microsoft.com/windowsapps/Creating-a-ThreadPool-work-9665cdff)中下载此快速入门中的代码，并在 win\_unap Windows 10 应用中重复使用源代码。
+若要了解详细信息，可在创建为 Windows 8.1 编写的[ThreadPool 工作项示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample)中下载此快速入门中的代码，并在 Win\_unap Windows 10 应用中重复使用源代码。
 
 ## <a name="related-topics"></a>相关主题
 

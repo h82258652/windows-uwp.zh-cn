@@ -1,43 +1,43 @@
 ---
-title: 在 UWP 中使用 VAPID 备用推送通道
-description: 有关如何使用备用推送通道使用的 UWP 应用中的 VAPID 协议说明
+title: 使用 UWP 中的 VAPID 的备用推送通道
+description: 在 Windows 应用中使用 VAPID 协议的备用推送通道的说明
 ms.date: 01/10/2017
 ms.topic: article
-keywords: windows 10，uwp，WinRT API WNS
+keywords: windows 10，uwp，WinRT API，WNS
 localizationpriority: medium
-ms.openlocfilehash: 6512eb891967b6c17bc4845d5e47639ae3c97d31
-ms.sourcegitcommit: 0c97c025d751082db3424cb9941bf6688d9b7381
+ms.openlocfilehash: 382dca376e2393d83c2803043b61db76226b3995
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835023"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970862"
 ---
-# <a name="alternate-push-channels-using-vapid-in-uwp"></a>在 UWP 中使用 VAPID 备用推送通道 
-从 Fall Creators Update，UWP 应用可以使用 VAPID 身份验证以发送推送通知。  
+# <a name="alternate-push-channels-using-vapid-in-windows"></a>在 Windows 中使用 VAPID 的备用推送通道 
+从秋季创意者更新开始，Windows 应用可以使用 VAPID authentication 来发送推送通知。  
 
 > [!NOTE]
-> 这些 Api 适用于 web 浏览器托管其他网站并代表他们创建的通道。  如果想要将 webpush 通知添加到你的 web 应用，我们建议遵循用于创建服务辅助角色和发送通知的 W3C 和 WhatWG 标准。
+> 这些 Api 适用于托管其他网站并代表用户创建频道的 web 浏览器。  如果你想要将 webpush 通知添加到你的 web 应用，我们建议遵循用于创建服务工作人员和发送通知的 W3C 和 WhatWG 标准。
 
-## <a name="introduction"></a>简介
-Web 推送标准的引入允许网站可以更像应用程序，即使用户不是网站上发送通知。
+## <a name="introduction"></a>介绍
+引入 web 推送标准后，即使用户不在网站上时，网站也能像应用一样操作，也可以发送通知。
 
-创建 VAPID 身份验证协议是为了允许网站使用供应商产品推送服务器进行身份验证无关的方式。 与所有供应商使用 VAPID 协议，网站可以发送推送通知，而不必知道它正在其运行的浏览器。 这是一项显著改进对实现每个平台一个不同的推送协议。 
+已创建 VAPID authentication 协议，以允许网站以与供应商无关的方式在推送服务器上进行身份验证。 使用 VAPID 协议的所有供应商，网站无需知道运行它的浏览器就能发送推送通知。 这是针对每个平台实现不同推送协议的一项重大改进。 
 
-UWP 应用可以使用 VAPID 发送推送通知与这些优势。 这些协议可以保存为新应用程序的开发时间并简化对现有应用的跨平台支持。 此外，企业应用或旁加载应用现在可以发送通知而无需在 Microsoft Store 中注册。 希望这会打开新的方法来跨所有平台的用户参与进来。  
+Windows 应用程序还可以使用 VAPID 发送具有这些优势的推送通知。 这些协议可节省新应用的开发时间，并简化对现有应用的跨平台支持。 此外，企业应用或旁加载应用现在可以发送通知，而无需在 Microsoft Store 中注册。 但愿，这将打开新的方法，以便与所有平台上的用户进行沟通。  
 
 ## <a name="alternate-channels"></a>备用通道 
-在 UWP 中，这些 VAPID 通道被称为备用通道，并提供与 web 推送通道类似的功能。 它们可以触发应用的后台任务运行，请启用消息加密，并允许通过单个应用的多个通道。 有关不同的通道类型之间的差异的详细信息，请参阅[选择了正确的信道](channel-types.md)。
+在 UWP 中，这些 VAPID 通道称为备用通道，并为 web 推送通道提供类似功能。 它们可以触发要运行的应用程序后台任务，启用消息加密，并允许来自单个应用的多个通道。 有关不同通道类型之间差异的详细信息，请参阅[选择正确的通道](channel-types.md)。
 
-使用备用的通道是访问推送通知，如果您的应用程序不能使用主通道或如果想要你的网站和应用之间共享代码的好办法。 设置通道既简单又熟悉的任何人已使用 web 推送标准版或 Windows 推送通知之前的工作。
+如果你的应用程序不能使用主通道，或者如果你想要在你的网站和应用程序之间共享代码，则可以使用备用通道来访问推送通知。 使用 web 推送标准或使用 Windows 推送通知的任何人都可以轻松地设置频道。
 
 ## <a name="code-example"></a>代码示例
 
-设置 UWP 应用的备用通道的基本过程是类似于设置主密钥或辅助通道。 首先，注册了通道[WNS server](windows-push-notification-services--wns--overview.md)。 然后，注册以作为后台任务运行。 发送通知并触发后台任务后，处理的事件。  
+为 Windows 应用程序设置备用通道的基本过程类似于设置主通道或辅助通道。 首先，使用[WNS 服务器](windows-push-notification-services--wns--overview.md)注册通道。 然后，注册以作为后台任务运行。 发送通知并触发后台任务后，处理事件。  
 
 ### <a name="get-a-channel"></a>获取通道 
-若要创建备用通道，该应用程序必须提供两条信息： 其服务器和创建的通道的名称的公共密钥。 有关服务器密钥的详细信息均位于 web 推送规范，但我们建议在服务器上使用标准 web 推送库来生成密钥。  
+若要创建备用通道，应用程序必须提供两条信息：其服务器的公钥以及它正在创建的通道的名称。 有关服务器密钥的详细信息可在 web 推送规范中找到，但建议在服务器上使用标准的 web 推送库来生成密钥。  
 
-通道 ID 是特别重要，因为应用程序可以创建多个备用的通道。 每个通道必须由将使用该通道上发送任何通知有效负载包含的唯一 ID 标识。  
+通道 ID 尤其重要，因为应用可创建多个备用通道。 每个通道必须由一个唯一的 ID 标识，该 ID 将随该通道发送的任何通知负载一起提供。  
 
 ```csharp
 private async void AppCreateVAPIDChannelAsync(string appChannelId, IBuffer applicationServerKey) 
@@ -57,13 +57,13 @@ private async void AppCreateVAPIDChannelAsync(string appChannelId, IBuffer appli
     AppPassChannelToSite(webChannel.Uri); 
 } 
 ```
-应用程序发送备份到其服务器通道，并将其保存在本地。 正在保存本地通道 ID 允许此应用来区分通道和通道续订才能防止过期。
+应用会将通道回发到其服务器，并将其保存在本地。 若要在本地保存通道 ID，应用程序可以区分通道和续订通道，以防止其过期。
 
-每个其他类型的推送通知通道，如 web 通道可能会过期。 若要防止您感觉不到应用程序过期通道，创建新的通道，每次启动您的应用程序。    
+与所有其他类型的推送通知通道一样，web 频道也会过期。 若要防止在你的应用知道的情况下通道过期，请在应用每次启动时创建新的通道。    
 
-### <a name="register-for-a-background-task"></a>注册以通过后台任务 
+### <a name="register-for-a-background-task"></a>注册后台任务 
 
-一旦您的应用程序创建后的备用通道，它应注册为接收通知的前景色或背景。 下面的示例注册为使用一个进程模型为在后台接收通知。  
+应用创建备用通道后，应注册以便在前台或后台接收通知。 下面的示例注册使用单进程模型在后台接收通知。  
 
 ```csharp
 var builder = new BackgroundTaskBuilder(); 
@@ -73,7 +73,7 @@ BackgroundTaskRegistration task = builder.Register();
 ```
 ### <a name="receive-the-notifications"></a>接收通知 
 
-一旦应用程序已注册为接收通知，它必须是能够处理传入通知。 由于单个应用程序可以注册多个通道，请务必处理通知之前检查通道 ID。  
+应用注册接收通知后，需要能够处理传入的通知。 由于单个应用可以注册多个通道，因此请确保在处理通知前检查通道 ID。  
 
 ```csharp
 protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args) 
@@ -100,16 +100,16 @@ protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 } 
 ```
 
-请注意，是否从主通道传入通知，然后通道 ID 将不会设置。  
+请注意，如果通知来自主通道，则不会设置通道 ID。  
 
-## <a name="note-on-encryption"></a>请注意加密 
+## <a name="note-on-encryption"></a>加密时的注意事项 
 
-可以使用任何加密方案更有用的应用程序。 在某些情况下，它就足以依赖于服务器和任何 Windows 设备之间的 TLS 标准。 在其他情况下，它可能会更有意义使用 web 推送加密方案或另一种方案设计。  
+你可以使用你找到的任何加密方案来帮助你的应用程序。 在某些情况下，足以依赖于服务器和任何 Windows 设备之间的 TLS 标准。 在其他情况下，使用 web 推送加密方案或设计的其他方案可能更有意义。  
 
-如果你想要使用其他形式，关键是加密的使用原始。标头属性。 它包含所有对推送服务器的 POST 请求中包含的加密标头。 在这里，您的应用程序可以使用密钥对消息进行解密。  
+如果希望使用另一种形式的加密，则密钥是使用原始。标头属性。 它包含发送到推送服务器的 POST 请求中包含的所有加密标头。 在该处，应用可以使用密钥对消息进行解密。  
 
 ## <a name="related-topics"></a>相关主题
-- [通知的通道类型](channel-types.md)
+- [通知通道类型](channel-types.md)
 - [Windows 推送通知服务 (WNS)](windows-push-notification-services--wns--overview.md)
 - [PushNotificationChannel 类](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannel)
 - [PushNotificationChannelManager 类](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager)

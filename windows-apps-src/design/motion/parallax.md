@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ac195916e76ad7b3f03adc39a293422d0d58f7a4
-ms.sourcegitcommit: 8be8ed1ef4e496055193924cd8cea2038d2b1525
+ms.openlocfilehash: d659683d6871d9d48fd17b73c74477e7bd03e258
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80614086"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970492"
 ---
 # <a name="parallax"></a>视差
 
@@ -45,7 +45,7 @@ ms.locfileid: "80614086"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>视差和 Fluent 设计系统
 
- Fluent Design 系统可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 视差是 Fluent 设计系统的一个组成部分，它将动画、深度和比例添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
+ Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 视差是 Fluent 设计系统的一个组成部分，它将动画、深度和比例添加到你的应用。 若要了解详细信息，请参阅 "[熟知设计概述](/windows/apps/fluent-design-system)"。
 
 ## <a name="how-it-works-in-a-user-interface"></a>它在用户界面中的工作原理
 
@@ -125,4 +125,4 @@ VerticalShift 和 HorizontalShift 属性让你可以控制视差效果的程度�
 
 - [ParallaxView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [UWP 的 Fluent Design](/windows/apps/fluent-design-system)
-- [系统中的科学：熟知设计和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [系统内的科学：Fluent Design 和深色](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

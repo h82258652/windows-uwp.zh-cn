@@ -1,5 +1,5 @@
 ---
-Description: 本主题介绍用于选择和操作文本、图像和控件的新 Windows UI，并提供在 UWP 应用中使用这些新的选择和操作机制时应考虑的用户体验指南。
+Description: 本主题介绍了用于选择和操作文本、图像和控件的新 Windows UI，并提供了在 Windows 应用中使用这些新的选择和操作机制时应考虑的用户体验指导原则。
 title: 选择文本和图像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,12 +8,12 @@ keywords: 键盘, 文本, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 56f09f2c903354159c63fa7226007cd65e57e69e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a118a7160842154a656e0f2d29783b1b2e676755
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74257920"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970092"
 ---
 # <a name="selecting-text-and-images"></a>选择文本和图像
 
@@ -24,7 +24,7 @@ ms.locfileid: "74257920"
  
 
 
-## <a name="dos-and-donts"></a>应做事项和禁止事项
+## <a name="dos-and-donts"></a>准则
 
 
 -   在实现自己的控制手柄 UI 时使用字体字形。 控制手柄是系统范围内提供的两个 Segoe UI 字体的组合。 使用字体资源可以简化不同的 dpi 下的呈现问题，而且适用于各种 UI 缩放平台。 在实现自己的控制手柄时，应当共享下面的 UI 特征：
@@ -47,22 +47,22 @@ ms.locfileid: "74257920"
 
 **注意事项和建议**
 
-使用通过 Windows 中的语言框架公开的内置控件生成可提供完整平台用户交互体验（包括选择和操作行为）的应用程序。 你会发现对于大多数 UWP 应用来说，内置控件的交互功能就已足够。
+使用通过 Windows 中的语言框架公开的内置控件，可以生成提供完整平台用户交互体验的应用（包括选择和操作行为）。 你将发现内置控件的交互功能足以满足大多数 Windows 应用的需求。
 
-使用标准 UWP 文本控件时，本主题中所述的选择行为和视觉对象不能自定义。
+使用标准 Windows 文本控件时，无法自定义本主题中所述的选择行为和视觉对象。
 
 **文本选择**
 
-如果你的应用程序需要支持文本选择的自定义 UI，则建议你遵循此处所述的 Windows 选择行为。
+如果你的应用需要一个支持文本选择的自定义 UI，我们建议你遵循此处描述的 Windows 选择行为。
 
-**可编辑的和不可编辑的内容**
+**可编辑的内容和不可编辑的内容**
 
 
-借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 与其他 Windows 触控交互一样，计时交互仅限按下和按住手势来显示信息 UI。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
+借助触摸，选择交互主要是通过诸如用于设置插入光标或选择词汇的点击以及用于修改选择的滑动之类的手势来执行。 和其他 Windows 触摸交互一样，计时交互仅限于用来显示信息 UI 的长按手势。 有关详细信息，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-Windows 识别出两种可能的状态：选择交互、可编辑和不可编辑，并相应地调整选择 UI、反馈和功能。
+Windows 识别选择交互的两个可能状态，即可编辑状态和不可编辑状态，并相应调整选择 UI、反馈以及功能。
 
-**可编辑内容**
+**可编辑的内容**
 
 在词汇的左半部分中点击会将光标放在紧挨词汇的左侧，在词汇的右半部分点击会将光标放在紧挨词汇的右侧。
 
@@ -78,7 +78,7 @@ Windows 识别出两种可能的状态：选择交互、可编辑和不可编辑
 
 ![在所选内容内或在控制手柄上点击（或长按）可调用上下文菜单。](images/textselection-show-context.png)
 
-**请注意**，  这些交互在拼写错误的单词时有所不同。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
+**请注意**  ，对于拼写错误的单词，这些交互各不相同。 点击标记为拼写错误的词汇将突出显示整个词汇，并且调用建议拼写上下文菜单。
 
  
 
@@ -92,44 +92,38 @@ Windows 识别出两种可能的状态：选择交互、可编辑和不可编辑
 
 **对象操作**
 
-在 UWP 应用中实现自定义对象操作时，尽可能使用相同（或相似）的控制手柄来选择文本。 这有助于在平台内提供一致的交互体验。
+只要有可能，在 Windows 应用程序中实现自定义对象操作时，请使用与文本选择相同的（或类似的）抓取资源。 这有助于在平台内提供一致的交互体验。
 
 例如，控制手柄还可以用在支持大小调整和修剪的图像处理应用中或者用在提供可调整进度栏的媒体播放应用中，如下面的几幅图所示。
 
 ![具有进度控制手柄的媒体播放器](images/gripper-mediaplayer.png)
 
-*具有可调整进度栏的 Media player。*
+*具有可调整进度栏的媒体播放器。*
 
 ![具有修剪控制手柄的图像](images/gripper-imagemanip.png)
 
-*带有裁剪控制手柄的图像编辑器。*
+*具有修剪控制手柄的图像编辑器。*
 
 ## <a name="related-articles"></a>相关文章
 
+### <a name="for-developers"></a>面向开发人员
 
+- [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
 
-**面向开发人员**
-* [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
+### <a name="samples"></a>示例
 
-**示例**
-* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+- [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
-**存档示例**
-* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [输入：触控命中测试示例](https://code.msdn.microsoft.com/windowsapps/Touch-Hit-Testing-sample-5e35c690)
-* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [输入：简化墨迹示例](https://code.msdn.microsoft.com/windowsapps/Input-simplified-ink-sample-11614bbf)
-* [输入： Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
-* [输入：操作和手势（C++）示例](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
-* [DirectX 触摸输入示例](https://code.msdn.microsoft.com/windowsapps/Simple-Direct3D-Touch-f98db97e)
- 
+### <a name="archive-samples"></a>存档示例
 
- 
-
-
-
-
+- [输入：XAML 用户输入事件示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [输入：设备功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [输入：触摸点击测试示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [输入：简化的墨迹示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
+- [输入：Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

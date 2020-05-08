@@ -1,5 +1,5 @@
 ---
-Description: 了解如何设计和优化你的 UWP 应用，使其为键盘高级用户以及残障人士和具有其他辅助功能需求的用户提供可能的最佳体验。
+Description: 了解如何设计和优化 Windows 应用，以使其为键盘电源用户和残障人士提供最佳体验，并提供其他辅助功能要求。
 title: 键盘交互
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
@@ -11,26 +11,26 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 449f0c81bdd54d99ef0977ca1c9b6ba10ba5eae7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 1d883243b60b2b2693fbf0f21315008e556b5743
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210103"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970752"
 ---
 # <a name="keyboard-interactions"></a>键盘交互
 
 ![键盘 Hero 图像](images/keyboard/keyboard-hero.jpg)
 
-了解如何设计和优化你的 UWP 应用，使其为键盘高级用户以及残障人士和具有其他辅助功能需求的用户提供可能的最佳体验。
+了解如何设计和优化 Windows 应用，以使其为键盘电源用户和残障人士提供最佳体验，并提供其他辅助功能要求。
 
-跨设备、键盘输入是整个通用 Windows 平台 (UWP) 交互体验的重要部分。 设计出色的键盘体验可以让用户高效地导航应用的 UI 并访问其所有功能，而无需将其双手抬离键盘。
+在设备中，键盘输入是整体 Windows 应用交互体验的重要组成部分。 设计出色的键盘体验可以让用户高效地导航应用的 UI 并访问其所有功能，而无需将其双手抬离键盘。
 
 ![键盘和游戏板图像](images/keyboard/keyboard-gamepad.jpg)
 
-***常见交互模式在键盘和游戏板之间共享***
+***可以在键盘和游戏板之间共享常见的交互模式***
 
-在本主题中，我们将重点介绍适用于电脑上的键盘输入的 UWP 应用设计。 不过，设计良好的键盘体验对于使用[软件键盘](#software-keyboard)（如触摸键盘和屏幕键盘（OSK））以及用于处理其他输入设备类型（如 Xbox 游戏板和远程控制）的支持辅助工具（如 Windows 讲述人）非常重要。
+在本主题中，我们将重点介绍适用于电脑上键盘输入的 Windows 应用设计。 不过，设计良好的键盘体验对于使用[软件键盘](#software-keyboard)（如触摸键盘和屏幕键盘（OSK））以及用于处理其他输入设备类型（如 Xbox 游戏板和远程控制）的支持辅助工具（如 Windows 讲述人）非常重要。
 
 此处讨论的许多指南和建议（包括[焦点视觉对象](#focus-visuals)、[访问键](#access-keys)和 [UI 导航](#navigation)）也适用于其他情况。
 
@@ -44,7 +44,7 @@ ms.locfileid: "79210103"
 
 ![具有手机图像的键盘](images/keyboard/keyboard-phone.jpg)
 
-***UWP 支持任何设备的键盘***
+***UWP 在任何设备上均支持键盘***
 
 ## <a name="basic-experiences"></a>基本体验
 ![基于焦点的设备](images/keyboard/focus-based-devices.jpg)
@@ -57,8 +57,8 @@ ms.locfileid: "79210103"
 
 | 设备/工具                       | 说明     |
 |-----------------------------------|-----------------|
-|键盘（硬件和软件）   |除了标准硬件键盘，UWP 应用程序还支持两个软件键盘：[触控（或软件）键盘](#software-keyboard)和[屏幕键盘](#on-screen-keyboard)。|
-|游戏板和遥控器         |Xbox 游戏板和遥控器是 [10 英尺体验](../devices/designing-for-tv.md)中的基础输入设备。 有关游戏板和遥控器的 UWP 支持的特定详细信息，请参阅[游戏板和遥控器交互](gamepad-and-remote-interactions.md)。|
+|键盘（硬件和软件）   |除了标准硬件键盘，Windows 应用程序还支持两个软件键盘：[触控（或软件）键盘](#software-keyboard)和[屏幕键盘](#on-screen-keyboard)。|
+|游戏板和遥控器         |Xbox 游戏板和遥控器是 [10 英尺体验](../devices/designing-for-tv.md)中的基础输入设备。 有关对游戏板和远程控制的 Windows 支持的特定详细信息，请参阅[游戏板和远程控制交互](gamepad-and-remote-interactions.md)。|
 |屏幕读取器（讲述人）          |讲述人是一款面向 Windows 的内置屏幕读取器，可提供独特的交互体验和功能，但仍依赖于基本的键盘导航和输入。 有关讲述人的详细信息，请参阅[讲述人入门](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)。|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>自定义体验和高效键盘操作
@@ -71,10 +71,10 @@ ms.locfileid: "79210103"
     - 为快速操作提供加速键（请参阅[加速器](#accelerators)）
     - 提供访问键以在应用程序的 UI 中导航（请参阅[访问密钥](access-keys.md)）
 
-### <a name="focus-visuals"></a>焦点视觉对象
+### <a name="focus-visuals"></a>焦点视觉对象 
 
 UWP 支持适合于所有输入类型和体验的单个焦点视觉对象设计。
-![聚焦视觉对象](images/keyboard/focus-visual.png)
+![焦点视觉对象](images/keyboard/focus-visual.png)
 
 焦点视觉对象：
 
@@ -95,7 +95,7 @@ UWP 支持适合于所有输入类型和体验的单个焦点视觉对象设计�
 
 默认情况下，Tab 键顺序反映了 UI 元素的创建顺序。 例如，如果 `StackPanel` 包含 `Button`、`Checkbox` 和 `TextBox`，则 Tab 键顺序为 `Button`、`Checkbox` 和 `TextBox`。
 
-您可以通过设置[TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex)属性来覆盖默认 tab 键顺序。
+你可以通过设置 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 属性来覆盖默认的 Tab 键顺序。
 
 #### <a name="tab-order-should-be-logical-and-predictable"></a>Tab 键顺序应符合逻辑且可预测
 
@@ -119,7 +119,7 @@ UWP 支持适合于所有输入类型和体验的单个焦点视觉对象设计�
 
 初始焦点用于指定在首次启动或激活应用程序或页面时接收焦点的 UI 元素。 使用键盘时，它来自此元素，用户可从该元素开始与应用程序的 UI 交互。
 
-对于 UWP 应用，初始焦点设置为具有可接收焦点的最高[TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex)的元素。 容器控件的子元素将被忽略。 因此，可视化树中的第一个元素接收焦点。
+对于 UWP 应用，初始焦点已设为具有可接收焦点的最高 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 的元素。 容器控件的子元素将被忽略。 因此，可视化树中的第一个元素接收焦点。
 
 #### <a name="set-initial-focus-on-the-most-logical-element"></a>将初始焦点设置为最符合逻辑的元素
 
@@ -143,10 +143,10 @@ UWP 支持适合于所有输入类型和体验的单个焦点视觉对象设计�
 -   **Tab 键**用于以 Tab 键顺序在可操作/活动控件之间导航。
 -   **Shift + Tab** 用于以与 Tab 键顺序相反的顺序导航控件。 如果用户已使用箭头键在控件内导航，则焦点将设为控件内的最后一个已知值。
 -   **箭头键**显示控件特定的“内部导航”。当用户进入“内部导航”时，箭头键不会在控件外导航。 示例包括：
-    -   向上/向下箭头键将焦点移 `ListView` 和 `MenuFlyout`
-    -   修改 `Slider` 和 `RatingsControl` 的当前选定值
-    -   在 `TextBox` 中移动插入符号
-    -   展开/折叠 `TreeView` 内的项
+    -   向上/向下箭头键将焦点`ListView`移到和中`MenuFlyout`
+    -   修改和的`Slider`当前选定值`RatingsControl`
+    -   移动插入符号`TextBox`
+    -   展开/折叠其中的项`TreeView`
 
 使用这些默认行为可以优化应用程序的键盘导航。
 
@@ -158,7 +158,7 @@ UWP 支持适合于所有输入类型和体验的单个焦点视觉对象设计�
 
 ![对话示例](images/keyboard/dialog.png)
 
-***使用箭头键导航使与相关按钮的集合进行交互变得更加容易。***
+***使用箭头键导航可以使与相关按钮集的交互变得更为简单***
 
 如果显示的是单列中的项目，向上/向下箭头键将会导航项目。 如果显示的是单行中的项目，则向右/向左箭头键将会导航项目。 如果项目位于多个列中，则所有 4 个箭头键均将用于导航。
 
@@ -174,7 +174,7 @@ UWP 支持适合于所有输入类型和体验的单个焦点视觉对象设计�
   <td><img src="images/keyboard/arrow-only.png" alt="arrow only" /></td>
 </table>
 
-***通过消除 tab 键并只使用箭头键进行导航，可使两个堆积 ListView 控件交互变得更简单、更高效。***
+***通过消除制表位并通过箭头键进行导航可以更轻松、高效地与两个堆叠 ListView 控件进行交互。***
 
 请访问[控件组](#control-group)部分了解如何为你的应用程序 UI 应用优化示例。
 
@@ -233,7 +233,7 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 
 ![向上和向下翻页键](images/keyboard/page-up-and-down.png)
 
-### <a name="keyboard-shortcuts"></a>键盘快捷键
+### <a name="keyboard-shortcuts"></a>键盘快捷方式
 
 键盘快捷方式可让你更轻松地使用应用程序，同时为键盘用户提供可访问性的增强支持和提高效率。
 
@@ -245,7 +245,7 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 
 提供支持跨应用程序的类似任务的一致的键盘快捷方式，使其更加有用和强大，并帮助用户记住它们。
 
-#### <a name="accelerators"></a>加速器
+#### <a name="accelerators"></a>加速键
 
 加速器可帮助用户更快、更高效地在应用程序中执行常见操作。 
 
@@ -260,7 +260,7 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 -   当支持时，它们将在整个应用程序中生效。
 -   应一致地分配它们，因为它们是缘故的，而不是直接记录的。
 
-#### <a name="access-keys"></a>访问密钥
+#### <a name="access-keys"></a>访问键
 
 有关 UWP 中的支持访问键的更多深入信息，请参阅[访问键](access-keys.md)页面。
 
@@ -280,7 +280,7 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 
 | 操作                               | 键命令                                      |
 |--------------------------------------|--------------------------------------------------|
-| 选择全部文本                           | Ctrl+A                                           |
+| 全选                           | Ctrl+A                                           |
 | 连续选择                  | Shift+箭头键                                  |
 | 保存                                 | Ctrl+S                                           |
 | 查找                                 | Ctrl+F                                           |
@@ -306,9 +306,9 @@ Esc 键让用户可以取消瞬态 UI（以及该 UI 中的任何正在进行的
 #### <a name="arrow-key-navigation"></a>箭头键导航
 
 用户期望当以下位置的 UI 区域中存在一组类似的相关控件时也支持箭头键导航：
--   `CommandBar` 中的 `AppBarButtons`
--   `ListView` 或 `GridView` 内的 `ListItems` 或 `GridItems`
--   `Buttons` 内部 `ContentDialog`
+-   `AppBarButtons`在`CommandBar`
+-   `ListItems`或`GridItems`内部`ListView`或`GridView`
+-   `Buttons`进入`ContentDialog`
 
 UWP 控件默认情况下之后箭头键导航。 有关自定义布局和控制组，请使用 `XYFocusKeyboardNavigation="Enabled"` 以提供类似的行为。
 
@@ -320,7 +320,7 @@ UWP 控件默认情况下之后箭头键导航。 有关自定义布局和控制
       <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
       <p><sup>对话框按钮</sup></p>
       <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
-      <p><sup>Radiobutton</sup></p>     
+      <p><sup>RadioButtons</sup></p>     
     </td>
     <td>
       <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
@@ -347,7 +347,7 @@ UWP 控件默认情况下之后箭头键导航。 有关自定义布局和控制
 
 示例包括：
 -   `RadioButtons`
--   多 `ListViews` 的外观和行为类似于单个 `ListView`
+-   类似`ListViews`于和的多个类似于单个`ListView`
 -   外观和行为类似于磁贴（例如“开始”菜单磁贴）网格的任何 UI
 
 #### <a name="specifying-control-group-behavior"></a>指定控件组行为
@@ -402,9 +402,9 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 
 | **键盘**  | **手柄**                         | **远程控制**  |
 |---------------|-------------------------------------|---------------------|
-| 空格         | A 按钮                            | 选择按钮       |
-| 输入         | A 按钮                            | 选择按钮       |
-| 退出        | B 按钮                            | 后退按钮         |
+| Space         | A 按钮                            | 选择按钮       |
+| Enter         | A 按钮                            | 选择按钮       |
+| Escape        | B 按钮                            | 返回按钮         |
 | Home/End      | 不可用                                 | 不可用                 |
 | 向上/向下翻页  | 扳机键按钮用于垂直滚动，缓冲键按钮用于水平滚动   | 不可用                 |
 
@@ -429,16 +429,16 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
   <tr>
     <td>
       <p><img src="images/keyboard/directional-navigation.png" alt="directional navigation"/></p>
-      <p><strong>支持 <em>定向导航</strong></br>用户可以使用方向键（键盘箭头、游戏板和遥控器）在不同控件之间导航。</em></p>
+      <p><em><strong>支持方向导航</strong></br>使用方向键（键盘箭头、游戏板和遥控器方向键），用户可以在不同控件之间进行导航。</em></p>
     </td>
     <td>
       <p><img src="images/keyboard/no-directional-navigation.png" alt="no directional navigation"/></p>
-      <p><strong>不支持 <em>定向导航</strong> </br>用户无法使用方向键在不同控件之间导航。 在控件之间导航的其他方法（tab 键）不会受到影响。</em></p>
+      <p><em><strong>不支持方向导航</strong> </br>用户无法使用方向键在不同控件之间导航。 控件之前的其他导航方法（Tab 键）不受影响。</em></p>
     </td>
   </tr>
 </table>
 
-### <a name="built-in-keyboard-optimization"></a>内置键盘优化
+### <a name="built-in-keyboard-optimization"></a>内置键盘优化 
 
 可以专门针对键盘输入进行 UWP 应用，具体取决于使用的布局和控件。
 
@@ -476,12 +476,12 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
     </td>
     <td>
       <p><img src="images/keyboard/column-major-keyboard.png" alt="column major keyboard navigation"/></p>
-      <p><em>列主要键盘导航</em></p>
+      <p><em>列主序键盘导航</em></p>
     </td>
   </tr>
 </table>
 
-#### <a name="popup-ui"></a>Popup UI
+#### <a name="popup-ui"></a>弹出窗口 UI 
 
 如前文所述，您应该尝试确保方向导航与应用程序的 UI 中控件的视觉顺序相对应。
 
@@ -513,7 +513,7 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 
 ## <a name="appendix"></a>附录
 
-### <a name="software-keyboard"></a>软件键盘
+### <a name="software-keyboard"></a>软件键盘 
 
 软件键盘是一种显示在屏幕上的键盘，用户可以借助触摸、鼠标、笔/触笔或其他指针设备（不需要触摸屏）来使用屏幕键盘代替物理键盘键入和输入数据。 在触摸屏上，可以通过直接触摸这些键盘来输入文本。 在 Xbox One 设备上，需要通过移动焦点视觉对象或使用游戏板或遥控器的快捷键选择单个键。
 
@@ -543,9 +543,9 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 -   树项
 -   菜单
 -   菜单栏
--   Menu item
+-   菜单项
 -   工具栏
--   列表
+-   列出
 -   列表项
 
 下面是适用于触摸键盘的其他模式的示例。 第一个图像是默认布局，第二个图像是缩略图布局（可能不适用于所有语言）。
@@ -560,7 +560,7 @@ Xbox 游戏板和遥控器支持许多 UWP 键盘行为和体验。 但是，由
 
 成功的键盘交互使用户能够仅使用键盘来完成基本应用方案；即用户可以访问所有交互元素并激活默认功能。 很多因素都可能会对键盘交互的成功产生或多或少的影响，其中包括键盘导航、用于辅助功能的访问键，以及面向高级用户的加速键（或快捷方式）。
 
-**请注意**  触摸键盘不支持切换和大多数系统命令。
+**注意**  触摸键盘不支持切换和大多数系统命令。
 
 #### <a name="on-screen-keyboard"></a>屏幕键盘
 和软件键盘一样，屏幕键盘也是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或其他指针设备（不需要触摸屏）来使用屏幕键盘代替物理键盘键入和输入数据。 屏幕键盘是针对没有物理键盘的系统提供的，或者是为行动有障碍而无法使用传统物理输入设备的用户提供使用。 屏幕键盘模拟硬件键盘的大部分功能（如果不是全部功能）。

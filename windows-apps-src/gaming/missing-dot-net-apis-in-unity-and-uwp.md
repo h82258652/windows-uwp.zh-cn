@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: df93fbeb3a879a84873827a5ead926f96b02adcc
-ms.sourcegitcommit: 8ee0752099170aaf96c7cb105f7cc039b6e7ff06
+ms.openlocfilehash: 8c7f906a19ddbabea85b0426aca9e41a62327e36
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80968053"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729808"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中缺少的 .NET API
 
@@ -19,7 +19,7 @@ ms.locfileid: "80968053"
 
 此外，某些游戏引擎使用与适用于 UWP 的 .NET 不完全兼容的不同 .NET 风格，如 Unity 的 Mono。 因此在你编写游戏时，编辑器中可能完全正常，但当你针对 UWP 进行构建时，你可能会看到如下错误：**类型或命名空间“格式化程序”在命名空间“System.Runtime.Serialization”中不存在（你是否缺少程序集引用？）**
 
-幸运的是，Unity 提供这些缺失的 API 的一部分作为扩展方法和替代类型，在[通用 Windows 平台：在 .NET 脚本后端缺少的 .NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)对此进行了描述。 但是，如果你需要的功能不在此处，则[适用于 Windows 8.x 应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))中讨论了转换代码以使用适用于 UWP API 的 WinRT 或 .NET 的方法。 （它讨论的是 Windows 8，但也适用于 Windows 10 UWP 应用。）
+幸运的是，Unity 提供这些缺失的 API 的一部分作为扩展方法和替代类型，在[通用 Windows 平台：在 .NET 脚本后端缺少的 .NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)对此进行了描述。 但是，如果你需要的功能不在此处，则[适用于 Windows 8. x 应用的 .net 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))介绍了将代码转换为对 Windows 运行时 Api 使用 WinRT 或 .net 的方法。 （它讨论的是 Windows 8，但也适用于 Windows 10 UWP 应用。）
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -60,7 +60,7 @@ Unity 脚本后端使用**脚本运行时版本**来允许你获取你选择的 
 ```
 
 > [!NOTE]
-> `NETFX_CORE` 仅用于检查是否正在针对 .NET 脚本编写C#后端编译代码。 如果你使用的是不同的脚本后端（例如 IL2CPP），请改用[`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) 。
+> `NETFX_CORE`仅用于检查是否正在针对 .NET 脚本编写后端编译 c # 代码。 如果你使用的是不同的脚本后端（例如 IL2CPP） [`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) ，请改用。
 
 若要获取依赖于平台的编译指令的完整列表，请参阅[依赖于平台的编译](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)。
 
@@ -115,7 +115,7 @@ private void UsingThreads()
 
 ### <a name="security"></a>安全性
 
-在为 UWP 生成 Unity 游戏时，有些 **System.Security.** * 命名空间（如 [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)）不可用。 在这些情况下，请使用 **Windows.Security.** * API，其具有许多相同的功能。
+在为 UWP 生成 Unity 游戏时，有些 **System.Security.*** 命名空间（如 [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)）不可用。 在这些情况下，请使用 **Windows.Security.*** API，其具有许多相同的功能。
 
 下面的示例只是从具有指定名称的证书存储获取证书：
 
@@ -136,14 +136,14 @@ private async void GetCertificatesAsync(string certStoreName)
 
 有关使用 WinRT 安全 API 的详细信息，请参阅[安全性](https://docs.microsoft.com/windows/uwp/security/)。
 
-### <a name="networking"></a>联网
+### <a name="networking"></a>网络
 
-有些 **System&period;Net.** * 命名空间（如 [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0)）在为 UWP 生成 Unity 游戏时同样不可用。 对于这些 API 的大多数，请使用相应的 **Windows.Networking.** * 和**Windows.Web.** * WinRT API 来获取类似的功能。 有关详细信息，请参阅[网络和 Web 服务](https://docs.microsoft.com/windows/uwp/networking/)。
+有些 **System&period;Net.*** 命名空间（如 [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0)）在为 UWP 生成 Unity 游戏时同样不可用。 对于这些 API 的大多数，请使用相应的 **Windows.Networking.*** 和**Windows.Web.*** WinRT API 来获取类似的功能。 有关详细信息，请参阅[网络和 Web 服务](https://docs.microsoft.com/windows/uwp/networking/)。
 
 对于 **System.Net.Mail**，请使用 [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email) 命名空间。 有关详细信息，请参阅[发送电子邮件](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-* [通用 Windows 平台： .NET 脚本后端缺少 .NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [通用 Windows 平台：在 .NET 脚本后端缺少的 .NET 类型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
 * [适用于 UWP 应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [Unity UWP 移植指南](https://unity3d.com/partners/microsoft/porting-guides)

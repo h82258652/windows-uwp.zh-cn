@@ -1,6 +1,6 @@
 ---
-Description: 了解如何 Fluent motion 使用方向性和重力。
-title: 方向性和引力 - UWP 应用中的动画
+Description: 了解流畅运动如何使用方向性和重心。
+title: 方向性和重力-Windows 应用中的动画
 label: Directionality and gravity
 template: detail.hbs
 ms.date: 10/02/2018
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8f1e36f0febeeaac5a12d408d7be8a717f0ab398
-ms.sourcegitcommit: 7c3b88198178d6f6a535f35e1bf8665410d41d92
+ms.openlocfilehash: ddcfac5e36500a8fc6dc41c7c86037f5a1483203
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67569116"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970642"
 ---
 # <a name="directionality-and-gravity"></a>方向性和引力
 
@@ -43,11 +43,11 @@ ms.locfileid: "67569116"
 
 :::row:::
     :::column:::
-移动的方向对应于物理运动。 就像在自然界中一样，对象可以沿任意世界轴（X、Y、Z）移动。 我们按照这种方式看待对象在屏幕上的运动。
-当移动对象时，避免非自然冲突。 请的注意对象来自并转到，并始终在场景中，如滚动方向或布局层次结构支持可能使用的更高级构造。
+移动方向对应于物理运动。 就像在自然界中一样，对象可以沿任意世界轴（X、Y、Z）移动。 我们按照这种方式看待对象在屏幕上的运动。
+移动对象时，请避免非自然冲突。 请记住，对象来自和转到，并始终支持可以在场景中使用的更高级别构造，如滚动方向或布局层次结构。
     :::column-end:::
     :::column:::
-        ![direction backward in](images/Direction.gif)
+        ![方向后退进入](images/Direction.gif)
     :::column-end:::
 :::row-end:::
 
@@ -61,11 +61,11 @@ ms.locfileid: "67569116"
 
 下面的示例应用了上述原则 - 在前进和后退导航过程中，所选项目停留在屏幕上。
 
-![UI 连续动作示例](images/continuous3.gif)
+![连续动作的 UI 示例](images/continuous3.gif)
 
 当导航导致屏幕上的项目被替换时，显示退出场景去往何方、新场景来自何处至关重要。
 
-这有以下几个好处：
+这样做有以下几个好处：
 
 - 巩固用户的空间心理模型。
 - 退出场景的持续时间提供更多时间来准备内容，以便为进入场景应用动画效果。
@@ -75,34 +75,34 @@ ms.locfileid: "67569116"
 
 :::row:::
     :::column:::
-**正向中**庆祝内容不包含传出内容冲突的方式输入场景。 内容在场景减速。
+**前进**以不与传出内容发生冲突的方式，庆祝内容进入场景。 内容减速到场景中。
     :::column-end:::
     :::column:::
-        ![direction forward in](images/forwardIN.gif)
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-**进扩展**内容很快退出。 关闭屏幕加速对象。
-    :::column-end:::
-    :::column:::
-        ![direction forward out](images/forwardOUT.gif)
+        ![前进方向](images/forwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-**向后接**与正向中相同但反转。
+**向外扩展**内容很快就会退出。 对象在屏幕上进行加速。
     :::column-end:::
     :::column:::
-        ![direction backward in](images/backwardIN.gif)
+        ![前进方向](images/forwardOUT.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-**向后扩展**进扩展相同但反转。
+**向后**与 Forward 相同，但反向。
     :::column-end:::
     :::column:::
-        ![direction backward out](images/backwardOUT.gif)
+        ![方向后退进入](images/backwardIN.gif)
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+**向后输出**与前向外，但反过来。
+    :::column-end:::
+    :::column:::
+        ![向后翻方向](images/backwardOUT.gif)
     :::column-end:::
 :::row-end:::
 
@@ -118,5 +118,5 @@ ms.locfileid: "67569116"
 
 ## <a name="related-articles"></a>相关文章
 
-- [Motion 概述](index.md)
+- [运动概述](index.md)
 - [计时和缓动](timing-and-easing.md)

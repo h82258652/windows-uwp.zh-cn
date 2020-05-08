@@ -1,42 +1,42 @@
 ---
-Description: 桌面应用程序和 UWP 应用之间共享代码
-title: 桌面应用程序和 UWP 应用之间共享代码
+Description: 在桌面应用程序和 UWP 应用之间共享代码
+title: 在桌面应用程序和 UWP 应用之间共享代码
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 344ee7060edcee3376e271fc21e104490d8724d7
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4c07a3bbff4b29d2b59ef7d6d8a5912ce3675a4e
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319713"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730356"
 ---
-# <a name="move-from-a-desktop-application-to-uwp"></a>移到 UWP 的桌面应用程序
+# <a name="move-from-a-desktop-application-to-uwp"></a>从桌面应用程序移至 UWP
 
-如果必须使用.NET Framework （包括 WPF 和 Windows 窗体） 构建的现有桌面应用程序或C++Win32 Api，你有多个选项将移动到通用 Windows 平台 (UWP) 和 Windows 10。
+如果现有的桌面应用程序是使用 .NET Framework （包括 WPF 和 Windows 窗体）或 c + + Win32 Api 生成的，则可以使用几个选项移动到通用 Windows 平台（UWP）和 Windows 10。
 
-## <a name="package-your-desktop-application-in-an-msix-package"></a>MSIX 包中的将桌面应用程序打包
+## <a name="package-your-desktop-application-in-an-msix-package"></a>在 .MSIX 包中打包桌面应用程序
 
-可以打包桌面应用程序 MSIX 包中获取到更多的 Windows 10 功能的访问权限。 MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（包括 UWP、WPF、Windows 窗体和 Win32 应用）的通用打包体验。 将桌面 Windows 应用打包到 MSIX 包中即可访问可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 您可以打包应用程序是否有源代码，或如果您只需一个现有的安装程序文件 （如 MSI 或 APP-V 安装程序）。 打包你的应用程序后，可以将集成 UWP 功能，例如打包扩展和其他 UWP 组件。
+可以将桌面应用程序打包在 .MSIX 包中，以访问更多 Windows 10 功能。 MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（包括 UWP、WPF、Windows 窗体和 Win32 应用）的通用打包体验。 将桌面 Windows 应用打包到 MSIX 包中即可访问可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 无论你是否有源代码，你都可以打包应用程序，或者是否只有现有的安装程序文件（例如 MSI 或 App-v 安装程序）。 打包应用程序后，可以集成 UWP 功能，如包扩展和其他 UWP 组件。
 
-有关详细信息，请参阅[打包桌面应用程序 （桌面桥）](/windows/msix/desktop/desktop-to-uwp-root)并[要求包标识的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
+有关详细信息，请参阅[打包桌面应用程序（Desktop Bridge）](/windows/msix/desktop/desktop-to-uwp-root)和[需要包标识的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
 
-## <a name="use-uwp-apis"></a>使用 UWP Api
+## <a name="use-windows-runtime-apis"></a>使用 Windows 运行时 Api
 
-可以在 WPF、Windows 窗体或 C++ Win32 桌面应用中直接调用许多 UWP API，以便集成对 Windows 10 用户来说焕然一新的体验。 例如，可以调用 UWP API，以便将 Toast 通知添加到桌面应用。
+可以在 WPF、Windows 窗体或 C++ Win32 桌面应用中直接调用许多 Windows 运行时 API，以便集成对 Windows 10 用户来说焕然一新的体验。 例如，可以调用 Windows 运行时 API，以便将 Toast 通知添加到桌面应用。
 
-有关详细信息，请参阅[在桌面应用中使用 UWP API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
+有关详细信息，请参阅[在桌面应用中使用 Windows 运行时 API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
 
-## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>迁移.NET Framework 应用程序向 UWP 应用
+## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>将 .NET Framework 应用迁移到 UWP 应用
 
-在.NET Framework 上运行应用程序，可以直接将其迁移到 UWP 应用，通过利用.NET Standard 2.0。 移动大量的代码如您可以到.NET Standard 2.0 类库，，然后创建 UWP 应用引用.NET Standard 2.0 库。 
+如果你的应用程序在 .NET Framework 上运行，则可以利用 2.0 .NET Standard 将其迁移到 UWP 应用。 将尽可能多的代码移动到 .NET Standard 2.0 的类库中，然后创建引用 .NET Standard 2.0 库的 UWP 应用。 
 
 ### <a name="share-code-in-a-net-standard-20-library"></a>在 .NET Standard 2.0 库中共享代码
 
-如果你的应用程序在.NET Framework 上运行，将太多代码，因为您可以到.NET Standard 2.0 类库。 只要你的代码使用标准中定义的 API，就可以在 UWP 应用中重复使用你的代码。 在 .NET Standard 库中共享代码比以前更容易，因为 .NET Standard 2.0 中包含的 API 相当多。
+如果你的应用程序在 .NET Framework 上运行，请将尽可能多的代码放在 2.0 .NET Standard 的类库中。 只要你的代码使用标准中定义的 API，就可以在 UWP 应用中重复使用你的代码。 在 .NET Standard 库中共享代码比以前更容易，因为 .NET Standard 2.0 中包含的 API 相当多。
 
-下面是告诉您有关它的详细信息的视频。
+这是一个视频，告诉你有关它的详细信息。
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
@@ -76,13 +76,13 @@ ms.locfileid: "67319713"
 
 某些代码将特定于平台，并且将需要保留在你的桌面应用程序项目中。
 
-#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>例如：迁移到.NET Standard 2.0 库的数据访问代码
+#### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>示例：将数据访问代码迁移到 .NET Standard 2.0 库
 
-假设我们有一个非常基本的 Windows 窗体应用程序显示了我们 Northwind 示例数据库中的客户。
+假设我们有一个非常基本的 Windows 窗体应用程序，该应用程序显示 Northwind 示例数据库中的客户。
 
 ![Windows 窗体应用](images/desktop-to-uwp/win-forms-app.png)
 
-项目包含一个 .NET Standard 2.0 类库，其中包含名为 **Northwind** 的静态类。 如果我们将此代码移到 **Northwind** 类中，它将不进行编译，因为它使用 ``SQLConnection``、``SqlCommand`` 和 ``SqlDataReader``类，以及 .NET Standard 2.0 中不可用的那些类。
+项目包含一个 .NET Standard 2.0 类库，其中包含名为 **Northwind** 的静态类。 如果将此代码移到**Northwind**类中，则不会进行编译，因为``SQLConnection``它``SqlCommand``使用了``SqlDataReader`` 、和类，而这些类在 .NET Standard 2.0 中不可用。
 
 ```csharp
 public static ArrayList GetCustomerNames()
@@ -239,7 +239,7 @@ public sealed partial class MainPage : Page
 ![Xamarin 应用](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->跨平台项目非常适合具有极少特定于平台的功能的应用。 你可以使用它们构建一个在 iOS、Android 和 Windows 上运行的基于 XAML 的本机 UI。 在[此处](https://docs.microsoft.com/xamarin/xamarin-forms/)了解详细信息。
+>跨平台项目非常适合具有极少特定于平台的功能的应用。 你可以使用它们构建一个在 iOS、Android 和 Windows 上运行的基于 XAML 的本机 UI。 在[此处](https://docs.microsoft.com/xamarin/xamarin-forms/)了解更多信息。
 
 然后，从你的 Android、iOS 或跨平台项目中，添加对类库项目的引用。
 
@@ -284,7 +284,7 @@ public class MainActivity : ListActivity
 
 **查找问题的答案**
 
-有问题？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
+有任何疑问吗？ 请在 Stack Overflow 上向我们提问。 我们的团队会监视这些[标记](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 你还可以在[此处](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)提问。
 
 **提供反馈或提出功能建议**
 

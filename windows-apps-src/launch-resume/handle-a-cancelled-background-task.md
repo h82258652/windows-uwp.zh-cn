@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c59982c174909a3fb8ab0b21d5dd792969cfeebc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d2b6ba88587f4f536d4fe6fc2750a520166fde18
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259477"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606346"
 ---
 # <a name="handle-a-cancelled-background-task"></a>处理取消的后台任务
 
@@ -23,7 +23,7 @@ ms.locfileid: "74259477"
 
 -   [**BackgroundTaskCanceledEventHandler**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskcanceledeventhandler)
 -   [**IBackgroundTaskInstance**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance)
--   [**ApplicationData**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
+-   [**ApplicationData.Current**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current)
 
 了解如何创建一个后台任务，该任务识别取消请求、停止工作，并向使用永久性存储的应用报告取消。
 
@@ -67,7 +67,7 @@ void ExampleBackgroundTask::OnCanceled(
 }
 ```
 
-将名为 **\_CancelRequested**的标志变量添加到后台任务类中。 此变量将用于指示何时发出取消请求。
+将名** \_为 CancelRequested**的标志变量添加到后台任务类中。 此变量将用于指示何时发出取消请求。
 
 ```csharp
 volatile bool _CancelRequested = false;
@@ -83,9 +83,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-在步骤1中创建的**OnCanceled**方法中，将 "标志变量 **\_CancelRequested** " 设置为 " **true**"。
+在步骤1中创建的**OnCanceled**方法中，将 "标志变量** \_CancelRequested** " 设置为 " **true**"。
 
-完整的[后台任务示例]( https://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法将 **\_CancelRequested**设置为**true** ，并写入可能有用的调试输出。
+完整的[后台任务示例]( https://code.msdn.microsoft.com/windowsapps/Background-Task-Sample-9209ade9) **OnCanceled**方法将** \_CancelRequested**设置为**true**并写入可能有用的调试输出。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -131,9 +131,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 ## <a name="handle-cancellation-by-exiting-your-background-task"></a>通过退出后台任务处理取消
 
-收到取消请求后，执行后台工作的方法需要通过识别 **\_cancelRequested**设置为**true**时停止工作并退出。 对于进程内后台任务，这意味着从**OnBackgroundActivated**方法返回。 对于进程外后台任务，这意味着从**Run**方法返回。
+收到取消请求后，执行后台工作的方法需要通过识别** \_cancelRequested**设置为**true**来停止工作和退出。 对于进程内后台任务，这意味着从**OnBackgroundActivated**方法返回。 对于进程外后台任务，这意味着从**Run**方法返回。
 
-修改后台任务类的代码以在它工作时检查该标志变量。 如果 **\_cancelRequested**设置为 true，则停止工作继续。
+修改后台任务类的代码以在它工作时检查该标志变量。 如果** \_cancelRequested**设置为 true，则停止工作继续。
 
 [后台任务示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)包含一个检查，该检查在后台任务被取消时停止定期计时器回调。
 
@@ -402,7 +402,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 
 ## <a name="related-topics"></a>相关主题
 
-- [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+- [创建并注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 - [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 - [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 - [后台任务指南](guidelines-for-background-tasks.md)
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
 - [使用维护触发器](use-a-maintenance-trigger.md)
 - [调试后台任务](debug-a-background-task.md)
-- [如何在 UWP 应用中触发挂起、继续和后台事件（调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+- [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

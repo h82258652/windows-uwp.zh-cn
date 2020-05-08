@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: 键盘, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: e26bbe00bba8b3d91d7ee842cb4d9c984a941f2b
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 76b468eedd136522a4af9fb5880049278548865d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521358"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970262"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的存在
 
@@ -27,7 +27,7 @@ ms.locfileid: "77521358"
 
 <sup>默认布局模式下的触摸键盘</sup>
 
-对于支持触摸的设备，触摸键盘支持文本输入。 当用户点击可编辑的输入字段时，通用 Windows 平台 (UWP) 文本输入控件会默认调用触摸键盘。 当用户在表单的控件之间导航时，触摸键盘通常保持可见，不过此行为可能因表单内其他控件类型的不同而有所不同。
+对于支持触摸的设备，触摸键盘支持文本输入。 默认情况下，当用户点击可编辑的输入字段时，Windows 应用文本输入控件将调用触摸键盘。 当用户在表单的控件之间导航时，触摸键盘通常保持可见，不过此行为可能因表单内其他控件类型的不同而有所不同。
 
 若要针对并非派生自标准文本输入控件的自定义文本输入控件支持相应的触摸键盘行为，必须使用 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> 类向 Microsoft UI 自动化公开控件，并实现正确的 UI 自动化控件模式。 请参阅[键盘辅助功能](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility)和[自定义的自动化对等](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers)。
 
@@ -39,9 +39,9 @@ ms.locfileid: "77521358"
 
 你应该对标准键盘交互、处理键盘输入和事件以及 UI 自动化有一个基本了解。
 
-如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请仔细阅读这些主题来熟悉此处讨论的技术。
+如果你不熟悉如何开发 Windows 应用应用，请查看以下主题，了解此处讨论的技术。
 
-- [创建你的第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
+- [创建第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - 借助[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
 
 **用户体验指南：**
@@ -60,9 +60,9 @@ ms.locfileid: "77521358"
 
 - 确保用户在交互时始终可以看到输入字段。
 
-    触摸键盘会遮挡住大部分屏幕，不过 UWP 可确保当用户在表单上的不同控件（包括当前不在视图中的控件）之间导航时，具有焦点的输入字段滚动到视图中。
+    由于触摸键盘在屏幕上 occludes，因此在用户浏览窗体上的控件（包括当前不在视图中的控件）时，Windows 将确保带有焦点的输入字段滚动到视图中。
 
-    自定义用户界面时，可以通过处理[显示](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing)和[隐藏](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) [**InputPane**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane)对象公开的事件，来提供触摸键盘外观上类似的行为。
+    自定义 UI 时，可通过处理 [InputPane](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) 对象所公开的 [Showing](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) 和 [**Hiding**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) 事件，针对触摸键盘的外观提供相似的行为。
 
     ![显示和没有显示触摸键盘的表单](images/touch-keyboard-pan1.png)
 
@@ -212,15 +212,15 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 - [键盘交互](keyboard-interactions.md)
 - [键盘辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
-- [自定义自动化对等](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
+- [自定义的自动化对等](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
 
-**示例**
+### <a name="samples"></a>示例
 
 - [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 
-**存档示例**
+### <a name="archive-samples"></a>存档示例
 
-- [输入：触控键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-- [响应屏幕键盘的外观示例](https://code.msdn.microsoft.com/windowsapps/keyboard-events-sample-866ba41c)
-- [XAML 文本编辑示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+- [输入：触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+- [响应屏幕键盘外观示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Responding%20to%20the%20appearance%20of%20the%20on-screen%20keyboard%20sample)
+- [XAML 文本编辑示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BVB%5D-Windows%208%20app%20samples/VB/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
 - [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

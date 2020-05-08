@@ -1,5 +1,5 @@
 ---
-Description: 了解应该在何时以及何处使用 UWP 应用中的辅助磁贴。
+Description: 了解你应在 Windows 应用程序中使用辅助磁贴的时间和位置。
 title: 辅助磁贴设计指南
 label: Secondary tiles
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10，uwp, 辅助磁贴, 指南, 指导, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 875513840d8dc752fe336241fa54710aebad6103
-ms.sourcegitcommit: 2d709ddcc31f52d2a4ace1134aea45057d99a615
+ms.openlocfilehash: 400b0d48fd68c720d613325d1938c0c4a70931a7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74782591"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971022"
 ---
 # <a name="secondary-tile-guidance"></a>辅助磁贴指南
 
@@ -45,10 +45,10 @@ ms.locfileid: "74782591"
 * 辅助磁贴与“开始”屏幕中的所有磁贴一样，都是可以使用新内容经常更新的动态出口。 辅助磁贴可以使用任何其他磁贴所使用的相同机制来显示通知和更新。 请参阅[选择通知传递方法](choosing-a-notification-delivery-method.md)了解详细信息。
 
 
-## <a name="related"></a>相关
+## <a name="related"></a>相关内容
 
 * [辅助磁贴概述](secondary-tiles.md)
 * [固定辅助磁贴](secondary-tiles-pinning.md)
-* [磁贴资产](app-assets.md)
+* [磁贴资源](app-assets.md)
 * [磁贴内容文档](create-adaptive-tiles.md)
 * [发送本地磁贴通知](sending-a-local-tile-notification.md)

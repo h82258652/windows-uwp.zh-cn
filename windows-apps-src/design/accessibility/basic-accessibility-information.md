@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fa9ba2b8c9b327a51218dfc5f100c147f2d566e8
-ms.sourcegitcommit: 0a319e2e69ef88b55d472b009b3061a7b82e3ab1
+ms.openlocfilehash: 39b019495235ca2ff4bec2f9e6bc1b9230a15599
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77521258"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969512"
 ---
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
@@ -32,7 +32,7 @@ ms.locfileid: "77521258"
 | 元素类型 | 说明 |
 |--------------|-------------|
 | 静态文本 | 对于 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 元素，辅助名称是从可见（内部）文本自动确定的。 该元素中所有文本都用作其名称。 请参阅[根据内部文本命名](#name_from_inner_text)。 |
-| 图像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
+| 映像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
 | 窗体元素 | 窗体元素的辅助名称应当与针对该元素显示的标签同名。 请参阅[标签和 LabeledBy](#labels)。 |
 | 按钮和链接 | 默认情况下，按钮或链接的辅助名称基于可见文本，并使用相同的规则，如[根据内部文本命名](#name_from_inner_text)所述。 如果按钮中仅包含一个图像，请使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供与按钮的预期操作等效的仅文本操作。 |
 
@@ -44,7 +44,7 @@ ms.locfileid: "77521258"
 ## <a name="role-and-value"></a>角色和值  
 属于 XAML 词汇的控件和其他 UI 元素都实现了对于 UI 自动化的支持，可以在元素的定义中报告角色和值。 你可以使用 UI 自动化工具检查控件的角色和值信息，也可以读取每个控件的 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 实现文档。 UI 自动化框架中的可用角色在 [**AutomationControlType**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 枚举中定义。 通过调用 UI 自动化框架使用控件的 **AutomationPeer** 公开的方法，UI 自动化客户端（例如，辅助技术）可以获取角色信息。
 
-并非所有的控件都有值。 有值的控件将通过该控件支持的对等和模式来向 UI 自动化报告此信息。 例如，[**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 窗体元素有值。 辅助技术可以是 UI 自动化客户端，而且既能发现值的存在，又能发现值是多少。 在此特定情况下，**TextBox** 通过 [**TextBoxAutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider) 定义支持 [**IValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer) 模式。
+并非所有的控件都有值。 有值的控件将通过该控件支持的对等和模式来向 UI 自动化报告此信息。 例如，[**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 窗体元素有值。 辅助技术可以是 UI 自动化客户端，而且既能发现值的存在，又能发现值是多少。 在此特定情况下，**TextBox** 通过 [**TextBoxAutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer) 定义支持 [**IValueProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider) 模式。
 
 > [!NOTE]
 > 如果你使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 或其他技术明确提供辅助名称，请不要在辅助名称中包括由控件角色或类型信息使用的文本。 例如，不要在名称中包含诸如“button”或“list”的字符串。 角色和类型信息源自对 UI 自动化的默认控件支持所提供的另一个 UI 自动化属性 (**LocalizedControlType**)。 许多辅助技术都在辅助名称后面附加 **LocalizedControlType**，因此，使用辅助名称来复制角色可能会导致不必要的重复词。 例如，如果你为 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 控件提供辅助名称“button”或将“button”包含为该名称的最后一部分，则可能导致屏幕阅读器将其读为“button button”。 你应该使用讲述人功能对辅助功能信息的该方面进行测试。
@@ -56,7 +56,7 @@ ms.locfileid: "77521258"
 ## <a name="influencing-the-ui-automation-tree-views"></a>影响 UI 自动化树视图  
 UI 自动化框架包含树视图概念，在这里 UI 自动化客户端可以使用以下三种可能的视图检索 UI 中元素之间的关系：原始视图、控件视图和内容视图。 控件视图是 UI 自动化客户端经常会使用的视图，因为它可以很好地表示和组织 UI 中的交互元素。 在测试工具显示元素的组织结构时，你通常可以选择使用哪种树视图。
 
-默认情况下，当 UI 自动化框架表示通用 Windows 平台 (UWP) 应用的 UI 时，控件视图中将会显示所有由 [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 派生的类以及少量其他元素。 但有些时候，出于 UI 组合的原因，你可能不希望某个元素显示在控件视图中（因为该元素复制的信息或显示的信息对于辅助功能方案无足轻重）。 使用附加属性 [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) 更改将元素公开给树视图的方式。 如果你将某个元素放置在 **Raw** 树中，则大多数辅助技术都不会将该元素报告为其视图的一部分。 若要查看此操作在现有控件中的工作原理的某些示例，请在文本编辑器中打开 generic.xaml 设计参考 XAML 文件，并在模板中搜索 **AutomationProperties.AccessibilityView**。
+默认情况下，当 UI 自动化框架表示 Windows 应用程序的 UI 时，控件视图中将显示任何[**控件**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)派生类和一些其他元素。 但有些时候，出于 UI 组合的原因，你可能不希望某个元素显示在控件视图中（因为该元素复制的信息或显示的信息对于辅助功能方案无足轻重）。 使用附加属性 [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) 更改将元素公开给树视图的方式。 如果你将某个元素放置在 **Raw** 树中，则大多数辅助技术都不会将该元素报告为其视图的一部分。 若要查看此操作在现有控件中的工作原理的某些示例，请在文本编辑器中打开 generic.xaml 设计参考 XAML 文件，并在模板中搜索 **AutomationProperties.AccessibilityView**。
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>
@@ -64,7 +64,7 @@ UI 自动化框架包含树视图概念，在这里 UI 自动化客户端可以�
 ## <a name="name-from-inner-text"></a>根据内部文本命名  
 为了更便于将可见 UI 中已经存在的字符串用于辅助名称值，许多控件和其他 UI 元素都支持以下功能：基于元素中的内部文本或者内容属性的字符串值自动确定默认辅助名称。
 
-* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、 [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)和**RichTextBlock**分别将**Text**属性的值提升为默认的可访问名称。
+* [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 和 **RichTextBlock** 各自将 **Text** 属性的值提升为默认的辅助名称。
 * 任何 [**ContentControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 子类都使用迭代“ToString”技术在其 [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 值中查找字符串，并将这些字符串提升为默认的辅助名称。
 
 > [!NOTE]
@@ -150,7 +150,7 @@ Windows 通过一个名为*数据绑定*的功能，支持许多可用来显示�
 ## <a name="accessible-names-and-localization"></a>辅助名称和本地化  
 为了确保辅助名称同时还是已本地化的元素，应当使用正确的技术将可本地化字符串作为资源进行存储，然后引用具有 [x:Uid 指令](https://docs.microsoft.com/windows/uwp/xaml-platform/x-uid-directive)值的资源连接。 如果辅助名称来自显式设置的 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 用法，请确保该用法中的字符串同样本地化。
 
-请注意，附加属性（如 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 属性）对资源名称使用特定的限定语法，以便资源在应用到特定元素时引用该附加属性。 例如，应用到名为 [ 的 UI 元素 时，AutomationProperties.Name](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name)`MediumButton` 的资源名称为 `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`。
+请注意，附加属性（如 [**AutomationProperties**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 属性）对资源名称使用特定的限定语法，以便资源在应用到特定元素时引用该附加属性。 例如，应用到名为 `MediumButton` 的 UI 元素 时，[**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 的资源名称为 `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`。
 
 <span id="related_topics"/>
 

@@ -1,5 +1,5 @@
 ---
-Description: 创建具有直观且独特用户交互体验的通用 Windows 平台 (UWP) 应用，它们针对触摸板进行了优化，但在不同的输入设备上功能一致。
+Description: 创建 Windows 应用应用，其中包含针对触摸板进行了优化但在输入设备上保持一致的直观且独特的用户交互体验。
 title: 触摸板交互
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,12 +8,12 @@ keywords: 触摸板, PTP, 触摸, 指针, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 991d85edd9c0a51412d33b48e364974d2095410e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258224"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970232"
 ---
 # <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
@@ -29,7 +29,7 @@ ms.locfileid: "74258224"
 
 -   标准触摸板或 Windows 精确式触摸板。
 
-    精确式触摸板针对通用 Windows 平台 (UWP) 设备进行了优化。 它们支持系统在本机处理触摸板体验的某些方面（例如手指跟踪和手掌检测），从而在不同设备之间实现更一致的体验。
+    精度触摸板针对 Windows 应用设备进行了优化。 它们支持系统在本机处理触摸板体验的某些方面（例如手指跟踪和手掌检测），从而在不同设备之间实现更一致的体验。
 
 -   一个或多个手指直接接触触摸板。
 -   触摸接触时移动（或不移动，具体取决于时间阈值）。
@@ -40,7 +40,7 @@ ms.locfileid: "74258224"
 -   作为另一种输入方法识别，例如鼠标或笔。
 -   用于补充或修改其他输入方法的方面，例如涂抹用笔绘制的笔划墨迹。
 
-触摸板将间接多点触控输入与指针设备（如鼠标）的精确输入结合。 这种组合使触摸板既适用于触摸优化的 UI，也适用于效率应用和桌面环境通常较小的目标。 针对触控输入优化 UWP 应用设计，并默认获取触摸板支持。
+触摸板将间接多点触控输入与指针设备（如鼠标）的精确输入结合。 这种组合使触摸板既适用于触摸优化的 UI，也适用于效率应用和桌面环境通常较小的目标。 为触摸输入优化 Windows 应用设计，并在默认情况下获取触摸板支持。
 
 由于触摸板支持聚合的交互体验，所以除了触摸输入的内置支持，我们还建议使用 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件来提供鼠标样式的 UI 命令。 例如，使用“上一页”和“下一页”按钮，使用户既可以翻阅网页内容，也可以通过平移浏览内容。
 
@@ -55,11 +55,11 @@ ms.locfileid: "74258224"
 
 ![标准触摸板设置](images/mouse-touchpad-settings-standard.png)
 
-<sup>标准\\ 触摸板\\ 设置</sup>
+<sup>标准\\触摸\\板设置</sup>
 
 ![Windows 精确式触摸板设置](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ 精度\\ 触摸板\\ 设置</sup>
+<sup>Windows\\精度\\触摸\\板设置</sup>
 
 下面是一些用于执行常见任务的触摸板优化手势的示例。
 
@@ -134,7 +134,7 @@ ms.locfileid: "74258224"
 
 有关视觉反馈的更常规的指南，请参阅[视觉反馈指南](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback)。
 
-## <a name="cursors"></a>光标
+## <a name="cursors"></a>游标
 
 
 为触摸板指针提供了一组标准光标。 它们用来表示元素的主要操作。
@@ -151,20 +151,19 @@ ms.locfileid: "74258224"
 
 ## <a name="related-articles"></a>相关文章
 
+- [处理指针输入](handle-pointer-input.md)
+- [标识输入设备](identify-input-devices.md)
 
-* [处理指针输入](handle-pointer-input.md)
-* [标识输入设备](identify-input-devices.md)
-**示例**
-* [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-* [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-* [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-* [焦点视觉效果示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
-**存档示例**
-* [输入：设备功能示例](https://code.msdn.microsoft.com/windowsapps/Input-device-capabilities-31b67745)
-* [输入： XAML 用户输入事件示例](https://code.msdn.microsoft.com/windowsapps/Input-3dff271b)
-* [XAML 滚动、平移和缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
-* [输入：与 GestureRecognizer 的手势和操作](https://code.msdn.microsoft.com/windowsapps/Manipulations-and-gestures-362b6b59)
- 
+### <a name="samples"></a>示例
 
+- [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 
+### <a name="archive-samples"></a>存档示例
 
+- [输入：设备功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [输入：XAML 用户输入事件示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [输入：使用 GestureRecognizer 的笔势和操作](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)

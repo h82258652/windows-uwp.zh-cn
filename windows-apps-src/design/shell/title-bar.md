@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标题栏
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 323b9b80a7d0087a07faf34d598f51d643e1324c
-ms.sourcegitcommit: 5687e5340f8d78da95c3ac28304d1c9b8960c47d
+ms.openlocfilehash: 47db0abfa96ae572c20d6bfd7496d7b5d168ab50
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930339"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968412"
 ---
 # <a name="title-bar-customization"></a>标题栏自定义
 
@@ -20,7 +20,7 @@ ms.locfileid: "70930339"
 
 当你的应用在桌面窗口中运行时，你可以自定义标题栏以匹配应用的个性。 利用标题栏自定义 API，你可以为标题栏元素指定颜色，或者将应用内容扩展到标题栏区域并完全控制该内容。
 
-> **重要的 API**：[W 属性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、 [ApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、 [CoreApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **重要 API**：[ApplicationView.TitleBar 属性](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[ApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、[CoreApplicationViewTitleBar 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>标题栏的自定义程度
 
@@ -33,7 +33,7 @@ ms.locfileid: "70930339"
 当你选择完全自定义时，你负责将内容放在标题栏区域中，并且可以定义自己的可拖动区域。 系统的“后退”、“关闭”、“最小化”和“最大化”按钮仍然可用并由系统处理，但是应用标题等元素则不可用。 你将需要根据应用的需要自行创建这些元素。
 
 > [!NOTE]
-> 可以使用 XAML、DirectX 和 HTML 对 UWP 应用进行简单的颜色自定义。 只能使用 XAML 对 UWP 应用进行完全自定义。
+> 使用 XAML、DirectX 和 HTML 的 Windows 应用程序可使用简单的颜色自定义。 完全自定义仅适用于使用 XAML 的 Windows 应用。
 
 ## <a name="simple-color-customization"></a>简单的颜色自定义
 
@@ -102,6 +102,11 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 标题栏的可拖动区域定义了用户可以在哪里通过单击和拖动来移动窗口（而不是只在应用画布中拖动内容）。 通过调用 [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) 方法并传入一个定义可拖动区域的 UIElement，你可以指定可拖动区域。 （UIElement 通常是一个包含其他元素的面板。）
 
 下面介绍如何将内容网格设置为可拖动的标题栏区域。 此代码会写入应用第一页的 XAML 和代码隐藏部分中。 请参阅[完全自定义示例](./title-bar.md#full-customization-example)部分以获取完整代码。
+
+
+> [!IMPORTANT]
+> 默认情况下，某些 UI 元素（例如网格）在没有后台集时不参与命中测试。
+> 为了使下面`AppTitleBar`的示例中的网格允许拖动，我们需要将背景设置为`Transparent`。
 
 ```xaml
 <Grid x:Name="AppTitleBar" Background="Transparent">
@@ -279,7 +284,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->仅在应用支持时才能进入_全屏_模式。 有关详细信息，请参阅 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_Tablet 模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是支持的硬件上的用户选项，因此用户可以选择在平板模式下运行任何应用。
+>仅在应用支持时才能进入_全屏_模式。 有关详细信息，请参阅 [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是受支持的硬件上的用户选项，以便用户可以选择在平板模式下运行任何应用。
 
 ## <a name="full-customization-example"></a>完全自定义示例
 
@@ -385,5 +390,5 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 
 ## <a name="related-articles"></a>相关文章
 
-- [Acrylic](../style/acrylic.md)
+- [亚克力](../style/acrylic.md)
 - [颜色](../style/color.md)

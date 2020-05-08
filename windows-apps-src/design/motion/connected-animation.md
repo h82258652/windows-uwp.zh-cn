@@ -1,6 +1,6 @@
 ---
 description: 连贯的动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态且引人入胜的导航体验。
-title: 连贯动画
+title: 连贯的动画
 template: detail.hbs
 ms.date: 10/04/2018
 ms.topic: article
@@ -9,14 +9,14 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e17b1c18fc8e643ac788e5e13ac78cae49a35ef
-ms.sourcegitcommit: 6d743cf9c3e09f87ea2879b8e1f2dc4a1b1a16fe
+ms.openlocfilehash: 385c11e48695c2486fd5a2b72633923454e2f8ea
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166076"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970632"
 ---
-# <a name="connected-animation-for-uwp-apps"></a>适用于 UWP 应用的连贯动画
+# <a name="connected-animation-for-windows-apps"></a>适用于 Windows 应用的连接动画
 
 连贯的动画让你可以通过为一个元素在两种不同视图之间的转换创建动画来创建动态且引人入胜的导航体验。 这有助于用户维持其上下文并提供不同视图之间的连贯性。
 
@@ -55,7 +55,7 @@ ms.locfileid: "74166076"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>连贯动画和 Fluent 设计系统
 
- Fluent Design 系统可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 连贯动画是 Fluent 设计系统的一个组成部分，它将动画添加到你的应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
+ Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 连贯动画是 Fluent 设计系统的一个组成部分，它将动画添加到你的应用。 若要了解详细信息，请参阅 "[熟知设计概述](/windows/apps/fluent-design-system)"。
 
 ## <a name="why-connected-animation"></a>为何选择连贯动画？
 
@@ -98,11 +98,11 @@ ms.locfileid: "74166076"
 
 为了实现各种效果，某些配置将忽略 ConnectedAnimationService 上的这些属性，并改为使用自己的值，如此表中所述。
 
-| 配置 | 是否尊重 DefaultDuration？ | 是否尊重 DefaultEasingFunction？ |
+| Configuration | 是否尊重 DefaultDuration？ | 是否尊重 DefaultEasingFunction？ |
 | - | - | - |
-| 引力 | “是” | 是* <br/> **从 A 到 B 的基本转换使用此缓动函数，但 "重力 dip" 具有其自己的缓动函数。*  |
-| Direct | 无 <br/> *在150ms 上进行动画处理。*| 无 <br/> *使用减速缓动函数。* |
-| 基本 | “是” | “是” |
+| 引力 | 是 | 是* <br/> **从 A 到 B 的基本转换使用此缓动函数，但 "重力 dip" 具有其自己的缓动函数。*  |
+| 直接 | 否 <br/> *在150ms 上进行动画处理。*| 否 <br/> *使用减速缓动函数。* |
+| 基本 | 是 | 是 |
 
 ## <a name="how-to-implement-connected-animation"></a>如何实现连接动画
 
@@ -268,7 +268,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 }
 ```
 
-若要使用此元素作为目标来启动动画（如从详细信息视图向后导航时），请使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果刚加载了 ListView 的数据源，TryStartConnectedAnimationAsync 将等待启动动画，直到创建了相应的项容器。
+若要使用此元素作为目标来启动动画（如从详细信息视图向后导航时），请使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果你刚为 ListView 加载了数据源，TryStartConnectedAnimationAsync 将会等到相应的项目容器已被创建时才启动动画。
 
 ```csharp
 private void ContactsListView_Loaded(object sender, RoutedEventArgs e)

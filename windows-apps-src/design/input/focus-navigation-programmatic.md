@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在 UWP 应用中使用键盘、游戏板和辅助工具以编程方式管理焦点导航。
+Description: 了解如何使用 Windows 应用程序中的键盘、游戏板和辅助工具以编程方式管理焦点导航。
 title: 使用键盘、手柄和辅助功能工具的编程焦点导航
 label: Programmatic focus navigation
 keywords: 键盘, 游戏控制器, 遥控器, 导航, 导航策略, 输入, 用户交互, 辅助功能, 可用性
@@ -10,18 +10,18 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d919a86a44110d5b3b444fdf47d41f31637ccb6b
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 6b66363588ddad01b05ccc9cc6b3b7912fa21594
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210003"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970142"
 ---
 # <a name="programmatic-focus-navigation"></a>编程焦点导航
 
 ![键盘、遥控器和方向键](images/dpad-remote/dpad-remote-keyboard.png)
 
-若要在 UWP 应用程序中以编程方式移动焦点，可以使用 [FocusManager.TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 方法或 [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) 方法。
+若要在 Windows 应用程序中以编程方式移动焦点，可以使用[system.windows.input.focusmanager>. TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_)方法或[FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_)方法。
 
 [TryMoveFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_) 将会尝试将焦点从具有焦点的元素更改到指定方向的下一个可聚焦元素，而 [FindNextElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_) 将会根据指定的导航方向检索将获得焦点的元素（作为 [DependencyObject](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject)）（仅限定向导航，不能用于模仿 Tab 键导航）。
 
@@ -136,7 +136,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 下图展示了其中的一些概念。 
 
-如果元素 B 具有焦点，则在向右导航时，FindNextElement 会将 I 标识为候选焦点。 其原因是：
+如果元素 B 具有焦点，则在向右导航时，FindNextElement 会将 I 标识为候选焦点。 这样做的原因是：
 - 由于 A 上的 [HintRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect)，因此起始参考点是 A，不是 B
 - C 不是候选项，因为已将 MyPanel 指定为 [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot)
 - F 不是候选项，因为 [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) 与其重叠
@@ -211,7 +211,7 @@ private void OnNoFocusCandidateFound (
 
 ![更改 GettingFocus 事件的焦点导航目标](images/keyboard/focus-events.png)
 
-*更改 GettingFocus 事件上的焦点导航目标*
+*更改 GettingFocus 事件的焦点导航目标*
 
 此处，我们显示了如何处理 [GettingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) 事件并重定向焦点。
 
@@ -250,7 +250,7 @@ private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
 }
 ```
 
-此处，我们显示了菜单关闭时如何处理 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 的 [LosingFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 事件并设置焦点。
+此处，我们显示了菜单关闭时如何处理 [CommandBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar) 的 [LosingFocus](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus) 事件并设置焦点。
 
 ```XAML
 <CommandBar x:Name="MyCommandBar" LosingFocus="OnLosingFocus">
@@ -327,6 +327,6 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="related-articles"></a>相关文章
 
-- [键盘、游戏板、远程控制和辅助工具的焦点导航](focus-navigation.md)
+- [适用于键盘、手柄、遥控器和辅助功能工具的焦点导航](focus-navigation.md)
 - [键盘交互](keyboard-interactions.md)
 - [键盘辅助功能](../accessibility/keyboard-accessibility.md)

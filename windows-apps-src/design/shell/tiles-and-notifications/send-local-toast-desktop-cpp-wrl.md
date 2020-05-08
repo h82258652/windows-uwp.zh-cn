@@ -1,22 +1,22 @@
 ---
-Description: 了解 Win32 C++ WRL 应用如何可以发送本地 toast 通知并处理用户单击 toast 的操作。
+Description: 了解 Win32 c + + WRL 应用如何可以发送本地 toast 通知并处理用户单击 toast 的操作。
 title: 从桌面 C++ WRL 应用发送本地 toast 通知
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, uwp, win32, 桌面, toast 通知, 发送 toast, 发送本地 toast, 桌面桥, C++, cpp, cplusplus, WRL
+keywords: windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，desktop bridge，.msix，稀疏包，c + +，cpp，cplusplus，WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: abd3fc88f2ecacd0146a9f3a88a3240630078454
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: cc87f9281b9623c1f1b46def8f886cfebeb0438f
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684203"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968292"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>从桌面 C++ WRL 应用发送本地 toast 通知
 
-桌面应用（包括桌面桥和经典 Win32）可以像通用 Windows 平台 (UWP) 应用一样发送交互式 toast 通知。 但是，由于激活方案不同，桌面应用存在一些特殊步骤，并且若不使用桌面桥，可能会缺少程序包标识符。
+桌面应用（包括打包的[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)应用、使用[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)获取包标识和经典非打包 Win32 应用的应用）可以像 Windows 应用应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
 
 > [!IMPORTANT]
 > 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C#](send-local-toast-desktop.md)。
@@ -47,7 +47,7 @@ ms.locfileid: "75684203"
 
 ## <a name="step-3-include-the-header-files-and-namespaces"></a>步骤 3：包括头文件和命名空间
 
-包括兼容库头文件，以及与使用 UWP toast API 相关的头文件和命名空间。
+包括兼容库标头文件以及与使用 Windows toast Api 相关的标头文件和命名空间。
 
 ```cpp
 #include "DesktopNotificationManagerCompat.h"
@@ -89,12 +89,12 @@ CoCreatableClass(NotificationActivator);
 
 ## <a name="step-5-register-with-notification-platform"></a>步骤 5：注册通知平台
 
-然后，必须注册通知平台。 根据所使用的是桌面桥还是经典 Win32，步骤会有所不同。 如果两者都支持，用于这两者的步骤均需执行（但无需对代码实施分支操作，库会自行执行此操作！）。
+然后，必须注册通知平台。 具体步骤取决于你使用的是 .MSIX/稀疏包还是经典 Win32。 如果两者都支持，用于这两者的步骤均需执行（但无需对代码实施分支操作，库会自行执行此操作！）。
 
 
-### <a name="desktop-bridge"></a>桌面桥
+### <a name="msixsparse-package"></a>.MSIX/稀疏包
 
-如果使用桌面桥（或如果同时支持两者），请在 **Package.appxmanifest** 中添加：
+如果你使用的是[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)或[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)（或同时支持两者），请在**appxmanifest.xml**中添加：
 
 1. **xmlns:com** 声明
 2. **xmlns:desktop** 声明
@@ -102,7 +102,7 @@ CoCreatableClass(NotificationActivator);
 4. 使用步骤 4 中 GUID 的 COM 激活器的 **com:Extension**。 务必包括 `Arguments="-ToastActivated"`，以便了解是从 toast 启动
 5. **windows.toastNotificationActivation** 的 **desktop:Extension**，用于声明 toast 激活器 CLSID（步骤 #4 中的 GUID）。
 
-**Package.appxmanifest**
+**Appxmanifest.xml**
 
 ```xml
 <Package
@@ -147,7 +147,7 @@ CoCreatableClass(NotificationActivator);
 
 如果对安装程序使用 WiX，则编辑 **Product.wxs** 文件，将两种快捷方式属性添加到“开始”菜单快捷方式中，如下所示。 确保步骤 #4 中的 GUID 包含在 `{}` 中，如下所示。
 
-**Wsmanconfig.wxs**
+**Product.wxs**
 
 ```xml
 <Shortcut Id="ApplicationStartMenuShortcut" Name="Wix Sample" Description="Wix Sample" Target="[INSTALLFOLDER]WixSample.exe" WorkingDirectory="INSTALLFOLDER">
@@ -170,18 +170,18 @@ CoCreatableClass(NotificationActivator);
 然后，在不考虑安装程序的情况下，在应用的启动代码中（在调用任何通知 API 之前），调用 **RegisterAumidAndComServer** 方法，指定步骤 #4 中的通知激活器类和上面使用的 AUMID。
 
 ```cpp
-// Register AUMID and COM server (for Desktop Bridge apps, this no-ops)
+// Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
 hr = DesktopNotificationManagerCompat::RegisterAumidAndComServer(L"YourCompany.YourApp", __uuidof(NotificationActivator));
 ```
 
-如果同时支持桌面桥和经典 Win32，任何情况下均可调用此方法。 如果在桌面桥下运行，此方法会立即返回。 无需对代码实施分支操作。
+如果同时支持 .MSIX/稀疏包和经典 Win32，则无需调用此方法。 如果在 .MSIX 或稀疏包下运行，则此方法将立即返回。 无需对代码实施分支操作。
 
 使用此方法可调用兼容 API 来发送和管理通知，而无需总是提供 AUMID。 并且它会插入 COM 服务器的 LocalServer32 注册表项。
 
 
 ## <a name="step-6-register-com-activator"></a>步骤 6：注册 COM 激活器
 
-对于桌面桥和经典 Win32 应用，均须注册通知激活器类型，以便能够处理 toast 激活。
+对于 .MSIX/稀疏包和经典 Win32 应用，必须注册 notification activator 类型，以便可以处理 toast 激活。
 
 在应用的启动代码中，调用以下 **RegisterActivator** 方法。 必须调用此方法才能够接收任何 toast 激活。
 
@@ -193,12 +193,12 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## <a name="step-7-send-a-notification"></a>步骤 7：发送通知
 
-发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 创建 **ToastNotifier**。 兼容库会自动根据桌面桥与经典 Win32 之间的区别进行相应处理，因此无需对代码实施分支操作。 对于经典 Win32，兼容库会缓存调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或不提供 AUMID 的问题。
+发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 创建 **ToastNotifier**。 兼容库自动处理 .MSIX/稀疏包和经典 Win32 之间的差异，因此你无需分叉你的代码。 对于经典 Win32，兼容库会缓存调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或不提供 AUMID 的问题。
 
 确保按以下所示使用 **ToastGeneric** 绑定，因为旧版 Windows 8.1 toast 通知模板不会激活在步骤 4 中创建的 COM 通知激活器。
 
 > [!IMPORTANT]
-> 仅清单中具有 Internet 功能的桌面桥应用才支持 http 图像。 经典 Win32 应用不支持 http 图像；必须将图像下载到本地应用数据中并在本地进行引用。
+> Http 映像仅在其清单中具有 internet 功能的 .MSIX/稀疏包应用中受支持。 经典 Win32 应用不支持 http 图像；必须将图像下载到本地应用数据中并在本地进行引用。
 
 ```cpp
 // Construct XML
@@ -322,7 +322,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
     HRESULT hr = winRtInitializer;
     if (SUCCEEDED(hr))
     {
-        // Register AUMID and COM server (for Desktop Bridge apps, this no-ops)
+        // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
         hr = DesktopNotificationManagerCompat::RegisterAumidAndComServer(L"WindowsNotifications.DesktopToastsCpp", __uuidof(NotificationActivator));
         if (SUCCEEDED(hr))
         {
@@ -395,7 +395,7 @@ if (SUCCEEDED(hr))
 
 ## <a name="step-10-deploying-and-debugging"></a>步骤 10：部署和调试
 
-若要部署和调试桌面桥应用，请参阅[运行、调试和测试打包的桌面应用](/windows/uwp/porting/desktop-to-uwp-debug)。
+若要部署和调试 .MSIX/稀疏包应用，请参阅[运行、调试和测试打包的桌面应用](/windows/uwp/porting/desktop-to-uwp-debug)。
 
 若要部署和调试经典 Win32 应用，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 
@@ -403,11 +403,11 @@ if (SUCCEEDED(hr))
 
 如果会出现通知但通知未保留在操作中心中（在弹出窗口关闭后消失），这意味着未正确实现 COM 激活器。
 
-如果同时安装了桌面桥和经典 Win32 应用，应注意，桌面桥应用会取代经典 Win32 应用来处理 toast 激活。 这意味着，单击经典 Win32 应用中的 toast 后，仍会启动桌面桥应用。 卸载桌面桥应用后会还原为由经典 Win32 应用来处理激活。
+如果已安装 .MSIX/稀疏包和经典 Win32 应用，请注意，.MSIX/稀疏包应用在处理 toast 激活时将取代经典 Win32 应用。 这意味着，在单击经典 Win32 应用程序中的 toast 时，它仍将启动 .MSIX/稀疏包应用。 卸载 .MSIX/稀疏包应用会将激活恢复回经典 Win32 应用。
 
 如果收到 `HRESULT 0x800401f0 CoInitialize has not been called.`，请务必先在应用中调用 `CoInitialize(nullptr)`，然后再调用 API。
 
-如果在调用兼容 API 时收到 `HRESULT 0x8000000e A method was called at an unexpected time.`，这很可能意味着调用所需的 Register 方法失败（或如果使用的是一个桌面桥应用，则意味着当前未在桌面桥上下文中运行应用）。
+如果在调用`HRESULT 0x8000000e A method was called at an unexpected time.`兼容 api 时收到，这可能意味着你无法调用所需的寄存器方法（或者，如果 .msix/稀疏包应用程序当前未在 .msix/稀疏上下文下运行你的应用程序）。
 
 如果收到大量 `unresolved external symbol` 编译错误，则很可能是因为忘记在步骤 1 中将 `runtimeobject.lib` 添加到**其他依赖项**中（或者只将其添加到“调试”配置而未添加到“发布”配置）。
 
@@ -420,9 +420,9 @@ Windows 8 引入了 toast 通知，但使用的是[旧版 toast 模板](https://
 
 | 操作系统 | ToastGeneric | COM 激活器 | 旧版 toast 模板 |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
-| Windows 8.1/8 | N/A | N/A | 支持 |
-| Windows 7 及更低版本 | N/A | N/A | N/A |
+| Windows 10 | 支持 | 支持 | 支持（但不会激活 COM 服务器） |
+| Windows 8.1/8 | 不可用 | 不可用 | 支持 |
+| Windows 7 及更低版本 | 不可用 | 不可用 | 不可用 |
 
 若要检查是否是在 Windows 10 上运行，请包含 `<VersionHelpers.h>` 标头并检查 **IsWindows10OrGreater** 方法。 如果返回 true，则继续调用本文档中所述的所有方法！ 
 
@@ -444,5 +444,5 @@ if (IsWindows10OrGreater())
 ## <a name="resources"></a>资源
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/desktop-toasts)
-* [桌面应用中的 Toast 通知](toast-desktop-apps.md)
-* [Toast 内容文档](adaptive-interactive-toasts.md)
+* [来自桌面应用的 Toast 通知](toast-desktop-apps.md)
+* [toast 内容文档](adaptive-interactive-toasts.md)

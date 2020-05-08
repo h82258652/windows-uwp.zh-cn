@@ -1,6 +1,6 @@
 ---
 Description: 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
-title: UWP 应用中的淡化动画
+title: 淡化动画
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d8642e911a3ad4275e0a7a0f147ca9d70f415b0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6b937ba4174d01096a09a98f7efd4e7e3dce9632
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366790"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970302"
 ---
 # <a name="fade-animations"></a>淡化动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "66366790"
 
 使用淡化动画将项目引入或引出视图。 两个常见淡化动画是淡入和淡出。
 
-> **重要的 API**：[**FadeInThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)， [ **FadeOutThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
+> **重要 API**：[**FadeInThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)、[**FadeOutThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -35,8 +35,8 @@ ms.locfileid: "66366790"
 ## <a name="related-articles"></a>相关文章
 
 * [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [进行淡化动画处理](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [快速入门：对 UI 使用库动画进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [创建淡化动画](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
+* [快速入门：使用库动画创建 UI 动画](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**FadeInThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation)
 * [**FadeOutThemeAnimation 类**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation)
 

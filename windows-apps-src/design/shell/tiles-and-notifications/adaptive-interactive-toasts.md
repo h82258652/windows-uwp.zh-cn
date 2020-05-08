@@ -8,28 +8,28 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, toast 通知, 交互式 toast, 自适应 toast, toast 内容, toast 有效负载
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b424da3b9413c7528cb6f6a6a888e9fe2cc7cb7
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: bda62b76973adb7b6cfe068cdd9ca33b1a54454c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209853"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970922"
 ---
 # <a name="toast-content"></a>Toast 内容
 
 借助自适应和交互式 toast 通知，可使用文本、图像和按钮/输入创建灵活的通知。
 
-> **重要 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要的 API**：[UWP 社区工具包通知 NuGet 程序包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> 若要查看 Windows 8.1 和 Windows Phone 8.1 中的旧模板，请参阅[旧 toast 模板目录](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
+> 要查看 Windows 8.1 和 Windows Phone 8.1 中的传统模板，请参阅[传统 Toast 模板目录](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
 
 
 ## <a name="getting-started"></a>入门
 
 **安装通知库。** 如果希望使用 C# 而不是 XML 来生成通知，请安装名为 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 程序包（搜索“notifications uwp”）。 本文中提供的 C# 示例使用 NuGet 程序包的版本 1.0.0。
 
-**安装通知可视化工具。** 此免费 UWP 应用通过在你编辑时提供 toast 的即时可视预览来帮助你设计交互 toast 通知，类似于 Visual Studio 的 XAML 编辑器/设计视图。 请参阅[通知可视化工具](notifications-visualizer.md)了解详细信息，或[从 Microsoft Store 下载通知可视化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
+**安装通知可视化工具。** 此免费 Windows 应用可帮助你设计交互式 toast 通知，方法是在编辑时提供 toast 的即时可视化预览，这与 Visual Studio 的 XAML 编辑器/设计视图类似。 请参阅[通知可视化工具](notifications-visualizer.md)了解详细信息，或[从 Microsoft Store 下载通知可视化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
 
 
 ## <a name="sending-a-toast-notification"></a>发送 toast 通知
@@ -88,7 +88,7 @@ ToastContent content = new ToastContent()
 ![Toast 通知结构](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>Visual
+## <a name="visual"></a>视觉对象
 
 每个 toast 均必须指定一个 visual，此处必须包含带文本、图像等的通用 toast 绑定。 这些元素将在各种 Windows 设备上呈现，包括桌面设备、手机、平板电脑和 Xbox。
 
@@ -144,7 +144,7 @@ new ToastBindingGeneric()
 
 ## <a name="app-logo-override"></a>应用徽标替代
 
-默认情况下，toast 将显示应用徽标。 但可将此徽标替代为自己的 [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo) 图像。 例如，如果这是来自某人的通知，则建议将应用徽标替换为此人的照片。
+默认情况下，toast 将显示应用徽标。 不过，你可以用自己的[**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo)映像覆盖此徽标。 例如，如果这是来自某人的通知，则建议将应用徽标替换为此人的照片。
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
@@ -236,7 +236,7 @@ Toast 通知中使用的图像可源自以下位置...
 
 对于 http 和 https 远程 Web 图像，每个单独图像的文件大小存在一定限制。 在 Fall Creators Update (16299) 中，我们将正常连接时的限制提升至 3 MB，并将按流量计费的连接上的限制提升至 1 MB。 之前，图像大小始终限制在 200 KB。
 
-| 正常连接 | 按流量计费的连接 | Fall Creators Update 之前 |
+| 正常连接 | 计量连接 | Fall Creators Update 之前 |
 | - | - | - |
 | 3 MB | 1 MB | 200 KB |
 
@@ -294,7 +294,7 @@ ToastContent toastContent = new ToastContent()
 ```
 
 
-## <a name="progress-bar"></a>进度栏
+## <a name="progress-bar"></a>进度条
 
 **创意者更新中的新增**内容：你可以在 toast 通知上提供一个进度条，以使用户能够了解操作（如下载）的进度。
 
@@ -318,7 +318,7 @@ ToastContent toastContent = new ToastContent()
 
 这些附加内容是用 Adaptive 指定的，阅读[自适应磁贴文档](create-adaptive-tiles.md)可了解更多内容。
 
-请注意，任何自适应内容均必须包含在 [**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup) 中。 否则将不会使用自适应呈现。
+请注意，任何自适应内容都必须包含在[**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup)中。 否则将不会使用自适应呈现。
 
 
 ### <a name="columns-and-text-elements"></a>列和文本元素
@@ -806,7 +806,7 @@ ToastContent content = new ToastContent()
 
 
 
-## <a name="audio"></a>音频：
+## <a name="audio"></a>音频
 
 移动版一直支持自定义音频，桌面版 1511（内部测试版本 10586）或更新版本也支持此功能。 可通过以下路径引用自定义音频：
 
@@ -879,6 +879,6 @@ ToastContent content = new ToastContent()
  
 ## <a name="related-topics"></a>相关主题
 
-* [发送本地 toast 并处理激活](send-local-toast.md)
+* [发送本地 toast 和处理激活](send-local-toast.md)
 * [GitHub 上的通知库（UWP 社区工具包的一部分）](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [针对语言、缩放和高对比度的磁贴和 toast 通知支持](tile-toast-language-scale-contrast.md)
+* [磁贴和 toast 通知的语言、比例和高对比度支持](tile-toast-language-scale-contrast.md)

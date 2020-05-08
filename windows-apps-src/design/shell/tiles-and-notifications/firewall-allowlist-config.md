@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10，uwp，WNS，windows 通知服务，通知，windows，防火墙，疑难解答，IP，流量，企业，网络，IPv4，VIP，FQDN，公共 IP 地址
 ms.localizationpriority: medium
-ms.openlocfilehash: 34e66249c5b44cbfecd81b9238eda2b1e5412b9a
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 7f87dc0cc174a22f474c91a58f3ffeb738822fa8
+ms.sourcegitcommit: 963316e065cf36c17b6360c3f89fba93a1a94827
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80080652"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82868904"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支持 WNS 流量的企业防火墙和代理配置
 
@@ -60,6 +60,10 @@ ms.locfileid: "80080652"
         <IpRange Subnet=""/>
         <!-- See the file in Download Center for the complete list of IP ranges -->
     </ClientIPsIPv4>
+    <IdentityServiceDNS>
+        <DNS FQDN="login.microsoftonline.com"/>
+        <DNS FQDN="login.live.com"/>
+    </IdentityServiceDNS>
 </WNSPublicIpAddresses>
 
 ```
@@ -84,8 +88,8 @@ ms.locfileid: "80080652"
 
 * [快速入门：发送推送通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868252(v=win.10))
 * [如何请求、创建和保存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))
-* [如何拦截正在运行的应用程序的通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
-* [如何向 Windows 推送通知服务（WNS）进行身份验证](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
-* [推送通知服务请求和响应标头](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
-* [推送通知的指导原则和核对清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [如何为正在运行的应用程序截获通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709907(v=win.10))
+* [如何使用 Windows 推送通知服务 (WNS) 进行验证](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10))
+* [推送通知服务请求和响应头](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10))
+* [推送通知指南和清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
  

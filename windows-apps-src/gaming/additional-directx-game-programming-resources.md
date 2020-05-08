@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 游戏, 编程
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ecf6e4c28695d789a133c96d6fa04ceb705ef3e
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a87b979dc48f8977047599cac6a32ba0d901bd63
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258541"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606356"
 ---
 # <a name="game-programming-resources"></a>游戏编程资源
 
@@ -24,7 +24,7 @@ ms.locfileid: "74258541"
 
 
 -   [图形和游戏](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
--   [OpenGL 引用](https://www.opengl.org/sdk/docs/man4/)
+-   [OpenGL 参考](https://www.opengl.org/sdk/docs/man4/)
 
 ## <a name="game-design-guidance"></a>游戏设计指南
 
@@ -34,15 +34,15 @@ ms.locfileid: "74258541"
 ## <a name="blogs"></a>博客
 
 
--   [适用于 Windows 和 DirectX SDK 的游戏]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX 开发人员博客]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Shawn Hargreaves 博客]( https://go.microsoft.com/fwlink/p/?LinkID=288872)（XNA 游戏信息）。
+-   [Windows 游戏和 DirectX SDK]( https://blogs.msdn.com/b/chuckw/)
+-   [DirectX 开发人员博客]( https://blogs.msdn.com/b/directx/)
+-   [Shawn Hargreaves 博客]( https://blogs.msdn.com/b/shawnhar/)（XNA 游戏信息）。
 
 ## <a name="toolkits"></a>工具包
 
 
--   [DirectX 工具包](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [DirectXTex 纹理处理库](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [DirectX 工具包](  https://github.com/Microsoft/DirectXTK)
+-   [DirectXTex 纹理处理库](  https://github.com/Microsoft/DirectXTex)
 -   Microsoft Visual Studio[图形诊断](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) - 一个易于使用的 Windows 运行时 API，具有带 GPU 加速的立即模式 2D 图形呈现。
 -   [Microsoft Store 的角度](https://github.com/microsoft/angle/wiki)-通过将 OPENGL es api 调用转换为 DIRECTX 11 API 调用，在 Windows 上运行 OpenGL es 内容。

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 任务栏, 任务栏管理器, 固定到任务栏, 主要磁贴
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aa259cd8c5c45ea99d83eaecb8e30fb0438aa8f
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 44ef6430398960e13fe5eebb40a52d022df6f0d2
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684536"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970652"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>将应用固定到任务栏
 
@@ -55,7 +55,7 @@ else
 
 ## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. 检查任务栏是否存在并允许固定
 
-UWP 应用可以在各种设备上运行；并非所有设备都支持任务栏。 现在，仅桌面设备支持任务栏。 
+Windows 应用可在各种设备上运行;并不是所有的都支持任务栏。 现在，仅桌面设备支持任务栏。 
 
 即使任务栏可用，用户计算机上的组策略也可能会禁用任务栏固定。 因此，尝试固定应用之前，你需要检查是否支持固定到任务栏。 如果任务栏存在并且允许固定，则 [TaskbarManager.IsPinningAllowed 属性](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsPinningAllowed) 会返回 True。 
 
@@ -110,4 +110,4 @@ bool isPinned = await TaskbarManager.GetDefault().RequestPinCurrentAppAsync();
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
 * [TaskbarManager 类](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [将应用固定到 "开始" 菜单](tiles-and-notifications/primary-tile-apis.md)
+* [将应用固定到“开始”菜单](tiles-and-notifications/primary-tile-apis.md)
