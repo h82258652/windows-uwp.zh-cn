@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 34425a0e754d62a1d9d7716bca3576463aec3ba5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: dbf9d40d4dc2cfedaa78cbca5b16c4cc26d2d4e1
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259729"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730075"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 开发人员计划上的 UWP 已知问题
 
 本主题介绍 Xbox One 开发人员计划上的 UWP 已知问题。 有关此计划的详细信息，请参阅 [Xbox 上的 UWP](index.md)。 
 
-\[如果你从 API 参考主题的链接中获得，并且正在查找通用设备家族 API 信息，请参阅[Xbox 上尚不支持的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。\]
+\[如果你从 API 参考主题的链接中获得，并且正在查找通用设备系列 API 信息，请参阅[Xbox 上尚不支持的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。\]
 
 下表重点介绍可能遇到的某些已知问题，但该列表并没有包括所有问题。 
 
@@ -39,9 +39,9 @@ ms.locfileid: "74259729"
 6. 关闭应用。
 7. 从 VS 中使用 F5 进行启动，然后应用将在没有任何提示的情况下启动。
 
-此时，权限是_粘连的_，除非你注销用户，否则即使卸载并重新安装该应用也是如此。
+此时，即使你卸载并重新安装了该应用程序，也会在用户注销之前，该权限处于_粘滞_状态。
  
-有另外一种仅适用于子女帐户的免除类型。 子女帐户需要家长登录以授予权限，但当家长将选项选择为**始终**时，他们就可以允许孩子启动该应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。
+有另外一种仅适用于子女帐户的免除类型。 子帐户需要使用父帐户才能登录到授予权限，但当用户执行此操作时，父帐户可以选择**始终**允许子对象启动应用。 该免除存储在云中且持续有效，即使孩子注销并重新登录也是如此。
 
 ## <a name="storagefilecopyasync-fails-to-copy-encrypted-files-to-unencrypted-destination"></a>StorageFile.CopyAsync 无法将加密的文件复制到未加密的目标 
 
@@ -58,14 +58,14 @@ System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070
 
 限制 Xbox One 设备上的通用 Windows 平台 (UWP) 应用绑定到 [57344, 65535] 范围中的端口，非独占。 尽管在运行时可能显示已成功绑定到这些端口，但网络流量在到达应用前已悄然断掉。 应用应在允许条件下绑定到端口 0，这支持系统选择本地端口。 如果需要使用特定端口，端口号必须在 [1025, 49151] 范围中，而且应该查看 IANA 注册表并避免与之相冲突。 有关详细信息，请参阅[服务名称和传输协议端口号注册表](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
 
-## <a name="uwp-api-coverage"></a>UWP API 覆盖范围
+## <a name="windows-runtime-api-coverage"></a>Windows 运行时 API 覆盖范围
 
-并非所有 UWP API 在 Xbox 上都受支持。 对于我们已知不起作用的 API 列表，请参阅 [Xbox 上尚不支持的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。 如果你发现其他 API 的问题，请通过论坛报告它们。 
+Xbox 不支持所有 Windows 运行时 Api。 对于我们已知不起作用的 API 列表，请参阅 [Xbox 上尚不支持的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。 如果你发现其他 API 的问题，请通过论坛报告它们。 
 
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>导航到 WDP 导致证书警告
 
-你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 若要访问 Windows Device Portal，请单击**继续浏览此网站**。
+你将收到已提供证书的警告（类似于以下屏幕截图），因为 Xbox One 控制台签名的安全证书不被视为众所周知的受信任发布者。 若要访问 Windows 设备门户，请单击 "**继续访问此网站**"。
 
 ![网站安全证书警告](images/security_cert_warning.jpg)
 
@@ -115,6 +115,6 @@ namespace TestDNLA {
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [常见问题解答](frequently-asked-questions.md)
-- [Xbox one 上的 UWP](index.md)
+- [Xbox One 上的 UWP](index.md)

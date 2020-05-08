@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx 9, directx 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: c5c86ad836c94d990f5728ce9f7cfe49c754ce19
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: e0643773ca529540284f0749de6e91349f4e9c47
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210603"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730236"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>将 DirectX 9 功能映射到 DirectX 11 API
 
@@ -19,7 +19,7 @@ ms.locfileid: "79210603"
 
 **摘要**
 
--   [规划 DirectX 端口](plan-your-directx-port.md)
+-   [规划 DirectX 移植](plan-your-directx-port.md)
 -   [从 Direct3D 9 到 Direct3D 11 的重要更改](understand-direct3d-11-1-concepts.md)
 -   功能映射
 
@@ -66,7 +66,7 @@ Visual Studio 仍然在后台使用 FXC 编译着色器对象。 将提前编译
 
 若要快速浏览加载着色器资源，请参阅[从 Direct3D 9 到 UWP 的简单移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)。
 
-Direct3D 11 引入了着色器模型5，它需要 Direct3D 功能级别 11\_0 （或更高版本）。 请参阅 [Direct3D 11 的 HLSL 着色器模型 5 功能](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl)。
+Direct3D 11 引入了着色器模型5，它需要 Direct3D 功能\_级别 11 0 （或更高版本）。 请参阅 [Direct3D 11 的 HLSL 着色器模型 5 功能](https://docs.microsoft.com/windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl)。
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>替换 XNAMath 和 D3DXMath
 
@@ -82,7 +82,7 @@ UWP 不支持 DirectSound：
 
 -   使用 [XAudio2](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-apis-portal) 向游戏中添加声音效果。
 
-##  <a name="replace-directinput-with-xinput-and-uwp-apis"></a>将 DirectInput 替换为 XInput 和 UWP API
+##  <a name="replace-directinput-with-xinput-and-windows-runtime-apis"></a>将 DirectInput 替换为 XInput 和 Windows 运行时 Api
 
 
 UWP 不支持 DirectInput：
@@ -101,17 +101,17 @@ DirectShow 不再是 DirectX API（或 Windows API）的一部分。 [Microsoft 
 
 Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要提供符合 UWP 要求的网络代码。 使用以下 API：
 
--   [UWP 应用的 Win32 和 COM （网络）（Windows）](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
--   [**Windows 网络命名空间（Windows）** ](https://docs.microsoft.com/uwp/api/Windows.Networking)
--   [**Windows 网络 Socket 命名空间（Windows）** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
--   [**Windows 网络连接命名空间（Windows）** ](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity)
--   [**Windows.applicationmodel.resources.core 命名空间（Windows）** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+-   [适用于 UWP 应用的 Win32 和 COM（网络）(Windows)](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)
+-   [**Windows.Networking 命名空间 (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking)
+-   [**Windows.Networking.Sockets 命名空间 (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets)
+-   [**Windows.Networking.Connectivity 命名空间 (Windows)**](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity)
+-   [**Windows.ApplicationModel.Background 命名空间 (Windows)**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
 
 以下文章将帮助你在应用包清单中添加网络功能并声明对网络的支持。
 
--   [使用套接字进行连接（使用C#/VB/C++和 XAML 的 UWP 应用）（Windows）](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
--   [使用 Websocket 连接（使用C#/VB/C++和 XAML 的 UWP 应用）（Windows）](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
--   [连接到 web 服务（使用C#/VB/C++和 XAML 的 UWP 应用）（Windows）](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
+-   [使用套接字进行连接（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh452976(v=win.10))
+-   [使用 WebSockets 进行连接（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh994396(v=win.10))
+-   [连接到 Web 服务（使用 C#/VB/C++ 和 XAML 的 UWP 应用）(Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
 -   [网络基础知识](https://docs.microsoft.com/windows/uwp/networking/networking-basics)
 
 请注意，所有 UWP 应用（包括游戏）都使用特定类型的后台任务，以便在应用暂停时保持连接。 如果你的游戏需要在暂停时保持连接状态，请参阅[网络基础知识](https://docs.microsoft.com/windows/uwp/networking/networking-basics)。
@@ -146,8 +146,8 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3">IDXGIDevice3</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-present">IDirect3DDevice9：:P 重发</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1：:P resent1</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-present">IDirect3DDevice9::Present</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-testcooperativelevel">IDirect3DDevice9::TestCooperativeLevel</a></p></td>
@@ -187,30 +187,30 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11samplerstate">ID3D11SamplerState</a></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitive">IDirect3DDevice9：:D rawIndexedPrimitive</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitive">IDirect3DDevice9：:D rawPrimitive</a></p></td>
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw">ID3D11DeviceContext：:D raw</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed">ID3D11DeviceContext：:D rawIndexed</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexedinstanced">ID3D11DeviceContext：:D rawIndexedInstanced</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawinstanced">ID3D11DeviceContext：:D rawInstanced</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetprimitivetopology">ID3D11DeviceContext：： IASetPrimitiveTopology</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawauto">ID3D11DeviceContext：:D rawAuto</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitive">IDirect3DDevice9::DrawIndexedPrimitive</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitive">IDirect3DDevice9::DrawPrimitive</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw">ID3D11DeviceContext::Draw</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed">ID3D11DeviceContext::DrawIndexed</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexedinstanced">ID3D11DeviceContext::DrawIndexedInstanced</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawinstanced">ID3D11DeviceContext::DrawInstanced</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-iasetprimitivetopology">ID3D11DeviceContext::IASetPrimitiveTopology</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawauto">ID3D11DeviceContext::DrawAuto</a></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-beginscene">IDirect3DDevice9::BeginScene</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-endscene">IDirect3DDevice9::EndScene</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitiveup">IDirect3DDevice9：:D rawPrimitiveUP</a></p>
-<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitiveup">IDirect3DDevice9：:D rawIndexedPrimitiveUP</a></p></td>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawprimitiveup">IDirect3DDevice9::DrawPrimitiveUP</a></p>
+<p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-drawindexedprimitiveup">IDirect3DDevice9::DrawIndexedPrimitiveUP</a></p></td>
 <td align="left"><p>无直接等效项</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-showcursor">IDirect3DDevice9：： ShowCursor</a></p>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-showcursor">IDirect3DDevice9::ShowCursor</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-setcursorposition">IDirect3DDevice9::SetCursorPosition</a></p>
 <p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-setcursorproperties">IDirect3DDevice9::SetCursorProperties</a></p></td>
 <td align="left"><p>使用标准光标 API。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-reset">IDirect3DDevice9：： Reset</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3ddevice9-reset">IDirect3DDevice9::Reset</a></p></td>
 <td align="left"><p>LOST 设备和 POOL_MANAGED 不再存在。 <a href="https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1">IDXGISwapChain1::Present1</a> 可能失败，并带有 <a href="https://docs.microsoft.com/windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_DEVICE_REMOVED</a> 返回值。</p></td>
 </tr>
 <tr class="odd">
@@ -342,7 +342,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   在着色器中使用 swizzle，以将红色复制到其他组件，以获取 Direct3D 9 行为。
+<strong>请注意</strong>   ，在着色器中使用 r swizzle 将红色复制到其他组件，以获取 Direct3D 9 行为。
 </div>
 <div>
  
@@ -352,7 +352,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   在着色器中使用 rrrg 重复红色，并将绿色移动到 alpha 组件以获取 Direct3D 9 行为。
+<strong>请注意</strong>   ，在着色器中使用 swizzle 可重复红色，并将绿色移动到 alpha 组件以获取 Direct3D 9 行为。
 </div>
 <div>
  
@@ -398,7 +398,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>，Direct3D 9 中的   数据通过 255.0 f 向上扩展，但这可以在着色器中进行处理。
+<strong>请注意</strong>   ，在 Direct3D 9 中，数据已由 255.0 f 放大，但这可以在着色器中进行处理。
 </div>
 <div>
  
@@ -412,7 +412,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>，Direct3D 9 中的   数据通过 255.0 f 向上扩展，但这可以在着色器中进行处理。
+<strong>请注意</strong>   ，在 Direct3D 9 中，数据已由 255.0 f 放大，但这可以在着色器中进行处理。
 </div>
 <div>
  
@@ -426,7 +426,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM &amp; DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>请注意</strong>，   DXT1 和 DXT2 与 API/硬件的透视是相同的。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
+<strong>请注意</strong>   ，DXT1 和 DXT2 与 API/硬件的透视是相同的。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
 </div>
 <div>
  
@@ -440,7 +440,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM &amp; DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>请注意</strong>，   DXT3 和 DXT4 与 API/硬件的透视是相同的。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
+<strong>请注意</strong>   ，DXT3 和 DXT4 与 API/硬件的透视是相同的。 唯一的差别是是否使用了预乘 alpha，这可以通过应用程序来跟踪，并且不需要单独的格式。
 </div>
 <div>
  
@@ -506,7 +506,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   在着色器中使用 swizzle，以将红色复制到其他组件，以获取 D3D9 行为。
+<strong>请注意</strong>   ，在着色器中使用 r swizzle 将红色复制到其他组件，以获取 D3D9 行为。
 </div>
 <div>
  
@@ -580,7 +580,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>请注意</strong>   着色器获取 UINT 值，但如果需要 Direct3D 9 样式整数浮点值（0.0 f，1.0 f .。。255. f），UINT 只能在着色器中转换为 float32。
+<strong>请注意</strong>   ，着色器获取 UINT 值，但如果需要 Direct3D 9 样式整数浮点值（0.0 f，1.0 f .。。255. f），UINT 只能在着色器中转换为 float32。
 </div>
 <div>
  
@@ -590,7 +590,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>请注意</strong>   着色器获取圣数值，但如果需要 Direct3D 9 样式整数浮点值，则可以只在着色器中将圣马丁转换为 float32。
+<strong>请注意</strong>   ，着色器会获得圣马丁值，但是如果需要 Direct3D 9 样式整数浮点值，则可以将圣马丁转换为着色器中的 float32。
 </div>
 <div>
  
@@ -600,7 +600,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>请注意</strong>   着色器获取圣数值，但如果需要 Direct3D 9 样式整数浮点值，则可以只在着色器中将圣马丁转换为 float32。
+<strong>请注意</strong>   ，着色器会获得圣马丁值，但是如果需要 Direct3D 9 样式整数浮点值，则可以将圣马丁转换为着色器中的 float32。
 </div>
 <div>
  
@@ -646,7 +646,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   需要功能级别10.0 或更高版本
+<strong>注意</strong>  需要功能级别10.0 或更高版本
 </div>
 <div>
  
@@ -656,7 +656,7 @@ Microsoft DirectPlay 已被弃用。 如果游戏使用网络服务，则需要�
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>请注意</strong>   需要功能级别10.0 或更高版本
+<strong>注意</strong>  需要功能级别10.0 或更高版本
 </div>
 <div>
  

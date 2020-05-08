@@ -1,23 +1,23 @@
 ---
-Description: 了解如何将辅助磁贴固定到开始，从 UWP 应用。
-title: 将辅助的磁贴固定到开始
+Description: 了解如何从 Windows 应用程序中固定辅助磁贴。
+title: 固定辅助磁贴以开始
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 辅助磁贴, 固定, 快速入门, 代码示例, 示例, secondarytile
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8c535e7e2abaf68212cb0a2f6daac8741b6548a5
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653152"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971042"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>将辅助的磁贴固定到开始
+# <a name="pin-secondary-tiles-to-start"></a>固定辅助磁贴以开始
 
 
-本主题指导你完成为 UWP 应用创建辅助磁贴并将其固定到“开始”菜单的步骤。
+本主题将指导你完成为 Windows 应用程序创建辅助磁贴的步骤，并将其固定到 "开始" 菜单。
 
 ![辅助磁贴的屏幕截图](images/secondarytiles.png)
 
@@ -37,10 +37,10 @@ using Windows.UI.StartScreen;
 
 辅助磁贴由一些主要组件构成...
 
-* **TileId**:一个唯一标识符，可以识别出在其他辅助磁贴之间的磁贴。
-* **DisplayName**:要在磁贴上显示名称。
-* **参数**:自变量时，你需要传递回您的应用程序在用户单击磁贴。
-* **Square150x150Logo**:所需的徽标，中等大小上显示磁贴 （和大小调整为较小磁贴，如果提供没有小徽标）。
+* **TileId**：用于标识其他辅助磁贴中的磁贴的唯一标识符。
+* **DisplayName**：想要显示在磁贴上的名称。
+* **Arguments**：想要在用户单击磁贴时传递回应用的参数。
+* **Square150x150Logo**：显示在中等大小磁贴上的所需徽标（如果未提供小徽标，则会按较小大小的磁贴来调整大小）。
 
 你**必须**为所有上述属性提供初始化值，否则将引起异常。
 
@@ -67,7 +67,7 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="optional-add-support-for-larger-tile-sizes"></a>可选：添加对更大的磁贴大小的支持
+## <a name="optional-add-support-for-larger-tile-sizes"></a>可选：添加对较大磁贴大小的支持
 
 如果你打算在辅助磁贴上显示大量磁贴通知，则可能需要允许用户将其磁贴调宽或调大，以便他们能够查看更多内容。
 
@@ -88,7 +88,7 @@ tile.VisualElements.Square44x44Logo = new Uri("ms-appx:///Assets/CityTiles/Squar
 ```
 
 
-## <a name="optional-enable-showing-the-display-name"></a>可选：启用显示的显示名称
+## <a name="optional-enable-showing-the-display-name"></a>可选：允许显示显示名称
 
 默认情况下将不显示显示名称。 若要在中等/宽/大磁贴上显示显示名称，请添加以下代码。
 
@@ -177,10 +177,10 @@ var tiles = await SecondaryTile.FindAllAsync();
 若要了解如何通过磁贴通知在磁贴上显示丰富的内容，请参阅[发送本地磁贴通知](sending-a-local-tile-notification.md)。
 
 
-## <a name="related"></a>相关
+## <a name="related"></a>相关内容
 
 * [辅助磁贴概述](secondary-tiles.md)
 * [辅助磁贴指南](secondary-tiles-guidance.md)
-* [磁贴资产](app-assets.md)
+* [磁贴资源](app-assets.md)
 * [磁贴内容文档](create-adaptive-tiles.md)
 * [发送本地磁贴通知](sending-a-local-tile-notification.md)

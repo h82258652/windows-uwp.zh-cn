@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d6647b25f6f9f5015ca31ae75a869731ccc1fe3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 0d3f1f4cfa609ce7e5df83c98f2e815045a3209f
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258307"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970222"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 交互
 
-surface Studio](images/windows-wheel/dial-pen-studio-600px.png) 的 ![图  
+![适配 Surface Studio 的 Surface Dial 的图像](images/windows-wheel/dial-pen-studio-600px.png)  
 *适配 Surface Studio 和触控笔的 Surface Dial*（可通过 [Microsoft 官方商城](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)购买）。
 
 ## <a name="overview"></a>概述
@@ -30,13 +30,13 @@ Surface Dial 之类的 Windows Wheel 设备是一类全新的输入设备，使�
 | 视频 |   |
 | --- | --- |
 | <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
-| *Surface 拨号应用合作伙伴* | *开发人员的外围网络* |
+| *Surface Dial 应用合作伙伴* | *适用于开发人员的 Surface Dial* |
 
 借助基于*旋转*操作（或手势）的外形规格，Surface Dial 旨在成为对主设备输入进行补充的多模态辅助输入设备。 在大多数情况下，用户使用其惯用手执行某个任务（如使用笔进行墨迹书写）期间，该设备由其非惯用手操控。 它不是专为精确指针输入（如触摸、笔或鼠标）而设计。 
 
 此外，Surface Dial 同时支持*长按*操作和*单击*操作。 长按只有一个功能：显示命令的菜单。 如果菜单处于活动状态，则由该菜单处理旋转和单击输入。 否则，该输入会传递给你的应用进行处理。 
 
-**与所有 Windows 输入设备一样，你可以自定义并定制表面拨号交互体验，以适合你的应用中的功能。**
+**与所有 Windows 输入设备一样，可以自定义和定制适合你的应用中功能的 Surface Dial 交互体验。**
 
 > [!TIP]
 > Surface Dial 和全新的 Surface Studio 搭配使用可提供更为独特的用户体验。  
@@ -59,21 +59,21 @@ Surface Dial 与 Windows 紧密集成，并且支持菜单上的一组内置工�
 
 除了这一常规平台支持之外，Surface Dial 还与 Windows Ink 平台控件（[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)）紧密集成。
 
-![surface 触控](images/windows-wheel/dial-and-pen-400px.png)  
-*Surface 触控与 Surface 触控笔*
+![适配 Surface 触控笔的 Surface Dial](images/windows-wheel/dial-and-pen-400px.png)  
+*适配 Surface 触控笔的 Surface Dial*
 
 当与 Surface Dial 搭配使用时，这些控件可启用用于修改 Ink 属性和控制 Ink 工具栏标尺模具的附加功能。
 
 在使用 Ink 工具栏的墨迹书写应用程序中打开 Surface Dial 菜单时，该菜单中现在包含用于控制笔类型和画笔粗细的工具。 标尺已启用时，会将相应工具添加到该菜单中供设备控制标尺的位置和角度。
 
-用于 Windows Ink 工具栏的笔选择工具的 ![Surface 拨号菜单](images/windows-wheel/surface-dial-menu-inktoolbar-pen.png)  
-*适用于 Windows Ink 工具栏的 "带笔选择工具的外围网络" 菜单*
+![适配 Windows Ink 工具栏的笔选择工具的 Surface Dial 菜单](images/windows-wheel/surface-dial-menu-inktoolbar-pen.png)  
+*适配 Windows Ink 工具栏的笔选择工具的 Surface Dial 菜单*
 
-适用于 Windows Ink 工具栏的 "笔触大小工具" !["Surface 拨号盘" 菜单](images/windows-wheel/surface-dial-menu-inktoolbar-strokesize.png)  
-*适用于 Windows Ink 工具栏的 "笔触大小" 工具的 "Surface 拨号盘" 菜单*
+![适配 Windows Ink 工具栏的笔划大小工具的 Surface Dial 菜单](images/windows-wheel/surface-dial-menu-inktoolbar-strokesize.png)  
+*适配 Windows Ink 工具栏的笔划大小工具的 Surface Dial 菜单*
 
-用于 Windows Ink 工具栏的带标尺工具的 ![Surface 拨号菜单](images/windows-wheel/surface-dial-menu-inktoolbar-ruler.png)  
-*用于 Windows Ink 工具栏的带标尺工具的外围网络菜单*
+![适配 Windows Ink 工具栏的标尺工具的 Surface Dial 菜单](images/windows-wheel/surface-dial-menu-inktoolbar-ruler.png)  
+*适配 Windows Ink 工具栏的标尺工具的 Surface Dial 菜单*
 
 ## <a name="user-customization"></a>用户自定义
 
@@ -94,16 +94,16 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 我们建议为应用或应用上下文只提供一个自定义工具。 如此可使你基于用户正在执行的操作设置工具，无需用户激活 Surface Dial 菜单并选择工具。 
 
-**动态更新工具集合**  
+**动态地更新工具的集合**  
 由于 Surface Dial 菜单项不支持禁用状态，因此应基于用户上下文（当前视图或焦点窗口）动态地添加和删除工具（包括默认的内置工具）。 如果工具与当前活动无关，或者它是多余的，请删除它。
 
 > [!IMPORTANT]
 > 当向菜单添加项时，请确保菜单中尚不存在该项。
 
-**请勿删除内置系统音量设置工具**  
+**请勿删除内置的系统音量设置工具**  
 通常，用户常常需要使用音量控制。 他们可能会边聆听音乐边使用应用，因此应始终可以从 Surface Dial 菜单访问音量和下一首工具。 （播放媒体时，会将下一首工具自动添加到菜单。）
 
-**与菜单组织一致**  
+**与菜单组织保持一致**  
 这有助于用户在使用应用时发现并了解哪些工具可用，还有助于提高用户切换工具时的效率。
 
 **提供与内置图标一致的高质量图标**  
@@ -116,9 +116,9 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 |   |   |   |
 | --- | --- | --- |
 | ![具有 Alpha 背景的图标](images/windows-wheel/surface-dial-menu-icon1.png) | ![使用默认主题图标在 Wheel 菜单上显示的图标](images/windows-wheel/surface-dial-menu-icon2.png) | ![Surface Dial 屏幕菜单](images/windows-wheel/surface-dial-menu-icon3.png) |
-| *带有 alpha 背景的图标* | *带有默认主题的滚轮菜单上显示的图标* | *鼠标滚轮菜单上显示的图标高对比度白主题* |
+| *具有 Alpha 背景的图标* | *使用默认主题在 Wheel 菜单上显示的图标* | *使用高对比度白色主题在 Wheel 菜单上显示的图标* |
 
-**使用简洁名称和描述性名称**  
+**使用描述性的简洁名称**  
 工具名称以及工具图标一起显示在工具菜单中，屏幕阅读器也会使用该工具名称。 
 - 名称应短到足以放入 Wheel 菜单的中心圆圈内
 - 名称应清楚地标识主要操作（可以隐含互补操作）：
@@ -141,7 +141,7 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 1. 首先，我们在 XAML 中声明我们的 UI（仅一个滑块和一个切换按钮）。
 
-   示例应用 UI 的 ![图像](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   ![示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *示例应用 UI*
 
     ```Xaml
@@ -242,8 +242,8 @@ Surface Dial 菜单可容纳七个项。 如果有八个或更多项，用户需
 
 当我们运行该应用时，我们使用 Surface Dial 与之进行交互。 首先，我们长按以打开菜单，然后选择我们的自定义工具。 自定义工具激活后，通过旋转 Dial 可调整滑块控件，通过单击 Dial 可切换开关。
 
-使用图面拨号自定义工具激活的示例应用 UI ![图像](images/windows-wheel/surface-dial-snippet-customtool2.png)  
-*使用图面拨号自定义工具激活的示例应用程序 UI*
+![使用 Surface Dial 自定义工具激活的示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+*使用 Surface Dial 自定义工具激活的示例应用 UI*
 
 **指定内置工具**
 
@@ -302,15 +302,15 @@ Surface Dial 主要设计用于对涉及模拟值或控制的平滑、增量调�
 
 #### <a name="ux-guidance-for-custom-interactions"></a>自定义交互的 UX 指南
 
-**具有连续或高旋转敏感度的工具应禁用 haptic 反馈**
+**具有连续或高旋转灵敏度的工具应禁用触觉反馈**
 
 触觉反馈与活动工具的旋转灵敏度匹配。 我们建议禁用具有连续或高旋转灵敏度的工具的触觉反馈，因为用户体验可能会感到不舒服。 
 
-**主导手不应影响基于旋转的交互**
+**惯用手不应该影响基于旋转的交互**
 
 Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows 设置 -> 设备 -> 触控笔和 Windows Ink** 中设置书写（或惯用手）。
 
-**对于所有旋转交互，应考虑区域设置**
+**应该为所有旋转交互考虑区域设置。**
 
 通过使你的交互适应和适合区域设置以及从右到左的布局，最大程度地提高客户的满意度。
 
@@ -318,14 +318,14 @@ Surface Dial 无法检测到正在使用哪只手，但用户可以在 **Windows
 
 |   |   |   |
 | --- | --- | --- |
-| Left<br/>向上<br/>缩小 | ![Surface Dial 的图像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>向下<br/>放大 |
+| Left<br/>向上<br/>出 | ![Surface Dial 的图像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>向下<br/>In |
 |   |   |   |
 
 | 概念性方向 | 映射到 Surface Dial | 顺时针旋转 | 逆时针旋转 |
 | --- | --- | --- | --- |
-| 水平 | 基于 Surface Dial 顶部的左右映射 | Right | Left |
+| 横向 | 基于 Surface Dial 顶部的左右映射 | Right | Left |
 | 垂直 | 基于 Surface Dial 左侧的上下映射 | 向下 | 向上 |
-| Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | 放大 | 缩小 |
+| Z 轴 | 映射到向上/向右的放大（或靠近）<br/>映射到向下/向左的缩小（或远离） | In | 出 |
 
 #### <a name="developer-guidance"></a>开发人员指南
 
@@ -372,13 +372,13 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### <a name="ux-guidance"></a>UX 指南
 
-**如果用户无法从结果中轻松恢复，请不要将操作或命令映射到此手势**
+**如果用户不能轻松地从结果中恢复，请勿将操作或命令映射到该手势**
 
 必须可撤消你的应用基于用户单击 Surface Dial 执行的任何操作。 始终使用户能够轻松地遍历应用后退堆栈和恢复应用的以前状态。
 
 单击手势的二元运算（如静音/取消静音或显示/隐藏）提供良好的用户体验。
 
-**不应通过单击 "表面拨号" 启用或禁用模式工具**
+**不应该通过单击 Surface Dial 启用或禁用模式工具**
 
 某些应用/工具模式可能会禁用依赖旋转的交互或与其冲突。 Windows Ink 工具栏中的功能（如标尺）应通过其他 UI 提供功能（Ink 工具栏提供了内置的 [**ToggleButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton) 控件）切换开关。
 
@@ -386,7 +386,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### <a name="developer-guidance"></a>开发人员指南
 
-单击 Surface Dial 时，会触发 [**RadialController.ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件。 [  **RadialControllerButtonClickedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact) 属性，该属性包含 Surface Dial 与 Surface Studio 屏幕接触的位置和边界区域。 Surface Dial 未与屏幕保持接触，则该属性为 null。 
+单击 Surface Dial 时，会触发 [**RadialController.ButtonClicked**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.buttonclicked) 事件。 [**RadialControllerButtonClickedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs) 包括 [**Contact**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerbuttonclickedeventargs.contact) 属性，该属性包含 Surface Dial 与 Surface Studio 屏幕接触的位置和边界区域。 Surface Dial 未与屏幕保持接触，则该属性为 null。 
 
 ### <a name="on-screen"></a>屏幕
 
@@ -401,25 +401,25 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### <a name="ux-guidance-for-on-screen-interactions"></a>屏幕交互的 UX 指导原则
 
-**当在屏幕上检测到 "表面拨号" 时，应用应响应**
+**屏幕上检测到 Surface Dial 时，应用应做出响应**
 
 视觉反馈可帮助向用户指示你的应用在 Surface Studio 上已检测到设备。
 
-**基于设备位置调整与外围网络相关的 UI**
+**基于设备位置调整与 Surface Dial 有关的 UI**
 
 设备（和用户的身体）可能会阻挡关键的 UI，具体取决于用户放置设备的位置。
 
-**基于用户交互调整与外围网络相关的 UI**
+**基于用户交互调整与 Surface Dial 有关的 UI**
 
 除了硬件阻挡，用户的手和臂在用户使用设备时可能会阻挡部分屏幕。
 
 已阻挡区域取决于正在使用设备的手。 由于设备设计为主要与非惯用手配合使用，因此与 Surface Dial 有关的 UI 应针对用户指定（**Windows 设置 > 设备 > 触控笔和 Windows Ink > 选择书写时使用哪只手**设置）的另一只手进行调整。
 
-**交互应响应 Surface 拨号位置，而不是移动**
+**交互应响应 Surface Dial 的位置，而不是移动。**
 
 设备的脚设计为紧跟屏幕而不是滑动，因为它不是精确的指针设备。 因此，我们希望用户使用 Surface Dial 的常见方式是提起、放下它，而不是在屏幕上拖动它。
 
-**使用屏幕位置确定用户意向**
+**使用屏幕位置确定用户意图**
 
 基于 UI 上下文（如邻近的控件、画布或窗口）设置活动工具，可通过减少执行任务所需的步骤来改善用户体验。
 
@@ -435,7 +435,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 1. 首先，我们在 XAML 中声明我们的 UI（四个部分，每一个都有一个滑块和一个切换按钮）。
 
-   示例应用 UI 的 ![图像](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   ![示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool3.png)  
    *示例应用 UI*
 
    ```xaml 
@@ -635,20 +635,20 @@ private void ActivateGridAtLocation(Point Location)
 
 当我们运行该应用时，我们使用 Surface Dial 与之进行交互。 首先，我们将设备置于 Surface Studio 屏幕上，应用会检查到该设备并将它与右下部分关联（请参阅图像）。 然后，我们长按 Surface Dial 以打开菜单，然后选择我们的自定义工具。 自定义工具激活后，通过旋转 Surface Dial 可调整滑块控件，通过单击 Surface Dial 可切换开关。
 
-使用图面拨号自定义工具激活的示例应用 UI ![图像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
-*使用图面拨号自定义工具激活的示例应用程序 UI*
+![使用 Surface Dial 自定义工具激活的示例应用 UI 的图像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+*使用 Surface Dial 自定义工具激活的示例应用 UI*
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本主题概述了有关以下方面的 Surface Dial 输入设备与 UX 和开发人员指南：与 Surface Studio 配合使用时，如何针对离屏情形以及屏幕情形自定义用户体验。
 
 ## <a name="feedback"></a>反馈
 
-请将你的问题、建议和反馈发送至 [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com)。
+请将你的问题、建议和反馈发送[radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com)到。
 
 ## <a name="related-articles"></a>相关文章
 
-[教程：支持 UWP 应用中的外围网络（和其他轮设备）](radialcontroller-walkthrough.md)
+[教程：在 Windows 应用程序中支持 Surface 拨号（和其他轮设备）](radialcontroller-walkthrough.md)
 
 ### <a name="api-reference"></a>API 参考
 
@@ -675,7 +675,7 @@ private void ActivateGridAtLocation(Point Location)
 
 [着色书籍示例](https://github.com/Microsoft/Windows-appsample-coloringbook)
 
-[入门教程：支持 UWP 应用中的表面拨号（和其他轮设备）](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
+[入门教程：在 Windows 应用程序中支持外围网络（和其他轮设备）](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController)
 
 [通用 Windows 平台示例（C# 和 C++）](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 

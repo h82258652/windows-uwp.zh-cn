@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b673122d707e152d24c49d3bacf71ed52cdb0ae5
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4145fbc67c6788a1d742fb0db616ecbc719e4b34
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74256812"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619311"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展
 
@@ -23,9 +23,9 @@ ms.locfileid: "74256812"
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady 加密媒体扩展中的新增功能
 
-本部分提供对 PlayReady 加密媒体扩展（EME）所做更改的列表，以便在 Windows 10 上启用 PlayReady 内容保护。
+本部分提供对 PlayReady 加密媒体扩展 (EME) 所做的更改列表，这些更改用于在 Windows 10 上启用 PlayReady 内容保护。
 
-以下列表描述了对适用于 Windows 10 的 PlayReady 加密媒体扩展所做的新功能和更改：
+下表介绍适用于 Windows 10 的 PlayReady 加密媒体扩展的新增功能和所做更改：
 
 -   添加了硬件数字版权管理 (DRM)。
 
@@ -34,10 +34,10 @@ ms.locfileid: "74256812"
 -   可主动获取非永久性许可证。
 -   在一条消息中可获取多个许可证。
 
-    你可以使用包含多个密钥标识符（KeyIDs）的 PlayReady 对象，Windows 8.1 中使用，也可以将[内容解密模型数据（CDMData）](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN)与多个 KeyIDs 一起使用。
+    可结合多个密钥标识符 (KeyID) 使用 PlayReady 对象（与在 Windows 8.1 中一样），或结合多个 KeyID 使用[内容解密模型数据 (CDMData)](https://docs.microsoft.com/previous-versions/windows/apps/dn457361(v=ieb.10)?redirectedfrom=MSDN)。
 
     > [!NOTE]
-    > 在 Windows 10 中，在 CDMData 中 &lt;KeyID&gt; 下支持多个密钥标识符。
+    > 在 Windows 10 中，在 CDMData 中的 &lt;KeyID&gt; 下支持多个密钥标识符。
 
 -   添加了实时到期支持，或有限持续时间许可证 (LDL)。
 
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> 上面示例中的安全停止数据 `<SessionID>B64 encoded session ID</SessionID>` 可以是星号（\*），这是记录的所有安全停止会话的通配符。 也就是说， **SessionID**标记可以是特定的会话，也可以是通配符（\*）以选择所有安全的停止会话。
+> 上面示例`<SessionID>B64 encoded session ID</SessionID>`中的安全停止数据可以是星号（\*），它是记录的所有安全停止会话的通配符。 也就是说， **SessionID**标记可以是特定的会话，也可以是通配符（\*）以选择所有安全的停止会话。
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>加密媒体扩展的编程注意事项
 
-本部分列出了为 Windows 10 创建启用 PlayReady 的 web 应用时应考虑的编程注意事项。
+本部分列出了在为 Windows 10 创建支持 PlayReady 的 Web 应用时，应考虑的编程注意事项。
 
-应用创建的 **MSMediaKeys** 和 **MSMediaKeySession** 对象必须保持活动状态，直到你的应用关闭。 确保这些对象保持活动状态的一种方法是将它们作为全局变量分配（如果声明为函数内的本地变量，这些变量将超出范围并遵循垃圾回收）。 例如，以下示例将变量*g\_msMediaKeys*和*g\_mediaKeySession*分配为全局变量，然后将其分配给函数中的**msMediaKeys**和**MSMediaKeySession**对象。
+应用创建的 **MSMediaKeys** 和 **MSMediaKeySession** 对象必须保持活动状态，直到你的应用关闭。 确保这些对象保持活动状态的一种方法是将它们作为全局变量分配（如果声明为函数内的本地变量，这些变量将超出范围并遵循垃圾回收）。 例如，下面的示例将*g\_msMediaKeys*和*g\_mediaKeySession*变量作为全局变量分配，然后将其分配给函数中的**msMediaKeys**和**MSMediaKeySession**对象。
 
 ``` syntax
 var g_msMediaKeys;
@@ -296,9 +296,9 @@ function foo() {
 }
 ```
 
-有关详细信息，请参阅[示例应用程序](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)。
+有关详细信息，请参阅[示例应用程序](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/PlayReady)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 - [PlayReady DRM](playready-client-sdk.md)
 
 

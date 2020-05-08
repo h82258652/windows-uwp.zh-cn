@@ -6,12 +6,12 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: Windows 10, uwp, 预告片, 视频, 屏幕截图, 图像, 图标, Microsoft Store 一览, Microsoft Store 一览图像
 ms.localizationpriority: medium
-ms.openlocfilehash: 48a8566c80516588939dc0ef071c3da4b9232d64
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 7995f7d8539ee5835ee9ae079305731879decc95
+ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210893"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255181"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>应用屏幕截图、图像和预告片
 
@@ -25,14 +25,14 @@ ms.locfileid: "79210893"
 
 ## <a name="screenshots"></a>屏幕截图
 
-屏幕截图是你的应用在应用的应用商店一览中显示给你的客户的图像。
+屏幕截图是应用在应用的 Microsoft Store 一览中向客户显示的图像。
 
 你可以选择为你的应用支持的不同设备系列提供屏幕截图，以便客户在该类型的设备上查看应用的 Microsoft Store 一览时显示相应的屏幕截图。 
 
 提交过程中只需要一张屏幕截图（对于任何设备系列），不过你也可以提供多张屏幕截图。最多可为桌面设备提供 9 张屏幕截图，而最多可为其他设备系列提供 8 张屏幕截图。 我们建议为应用支持的每一种设备系列至少提供 4 张屏幕截图，以便客户了解应用在其设备类型上的外观。 （不包括你的应用不支持的设备系列的屏幕截图。）请注意：**桌面**屏幕截图还向使用 Surface Hub 设备的客户显示。
 
 > [!NOTE]
-> Microsoft Visual Studio 提供了一个[可帮助你捕获屏幕截图的工具](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store)。
+> Microsoft Visual Studio 提供了一种[工具来帮助你捕获屏幕快照](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store)。
 
 每张屏幕截图都必须是 .png 文件，采用横向或纵向布局，且文件大小不能大于 50 MB。
 
@@ -89,7 +89,7 @@ ms.locfileid: "79210893"
 
 若要让应用商店只使用上传的映像（适用于 Windows 10 上的客户，包括 Xbox），而不使用包中的任何图像，请选中**为 Windows 10 和 Xbox 上的客户显示的框，并显示已上传的徽标图像，而不是包中的图像**。
 
-选中此框后，一个名为“Store 显示图像”的新部分会出现。 可在此处上传3个图像，包括**1:1 应用磁贴图标（300 x 300 像素）** 大小（如果选中该框，则提供该图像的字段将移入此部分）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
+选中此框后，一个名为“Store 显示图像”的新部分会出现****。 可在此处上传3个图像，包括**1:1 应用磁贴图标（300 x 300 像素）** 大小（如果选中该框，则提供该图像的字段将移入此部分）。 如果你使用此选项，我们建议提供所有三种图像大小：300 x 300、150 x 150 和 71 x 71 像素。 但是，只需要 300 x 300 大小的图像。
 
 
 <span id="promotional-images" />
@@ -128,7 +128,7 @@ ms.locfileid: "79210893"
 
 还必须遵循以下所列的要求。
 
-**向列表中添加尾端：**
+**将预告片添加到你的应用商店一览中：**
 1. 在指示框中上传预告片**视频文件**。 如果你想重新使用已上传的预告片（可能是不同语言的应用商店一览），也会显示一个下拉框。
 2. 上传预告片后，你需要上传与之相应的**缩略图**。 略缩图必须为 1920 x 1080 像素的 .png 文件，通常应为取自预告片的静态图像。
 3. 单击铅笔图标,为预告片添加**标题**（255 字符或更少）。
@@ -144,10 +144,9 @@ ms.locfileid: "79210893"
 
 提供你预告片时，请确保遵循这些要求：
 
-- 视频格式必须为 MOV 或 MP4。 如果要上传4K 视频，则仅支持 "个"。
-- 视频持续时长不能超过 60 秒。
+- 视频格式必须为 MOV 或 MP4。
 - 预告片的文件大小不能超过 2 GB。
-- 视频分辨率必须为 1920 x 1080 像素或 3840 x 2160 像素。
+- 视频分辨率必须为 1920 x 1080 像素。
 - 缩略图必须为 PNG 文件，分辨率为 1920 x 1080 像素或 3840 x 2160 像素。
 - 标题不能超过 255 个字符。
 - 在你的预告片中不包含年龄分级。
@@ -161,16 +160,16 @@ ms.locfileid: "79210893"
 
 #### <a name="mov"></a>MOV
 
-| 视频 | 音频： | 
+| 视频 | 音频 | 
 | --- | --- | 
 | <ul><li>1080p ProRes (适当的位置为高质量)</li><li>原生帧率；首选 29.97 FPS</li></ul> | <ul><li>需要立体声</li><li>推荐的音频级别：-16 LKFS/LUFS</li></ul> |
 
 
 #### <a name="mp4"></a>MP4
 
-| 视频 | 音频： |
+| 视频 | 音频 |
 | --- | --- |
-| <ul><li>编解码器[： h.264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) （AVC1）  </li><li>逐行扫描（无隔行）</li><li>高级画质</li><li>2 个连续的 B 帧</li><li>关闭 GOP。 一半帧率的 GOP</li><li>CABAC</li><li>50 MB/s </li><li>色彩空间：4.2.0</li></ul> | <ul><li>编解码器：AAC-LC</li><li>通道：立体声或环绕声</li><li>采样率：48 KHz</li><li>音频比特率：立体声为 384 KB/s，环绕声为 512 KB/s</li></ul> |
+| <ul><li>编解码器[： h.264](https://docs.microsoft.com/windows/desktop/DirectShow/h-264-video-types) （AVC1）  </li><li>逐行扫描（无隔行）</li><li>高级画质</li><li>2 个连续的 B 帧</li><li>关闭 GOP。 一半帧率的 GOP</li><li>CABAC</li><li>50 MB/秒 </li><li>色彩空间：4.2.0</li></ul> | <ul><li>编解码器：AAC-LC</li><li>通道：立体声或环绕声</li><li>采样率：48 KHz</li><li>音频比特率：立体声为 384 KB/s，环绕声为 512 KB/s</li></ul> |
 
 > [!WARNING]
 > 客户可能不会听到用 AVC1 以外的编解码器编码的未处理文件的音频。
@@ -184,7 +183,7 @@ ms.locfileid: "79210893"
 
 在**windows 10 和 Xbox 映像**部分中， **16:9 的超大英雄（1920 x 1080 或 3840 x 2160 像素）** 图像用于所有 Windows 10 设备类型（包括 Xbox）的 Microsoft Store 中的各种布局。 无论你的应用针对哪种操作系统版本或设备类型，我们都建议提供此图像。
 
-如果一览包括*视频预告片*，则[需要](#trailers)使用此图像进行正确显示。 对于 Windows 10 版本 1607 或更高版本（包括 Xbox）的客户，它会作为 Microsoft Store 一览顶部的主图像（或在任何预告片播放完成后出现）。 此外它还可以在整个 Microsoft Store 的促销布局中突出显示你的应用。 注意：此图像不得包含产品的标题或其他文本消息。
+如果一览包括[视频预告片](#trailers)，则*需要*使用此图像进行正确显示。 对于 Windows 10 版本 1607 或更高版本（包括 Xbox）的客户，它会作为 Microsoft Store 一览顶部的主图像（或在任何预告片播放完成后出现）。 此外它还可以在整个 Microsoft Store 的促销布局中突出显示你的应用。 注意：此图像不得包含产品的标题或其他文本消息。
 
 下面是在设计此图像时需要牢记的一些技巧：
 
@@ -197,9 +196,9 @@ ms.locfileid: "79210893"
 - 避免显示你应用的 UI，并且请勿使用任何特定于设备的图像。
 - 避免使用政治和国家/地区主题、标志或宗教符号。
 - 请勿提供包含以下内容的图像：无礼手势、裸体、赌博、货币、毒品、烟草或酒精。
-- 请勿使用指向观众的武器或过度暴力和血腥内容。
+- 请勿使用指向观众的武器或过度暴力和血腥的内容。
 
-虽然提供此图像后，我们可以为你的应用考虑特色促销机会，但并不能保证你的应用会获得特别推荐。 有关详细信息，请参阅[轻松推广你的应用](make-your-app-easier-to-promote.md)。
+虽然提供此图像后，我们可以为你的应用考虑特色促销机会，但并不能保证你的应用会获得特别推荐。 有关详细信息，请参阅[使应用易于升级](make-your-app-easier-to-promote.md)。
 
 
 ### <a name="xbox-images"></a>Xbox 图像
@@ -212,7 +211,7 @@ ms.locfileid: "79210893"
 - **特别推荐的促销方块图片，1080 x 1080 像素**：*不得*包含产品的名称。
 
 > [!NOTE]
-> 要在 Xbox 上获得最佳显示效果，还必须在**应用商店徽标**部分中提供 [9:16（720 x 1080 或 1440 x 2160 像素）](#store-logos)图像。
+> 要在 Xbox 上获得最佳显示效果，还必须在[应用商店徽标](#store-logos)部分中提供 **9:16（720 x 1080 或 1440 x 2160 像素）** 图像。
 
 
 ### <a name="holographic-image"></a>全息图像
@@ -226,7 +225,7 @@ ms.locfileid: "79210893"
 
 如果你以前提交的应用支持早期版本的操作系统（Windows 8.x 和/或 Windows Phone 1.2.1），则必须提供这些映像，以供我们考虑在促销布局中采用你的应用（尽管他们不保证你的应用将会提供）。 如果你的应用程序不支持这些较早版本的操作系统，请跳过此部分。 （此部分以前称为**可选促销图像**。）
 
-**对于 Windows Phone 8.1 及更早版本**，促销布局中可使用两种图像大小：**1000 x 800 像素 (5:4)** 和 **358 x 358 像素 (1:1)** 。 如果你的应用在 Windows Phone 8.1 或更早的版本上运行，则我们建议同时提供这两种大小的图像。  
+**对于 Windows Phone 8.1 及更早版本**，促销布局中可使用两种图像大小：**1000 x 800 像素 (5:4)** 和 **358 x 358 像素 (1:1)**。 如果你的应用在 Windows Phone 8.1 或更早的版本上运行，则我们建议同时提供这两种大小的图像。  
 
 > [!TIP]
 > 对于任何支持 Windows Phone 8.1 或更早版本的提交，请务必在[应用商店徽标](#store-logos)部分中提供 300 x 300 的应用磁贴图标图像。 这将确保你的应用不会在应用商店中显示为空白图标。  
