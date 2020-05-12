@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d0e4a290da0d67560715f80bf20fc6ae4d44a8f6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a74d98298f2c51059d8293022817e91ba573cf45
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81266955"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970692"
 ---
 # <a name="number-box"></a>数字框
 
@@ -22,7 +22,7 @@ ms.locfileid: "81266955"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) |  NumberBox 控件需要 Windows UI 库，该库是一个 NuGet 包，其中包含适用于 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) |  NumberBox 控件需要 Windows UI 库，该库是一个 NuGet 包，其中包含适用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 **Windows UI 库 API：** [NumberBox 类](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
 

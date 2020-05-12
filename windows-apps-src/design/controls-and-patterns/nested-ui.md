@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: aa672c99dc83e7955c4d4f91b5bc34620c48ed01
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d2372044076e1885602dec806df95ad60e789cdd
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66364551"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968082"
 ---
 # <a name="nested-ui-in-list-items"></a>列表项中嵌套的 UI
 
@@ -56,9 +56,9 @@ ms.locfileid: "66364551"
 
 ## <a name="options-for-secondary-actions"></a>辅助操作的选项
 
-当创建列表 UI 时，首先需要确保考虑到 UWP 支持的所有输入方法。 有关不同类型的输入的详细信息，请参阅[输入基础版](../input/index.md)。
+当创建列表 UI 时，首先需要确保考虑到 Windows 支持的所有输入方法。 有关不同类型的输入的详细信息，请参阅[输入基础版](../input/index.md)。
 
-在确认应用支持适用于 UWP 的所有输入后，应确定应用的辅助操作的重要程度是否足以在主列表中公开为快捷键。 请记住，公开的操作越多，UI 就变得越复杂。 是否确实需要在主列表 UI 中公开辅助操作，或者是否可以将它们放置在其他位置？
+在确认应用支持适用于 Windows 的所有输入后，应确定应用的辅助操作的重要程度是否足以在主列表中公开为快捷键。 请记住，公开的操作越多，UI 就变得越复杂。 是否确实需要在主列表 UI 中公开辅助操作，或者是否可以将它们放置在其他位置？
 
 当附加操作需要随时可供所有输入访问时，可考虑在主列表 UI 中公开它们。
 
@@ -97,7 +97,7 @@ ms.locfileid: "66364551"
 
 ## <a name="consider-all-inputs"></a>考虑所有输入
 
-当确定使用嵌套的 UI 时，还需根据所有输入类型评估用户体验。 如前面所述，嵌套的 UI 非常适用于某些输入类型。 但是，它并非始终适用于其他一些输入类型。 特别是，键盘、控制器和远程输入可能难以访问嵌套的 UI 元素。 请务必遵循下面的指南以确保你的 UWP 适用于所有输入类型。
+当确定使用嵌套的 UI 时，还需根据所有输入类型评估用户体验。 如前面所述，嵌套的 UI 非常适用于某些输入类型。 但是，它并非始终适用于其他一些输入类型。 特别是，键盘、控制器和远程输入可能难以访问嵌套的 UI 元素。 请务必遵循下面的指南以确保你的 Windows 适用于所有输入类型。
 
 ## <a name="nested-ui-handling"></a>嵌套的 UI 处理
 

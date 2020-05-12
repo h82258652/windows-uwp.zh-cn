@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b97041e305cfaac2a5fe202212741a282dccdb54
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63801121"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968872"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>用于集合和列表的上下文命令
 
@@ -31,7 +31,7 @@ ms.locfileid: "63801121"
 
 ## <a name="creating-commands-for-all-input-types"></a>为所有输入类型创建命令
 
-因为用户可以使用[广泛的设备和输入](../devices/index.md)与 UWP 应用交互，所以应用应通过与输入无关的上下文菜单和特定于输入的快捷方式来公开命令。 通过包含这两者，用户可以对内容快速调用命令，而无论是何种输入或设备类型。
+因为用户可以使用[广泛的设备和输入方式](../devices/index.md)与 Windows 应用交互，所以应用应通过与输入无关的上下文菜单和特定于输入的快捷方式来公开命令。 通过包含这两者，用户可以对内容快速调用命令，而无论是何种输入或设备类型。
 
 下表显示了一些典型集合命令以及用于公开这些命令的方式。 
 
@@ -445,7 +445,7 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 
-* 确保用户可以从所有类型的 UWP 设备访问所有命令。
+* 确保用户可以从所有类型的 Windows 设备访问所有命令。
 * 包含上下文菜单，通过它可以访问所有可用于集合项的命令。 
 * 为常用命令提供输入快捷方式。 
 * 使用 [ICommand 接口](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)实现命令。 

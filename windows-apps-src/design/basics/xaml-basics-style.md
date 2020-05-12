@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e9e0a426d51fddaf4ff509438176e9db7a3e474
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 279a02962693d74c8c9ac037c0e3ee08f44a560b
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684122"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969093"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
@@ -32,7 +32,7 @@ PhotoLab 应用有两个主要页面：
 
 ## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部分：创建精致的滑块控件  
 
-通用 Windows 平台 (UWP) 提供了多种用于自定义应用外观的方法。 从字体和版式设置到颜色和渐变再到模糊效果，你有很多选择。 
+Windows 应用提供了多种自定义应用外观的方法。 从字体和版式设置到颜色和渐变再到模糊效果，你有很多选择。 
 
 在本教程的第一部分，我们会将一些照片编辑控件变得生动有趣。 
 

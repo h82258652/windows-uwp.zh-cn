@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, COM, 组件, 类, 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a286056fc0c44d01482e23e52df0fa80eca0515
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 1b6ce3ce56b4afbf4c45b406c8af369bee4b55bb
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218517"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619321"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 
@@ -127,7 +127,13 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>采用 **IUnknown** 接口指针的 COM 函数
 
-可以调用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 自由函数，将 **com_ptr** 传递给采用 **IUnknown** 接口指针的函数。 有关代码示例，请参阅该主题。
+可以使用 [com_ptr::get](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function)，将 com_ptr 传递给采用 IUnknown 接口指针的函数    。
+
+可以使用 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown) 自由函数返回投影类型的对象的基础原始 [IUnknown 接口](/windows/win32/api/unknwn/nn-unknwn-iunknown)的地址（也就是说，指向该接口的指针）  。 然后，可以将该地址传递给采用 IUnknown 接口指针的函数  。
+
+有关投影类型  的信息，请参阅[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+
+有关 get_unknown 的代码示例，请参阅 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown)，或本主题中的[一个精简 Direct2D 应用程序的完整源代码列表](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application)   。
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>传递和返回 COM 智能指针
 

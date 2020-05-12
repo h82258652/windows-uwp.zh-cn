@@ -1,24 +1,24 @@
 ---
 Description: 每个 UWP 应用中所包含的通用设计功能都有助于生成跨各种设备完美缩放的应用。
-title: 通用 Windows 平台 (UWP) 应用设计（Windows 应用）简介
+title: Windows 应用设计简介（Windows 应用）
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8568a4613b5bb62b98edc7edd302a42153e5e33b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d0e7ad60e8c709cf4a7b075b1d7307bbd61ed79c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209312"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969352"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
 
 ![示例照明应用](images/introUWP-header.jpg)
 
-通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。
+Windows 应用设计指南可以帮助你设计和构建美观、精良的应用。
 
 它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 [Fluent Design System](/windows/apps/fluent-design-system) 以及应用构建社区的需求。
 

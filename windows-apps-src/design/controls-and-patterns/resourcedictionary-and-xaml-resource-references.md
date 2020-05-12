@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b4a02f3307909f325b71cdc0540d44054adf4c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2be937646374db3586b1b3bca2df2b99888c831a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73061970"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968132"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
 
@@ -401,7 +401,7 @@ sealed partial class App : Application
 
 最后，还有一种针对平台资源的资源查找。 平台资源包括为每个系统 UI 主题定义的控件模板，以及用于定义你在 Windows 运行时应用中为所有 UI 控件使用的默认外观的控件模板。 平台资源还包括与系统范围内的外观和主题相关的一组已命名资源。 从技术上来说，这些资源是 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 项，因此在加载应用之后可用于从 XAML 或代码中查找。 例如，系统主题资源包括一个名为 “SystemColorWindowTextColor”的资源，该资源提供一个 [Color](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 定义以使应用文本颜色与系统窗口的文本颜色（来自操作系统和用户首选项）相匹配。 应用的其他 XAML 样式可以引用该样式，或者你的代码可以获取资源查找值（并将该值转换为示例中的 **Color**）。
 
-有关特定于主题的资源和系统资源（可用于使用 XAML 的 UWP 应用）的详细信息和列表，请参阅 [XAML 主题资源](xaml-theme-resources.md)。
+有关特定于主题的资源和系统资源（可用于使用 XAML 的 Windows 应用）的详细信息和列表，请参阅 [XAML 主题资源](xaml-theme-resources.md)。
 
 如果请求的键仍未在这其中任何位置中找到，会发生 XAML 分析错误/异常。 某些情况下，XAML 分析异常可能是 XAML 标记编译操作或 XAML 设计环境未检测到的运行时异常。
 

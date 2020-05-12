@@ -1,16 +1,16 @@
 ---
-Description: UWP 应用中表单的布局指南。
+Description: Windows 应用中表单的布局指南。
 title: 窗体
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: b6533864748b4245b16ec7bcea9d2a831ff1c88a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76520442"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968508"
 ---
 # <a name="forms"></a>窗体
 表单是一组控件，用于收集和提交来自用户的数据。 表单通常用于设置页面、调查、创建帐户，等等。 
@@ -62,7 +62,7 @@ ms.locfileid: "76520442"
 
 在[针对辅助功能进行设计](../accessibility/accessibility.md)时，请将所有的单个控件和控件组进行标记，使用户和屏幕阅读器都能清楚地看到。 
 
-对于字体样式，请使用默认的 [UWP 类型渐变](../style/typography.md)。 将 `TitleTextBlockStyle` 用于页面标题，将 `SubtitleTextBlockStyle` 用于组标题，将 `BodyTextBlockStyle` 用于控件标签。
+对于字体样式，请使用默认的 [Windows 类型渐变](../style/typography.md)。 将 `TitleTextBlockStyle` 用于页面标题，将 `SubtitleTextBlockStyle` 用于组标题，将 `BodyTextBlockStyle` 用于控件标签。
 
 <div class="mx-responsive-img">
 <table>
@@ -149,7 +149,7 @@ ms.locfileid: "76520442"
 ### <a name="additional-controls"></a>其他控件 
 如需 UWP 控件的完整列表，请参阅[按功能排序的控件索引](controls-by-function.md)。
 
-如需更多复杂的自定义 UI 控件，请查看 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](https://www.actiprosoftware.com/products/controls/universal) 等公司提供的 UWP 资源。
+如需更多复杂的自定义 UI 控件，请查看 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](https://www.actiprosoftware.com/products/controls/universal) 等公司提供的资源。
 
 ## <a name="one-column-form-example"></a>单列表单示例
 以下示例使用亚克力的[大纲/细节](master-details.md)[列表视图](lists.md)和 [NavigationView](navigationview.md) 控件。

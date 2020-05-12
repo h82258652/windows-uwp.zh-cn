@@ -1,31 +1,31 @@
 ---
 description: 了解如何在应用中使用版式帮助用户轻松了解内容。
-title: UWP 应用中的版式
+title: Windows 应用中的版式
 ms.date: 04/06/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cb2aef514c8787b5afe11ea5a2818012bfdf2f41
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3a5b6df7a5d8333e0f4834c256a38fc912f8f51e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72282411"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970622"
 ---
-# <a name="typography"></a>版式
+# <a name="typography-in-windows-apps"></a>Windows 应用中的版式
 
 ![主图](images/header-typography.svg)
 
-作为语言的视觉表示形式，版式的主要任务是传达信息。 它的样式应永远不妨碍该目标。 本文介绍如何在 UWP 应用中设计版式以帮助用户轻松高效地了解内容。
+作为语言的视觉表示形式，版式的主要任务是传达信息。 它的样式应永远不妨碍该目标。 本文介绍如何在 Windows 应用中设计版式以帮助用户轻松高效地了解内容。
 
 ## <a name="font"></a>字体
 
-应在应用的全部 UI 中使用同一种字体，建议始终使用 UWP 应用的默认字体 Segoe UI  。 其设计目的是为保持不同字体大小和像素密度下的最佳可读性，并提供可润色系统内容的清晰、明朗的美学效果。
+应用的全部 UI 应使用同一种字体，建议始终使用 Windows 应用的默认字体 Segoe UI  。 其设计目的是为保持不同字体大小和像素密度下的最佳可读性，并提供可润色系统内容的清晰、明朗的美学效果。
 
 ![Segoe UI 字体的示例文本](images/type/segoe-sample.svg)
 
-若要在应用上显示非英语语言或为应用选择另一种字体，请参阅[语言](#languages)和[字体](#fonts)，了解我们推荐的 UWP 应用字体。
+若要在应用上显示非英语语言或为应用选择另一种字体，请参阅[语言](#languages)和[字体](#fonts)，了解我们推荐的 Windows 应用字体。
 
 :::row:::
     :::column:::
@@ -46,7 +46,7 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 遵循 UWP [字体渐变](#type-ramp)大小调整方式。
+![应做事项](images/do.svg) 遵循 Windows [字体渐变](#type-ramp)大小调整方式。
     :::column-end:::
     :::column:::
 ![禁止事项](images/dont.svg) 使用小于 12 像素的字号。
@@ -57,7 +57,7 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 :::row:::
     :::column:::
-用户在扫描页面时依赖于视觉层次结构：标题用于总结内容，正文文本用于提供更多详细信息。 若要在应用中创建清晰的视觉层次结构，请遵循 UWP 字体渐变。
+用户在扫描页面时依赖于视觉层次结构：标题用于总结内容，正文文本用于提供更多详细信息。 若要在应用中创建清晰的视觉层次结构，请遵循 Windows 字体渐变。
     :::column-end:::
     :::column:::
 ![文本块样式](images/type/type-hierarchy.svg)
@@ -66,7 +66,7 @@ UWP 应用中的字号可在所有设备上自动缩放。 该缩放算法确保
 
 ### <a name="type-ramp"></a>字体渐变
 
-UWP 字体渐变在页面上的字型之间建立关键关系，帮助用户轻松阅读内容。 所有大小均以有效像素为单位，并针对所有设备上运行的 UWP 应用进行了优化。
+Windows 字体渐变可在页面上的字型之间建立关键关系，帮助用户轻松阅读内容。 所有大小均以有效像素为单位，并针对所有设备上运行的 UWP 应用进行了优化。
 
 ![字体渐变](images/type/type-ramp.png)
 

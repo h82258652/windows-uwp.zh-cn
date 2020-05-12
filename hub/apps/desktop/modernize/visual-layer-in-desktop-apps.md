@@ -7,16 +7,16 @@ keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 249291c59a31036fa967ac338209404557b57503
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 33a5f0bc31a8fe1421f7ab0de5f229d2feb77915
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66215177"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730130"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>在桌面应用中使用视觉层
 
-现在，可以在非 UWP 桌面应用程序中使用 UWP API 来增强 WPF、Windows 窗体和 C++ Win32 应用程序的感观和功能，并利用只能通过 UWP 获得的最新 Windows 10 UI 功能。
+现在，可以在非 UWP 桌面应用程序中使用 Windows 运行时 API 来增强 WPF、Windows 窗体和 C++ Win32 应用程序的感观和功能，并利用只能通过 UWP 获得的最新 Windows 10 UI 功能。
 
 在许多情况下，可以使用 [XAML Islands](xaml-islands.md) 将现代化 XAML 控件添加到应用。 但是，如果需要创建超越内置控件功能范围的自定义体验，可以访问视觉层 API。
 

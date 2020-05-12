@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 应用认证
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ffd500f3b616367ac26dffbbfc03d43b507dac
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 37c382fb81a4527b730840142643ff72b9020127
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089403"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730297"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 桌面桥应用测试
 
@@ -37,7 +37,7 @@ Windows 桌面桥应用的可选测试仅提供信息，不会用于在 Microsof
 此测试扫描包注册表以检查是否注册了任何文件关联谓词。 
 
 **测试详细信息**  
-可以使用各种通用 Windows 平台 API 增强已转换的桌面应用。 此测试检查应用中的 UWP 二进制文件是否未调用非 UWP API。 UWP 二进制文件设置了 AppContainer  标志。
+可以使用各种 Windows 运行时 API 增强已转换的桌面应用。 此测试检查应用中的 UWP 二进制文件是否未调用非 Windows 运行时 API。 UWP 二进制文件设置了 AppContainer  标志。
 
 **更正操作**  
 请参阅[桌面到 UWP 桥：应用扩展](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions)，以了解这些扩展以及如何正确使用它们的说明。 

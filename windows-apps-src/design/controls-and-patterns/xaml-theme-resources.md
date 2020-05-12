@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2097a35d87594251ed2c0a04be06ccdb705902f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fc05ce50c19a04d5b90d225746c9af6569f49bd3
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80249851"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970432"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
@@ -57,7 +57,7 @@ Windows 运行时不使用这些物理文件进行运行时查找。 这就是�
 
 由“浅色”、“深色”和“高对比度”主题组合的颜色集构成了 XAML 中的 *Windows 颜色渐变*。 无论是想要修改系统主题，还是将系统主题应用到自己的 XAML 元素，了解如何构建颜色资源都非常重要。
 
-有关如何在 UWP 应用中应用颜色的更多信息，请参阅 [UWP 应用中的颜色](../style/color.md)。
+有关如何在 Windows 应用中应用颜色的更多信息，请参阅 [Windows 应用中的颜色](../style/color.md)。
 
 ### <a name="light-and-dark-theme-colors"></a>浅色和深色主题颜色
 
@@ -147,7 +147,7 @@ XAML 框架提供了一个已命名的 [Color](/uwp/api/Windows.UI.Color) 资源
 
 ### <a name="windows-system-high-contrast-colors"></a>Windows 系统高对比度颜色
 
-除了 XAML 框架提供的资源集，还存在派生自 Windows 系统调色板的颜色值集。 这些颜色并不特定于 Windows 运行时或通用 Windows 平台(UWP) 应用。 然而，当使用“高度对比”主题运行系统（并且应用正在运行）时，许多 XAML [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) 资源都将使用这些颜色。 XAML 框架提供这些系统范围的颜色作为键控资源。 这些键遵循以下命名格式：`SystemColor[name]Color`。
+除了 XAML 框架提供的资源集，还存在派生自 Windows 系统调色板的颜色值集。 这些颜色并不特定于 Windows 运行时或 Windows 应用。 然而，当使用“高度对比”主题运行系统（并且应用正在运行）时，许多 XAML [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) 资源都将使用这些颜色。 XAML 框架提供这些系统范围的颜色作为键控资源。 这些键遵循以下命名格式：`SystemColor[name]Color`。
 
 此表列出了 XAML 提供的系统范围的颜色，可作为派生自 Windows 系统调色板的资源对象。 “轻松使用名称”列显示了如何在 Windows 设置 UI 中向颜色添加标签。 “简单的高对比度名称”列中使用一个词描述如何在 XAML 常用控件中应用该颜色。 它将用作我们后面介绍的画笔命名约定的一部分。 如果系统未以高对比度运行，则“初始默认设置”列会显示你已得到的值。
 
@@ -224,7 +224,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
-有关如何在应用中使用 UWP 类型渐变的指南，请参阅 [UWP 应用中的版式](../style/typography.md)。
+有关如何在应用中使用 Windows 类型渐变的指南，请参阅 [Windows 应用中的版式](../style/typography.md)。
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 

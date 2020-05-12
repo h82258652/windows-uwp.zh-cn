@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 66dc74e73207feb9b155adffc116f857dcb3027d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 34eca0c822b0da96cae39463777c5c3e9888240c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081629"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970802"
 ---
 # <a name="progress-controls"></a>进度控件
 
@@ -27,14 +27,14 @@ ms.locfileid: "80081629"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | ProgressBar 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，包含用于 UWP 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | ProgressBar 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
-> Windows UI 库 API：  [ProgressBar 类](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.progressbar.isindeterminate)
+> **Windows UI 库 API：** [ProgressBar 类](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 类](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing)、[IsActive 属性](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
 >
 > **平台 API：** [ProgressBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
 
 > [!NOTE]
-> 有两个版本的 ProgressBar 控件：一个在平台中，以 Windows.UI.Xaml 命名空间为代表；另一个在 Windows UI 库中，以 Microsoft.UI.Xaml 命名空间为代表。 虽然用于 ProgressBar 的 API 相同，但这两个版本的控件外观不同。 本文档将显示较新版 Windows UI 库的映像。
+> ProgressBar 和 ProgressRing 控件有两个版本：一个在平台中，以 Windows.UI.Xaml 命名空间为代表；另一个在 Windows UI 库中，以 Microsoft.UI.Xaml 命名空间为代表。 尽管 ProgressRing 和 ProgressBar 的 API 是相同的，但这两个版本之间的控件外观有所不同。 本文档将显示较新版 Windows UI 库的映像。
 在本文档中，我们将使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
 
 ```xaml
@@ -195,7 +195,7 @@ progressRing.IsActive = true;
 <muxc:ProgressBar Width="100" Foreground="Green"/>
 ```
 
-更改 ProgressRing 的前景色将更改点颜色。 进度条的前景属性可以更改进度条的填充颜色；若要更改进度条的未填充部分，只需重写背景属性。
+更改 ProgressRing 的前景色将更改进度环的填充颜色。 进度条的前景属性可以更改进度条的填充颜色；若要更改进度条的未填充部分，只需重写背景属性。
 
 **显示等待光标**
 

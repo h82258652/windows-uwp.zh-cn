@@ -2,7 +2,7 @@
 Description: NavigationView 是为应用实现顶级导航模式的自适应控件。
 title: 导航视图
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 05/02/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: yulikl
@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 17eb1a2f24e9fd893fee1a0aff349989577375c7
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 85cd58233de0feeded449e55cb1175087a64e61d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081695"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970362"
 ---
 # <a name="navigation-view"></a>导航视图
 
@@ -29,13 +29,13 @@ NavigationView 控件可为应用提供顶级导航。 它适应各种屏幕大�
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | NavigationView  控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，包含用于 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | NavigationView  控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **平台 API**：[Windows.UI.Xaml.Controls.NavigationView 类](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
 > Windows UI 库 API  ：[Microsoft.UI.Xaml.Controls.NavigationView 类](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
-> NavigationView 的某些功能（如顶部  导航）需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，或是 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> NavigationView 的某些功能（如顶部  和分层  导航）需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更高版本，或是 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -648,6 +648,242 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
     }
 }
 ```
+## <a name="hierarchical-navigation"></a>分层导航
+某些应用可能具有更复杂的层次结构，该结构不仅仅需要导航项的简单列表。 你可能想要使用顶级导航项来显示页面类别，其中子项显示特定页。 如果你具有仅链接到其他页面的中心样式页面，则此方法也非常有用。 在这些情况下，应创建分层 NavigationView。
+
+若要在窗格中显示嵌套导航项的层次结构列表，请使用 NavigationViewItem 的 `MenuItems` 属性或 `MenuItemsSource` 属性  。
+每个 NavigationViewItem 可以包含其他 NavigationViewItem 和组织元素，如项标题和分隔符。 若要在使用 `MenuItemsSource` 时显示层次结构列表，请将 `ItemTemplate` 设置为 NavigationViewItem，并将其 `MenuItemsSource` 属性绑定到层次结构的下一级。
+
+尽管 NavigationViewItem 可以包含任意数量的嵌套级别，但建议为应用使用较浅的导航层次结构。 我们认为两个级别是兼顾使用和理解的理想选择。
+
+NavigationView 在顶部、左侧和 LeftCompact 窗格显示模式下显示层次结构。 下面是展开的子树在每个窗格显示模式下的外观：
+
+![具有层次结构的 NavigationView](images/navigation-view-hierarchy-labeled.png)
+
+### <a name="adding-a-hierarchy-of-items-in-markup"></a>在标记中添加项的层次结构
+在标记中声明应用导航层次结构。
+
+```Xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<muxc:NavigationView>
+    <muxc:NavigationView.MenuItems>
+        <muxc:NavigationViewItem Content="Home" Icon="Home" ToolTipService.ToolTip="Home"/>
+        <muxc:NavigationViewItem Content="Collections" Icon="Keyboard" ToolTipService.ToolTip="Collections">
+            <muxc:NavigationViewItem.MenuItems>
+                <muxc:NavigationViewItem Content="Notes" Icon="Page" ToolTipService.ToolTip="Notes"/>
+                <muxc:NavigationViewItem Content="Mail" Icon="Mail" ToolTipService.ToolTip="Mail"/>
+            </muxc:NavigationViewItem.MenuItems>
+        </muxc:NavigationViewItem>
+    </muxc:NavigationView.MenuItems>
+</muxc:NavigationView>
+```
+
+### <a name="adding-a-hierarchy-of-items-using-data-binding"></a>使用数据绑定添加项的层次结构
+
+向 NavigationView 添加菜单项的层次结构 
+* 将 MenuItemsSource 属性绑定到分层数据
+* 将项模板定义为 NavigationViewMenuItem，将其内容设置为菜单项的标签，并将其 MenuItemsSource 属性绑定到层次结构的下一级
+
+此示例还演示了“展开”和“折叠”事件   。 带有子项的菜单项会引发这些事件。
+
+```xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<DataTemplate x:Key="NavigationViewMenuItem" x:DataType="local:Category">
+    <muxc:NavigationViewItem Content="{x:Bind Name}" MenuItemsSource="{x:Bind Children}"/>
+</DataTemplate>
+<muxc:NavigationView x:Name="navview" 
+    MenuItemsSource="{x:Bind categories, Mode=OneWay}" 
+    MenuItemTemplate="{StaticResource NavigationViewMenuItem}" 
+    ItemInvoked="{x:Bind OnItemInvoked}" 
+    Expanding="OnItemExpanding" 
+    Collapsed="OnItemCollapsed" 
+    PaneDisplayMode="Left">
+    
+    <StackPanel Margin="10,10,0,0">
+        <TextBlock Margin="0,10,0,0" x:Name="ExpandingItemLabel" Text="Last Expanding: N/A"/>
+        <TextBlock x:Name="CollapsedItemLabel" Text="Last Collapsed: N/A"/>
+    </StackPanel>    
+</muxc:NavigationView>
+```
+
+```csharp
+public class Category
+{
+    public String Name { get; set; }
+    public String Icon { get; set; }
+    public ObservableCollection<Category> Children { get; set; }
+}
+    
+public sealed partial class HierarchicalNavigationViewDataBinding : Page
+{
+    public HierarchicalNavigationViewDataBinding()
+    {
+        this.InitializeComponent();
+    }  
+    
+    public ObservableCollection<Category> Categories = new ObservableCollection<Category>()
+    {
+        new Category(){
+            Name = "Menu Item 1",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+               new Category(){
+                    Name = "Menu Item 2",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { 
+                            Name  = "Menu Item 2", 
+                            Icon = "Icon",
+                            Children = new ObservableCollection<Category>() {
+                                new Category() { Name  = "Menu Item 3", Icon = "Icon" },
+                                new Category() { Name  = "Menu Item 4", Icon = "Icon" }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        new Category(){
+            Name = "Menu Item 5",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 6",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { Name  = "Menu Item 7", Icon = "Icon" },
+                        new Category() { Name  = "Menu Item 8", Icon = "Icon" }
+                    }
+                }
+            }
+        },
+        new Category(){ Name = "Menu Item 9", Icon = "Icon" }
+    };
+    private void OnItemInvoked(object sender, NavigationViewItemInvokedEventArgs e)
+    {
+        var clickedItem = e.InvokedItem;
+        var clickedItemContainer = e.InvokedItemContainer;
+    }
+    private void OnItemExpanding(object sender, NavigationViewItemExpandingEventArgs e)
+    {
+        var nvib = e.ExpandingItemContainer;
+        var name = "Last Expanding: " + nvib.Content.ToString();
+        ExpandingItemLabel.Text = name;
+    }
+    private void OnItemCollapsed(object sender, NavigationViewItemCollapsedEventArgs e)
+    {
+        var nvib = e.CollapsedItemContainer;
+        var name = "Last Collapsed: " + nvib.Content;
+        CollapsedItemLabel.Text = name;
+    }
+}
+```
+### <a name="selection"></a>选择
+默认情况下，任何项都可以包含子项（已调用或已选择）。
+当向用户提供导航选项的分层树时，可以使父项不可选择，例如，当你的应用没有与该父项关联的目标页时。 如果父项可以选择，则建议使用左展开或顶部窗格显示模式  。 LeftCompact 模式将使用户导航到父项，以便在每次调用子树时将其打开。
+
+当处于左侧模式时，选定项将沿其左边缘绘制选择指示器，当处于顶部模式时，会沿其下边缘进行绘制。 下面显示的是在左侧模式和顶部模式下选中了父项的 NavigationView。
+
+![在左侧模式下选中了父项的 NavigationView](images/navigation-view-selection.png)
+
+![在顶部模式下选中了父项的 NavigationView](images/navigation-view-selection-top.png)
+
+选定项不一定总是可见。 如果选中了折叠/不可展开的子树中的子项，则其第一个可见上级将显示为选中状态。 如果子树展开，则选择指示器将移回至选定项。
+
+例如，在上图中，用户可以选择日历项，然后折叠其子树。 在这种情况下，选择指示器将显示在帐户项下，因为帐户是日历的第一个可见上级。 当用户再次展开子树时，选择指示器将移回到日历项。 
+
+整个 NavigationView 不会显示 1 个以上选择指示器。
+
+在顶部和左侧模式下，单击 NavigationViewItem 上的箭头将展开或折叠子树。 单击或点击 NavigationViewItem 上的其他位置将触发 `ItemInvoked` 事件，同时还会折叠或展开子树  。
+
+若要防止项在被调用时显示选择指示器，请将其 [SelectsOnInvoked](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.navigationviewitem.selectsoninvoked?view=winui-2.3) 属性设置为 False，如下所示：
+
+```xaml
+<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+<DataTemplate x:Key="NavigationViewMenuItem" x:DataType="local:Category">
+    <muxc:NavigationViewItem Content="{x:Bind Name}" 
+        MenuItemsSource="{x:Bind Children}"
+        SelectsOnInvoked="{x:Bind IsLeaf}" />
+</DataTemplate>
+<muxc:NavigationView x:Name="navview" 
+    MenuItemsSource="{x:Bind categories, Mode=OneWay}" 
+    MenuItemTemplate="{StaticResource NavigationViewMenuItem}">
+   
+</muxc:NavigationView>
+```
+
+```csharp
+public class Category
+{
+    public String Name { get; set; }
+    public String Icon { get; set; }
+    public ObservableCollection<Category> Children { get; set; }
+    public bool IsLeaf { get; set; }
+}
+    
+public sealed partial class HierarchicalNavigationViewDataBinding : Page
+{
+    public HierarchicalNavigationViewDataBinding()
+    {
+        this.InitializeComponent();
+    }      
+    
+    public ObservableCollection<Category> Categories = new ObservableCollection<Category>()
+    {
+        new Category(){
+            Name = "Menu Item 1",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 2",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { 
+                            Name  = "Menu Item 2", 
+                            Icon = "Icon",
+                            Children = new ObservableCollection<Category>() {
+                                new Category() { Name  = "Menu Item 3", Icon = "Icon", IsLeaf = true },
+                                new Category() { Name  = "Menu Item 4", Icon = "Icon", IsLeaf = true }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        new Category(){
+            Name = "Menu Item 5",
+            Icon = "Icon",
+            Children = new ObservableCollection<Category>() {
+                new Category(){
+                    Name = "Menu Item 6",
+                    Icon = "Icon",
+                    Children = new ObservableCollection<Category>() {
+                        new Category() { Name  = "Menu Item 7", Icon = "Icon", IsLeaf = true },
+                        new Category() { Name  = "Menu Item 8", Icon = "Icon", IsLeaf = true }
+                    }
+                }
+            }
+        },
+        new Category(){ Name = "Menu Item 9", Icon = "Icon", IsLeaf = true }
+    };
+}
+```
+
+### <a name="keyboarding-within-hierarchical-navigationview"></a>分层 NavigationView 内的键盘操作
+用户可以使用[键盘](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions)在导航视图上移动焦点。 箭头键在窗格内公开“内部导航”，并按照[树视图](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view)中提供的交互进行操作。 当在 NavigationView 或其浮出控件菜单（在 HierarchicalNavigationView 的顶部和左侧模式下显示）中导航时，键操作将发生变化。 下面是每个键可在分层 NavigationView 中执行的特定操作：
+
+| 键      |      在左侧模式下      |  在顶部模式下 | 在浮出控件中  |
+|----------|------------------------|--------------|------------|
+| 向上 |将焦点移动到当前焦点项的正上方。 | 不执行任何操作。 |将焦点移动到当前焦点项的正上方。|
+| 向下|将焦点移动到当前焦点项的正下方。* | 不执行任何操作。 | 将焦点移动到当前焦点项的正下方。* |
+| 权限 |不执行任何操作。  |将焦点移动到当前焦点项的右侧。 |不执行任何操作。|
+| 左 |不执行任何操作。 | 将焦点移动到当前焦点项的左侧。  |不执行任何操作。 |
+| 空格键/Enter |如果某项具有子项，则展开/折叠项且不更改焦点。   | 如果某项具有子项，则将子项展开为浮出控件，并将焦点置于浮出控件中的第一项。 | 调用/选择项并关闭浮出控件。 |
+| Esc | 不执行任何操作。 | 不执行任何操作。 | 关闭浮出控件。|
+
+空格键或 Enter 键始终会调用/选择一个项。
+
+*请注意，项不需要在视觉上相邻，焦点将从窗格列表的最后一项移动到设置项。 
 
 ## <a name="navigation-view-customization"></a>导航视图自定义
 
@@ -744,4 +980,4 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 - [NavigationView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 - [大纲/细节](master-details.md)
 - [导航基础知识](../basics/navigation-basics.md)
-- [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)
+- [Fluent Design 概述](/windows/apps/fluent-design-system)

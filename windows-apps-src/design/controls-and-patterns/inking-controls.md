@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 892e8e9bdeed562a83e566266a7391e9c24b2ad3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 848d682b2672e1a397e3ac867ae981c707873e8e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081731"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970412"
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
 
 
-有两种不同的控件可促进通用 Windows 平台 (UWP) 应用中的墨迹书写：[InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 和 [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)。
+有两种不同的控件可促进 Windows 应用中的墨迹书写：[InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 和 [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)。
 
 InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默认设置）或擦除笔划。 此控件是一个透明的覆盖层，该覆盖层不包含任何用于更改默认笔划墨迹属性的内置 UI。
 
@@ -84,7 +84,7 @@ InkCanvas 和 InkToolbar 还用于 **Windows Ink 工作区**中的**草图板**�
 ```
 
 > [!NOTE]
-> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“UWP 应用中的笔交互和 Windows Ink”](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)。
+> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“Windows 应用中的笔交互和 Windows Ink”](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)一文。
 
 InkToolbar 控件必须与 InkCanvas 结合使用。 将 InkToolbar（以及所有内置工具）合并到应用需要一行额外的标记：
 
@@ -170,6 +170,6 @@ InkToolbar 由两组不同的按钮类型组成：
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用中的笔交互和 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Windows 应用中的笔交互和 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
 - [将 Windows Ink 笔划识别为文本和形状](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
 - [存储和检索 Windows Ink 墨迹数据](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)

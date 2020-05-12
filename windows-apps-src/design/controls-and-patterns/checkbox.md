@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b91ca2de98142bf267cc42b56fba14a49a87bb06
-ms.sourcegitcommit: af4050f69168c15b0afaaa8eea66a5ee38b88fed
+ms.openlocfilehash: 3fca2695cbb57375964beff0f8a3fd9be603228c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80081240"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968922"
 ---
 # <a name="check-boxes"></a>复选框
 
@@ -29,7 +29,7 @@ ms.locfileid: "80081240"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含 UWP 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **平台 API：** [CheckBox 类](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 属性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
@@ -89,11 +89,33 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>绑定到 IsChecked
 
-使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。 但是，由于 IsChecked 是一个[可空](https://docs.microsoft.com/dotnet/api/system.nullable-1)布尔值，所以必须使用值转换器才能将它绑定到某个布尔值。
+使用 [IsChecked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 属性确定复选框是已选中还是已清除。 你可以将 IsChecked 属性的值绑定到其他二进制值。
+但是，由于 IsChecked 是一个[可空](https://docs.microsoft.com/dotnet/api/system.nullable-1)布尔值，因此必须使用转换或值转换器才能将它绑定到某个布尔属性。 这取决于所使用的实际绑定类型，并且会找到每种可能类型的以下示例。 
 
 在本示例中，同意服务条款的复选框的 **IsChecked** 属性绑定到了“提交”按钮的 [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled) 属性。 “提交”按钮仅在服务条款得到同意时才启用。
 
-> 注意&nbsp;&nbsp;我们仅在此处显示相关代码。 有关数据绑定和值转换器的详细信息，请参阅[数据绑定概述](../../data-binding/data-binding-quickstart.md)。
+#### <a name="using-xbind"></a>使用 x:Bind
+
+> 注意&nbsp;&nbsp;我们仅在此处显示相关代码。 有关数据绑定的详细信息，请参阅[数据绑定概述](../../data-binding/data-binding-quickstart.md)。 [此处](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)详细介绍了特定 {x:Bind} 信息（例如强制转换）。
+
+```xaml
+<StackPanel Grid.Column="2" Margin="40">
+    <CheckBox x:Name="termsOfServiceCheckBox" Content="I agree to the terms of service."/>
+    <Button Content="Submit" 
+            IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay}"/>
+</StackPanel>
+```
+
+如果该复选框还可以处于“不确定”状态  ，我们将使用该绑定的 [FallbackValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) 属性来指定表示此状态的布尔值。 在这种情况下，我们不想同时启用“提交”按钮：
+
+```xaml
+<Button Content="Submit" 
+        IsEnabled="{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay, FallbackValue=False}"/>
+```
+
+#### <a name="using-xbind-or-binding"></a>使用 x:Bind 或 Binding
+
+> 注意&nbsp;&nbsp;我们仅使用 {x:Bind} 在此处显示相关代码。 在 {Binding} 示例中，我们将 {x:Bind} 替换为 {Binding}。 有关数据绑定、值转换器和 {x:Bind} 与 {Binding} 标记扩展之间的差异的详细信息，请参阅[数据绑定概述](../../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...
@@ -110,6 +132,7 @@ checkBox1.Content = "I agree to the terms of service.";
                         Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}"/>
 </StackPanel>
 ```
+
 
 ```csharp
 public class NullableBooleanToBooleanConverter : IValueConverter

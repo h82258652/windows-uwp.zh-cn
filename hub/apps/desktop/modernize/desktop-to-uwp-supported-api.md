@@ -1,6 +1,6 @@
 ---
-Description: 已打包的桌面应用可以使用各种不同的通用 Windows 平台 (UWP) API，即使它们没有完全转换为 UWP 应用也是如此。 本文列出了已打包的应用可以使用的可用类。
-title: 适用于打包桌面应用（桌面桥）的 UWP API
+Description: 已打包的桌面应用可以使用各种不同的 Windows 运行时 API，即使它们没有完全转换为 UWP 应用也是如此。 本文列出了已打包的应用可以使用的可用类。
+title: 适用于已打包桌面应用（桌面桥）的 Windows 运行时 API
 ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,18 +9,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 60a735af077d2121868e2613cb0f33e194e4330c
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 68c2427fe6b02385325f0f224cc837912621f6bb
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209663"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729854"
 ---
-# <a name="uwp-apis-available-to-desktop-apps"></a>适用于桌面应用的 UWP API
+# <a name="windows-runtime-apis-available-to-desktop-apps"></a>适用于桌面应用的 Windows 运行时 API
 
 桌面应用可以使用各种不同的通用 Windows 平台 (UWP) API，即使它们没有完全转换为 UWP 应用。 本文列出了桌面应用可以使用的可用类。
 
-许多 UWP API 需要在桌面应用中使用的[包标识](modernize-packaged-apps.md)。 大多数 UWP API 可以很好地运行具有包标识的应用。 但是，某些功能区域尚未经过充分测试或当前无法按预期运行。
+许多 Windows 运行时 API 要求在桌面应用中使用[程序包标识符](modernize-packaged-apps.md)。 大多数 Windows 运行时 API 可以很好地运行具有程序包标识符的应用。 但是，某些功能区域尚未经过充分测试或当前无法按预期运行。
 
 | 功能区域 | 详细信息 |
 |--------------|---------|
@@ -45,9 +45,9 @@ ms.locfileid: "79209663"
 
 ## <a name="list-of-apis"></a>API 列表
 
-下面是在桌面应用中受支持的 UWP API 的完整列表。 可以查看[仅具有包标识的应用支持的 API](#new)或[所有桌面应用支持的 API](#both)。
+下面是在桌面应用中受支持的 Windows 运行时 API 的完整列表。 可以查看[仅具有包标识的应用支持的 API](#new)或[所有桌面应用支持的 API](#both)。
 
-有关如何使用 UWP API 的示例，请参阅 GitHub 上的[桌面桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples)。 还可以查阅 Windows 博客文章[从桌面应用程序调用 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)，了解应用生成。
+有关如何使用 Windows 运行时 API 的示例，请参阅 GitHub 上的[桌面桥示例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) 应用示例](https://github.com/Microsoft/Windows-universal-samples)。 还可以查阅 Windows 博客文章[从桌面应用程序调用 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/)，了解应用生成。
 
 <a id="new" />
 

@@ -1,18 +1,18 @@
 ---
-description: 了解如何在 UWP 应用中使用主题色和主题。
-title: UWP 应用中的颜色
+description: 了解如何在 Windows 应用中使用主题色和主题。
+title: Windows 应用中的颜色
 ms.date: 04/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7ab504657ae5e3142eb7db1d9517a013e9aaf5f3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f5e103b7661c53fb70561dd1bd654188be2704ff
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684585"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970762"
 ---
 # <a name="color"></a>颜色
 
@@ -20,7 +20,7 @@ ms.locfileid: "75684585"
 
 使用颜色可在应用中向用户直观传达信息：颜色可用于指示交互性、针对用户操作提供反馈并保证应用界面的视觉连续性。
 
-在 UWP 应用中，颜色主要由主题色和主题决定。 本文介绍如何在应用中使用颜色，同时介绍如何使用主题色和主题资源来让 UWP 应用可用于任何主题上下文。
+在 Windows 应用中，颜色主要由主题色和主题决定。 本文介绍如何在应用中使用颜色，同时介绍如何使用主题色和主题资源来让 Windows 应用可用于任何主题上下文。
 
 ## <a name="color-principles"></a>颜色使用原则
 
@@ -48,7 +48,7 @@ ms.locfileid: "75684585"
 
 ## <a name="themes"></a>主题
 
-可对 UWP 应用使用浅色或深色应用程序主题。 主题将对应用背景、文本、图标和[常见控件](../controls-and-patterns/index.md)的颜色造成影响。
+Windows 应用可使用浅色或深色应用程序主题。 主题将对应用背景、文本、图标和[常见控件](../controls-and-patterns/index.md)的颜色造成影响。
 
 ### <a name="light-theme"></a>浅色主题
 
@@ -58,7 +58,7 @@ ms.locfileid: "75684585"
 
 ![深色主题](images/color/dark-theme.svg)
 
-默认情况下，UWP 应用的主题是 Windows 设置中的用户首选主题或设备的默认主题（即 Xbox 上的深色主题）。 但是，可设置 UWP 应用的主题。
+默认情况下，Windows 应用的主题是 Windows 设置中的用户首选主题或设备的默认主题（即 Xbox 上的深色主题）。 你也可以自己设置 Windows 应用的主题。
 
 ### <a name="changing-the-theme"></a>更改主题
 

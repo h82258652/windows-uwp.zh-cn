@@ -1,6 +1,6 @@
 ---
-Description: 在通用 Windows 平台 (UWP) 应用中，命令元素是使用户能够执行诸如发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。
-title: 通用 Windows 平台 (UWP) 应用的命令设计基础知识
+Description: 在 Windows 应用中，命令元素是使用户能够执行发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。
+title: Windows 应用的命令设计基础知识
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
@@ -10,16 +10,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6be51c274078d3b8db5ae50033bbf714ec4aa12a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26d649e5a27ae7eef0131964f5c277f3539da73f
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081395"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969372"
 ---
-# <a name="command-design-basics-for-uwp-apps"></a>UWP 应用的命令设计基础知识
+# <a name="command-design-basics-for-windows-apps"></a>Windows 应用的命令设计基础知识
 
-在通用 Windows 平台 (UWP) 应用中，*命令元素*是使用户能够执行诸如发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。 命令界面  包含常见命令元素、托管它们的命令图面、它们支持的交互，以及它们提供的体验。
+在 Windows 应用中，命令元素  是使用户能够执行诸如发送电子邮件、删除项或提交表单等操作的交互式 UI 元素。 命令界面  包含常见命令元素、托管它们的命令图面、它们支持的交互，以及它们提供的体验。
 
 ## <a name="provide-the-best-command-experience"></a>提供最佳命令体验
 
@@ -33,7 +33,7 @@ ms.locfileid: "80081395"
 - 打开、保存和删除文件
 - 编辑或创建内容
 
-在设计命令体验时要有创意。 选择应用支持的输入设备，以及应用响应每个设备的方式。 通过支持最广泛范围的功能和首选项，尽可能提高应用的可用性、可移植性和可访问性（如需更多详细信息，请参阅[通用 Windows 平台 (UWP) 应用的命令控制设计](../controls-and-patterns/commanding.md)）。
+在设计命令体验时要有创意。 选择应用支持的输入设备，以及应用响应每个设备的方式。 通过支持最广泛范围的功能和首选项，尽可能提高应用的可用性、可移植性和可访问性（如需更多详细信息，请参阅 [Windows 应用的命令控制设计](../controls-and-patterns/commanding.md)）。
 
 
 
@@ -43,7 +43,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="choose-the-right-command-elements"></a>选择适当的命令元素
 
-若要区分直观的易用应用与令人费解和困惑的应用，一条标准是能否在命令界面中使用适当的元素。 通用 Windows 平台 (UWP) 中提供范围广泛的命令元素。 下面列出了一些最常见的 UWP 命令元素。
+若要区分直观的易用应用与令人费解和困惑的应用，一条标准是能否在命令界面中使用适当的元素。 Windows 应用中提供广泛的命令元素。 下面列出了一些最常见的 UWP 命令元素。
 
 :::row:::
     :::column:::

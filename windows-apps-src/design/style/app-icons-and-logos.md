@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 25d9df392d6ed2725b171fe6513334a39458410b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684588"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971002"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -185,7 +185,7 @@ filename-scale-scale factor.png
 
 Square150x150Logo-scale-100.png、Square150x150Logo scale 200.png、Square150x150Logo scale 400.png
 
-请注意，在默认情况下，Visual Studio 不会生成锁屏提醒徽标。 因为锁屏提醒徽标是唯一的且可能不应该与其他应用图标匹配。 有关详细信息，请参阅[适用于UWP 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。 
+请注意，在默认情况下，Visual Studio 不会生成锁屏提醒徽标。 因为锁屏提醒徽标是唯一的且可能不应该与其他应用图标匹配。 有关详细信息，请参阅[适用于 Windows 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。 
 
 
 ## <a name="more-about-app-icon-assets"></a>有关应用图标资源的详细信息
@@ -253,13 +253,13 @@ Windows 默认在彩色背板顶部上使用基于目标的资源。 如果需�
 
 
 ## <a name="more-about-splash-screen-assets"></a>初始屏幕资源的详细信息
-有关初始屏幕的详细信息，请参阅 [UWP 初始屏幕文章](/windows/uwp/launch-resume/splash-screens)。
+有关初始屏幕的详细信息，请参阅 [Windows 应用初始屏幕](/windows/uwp/launch-resume/splash-screens)。
 
 ## <a name="more-about-badge-logo-assets"></a>锁屏提醒徽标资源的详细信息
 
 使用资源生成器以生成所需的所有资源时，默认情况下不会生成锁屏提醒徽标的原因是：它们与其他应用资源有很大的差别。 锁屏提醒徽标是出现在通知和应用磁贴上的状态图像。 
 
-有关详细信息，请参阅 [UWP 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。
+有关详细信息，请参阅[适用于 Windows 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。
 
 
 ## <a name="customizing-asset-padding"></a>自定义资源填充

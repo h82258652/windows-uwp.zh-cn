@@ -6,16 +6,16 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 08853a201eff063b49dcc69d5827c9b54e324b75
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5bcc7d45646651cdb60228a3c08123378eedb960
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684873"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970612"
 ---
 # <a name="control-size-and-density"></a>控件大小和密度
 
-使用控件大小和密度的组合可优化通用 Windows 平台 (UWP) 应用程序，并提供最适合于应用功能和交互要求的用户体验。
+使用控件大小和密度的组合可优化 Windows 应用，并提供最适合于应用功能和交互要求的用户体验。
 
 默认情况下，UWP 应用使用低密度（或`Standard`）布局进行呈现。 但是从 WinUI 2.1 开始，也支持适用于信息丰富的 UI 和类似专用方案的高密度（或 `Compact`）布局选项。 这可以通过基本样式资源进行指定（请参阅以下示例）。
 
@@ -44,7 +44,7 @@ ms.locfileid: "75684873"
 Standard 大小旨在适应触控和指针输入。 
 
 > [!NOTE]
->有关有效像素和缩放的更多信息，请参阅 [UWP 应用设计简介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+>有关有效像素和缩放的更多信息，请参阅 [Windows 应用设计简介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > 有关系统级别缩放的更多信息，请参阅[对齐、边距和填充](../layout/alignment-margin-padding.md)。
 

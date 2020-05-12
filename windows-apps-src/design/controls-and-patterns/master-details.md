@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7c21e5e6305c7b2941b46db562c93da0fdfe39
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684379"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970382"
 ---
 # <a name="masterdetails-pattern"></a>大纲/细节模式
 
@@ -24,6 +24,9 @@ ms.locfileid: "75684379"
 > **重要的 API**：[ListView 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![大纲-细节模式的示例](images/HIGSecOne_MasterDetail.png)
+
+> [!TIP]
+> 如果要使用为你实现此模式的 XAML 控件，则建议使用 Windows 社区工具包中的 [MasterDetailsView XAML 控件](/windows/communitytoolkit/controls/masterdetailsview)。
 
 ## <a name="is-this-the-right-pattern"></a>这是正确的模式吗？
 
@@ -61,7 +64,7 @@ ms.locfileid: "75684379"
 
 对于细节视图页面，使用[内容元素](../layout/layout-panels.md)最为合理。 如果你有大量的单独字段，请考虑使用网格布局将元素排列为一个表单  。
 
-有关页面间的导航，请参阅 [UWP 应用的导航历史记录和向后导航](../basics/navigation-history-and-backwards-navigation.md)。
+有关页面间的导航，请参阅 [Windows 应用的导航历史记录和向后导航](../basics/navigation-history-and-backwards-navigation.md)。
 
 ## <a name="side-by-side-style"></a>并排样式
 
@@ -98,6 +101,9 @@ ms.locfileid: "75684379"
 - [Windows Template Studio 大纲/细节示例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [客户订单数据库示例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS 阅读器示例](https://github.com/Microsoft/Windows-appsample-rssreader)
+
+> [!TIP]
+> 如果要使用为你实现此模式的 XAML 控件，则建议使用 Windows 社区工具包中的 [MasterDetailsView XAML 控件](/windows/communitytoolkit/controls/masterdetailsview)。
 
 ## <a name="related-articles"></a>相关文章
 

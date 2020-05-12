@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7ee8550b72356199645f54b587480275c2bcd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685085"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971072"
 ---
 # <a name="reveal-highlight"></a>突出显示
 
@@ -282,7 +282,7 @@ ms.locfileid: "75685085"
 
 ## <a name="reveal-and-the-fluent-design-system"></a>展示和 Fluent Design 系统
 
- Fluent Design 系统可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 展示是 Fluent Design 系统组件，用于将光线添加到应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
+ Fluent Design 系统可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 展示是 Fluent Design 系统组件，用于将光线添加到应用。 若要了解详细信息，请参阅 [Fluent Design 概述](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相关文章
 

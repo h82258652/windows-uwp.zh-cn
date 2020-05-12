@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d0c2f5c5aa6c5d5bfcaee8e9b0ec14bbcd4ff3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8ed4515a90df50a1ff8c0d6b82eb8cda5a4a78c9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339371"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968742"
 ---
 # <a name="control-templates"></a>控件模板
 
@@ -186,7 +186,7 @@ ms.locfileid: "71339371"
 
 ## <a name="controls-and-accessibility"></a>控件和辅助功能
 
-当为控件创建新模板时，除了可能会更改控件的行为和视觉外观外，还可能会更改控件自行代表辅助功能框架的方式。 通用 Windows 平台 (UWP) 支持 Microsoft UI 自动化框架用于辅助功能。 所有默认控件及其模板都支持适用于控件的用途和功能的常见 UI 自动化控件类型和模式。 这些控件类型和模式由 UI 自动化客户端（如辅助技术）进行解释，这样允许控件作为较大辅助应用 UI 的一部分进行访问。
+当为控件创建新模板时，除了可能会更改控件的行为和视觉外观外，还可能会更改控件自行代表辅助功能框架的方式。 Windows 应用支持 Microsoft UI 自动化框架用于辅助功能。 所有默认控件及其模板都支持适用于控件的用途和功能的常见 UI 自动化控件类型和模式。 这些控件类型和模式由 UI 自动化客户端（如辅助技术）进行解释，这样允许控件作为较大辅助应用 UI 的一部分进行访问。
 
 若要分离基本控件逻辑以及符合 UI 自动化的某些体系结构要求，控件类在独立类（自动化对等）中包含辅助功能支持。 有时自动化对等会与控件模板有交互，因为对等预期某些命名部件存在于模板中，以便可能会使用诸如允许辅助技术调用按钮操作的功能。
 

@@ -1,7 +1,7 @@
 ---
 author: knicholasa
 description: 使用 Z 深度（也称为相对深度）和阴影，是将深度整合到应用中以帮助用户以自然高效的方式聚焦的两种做法。
-title: 适用于 UWP 应用的 Z 深度和阴影
+title: 适用于 Windows 应用的 Z 深度和阴影
 template: detail.hbs
 ms.date: 04/19/2019
 ms.topic: article
@@ -9,18 +9,18 @@ ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 216974ba564a192f94473469f3a7a49191ef2192
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2655abd69f0f02efada9de5bab22e463c86b5d7e
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081390"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970182"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和阴影
 
 ![一个 gif 图形，显示沿对角线方向堆叠的四个灰色矩形（一个堆叠于另一个之上）。 该 gif 图形采用了动画效果，以便使阴影出现和消失。](images/elevation-shadow/shadow.gif)
 
-在 UI 中创建元素的视觉层次结构可以使 UI 易于扫描，并可传达需要重点关注的信息。 提升（使所选 UI 元素前进的动作）通常用于在软件中实现此类层次结构。 本文介绍如何使用 Z 深度和阴影在 UWP 应用中创建提升效果。
+在 UI 中创建元素的视觉层次结构可以使 UI 易于扫描，并可传达需要重点关注的信息。 提升（使所选 UI 元素前进的动作）通常用于在软件中实现此类层次结构。 本文介绍如何使用 Z 深度和阴影在 Windows 应用中创建提升效果。
 
 Z 深度是在 3D 应用创建者中使用的一个术语，用于表示在 Z 轴方向上两个图面之间的距离。 它演示对象与观看者的靠近程度。 可将其概念视为类似于 X/Y 坐标，但方向为 Z。
 
@@ -32,7 +32,7 @@ Z 深度是在 3D 应用创建者中使用的一个术语，用于表示在 Z �
 
 阴影是用户感受提升的一种方式。 提升的对象上面的光线会在下方图面上产生阴影。 对象越高，阴影就越大且越柔和。 UI 中提升的对象不需要有阴影，但阴影有助于表现提升。
 
-在 UWP 应用中，应该有目的性地使用阴影，而不能只是出于美观。 使用过多的阴影会减少或消除阴影吸引用户注意力的能力。
+在 Windows 应用中，应该有目的地使用阴影，而不能只是出于美观。 使用过多的阴影会减少或消除阴影吸引用户注意力的能力。
 
 如果使用标准控件，ThemeShadow 阴影将自动整合到 UI 中。 但是，可以使用 ThemeShadow 或 DropShadow API 在 UI 中手动包含阴影。 
 

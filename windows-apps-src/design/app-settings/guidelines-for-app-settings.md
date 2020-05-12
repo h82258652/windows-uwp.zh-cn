@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c08dad36929c7889f1896404df862230040e3499
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9c35bc6cfcf36543482bcb42d0ccda7fd3102ac9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72163706"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970032"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
-应用设置是通过应用设置页面访问的通用 Windows 平台 (UWP) 应用的用户可自定义的部分。 例如，新闻阅读器应用可以让用户指定要显示的新闻源或屏幕上要显示的列数，而天气应用则可以让用户在摄氏度和华氏度之间进行选择。 本文将提供有关创建和显示应用设置的建议和最佳做法。
+应用设置是 Windows 应用的用户可自定义部分，可通过应用设置页面访问。 例如，新闻阅读器应用可以让用户指定要显示的新闻源或屏幕上要显示的列数，而天气应用则可以让用户在摄氏度和华氏度之间进行选择。 本文将提供有关创建和显示应用设置的建议和最佳做法。
 
 ## <a name="when-to-provide-a-settings-page"></a>何时提供设置页面
 
@@ -143,4 +143,4 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 * [命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
 * [进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
 * [存储和检索应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [EntranceThemeTransition  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [EntranceThemeTransition](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 

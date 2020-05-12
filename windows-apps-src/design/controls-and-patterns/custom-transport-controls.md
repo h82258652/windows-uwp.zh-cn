@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 74735b15ec53cf04e33dcb850c6cb174082ac438
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6f60880d29cb4d8344c63bd6fb8e710be4796912
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74257263"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969972"
 ---
 # <a name="create-custom-transport-controls"></a>创建自定义传输控件
 
 
 
-MediaPlayerElement 具有可自定义的 XAML 传输控件来管理通用 Windows 平台 (UWP) 应用中的音频和视频内容的控件。 下面，我们演示如何自定义 MediaTransportControls 模板。 我们将向你演示如何使用溢出菜单、添加自定义按钮和修改滑块。
+MediaPlayerElement 具有可自定义的 XAML 传输控件，用于管理 Windows 应用中的音频和视频内容控件。 下面，我们演示如何自定义 MediaTransportControls 模板。 我们将向你演示如何使用溢出菜单、添加自定义按钮和修改滑块。
 
 > **重要的 API**：[MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaPlayerElement.AreTransportControlsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled)、[MediaTransportControls](https://docs.microsoft.com/uwp/api/Windows.Media.SystemMediaTransportControls)
 

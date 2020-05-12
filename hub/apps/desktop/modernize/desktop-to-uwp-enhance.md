@@ -1,6 +1,6 @@
 ---
-Description: 使用通用 Windows 平台 (UWP) API 为 Windows 10 用户增强桌面应用程序。
-title: 在桌面应用中使用 UWP API
+Description: 使用 Windows 运行时 API 为 Windows 10 用户增强桌面应用程序。
+title: 在桌面应用中调用 Windows 运行时 API
 ms.date: 08/20/2019
 ms.topic: article
 keywords: windows 10, uwp
@@ -8,24 +8,24 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 78d9760c5ef21b29d09babaace0f4379b6a51209
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 444699c00a17dd90fe4c08c44ff56d540cadb3d6
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302601"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82729860"
 ---
-# <a name="call-uwp-apis-in-desktop-apps"></a>在桌面应用中调用 UWP API
+# <a name="call-windows-runtime-apis-in-desktop-apps"></a>在桌面应用中调用 Windows 运行时 API
 
 你可以使用通用 Windows 平台 (UWP) API 向桌面应用添加令 Windows 10 用户感到满意的新式体验。
 
-首先，使用必需的引用设置项目。 然后，从代码中调用 UWP API 以将 Windows 10 体验添加到桌面应用。 你可以为 Windows 10 用户单独生成，也可以不考虑用户所运行的 Windows 版本而向所有用户分发相同的二进制文件。
+首先，使用必需的引用设置项目。 然后，从代码中调用 Windows 运行时 API 以为桌面应用带来 Windows 10 体验。 你可以为 Windows 10 用户单独生成，也可以不考虑用户所运行的 Windows 版本而向所有用户分发相同的二进制文件。
 
-某些 UWP API 仅在具有[程序包标识符](modernize-packaged-apps.md)的桌面应用中受支持。 有关详细信息，请参阅[可用 UWP API](desktop-to-uwp-supported-api.md)。
+某些 Windows 运行时 API 仅在具有[程序包标识符](modernize-packaged-apps.md)的桌面应用中受支持。 有关详细信息，请参阅[可用的 Windows 运行时 API](desktop-to-uwp-supported-api.md)。
 
 ## <a name="set-up-your-project"></a>设置项目
 
-你需要对项目进行一些更改才能使用 UWP API。
+需要对项目进行一些更改才能使用 Windows 运行时 API。
 
 ### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>修改 .NET 项目以使用 Windows 运行时 API
 

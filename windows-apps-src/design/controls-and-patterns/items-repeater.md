@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5782c6e9ba42fed07c2b1382f2d17b1d311d0a13
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80893457"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970402"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -26,7 +26,7 @@ ms.locfileid: "80893457"
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | ItemsRepeater 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，包含用于 UWP 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | ItemsRepeater 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -774,7 +774,7 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>启用辅助功能
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不提供默认的辅助功能体验。 有关 [UWP 应用中的可用性](/windows/uwp/design/usability)的文档提供了详细的信息，读后可确保应用提供包容性用户体验。 如果使用 ItemsRepeater 来创建自定义控件，则务必查看有关[自定义的自动化对等](/windows/uwp/design/accessibility/custom-automation-peers)的文档。
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不提供默认的辅助功能体验。 有关 [Windows 应用的可用性](/windows/uwp/design/usability)的文档提供了详细信息，可帮助你确保应用提供包容性用户体验。 如果使用 ItemsRepeater 来创建自定义控件，则务必查看有关[自定义的自动化对等](/windows/uwp/design/accessibility/custom-automation-peers)的文档。
 
 ### <a name="keyboarding"></a>键盘操作
 根据 XAML 的[适用于键盘操作的 2D 定向导航](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard)中的说明，将会尽量减少针对焦点移动（由 ItemsRepeater 提供）的键盘操作支持。
