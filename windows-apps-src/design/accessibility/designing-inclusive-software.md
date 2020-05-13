@@ -1,5 +1,5 @@
 ---
-Description: 了解如何通过适用于 Windows 10 的 Windows 应用程序进行不断发展的包含设计。  以辅助功能为中心来设计和生成非独占软件。
+Description: 了解适用于 Windows 10 的 Windows 应用的不断发展的包含设计。  以辅助功能为中心来设计和生成非独占软件。
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: 在 Windows 10 中设计非独占软件
 label: Designing inclusive software
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f048d9d3541b52994713c8040c451a421df3e0a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969432"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234079"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>针对 Windows 10 设计非独占软件  
 
-了解如何通过适用于 Windows 10 的 Windows 应用程序进行不断发展的包含设计。  以辅助功能为中心来设计和生成非独占软件。
+了解适用于 Windows 10 的 Windows 应用的不断发展的包含设计。  以辅助功能为中心来设计和生成非独占软件。
 
 在 Microsoft 中，我们正在发展我们的设计原则和做法。 这些内容揭示我们的体验的外观、感觉、功能和行为。 我们正在提升我们的视角。
 

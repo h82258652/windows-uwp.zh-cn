@@ -1,5 +1,5 @@
 ---
-description: 描述在高对比度主题处于活动状态时，确保 Windows 应用应用程序可用所需的步骤。
+description: 描述在高对比度主题处于活动状态时，确保您的 Windows 应用程序可用所需的步骤。
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: 高对比度主题
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 118f604b8c8c95a863773270825ff4db5c5a1b3a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ce3fe9ea96f4b4ce2f541fb5f7a9682a0dee5e0e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969452"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234031"
 ---
 # <a name="high-contrast-themes"></a>高对比度主题  
 
@@ -95,7 +95,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 每一个 **SystemColor*Color** 资源都是一个变量，可在用户切换高对比度主题时自动更新颜色。 以下是在何处以及何时使用每个资源的指南。
 
-资源 | 用法 |
+资源 | 使用情况 |
 |--------|-------|
 **SystemColorWindowTextColor** | 正文、标题、列表；无法与之进行交互的任何文本 |
 | **SystemColorHotlightColor** | 超链接 |
@@ -108,13 +108,13 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 
 通常有助于查看现有应用、“开始”菜单或常用控件，了解其他人如何解决类似于自己面临的高对比度设计问题。
 
-**看**
+**应做事项**
 
 * 如有可能，请考虑背景/前景配对。
 * 当应用正在运行时，在 4 个高对比度主题中都进行测试。 用户切换主题时，应无需重新启动你的应用。
 * 保持一致。
 
-**禁止做法**
+**禁止事项**
 
 * 硬编码 **HighContrast** 主题中的颜色；使用 **SystemColor*Color** 资源。
 * 选择具有美学效果的颜色资源。 请记住，它们会随主题变化而变化！
@@ -154,7 +154,7 @@ Windows 支持面向操作系统和应用的用户可能会选择启用的高对
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-请注意** \{，\} ThemeResource**如何使用两次，一次引用**SystemColorWindowColor**并再次引用**BrandedPageBackgroundBrush**。 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
+请注意， ** \{ ThemeResource \} **如何使用两次，一次引用**SystemColorWindowColor**并再次引用**BrandedPageBackgroundBrush**。 两次都需要应用在运行时搭配正确主题。 此时适合测试应用功能。 当你切换到高对比度主题时，网格的背景将自动更新。 当在不同高对比度主题之间切换时，它的背景也随之更新。
 
 ## <a name="when-to-use-borders"></a>何时使用边框
 

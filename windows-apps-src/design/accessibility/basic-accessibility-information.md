@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b019495235ca2ff4bec2f9e6bc1b9230a15599
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ff19eea5a2fa57d4e5b2728ddbd87e5d99ff539a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969512"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234132"
 ---
 # <a name="expose-basic-accessibility-information"></a>公开基本的辅助功能信息  
 
@@ -32,7 +32,7 @@ ms.locfileid: "82969512"
 | 元素类型 | 说明 |
 |--------------|-------------|
 | 静态文本 | 对于 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 元素，辅助名称是从可见（内部）文本自动确定的。 该元素中所有文本都用作其名称。 请参阅[根据内部文本命名](#name_from_inner_text)。 |
-| 映像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
+| 图像 | XAML [**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 元素没有对 **img** 和类似元素的 HTML **alt** 属性的直接模拟。 使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供名称，或者使用描述技术。 请参阅[图像的辅助名称](#images)。 |
 | 窗体元素 | 窗体元素的辅助名称应当与针对该元素显示的标签同名。 请参阅[标签和 LabeledBy](#labels)。 |
 | 按钮和链接 | 默认情况下，按钮或链接的辅助名称基于可见文本，并使用相同的规则，如[根据内部文本命名](#name_from_inner_text)所述。 如果按钮中仅包含一个图像，请使用 [**AutomationProperties.Name**](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.name) 提供与按钮的预期操作等效的仅文本操作。 |
 
@@ -56,7 +56,7 @@ ms.locfileid: "82969512"
 ## <a name="influencing-the-ui-automation-tree-views"></a>影响 UI 自动化树视图  
 UI 自动化框架包含树视图概念，在这里 UI 自动化客户端可以使用以下三种可能的视图检索 UI 中元素之间的关系：原始视图、控件视图和内容视图。 控件视图是 UI 自动化客户端经常会使用的视图，因为它可以很好地表示和组织 UI 中的交互元素。 在测试工具显示元素的组织结构时，你通常可以选择使用哪种树视图。
 
-默认情况下，当 UI 自动化框架表示 Windows 应用程序的 UI 时，控件视图中将显示任何[**控件**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)派生类和一些其他元素。 但有些时候，出于 UI 组合的原因，你可能不希望某个元素显示在控件视图中（因为该元素复制的信息或显示的信息对于辅助功能方案无足轻重）。 使用附加属性 [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) 更改将元素公开给树视图的方式。 如果你将某个元素放置在 **Raw** 树中，则大多数辅助技术都不会将该元素报告为其视图的一部分。 若要查看此操作在现有控件中的工作原理的某些示例，请在文本编辑器中打开 generic.xaml 设计参考 XAML 文件，并在模板中搜索 **AutomationProperties.AccessibilityView**。
+默认情况下，当 UI 自动化框架表示 Windows 应用的 UI 时，控件视图中将显示任何[**控件**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control)派生类和一些其他元素。 但有些时候，出于 UI 组合的原因，你可能不希望某个元素显示在控件视图中（因为该元素复制的信息或显示的信息对于辅助功能方案无足轻重）。 使用附加属性 [**AutomationProperties.AccessibilityView**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) 更改将元素公开给树视图的方式。 如果你将某个元素放置在 **Raw** 树中，则大多数辅助技术都不会将该元素报告为其视图的一部分。 若要查看此操作在现有控件中的工作原理的某些示例，请在文本编辑器中打开 generic.xaml 设计参考 XAML 文件，并在模板中搜索 **AutomationProperties.AccessibilityView**。
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>

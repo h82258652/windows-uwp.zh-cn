@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 207ad9cb3008f1a36402e413b7e246aa2135ae26
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5fd39acbf6549cddc075f8b63779f06a802bfdbb
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970162"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234675"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>游戏板和遥控器交互
 
@@ -22,7 +22,7 @@ ms.locfileid: "82970162"
 
 ***各种交互体验在游戏板、远程控制和键盘之间共享***
 
-在 Windows 应用程序应用程序中构建交互体验，以确保你的应用程序可供使用，并可通过传统的 Pc、笔记本电脑和平板电脑（鼠标、键盘、触摸等）输入类型进行访问，同时还可实现电视和 Xbox *10 英尺*体验（例如游戏板和遥控器）的典型输入类型。
+在 Windows 应用程序中构建交互体验，确保你的应用程序可供使用，并可通过传统的 Pc、笔记本电脑和平板电脑（鼠标、键盘、触摸等）输入类型进行访问，以及电视和 Xbox *10 英尺*体验的典型输入类型，如游戏板和遥控器。
 
 有关 Windows 应用程序的常规设计指南，请参阅在*10 英尺*体验中[设计 Xbox 和 TV](../devices/designing-for-tv.md) 。
 
@@ -158,10 +158,10 @@ Xbox one 上的 Windows 应用程序还支持按**菜单**按钮打开上下文�
 | 交互   | 键盘/鼠标   | 游戏板      | 内置用于：  | 建议用于： |
 |---------------|------------|--------------|----------------|------------------|
 | 向上/向下翻页  | 向上/向下翻页 | 左/右扳机键 | [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持垂直滚动的视图
-| 向左/向右翻页 | None | 左/右缓冲键 | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持水平滚动的视图
-| 放大/缩小        | Ctrl +/- | 左/右扳机键 | None | `ScrollViewer`支持放大和缩小的视图 |
-| 打开/关闭导航窗格 | None | 查看 | None | 导航窗格​​ |
-| 搜索 | None | Y 按钮 | None | 应用中主要搜索功能的快捷方式 |
+| 向左/向右翻页 | 无 | 左/右缓冲键 | [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[ListBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[FlipView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支持水平滚动的视图
+| 放大/缩小        | Ctrl +/- | 左/右扳机键 | 无 | `ScrollViewer`支持放大和缩小的视图 |
+| 打开/关闭导航窗格 | 无 | 视图 | 无 | 导航窗格​​ |
+| 搜索 | 无 | Y 按钮 | 无 | 应用中主要搜索功能的快捷方式 |
 | [打开上下文菜单](#commandbar-and-contextflyout) | 右键单击 | “菜单”按钮 | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout) | 上下文菜单 |
 
 ## <a name="xy-focus-navigation-and-interaction"></a>XY 焦点导航和交互
@@ -538,7 +538,7 @@ public App()
 
 与这些控件稍有不同的是 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer)，该控件具有其自己的特点要考虑。 如果你有包含可聚焦内容的 `ScrollViewer`，默认情况下导航到 `ScrollViewer` 将允许你移动其可聚焦元素。 和在 `ListView` 中相同，你必须滚动浏览每一项才能导航到 `ScrollViewer` 外部。
 
-如果不`ScrollViewer`具有*no*可设定焦点&mdash;的内容（例如，如果它仅&mdash;包含可以设置`IsFocusEngagementEnabled="True"`的文本），则用户`ScrollViewer`可以通过使用 " **/选择**" 按钮来参与。 使用后，他们可以使用**D-pad/左摇杆**滚动文本，然后按**B/后退**按钮，在完成后松开。
+如果 `ScrollViewer` *不*具有可设定焦点 &mdash; 的内容（例如，如果它仅包含可以设置的文本），则 &mdash; `IsFocusEngagementEnabled="True"` 用户可以 `ScrollViewer` 通过使用 " **/选择**" 按钮来参与。 使用后，他们可以使用**D-pad/左摇杆**滚动文本，然后按**B/后退**按钮，在完成后松开。
 
 另一个方法是在 `ScrollViewer` 上设置 `IsTabStop="True"`，以便当 `ScrollViewer` 内不存在可聚焦元素时用户无需占用控件&mdash;他们只需将焦点放置在该控件上，然后使用**方向键/左摇杆**进行滚动。
 
@@ -546,7 +546,7 @@ public App()
 
 某些控件导致焦点捕获的频率足以保证其默认设置要求焦点占用，而其他控件默认关闭焦点占用，但可能因打开它而受益。 下表列出了这些控件及其默认焦点占用行为。
 
-| 控制               | 焦点占用默认值  |
+| 控件               | 焦点占用默认值  |
 |-----------------------|---------------------------|
 | CalendarDatePicker    | 启用                        |
 | FlipView              | 关闭                       |
@@ -557,13 +557,13 @@ public App()
 | SemanticZoom          | 关闭                       |
 | 滑块                | 启用                        |
 
-所有其他 Windows 控件在时`IsFocusEngagementEnabled="True"`不会导致行为或视觉对象更改。
+所有其他 Windows 控件在时不会导致行为或视觉对象更改 `IsFocusEngagementEnabled="True"` 。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 你可以构建针对特定设备或体验进行了优化的 Windows 应用程序，但通用 Windows 平台还允许你构建可跨设备成功使用的应用（在2英尺和10英尺体验中，无论输入设备或用户的功能如何）。 使用本文中的建议可以确保你的应用程序可以在电视和 PC 上正常工作。
 
 ## <a name="related-articles"></a>相关文章
 
 - [针对 Xbox 和电视进行设计](../devices/designing-for-tv.md)
-- [Windows 应用应用的设备入门](index.md)
+- [适用于 Windows 应用的设备入门](index.md)

@@ -8,16 +8,16 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: 'windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf'
 ms.localizationpriority: medium
-ms.openlocfilehash: f177660ce6e367caf69de849839a94472f5343fb
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 679254aa35ea49e72f7feaae02ba0ccbddeafdad
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968282"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233663"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
-桌面应用（包括打包的[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)应用、使用[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)获取包标识和经典非打包 Win32 应用的应用）可以像 Windows 应用应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
+桌面应用（包括打包的[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)应用、使用[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)获取包标识和经典非打包 Win32 应用的应用）可以像 Windows 应用一样发送交互式 toast 通知。 但对于桌面应用程序，有几个特殊步骤，因为不同的激活方案，如果你未使用 .MSIX 或稀疏包，则可能缺少包标识。
 
 > [!IMPORTANT]
 > 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
@@ -27,7 +27,7 @@ ms.locfileid: "82968282"
 
 如果你尚未从 Win32 应用程序中引用 Windows 运行时 Api，则必须先执行该操作。
 
-只需在`Microsoft.Windows.SDK.Contracts`项目中安装[NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts)。 详细了解如何[在此处启用 Windows 运行时 api](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
+只需 `Microsoft.Windows.SDK.Contracts` 在项目中安装[NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts)。 详细了解如何[在此处启用 Windows 运行时 api](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
 
 
 ## <a name="step-2-copy-compat-library-code"></a>步骤 2：复制兼容库代码
@@ -117,7 +117,7 @@ public class MyNotificationActivator : NotificationActivator
 
 #### <a name="step-41-wix-installer"></a>步骤4.1： WiX 安装程序
 
-如果对安装程序使用 WiX，则编辑 **Product.wxs** 文件，将两种快捷方式属性添加到“开始”菜单快捷方式中，如下所示。 请确保步骤 #3 的 GUID 包括在中`{}` ，如下所示。
+如果对安装程序使用 WiX，则编辑 **Product.wxs** 文件，将两种快捷方式属性添加到“开始”菜单快捷方式中，如下所示。 请确保步骤 #3 的 GUID 包括在中， `{}` 如下所示。
 
 **Product.wxs**
 

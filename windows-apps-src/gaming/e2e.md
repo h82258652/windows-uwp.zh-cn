@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 游戏开发
 ms.localizationpriority: medium
-ms.openlocfilehash: de18e77137941acfba6e9cb3fb6421de8fe156f0
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 5f7c124c1d77cbce140cb42cdc07682dad8f78f2
+ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730254"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280247"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 游戏开发指南
 
@@ -119,7 +119,7 @@ Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows �
 
 你可以在没有专用开发工具包、仅使用零售硬件的情况下，在创意者计划中部署、设计和发布游戏。 若要开始，请在 Xbox One 上下载[开发人员模式激活应用](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation)。
 
-如果希望获得更多 Xbox Live 功能的访问权限、专职营销和开发支持，以及在主要 Xbox One 商店中提供的机会，请将应用到[ID@Xbox](https://www.xbox.com/Developers/id)该计划。
+如果希望获得更多 Xbox Live 功能的访问权限、专职营销和开发支持，以及在主要 Xbox One 商店中提供的机会，请将应用到该 [ID@Xbox](https://www.xbox.com/Developers/id) 计划。
 
 <table>
     <colgroup>
@@ -134,7 +134,7 @@ Microsoft 提供多个开发人员计划，可帮助你开发和发布 Windows �
 
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xbox One 上发布游戏。 如果你想开发适用于 Xbox One 的应用，或将诸如玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows 10 游戏，请注册 ID@Xbox。 成为一名 ID@Xbox 开发人员，获取所需的工具和支持，来发挥你的创造力并最大可能地取得成功。 建议先将应用到ID@Xbox ，然后在合作伙伴中心注册开发人员帐户。
+ID@Xbox 计划可帮助符合资格的游戏开发人员自行在 Windows 和 Xbox One 上发布游戏。 如果你想开发适用于 Xbox One 的应用，或将诸如玩家分数、成就和排行榜等 Xbox Live 功能添加到 Windows 10 游戏，请注册 ID@Xbox。 成为一名 ID@Xbox 开发人员，获取所需的工具和支持，来发挥你的创造力并最大可能地取得成功。 建议先将应用到， ID@Xbox 然后在合作伙伴中心注册开发人员帐户。
 
 <table>
     <colgroup>
@@ -218,7 +218,7 @@ Xbox 工具和中间件计划给使用游戏工具和中间件的专业开发人
     </tr>
     <tr>
         <td>Windows 游戏示例（MSDN 代码库）</td>
-        <td><a href="https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft">Microsoft Store 游戏示例</a></td>
+        <td><a href="https://docs.microsoft.com/samples/browse/?term=games">Microsoft Store 游戏示例</a></td>
     </tr>
     <tr>
         <td>JavaScript 2D 游戏示例</td>
@@ -1834,7 +1834,7 @@ Xbox Live 是一个卓越的游戏网络，连接着世界各地的数百万玩�
     </tr>
     <tr>
         <td>示例</td>
-        <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">面向开发人员ID@Xbox的代码示例</a></td>
+        <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">面向开发人员的代码示例 ID@Xbox</a></td>
     </tr>  
     <tr>
         <td>Xbox Live 游戏开发概述（视频）</td>

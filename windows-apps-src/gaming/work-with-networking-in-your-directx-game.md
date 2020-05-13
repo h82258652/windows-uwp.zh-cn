@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 网络, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e693016fa6b87f231c1cbbfac4c2e55d44623c9
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: d2d1487c708b8618feec5cb735fb8af260608e00
+ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606366"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280267"
 ---
 # <a name="networking-for-games"></a>游戏网络
 
@@ -121,7 +121,7 @@ ms.locfileid: "82606366"
 
 [**DatagramSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 操作上发生的错误将引发异常。 异常原因是一个错误值，表示为 **HRESULT** 值。 [**SocketError.GetStatus**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.socketerror.getstatus) 方法用于将来自套接字操作的网络错误转换为 [**SocketErrorStatus**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.SocketErrorStatus) 枚举值。 大部分 **SocketErrorStatus** 枚举值对应由本机 Windows 套接字操作返回的错误。 应用可以筛选特定 **SocketErrorStatus** 枚举值来基于异常原因修改应用行为。
 
-对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 了解有关导致该异常的错误的更详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的**HRESULT**为**E\_INVALIDARG**。
+对于参数验证错误，应用还可以使用来自异常的 **HRESULT** 了解有关导致该异常的错误的更详细信息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 对于大多数参数验证错误，返回的**HRESULT**为**E \_ INVALIDARG**。
 
 尝试连接流套接字时，添加处理异常的代码
 
@@ -273,7 +273,7 @@ using namespace Windows::Networking::Sockets;
 
 在使用 C++ 的应用中，发生异常时，[**Platform::Exception**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) 表示应用执行期间的错误。 [**Platform：： Exception：： HResult**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult)属性返回分配给特定异常的**hresult** 。 [**Platform：： Exception：： Message**](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message)属性返回与**HRESULT**值关联的系统提供的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 
-对于大多数参数验证错误，返回的**HRESULT**为**E\_INVALIDARG**。 对于某些非法的方法调用，返回的 **HRESULT** 为 **E\_ILLEGAL\_METHOD\_CALL**。
+对于大多数参数验证错误，返回的**HRESULT**为**E \_ INVALIDARG**。 对于某些非法的方法调用，返回的 **HRESULT** 为 **E\_ILLEGAL\_METHOD\_CALL**。
 
 当尝试使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 连接到 HTTP 服务器时，添加处理异常的代码
 
@@ -388,7 +388,7 @@ using namespace Windows::Web::Http;
 
 **示例**
 
-* [DatagramSocket 示例](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)
+* [DatagramSocket 示例](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/ControlChannelTrigger%20StreamSocket%20sample%20(Windows%208))
 * [HttpClient 示例]( https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)
-* [邻近感应示例](https://code.msdn.microsoft.com/windowsapps/Proximity-Sample-88129731)
+* [邻近感应示例](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/Proximity%20sample%20(Windows%208))
 * [StreamSocket 示例](https://code.msdn.microsoft.com/windowsapps/StreamSocket-Sample-8c573931)

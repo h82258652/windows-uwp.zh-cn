@@ -1,17 +1,17 @@
 ---
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: 帐户类型、位置和费用
-description: 我们在许多国家和地区都提供个人开发者帐户和公司开发者帐户。
+description: 我们在许多国家和地区提供了个人开发者帐户和公司开发者帐户。
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ab3d40b48caecc82fafef4df964b7a1dbf8071
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: 829bbc857f3856962dfbbbc4bb589fa677b8e264
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545087"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234817"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
@@ -20,9 +20,9 @@ ms.locfileid: "81545087"
 > [!NOTE]
 > 打开开发人员帐户时，请确保使用要用于开发人员帐户的 Microsoft 帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
 
-在[开始注册过程](https://developer.microsoft.com/store/register)时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
+在[开始注册过程](https://developer.microsoft.com/store/register) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
 
-公司帐户用于组织和企业。 对于公司帐户，我们还需要进一步进行[验证](#account-verification)，以确保已向你授权为公司设置该帐户。 个人帐户通常适用于自行开发的单个开发人员，但你可以选择将其他帐户用户添加到任一帐户类型。
+公司帐户用于组织和企业。 对于公司帐户，我们需要进行更多[验证](#account-verification)，以确认你有权为你的公司设置帐户。 个人帐户通常适用于自行开发的单个开发人员，但你可以选择将其他帐户用户添加到任一帐户类型。
 
 > [!IMPORTANT]
 > 由于在选择后无法更改帐户类型，因此，请务必选择正确的类型。
@@ -39,13 +39,13 @@ ms.locfileid: "81545087"
 
 完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 在验证之前，你无法从公司帐户提交应用，但在等待时，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)继续生成和测试应用，并准备就绪。
 
-可在**帐户设置**页上查看验证状态。 
+您可以在 "**帐户设置**" 页上检查您的验证状态。
 
 ## <a name="developer-account-and-app-submission-markets"></a>开发者帐户和应用提交市场
 
 如果你居住在下面列出的国家或地区或在这些地方开展业务，你将能够注册你的开发者帐户并提交应用。
 
-在下表中，**注册费**是你当前注册开发者帐户时需支付的费用。 这是一次性费用，之后不会收取任何费用。 请注意，以下价格可能会随时发生变化。
+在下表中，**注册费用**是注册开发人员帐户的当前成本。 这是一次性费用，之后不会收取任何费用。 请注意，以下价格可能会随时发生变化。
 
 | 国家/地区                    | 个人注册费用 | 公司注册费用 |
 |-----------------------------------|---------------------|------------------|
@@ -80,7 +80,7 @@ ms.locfileid: "81545087"
 | 佛得角                        | 19 USD              | 99 USD           |  
 | 柬埔寨                          | 19 USD              | 99 USD           |  
 | 喀麦隆                          | 19 USD              | 99 USD           |  
-| 加拿大                            | 20 CAD              | 99 CAD           |  
+| Canada                            | 20 CAD              | 99 CAD           |  
 | 中非共和国          | 19 USD              | 99 USD           |  
 | 乍得                              | 19 USD              | 99 USD           |  
 | 智利                             | 9776 CLP            | 46,000 CLP        |  
@@ -93,10 +93,10 @@ ms.locfileid: "81545087"
 | 科特迪瓦                     | 19 USD              | 99 USD           |  
 | 克罗地亚                           | 107 HRK             | 500 HRK          |  
 | 塞浦路斯                            | 14 EUR              | 75 EUR           |  
-| Czechia                           | 365 CZK             | 1720 CZK         |  
+| 捷克                           | 365 CZK             | 1720 CZK         |  
 | 丹麦                           | 106 DKK             | 530 DKK          |  
-| 吉布提                          | 19 USD              | 99 USD           | 
-| 多米尼加                          | 19 USD              | 99 USD           | 
+| 吉布提                          | 19 USD              | 99 USD           |
+| 多米尼加                          | 19 USD              | 99 USD           |
 | 多米尼加共和国                | 19 USD              | 99 USD           |  
 | 厄瓜多尔                           | 19 USD              | 99 USD           |  
 | 埃及                             | 133 EGP             | 600 EGP          |  
@@ -108,11 +108,11 @@ ms.locfileid: "81545087"
 | 法罗群岛                     | 19 USD              | 99 USD           |  
 | 斐济                              | 19 USD              | 99 USD           |  
 | 芬兰                           | 14 EUR              | 75 EUR           |  
-| France                            | 14 EUR              | 75 EUR           |  
+| 法国                            | 14 EUR              | 75 EUR           |  
 | 加蓬                             | 19 USD              | 99 USD           |  
 | 冈比亚                        | 19 USD              | 99 USD           |  
-| 佐治亚州                           | 19 USD              | 99 USD           |  
-| Germany                           | 14 EUR              | 75 EUR           |  
+| 格鲁吉亚                           | 19 USD              | 99 USD           |  
+| 德国                           | 14 EUR              | 75 EUR           |  
 | 加纳                             | 19 USD              | 99 USD           |  
 | 希腊                            | 14 EUR              | 75 EUR           |  
 | 格陵兰                         | 19 USD              | 99 USD           |  
@@ -138,7 +138,7 @@ ms.locfileid: "81545087"
 | 哈萨克斯坦                        | 2897 KZT            | 15038 KZT        |  
 | 肯尼亚                             | 1900 KES            | 9999 KES         |  
 | 基里巴斯                          | 19 USD              | 99 USD           |  
-| Korea                             | 21216 KRW           | 108,000 KRW       |  
+| 韩国                             | 21216 KRW           | 108,000 KRW       |  
 | 科威特                            | 5 KWD               | 28 KWD           |  
 | 吉尔吉斯斯坦                        | 19 USD              | 99 USD           |  
 | 老挝                              | 19 USD              | 99 USD           |  
@@ -151,7 +151,6 @@ ms.locfileid: "81545087"
 | 立陶宛                         | 14 EUR              | 75 EUR           |  
 | 卢森堡                        | 14 EUR              | 75 EUR           |  
 | 澳门特别行政区                         | 19 USD              | 99 USD           |  
-| 马其顿语(马其顿共和国)                 | 19 USD              | 99 USD           |  
 | 马达加斯加                        | 19 USD              | 99 USD           |  
 | 马拉维                            | 19 USD              | 99 USD           |  
 | 马来西亚                          | 62 MYR              | 300 MYR          |  
@@ -176,7 +175,8 @@ ms.locfileid: "81545087"
 | 新西兰                       | 24 NZD              | 140 NZD          |  
 | 尼加拉瓜                         | 19 USD              | 99 USD           |  
 | 尼日尔                             | 19 USD              | 99 USD           |  
-| 尼日利亚                           | 3700 NGN            | 19500 NGN        |  
+| 尼日利亚                           | 3700 NGN            | 19500 NGN        |
+| 北马其顿                   | 19 USD              | 99 USD           |    
 | 挪威                            | 113 NOK             | 580 NOK          |  
 | 阿曼                              | 7 OMR               | 40 OMR           |  
 | 巴基斯坦                          | 1959 PKR            | 9000 PKR         |  
@@ -195,7 +195,7 @@ ms.locfileid: "81545087"
 | 圣基茨和尼维斯             | 19 USD              | 99 USD           |  
 | 圣卢西亚                       | 19 USD              | 99 USD           |  
 | 圣文森特和格林纳丁斯  | 19 USD              | 99 USD           |  
-| 萨摩亚群岛                             | 19 USD              | 99 USD           |  
+| 萨摩亚                             | 19 USD              | 99 USD           |  
 | 圣马力诺                        | 14 EUR              | 75 EUR           |  
 | 圣多美和普林西比             | 19 USD              | 99 USD           |  
 | 沙特阿拉伯                      | 71 SAR              | 380 SAR          |  
@@ -206,7 +206,7 @@ ms.locfileid: "81545087"
 | 新加坡                         | 24 SGD              | 120 SGD          |  
 | 斯洛伐克                          | 14 EUR              | 75 EUR           |  
 | 斯洛文尼亚                          | 14 EUR              | 75 EUR           |  
-| 索罗门群岛                   | 19 USD              | 99 USD           |  
+| 所罗门群岛                   | 19 USD              | 99 USD           |  
 | 索马里                           | 19 USD              | 99 USD           |  
 | 南非                      | 193 ZAR             | 700 ZAR          |  
 | 西班牙                             | 14 EUR              | 75 EUR           |  
@@ -230,8 +230,8 @@ ms.locfileid: "81545087"
 | 乌干达                            | 19 USD              | 99 USD           |  
 | 乌克兰                           | 156 UAH             | 800 UAH          |  
 | 阿拉伯联合酋长国              | 19 USD              | 99 USD           |  
-| 英国                    | 12 GBP              | 65 GBP           |  
-| 美国                     | 19 USD              | 99 USD           |  
+| United Kingdom                    | 12 GBP              | 65 GBP           |  
+| United States                     | 19 USD              | 99 USD           |  
 | 乌拉圭                           | 19 USD              | 99 USD           |  
 | 乌兹别克斯坦                        | 19 USD              | 99 USD           |  
 | 瓦努阿图                           | 19 USD              | 99 USD           |  

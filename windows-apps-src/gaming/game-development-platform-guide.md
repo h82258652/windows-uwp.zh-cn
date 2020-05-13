@@ -6,27 +6,27 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 技术, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 3576808726780f94e1f686b9634eb5c44a6b9d43
-ms.sourcegitcommit: 520a858435cad1900d4dc9a29fde61c168c8ce23
+ms.openlocfilehash: a8fcf2b7a621b7d76411834826bf5db43ddbcfb7
+ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80229449"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83280207"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>适用于 UWP 应用的游戏技术
 
 在此指南中，你将了解可用于开发通用 Windows 平台 (UWP) 游戏的技术。
 
-##  <a name="benefits-of-windows10-for-game-development"></a>适用于游戏开发的 Windows 10 的优点
+##  <a name="benefits-of-windows10-for-game-development"></a>Windows 10 对于游戏开发的优势
 
-通过在 Windows 10 中引入 UWP，你的 Windows 10 标题将能够跨所有 Microsoft 平台。 通过从以前版本的 Windows 中免费迁移，Windows 10 客户端的数量将不断增加。 这两个方面的组合意味着，你的 Windows 10 标题将能够通过 Microsoft Store 向大量客户联系。
+通过在 Windows 10 中引入 UWP，Windows 10 标题将能够跨越所有 Microsoft 平台。 通过从以前版本的 Windows 的免费迁移，Windows 10 客户端数量将稳定增加。 这两个事实的结合意味着你的 Windows 10 标题能够通过 Microsoft Store 覆盖大量客户。
 
-此外，Windows 10 提供了许多对游戏特别有用的新功能：
+此外，Windows 10 还提供了许多对游戏极其有益的新功能：
 
 -   减少了内存分页和整体内存系统大小
 -   经改进的图形内存管理可为前台游戏主动分配和保护更多内存
 
-## <a name="uwp-games-with-c-and-directx"></a>具有和 DirectX C++的 UWP 游戏
+## <a name="uwp-games-with-c-and-directx"></a>带有 c + + 和 DirectX 的 UWP 游戏
 
 需要高性能的实时游戏应充分利用 DirectX API。 DirectX 是用于创建需要高性能的游戏和多媒体应用程序（如 3D 游戏）的本机 API 集合。
 
@@ -41,7 +41,7 @@ ms.locfileid: "80229449"
 
 ## <a name="getting-started-with-directx-game-project-templates"></a>DirectX 游戏项目模板入门
 
-设置开发环境后，可以使用 DirectX 相关项目模板之一创建 UWP DirectX 游戏。 Visual Studio 2015 具有三个可用于创建新的 UWP DirectX 项目的模板：**DirectX 11 应用（通用 Windows）** 、**DirectX 12 应用（通用 Windows）** 以及 **DirectX 11 和 XAML 应用（通用 Windows）** 。 有关详细信息，请参阅[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
+设置开发环境后，可以使用 DirectX 相关项目模板之一创建 UWP DirectX 游戏。 Visual Studio 2015 具有三个可用于创建新的 UWP DirectX 项目的模板：**DirectX 11 应用（通用 Windows）**、**DirectX 12 应用（通用 Windows）** 以及 **DirectX 11 和 XAML 应用（通用 Windows）**。 有关详细信息，请参阅[从模板创建通用 Windows 平台和 DirectX 游戏项目](user-interface.md)。
 
 ## <a name="windows-10-apis"></a>Windows 10 API
 
@@ -155,7 +155,7 @@ Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的
     <td align="left">音频图</td>
     <td align="left"><p>对于可使用 XAudio2 实现的功能，可以改为使用 Windows 运行时音频图形 Api。 若要帮助你确定两种替代方法，请参阅<a href="/windows/uwp/audio-video-camera/audio-graphs#choosing-windows-runtime-audiograph-or-xaudio2">选择 Windows 运行时 AudioGraph 或 XAudio2</a>。</p>
     <p><strong>何时使用</strong></p>
-    <p>如果游戏需要以最小的开销和延迟播放声音，但使用比 XAudio2 更简单易用的 API，并且具有C#支持选项，请使用音频图。</p>
+    <p>如果游戏需要以最小的开销和延迟播放声音，但使用比 XAudio2 更易于使用的 API，并且具有 c # 支持的选项，请使用音频图。</p>
     <p><strong>详细信息</strong></p>
     <p>请参阅<a href="/windows/uwp/audio-video-camera/audio-graphs">音频图</a>文档。</p></td>
     </tr>
@@ -165,7 +165,7 @@ Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的
     <p><strong>何时使用</strong></p>
     <p>媒体基础对于游戏中的电影场景或非交互组件尤其有用。 媒体基础对于使用 XAudio2 解码音频文件用于播放也很有用。</p>
     <p><strong>详细信息</strong></p>
-    <p>请参阅 <a href="/windows/win32/medfound/microsoft-media-foundation-sdk">Microsoft 媒体基础</a>概述。</p></td>
+    <p>请参阅<a href="/windows/win32/medfound/microsoft-media-foundation-sdk">Microsoft 媒体基础</a>概述。</p></td>
     </tr>
     </tbody>
     </table>
@@ -294,7 +294,7 @@ Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">Library</th>
+    <th align="left">库</th>
     <th align="left">说明</th>
     </tr>
     </thead>
@@ -305,7 +305,7 @@ Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的
     <p><strong>何时使用</strong></p>
     <p>如果你是正在寻找旧版 D3DX 实用工具代码的现代替代项的 C++ 开发人员，或者你是过渡到本机 C++ 的 XNA Game Studio 开发人员，请使用 DirectX 工具包。</p>
     <p><strong>详细信息</strong></p>
-    <p>请参阅 DirectX 工具包项目页面 <a href="https://github.com/Microsoft/DirectXTK">https://github.com/Microsoft/DirectXTK</a>。</p></td>
+    <p>请参阅 DirectX 工具包项目页 <a href="https://github.com/Microsoft/DirectXTK">https://github.com/Microsoft/DirectXTK</a> 。</p></td>
     </tr>
     <tr>
     <td align="left">Win2D</td>
@@ -313,16 +313,16 @@ Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的
     <p><strong>何时使用</strong></p>
     <p>如果你是一名 C++ 开发人员并且需要更易于使用的 Direct2D 和 DirectWrite 的 WinRT 包装器，或者你是要使用 Direct2D 和 DirectWrite 的 C# 开发人员，请使用 Win2D。</p>
     <p><strong>详细信息</strong></p>
-    <p>请参阅 Win2D 项目页面 <a href="https://github.com/Microsoft/Win2D">https://github.com/Microsoft/Win2D</a>。</p></td>
+    <p>请参阅 Win2D 项目页 <a href="https://github.com/Microsoft/Win2D">https://github.com/Microsoft/Win2D</a> 。</p></td>
     </tr>
     </tbody>
     </table>
 
 ## <a name="xbox-live-services"></a>Xbox Live 服务
 
-[Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)允许任何开发人员将 Xbox live 集成到其 UWP 游戏中并发布到 Xbox One 和 Windows 10。 你可以使用最少的开发时间，将 Xbox Live 社交体验（如登录、状态、排行榜等）集成到游戏中。 Xbox Live 社交功能旨在有机增加你的受众，在 5,500 多万名活跃玩家中扩大你的知名度。
+利用 [Xbox Live 创意者计划](https://developer.microsoft.com/games/xbox/xboxlive/creator)，任何开发人员都可以将 Xbox Live 集成到其 UWP 游戏中并发布到 Xbox One 和 Windows 10。 你可以使用最少的开发时间，将 Xbox Live 社交体验（如登录、状态、排行榜等）集成到游戏中。 Xbox Live 社交功能旨在有机增加你的受众，在 5,500 多万名活跃玩家中扩大你的知名度。
 
-如果想访问主 Xbox One 应用商店中特别推荐的更多 Xbox Live 功能、专门的营销和开发支持和机会，则你可以申请 [ID@Xbox](https://www.xbox.com/developers/id) 计划。 若要查看可用于 Xbox Live 创意者计划和 ID@Xbox 计划的功能，请参阅[功能表](/gaming/xbox-live/developer-program-overview.md#feature-table)。
+如果希望获得更多 Xbox Live 功能的访问权限、专职营销和开发支持，以及在主要 Xbox One 商店中提供的机会，请将应用到该 [ID@Xbox](https://www.xbox.com/developers/id) 计划。 若要查看可用于 Xbox Live 创意者计划和 ID@Xbox 计划的功能，请参阅[功能表](/gaming/xbox-live/developer-program-overview.md#feature-table)。
 
 有关详细信息，请转到[将 Xbox Live 添加到游戏](e2e.md#adding-xbox-live-to-your-game)。
 
@@ -330,7 +330,7 @@ Windows 10 提供可用于游戏开发的大量 API 集合。 有用于游戏的
 
 ### <a name="uwp-games-without-directx"></a>无 DirectX 的 UWP 游戏
 
-具有最小性能要求的较简单的游戏（例如纸盘或棋盘游戏）可在不使用 DirectX 的情况下编写，并且不一定需要使用 C++ 编写。 此类游戏可使用 UWP 支持的任何语言，例如 C#、Visual Basic、C++ 和 HTML/JavaScript。 如果你的游戏不需要高性能和密集图形，请查阅 [JavaScript 和 HTML5 触摸游戏示例](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)作为一个示例。
+具有最小性能要求的较简单的游戏（例如纸盘或棋盘游戏）可在不使用 DirectX 的情况下编写，并且不一定需要使用 C++ 编写。 此类游戏可使用 UWP 支持的任何语言，例如 C#、Visual Basic、C++ 和 HTML/JavaScript。 如果你的游戏不需要高性能和密集图形，请查阅 [JavaScript 和 HTML5 触摸游戏示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/JavaScript%20and%20HTML5%20touch%20game%20sample/%5BJavaScript%5D-JavaScript%20and%20HTML5%20touch%20game%20sample/JavaScript)作为一个示例。
 
 ### <a name="game-engines"></a>游戏引擎
 

@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cd347b115a920c71ca1eb9b5f466adf05c69c64
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a1db38120252febefd55933fa106f473b3f920d8
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968242"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234868"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定语音识别器语言
 
@@ -31,7 +31,7 @@ ms.locfileid: "82968242"
 
 你应该已经大致了解了语音识别和识别约束。
 
-如果你不熟悉如何开发 Windows 应用应用，请查看以下主题，了解此处讨论的技术。
+如果你不熟悉如何开发 Windows 应用程序，请参阅这些主题，了解此处讨论的技术。
 
 -   [创建第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 -   借助[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
@@ -56,7 +56,7 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 已安装的语言在不同的设备之间可能会不同。 如果对于特定的约束你依赖于某种语言，你应验证是否存在该语言。
 
-**请注意**  ，在安装新语言包之后需要重新启动。 如果指定的语言不受\_支持\_或尚未完成安装，则会引发一个异常，其中包含错误代码 "找不到 SPERR （0x8004503a）"。
+**注意**   安装新语言包后需要重新启动。 \_ \_ 如果指定的语言不受支持或尚未完成安装，则会引发一个异常，其中包含错误代码 "找不到 SPERR （0x8004503a）"。
 
  
 

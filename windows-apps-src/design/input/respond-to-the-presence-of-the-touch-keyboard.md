@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: 键盘, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: 76b468eedd136522a4af9fb5880049278548865d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 969d0c24c86a47e72cbfec08d835c25b6e6779c4
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970262"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234888"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的存在
 
@@ -39,7 +39,7 @@ ms.locfileid: "82970262"
 
 你应该对标准键盘交互、处理键盘输入和事件以及 UI 自动化有一个基本了解。
 
-如果你不熟悉如何开发 Windows 应用应用，请查看以下主题，了解此处讨论的技术。
+如果你不熟悉如何开发 Windows 应用程序，请参阅这些主题，了解此处讨论的技术。
 
 - [创建第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - 借助[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件

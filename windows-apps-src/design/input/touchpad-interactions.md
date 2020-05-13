@@ -1,5 +1,5 @@
 ---
-Description: 创建 Windows 应用应用，其中包含针对触摸板进行了优化但在输入设备上保持一致的直观且独特的用户交互体验。
+Description: 利用为触摸板优化但在输入设备上保持一致的直观且独特的用户交互体验创建 Windows 应用。
 title: 触摸板交互
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,12 +8,12 @@ keywords: 触摸板, PTP, 触摸, 指针, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: afbdf5c672328acfc60a82f9f66c75dc52370c99
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970232"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234487"
 ---
 # <a name="touchpad-design-guidelines"></a>触摸板设计指南
 
@@ -55,11 +55,11 @@ ms.locfileid: "82970232"
 
 ![标准触摸板设置](images/mouse-touchpad-settings-standard.png)
 
-<sup>标准\\触摸\\板设置</sup>
+<sup>标准 \\ 触摸板 \\ 设置</sup>
 
 ![Windows 精确式触摸板设置](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\精度\\触摸\\板设置</sup>
+<sup>Windows \\ 精度 \\ 触摸板 \\ 设置</sup>
 
 下面是一些用于执行常见任务的触摸板优化手势的示例。
 

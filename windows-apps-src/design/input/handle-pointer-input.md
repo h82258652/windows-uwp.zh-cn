@@ -1,5 +1,5 @@
 ---
-Description: 在 Windows 应用程序应用程序中接收、处理和管理指针设备，如触摸、鼠标、笔/触笔和触摸板等。
+Description: 在 Windows 应用程序中接收、处理和管理指针设备，如触摸、鼠标、笔/触笔和触摸板等。
 title: 处理指针输入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,16 +8,16 @@ keywords: 笔、鼠标、触摸板、触摸、指针、输入、用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: db3b87bd187c64b04615fb6722e4e1f2b666b7dc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 609f6f1ad33c3736d9ac99ec40cbbfe7ade9500a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970062"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234819"
 ---
 # <a name="handle-pointer-input"></a>处理指针输入
 
-在 Windows 应用程序应用程序中接收、处理和管理指针设备（例如触摸、鼠标、笔/触笔和触摸板）中的输入数据。
+在 Windows 应用程序中接收、处理和管理指针设备（例如触摸、鼠标、笔/触笔和触摸板）中的输入数据。
 
 > [!Important]
 > 仅当要求清楚、定义良好且平台控件支持的交互不支持你的方案时才创建自定义交互。  
@@ -72,7 +72,7 @@ Windows 应用可以侦听以下指针事件：
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>当另一个 UI 元素捕获该指针、释放该指针、或以编程方式捕获另一个指针时发生。</p>
 <div class="alert">
-<strong>请注意</strong>  ，没有对应的指针捕获事件。
+<strong>注意</strong>   没有相应的指针捕获事件。
 </div>
 <div>
  
@@ -132,7 +132,7 @@ Windows 应用可以侦听以下指针事件：
 
 ### <a name="create-the-ui"></a>创建 UI
 
-在此示例中，我们使用[矩形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle)（`Target`）作为使用指针输入的对象。 当指针状态更改时，目标的颜色也将更改。
+在此示例中，我们使用[矩形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle)（ `Target` ）作为使用指针输入的对象。 当指针状态更改时，目标的颜色也将更改。
 
 每个指针的详细信息显示在随指针移动的浮动 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中。 指针事件本身在矩形右侧的 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 中报告。
 

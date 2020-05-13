@@ -1,5 +1,5 @@
 ---
-Description: 列出要在创建可访问的 Windows 应用应用时要避免的做法。
+Description: 列出要在创建可访问的 Windows 应用时要避免的做法。
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: 要避免的辅助功能做法
 label: Accessibility practices to avoid
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 95c23a00ebc9ee2563340fbd5594d53ac7edb066
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 75dad7eb676bd2d2a9d95fa57122085329e5e144
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970002"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233944"
 ---
 # <a name="accessibility-practices-to-avoid"></a>要避免的辅助功能做法
 
-若要创建可访问的 Windows 应用应用，请参阅下面的要避免的做法列表： 
+如果要创建可访问的 Windows 应用，请参阅下面的要避免的做法列表： 
 
 * 如果你可以使用默认 Windows 控件或已实现 Microsoft UI 自动化支持的控件，**请避免生成自定义 UI 元素**。 标准 Windows 控件默认具有辅助性，并且通常只需添加几个特定于应用的辅助功能属性即可。 相反，为真正的自定义控件实现 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 支持会更为复杂（请参阅[自定义自动化对等](custom-automation-peers.md)）。
 * **不要在 Tab 键顺序中放置静态文本或其他非交互元素**（例如，通过为非交互元素设置 [**TabIndex**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.tabindex) 属性）。 如果非交互元素在 Tab 键顺序中，这将违背键盘辅助功能指南，因为它会降低用户进行键盘导航的效率。 许多辅助技术使用 Tab 键顺序和元素聚焦功能，以此作为它们向辅助技术用户呈现应用界面的一部分逻辑。 Tab 键顺序中的纯文本元素会对预期 Tab 键顺序中只有交互元素（例如按钮、复选框、文本输入字段、组合框、列表等）的用户造成困惑。

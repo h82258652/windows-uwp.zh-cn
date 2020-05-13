@@ -8,18 +8,18 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b5462dcd5714c765853174ae62f56f99c5d5cdcc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 15386febd99180c30671a313465b11f7fe63ffd0
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969518"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234118"
 ---
 # <a name="custom-automation-peers"></a>自定义的自动化对等  
 
 介绍 Microsoft UI 自动化的自动化对等概念以及如何为自己的自定义 UI 类提供自动化支持。
 
-UI 自动化提供了一个框架，可供自动化客户端用来检查或操作各种 UI 平台和框架的用户界面。 如果你正在编写 Windows 应用程序应用程序，你为 UI 使用的类已经提供 UI 自动化支持。 你可以从现有的非封装类通过派生方式定义一种新的 UI 控件或支持类。 在执行此操作的过程中，你的类可能会添加应当具有辅助功能支持，但默认的 UI 自动化支持未涵盖的行为。 在这种情况下，您应通过从基实现使用的[**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)类派生来扩展现有的 UI 自动化支持，并将任何必要的支持添加到对等实现，并通知 Windows 应用程序控制基础结构应创建新的对等节点。
+UI 自动化提供了一个框架，可供自动化客户端用来检查或操作各种 UI 平台和框架的用户界面。 如果你正在编写 Windows 应用程序，你为 UI 使用的类已经提供 UI 自动化支持。 你可以从现有的非封装类通过派生方式定义一种新的 UI 控件或支持类。 在执行此操作的过程中，你的类可能会添加应当具有辅助功能支持，但默认的 UI 自动化支持未涵盖的行为。 在这种情况下，您应通过从基实现使用的[**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)类派生来扩展现有的 UI 自动化支持，并将任何必要的支持添加到对等实现，并通知 Windows 应用程序控制基础结构应创建新的对等节点。
 
 UI 自动化不仅支持辅助功能应用和辅助技术（如屏幕阅读器），而且支持质量保证（测试）代码。 在任一情况下，UI 自动化客户端都可以检查用户界面元素并从应用外的其他代码模拟用户与你的应用的交互。 有关所有平台及其更广泛含义内的 UI 自动化的信息，请参阅 [UI 自动化概述](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-uiautomationoverview)。
 
@@ -76,7 +76,7 @@ UWP 基于先前的托管代码 UI 框架（如 Windows 窗体、Windows Present
 
 无论是否为框架实现了自动化对等，UI 自动化客户端功能都不绑定到 UWP，实际上，现有的 UI 自动化客户端（如辅助技术）将使用其他编程模型（如 COM）。 在 COM 中，客户端可以针对用来实现属性、事件或树检查的所请求模式或常规 UI 自动化框架的 COM 控件模式接口执行 **QueryInterface**。 对于这些模式，UI 自动化框架会将该接口代码封送到针对应用的 UI 自动化提供程序以及相关对等运行的 UWP 代码中。
 
-使用 C\#或 Microsoft Visual Basic 为某个托管代码框架（如 UWP 应用）实现控件模式时，可以使用 .NET Framework 接口来表示这些模式，而不是使用 COM 接口表示形式。 例如，由 Microsoft .NET 实现的 **Invoke** 模式的 UI 自动化模式界面是 [**IInvokeProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider)。
+使用 C 或 Microsoft Visual Basic 为某个托管代码框架（如 UWP 应用）实现控件模式时 \# ，可以使用 .NET Framework 接口来表示这些模式，而不是使用 COM 接口表示形式。 例如，由 Microsoft .NET 实现的 **Invoke** 模式的 UI 自动化模式界面是 [**IInvokeProvider**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider)。
 
 有关控件模式、提供程序接口及其用途的列表，请参阅[控件模式和接口](control-patterns-and-interfaces.md)。 有关控件类型的列表，请参阅 [UI 自动化控件类型概述](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controltypesoverview)。
 
@@ -529,10 +529,10 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 
 对于传递到对等中的参数，可使用它来验证输入，例如，如果传递了 **null**，会引发 [**ArgumentNullException**](https://docs.microsoft.com/dotnet/api/system.argumentnullexception)，并且对于你的实现，该参数不是有效值。 但是，如果你的对等执行了后续操作，请记住对等与托管控件的交互将向其传入某些异步字符。 对等执行的任何操作不一定会阻止控件中的 UI 线程（而且它可能不应该执行此操作）。 因此，当创建了对等或首次调用了自动化对等方法时，会出现以下情况：对象可用或具有某些属性，但同时控件状态也会发生更改。 在这些情况下，提供程序会引发两种专门的异常：
 
-* 如果你无法访问对等所有者或相关对等元素，则会引发 [**ElementNotAvailableException**](https://docs.microsoft.com/dotnet/api/system.windows.automation.elementnotavailableexception)，具体取决于你的 API 传递的原始信息。 例如，你的对等可能会尝试运行其方法，但是所有者自此从 UI 中删除，已关闭的模式对话框就是这样的例子。 对于 non-.NET 客户端，这将映射[**到\_UIA\_E ELEMENTNOTAVAILABLE**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-error-codes)。
-* 如果仍然具有所有者，但该所有者处于诸如 [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)`=`**false** 的模式下，则会引发 [**ElementNotEnabledException**](https://docs.microsoft.com/dotnet/api/system.windows.automation.elementnotenabledexception)，该模式会阻止对等正在尝试完成的某些特定编程更改。 对于 non-.NET 客户端，这将映射[**到\_UIA\_E ELEMENTNOTENABLED**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-error-codes)。
+* 如果你无法访问对等所有者或相关对等元素，则会引发 [**ElementNotAvailableException**](https://docs.microsoft.com/dotnet/api/system.windows.automation.elementnotavailableexception)，具体取决于你的 API 传递的原始信息。 例如，你的对等可能会尝试运行其方法，但是所有者自此从 UI 中删除，已关闭的模式对话框就是这样的例子。 对于 non-.NET 客户端，这将映射到[**UIA \_ E \_ ELEMENTNOTAVAILABLE**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-error-codes)。
+* 如果仍然具有所有者，但该所有者处于诸如 [**IsEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.isenabled)`=`**false** 的模式下，则会引发 [**ElementNotEnabledException**](https://docs.microsoft.com/dotnet/api/system.windows.automation.elementnotenabledexception)，该模式会阻止对等正在尝试完成的某些特定编程更改。 对于 non-.NET 客户端，这将映射到[**UIA \_ E \_ ELEMENTNOTENABLED**](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-error-codes)。
 
-除此之外，对等还应该是它们从其对等支持中引发的相对保守的相关异常。 大多数客户端无法处理对等中的异常，也无法将其转换为当与客户端交互时其用户可以选择的可操作选项。 因此，与在每次对等尝试执行的某些操作不起作用时即引发异常相比，有时 no-op 以及捕获异常（不会在对等实现中重新引发异常）是一个较好的策略。 同时还需考虑到，大多数 UI 自动化客户端均不会采用托管代码编写。 大多数都是以 COM 编写的，只要调用 UI 自动化客户端方法来访问对等端，就可以在**HRESULT**中检查是否有**\_"OK"** 。
+除此之外，对等还应该是它们从其对等支持中引发的相对保守的相关异常。 大多数客户端无法处理对等中的异常，也无法将其转换为当与客户端交互时其用户可以选择的可操作选项。 因此，与在每次对等尝试执行的某些操作不起作用时即引发异常相比，有时 no-op 以及捕获异常（不会在对等实现中重新引发异常）是一个较好的策略。 同时还需考虑到，大多数 UI 自动化客户端均不会采用托管代码编写。 大多数都是以 COM 编写的，只要调用 UI 自动化客户端方法来访问对等端，就可以在**HRESULT**中检查是否有** \_ "OK"** 。
 
 <span id="related_topics"/>
 

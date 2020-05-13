@@ -7,16 +7,16 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10，uwp，win32，桌面，toast 通知，desktop bridge，.msix，稀疏包，用于发送 toast，com 服务器，com 激活器，com，虚假 com，无 com，无 com，send toast 的选项
 ms.localizationpriority: medium
-ms.openlocfilehash: 020cdeb1aaddac7fe879e91d18e258aea1b387ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b84120a592a1c2f5f18c6b6121568cbf126a582e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970982"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234544"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>来自桌面应用的 Toast 通知
 
-桌面应用（包括打包的[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)应用、使用[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)获取包标识和经典非打包 Win32 应用的应用）可以像 Windows 应用应用一样发送交互式 toast 通知。 但是，由于激活方案不同，存在一些不同的桌面应用选项。
+桌面应用（包括打包的[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)应用、使用[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)获取包标识和经典非打包 Win32 应用的应用）可以像 Windows 应用一样发送交互式 toast 通知。 但是，由于激活方案不同，存在一些不同的桌面应用选项。
 
 在本文中，我们将介绍你可以用于在 Windows 10 上发送 toast 通知的选项。 每个选项完全支持…
 

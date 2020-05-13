@@ -1,5 +1,5 @@
 ---
-Description: 创建 Windows 应用应用，其中包含经过优化可触摸但在输入设备上保持一致的直观且独特的用户交互体验。
+Description: 创建具有直观且独特的用户交互体验的 Windows 应用，这些体验经过优化，可用于触摸，但在输入设备中的功能保持一致。
 title: 触控交互
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: 键盘, 指针, 输入, 用户交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 99926de0ea26b0cef9184756add777a39330d934
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e753b5c92dc22f967e2f518e8435d3a4fb41a529
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970252"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234840"
 ---
 # <a name="touch-interactions"></a>触控交互
 

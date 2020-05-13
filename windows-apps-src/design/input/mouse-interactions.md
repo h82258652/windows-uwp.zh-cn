@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0591a62134f09c1b3a9d115d038020e95f0c139
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2d6ddf03541e94f89d0950a4f4c03eebaa0e396e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970712"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234470"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
-为触控输入优化 Windows 应用应用设计，并默认获取基本的鼠标支持。 
+为触摸输入优化 Windows 应用设计，并默认获取基本的鼠标支持。 
 
 ![鼠标](images/input-patterns/input-mouse.jpg)
 
@@ -59,7 +59,7 @@ ms.locfileid: "82970712"
 <td align="left"><p>右键单击以选定和进行命令操作</p></td>
 <td align="left"><p>右键单击以使用全局命令显示导航栏（如果有的话）与应用栏。 右键单击某个元素可将其选定并显示带有所选元素的上下文命令的应用栏。</p>
 <div class="alert">
-<strong>注意：</strong>  右键单击此项可显示 "选择" 或 "应用栏" 命令不适合的 UI 行为，并显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
+<strong>注意</strong>   右键单击以显示 "选择" 或 "应用栏" 命令不适合的 UI 行为，以显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
 </div>
 <div>
  

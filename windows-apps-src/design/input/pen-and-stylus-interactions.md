@@ -1,6 +1,6 @@
 ---
 Description: 构建支持来自笔和触笔设备的自定义交互的 Windows 应用程序，包括用于自然书写和绘图体验的数字墨迹。
-title: Windows 应用中的笔交互和 Windows 墨迹
+title: Windows 应用中的笔交互和 Windows Ink
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
 template: detail.hbs
@@ -8,21 +8,21 @@ keywords: Windows Ink, Windows Ink 书写, DirectInk, InkPresenter, InkCanvas, �
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c2cda9b2775ac1e0dca2cd37d1082bc6d75b1bad
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 1c9986ee6d4dacc929a8c2d243becf7d5c9d973e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968382"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234907"
 ---
-# <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 应用中的笔交互和 Windows 墨迹
+# <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 应用中的笔交互和 Windows Ink
 
 ![Surface 触控笔](images/ink/hero-small.png)  
 *Surface 触控笔*（可通过 [Microsoft 官方商城](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)购买）。
 
 ## <a name="overview"></a>概述
 
-优化 Windows 应用程序的笔输入，以便为用户提供标准[**指针设备**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice)功能和最佳 Windows 墨迹体验。
+优化 Windows 应用程序的笔输入，为用户提供标准[**指针设备**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.PointerDevice)功能和最佳 Windows 墨迹体验。
 
 > [!NOTE]
 > 本主题重点介绍 Windows Ink 平台。 对于常规指针输入处理（类似于鼠标、触摸和触摸板），请参阅[处理指针输入](handle-pointer-input.md)。

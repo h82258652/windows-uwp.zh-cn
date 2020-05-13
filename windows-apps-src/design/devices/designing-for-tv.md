@@ -13,16 +13,16 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24cc85c255f26b61603690d6b39c3a6ffdcbb544
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5025a63f5c96365ba1f14311b9c68ed41f4fc5aa
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970722"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234597"
 ---
 # <a name="designing-for-xbox-and-tv"></a>针对 Xbox 和电视进行设计
 
-设计 Windows 应用程序应用程序，使其在 Xbox One 和电视屏幕上看起来良好且功能良好。
+设计您的 Windows 应用程序，使其在 Xbox One 和电视屏幕上看起来良好且功能良好。
 
 请参阅[游戏板和远程控制交互](../input/gamepad-and-remote-interactions.md)，获取有关在*10 英尺*体验中的 UWP 应用程序的交互体验指导。
 
@@ -170,7 +170,7 @@ bool result =
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### <a name="image"></a>图像
+### <a name="image"></a>映像
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -333,7 +333,7 @@ UWP 具有将焦点视觉对象保留在 [VisibleBounds](https://docs.microsoft.
 > [!NOTE]
 > 此代码片段专门用于 `ListView`；对于 `GridView` 样式，请将 [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 和 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 的 [TargetType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 属性设置为 `GridView`。
 
-为了更精细地控制项的显示方式，如果应用程序面向版本1803或更高版本，则可以使用[BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 你可以将其放在**ListView**/**GridView**的[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)上，在内部**ScrollViewer**之前捕获它，如以下代码片段所示：
+为了更精细地控制项的显示方式，如果应用程序面向版本1803或更高版本，则可以使用[BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 你可以将其放在[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) **ListView** / **GridView**的 ItemsPanel 上，在内部**ScrollViewer**之前捕获它，如以下代码片段所示：
 
 ```xaml
 <GridView x:Name="gridView">
@@ -462,7 +462,7 @@ UWP 提供一种便捷方式来公开用户从其系统设置中选择的**主�
 
 嵌套 UI 公开包含在容器 UI 元素内的可操作项，其中嵌套项和容器项可彼此独立捕获焦点。
 
-嵌套 UI 较适合某些输入类型，但对于依赖 XY 导航的游戏板和遥控器不一定适用。 请务必遵循本主题中的指南操作，确保你的 UI 已针对 10 英尺环境进行了优化，并且用户可以轻松地访问所有可交互元素。 一个常见的解决方案是将嵌套 UI 元素放置在`ContextFlyout`中。
+嵌套 UI 较适合某些输入类型，但对于依赖 XY 导航的游戏板和遥控器不一定适用。 请务必遵循本主题中的指南操作，确保你的 UI 已针对 10 英尺环境进行了优化，并且用户可以轻松地访问所有可交互元素。 一个常见的解决方案是将嵌套 UI 元素放置在中 `ContextFlyout` 。
 
 有关嵌套 UI 的详细信息，请参阅[列表项中的嵌套 UI](../controls-and-patterns/nested-ui.md)。
 
@@ -560,12 +560,12 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 然后，你可以遵循此检查对代码块中的 UI 进行相应调整。 
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 针对 10 英尺体验进行设计需要考虑特殊的注意事项，这些注意事项有别于针对任何其他平台进行设计。 当然直接将 UWP 应用移植到 Xbox One 也能使其工作，但它不一定已针对 10 英尺体验进行优化，并且可能导致用户沮丧。 按照本文中的指南进行操作可确保你的应用在电视上达到最佳状态。
 
 ## <a name="related-articles"></a>相关文章
 
-- [Windows 应用应用的设备入门](index.md)
+- [适用于 Windows 应用的设备入门](index.md)
 - [游戏板和遥控器交互](../input/gamepad-and-remote-interactions.md)
 - [UWP 应用中的声音](../style/sound.md)

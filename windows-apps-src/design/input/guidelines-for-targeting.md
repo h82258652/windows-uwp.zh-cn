@@ -8,16 +8,16 @@ ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 199c120dcc85e5c113d6d4d529699a3f2fb28aa1
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 13737e9aeb906e0430b2a18dd75ae1fce3a75956
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970082"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234588"
 ---
 # <a name="guidelines-for-touch-targets"></a>触摸目标准则
 
-Windows 应用程序应用程序中的所有交互 UI 元素必须足够大，以便用户能够准确地访问和使用，而不考虑设备类型或输入方法。
+无论设备类型或输入方法是什么，Windows 应用程序中的所有交互式 UI 元素都必须足够大，以便用户能够准确地访问和使用。
 
 支持触摸输入（以及触摸联系人区域相对不精确的性质）需要进一步优化目标大小和控件布局，因为触控数字化器报告的较大、更复杂的输入数据集用于确定用户的预期（或最可能的）目标。
 
@@ -29,10 +29,10 @@ Windows 应用程序应用程序中的所有交互 UI 元素必须足够大，�
 
 ## <a name="fluent-standard-sizing"></a>Fluent Standard 大小
 
-创建 Fluent Standard 大小** 是为了在信息密度与用户舒适之间提供平衡。 实际上，屏幕上的所有项都对齐到 40x40 有效像素 (epx) 目标，这使 UI 元素可与网格对齐并基于系统级别缩放进行相应缩放。
+创建 Fluent Standard 大小  是为了在信息密度与用户舒适之间提供平衡。 实际上，屏幕上的所有项都对齐到 40x40 有效像素 (epx) 目标，这使 UI 元素可与网格对齐并基于系统级别缩放进行相应缩放。
 
 > [!NOTE]
-> 有关有效像素和缩放的详细信息，请参阅[Windows 应用设计简介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
+> 有关有效像素和缩放的更多信息，请参阅 [Windows 应用设计简介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
 >
 > 有关系统级别缩放的更多信息，请参阅[对齐、边距和填充](../layout/alignment-margin-padding.md)。
 
@@ -44,7 +44,7 @@ Windows 应用程序应用程序中的所有交互 UI 元素必须足够大，�
 
 可以在页面或网格级别应用精简大小调整。
 
-### <a name="page-level"></a>页级别
+### <a name="page-level"></a>页面级别
 
 ```xaml
 <Page.Resources>

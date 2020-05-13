@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d2866b3e04d2fa531e9bd538badd96205a8c65
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 37fb7cc81d1a86a159526af5d580a02482d13f9a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969422"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233978"
 ---
 # <a name="developing-inclusive-windows-apps"></a>开发非独占 Windows 应用  
 
-本文介绍如何开发可访问的 Windows 应用程序。 具体而言，它假定你了解如何为应用设计逻辑层次结构。 了解如何开发可访问的 Windows 应用，包括键盘导航、颜色和对比度设置以及辅助技术支持。
+本文介绍如何开发可访问的 Windows 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。 了解如何开发可访问的 Windows 应用，包括键盘导航、颜色和对比度设置以及辅助技术支持。
 
 如果你尚未了解，请首先阅读[设计非独占软件](designing-inclusive-software.md)。
 
