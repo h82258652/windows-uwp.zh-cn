@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cc182d05b1cc02dd62f66506c12fcfcfc8a03952
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969772"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234468"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>适用于 Windows 应用的磁贴、锁屏提醒和通知
  
@@ -37,7 +37,7 @@ ms.locfileid: "82969772"
 | 文章 | 说明 |
 | --- | --- |
 | [创建磁贴](creating-tiles.md) | 为你的应用自定义默认磁贴，并提供适用于不同屏幕大小的资源。 |
-| [应用图标资源](app-assets.md) | 应用图标资产（它以各种形式出现在整个 Windows 10 操作系统中）是 Windows 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。 |
+| [应用图标资源](app-assets.md) | 应用图标资产（以各种形式出现在整个 Windows 10 操作系统中）是 Windows 应用的调用卡。 这些指南详细介绍应用图标资源在系统中的显示位置，并提供有关如何创建最完美图标的深入设计提示。 |
 | [主要磁贴 API](primary-tile-apis.md) | 请求固定你的应用的主磁贴，并检查主磁贴当前是否已固定。 |
 | [磁贴内容](create-adaptive-tiles.md) | 磁贴通知内容使用 Windows 10 中的自适应新功能来指定，让你可以使用可适应不同屏幕密度的简单而灵活的标记语言来设计你自己的磁贴通知内容。 本文介绍了如何为 Windows 应用创建自适应动态磁贴。 |
 | [磁贴内容架构](../tiles-and-notifications/tile-schema.md) | 以下是用于创建自适应磁贴的元素和属性。 |
@@ -51,7 +51,7 @@ ms.locfileid: "82969772"
 | --- | --- |
 | [Toast 通知](adaptive-interactive-toasts.md) | 自适应和交互式 Toast 通知可使你创建带有更多内容的灵活弹出通知、可选的嵌入式图像和可选的用户交互。 |
 | [发送本地 toast 通知](send-local-toast.md) | 了解如何发送交互式的 toast 通知。 |
-| [通知可视化工具](notifications-visualizer.md) | 通知可视化工具是 [Microsoft Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) 中的一款新 Windows 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。 |
+| [通知可视化工具](notifications-visualizer.md) | 通知可视化工具是 [Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) 中的一款新 Windows 应用，可帮助开发人员设计适用于 Windows 10 的自适应动态磁贴。 |
 | [选择通知传递方法](choosing-a-notification-delivery-method.md) | 本文介绍了用于传递磁贴和锁屏提醒更新以及 Toast 通知内容的四个通知选项：本地、计划、定期和推送。 |
 | [定期通知概述](periodic-notification-overview.md) | 定期通知（也称为轮询通知）通过从云服务下载内容，以固定间隔更新磁贴和锁屏提醒。 |
 | [Windows 推送通知服务 (WNS) 概述](windows-push-notification-services--wns--overview.md) | Windows 推送通知服务 (WNS) 使第三方开发人员可从自己的云服务发送 Toast、磁贴、锁屏提醒和原始更新。 这提供了一种高效而可靠地向用户提供新更新的机制。 |

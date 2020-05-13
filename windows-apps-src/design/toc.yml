@@ -546,6 +546,8 @@
           href: accessibility/basic-accessibility-information.md
         - name: 键盘辅助功能
           href: accessibility/keyboard-accessibility.md
+        - name: 屏幕阅读器和硬件系统按钮
+          href: accessibility/system-button-narration.md
         - name: 标志和标题
           href: accessibility/landmarks-and-headings.md
         - name: 高对比度主题

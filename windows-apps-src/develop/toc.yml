@@ -99,6 +99,8 @@
               href: ../audio-video-camera/dash-profile-support.md
         - name: 媒体转换
           href: ../audio-video-camera/media-casting.md
+        - name: 启用从蓝牙连接的远程设备播放音频
+          href: ../audio-video-camera/enable-remote-audio-playback.md
         - name: PlayReady DRM
           href: ../audio-video-camera/playready-client-sdk.md
           items:

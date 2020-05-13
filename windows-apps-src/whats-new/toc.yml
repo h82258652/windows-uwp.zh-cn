@@ -1,10 +1,15 @@
-- name: 面向开发人员的 Windows 10 内部版本 18362 中的新增功能
-  href: ../whats-new/windows-10-build-18362.md
+- name: 面向开发人员的 Windows 10 内部版本 19041 中的新增功能
+  href: ../whats-new/windows-10-build-19041.md
   items:
-    - name: Windows 10 版本 18362 中的 API 新增内容
-      href: ../whats-new/windows-10-build-18362-api-diff.md
+    - name: Windows 10 内部版本 19041 中的 API 新增内容
+      href: ../whats-new/windows-10-build-19041-api-diff.md
 - name: 以前版本的 Windows 10
   items:
+    - name: 面向开发人员的 Windows 10 内部版本 18362 中的新增功能
+      href: ../whats-new/windows-10-build-18362.md
+      items:
+        - name: Windows 10 版本 18362 中的 API 新增内容
+          href: ../whats-new/windows-10-build-18362-api-diff.md
     - name: 面向开发人员的 Windows 10 版本 17763 中的新增功能
       href: ../whats-new/windows-10-build-17763.md
       items:
