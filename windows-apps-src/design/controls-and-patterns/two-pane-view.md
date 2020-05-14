@@ -6,12 +6,12 @@ ms.date: 01/22/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e151e06f0ebc838671aa1100d96e8e6f14de0739
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bc080a58bc3e381fc26ddcc6a42af28e2dacaa65
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614127"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970442"
 ---
 # <a name="two-pane-view"></a>双窗格视图
 
@@ -29,7 +29,7 @@ TwoPaneView 控件旨在帮助你自动充分利用双屏设备（尽管它适�
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | **TwoPaneView** 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | TwoPaneView  控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [TwoPaneView 类](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
 

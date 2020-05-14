@@ -5,18 +5,30 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#, 示例, 剪贴板, 案例, 研究
 ms.localizationpriority: medium
-ms.openlocfilehash: ecfbe1831014bce0cb7259c935ab0ae7a8af3de8
-ms.sourcegitcommit: 8b7b677c7da24d4f39e14465beec9c4a3779927d
+ms.openlocfilehash: de19d4624cbcf6f102b2eb2067c9f0ff9c583f0b
+ms.sourcegitcommit: 29daa3959304d748e4dec4e6f8e774fade65aa8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81266935"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82851601"
 ---
 # <a name="porting-the-clipboard-sample-tocwinrtfromcmdasha-case-study"></a>将 Clipboard 示例从 C# 移植到 C++/WinRT&mdash;案例研究
 
 本主题提供了一个有关将[通用 Windows 平台 (UWP) 应用示例](https://github.com/microsoft/Windows-universal-samples)之一从 [C#](/visualstudio/get-started/csharp) 移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的案例研究。 可以通过按照本演练并自行移植示例，获取移植实践和体验。
 
-另请参阅[从 C# 移动到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)，其中包含许多关于从 C# 移动到 C++/WinRT 所涉及的特定技术细节的部分。
+有关对从 C# 移植到 C++/WinRT 所涉及的技术详细信息的全面分类，请参阅对应的主题[从 C# 迁移到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)。
+
+## <a name="a-brief-preface-about-c-and-c-source-code-files"></a>简要介绍 C# 和 C++ 源代码文件
+
+在 C# 项目中，源代码文件主要是 `.cs` 文件。 迁移到 C++ 后，你会注意到有更多类型的源代码文件可供使用。 原因与编译器之间的差异、重用 C++ 源代码的方式，以及声明和定义类型及其函数（其方法）的概念有关   。
+
+函数 declaration 仅描述函数的签名（其返回类型和名称及其参数类型和名称）   。 函数 definition 包括函数的正文（其实现）   。
+
+涉及到类型时稍有不同。 通过提供类型的名称并（至少）仅声明其所有成员函数（以及其他成员）来定义类型   。 就是这样，即使未定义类型的成员函数，也可以定义类型  。
+
+- 常见的 C++ 源代码文件是 `.h` 和 `.cpp` 文件。 `.h` 文件是标头文件，它定义了一个或多个类型  。 虽然可以在标头中定义成员函数，但这通常是 `cpp` 文件的用途  。 因此，对于假想 C++ 类型 MyClass  ，应在 `MyClass.h` 中定义 MyClass  ，并在 `MyClass.cpp` 中定义其成员函数。 要让其他开发人员重复使用你的类，只需共享 `.h` 文件和对象代码。 应将 `.cpp` 文件保密，因为其实现构成了知识产权。
+- 预编译标头 (`pch.h`)。 通常，应用程序中包含一组标头文件，这组文件很少变化。 因此无需在每次编译时处理这组标头的内容，即可将这些标头聚合为一个，编译一次，然后在每次生成时使用预编译步骤的输出。 可以通过预编译标头文件（通常名为 `pch.h`）来执行此操作  。
+- `.idl` 文件。 这些文件包含接口定义语言 (IDL)。 可以将 IDL 视为 Windows 运行时类型的标头文件。 我们将在 [MainPage 类型的 IDL](#idl-for-the-mainpage-type) 部分中详细地讨论 IDL  。
 
 ## <a name="download-and-test-the-clipboard-sample"></a>下载和测试 Clipboard 示例
 
@@ -72,19 +84,30 @@ C# 项目引用共享文件夹中的资产文件。 可以在 C++/WinRT 项目�
 
 ### <a name="idl-for-the-mainpage-type"></a>MainPage 类型的 IDL 
 
+我们先来简要介绍一下接口定义语言 (IDL)，以及它如何帮助我们使用 C++/WinRT 进行编程。 IDL 是用于描述 Windows 运行时类型的可调用图面的一种源代码。 类型的可调用（或公共）图面已投影到世界各地区，以便可以使用该类型  。 该类型的投影部分与该类型的实际内部实现（当然是不可调用的，并且不是公共的）进行比较  。 这只是我们在 IDL 中定义的投影部分。
+
+使用编写的 IDL 源代码（在 `.idl` 文件中）即可将 IDL 编译为计算机可读的元数据文件（也称为 Windows 元数据）。 这些元数据文件的扩展名为 `.winmd`，以下是其部分用途。
+
+- `.winmd` 可以描述组件中的 Windows 运行时类型。 从某个应用程序项目引用 Windows 运行时组件 (WRC) 时，该应用程序项目将读取属于 WRC 的 Windows 元数据（该元数据可能位于单独的文件中，也可能会打包到与 WRC 本身相同的文件中），以便你可以从应用程序内使用 WRC 的类型。
+- `.winmd` 可以描述应用程序某一部分中的 Windows 运行时类型，以便它们可由同一应用程序的不同部分使用。 例如，在同一应用中 XAML 页使用的 Windows 运行时类型。
+- 为了更轻松地使用 Windows 运行时类型（内置或第三方），C++/WinRT 生成系统使用 `.winmd` 文件来生成包装类型，以表示这些 Windows 运行时类型的投影部分。
+- 为了让你更轻松地实现 Windows 运行时类型，C++/WinRT 生成系统会将 IDL 转换为 `.winmd` 文件，然后使用该文件为投影生成包装，并生成作为实现基础的存根（我们稍后会在本主题中详细介绍这些存根）。
+
+与 C++/WinRT 一起使用的 IDL 的特定版本是 [Microsoft 接口定义语言 3.0](/uwp/midl-3/intro)。 在本节的其余部分中，我们将详细介绍 C# MainPage 类型  。 我们会确定哪些部分需要在 C++/WinRT MainPage 类型的投影中（即，在其可调用或公共的图面中），以及哪些部分只能是其实现的一部分   。 这一区别很重要，因为当我们开始编写 IDL（我们将在下一部分中执行此操作）时，我们在此处将仅定义可调用的部分。
+
 同时实现 MainPage 类型的 C# 源代码文件包括：`MainPage.xaml`（我们将通过复制它来快速移植）、`MainPage.xaml.cs` 和 `SampleConfiguration.cs` 。
 
 在 C++/WinRT 版本中，我们以类似的方式将 MainPage 类型纳入源代码文件中  。 我们将在 `MainPage.xaml.cs` 中采用逻辑，并将大部分转换为 `MainPage.h` 和 `MainPage.cpp`。 对于 `SampleConfiguration.cs` 中的逻辑，我们会将其转换为 `SampleConfiguration.h` 和 `SampleConfiguration.cpp`。
 
-C# 通用 Windows 平台 (UWP) 应用程序中的类是 Windows 运行时类型。 但在 C++/WinRT 应用程序中创作类型时，可以选择将该类型设为 Windows 运行时类型还是常规 C++ 类/结构/枚举。
+C# 通用 Windows 平台 (UWP) 应用程序中的类当然是 Windows 运行时类型。 但在 C++/WinRT 应用程序中创作类型时，可以选择将该类型设为 Windows 运行时类型还是常规 C++ 类/结构/枚举。
 
-在 C++/WinRT 项目中，MainPage 已是 Windows 运行时类型，因此我们不需要更改这部分  。 具体而言，它是运行时类  。
+项目中的任何 XAML 页都必须是 Windows 运行时类型，因此 MainPage 必须是 Windows 运行时类型  。 在 C++/WinRT 项目中，MainPage 已是 Windows 运行时类型，因此我们不需要更改这部分  。 具体而言，它是运行时类  。
 
 - 若要更详细地了解是否应针对给定类型创作运行时类，请参阅主题：[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
-- 在使用 C++/WinRT 时，实现类型和投影类型的概念很重要   。 可以在上述主题和[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis) 中了解相关信息。
-- 有关运行时类和 `.idl` 文件之间的连接的信息，请参阅主题 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。 本主题分步介绍创作新运行时类的过程，第一步是将新的 Midl 文件 (.idl) 项添加到项目  。
+- 在 C++/WinRT 中，运行时类的内部实现及其投影（公共）部分以两个不同的类的形式存在。 这些称为实现类型和投影类型   。 可以在上面提到的主题和[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis) 中了解详细信息。
+- 有关运行时类和 IDL（`.idl` 文件）之间的连接的详细信息，可以参阅主题 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)。 本主题分步介绍创作新运行时类的过程，第一步是将新的 Midl 文件 (.idl) 项添加到项目  。
 
-对于 MainPage，在 C++/WinRT 项目中已有必要的 `MainPage.idl` 文件  。 但在本演练中，我们会将新的 `.idl` 文件添加到项目  。
+对于 MainPage，在 C++/WinRT 项目中实际已有必要的 `MainPage.idl` 文件  。 这是因为项目模板为我们创建了它。 但稍后在本演练中，我们会将更多 `.idl` 文件添加到项目。
 
 我们很快就会看到一个列表，其中列出了需要添加到现有 `MainPage.idl` 文件的 IDL。 在此之前，我们要确定需要在 IDL 中添加哪些项以及不需要在其中添加哪些项。
 
@@ -139,7 +162,7 @@ NotifyType 是在 C# 的 `MainPage.xaml.cs` 中声明的 `enum` 。 由于我们
 
 现在，让我们向 `MainPage.idl` 文件添加已决定在 IDL 中声明的 Mainpage 的新类型和新成员  。 同时，我们将从 IDL 中删除 Visual Studio 项目模板提供的 Mainpage 的占位符成员  。
 
-因此，在 C++/WinRT 项目中，打开 `MainPage.idl`，并对其进行编辑，使其类似于下面的列表。 请注意，其中一项编辑是将命名空间名称从 Clipboard 更改为 SDKTemplate   。 如果需要，只需删除 `MainPage.idl` 的当前内容，然后粘贴到下面的列表中即可。 需要注意的另一个调整是，我们要将名称 Scenario::ClassType 更改为 Scenario::ClassName   。
+因此，在 C++/WinRT 项目中，打开 `MainPage.idl`，并对其进行编辑，使其类似于下面的列表。 请注意，其中一项编辑是将命名空间名称从 Clipboard 更改为 SDKTemplate   。 如果需要，可以将 `MainPage.idl` 的全部内容替换为以下代码。 需要注意的另一个调整是，我们要将名称 Scenario::ClassType 更改为 Scenario::ClassName   。
 
 ```idl
 // MainPage.idl
@@ -179,17 +202,19 @@ namespace SDKTemplate
 
 但在本演练中继续进行迁移操作时，我们会将 Clipboard 命名空间名称的源代码中的每个匹配项更改为 SDKTemplate   。 在 C++/WinRT 项目属性中，还有一个地方会出现 Clipboard 命名空间名称，因此我们现在借此机会进行更改  。
 
-在 Visual Studio 中，对于 C++/WinRT 项目，将项目属性“公共属性”\>“C++/WinRT”\>根命名空间”设置为值“SDKTemplate” ****  ****  ****  。
+在 Visual Studio 中，对于 C++/WinRT 项目，将项目属性“公共属性”\>“C++/WinRT”\>根命名空间”设置为值“SDKTemplate” ****   ****   ****  。
 
 ### <a name="save-the-idl-and-re-generate-stub-files"></a>保存 IDL 并重新生成存根文件
 
-如果已阅读 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)主题，则会遇到“存根文件”的概念  。 生成 C++/WinRT 项目时，将为你生成存根文件（通过名为 `cppwinrt.exe` 的工具，基于 `.idl` 文件的内容）。 该主题包含有关这些文件的更多详细信息。
+[XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)主题引入了存根文件的概念，并向你进行了操作演示  。 我们还在本主题前面的内容中提到了存根，即 C++/WinRT 生成系统将 `.idl` 文件的内容转换为 Windows 元数据，然后名为 `cppwinrt.exe` 的工具从该元数据生成实现所基于的存根。
+
+每次在 IDL 中添加、删除或更改内容时，生成系统都会更新这些存根文件中的存根实现。 因此，每次更改 IDL 和生成时，我们建议你查看这些存根文件，复制任何已更改的签名，并将其粘贴到项目中。 稍后我们将介绍如何执行此操作的更多具体信息和示例。 这样做的优点是，随时都可以准确无误地知道实现类型的形状及其方法的签名。
 
 此时，我们暂时完成了对 `MainPage.idl` 文件的编辑，因此应立即进行保存。 此时，项目目前无法完成生成，但现在执行生成是一项有用的操作，因为它会为 MainPage 重新生成存根文件  。
 
 对于此 C++/WinRT 项目，这些存根文件将在 `\Clipboard\Clipboard\Generated Files\sources` 文件夹中生成。 在部分生成完成后，你会在此处找到它们（同样，生成不会完全成功。 但我们关注的&mdash;生成存根&mdash;步骤会成功）  。 我们需要的文件是 `MainPage.h` 和 `MainPage.cpp`。
 
-在这两个存根文件中，你将看到添加到 IDL 的 MainPage 的新成员的存根实现（例如 Current 和 FEATURE_NAME）    。 我们会将这些存根实现复制到项目中已存在的 `MainPage.h` 和 `MainPage.cpp` 文件。 同时，就像我们对 IDL 进行的操作一样，我们将从这些现有的文件中删除 Visual Studio 项目模板提供的 Mainpage 的占位符成员（名为 MyProperty 的虚拟属性和名为 ClickHandler 的事件处理程序）    。
+在这两个存根文件中，你将看到添加到 IDL 的 MainPage 的成员的存根实现（例如 Current 和 FEATURE_NAME）    。 你需要将这些存根实现复制到项目中已存在的 `MainPage.h` 和 `MainPage.cpp` 文件。 同时，就像我们对 IDL 进行的操作一样，我们将从这些现有的文件中删除 Visual Studio 项目模板提供的 Mainpage 的占位符成员（名为 MyProperty 的虚拟属性和名为 ClickHandler 的事件处理程序）    。
 
 事实上，我们要保留的 MainPage 当前版本的唯一成员是构造函数  。
 
@@ -484,7 +509,7 @@ IVector<Scenario> implementation::MainPage::scenariosInner = winrt::single_threa
 
 #### <a name="add-five-new-blank-xaml-pages"></a>添加五个新的空白 XAML 页
 
-向项目添加新的“XAML” > “空白页(C++/WinRT)”项（确保它是“空白页(C++/WinRT)”项目模板，而不是“空白页”）     。 将其命名为  `CopyText`。 新的 XAML 页在 SDKTemplate 命名空间中定义，这正是我们所需要的  。
+向项目添加新的“XAML” > “空白页(C++/WinRT)”项（确保它是“空白页(C++/WinRT)”项目模板，而不是“空白页”）       。 将其命名为  `CopyText`。 新的 XAML 页在 SDKTemplate 命名空间中定义，这正是我们所需要的  。
 
 再重复上述步骤四次，并将 XAML 页命名为 `CopyImage`、`CopyFiles`、`HistoryAndRoaming` 和 `OtherScenarios`。
 
@@ -559,7 +584,7 @@ void MainPage::UpdateStatus(hstring const& strMessage, SDKTemplate::NotifyType c
 ...
 ```
 
-在 C# 中，可点入嵌套属性  。 因此，C# MainPage 类型可使用语法 `Dispatcher` 访问其自己的 Dispatcher 属性   。 C# 可以通过语法（比如 `Dispatcher.HasThreadAccess`）进一步点入该值  。 在 C++/WinRT 中，属性是作为访问器函数实现的，因此，语法的不同之处仅在于为每个函数调用添加括号。
+在 C# 中，可以使用点表示法“点入到”嵌套属性中  。 因此，C# MainPage 类型可使用语法 `Dispatcher` 访问其自己的 Dispatcher 属性   。 C# 可以通过语法（比如 `Dispatcher.HasThreadAccess`）进一步点入该值  。 在 C++/WinRT 中，属性是作为访问器函数实现的，因此，语法的不同之处仅在于为每个函数调用添加括号。
 
 |C#|C++/WinRT|
 |-|-|
@@ -1127,7 +1152,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Win
 
 在这样做的同时，让我们也从所有五个 XAML 页面类型中删除自动生成的虚拟属性（`Int32 MyProperty;` 及其实现）。
 
-首先，向 C++/WinRT 项目添加新的 Midl 文件 (.idl)  项。 将其命名为 `Project.idl`。 删除 `Project.idl` 的默认内容，然后在其位置粘贴下面列出的代码。
+首先，向 C++/WinRT 项目添加新的 Midl 文件 (.idl)  项。 将其命名为 `Project.idl`。 将 `Project.idl` 的全部内容替换为以下代码。
 
 ```idl
 // Project.idl
