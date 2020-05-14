@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: f7c5eb595f3347eb4670e4f7c0a50aa930341d3e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9848fc9e330a725f52ce2a7fae8b13f300476cf7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735032"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970192"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教程：使用 Grid 和 StackPanel 创建简单的天气应用
 
@@ -56,7 +56,7 @@ ms.locfileid: "74735032"
 如果现在运行该应用程序，只会看到一个空白页面，因为任何**网格**区域都没有内容。 若要显示**网格**，让我们添加一些颜色。
 
 ## <a name="step-3-color-the-grid"></a>步骤 3:为网格着色
-为了为**网格**着色，我们添加了三个**边框**元素，每个都带有不同的背景色。  通过使用 **Grid.Row** 和 **Grid.Column** 属性，也将每个元素分配到父**网格**中的行和列。 这些属性的值默认为 0 时，因此无需将其分配给第一个**边框**。 定义行和列后，将以下代码添加到**网格**元素。
+为了为**网格**着色，我们添加了三个**边框**元素，每个都带有不同的背景色。 通过使用 **Grid.Row** 和 **Grid.Column** 属性，也将每个元素分配到父**网格**中的行和列。 这些属性的值默认为 0 时，因此无需将其分配给第一个**边框**。 定义行和列后，将以下代码添加到**网格**元素。
 
 ```xml
 <Border Background="#2f5cb6"/>
@@ -120,6 +120,6 @@ ms.locfileid: "74735032"
 如果愿意，请尝试使用上面的布局，并探索可能代表天气数据的不同方式。
 
 ## <a name="related-articles"></a>相关文章
-有关设计 UWP 应用布局的简介，请参阅 [UWP 应用设计简介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
+有关设计 Windows 应用布局的简介，请参阅 [Windows 应用设计简介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
 若要了解如何创建适应不同屏幕大小的响应性布局，请参阅[使用 XAML 定义页面布局](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fa8dd744120d5751dcf8c10a090ccc31094000d2
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 5f3e4eee486edd47901fc2b97a6e10c880cb04b1
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80482503"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606296"
 ---
 # <a name="host-a-custom-uwp-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML 岛在 WPF 应用中托管自定义 UWP 控件
 
@@ -235,7 +235,10 @@ ms.locfileid: "80482503"
 
 此部分演示了如何将 WinUI 库中的 UWP 控件添加到用户控件，以便于将此控件托管在 WPF 应用中。
 
-1. 在 UWP 应用项目中，安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 程序包的最新版本。
+1. 在 UWP 应用项目中，安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的最新发行版本或预发行版本。
+
+    > [!NOTE]
+    > 如果桌面应用在 [MSIX 包](https://docs.microsoft.com/windows/msix)中打包，则可以使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 包的预发行版本或发行版本。 如果桌面应用未使用 MSIX 打包，则必须安装 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的预发行版本。
 
 2. 在此项目的 App.xaml 文件中，将以下子元素添加到 `<xaml:XamlApplication>` 元素。
 
@@ -268,7 +271,7 @@ ms.locfileid: "80482503"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 在同一个文件中，添加 `<winui:RatingControl />` 元素作为 `<StackPanel>` 的子级。 此元素会添加 WinUI 库中 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol?view=winui-2.2) 类的实例。 添加此元素后，现在 `<StackPanel>` 应如下所示。
+5. 在同一个文件中，添加 `<winui:RatingControl />` 元素作为 `<StackPanel>` 的子级。 此元素会添加 WinUI 库中 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) 类的实例。 添加此元素后，现在 `<StackPanel>` 应如下所示。
 
     ```xml
     <StackPanel Background="LightCoral">

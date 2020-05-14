@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9739933f9fd23c6f169c24c4f789e53ba894708d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80696633"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968452"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
@@ -36,7 +36,7 @@ Acrylic 在深色主题中的应用 ![Acrylic 在深色主题中的应用](image
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>Acrylic 和 Fluent Design 系统
 
- Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 Acrylic 是一种 Fluent Design 系统组件，用于在你的应用中添加物理纹理（材料）和深度。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
+ Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 Acrylic 是一种 Fluent Design 系统组件，用于在你的应用中添加物理纹理（材料）和深度。 若要了解详细信息，请参阅 [Fluent Design 概述](/windows/apps/fluent-design-system)。
 
  ## <a name="video-summary"></a>视频摘要
 
@@ -102,7 +102,7 @@ Acrylic 外观可自动适应各种设备和上下文。
 
 此外，只有背景 Acrylic 会将半透明度和纹理替换为纯色：
  - 桌面上的应用窗口停用时
- - UWP 应用在手机、Xbox、HoloLens 或平板电脑模式下运行时
+ - Windows 应用在手机、Xbox、HoloLens 或平板电脑模式下运行时
 
 ### <a name="legibility-considerations"></a>可读性注意事项
 请务必确保应用上显示的任何文本[满足对比率要求](../accessibility/accessible-text-requirements.md)。 我们已优化 Acrylic 设置，因此，增强色的黑色、白色甚至中间色的灰色文本在 Acrylic 上显示时都能满足对比率要求。 平台提供的主题资源的默认对比色调为 80% 不透明度。 在 Acrylic 上放置增强色正文文本时，你可以在降低色调不透明度的同时保持可读性。 在深色模式下，色调不透明度可设为 70%，而在浅色模式下，Acrylic 可满足 50% 不透明度条件下的对比率要求。

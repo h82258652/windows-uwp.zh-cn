@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 文件, 文件 io, 读取文件, 写入文件, 创建文件, 写入文本, 读取文本
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1270d49cc8746b2793b1414306f9ee842cb40f40
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82166243"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730057"
 ---
 # <a name="work-with-files"></a>处理文件
 
@@ -26,7 +26,7 @@ ms.locfileid: "82166243"
 下面是需要了解的在文件读取或写入文本的主要类型：
 
 - [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) 表示文件。 此类具有提供文件相关信息的属性，以及创建、打开、复制、删除和重命名文件的方法。
-可以用来处理字符串路径。 某些 UWP API 获取字符串路径，但更多情况下，你将使用 **StorageFile** 表示文件，因为在 UWP 中处理的某些文件可能没有路径，或者可能具有不实用的路径。 使用 [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 将字符串路径转换为 **StorageFile**。 
+可以用来处理字符串路径。 某些 Windows 运行时 API 会获取字符串路径，但更多情况下，你将使用 StorageFile  表示文件，因为在 UWP 中处理的某些文件可能没有路径，或者路径繁复。 使用 [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 将字符串路径转换为 **StorageFile**。 
 
 - [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) 类提供读取和写入文本的简单方式。 此类还可以读取/写入字节数组或缓冲区内容。 此类与 [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 类非常相似。 主要区别在于它不像 **PathIO** 那样获取字符串路径，而是获取 **StorageFile**。
 - [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) 表示文件夹（目录）。 此类具有创建文件、查询文件夹内容以及创建、重命名和删除文件夹的方法，并具有提供文件夹相关信息的属性。 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc68520bbf83ec637c0814c333dfada2f974d1e
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: 2b5fd5061f3b466743cad2e9e412d79caebaf2f0
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74735002"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730280"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 组件和优化互操作
 
@@ -28,7 +28,7 @@ ms.locfileid: "74735002"
 
 UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问这些类型。 你可在 C# 或 Microsoft Visual Basic 中使用 UWP 类型，同样，你也可使用 .NET 对象。 你无需让平台使用方法调用来访问 UWP 组件。 这会让编写应用变得没那么复杂，但请务必知道，可能会发生比你预期更多的互操作。 如果使用 C# 或 Visual Basic 以外的语言来编写 UWP 组件，在你使用此组件时可跨越互操作性边界。 跨域互操作性边界可影响应用的性能。
 
-当你使用 C# 或 Visual Basic 开发 UWP 应用时，你所使用的两个最常见的 API 组合是 UWP API 和 UWP 应用的 .NET API。 通常，在 UWP 中定义的类型位于以“Windows”开头的命名空间中。 而 .NET 类型位于以“System”开头的命名空间中。 但是，存在例外情况。 UWP 应用的 .NET 中的类型在使用时不要求互操作性。 如果你发现在使用 UWP 的区域出现较差性能，你可以使用适用于 UWP 应用的 .NET 来获取更佳性能。
+当使用 C# 或 Visual Basic 开发 UWP 应用时，两个最常见的 API 组合是 Windows 运行时 API 和适用于 UWP 应用的 .NET API。 通常，在 UWP 中定义的类型位于以“Windows”开头的命名空间中。 而 .NET 类型位于以“System”开头的命名空间中。 但是，存在例外情况。 UWP 应用的 .NET 中的类型在使用时不要求互操作性。 如果你发现在使用 UWP 的区域出现较差性能，你可以使用适用于 UWP 应用的 .NET 来获取更佳性能。
 
 **注意**：随 Windows 10 提供的大多数 UWP 组件是使用 C++ 实现的，因此你由 C# 或 Visual Basic 使用它们时将跨越互操作性边界。   如往常一样，在更改代码前，请务必监测你的应用，确认使用 UWP 组件是否影响你的应用性能。
 
@@ -52,7 +52,7 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 当 UWP 组件返回 UWP 对象时，将该返回的对象复制入 .NET 对象可能很有利。 尤其重要的两个位置就是你在处理集合和流时的两个位置。
 
-如果你调用返回集合的 UWP API，然后多次保存和访问该集合，则将该集合复制入 .NET 集合并从此使用 .NET 版本可能很有利。
+如果调用返回集合的 Windows 运行时 API，然后多次保存和访问该集合，则将该集合复制到 .NET 集合并从此使用 .NET 版本可能很有利。
 
 ### <a name="cache-the-results-of-calls-to-uwp-components-for-later-use"></a>缓存对 UWP 组件的调用结果，供以后使用
 
@@ -72,7 +72,7 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 使用 UWP 可以在本机代码和托管代码之间轻松地互操作，但是如果你不小心，它可能会产生性能成本。 下面，我们向你展示当在托管的 UWP 应用中使用互操作时，如何获得良好性能。
 
-借助每种语言中提供的 UWP API 投射，UWP 允许开发人员使用 XAML 和他们自己选择的语言编写应用。 使用 C# 或 Visual Basic 编写应用时，此便利会带来互操作成本，因为 UWP API 通常是使用本机代码实现的，且从 C# 或 Visual Basic 进行的任何 UWP 调用都要求从托管堆栈帧到本机堆栈帧进行 CLR 过渡以及从编组函数参数到可由本机代码访问的表示进行 CLR 过渡。 对于大多数应用来说，此开销是微不足道的。 但是，如果在应用的关键路径中多次（几十万到几百万）调用 UWP API，则此成本可能会变得很显著。 通常你会希望确保在语言转换上花费的时间相对少于其余代码的执行时间。 下面图表对此进行了展示。
+借助每种语言中提供的 Windows 运行时 API 投影，UWP 允许开发人员使用 XAML 和他们自己选择的语言编写应用。 使用 C# 或 Visual Basic 编写应用时，此便利会带来互操作成本，因为 Windows 运行时 API 通常是使用本机代码实现的，且从 C# 或 Visual Basic 进行的任何 UWP 调用都要求从托管堆栈帧到本机堆栈帧进行 CLR 过渡以及从编组函数参数到可由本机代码访问的表示进行 CLR 过渡。 对于大多数应用来说，此开销是微不足道的。 但是，如果在应用的关键路径中多次（几十万到几百万）调用 Windows 运行时 API，则此成本可能会显著增加。 通常你会希望确保在语言转换上花费的时间相对少于其余代码的执行时间。 下面图表对此进行了展示。
 
 ![互操作转换不应在程序执行时间中占优势地位。](images/interop-transitions.png)
 
@@ -80,7 +80,7 @@ UWP 具有一个类型库，可通过编写 UWP 应用的任何语言来访问�
 
 你应衡量你的应用并在优化你的互操作成本前确定互操作是否占据你的应用执行时间的一大部分时间。 当使用 Visual Studio 分析你的应用的性能时，可以通过使用“函数”  视图并查看调用 UWP 的方法所花费的包含时间，来轻松获取你的互操作成本上限。
 
-如果你的应用由于互操作开销变得很慢，你可以通过减少对热门代码路径上的 UWP API 的调用来提高应用的性能。 例如，通过定期查询 [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的位置和维数来执行大量物理计算的某个游戏引擎可以通过以下操作节省大量时间：存储从 **UIElements** 到本地变量的必要信息、对这些已缓存值执行计算，以及在完成计算后将最终结果分配回 **UIElements**。 另一个示例：如果 C# 或 Visual Basic 代码频繁访问某个集合，则从 [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections) 命名空间使用该集合比从 [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections) 命名空间使用该集合更加有效。 你还应考虑组合调用 UWP 组件；一个可行的示例是使用 [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess) API。
+如果互操作开销拖慢了应用的运行速度，可以通过减少对热门代码路径上的 Windows 运行时 API 的调用来提高应用的性能。 例如，通过定期查询 [**UIElements**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的位置和维数来执行大量物理计算的某个游戏引擎可以通过以下操作节省大量时间：存储从 **UIElements** 到本地变量的必要信息、对这些已缓存值执行计算，以及在完成计算后将最终结果分配回 **UIElements**。 另一个示例：如果 C# 或 Visual Basic 代码频繁访问某个集合，则从 [**System.Collections**](https://docs.microsoft.com/dotnet/api/system.collections) 命名空间使用该集合比从 [**Windows.Foundation.Collections**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections) 命名空间使用该集合更加有效。 你还应考虑组合调用 UWP 组件；一个可行的示例是使用 [**Windows.Storage.BulkAccess**](https://docs.microsoft.com/uwp/api/Windows.Storage.BulkAccess) API。
 
 ### <a name="building-a-uwp-component"></a>生成 UWP 组件
 

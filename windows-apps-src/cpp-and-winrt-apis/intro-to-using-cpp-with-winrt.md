@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: 250e3626c5abee43cf3b8ca3320c78ec4f8f9751
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ddf2cd876ac629f4cb3c49e349e43dee8fdb0c7a
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80662408"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730299"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -29,8 +29,8 @@ C++/WinRT 是 Microsoft 推荐的用于替代 [C++/CX](/cpp/cppcx/visual-c-langu
 ## <a name="language-projections"></a>语言投影
 Windows 运行时基于组件对象模型 (COM) API，根据设计，可通过语言投影  访问它。 投影将隐藏 COM 详细信息，并为给定语言提供更自然的编程体验。
 
-### <a name="the-cwinrt-language-projection-in-the-windows-uwp-api-reference-content"></a>Windows UWP API 引用内容中的 C++/WinRT 语言投影
-浏览 [Windows UWP API](https://docs.microsoft.com/uwp/api/) 时，请单击右上角的“语言”  组合框，然后选择“C++/WinRT”  以查看 API 语法块（当它们在 C++/WinRT 语言投影中出现时）。
+### <a name="the-cwinrt-language-projection-in-the-windows-runtime-api-reference-content"></a>Windows 运行时 API 引用内容中的 C++/WinRT 语言投影
+浏览 [Windows 运行时 API](https://docs.microsoft.com/uwp/api/) 时，请单击右上角的“语言”  组合框，然后选择“C++/WinRT”  以查看 API 语法块（当它们在 C++/WinRT 语言投影中出现时）。
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>针对 C++/WinRT、XAML、VSIX 扩展和 NuGet 包的 Visual Studio 支持
 若要获取 Visual Studio 支持，需要 Visual Studio 2019 或 Visual Studio 2017（至少需要版本 15.6；建议至少使用 15.7）。 从 Visual Studio 安装程序中，安装“通用 Windows 平台开发”  工作负荷。 在“安装详细信息”   >   “通用 Windows 平台开发”中，选中“C++ (v14x) 通用 Windows 平台工具”  选项（如果尚未这样做）。 另外，请在 Windows 的“设置”   > “更新和安全”\&   >   “面向开发人员”中选择“开发人员模式”选项而非“旁加载应用”选项。  
@@ -151,4 +151,4 @@ Windows SDK 也附带 `cppwinrt.exe` 工具，这同样是出于兼容性原因�
 * [C++/WinRT 入门](get-started.md)
 * [标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)
 * [C++/WinRT 中的字符串处理](strings.md)
-* [Windows UWP API](https://docs.microsoft.com/uwp/api/)
+* [Windows 运行时 API](https://docs.microsoft.com/uwp/api/)
