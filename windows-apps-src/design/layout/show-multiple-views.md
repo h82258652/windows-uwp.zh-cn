@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee49b5fe5b5956e9069ea196c4d2e029b3a15763
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e7d6ea614a9d85eadfcb807c6e6100dbe15ed0c4
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68729511"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970732"
 ---
 # <a name="show-multiple-views-for-an-app"></a>显示应用的多个视图
 
@@ -32,11 +32,11 @@ ms.locfileid: "68729511"
 
 尽管每个应用布局都是独特的，但我们建议在可预测的位置（例如，可在新窗口中打开的内容的右上角）包含一个“新建窗口”按钮。 另外，请考虑在“在新窗口中打开”中包含一个[上下文菜单](../controls-and-patterns/menus.md)选项。
 
-若要创建应用的单独实例（而不是为同一实例创建不同的窗口），请参阅[创建多实例 UWP 应用](../../launch-resume/multi-instance-uwp.md)。
+若要创建应用的单独实例（而不是为同一实例创建不同的窗口），请参阅[创建多实例 Windows 应用](../../launch-resume/multi-instance-uwp.md)。
 
 ## <a name="windowing-hosts"></a>窗口宿主
 
-可以通过不同的方式在应用中承载 UWP 内容。
+可以通过不同的方式在应用中承载 Windows 内容。
 
 - [CoreWindow](/uwp/api/windows.ui.core.corewindow)/[ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)
 
@@ -47,7 +47,7 @@ ms.locfileid: "68729511"
     若要了解如何使用 ApplicationView 在应用中显示辅助窗口，请参阅[使用 ApplicationView](application-view.md)。
 - [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)
 
-    AppWindow 简化了多窗口 UWP 应用的创建，因为它是在创建它时所在的同一 UI 线程中运行的。
+    AppWindow 简化了多窗口 Windows 应用的创建，因为其创建和运行均在同一 UI 线程。
 
     从 Windows 10 版本 1903 (SDK 18362) 开始提供 AppWindow 类，以及 [WindowManagement](/uwp/api/windows.ui.windowmanagement) 命名空间中的其他 API。 如果应用面向早期版本的 Windows 10，则必须使用 ApplicationView 创建辅助窗口。
 
