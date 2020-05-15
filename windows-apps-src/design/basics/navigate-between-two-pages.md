@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在通用 Windows 平台 (UWP) 应用中启用两个基础页面之间的对等导航。
+Description: 了解如何在 Windows 应用中启用两个基础页面之间的对等导航。
 title: 两个页面之间的对等导航
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c35795eeb6afa32e77acb507c687e334e454d0d5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ef50b2d84ae9785a13d8c8dd13ca5a399dae142d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72560805"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969242"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
@@ -155,7 +155,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 ```
 
 > [!NOTE]
-> 对于 C++ 项目，必须在引用其他页面的每个页面的头文件中添加 `#include` 指令。 对于此处展示的页面间导航示例，page1.xaml.h 文件包含 `#include "Page2.xaml.h"`，依此类推，page2.xaml.h 包含 `#include "Page1.xaml.h"`。
+> 对于 C++ 项目，必须在引用其他页面的每个页面的标头文件中添加 `#include` 指令。 对于此处展示的页面间导航示例，page1.xaml.h 文件包含 `#include "Page2.xaml.h"`，依此类推，page2.xaml.h 包含 `#include "Page1.xaml.h"`。
 
 既然页面已经准备好，我们需要让 Page1.xaml 在应用启动时显示。
 
@@ -451,6 +451,6 @@ Page1::Page1()
 ```
 
 ## <a name="related-articles"></a>相关文章
-* [UWP 应用的导航设计基础知识](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
+* [Windows 应用的导航设计基础知识](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
 * [透视表](../controls-and-patterns/pivot.md)
 * [导航视图](../controls-and-patterns/navigationview.md)

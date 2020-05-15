@@ -6,14 +6,18 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8db29561afa06a2f6a2be67565d59e9387240d1c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 29c6609a2e57abede7fe606be8c028e503270d4c
+ms.sourcegitcommit: f910b29d35ac7afd0b759640bcac1d2fee399b3d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74259197"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82973273"
 ---
 # <a name="network-communications-in-the-background"></a>后台网络通信
+
+> [!NOTE]
+> **一些信息与预发布产品相关，在商业发行之前可能发生实质性修改。Microsoft 不对此处提供的信息作任何明示或默示的担保。**
+
 不是在前台操作的情况下，若要继续进行网络通信，应用可以使用后台任务和以下两个选项之一。
 - 套接字代理。 如果应用使用套接字进行长期连接，则当它退出前台时，可将套接字的所有权委托给系统套接字代理。 在流量到达套接字上后，该代理会激活应用并将所有权传输回应用；然后应用会处理到达的流量。
 - 控制通道触发器。 
@@ -160,6 +164,10 @@ case SocketActivityTriggerReason.SocketClosed:
 如果使用的是 WebSockets、[**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)、[**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 或 [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)，则必须使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ControlChannelTrigger 与 WebSockets
+
+> [!IMPORTANT]
+> SDK 版本 10.0.15063.0 及更早版本支持本部分中所述的功能（ControlChannelTrigger 与 WebSockets  ）。 [Windows 10 Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) 的预发行版本也支持此功能。
+
 将 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 结合使用时，需要应用某些特殊注意事项。 将 **MessageWebSocket** 或 **StreamWebSocket** 与 **ControlChannelTrigger** 结合使用时，应遵循某些特定于传输的使用模式和最佳做法。 此外，这些注意事项影响在 **StreamWebSocket** 上接收数据包的请求的处理方式。 不影响在 **MessageWebSocket** 上接收数据包的请求。
 
 将 [**MessageWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket) 或 [**StreamWebSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket) 与 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 结合使用时，应遵循以下使用模式和最佳做法：

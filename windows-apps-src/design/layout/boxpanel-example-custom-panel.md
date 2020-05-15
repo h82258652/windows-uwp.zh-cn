@@ -12,12 +12,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fe1389e3c3db28f834217b4f163c48633c32d14
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 68ca40a48b8b8d04bcd8b01584856233e9a99e7c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340165"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970202"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel，一个自定义面板示例
 
@@ -47,7 +47,7 @@ ms.locfileid: "71340165"
 
 由从 [**Panel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) 派生自定义类开始。 执行此操作的最简单方法可能是为此类定义一个独立的代码文件，方法是从 Microsoft Visual Studio 中的“解决方案资源管理器”  中针对项目使用“添加”   | “新建项”   | “类”  上下文菜单选项。 将该类（以及文件）命名为 `BoxPanel`。
 
-类的模板文件不会从许多 **using** 语句开始，因为它不特别适用于通用 Windows 平台 (UWP) 应用。 因此，首先添加 **using** 语句。 模板文件的开头部分还包含一些你可能不需要的 **using** 语句，可以将其删除。 以下是可解析类型的 **using** 语句的建议列表，你将需要将这些语句用于典型的自定义面板代码：
+类的模板文件不会从许多 using  语句开始，因为它不是专门为 Windows 应用设计的。 因此，首先添加 **using** 语句。 模板文件的开头部分还包含一些你可能不需要的 **using** 语句，可以将其删除。 以下是可解析类型的 **using** 语句的建议列表，你将需要将这些语句用于典型的自定义面板代码：
 
 ```CSharp
 using System;
