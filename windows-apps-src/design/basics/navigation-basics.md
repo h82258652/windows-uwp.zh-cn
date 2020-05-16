@@ -1,5 +1,5 @@
 ---
-Description: Windows 应用中的导航基于灵活的导航结构、导航元素和系统级功能模型。
+Description: Windows 应用中的导航基于导航结构、导航元素和系统级功能的灵活模型。
 title: Windows 应用的导航基础知识
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4973ccaf066b2694412f04b09b8725da2fc31c36
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ed38be070263bbd619e44daf5c747a97299b3cf7
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969232"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233850"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 应用的导航设计基础知识
 

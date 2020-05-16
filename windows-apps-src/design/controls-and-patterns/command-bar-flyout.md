@@ -12,18 +12,18 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9388df4159d7e9acd68c75163465339183b41314
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
+ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968792"
+ms.locfileid: "82989800"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
 使用命令栏浮出控件时，可以在浮动工具栏中显示与 UI 画布上的某个元素相关的命令，方便用户访问常见任务。
 
-![扩展的文本命令栏浮出控件](images/command-bar-flyout-header.png)
+![扩展的文本命令栏浮出控件](images/command-bar-flyout-text-full.png)
 
 与 [CommandBar](app-bars.md) 一样，CommandBarFlyout 的 **PrimaryCommands** 和 **SecondaryCommands** 属性可以用来添加命令。 可以将命令置于这两个集合中，或者置于其中的一个中。 主要命令和辅助命令何时显示以及以何种方式显示取决于显示模式。
 
