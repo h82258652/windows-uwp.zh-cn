@@ -31,7 +31,7 @@ ms.locfileid: "63813164"
 | 主题                                                                                                          | 说明                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | [异步编程（UWP 应用）](asynchronous-programming-universal-windows-platform-apps.md)              | 本主题介绍了通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C++ 组件扩展 (C++/CX) 和 JavaScript 中的表示形式。 |
-| [使用 C++/CX 进行异步编程（UWP 应用）](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文介绍在 C++/CX 中，通过使用在 ppltasks.h 中的 <code>task</code> 命名空间中定义的 <code>concurrency</code> 类来使用异步方法的推荐方法。 |
+| [使用 C++/CX 进行异步编程（UWP 应用）](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文介绍在 C++/CX 中，通过使用在 ppltasks.h 中的 <code>concurrency</code> 命名空间中定义的 <code>task</code> 类来使用异步方法的推荐方法。 |
 | [使用线程池的最佳做法](best-practices-for-using-the-thread-pool.md)                         | 本主题介绍了使用线程池的最佳做法。 |
 | [使用 C# 或 Visual Basic 调用异步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | 通用 Windows 平台 (UWP) 包含许多异步 API，可确保应用在执行可能花费大量时间的任务时仍能保持响应。 本主题将介绍如何从采用 C# 或 Microsoft Visual Basic 的 UWP 使用异步方法。 |
 | [创建定期工作项](create-a-periodic-work-item.md)                                                   | 了解如何创建定期重复的工作项。 |

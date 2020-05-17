@@ -47,7 +47,7 @@ ms.locfileid: "66365253"
 
 ## <a name="planeprojection-class"></a>PlaneProjection 类
 
-通过使用 [**PlaneProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 来设置 UIElement 的 [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection) 属性，你可以对任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PlaneProjection) 应用 3D 效果。 **PlaneProjection** 定义在空间内呈现转换的方式。 下一个示例显示了一个简单情况。
+通过使用 [**PlaneProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PlaneProjection) 来设置 UIElement 的 [**Projection**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.projection) 属性，你可以对任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 应用 3D 效果。 **PlaneProjection** 定义在空间内呈现转换的方式。 下一个示例显示了一个简单情况。
 
 ```xml
 <Image Source="kid.png">
@@ -174,4 +174,4 @@ ms.locfileid: "66365253"
 
 ## <a name="positioning-an-object"></a>定位对象
 
-对于比 [**PlaneProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Matrix3DProjection) 更复杂的半 3D 方案，你可以使用 [**Matrix3DProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Media3D.Matrix3D) 和 [**Matrix3D**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PlaneProjection) 类型。 **Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。
+对于比 [**PlaneProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.PlaneProjection) 更复杂的半 3D 方案，你可以使用 [**Matrix3DProjection**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Matrix3DProjection) 和 [**Matrix3D**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Media3D.Matrix3D) 类型。 **Matrix3DProjection** 可为你提供应用于任何 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的完全 3D 转换矩阵，从而使你可以将任何模型转换矩阵和透视矩阵应用到元素。 请记住，这些 API 非常小，因此如果要使用它们，你需要编写正确创建 3D 转换矩阵的代码。 因此，对于简单的 3D 方案，使用 **PlaneProjection** 更容易。

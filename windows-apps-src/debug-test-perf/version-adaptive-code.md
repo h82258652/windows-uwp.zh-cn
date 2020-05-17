@@ -75,7 +75,7 @@ ms.locfileid: "75681978"
 
 Windows 10 版本 1607 向 [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) 枚举添加了一个新值：**ChatWithoutEmoji**。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
 
-此示例显示了如何检查是否存在 **ChatWithoutEmoji** 枚举值，并设置 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 的 **InputScope** 属性（如果存在该枚举值）。 如果在应用运行所在的系统上不存在该枚举值，则改为将 **InputScope** 设置为 **Chat**。 所示代码可放置在 Page 构造函数或 Page.Loaded 事件处理程序中。
+此示例显示了如何检查是否存在 **ChatWithoutEmoji** 枚举值，并设置 **TextBox** 的 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性（如果存在该枚举值）。 如果在应用运行所在的系统上不存在该枚举值，则改为将 **InputScope** 设置为 **Chat**。 所示代码可放置在 Page 构造函数或 Page.Loaded 事件处理程序中。
 
 > [!TIP]
 > 在检查 API 时，使用静态字符串而不是依赖于 .NET 语言功能，否则你的应用可能会尝试访问未定义的类型并在运行时崩溃。

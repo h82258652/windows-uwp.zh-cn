@@ -61,9 +61,9 @@ ms.locfileid: "74259610"
 
 使用最适合希望检索的项的检索方法。
 
--   使用 [**GetFileAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 检索作为 [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync) 的文件。
--   使用 [**GetFolderAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 检索作为 [**StorageFolder**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync) 的文件夹。
--   使用 [**GetItemAsync**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem) 检索既可代表文件也可代表文件夹的通用 [**IStorageItem**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync)。
+-   使用 [**GetFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfileasync) 检索作为 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 的文件。
+-   使用 [**GetFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getfolderasync) 检索作为 [**StorageFolder**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFolder) 的文件夹。
+-   使用 [**GetItemAsync**](https://docs.microsoft.com/uwp/api/windows.storage.accesscache.storageitemmostrecentlyusedlist.getitemasync) 检索既可代表文件也可代表文件夹的通用 [**IStorageItem**](https://docs.microsoft.com/uwp/api/Windows.Storage.IStorageItem)。
 
 这里介绍了如何取回我们刚刚添加的文件。
 

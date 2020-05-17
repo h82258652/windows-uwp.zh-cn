@@ -268,11 +268,11 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 **Windows 应用认证工具包错误消息：** WXCheck 测试失败。
 
-此项检查有助于确保二进制文件不包含任何映射为可写和可映射的页面。 如果二进制文件包含可写和可执行的部分，或者如果二进制文件的 SectionAlignment  小于 PAGE*SIZE\-* ，则可能会发生这种情况。
+此项检查有助于确保二进制文件不包含任何映射为可写和可映射的页面。 如果二进制文件包含可写和可执行的部分，或者如果二进制文件的 SectionAlignment  小于 PAGE\-SIZE  ，则可能会发生这种情况。
 
 **在应用未通过此测试时怎么办**
 
-确保二进制文件不包含可写或可执行部分，并且二进制文件的 SectionAlignment  值至少等于 PAGE*SIZE\-* 。
+确保二进制文件不包含可写或可执行部分，并且二进制文件的 SectionAlignment  值至少等于 PAGE\-SIZE  。
 
 **备注**
 
@@ -280,7 +280,7 @@ AppContainerCheck 验证一个可执行二进制文件的可移植可执行 (PE)
 
 如果已在启用“编辑”和“继续”(/ZI) 的情况下构建可执行文件，则其中可能包含可写和可执行部分。 禁用“编辑”和“继续”将导致无效部分无法呈现。
 
-PAGE*SIZE\-* 是可执行文件的默认 SectionAlignment  值。
+PAGE\-SIZE  是可执行文件的默认 SectionAlignment  值。
 
 ### <a name="private-code-signing"></a>私有代码签名
 
@@ -559,7 +559,7 @@ Microsoft Store 要求使用 Direct3D 的所有应用程序在功能级别 9\-1 
 
 ### <a name="corrective-action"></a>更正操作
 
-每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) API。
+每当应用即将暂停时应在其 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 接口上调用 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ## <a name="app-capabilities-test"></a>应用功能测试
 
