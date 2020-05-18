@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: dbae7ada227b4f3019a2e17c91e6b06b7f2f276f
-ms.sourcegitcommit: 0acdafcf75fcd19e5c3181eb16defcfee3918cb2
+ms.openlocfilehash: d050e2b4a7659f8910ce603ec7e90b703cc7722f
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81441862"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606236"
 ---
 # <a name="host-uwp-xaml-controls-in-desktop-apps-xaml-islands"></a>在桌面应用中托管 UWP XAML 控件（XAML 岛）
 
@@ -40,7 +40,7 @@ XAML 岛具有以下运行时要求：
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF 和 Windows 窗体应用程序
 
-我们的建议是让 WPF 和 Windows 窗体应用程序使用 Windows 社区工具包中提供的 XAML 岛 .NET 控件。 这些控件提供一个对象模型，用于模拟相应 UWP 控件的属性、方法和事件（或提供对它们的访问）。 它们还处理键盘导航和布局更改等行为。
+我们的建议是让 WPF 和 Windows 窗体应用程序使用 Windows 社区工具包中提供的 XAML 岛 .NET 控件。 这些控件提供一个对象模型，用于模拟相应 UWP 控件的属性、方法和事件（或提供对它们的访问权限）。 它们还处理键盘导航和布局更改等行为。
 
 有两组用于 WPF 和 Windows 窗体应用程序的 XAML 岛控件：包装控件  和主机控件  。 
 
@@ -129,6 +129,8 @@ UWP XAML 托管 API 包含多个 Windows 运行时类和 COM 接口，可供 C++
 
 ### <a name="supported-only-with-workarounds"></a>仅通过使用变通方法支持
 
+:heavy_check_mark:XAML 岛的当前版本有条件地支持在 XAML 岛中承载来自 [WinUI 库](https://docs.microsoft.com/uwp/toolkits/winui/)的 UWP 控件。 如果桌面应用将 [MSIX 包](https://docs.microsoft.com/windows/msix)用于部署，则可以承载来自 [Microsoft.UI.Xaml NugGet 包的预发行版或发行版](https://www.nuget.org/packages/Microsoft.UI.Xaml)的 WinUI 控件。 如果桌面应用不是使用 MSIX 打包的，那么，只有在你安装了 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 包的预发行版的情况下，才能承载 WinUI 控件。
+
 :heavy_check_mark:若要访问 XAML 岛中 XAML 内容树的根元素并获取在其中托管它的上下文的相关信息，请勿使用 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)、[ApplicationView](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 和 [Window](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) 类。 相反，请使用 [XamlRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.xamlroot) 类。 有关详情，请参阅[本部分](#window-host-context-for-xaml-islands)。
 
 :heavy_check_mark:若要支持来自 WPF、Windows 窗体或 C++ Win32 应用的[共享协定](/windows/uwp/app-to-app/share-data)，应用必须使用 [IDataTransferManagerInterop](https://docs.microsoft.com/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) 接口获取 [DataTransferManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager) 对象，以便为特定窗口启动共享操作。 有关演示如何在 WPF 应用中使用此接口的示例，请参阅 [ShareSource 示例](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource)。
@@ -150,6 +152,8 @@ UWP XAML 托管 API 包含多个 Windows 运行时类和 COM 接口，可供 C++
 :no_entry_sign:使用 `@Places` 和 `@People` 内容链接的文本控件。 有关此功能的详细信息，请参阅[本文](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/content-links)。
 
 :no_entry_sign:XAML Islands 不支持托管一个包含接受文本输入的控件（例如 [TextBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox)、[RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox) 或 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)）的 [ContentDialog](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)。 如果你托管了这样的 ContentDialog，输入控件将无法正确响应按键操作。 若要使用 XAML Islands 实现类似的功能，建议托管一个包含输入控件的 [Popup](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup)。
+
+:no_entry_sign:XAML 岛目前不支持在承载的 [Windows.UI.Xaml.Controls.Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 控件中或通过使用 [Windows.UI.Xaml.Media.Imaging.SvgImageSourc](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource) 对象显示 SVG 文件。 作为一种解决方法，请将要显示的图像文件转换为基于光栅的格式，如 JPG 或 PNG。
 
 ### <a name="window-host-context-for-xaml-islands"></a>XAML 岛的窗口宿主上下文
 
