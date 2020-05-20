@@ -54,7 +54,7 @@ XAML 框架中的几乎所有动画默认都是独立的，但你可以采取某
 
 对 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 进行动画处理似乎不是一个好方法。 除了有损性能，它还可能导致要播放的视频内容中出现断裂或其他痕迹。
 
-> **注意**：本文中对 MediaPlayerElement  的建议也适用于 [MediaElement  ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。   **MediaPlayerElement** 仅在 Windows 10 版本 1607 中可用，因此如果你要创建适用于以前版本的 Windows 的应用，则需要使用 **MediaElement**。
+> **注意**：本文中对 MediaPlayerElement 的建议也适用于 [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。   **MediaPlayerElement** 仅在 Windows 10 版本 1607 中可用，因此如果你要创建适用于以前版本的 Windows 的应用，则需要使用 **MediaElement**。
 
 ### <a name="use-infinite-animations-sparingly"></a>尽量少使用无限动画
 
