@@ -1,6 +1,36 @@
 - name: Windows 开发环境
   href: index.yml
   items:
+    - name: Windows 程序包管理器
+      items:
+        - name: 概述
+          href: ../package-manager/index.md
+        - name: 使用 winget 工具
+          items:
+            - name: 概述
+              href: ../package-manager/winget/index.md
+            - name: hash 命令
+              href: ../package-manager/winget/hash.md
+            - name: help 命令
+              href: ../package-manager/winget/help.md
+            - name: install 命令
+              href: ../package-manager/winget/install.md
+            - name: search 命令
+              href: ../package-manager/winget/search.md
+            - name: show 命令
+              href: ../package-manager/winget/show.md
+            - name: source 命令
+              href: ../package-manager/winget/source.md
+            - name: validate 命令
+              href: ../package-manager/winget/validate.md
+        - name: 提交程序包
+          items:
+            - name: 概述
+              href: ../package-manager/package/index.md
+            - name: 创建程序包清单
+              href: ../package-manager/package/manifest.md
+            - name: 将清单提交到存储库
+              href: ../package-manager/package/repository.md
     - name: 使用 Python 进行开发
       items:
         - name: 概述

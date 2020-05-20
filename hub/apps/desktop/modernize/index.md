@@ -6,12 +6,12 @@ ms.date: 04/17/2019
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b966d00455bce390457e148c60b57296375ac2fa
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 86586cfc0f054181f08cd3cd75731e6c53ea4b92
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730244"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83579924"
 ---
 # <a name="modernize-your-desktop-apps"></a>实现桌面应用的现代化
 
@@ -21,6 +21,17 @@ Windows 10 和通用 Windows 平台 (UWP) 提供的许多功能可以用来在�
 
 > [!NOTE]
 > 在将桌面应用迁移到 Windows 10 的过程中，你是否需要帮助？ [桌面应用保证](https://docs.microsoft.com/FastTrack/win-10-desktop-app-assure)服务为需要将应用移植到 Windows 10 的开发人员提供直接的免费支持。 该计划适用于所有 ISV 和合格的企业。 若要更详细地了解相关资格和计划本身，请访问 [https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered](https://docs.microsoft.com/fasttrack/win-10-app-assure-assistance-offered)。 若要立即开始体验，请[提交请求](https://fasttrack.microsoft.com/dl/daa)。
+
+## <a name="windows-ui-library"></a>Windows UI 库
+
+Windows UI 库是一组 NuGet 程序包，提供用于 Windows 10 应用的控件和其他用户界面元素。 WinUI 开始时是作为工具包提供的，并为面向低端版 Windows 10 的 UWP 应用提供新版和更新版 UWP 控件。 WinUI 的范围已扩大，现在是 Windows 10 应用（包括 UWP、.NET 和 Win32）的新式原生用户界面 (UI) 平台。
+
+可通过以下方式在桌面应用中使用 WinUI：
+
+* 你可以更新现有的 WPF、Windows 窗体和 C++/Win32 应用，以使用 [XAML 岛](xaml-islands.md)在应用中托管 WinUI 2.x 控件。
+* 从 [WinUi 3.0 预览版 1](../../winui/winui3/index.md) 开始，可以创建[使用完全基于 WinUI 的 UI 的 .NET 和 C++/Win32 应用](../../winui/winui3/get-started-winui3-for-desktop.md)。
+
+请参阅 [Windows UI (WinUI) 库](../../winui/index.md)。
 
 ## <a name="msix-packages"></a>MSIX 包
 
@@ -44,7 +55,7 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 
 ## <a name="host-uwp-controls-xaml-islands"></a>托管 UWP 控件（XAML 岛）
 
-从 Windows 10 版本 1903 开始，可以将 [UWP XAML 控件](/windows/uwp/design/controls-and-patterns/controls-by-function)直接添加到与窗口句柄 (HWND) 关联的 WPF、Windows 窗体或 C++ Win32 应用中的任何 UI 元素。 这意味着，你可以将最新的 UWP 功能（例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) 和支持 [Fluent Design System](/windows/uwp/design/fluent-design-system/index) 的控件完全集成到 Windows 以及桌面应用的其他显示表面中去。 此开发人员方案有时称为“XAML 岛”。 
+从 Windows 10 版本 1903 开始，可以将 [UWP XAML 控件](/windows/uwp/design/controls-and-patterns/controls-by-function)直接添加到与窗口句柄 (HWND) 关联的 WPF、Windows 窗体或 C++ Win32 应用中的任何 UI 元素。 这意味着，你可以将最新的 UWP 功能（例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) 和支持 [Fluent Design System](/windows/uwp/design/fluent-design-system/index) 的控件完全集成到 Windows 以及桌面应用的其他显示表面中去。 此开发人员方案有时称为“XAML 岛”。
 
 有关详细信息，请参阅[桌面应用中的 UWP 控件](xaml-islands.md)
 
@@ -61,7 +72,7 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 可通过多种方式向桌面应用授予标识：
 
 * 将其打包到 [MSIX 包](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是一种新式应用包格式，提供适合所有 Windows 应用、WPF、Windows 窗体和 Win32 应用的通用打包体验。 它提供了可靠的安装和更新体验、功能系统灵活的托管安全模型、对 Microsoft Store 的支持、企业管理以及许多自定义分发模型。 有关详细信息，请参阅 MSIX 文档中的[打包桌面应用程序](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
-* 如果无法采用 MSIX 打包来部署桌面应用，那么，自 Windows 10 版本 2004 起，你可通过创建一个仅包含程序包清单的稀疏 MSIX 包来授予包标识  。 有关详细信息，请参阅[向未打包的桌面应用授予标识](grant-identity-to-nonpackaged-apps.md)。
+* 如果无法采用 MSIX 打包来部署桌面应用，那么，自 Windows 10 版本 2004 起，你可通过创建一个仅包含程序包清单的稀疏 MSIX 包来授予包标识。 有关详细信息，请参阅[向未打包的桌面应用授予标识](grant-identity-to-nonpackaged-apps.md)。
 
 <a id="desktop-uwp-controls"/>
 
@@ -79,12 +90,6 @@ MSIX 是一种新式的 Windows 应用包格式，提供所有 Windows 应用（
 | [ComboBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | 现在可以将组合框设置为可编辑，这样用户就能输入控件中未列出的值。  |
 | [TreeView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tree-view) | 现在可以配置树视图，以便启用数据绑定、项模板和拖放功能。  |
 | [DataGridView](https://docs.microsoft.com/windows/communitytoolkit/controls/datagrid) |   用于在行和列中灵活地显示数据集合。 此控件在 [Windows 社区工具包](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中可用。  |
-
-## <a name="windows-ui-library"></a>Windows UI 库
-
-Windows UI 库是一组 NuGet 包，它们提供了用于 UWP 应用的新控件和其他用户界面元素。 Windows UI 库 API 可以在早期版本的 Windows 10 上使用。因此，即使用户没有运行最新版 Windows 10，你的应用也可以使用。 这样，当新控件在 Windows UI 库中发布时，你就可以采用它们，不需担心是否要添加版本检查或条件 XAML。
-
-请参阅 [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/)（Windows UI 库）。
 
 ## <a name="other-technologies-for-modern-desktop-apps"></a>新式桌面应用的其他技术
 

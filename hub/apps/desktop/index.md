@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: c27826980127674b4a4356af8a3c36056e86bd83
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 5a55a1578fba7052396ecec725db2678ea8bd6ff
+ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74056862"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83580014"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
 
@@ -62,6 +62,9 @@ ms.locfileid: "74056862"
 </tr>
 </tbody>
 </table>
+
+> [!NOTE]
+> 所有这些应用程序平台都提供了一个完整的 UI 框架和一组 UI 控件，你可以使用它们创建在经典 Windows 桌面上运行的 Word、Excel 和 Photoshop 等桌面应用，并充分利用该环境的特定功能。 在 Windows 10 上，这些平台还都支持使用 Windows UI (WinUI) 库来创建其用户界面。 若要详细了解适用于桌面应用的 WinUI，请参阅[此部分](choose-your-platform.md#windows-ui-library)。
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>针对 Windows 10 更新现有桌面应用
 
