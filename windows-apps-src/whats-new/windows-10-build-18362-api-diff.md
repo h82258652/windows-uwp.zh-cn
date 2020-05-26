@@ -1,17 +1,17 @@
 ---
 title: Windows 10 版本 18362 API 更改
 description: 开发人员可以使用以下列表标识 Windows 10 版本 18362 中的新增或更改的命名空间
-keywords: 新增功能, 新功能, 更新, Windows 10, 最新, api, 18362, 五月
+keywords: Windows 10, API, 18362, 1903
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e230ac2716fc79449197a2f777b9262b2c237fe3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5770ca513f6eb75c6a2c1e9e89aa0b3bc0ffc581
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63780365"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233806"
 ---
 # <a name="new-apis-in-windows-10-build-18362"></a>Windows 10 版本 18362 中的新增 API
 

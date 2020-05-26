@@ -1,22 +1,22 @@
 ---
 title: Windows 10 内部版本 17134 中的新增功能
 description: Windows 10 内部版本 17134 和新的开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
-keywords: 新增功能, 新功能, 更新, 刷新, 功能, 新, Windows 10, 最新, 开发人员, 17134
+keywords: Windows 10, 17134, 1803
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cce2c6c36918a117ba6aee25987be9060b3ec148
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 12c788cae02cdc5a0cf8e26f02ea03264960ce49
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258862"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234373"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>面向开发人员的 Windows 10 内部版本 17134 中的新增功能
 
 Windows 10 内部版本 17134（又称 4 月更新或版本 1803）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17134 API 更改](windows-10-build-17134-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的高级概述。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17134 API 更改](windows-10-build-17134-api-diff.md)。 有关 Windows 10 中亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
 ## <a name="design--ui"></a>设计和 UI
 
@@ -50,7 +50,7 @@ Fluent Design 更新 | 我们已经更新了许多 Fluent Design 页面，增加
  :------ | :------
 自适应卡片 | [自适应卡](https://docs.microsoft.com/adaptive-cards/)是一种开放的卡交换格式，让开发人员可以通过常见且一致的方式交换 UI 内容。 它们将内容描述为可以自动呈现以适应主机应用程序的外观和感觉的 JSON 对象。
 应用资源组 | [AppResourceGroupInfo](https://docs.microsoft.com/uwp/api/windows.system.appresourcegroupinfo) 类有新的方法，你可以用来启动向已暂停、活动（已恢复）和已终止状态应用的转换。
-广泛的文件系统访问 | **broadFileSystemAccess** 功能授予应用与当前运行该应用的用户相同的文件系统访问权限，而无需文件选取器样式提示符。 有关详细信息，请参阅[文件访问权限](../files/file-access-permissions.md)和**应用功能声明**中的 [broadFileSystemAccess](../packaging/app-capability-declarations.md) 条目。
+广泛的文件系统访问 | **broadFileSystemAccess** 功能授予应用与当前运行该应用的用户相同的文件系统访问权限，而无需文件选取器样式提示符。 有关详细信息，请参阅[文件访问权限](../files/file-access-permissions.md)和[应用功能声明](../packaging/app-capability-declarations.md)中的 **broadFileSystemAccess** 条目。
 C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) 是适用于 Windows 运行时 (WinRT) API 的全新、完全标准的现代 C++17 语言投影。 它仅在标头文件中实现，旨在为你提供对现代 Windows API 的一流访问。 通过 C++/WinRT，可以使用任何符合标准的 C++17 编译器编写和使用 WinRT API。 对于 C++ 应用程序（从 Win32 到 UWP），使用 C++/WinRT 来保持代码的标准、现代和干净，并且使应用程序轻量且快速。
 控制台 UWP 应用 | 现在可以编写在控制台窗口（如 DOS 或 PowerShell 控制台窗口）中运行的 C++ /WinRT 或 /CX UWP 控制台应用。 控制台应用使用控制台窗口进行输入和输出。 UWP 控制台应用可以发布到 Microsoft Store，在应用列表中有对应条目，并有可以固定到“开始”菜单的主要磁贴。 有关详细信息，请参阅[创建通用 Windows 平台控制台应用](../launch-resume/console-uwp.md)
 扩展应用清单功能 | 应用程序包清单架构中添加了几项功能，包括：广泛的文件系统访问、为服务点设备启用条形码扫描程序、定义 UWP 控制台应用等等。 请参阅[应用清单在 Windows 10 中的更改](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10)了解详细信息。

@@ -8,72 +8,39 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 node, wsl 上的 node, windows 中 linux 上的 node, 在 windows 上安装 node, 具有 vs code 的 nodejs, 通过 windows 上的 node 进行开发, 通过 windows 上的 nodejs 进行开发, 在 WSL 上安装 node, 适用于 Linux 的 Windows 子系统上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: c987f5bea387c630a1b9ef23c928d7a1bb8fadfc
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1ea8973e1db665d1fe66ef6b5f5699319131d605
+ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75835383"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83717126"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 设置 Node.js 开发环境
 
-下面是可帮助你使用适用于 Linux 的 Windows 子系统 (WSL) 设置 Node.js 开发环境的分步指南。 本指南当前要求你安装并运行 Windows Insider Preview 版本才能安装和使用 [WSL 2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)。 WSL 2 比 WSL 1 显著提高了速度和性能，尤其对于 Node.js。 有关 Node.js Web 开发的许多 npm 模块和教程是面向 Linux 用户编写的，并使用基于 Linux 的打包和安装工具。 大多数 Web 应用也部署在 Linux 上，因此使用 WSL 2 会确保开发环境与生产环境之间的一致性。
+下面是可帮助你使用适用于 Linux 的 Windows 子系统 (WSL) 设置 Node.js 开发环境的分步指南。
+
+建议安装并运行更新后的 WSL 2，因为性能速度和系统调用兼容性方面的大幅提升（包括可运行 [Docker Desktop](https://docs.docker.com/docker-for-windows/wsl-tech-preview/#download) 的能力）将使你受益。 有关 Node.js Web 开发的许多 npm 模块和教程是面向 Linux 用户编写的，并使用基于 Linux 的打包和安装工具。 大多数 Web 应用也部署在 Linux 上，因此使用 WSL 2 会确保开发环境与生产环境之间的一致性。
 
 > [!NOTE]
 > 如果你致力于直接在 Windows 上使用 Node.js，或计划使用 Windows Server 生产环境，请参阅我们的指南以[直接在 Windows 上设置 Node.js 开发环境](./setup-on-windows.md)。
 
-## <a name="install-windows-10-insider-preview-build"></a>安装 Windows 10 Insider Preview 版本
-
-1. **[安装最新版本的 Windows 10](https://www.microsoft.com/software-download/windows10)** ：选择“立即更新”以下载更新助手  。 下载完成后，打开更新助手以查看当前是否正在运行最新版本的 Windows，如果不是，请选择助手窗口中的“立即更新”以更新计算机  。 *（如果运行的是最新版本的 Windows 10，则此步骤是可选的。）*
-
-    ![Windows 更新助手](../images/windows-update-assistant2019.png)
-
-2. **[转到“开始”>“设置”>“Windows 预览体验计划”](ms-settings:windowsinsider)** ：在“Windows 预览体验计划”窗口中，选择“开始使用”，然后“链接帐户”   。
-
-    ![Windows 预览体验计划设置](../images/windows-insider-program-settings.png)
-
-3. **[以 Windows 预览体验成员身份注册](https://insider.windows.com/getting-started/#register)** ：如果尚未注册预览体验计划，则需要使用 [Microsoft 帐户](https://account.microsoft.com/account)进行注册。
-
-    ![Windows 预览体验注册](../images/windows-insider-account.png)
-
-4. 选择接收“快圈”更新或“跳到下一个 Windows 版本”内容   。 确认并选择“稍后重新启动”  。 在重新启动之前，需要更改几个其他设置。
-
-    ![Windows 预览体验快圈](../images/windows-insider-fast.png)
-
-## <a name="enable-windows-subsystem-for-linux-and-virtual-machine-platform"></a>启用适用于 Linux 的 Windows 子系统和虚拟机平台
-
-1. 如果仍在“Windows 设置”中，请搜索“打开或关闭 Windows 功能”   。
-2. 出现“Windows 功能”列表后，滚动查找“虚拟机平台”和“适用于 Linux 的 Windows 子系统”，确保选中此框以启用这两者，然后选择“确定”     。
-3. 出现提示时，重启计算机。
-
-    ![启用 Windows 功能](../images/windows-feature-settings.png)
-
-## <a name="install-a-linux-distribution"></a>安装 Linux 发行版本
-
-可以在 WSL 上运行多个 Linux 发行版本。 可以在 Microsoft Store 中查找并安装最常用的版本。 建议从 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) 开始，因为它是最新常用版本，并且受到良好支持。
-
-1. 打开此 [Ubuntu 18.04 LTS](https://www.microsoft.com/store/productId/9N9TNGVNDL3Q) 链接，打开 Microsoft Store，然后选择“获取”  。 （这属于大型下载，可能需要一段时间才能安装完成。） 
-
-2. 下载完成之后，从 Microsoft Store 选择“启动”  ，或是通过在“开始”  菜单中输入“Ubuntu 18.04 LTS”来启动。
-
-3. 首次运行发行版本时，系统会要求创建帐户名称和密码。 在此之后，默认情况下你会以此用户身份自动登录。 可以选择任意用户名和密码。 它们对 Windows 用户名没有任何影响。
-
-    ![Microsoft Store 中的 Linux 发行版本](../images/store-linux-distros.png)
-
-可以通过输入以下内容来检查当前使用的 Linux 发行版本：`lsb_release -dc`。 若要更新 Ubuntu 发行版本，请使用：`sudo apt update && sudo apt upgrade`。 建议定期更新以确保具有最新包。 Windows 不会自动处理此更新。 有关 Microsoft Store 中提供的其他 Linux 发行版本链接、替代安装方法或故障排除，请参阅[适用于 Linux 的 Windows 子系统安装指南 (Windows 10)](https://docs.microsoft.com/windows/wsl/install-win10)。
-
 ## <a name="install-wsl-2"></a>安装 WSL 2
 
-WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/wsl/wsl2-about)，它更改了 Linux 发行版本与 Windows 进行交互的方式，从而提高了性能并增加了完整系统调用兼容性。
+要启用和安装 WSL 2，请按照 [WSL 安装文档](https://docs.microsoft.com/windows/wsl/install-win10)中的步骤操作。 这些步骤将包含选择 Linux 发行版（例如 Ubuntu）。
 
-1. 在 PowerShell 中，输入以下命令：`wsl -l` 用于查看计算机上已安装的 WSL 发行版本的列表。 你现在应该可以在此列表中看到 Ubuntu-18.04。
-2. 现在，输入以下命令：`wsl --set-version Ubuntu-18.04 2` 用于设置 Ubuntu 安装以使用 WSL 2。
-3. 验证每个已安装的发行版本使用的 WSL 版本：`wsl --list --verbose`（或 `wsl -l -v`）。
+安装 WSL 2 和 Linux 发行版后，打开 Linux 发行版（可在 Windows 的开始菜单中找到），并使用命令 `lsb_release -dc` 查看版本和代码名称。
 
-    ![适用于 Linux 的 Windows 子系统设置版本](../images/wsl-versions.png)
+建议定期更新 Linux 发行版，包括在安装之后立即更新，以确保具有最新的包。 Windows 不会自动处理此更新。 要更新发行版，请使用命令：`sudo apt update && sudo apt upgrade`。  
 
-> [!TIP]
-> 你可以按照相同的说明（使用 PowerShell）设置已安装到 WSL 2 的任何 Linux 发行版本，只需将“Ubuntu-18.04”更改为希望设为目标的已安装发行版本的名称即可。 要更改回 WSL 1，请运行与上面相同的命令，但将“2”替换为“1”。  你还可以通过输入以下内容将 WSL 2 设置为任何新安装的发行版本的默认值：`wsl --set-default-version 2`。
+## <a name="install-windows-terminal-optional"></a>安装 Windows 终端（可选）
+
+新的 Windows 终端可启用多个选项卡（在多个 Linux 命令行、Windows 命令提示符、PowerShell 和 Azure CLI 等之间快速切换）、创建键绑定（用于打开或关闭选项卡、复制粘贴等的快捷方式键）、使用搜索功能，以及使用自定义主题（配色方案、字体样式和大小、背景图像/模糊/透明度）。 [了解详细信息](https://docs.microsoft.com/windows/terminal)。
+
+1. 获取 [Microsoft Store 中的 Windows 终端（预览版）](https://www.microsoft.com/store/apps/9n0dx20hk701)：通过 Microsoft Store 进行安装时，将自动处理更新。
+
+2. 安装完成后，打开 Windows 终端并选择“设置”以使用 `settings.json` 文件自定义终端。
+
+    ![Windows 终端设置](../images/windows-terminal-settings.png)
 
 ## <a name="install-nvm-nodejs-and-npm"></a>安装 nvm、node.js 和 npm
 
@@ -99,8 +66,7 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 9. 使用以下命令验证 Node.js 是否已安装，以及是否为当前默认版本：`node --version`。 然后使用以下命令验证是否也有 npm：`npm --version`（还可以使用 `which node` 或 `which npm` 来查看用于默认版本的路径）。
 10. 若要更改要用于项目的 Node.js 版本，请创建新的项目目录 `mkdir NodeTest`，输入目录 `cd NodeTest`，然后输入 `nvm use node` 切换到当前版本，或输入 `nvm use --lts` 切换到 LTS 版本。 你还可以使用已安装的任何其他版本的特定数量，如 `nvm use v8.2.1`。 （若要列出 Node.js 的所有可用版本，请使用以下命令：`nvm ls-remote`）。
 
-> [!TIP]
-> 如果要使用 NVM 安装 Node.js 和 NPM，则不需要使用 SUDO 命令来安装新包。
+如果要使用 NVM 安装 Node.js 和 NPM，则不需要使用 SUDO 命令来安装新包。
 
 > [!NOTE]
 > 发布时，NVM v0.35.2 是可用的最新版本。 你可以查看[最新版本的 NVM 的 GitHub 项目页](https://github.com/nvm-sh/nvm)，并调整上述命令以包含最新版本。
@@ -118,7 +84,7 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 
 ## <a name="install-your-favorite-code-editor"></a>安装你最喜欢的代码编辑器
 
-建议将 Visual Studio Code 与适用于 Node.js 项目的 Remote-WSL 扩展一起使用   。 这会将 VS Code 拆分为“客户端-服务器”体系结构，使客户端（用户界面）在 Windows 计算机上运行，而使服务器（你的代码、Git、插件等）远程运行。
+建议将 Visual Studio Code 与适用于 Node.js 项目的 Remote-WSL 扩展一起使用 。 这会将 VS Code 拆分为“客户端-服务器”体系结构，使客户端（用户界面）在 Windows 计算机上运行，而使服务器（你的代码、Git、插件等）远程运行。
 
 - 支持基于 Linux 的 Intellisense 和 linting。
 - 你的项目将在 Linux 中自动生成。
@@ -144,7 +110,7 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 
 安装 Node.js 扩展包：
 
-1. 在 VS Code 中打开“扩展”  窗口 (Ctrl+Shift+X)。
+1. 在 VS Code 中打开“扩展”窗口 (Ctrl+Shift+X)。
 
     现在，“扩展”窗口分为三个部分（因为你已安装 Remote-WSL 扩展）。
     - “本地 - 已安装”：要与 Windows 操作系统一起使用而安装的扩展。
@@ -153,7 +119,7 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 
     ![VS Code 扩展本地和远程](../images/vscode-extensions-local-remote.png)
 
-2. 在“扩展”窗口顶部的搜索框中，输入：节点扩展包  （或要查找的任何扩展的名称）。 将为 VS Code 的本地实例或 WSL 实例安装扩展，具体取决于打开当前项目的位置。 可以通过选择“VS Code”窗口左下角的远程链接进行判断（以绿色显示）。 将向你提供打开或关闭远程连接的选项。 在“WSL:Ubuntu-18.04”环境中安装 Node.js 扩展。
+2. 在“扩展”窗口顶部的搜索框中，输入：节点扩展包（或要查找的任何扩展的名称）。 将为 VS Code 的本地实例或 WSL 实例安装扩展，具体取决于打开当前项目的位置。 可以通过选择“VS Code”窗口左下角的远程链接进行判断（以绿色显示）。 将向你提供打开或关闭远程连接的选项。 在“WSL:Ubuntu-18.04”环境中安装 Node.js 扩展。
 
     ![VS Code 远程链接](../images/wsl-remote-extension.png)
 
@@ -162,16 +128,6 @@ WSL 2 是 WSL 中[体系结构的新版本](https://docs.microsoft.com/windows/w
 - [Chrome 调试器](https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code)：在服务器端通过 Node.js 完成开发后，需要开发并测试客户端。 此扩展将 VS Code 编辑器与 Chrome 浏览器调试服务进行集成，以提高工作效率。
 - [来自其他编辑器的键映射](https://marketplace.visualstudio.com/search?target=VSCode&category=Keymaps&sortBy=Downloads)：如果是从另一个文本编辑器（如 Atom、Sublime、Vim、eMacs、Notepad++ 等）进行转换，则这些扩展可帮助你的环境对此进行适应。
 - [设置同步](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)：可以使用 GitHub 在不同安装之间同步 VS Code 设置。 如果在不同的计算机上工作，这有助于在它们之间保持一致的环境。
-
-## <a name="install-windows-terminal-optional"></a>安装 Windows 终端（可选）
-
-新的 Windows 终端启用多个选项卡（在命令提示符、PowerShell 或多个 Linux 发行版本之间快速切换）、自定义键绑定（创建自己的快捷键以打开或关闭选项卡、复制并粘贴等）、表情符号 ☺ 和自定义主题（配色方案、字体样式和大小、背景图像/模糊/透明度）。 [了解详细信息](https://devblogs.microsoft.com/commandline/)。
-
-1. 获取 [Microsoft Store 中的 Windows 终端（预览版）](https://www.microsoft.com/store/apps/9n0dx20hk701)：通过 Microsoft Store 进行安装时，将自动处理更新。
-
-2. 安装完成后，打开 Windows 终端并选择“设置”以使用 `profile.json` 文件自定义终端  。 [了解有关编辑 Windows 终端设置的详细信息](https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md)。
-
-    ![Windows 终端设置](../images/windows-terminal-settings.png)
 
 ## <a name="set-up-git-optional"></a>设置 Git（可选）
 

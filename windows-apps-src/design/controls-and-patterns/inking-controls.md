@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 848d682b2672e1a397e3ac867ae981c707873e8e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b9a4d0fb13b28babb3d99d0f763d9e7dc6decd2b
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970412"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233782"
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
@@ -67,7 +67,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 
 **Microsoft Edge**
 
-Microsoft Edge 针对“Web 笔记”使用 InkCanvas 和 InkToolbar  。  
+Microsoft Edge 针对“Web 笔记”使用 InkCanvas 和 InkToolbar。  
 ![InkCanvas 用于在 Microsoft Edge 中进行墨迹书写](images/ink-tools-edge.png)
 
 **Windows Ink 工作区**

@@ -1,16 +1,16 @@
 ---
 title: Windows 10 内部版本 16299 中的新增功能
 description: Windows 10 内部版本 16299 和新的开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
-keywords: 最近更新, 更新, 功能, 新增, Windows 10, 1709, 10 月, 最新, 开发人员, 16299, Fall Creators
+keywords: Windows 10, 1709, 16299, Fall Creators
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c54321d1d9db95a33d2de6363a79d93243c07d1f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fc4f0a50a70531d9d0591c1153aad1ab23e8250d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258891"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234216"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>面向开发人员的 Windows 10 内部版本 16299 中的新增功能
 

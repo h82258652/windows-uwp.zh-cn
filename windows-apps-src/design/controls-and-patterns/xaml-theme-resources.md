@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc05ce50c19a04d5b90d225746c9af6569f49bd3
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b16ad72541f34e40d1b0cf534082eb68b0843141
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970432"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234724"
 ---
 # <a name="xaml-theme-resources"></a>XAML 主题资源
 
@@ -202,7 +202,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 -->
 
 > [!NOTE]
-> 并非\[简单的高对比度名称\]\[简单的浅色/深色名称\]的每个组合都作为画笔资源提供   。
+> 并非\[简单的高对比度名称\]\[简单的浅色/深色名称\]的每个组合都作为画笔资源提供 。
 
 ## <a name="the-xaml-type-ramp"></a>XAML 类型渐变
 
@@ -375,7 +375,7 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 </Style>
 ```
 
-**注意**：  [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 样式不具有 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 包含的所有文本渐变样式，主要原因是适用于“RichTextBlock”的基于块的文档对象模型使对个别文本元素设置属性更为简单  。 同样，使用 XAML 内容属性设置 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于"RichTextBlock"，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)）中，你可能会在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式  。
+**注意**：  [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 样式不具有 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 包含的所有文本渐变样式，主要原因是适用于“RichTextBlock”的基于块的文档对象模型使对个别文本元素设置属性更为简单。 同样，使用 XAML 内容属性设置 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 将出现以下情况：没有要设置样式的文本元素，因此你必须设置容器样式。 对于"RichTextBlock"，这不是问题，因为其文本内容始终位于特定的文本元素（例如 [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph)）中，你可能会在该元素中为页面标头、页面子标头和类似文本渐变定义应用 XAML 样式。
 
 ## <a name="miscellaneous-named-styles"></a>其他命名样式
 
@@ -385,11 +385,11 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 **TargetType**：[ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
 
-当你需要显示用户可以点击以进行操作的文本时，请将此样式应用到 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 使用当前主题色设置该文本的样式以在交互时进行区分，并且该文本具有非常适用于文本的焦点矩形。 与 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隐式样式不同，“TextBlockButtonStyle”不会为文本添加下划线  。
+当你需要显示用户可以点击以进行操作的文本时，请将此样式应用到 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 使用当前主题色设置该文本的样式以在交互时进行区分，并且该文本具有非常适用于文本的焦点矩形。 与 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隐式样式不同，“TextBlockButtonStyle”不会为文本添加下划线。
 
 该模板还设置显示文本的样式以使用 **SystemControlHyperlinkBaseMediumBrush**（适用于“PointerOver”状态）、**SystemControlHighlightBaseMediumLowBrush**（适用于“Pressed”状态）和 **SystemControlDisabledBaseLowBrush**（适用于“Disabled”状态）。
 
-下面介绍向其应用了“TextBlockButtonStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)  。
+下面介绍向其应用了“TextBlockButtonStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
 
 ```XAML
 <Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}"
@@ -404,9 +404,9 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 **TargetType**：[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 默认尺寸是 40 x 40 像素。 要定制样式，可明确设置 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) 和“Button”上的其他属性，也可以使用 [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) 创建一个派生的样式  。
+此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 默认尺寸是 40 x 40 像素。 要定制样式，可明确设置 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontsize) 和“Button”上的其他属性，也可以使用 [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) 创建一个派生的样式。
 
-下面介绍向其应用了“NavigationBackButtonNormalStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)  。
+下面介绍向其应用了“NavigationBackButtonNormalStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
@@ -420,9 +420,9 @@ themeresources.xaml 文件将定义若干个资源，这些资源定义可应用
 
 **TargetType**：[Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 它与“NavigationBackButtonNormalStyle”类似，但尺寸为 30 x 30 像素  。
+此 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 提供的适用于 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的完整模板可能是适用于导航应用的导航后退按钮。 它与“NavigationBackButtonNormalStyle”类似，但尺寸为 30 x 30 像素。
 
-下面是一个应用了“NavigationBackButtonSmallStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)  。
+下面是一个应用了“NavigationBackButtonSmallStyle”资源的 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
 
 ```XAML
 <Button Style="{StaticResource NavigationBackButtonSmallStyle}" />

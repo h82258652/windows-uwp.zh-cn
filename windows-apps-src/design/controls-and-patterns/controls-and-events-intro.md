@@ -8,12 +8,15 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: af04bfcc9b105b19ace18086921a17cc609e5d71
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: addb4e7d929fb0222deda63494546d731f01cecd
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969982"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775792"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控件和模式简介
 
@@ -102,6 +105,9 @@ Visual Studio“工具箱”会显示可在应用中使用的许多控件。 要
 ```csharp
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
+```cppwinrt
+Button1().Foreground(Media::SolidColorBrush(Windows::UI::Colors::Beige()));
+```
 
 ## <a name="create-an-event-handler"></a>创建事件处理程序 
 
@@ -122,6 +128,22 @@ private void Button_Click(object sender, RoutedEventArgs e)
     b.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
 }
 ```
+```cppwinrt
+#MainPage.h
+struct MainPage : MainPageT<MainPage>
+    {
+        MainPage();
+        ...
+        void Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
+    };
+    
+#MainPage.cpp
+void MainPage::Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+        auto b{ sender.as<winrt::Windows::UI::Xaml::Controls::Button>() };
+        b.Foreground(Media::SolidColorBrush(Windows::UI::Colors::Blue()));
+    }
+```
 
 你也可以在 XAML 中关联事件处理程序。 在 XAML 编辑器中，键入要处理的事件名称。 当你开始输入时，Visual Studio 会显示 IntelliSense 窗口。 指定事件后，你可以在 IntelliSense 窗口中双击 `<New Event Handler>`，从而使用默认名称创建新的事件处理程序，或者从列表中选择一个现有的事件处理程序。 
 
@@ -139,6 +161,9 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 ```csharp
 Button1.Click += new RoutedEventHandler(Button_Click);
+```
+```cppwinrt
+Button1().Click({ this, &MainPage::Button1_Click });
 ```
 
 ## <a name="related-topics"></a>相关主题

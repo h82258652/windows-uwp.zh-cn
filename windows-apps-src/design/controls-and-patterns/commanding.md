@@ -4,20 +4,20 @@ description: 如何使用 XamlUICommand 和 StandardUICommand 类（以及 IComm
 ms.service: ''
 ms.topic: overview
 ms.date: 09/13/2019
-ms.openlocfilehash: 24df2f6c67fe5a501461d5ce5e9c18a147c54672
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5ab46a479e882b9975f24731dfcbb6e433126f80
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968762"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233767"
 ---
-# <a name="commanding-in-windows-app-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 在 Windows 应用中进行命令控制
+# <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 在 Windows 应用中进行命令控制
 
 本主题介绍 Windows 应用程序中的命令控制。 具体说来，我们讨论如何使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
 
 ![表示共享命令常见使用情况的图：多个包含“收藏夹”命令的 UI 设计面](images/commanding/generic-commanding.png)
 
-在不同的控件之间共享命令，不管设备和输入类型是什么 
+在不同的控件之间共享命令，不管设备和输入类型是什么
 
 ## <a name="important-apis"></a>重要的 API
 
@@ -625,7 +625,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 ![命令界面示例](images/commanding/icommand.gif)
 
-ICommand 示例 
+ICommand 示例
 
 | 下载此示例的代码 |
 | -------------------- |

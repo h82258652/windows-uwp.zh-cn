@@ -6,16 +6,16 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5bcc7d45646651cdb60228a3c08123378eedb960
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 634393e700538dc5db43b2d4065c6742fd7673f1
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970612"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234338"
 ---
 # <a name="control-size-and-density"></a>控件大小和密度
 
-使用控件大小和密度的组合可优化 Windows 应用，并提供最适合于应用功能和交互要求的用户体验。
+使用控件大小和密度的组合可优化 Windows 应用程序，并提供最适合于应用功能和交互要求的用户体验。
 
 默认情况下，UWP 应用使用低密度（或`Standard`）布局进行呈现。 但是从 WinUI 2.1 开始，也支持适用于信息丰富的 UI 和类似专用方案的高密度（或 `Compact`）布局选项。 这可以通过基本样式资源进行指定（请参阅以下示例）。
 
@@ -39,9 +39,9 @@ ms.locfileid: "82970612"
 
 ## <a name="fluent-standard-sizing"></a>Fluent Standard 大小
 
-创建 Fluent Standard 大小  是为了在信息密度与用户舒适之间提供平衡。 实际上，屏幕上的所有项都对齐到 40x40 有效像素 (epx) 目标，这使 UI 元素可与网格对齐并基于系统级别缩放进行相应缩放。
+创建 Fluent Standard 大小是为了在信息密度与用户舒适之间提供平衡。 实际上，屏幕上的所有项都对齐到 40x40 有效像素 (epx) 目标，这使 UI 元素可与网格对齐并基于系统级别缩放进行相应缩放。
 
-Standard 大小旨在适应触控和指针输入。 
+Standard 大小旨在适应触控和指针输入。
 
 > [!NOTE]
 >有关有效像素和缩放的更多信息，请参阅 [Windows 应用设计简介](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)
@@ -54,7 +54,7 @@ Standard 大小旨在适应触控和指针输入。
 
 ![标准控件布局示例](images/standarddensity.png)
 
-标准控件布局示例 
+标准控件布局示例
 
 这下一个图显示 Windows 10 2018 年 10 月更新的控件大小更改。 具体而言，对齐到 40epx 网格。
 
@@ -68,7 +68,7 @@ Compact 大小可实现信息丰富的密集控件组，并且可与帮助提供
 - 最大化页面上的可见内容。
 - 对控件和内容进行导航和交互
 
-Compact 大小主要用于适应指针输入。 
+Compact 大小主要用于适应指针输入。
 
 ### <a name="examples"></a>示例
 

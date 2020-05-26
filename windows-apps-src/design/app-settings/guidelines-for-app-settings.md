@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c35bc6cfcf36543482bcb42d0ccda7fd3102ac9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a9b27094a5861151b907dc7787828068122e4a54
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970032"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233988"
 ---
 # <a name="guidelines-for-app-settings"></a>应用设置指南
 
@@ -143,4 +143,4 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 * [命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
 * [进度控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
 * [存储和检索应用数据](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [EntranceThemeTransition](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 
+* [EntranceThemeTransition](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

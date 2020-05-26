@@ -1,17 +1,17 @@
 ---
 title: Windows 10 内部版本 18362 中的新增功能
 description: Windows 10 内部版本 18362 和新的开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
-keywords: 新增功能, 新功能, Windows, Windows 10, 更新, 功能, 新, 最新, 开发人员, 18362, 五月
+keywords: Windows 10, 18362, 1903
 ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 334dac56c12bf914cb767787bddc06b1c5dc9da2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b5fb6c5ebd300c393c4aef7b73750fe00c6b1f6d
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80759374"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234364"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>面向开发人员的 Windows 10 内部版本 18362 中的新增功能
 
@@ -40,7 +40,7 @@ Z 深度和阴影 | 使用 [Z 深度和阴影](../design/layout/depth-shadow.md)
 C++/WinRT 2.0 | C++/WinRT 版本 2.0 现已发布。 请查看 [C++/WinRT 中的新增功能](../cpp-and-winrt-apis/news.md)，了解所有新的更改和补充功能的完整概述。
 选择平台 | 希望新建桌面应用程序？ 查看我们改进的[选择平台](https://docs.microsoft.com/windows/desktop/choose-your-technology)页面，获取关于 UWP、WPF 和 Windows 窗体平台的详细介绍和对比，以及关于 Win32 API 的详细信息。
 对话代理 | 使用 [Windows.ApplicationModel.ConversationalAgent](https://docs.microsoft.com/uwp/api/windows.applicationmodel.conversationalagent) 命名空间可将 Windows 平台代理激活运行时 (AAR) 支持的任何数字助手添加到 Windows 应用。
-云文件 API | 使用云文件 API 可以[构建一个支持占位符文件的云同步引擎](https://docs.microsoft.com/windows/desktop/cfapi/build-a-cloud-file-sync-engine)。 
+云文件 API | 使用云文件 API 可以[构建一个支持占位符文件的云同步引擎](https://docs.microsoft.com/windows/desktop/cfapi/build-a-cloud-file-sync-engine)。
 Direct 3D 12 | 如果渲染器基于“基于磁贴的延迟渲染”(TBDR) 以及其他技术，则 [Direct3D 12 渲染器通道](/windows/desktop/direct3d12/direct3d-12-render-passes)可提高渲染器的性能。 该技术通过使应用程序更好地识别资源渲染排序要求和数据依赖项，来帮助渲染器提高 GPU 效率。 这可以减少流入/流出芯片外内存的内存流量。
 直接机器学习 (DirectML) | [DirectML](https://docs.microsoft.com/windows/desktop/direct3d12/dml) 是用于机器学习的低级别硬件加速 API。 它具有常见的（本机 C++、nano-COM）编程接口和 DirectX 12 样式的工作流。 可将机器学习推断工作负荷集成到游戏、引擎、中间件、后端或其他应用程序中。 所有与 DirectX 12 兼容的硬件都支持 DirectML。
 DirectX HLSL | [HLSL 着色器模型 6.4](https://docs.microsoft.com/windows/desktop/direct3dhlsl/hlsl-shader-model-6-4-features-for-direct3d-12) 提供可在 DirectML 中使用的新机器学习内部函数。
