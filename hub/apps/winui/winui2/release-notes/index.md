@@ -3,16 +3,16 @@ title: WinUI 发行说明
 description: WinUI 发行说明的索引。
 ms.date: 05/08/2020
 ms.topic: reference
-ms.openlocfilehash: 93e98d771eace65f502d77ffe8e1891ab09ff40a
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: cf1cf75d7f92107c88f27008bff53c76d37715ec
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580224"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775816"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Windows UI 库 2.x 发行说明
 
-Windows UI 库 (WinUI) 是托管在 GitHub 上的开源项目。 所有新版本都是从 [Windows UI 库 GitHub 存储库](https://aka.ms/winui)生成的。 
+Windows UI 库 (WinUI) 是托管在 GitHub 上的开源项目。 所有新版本都是从 [Windows UI 库 GitHub 存储库](https://aka.ms/winui)生成的。
 
 我们也欢迎你在 [Windows UI 库存储库](https://aka.ms/winui)中提供 Bug 报告、提交功能请求和贡献社区代码。
 
@@ -49,9 +49,9 @@ API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
 | [2.4](winui-2.4.md) | 稳定版 | 2020 年 5 月 | [发行说明](winui-2.4.md) | [RadialGradientBrush](winui-2.4.md#radialgradientbrush)、[ProgressRing](winui-2.4.md#progressring)、[TabView 更新](winui-2.4.md#tabview-updates)、[对 TextBox 系列控件的深色主题更新](winui-2.4.md#dark-theme-updates-to-textbox-family-of-controls)、[分层导航](winui-2.4.md#hierarchical-navigation)  |
 | [2.3](winui-2.3.md) | 稳定版 | 2019 年 11 月 | [发行说明](winui-2.3.md) | [进度栏视觉刷新](winui-2.3.md#progress-bar-visual-refresh)、[NumberBox](winui-2.3.md#numberbox)、[RadioButtons](winui-2.3.md#radiobuttons) |
 | [2.2](winui-2.2.md) | 稳定版 | 2019 年 8 月 | [发行说明](winui-2.2.md) | [TabView](winui-2.2.md#tabview)、[NavigationView 更新](winui-2.2.md#navigationview-updates)、[视觉样式更新](winui-2.2.md#visual-style-updates)  |
-| [2.1](winui-2.1.md) | 稳定版 | 2019 年 4 月 | [发行说明](winui-2.1.md) | [GitHub](https://github.com/microsoft/microsoft-ui-xaml) 中的第一个开源版本。 <br />[ItemsRepeater](winui-2.1.md#itemsrepeater)、[AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer)、[TeachingTip](winui-2.1.md#teachingtip)、[RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem)、[CompactDensity](winui-2.1.md#compactdensity)、[Shadows](winui-2.1.md#shadows)。 |
-| [2.0](winui-2.0.md) | 稳定版 | 2018 年 10 月 | [发行说明](winui-2.0.md) | 初始版本。<br>包括适用于 Windows UWP 应用的官方本机 Fluent 控件和功能。  |
+| [2.1](winui-2.1.md) | 稳定版 | 2019 年 4 月 | [发行说明](winui-2.1.md) | [GitHub](https://github.com/microsoft/microsoft-ui-xaml) 中的第一个开放源代码版本。 包括 [ItemsRepeater](winui-2.1.md#itemsrepeater)、[AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer)、[TeachingTip](winui-2.1.md#teachingtip)、[RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem)、[CompactDensity](winui-2.1.md#compactdensity)、[Shadows](winui-2.1.md#shadows)。 |
+| [2.0](winui-2.0.md) | 稳定版 | 2018 年 10 月 | [发行说明](winui-2.0.md) | **初始版本**。 包括适用于 Windows UWP 应用的官方本机 Fluent 控件和功能。  |
 
-### <a name="winui-3-alpha"></a>WinUI 3 Alpha
+### <a name="winui-3-preview-1"></a>WinUI 3 预览版 1
 
-有关试用 WinUI 3 早期预览版的信息，请参阅 [WinUI 3.0 (Alpha)](../../winui3/index.md)。
+要详细了解如何试用 WinUI 3 早期预览版，请参阅 [WinUI 3.0 预览版 1](../../winui3/index.md)。

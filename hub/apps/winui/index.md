@@ -4,12 +4,12 @@ description: 适用于 Windows 应用开发的 WinUI 库。
 ms.topic: article
 ms.date: 05/11/2020
 keywords: windows 10, uwp, 工具包 sdk, winui, Windows UI 库
-ms.openlocfilehash: 2afa6b1eadc98300e3de76a1dfc6ede66a2a56e5
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 01eed4a82bfe14b70c86ade1b82c487e33e6f6f6
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580174"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775882"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI 库 (WinUI)
 
@@ -38,7 +38,7 @@ WinUI 2.x 控件保持与早期版本的 Windows 10 的低端兼容性，即使�
 
 有关安装说明，请参阅 [Windows UI 库入门](winui2/getting-started.md)。
 
-### <a name="related-links"></a>相关链接
+### <a name="related-links-for-winui-2x"></a>WinUI 2.x 的相关链接
 
 - [WinUI 2.x 库概述](winui2/index.md)
 - [API 文档](https://docs.microsoft.com/uwp/api/overview/winui/)
@@ -52,7 +52,7 @@ WinUI 3 是 WinUI 的下一版本，它是与 UWP SDK 完全分离的原生 Wind
 通过将 Xaml、合成以及输入 API 从 UWP SDK 中完全分离，Windows UI 3.0 库可以极大地扩展 WinUI 的范围，使之包括完整的 Windows 10 原生 UI 平台。
 
 WinUI 充当所有 Windows 应用的转发路径 - 可以将其用作原生 UWP 或 Win32 应用上的 UI 层，也可以使用它通过 [Xaml 岛](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands)一点点地实现桌面应用的现代化。
- 
+
 > [!NOTE]
 > WinUI 3.0 预览版 1 是 WinUI 3.0 的预发布版本。 欢迎在 [WinUI GitHub 存储库](https://github.com/microsoft/microsoft-ui-xaml)中提供反馈。
 
@@ -65,10 +65,10 @@ WinUI 充当所有 Windows 应用的转发路径 - 可以将其用作原生 UWP 
 > [!Important]
 > WinUI 3.0 预览版 1 用于早期评估以及从开发人员社区收集反馈。 它**不**应该用于生产应用。
 
-### <a name="related-links"></a>相关链接
+### <a name="related-links-for-winui-30"></a>WinUI 3.0 的相关链接
 
 - [WinUI 3.0 预览版 1（2020 年 5 月）](winui3/index.md)
-- [XAML 控件库（WinUI 3.0 预览版 1）应用](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3alpha)
+- [XAML 控件库（WinUI 3.0 预览版 1）应用](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## <a name="winui-resources"></a>WinUI 资源
 

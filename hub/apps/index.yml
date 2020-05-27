@@ -11,20 +11,20 @@ metadata:
   ms.date: 11/08/2019
   ms.localizationpriority: medium
   uhfHeaderId: MSDocsHeader-WinDevCenter
-  ms.openlocfilehash: c97b18f07998faed28f4ecc83115bb0d5daaa313
-  ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+  ms.openlocfilehash: 1192e0d34ad0f754917bf156432646d0ace1458a
+  ms.sourcegitcommit: 10ec5a20dd1152a1037ebc4fba1a28cc96593586
   ms.translationtype: HT
   ms.contentlocale: zh-CN
   ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83579986"
+  ms.locfileid: "83665871"
 highlightedContent:
   items:
   - title: 获取 Visual Studio 和 Windows SDK
     itemType: download
     url: https://developer.microsoft.com/windows/downloads
-  - title: 用户界面和设计准则
+  - title: 最新版本中面向开发人员的新增功能
     itemType: overview
-    url: /windows/apps/fluent-design-system
+    url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041
   - title: 加入预览体验计划
     itemType: overview
     url: https://docs.microsoft.com/windows-insider
@@ -44,7 +44,7 @@ productDirectory:
     links:
     - url: /windows/apps/winui/
       text: 入门
-  - title: 适用于 Linux 的 Windows 子系统、Python 和其他工具
+  - title: 适用于 Linux 的 Windows 子系统、Windows 终端、Python 和其他工具
     imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg
     links:
     - url: /windows/dev-environment/
