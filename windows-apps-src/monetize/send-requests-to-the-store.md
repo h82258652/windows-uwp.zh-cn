@@ -1,17 +1,17 @@
 ---
-Description: SendRequestAsync 方法可用于将请求发送到 Microsoft Store 的操作，还没有在 Windows SDK 中提供的 API。
+Description: 你可以使用 SendRequestAsync 方法将请求发送到 Microsoft Store，以执行尚未在 Windows SDK 中提供 API 的操作。
 title: 向 Microsoft Store 发送请求
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 810c546eb0ee0263dcb50b3ce58e593ad294435c
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57589792"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867327"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>向 Microsoft Store 发送请求
 
@@ -27,14 +27,14 @@ ms.locfileid: "57589792"
 * 用于标识你想要向应用商店发送的请求的整数。
 * 如果请求支持任何参数，你还可以传递 JSON 格式的字符串，它包含要与请求一起传递的参数。
 
-以下示例展示了如何调用此方法。 本示例要求使用适用于 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间的语句。
+下面的示例演示如何调用此方法。 本示例要求使用适用于 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间的语句。
 
 ```csharp
 public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
@@ -58,7 +58,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 **SendRequestAsync** 方法支持一组外部测试版组方案的请求，例如为外部测试版组添加用户或设备。 若要提交这些请求，请将 *requestKind* 参数值 7 或 8 以及 JSON 格式的字符串一起传递给用于指示你想要与任何相关参数一起提交的请求的 *parametersAsJson* 参数。 这些 *requestKind* 值在以下方面不同。
 
-|  请求类型值  |  描述  |
+|  请求类型值  |  说明  |
 |----------------------|---------------|
 |  7                   |  此请求将在当前设备的上下文中执行。 此值仅可用于 Windows 10 版本 1703 或更高版本。  |
 |  8                   |  此请求将在当前已登录到应用商店的用户的上下文中执行。 此值可用于 Windows 10 版本 1607 或更高版本。  |
@@ -72,12 +72,12 @@ public async Task<bool> AddUserToFlightGroup()
 
 此请求将为当前用户或设备检索排名最高的外部测试版组的远程变量。 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  描述  |
+|  参数  |  说明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以返回设备的最高排名外部测试版组，或者指定 8 以返回当前用户和设备的最高排名外部测试版组。 我们建议为 *requestKind* 参数使用值 8，因为此值将在成员中返回当前用户和设备的最高排名外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
 
-以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将分配*projectId*字段到在其中定义在合作伙伴中心中的远程变量的项目的 ID。
+以下示例显示了要传递至 *parametersAsJson* 的 JSON 数据格式。 必须为*类型*字段分配字符串 *GetRemoteVariables*。 将*projectId*字段分配到在其中定义了合作伙伴中心中的远程变量的项目的 ID。
 
 ```json
 { 
@@ -91,7 +91,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  字段  |  描述  |
 |----------------------|---------------|
 |  *匿名*                   |  布尔值，其中 **true** 指示用户或设备身份不存在于请求中，**false** 指示用户或设备身份已存在于请求中。  |
-|  *名称*                   |  包含设备或用户所在的最高排名外部测试版组名称的字符串。  |
+|  name                   |  包含设备或用户所在的最高排名外部测试版组名称的字符串。  |
 |  *设置*                   |  键/值对的字典，包含开发人员为外部测试版组配置的远程变量的名称和值。  |
 
 以下示例展示了此请求的返回值。
@@ -115,7 +115,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  描述  |
+|  参数  |  说明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以将设备添加到外部测试版组，或者指定 8 以将当前已登录到应用商店的用户添加到外部测试版组。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
@@ -138,7 +138,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要发送此请求，请将以下信息传递至 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 参数。
 
-|  参数  |  描述  |
+|  参数  |  说明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 以从外部测试版组中删除设备，或者指定 8 以从外部测试版组中删除当前已登录到应用商店的用户。  |
 |  *parametersAsJson*                   |  传递 JSON 格式的字符串，它包含以下示例显示的数据。  |
@@ -156,5 +156,5 @@ public async Task<bool> AddUserToFlightGroup()
 
 ## <a name="related-topics"></a>相关主题
 
-* [显示一个级别并查看应用程序中的对话框](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
+* [在应用中显示评分和评价对话框](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

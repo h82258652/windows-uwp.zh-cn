@@ -9,12 +9,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 385c11e48695c2486fd5a2b72633923454e2f8ea
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ad94d7b887e28ac01156592ac47cfc9ac4783193
+ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970632"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83775910"
 ---
 # <a name="connected-animation-for-windows-apps"></a>适用于 Windows 应用的连接动画
 
@@ -55,7 +55,7 @@ ms.locfileid: "82970632"
 
 ## <a name="connected-animation-and-the-fluent-design-system"></a>连贯动画和 Fluent 设计系统
 
- Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 连贯动画是 Fluent 设计系统的一个组成部分，它将动画添加到你的应用。 若要了解详细信息，请参阅 "[熟知设计概述](/windows/apps/fluent-design-system)"。
+ Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 连贯动画是 Fluent 设计系统的一个组成部分，它将动画添加到你的应用。 若要了解详细信息，请参阅 [Fluent Design 概述](/windows/apps/fluent-design-system)。
 
 ## <a name="why-connected-animation"></a>为何选择连贯动画？
 
@@ -98,7 +98,7 @@ ms.locfileid: "82970632"
 
 为了实现各种效果，某些配置将忽略 ConnectedAnimationService 上的这些属性，并改为使用自己的值，如此表中所述。
 
-| Configuration | 是否尊重 DefaultDuration？ | 是否尊重 DefaultEasingFunction？ |
+| 配置 | 是否尊重 DefaultDuration？ | 是否尊重 DefaultEasingFunction？ |
 | - | - | - |
 | 引力 | 是 | 是* <br/> **从 A 到 B 的基本转换使用此缓动函数，但 "重力 dip" 具有其自己的缓动函数。*  |
 | 直接 | 否 <br/> *在150ms 上进行动画处理。*| 否 <br/> *使用减速缓动函数。* |
@@ -271,7 +271,7 @@ void PrepareAnimationWithItem(ContactsItem item)
 若要使用此元素作为目标来启动动画（如从详细信息视图向后导航时），请使用[TryStartConnectedAnimationAsync](/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync)。 如果你刚为 ListView 加载了数据源，TryStartConnectedAnimationAsync 将会等到相应的项目容器已被创建时才启动动画。
 
 ```csharp
-private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
+private async void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 {
     ContactsItem item = GetPersistedItem(); // Get persisted item
     if (item != null)

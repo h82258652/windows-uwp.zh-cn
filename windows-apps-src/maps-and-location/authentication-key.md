@@ -6,19 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地图身份验证密钥, 地图控件
 ms.localizationpriority: medium
-ms.openlocfilehash: c3bc74d83c3f713149e9001de4ec10fe0a4706de
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: ab0d1900398c313021600c18338ecc1201241410
+ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259389"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790998"
 ---
 # <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 
-
-
-
-[通用 Windows 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)必须先经过验证，然后才能在 [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 命名空间中使用 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本主题介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图验证密钥并将其添加到应用。
+必须先对[通用 Windows 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)进行身份验证，然后才能使用 MapControl[**命名空间中的**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)和映射服务。 若要对应用进行身份验证，必须指定地图身份验证密钥。 本主题介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图验证密钥并将其添加到应用。
 
 **提示** 若要了解有关在你的应用中使用地图的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](https://github.com/Microsoft/Windows-universal-samples)中下载以下示例：
 
@@ -31,13 +28,13 @@ ms.locfileid: "74259389"
 
 创建新密钥
 
-1.  在浏览器中，导航到必应地图开发人员中心（[https://www.bingmapsportal.com](https://www.bingmapsportal.com/)）。
+1.  在浏览器中，导航到必应地图开发人员中心（ [https://www.bingmapsportal.com](https://www.bingmapsportal.com/) ）。
 
 2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击**登录**。
 
-3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击 **“是”** 。 否则，请单击**使用其他帐户登录**。
+3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击 **“是”**。 否则，请单击**使用其他帐户登录**。
 
-4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入 **“帐户名称”** 、 **“联系人姓名”** 、 **“公司名称”** 、 **“电子邮件地址”** 和 **“电话号码”** 。 在接受使用条款后，单击**创建**。
+4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入 **“帐户名称”**、**“联系人姓名”**、**“公司名称”**、**“电子邮件地址”** 和 **“电话号码”**。 在接受使用条款后，单击**创建**。
 
 5.  在**我的帐户**菜单上，单击**我的密钥**。
 
@@ -47,7 +44,7 @@ ms.locfileid: "74259389"
 
     -   **应用程序名称：** 你的应用程序的名称。
     -   **应用程序 URL（可选）：** 你的应用程序的 URL。
-    -   **密钥类型：** 选择 **“基本”** 或 **“企业”** 。
+    -   **密钥类型：** 选择 **“基本”** 或 **“企业”**。
     -   **应用程序类型：** 选择要在通用 Windows 应用中使用的**Windows 应用程序**。
 
     这是一个表格呈现内容的示例。
@@ -92,5 +89,5 @@ ms.locfileid: "74259389"
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
 * [UWP 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [地图设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [生成2015视频：跨 Windows 应用中的手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 路况应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)
