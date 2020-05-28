@@ -7,12 +7,12 @@ keywords: 设备, 数字化器, 输入, 交互, 注入
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d15305fecb562546bdeaf15c501890151c7dd29a
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7bcd63d940e53d90d925f83f27e4c77165a11650
+ms.sourcegitcommit: 124cea09be7f12444bfff541badb65d539d55c83
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968025"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84124119"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>通过输入式注入模拟用户输入
 
@@ -22,11 +22,11 @@ ms.locfileid: "82968025"
 
 ## <a name="overview"></a>概述
 
-使用输入注入，Windows 应用程序可以模拟来自各种输入设备的输入，并将该输入定向到任何位置，包括应用的工作区之外（甚至应用于使用管理员权限运行的应用，如注册表编辑器）。
+使用输入注入，你的 Windows 应用程序可以模拟来自各种输入设备的输入，并将该输入定向到任何位置，包括应用的工作区之外（即使是使用管理员权限运行的应用，如注册表编辑器）。
 
 对于需要提供可访问性、测试（即席、自动）以及远程访问和支持功能的功能的 Windows 应用程序和工具，输入注入非常有用。
 
-## <a name="setup"></a>安装
+## <a name="setup"></a>设置
 
 若要在 Windows 应用中使用输入注入 Api，需要将以下内容添加到应用程序清单中：
 
@@ -51,7 +51,7 @@ ms.locfileid: "82968025"
 
     我们有两个网格区域（一个用于鼠标输入，另一个用于注入式触控输入），每个区域均有四个按钮。
       > [!NOTE] 
-      > 必须为网格背景分配一个值（`Transparent`在本例中为），否则，将不会检测到指针事件。
+      > 必须为网格背景分配一个值（ `Transparent` 在本例中为），否则，将不会检测到指针事件。
 
     在输入区域检测到任何鼠标点击时，对应的触控事件将插入到输入式注入区域。 来自注入输入的按钮点击在标题区域报告。
 
@@ -361,7 +361,7 @@ ms.locfileid: "82968025"
 
 4. 最后，我们处理输入式注入区域中的所有按钮[点击](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase)路由事件，并使用所点击按钮的名称更新 UI。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 ### <a name="topic-samples"></a>主题示例
 

@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ed4356513e406c7c787ec111d32560ac08d293f1
-ms.sourcegitcommit: f26d0b22a70b05679fc7089e11d639ba1a4a23af
+ms.openlocfilehash: 1847fb707d633cc7960b3b9767db974452414a25
+ms.sourcegitcommit: eae9859ee06c1e5e4afa08d8d3da072ad06d24a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82107720"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84110394"
 ---
 # <a name="create-hosted-apps"></a>创建托管应用
 
 从 Windows 10 版本2004开始，你可以创建*托管应用*。 托管应用与父*主机*应用共享相同的可执行文件和定义，但其外观和行为类似于系统上的单独应用。
 
-托管应用适用于希望组件（如可执行文件或脚本文件）的行为类似于独立 Windows 10 应用的方案，但组件需要主机进程才能执行。 例如，可以将 PowerShell 或 Python 脚本作为托管应用传递，该应用需要安装主机才能运行。 托管应用可以具有其自己的开始磁贴、标识以及与 Windows 10 功能（如后台任务、通知、磁贴和共享目标）的深度集成。
+对于希望组件（如可执行文件或脚本文件）的行为类似于独立 Windows 10 应用，但该组件需要托管进程才能进行执行的应用场景，托管应用会很有用。 例如，可以将 PowerShell 或 Python 脚本作为托管应用传递，该应用需要安装主机才能运行。 托管应用可以具有其自己的开始磁贴、标识，且可以与 Windows 10 功能（如后台任务、通知、磁贴和共享目标）深度集成。
 
 包清单中的几个元素和属性支持托管应用功能，包清单中的这些元素和特性使托管应用可以在主机应用包中使用可执行文件和定义。 当用户运行托管应用程序时，操作系统会自动以托管应用程序的标识启动主机可执行文件。 然后，宿主可以将视觉资产、内容或调用 Api 作为托管应用程序加载。 托管应用获取主机和托管应用之间声明的功能的交集。 这意味着，托管应用无法请求比主机提供的功能更多的功能。
 
@@ -63,7 +63,7 @@ ms.locfileid: "82107720"
 托管应用包可以签名或无符号：
 
 * 已签名的包可能包含可执行文件。 这在具有二进制扩展机制的方案中很有用，此机制使宿主能够在托管应用程序包中加载 DLL 或已注册的组件。
-* 未签名的包只能包含不可执行的文件。 当宿主只需要加载映像、资产和内容或脚本文件时，这非常有用。 未签名的包在其`OID` [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素中必须包含一个特殊值，否则不允许注册。 这可以防止未签名的包与签名包的标识冲突，或哄骗签名包的标识。
+* 未签名的包只能包含不可执行的文件。 当宿主只需要加载映像、资产和内容或脚本文件时，这非常有用。 未签名 `OID` 的包在其[**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素中必须包含一个特殊值，否则不允许注册。 这可以防止未签名的包与签名包的标识冲突，或哄骗签名包的标识。
 
 若要定义托管应用，请在包清单中声明以下项：
 
@@ -98,7 +98,7 @@ ms.locfileid: "82107720"
 
 | 元素              | 详细信息 |
 |----------------------|-------|
-| [**标识**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) | 由于本示例中的托管应用包是无符号的，因此**发布服务器**特性`OID.2.25.311729368913984317654407730594956997722=1`必须包含字符串。 这可确保未签名的包无法欺骗签名包的标识。 |
+| [**标识**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) | 由于本示例中的托管应用包是无符号的，因此**发布服务器**特性必须包含 `OID.2.25.311729368913984317654407730594956997722=1` 字符串。 这可确保未签名的包无法欺骗签名包的标识。 |
 | [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) | **MinVersion**特性必须指定10.0.19041.0 或更高版本的 OS 版本。 |
 | [**uap10:HostRuntimeDependency**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-hostruntimedependency)  | 此元素元素声明主机应用包上的依赖关系。 这包括主机包的名称和**发布服务器****以及它所依赖的文件****名称**。 这些值可在主机包的[标识](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素下找到。 |
 | [**应用程序**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application) | **Uap10： HostId**属性表示主机上的依赖关系。 托管应用包必须为[**应用程序**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)或[**扩展**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-1-extension)元素声明此特性，而不是常用的**可执行文件**和**入口点**特性。 因此，托管应用从具有相应**HostId**值的主机继承**可执行文件**、**入口点**和运行时属性。<br/><br/>**Uap10： Parameters**特性指定传递给宿主可执行文件的入口点函数的参数。 由于主机需要知道要如何处理这些参数，主机和托管应用之间有隐含的协定。 |
@@ -109,8 +109,8 @@ ms.locfileid: "82107720"
 
 使用[**PackageManager**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager)类的以下方法来注册未签名的托管应用程序包。 从 Windows 10 版本2004开始提供这些方法。
 
-* **AddPackageByUriAsync**：使用*Options*参数的**AllowUnsigned**属性注册未签名的 .msix 包。
-* **RegisterPackageByUriAsync**：执行松散的包清单文件注册。 如果对包进行了签名，则包含清单的文件夹必须包含[时会文件](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package)和目录。 如果未签名，则必须设置*options*参数的**AllowUnsigned**属性。
+* [**AddPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync)：使用*Options*参数的**AllowUnsigned**属性注册未签名的 .msix 包。
+* [**RegisterPackageByUriAsync**](https://docs.microsoft.com/uwp/api/windows.management.deployment.packagemanager.registerpackagebyuriasync)：执行松散的包清单文件注册。 如果对包进行了签名，则包含清单的文件夹必须包含[时会文件](https://docs.microsoft.com/windows/msix/overview#inside-an-msix-package)和目录。 如果未签名，则必须设置*options*参数的**AllowUnsigned**属性。
 
 ### <a name="requirements-for-unsigned-hosted-apps"></a>未签名的托管应用的要求
 
@@ -138,7 +138,7 @@ ms.locfileid: "82107720"
 
 ### <a name="the-host"></a>主机
 
-主机名为**PyScriptEngine**。 这是用 c # 编写的包装程序，用于运行 python 脚本。 当使用`-Register`参数运行时，脚本引擎将安装包含 python 脚本的托管应用程序。 当用户尝试启动新安装的托管应用时，主机将启动并执行**NumberGuesser** python 脚本。
+主机名为**PyScriptEngine**。 这是用 c # 编写的包装程序，用于运行 python 脚本。 当使用参数运行时 `-Register` ，脚本引擎将安装包含 python 脚本的托管应用程序。 当用户尝试启动新安装的托管应用时，主机将启动并执行**NumberGuesser** python 脚本。
 
 主机应用的包清单（PyScriptEnginePackage 文件夹中的 appxmanifest.xml 文件）包含一个**uap10： HostRuntime**扩展，该扩展将应用声明为 ID 为**PythonHost**的主机和可执行的**PyScriptEngine**。  
 
@@ -151,7 +151,7 @@ ms.locfileid: "82107720"
 
 托管应用的包清单（NumberGuesser/Appxmanifest.xml 文件）包含以下项：
 
-* [**标识**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**发行者**特性包含无符号包`OID.2.25.311729368913984317654407730594956997722=1`所需的标识符。
+* [**标识**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**发行者**特性包含 `OID.2.25.311729368913984317654407730594956997722=1` 无符号包所需的标识符。
 * [**应用程序**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-application)元素的**uap10： HostId**属性将**PythonHost**标识为其主机。
 
 ### <a name="run-the-sample"></a>运行示例
@@ -162,13 +162,13 @@ ms.locfileid: "82107720"
 2. 在 Visual Studio 中打开 PyScriptEngine 解决方案，并将**PyScriptEnginePackage**项目设置为启动项目。
 3. 生成**PyScriptEnginePackage**项目。
 4. 在解决方案资源管理器中，右键单击**PyScriptEnginePackage**项目并选择 "**部署**"。
-5. 在将示例文件复制到的目录中打开一个命令提示符窗口，并运行以下命令以注册示例**NumberGuesser**应用（托管应用）。 更改`D:\repos\HostedApps`为复制示例文件的路径。
+5. 在将示例文件复制到的目录中打开一个命令提示符窗口，并运行以下命令以注册示例**NumberGuesser**应用（托管应用）。 更改 `D:\repos\HostedApps` 为复制示例文件的路径。
 
     ```CMD
     D:\repos\HostedApps>pyscriptengine -Register D:\repos\HostedApps\NumberGuesser\AppxManifest.xml
     ```
 
     > [!NOTE]
-    > 可以在命令`pyscriptengine`行上运行，因为示例中的主机声明了[**AppExecutionAlias**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias)。
+    > 可以 `pyscriptengine` 在命令行上运行，因为示例中的主机声明了[**AppExecutionAlias**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias)。
 
 6. 打开 "**开始**" 菜单，单击 " **NumberGuesser** " 运行托管应用。
