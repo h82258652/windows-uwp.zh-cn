@@ -188,7 +188,7 @@ RelativePanel、StackPanel 和 Grid 面板定义边框属性，可使你在面�
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
-Column_1 | **自动** | 列会调整为适合其内容的大小。
+Column_1 | **Auto** | 列会调整为适合其内容的大小。
 Column_2 | * | Auto 列经过计算后，列获得剩余宽度的一部分。 Column_2 将是 Column_4 宽度的一半。
 Column_3 | **44** | 该列宽度将是 44 像素。
 Column_4 | **2**\* | Auto 列经过计算后，列获得剩余宽度的一部分。 Column_4 将是 Column_2 的两倍宽。
