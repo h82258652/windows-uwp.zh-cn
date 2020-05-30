@@ -76,7 +76,7 @@ Authorization: Bearer <your access token>
 
 | ReplTest1 | 在任务栏的搜索框中键入 | 描述 |
 | --- | --- | --- |
-| 日期 | string | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
+| date | string | 购置数据的日期范围内的第一个日期。 如果请求指定了某一天，此值就是该日期。 如果请求指定了一周、月或其他日期范围，此值是该日期范围内的第一个日期。 |
 | applicationId | string | 要检索其购置数据的 Xbox One 游戏的产品 ID。 |
 | applicationName | string | 游戏的显示名称。 |
 | acquisitionType | string | 下列字符串之一，用于指示购置类型：  <ul><li>**免费**</li><li>**试用版**</li><li>**付费**</li><li>**促销代码**</li><li>**Iap**</li><li>**订阅、 Iap**</li><li>**私有访问群体**</li><li>**Pre 顺序**</li><li>**Xbox Game Pass**（或者，如果在 2018 年 3 月 23 之前查询数据，则是 **Game Pass**）</li><li>**Disk**</li><li>**预付的代码**</li><li>**计费的 Pre 顺序**</li><li>**已取消的预顺序**</li><li>**失败的 Pre 订单**</li></ul> |
