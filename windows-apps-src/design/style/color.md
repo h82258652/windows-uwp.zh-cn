@@ -7,12 +7,15 @@ keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5e103b7661c53fb70561dd1bd654188be2704ff
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: c87dfbdc00df36c75a5b0b865376af352edcabbb
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970762"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867357"
 ---
 # <a name="color"></a>颜色
 
@@ -235,6 +238,9 @@ Windows Shell 中的主题色算法可生成主题色的浅色和深色底纹。
 
 ```csharp
 Color LightBlue = Color.FromArgb(255,54,192,255);
+```
+```cppwinrt
+Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255);
 ```
 
 “Argb”中的各字母分别代表 Alpha（不透明度）、红、绿和蓝，这四个部分共同组成一种颜色。 每个参数的值可介于 0 至 255 之间。 可选择忽略第一个值，此操作将默认选定 255 或 100% 的透明度。

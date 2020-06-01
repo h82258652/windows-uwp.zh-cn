@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 299a25bb92c5afdb86ebc1569a1f98916baa3d09
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: add292dd5b58c3e8da1a0ce2c2371bf211b2a617
+ms.sourcegitcommit: 7704c888a28edc7ab0515a75afac93d1dda4d693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233950"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84151946"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 应用设计简介
 
@@ -120,7 +120,7 @@ UWP 应用将与 Windows [Shell](../shell/tiles-and-notifications/creating-tiles
 
 应用启动时，磁贴显示在“开始”菜单上，可以通过它们大致了解应用中的情况。 其功能来自背后的内容及其体现的智能和工艺。
 
-UWP 应用具有四种磁贴大小（小、中、宽和大），可使用应用的图标和标识来自定义这几种大小。 有关为 UWP 应用设计磁贴的指南，请参阅[磁贴和图标资产指南](../shell/tiles-and-notifications/app-assets.md)。
+UWP 应用具有四种磁贴大小（小、中、宽和大），可使用应用的图标和标识来自定义这几种大小。 有关为 UWP 应用设计磁贴的指南，请参阅[磁贴和图标资产指南](../style/app-icons-and-logos.md)。
     :::column-end:::
     :::column:::
 ![“开始”菜单上的磁贴](images/shell.svg)

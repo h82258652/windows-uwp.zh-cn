@@ -42,11 +42,11 @@ ms.locfileid: "57829837"
 | 参数 | 在任务栏的搜索框中键入 | 描述 | 必需 |
 | --- | --- | --- | --- |
 | applicationId | string | 要检索其购置数据的 Xbox One 游戏的产品 ID。 若要获取您的游戏的产品 ID，请导航到您的游戏中 XDP 分析程序，并从 URL 检索产品 ID。 或者，如果从合作伙伴中心的分析报告下载收购数据，请在.tsv 文件中包括的产品 ID。  | 是 |
-| startDate | 日期 | 要检索的购置数据日期范围中的开始日期。 默认值为当前日期。  | 否 |
-| endDate | 日期 | 要检索的购置数据日期范围中的结束日期。 默认值为当前日期。  | 否 |
+| startDate | date | 要检索的购置数据日期范围中的开始日期。 默认值为当前日期。  | 否 |
+| endDate | date | 要检索的购置数据日期范围中的结束日期。 默认值为当前日期。  | 否 |
 | top | 整数 | 要返回的数据的行数。 如果未指定，最大值和默认值为 10000。 当查询中存在多行数据时，响应正文中包含的下一个链接可用于请求下一页数据。  | 否 |
 | skip | 整数 | 要在查询中跳过的行数。 使用此参数可以浏览较大的数据集。 例如，*顶部 = 10000 和跳过 = 0*检索的数据，首先 10000 行*顶部 = 10000 和跳过 = 10000*检索数据和等等的下一步 10000 行。  | 否 |
-| filter | string | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 字符串值必须用筛选器参数中的单个引号引起来。 例如，*filter=market eq 'US' and gender eq 'm'*。  <br/> 你可以指定响应正文中的以下字段： <ul><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | 否 |
+| filter | string | 在响应中筛选行的一条或多条语句。 每条语句包含的响应正文中的字段名称和值使用 **eq** 或 **ne** 运算符进行关联，并且语句可以使用 **and** 或 **or** 进行组合。 字符串值必须用筛选器参数中的单个引号引起来。 例如，*filter=market eq 'US' and gender eq 'm'* 。  <br/> 你可以指定响应正文中的以下字段： <ul><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**sandboxId**</li></ul> | 否 |
 | aggregationLevel | string | 指定用于检索聚合数据的时间范围。 可以是以下字符串之一：**day**、**week** 或 **month**。 如果未指定，默认值为 **day**。  | 否 |
 | orderby | string | 对每个购置的结果数据值进行排序的语句。 语法是 *orderby = 字段 [顺序] 字段 [顺序]...* *field* 参数可以是以下字符串之一。 <ul><li>**date**</li><li>**acquisitionType**</li><li>**age**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> *order* 参数是可选的，可以是 **asc** 或 **desc**，用于指定每个字段的升序或降序排列。 默认值为 **asc**。 下面是一个 *orderby* 字符串的示例：*orderby=date,market*  | 否 |
 | groupby | string | 仅将数据聚合应用于指定字段的语句。 可以指定的字段如下所示： <ul><li>**date**</li><li>**applicationName**</li><li>**acquisitionType**</li><li>**ageGroup**</li><li>**storeClient**</li><li>**gender**</li><li>**market**</li><li>**osVersion**</li><li>**deviceType**</li><li>**paymentInstrumentType**</li><li>**sandboxId**</li><li>**xboxTitleIdHex**</li></ul> 返回的数据行会包含 *groupby* 参数中指定的字段，以及以下字段： <ul><li>**date**</li><li>**applicationId**</li><li>**acquisitionQuantity**</li></ul> *Groupby*参数可以与 aggregationLevel 参数一起使用。 例如： *& groupby = ageGroup、 市场和 aggregationLevel = 周*  | 否 |
@@ -87,7 +87,7 @@ Authorization: Bearer <your access token>
 | osVersion | string | 发生购置行为的操作系统版本。 对于此方法，此值始终是 **Windows 10**。 |
 | paymentInstrumentType | string | 用于指示用于购置的付款说明的以下字符串之一： <ul><li>**信用卡**</li><li>**直接借记卡**</li><li>**推断的购买**</li><li>**MS 余额**</li><li>**移动运营商**</li><li>**联机银行转帐**</li><li>**PayPal**</li><li>**拆分事务**</li><li>**令牌兑换**</li><li>**零金额**</li><li>**eWallet**</li><li>**Unknown**</li></ul> |
 | sandboxId | string | 为游戏创建的沙盒的 ID。 这可为值**零售**或专用沙盒 id。 |
-| storeClient | string | 用于指示发生购置的 Microsoft Store 版本的以下字符串之一： <ul><li>**Windows Phone 应用商店 （客户端）**</li><li>**Microsoft Store (client)**（或 **Windows Store (client)**，如果查询 2018 年 3 月 23 日之前的数据） </li><li>**Microsoft Store (web)**（或 **Windows Store (web)**，如果查询 2018 年 3 月 23 日之前的数据） </li><li>**由组织的批量购买**</li><li>**其他**</li></ul> |
+| storeClient | string | 用于指示发生购置的 Microsoft Store 版本的以下字符串之一： <ul><li>**Windows Phone 应用商店 （客户端）**</li><li>**Microsoft Store (client)** （或 **Windows Store (client)** ，如果查询 2018 年 3 月 23 日之前的数据） </li><li>**Microsoft Store (web)** （或 **Windows Store (web)** ，如果查询 2018 年 3 月 23 日之前的数据） </li><li>**由组织的批量购买**</li><li>**其他**</li></ul> |
 | xboxTitleId | string | Xbox 开发人员门户 (XDP) 为支持 Xbox Live 的游戏指定的 Xbox Live 标题 ID（以十六进制值表示）。 |
 | acquisitionQuantity | 数字 | 在指定的聚合级别期间发生的购置数。 |
 | purchasePriceUSDAmount | 数字 | 客户为购置所付金额，已使用每月汇率转换为美元。 |

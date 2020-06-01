@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d1f01774d5950dbb73cff2e5c38f16167b4b812b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b048de69a8a259509e5a5c54c5f1d61675a25a18
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209713"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854715"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>将桌面应用与 Windows 10 和 UWP 集成
 
@@ -1372,7 +1372,7 @@ ms.locfileid: "79209713"
 
 如果要创建在所有设备上运行的通用 Windows 平台用户界面，但希望 Win32 应用程序的组件继续以完全信任方式运行，此扩展可能会很有用。
 
-只需为 Win32 应用创建 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你要在 Windows 应用包中启动可执行文件。  如果要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](/windows/uwp/launch-resume/app-services.md)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
+只需为 Win32 应用创建 Windows 应用包。 然后，将此扩展添加到 UWP 应用的程序包文件。 此扩展指示你要在 Windows 应用包中启动可执行文件。  如果要在 UWP 应用和 Win32 应用之间进行通信，可以设置一个或多个[应用服务](/windows/uwp/launch-resume/app-services)来执行此操作。 可以在[此处](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)阅读关于此方案的详细信息。
 
 ## <a name="next-steps"></a>后续步骤
 
