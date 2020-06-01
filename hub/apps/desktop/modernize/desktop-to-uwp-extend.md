@@ -200,7 +200,7 @@ private async void ShowMap(double lat, double lon)
 
 ### <a name="parse-parameters-and-show-a-page"></a>分析参数并显示页面
 
-在 UWP 项目的 App 类中，覆盖 OnActivated  事件处理程序。 如果应用已通过协议激活，则分析参数并打开所需页面。
+在 UWP 项目的 App 类中，替代 OnActivated 事件处理程序。如果应用已通过协议激活，则分析参数并打开所需页面。
 
 ```csharp
 protected override void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs e)
@@ -303,7 +303,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="override-the-onsharetargetactivated-event-handler"></a>覆盖 OnShareTargetActivated 事件处理程序
 
-在 UWP 项目的 App 类中，覆盖 OnShareTargetActivated  事件处理程序。
+在 UWP 项目的 App 类中，替代 OnShareTargetActivated 事件处理程序。
 
 此事件处理程序会在用户选择你的应用来共享他们的文件时被调用。
 
