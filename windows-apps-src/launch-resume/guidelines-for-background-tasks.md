@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c66cbccbdeed1258a25d3da03ed34a64995cd48
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 7709e93ba14d3ecf5418accc41a9fe52c968fcec
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260501"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262758"
 ---
 # <a name="guidelines-for-background-tasks"></a>后台任务指南
 
@@ -28,8 +28,8 @@ ms.locfileid: "74260501"
 
 |注意事项 | 影响 |
 |--------------|--------|
-|恢复能力   | 如果你的后台进程在另一个进程中运行，后台进程崩溃时不会关闭你的前台应用程序。 此外，如果后台活动运行时间超过了执行时间限制，就可能会终止，即使在你的应用中运行也是如此。 当前台进程和后台进程不需要相互通信时，将后台工作分离成一个独立于前台应用的任务可能是更好的选择（因为进程内后台任务的主要优势之一就是它们不需要进程之间相互通信）。 |
-|简单    | 进程内后台任务不需要跨进程通信，并且编写起来没有那么复杂。  |
+|复原能力   | 如果你的后台进程在另一个进程中运行，后台进程崩溃时不会关闭你的前台应用程序。 此外，如果后台活动运行时间超过了执行时间限制，就可能会终止，即使在你的应用中运行也是如此。 当前台进程和后台进程不需要相互通信时，将后台工作分离成一个独立于前台应用的任务可能是更好的选择（因为进程内后台任务的主要优势之一就是它们不需要进程之间相互通信）。 |
+|简易性    | 进程内后台任务不需要跨进程通信，并且编写起来没有那么复杂。  |
 |可用的触发器 | 进程内后台任务不支持以下触发器：[DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) 和 **IoTStartupTask**。 |
 |VoIP | 进程内后台任务不支持在应用程序中激活 VoIP 后台任务。 |  
 
@@ -59,12 +59,16 @@ ms.locfileid: "74260501"
 
 **请求执行后台任务：**
 
-> **重要**  从 Windows 10 开始，应用程序不再需要在锁定屏幕上作为运行后台任务的先决条件。
+> **重要提示**   从 Windows 10 开始，应用程序不再需要在锁定屏幕上作为运行后台任务的先决条件。
 
-通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用必须在注册任何类型的后台任务之前调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。 如果用户在设备设置中显式拒绝了应用的后台任务权限，此方法将返回 [**BackgroundAccessStatus.DeniedByUser**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus)。 有关后台活动和节电模式的相关用户选项的详细信息，请参阅[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
+通用 Windows 平台 (UWP) 应用无需固定到锁屏界面，即可运行所有受支持的任务类型。 但是，应用程序必须调用[**GetAccessState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，并检查应用是否未被拒绝在后台运行。 确保 [**GetAccessStatus**] 不返回拒绝的[**BackgroundAccessStatus**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus)枚举中的一个。 例如， https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) 如果用户在设备设置中明确拒绝了应用的后台任务权限，则此方法将返回。
+
+如果你的应用被拒绝在后台运行，则你的应用应调用[**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，并确保在注册后台任务之前未拒绝响应。
+
+有关后台活动和节电模式的相关用户选项的详细信息，请参阅[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
 ## <a name="background-task-checklist"></a>后台任务清单
 
-*适用于进程内和进程外后台任务*
+*既适用于进程内后台任务，也适用于进程外后台任务*
 
 -   将后台任务与正确的触发器关联。
 -   添加条件以帮助确保你的后台任务成功运行。
@@ -90,7 +94,7 @@ ms.locfileid: "74260501"
 
 ## <a name="related-topics"></a>相关主题
 
-* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+* [创建并注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 * [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [在后台播放媒体](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
@@ -103,7 +107,7 @@ ms.locfileid: "74260501"
 * [使用维护触发器](use-a-maintenance-trigger.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发挂起、继续和后台事件（调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
  
 

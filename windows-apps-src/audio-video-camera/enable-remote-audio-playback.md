@@ -1,18 +1,18 @@
 ---
 description: 本文介绍如何使用 AudioPlaybackConnection 来启用连接蓝牙的远程设备，以便在本地计算机上播放音频。
-title: 启用通过远程蓝牙连接的设备播放音频
+title: 启用从蓝牙连接的远程设备播放音频
 ms.date: 05/03/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f03fc963e533ff29d49c326611c45437baa14f6c
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 3d4a4ab7664833308fe059e8bf07f68adea82b3e
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234950"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262748"
 ---
-# <a name="enable-audio-playback-from-remote-bluetooth-connected-devices"></a>启用通过远程蓝牙连接的设备播放音频
+# <a name="enable-audio-playback-from-remote-bluetooth-connected-devices"></a>启用从蓝牙连接的远程设备播放音频
 
 本文介绍如何使用[AudioPlaybackConnection](/uwp/api/windows.media.audio.audioplaybackconnection)来启用连接蓝牙的远程设备，以便在本地计算机上播放音频。
 
@@ -24,7 +24,7 @@ ms.locfileid: "83234950"
 
 对于本文中的示例，我们将使用以下简单的 XAML UI，该 UI 定义**ListView**控件以显示可用的远程设备、显示连接状态的**TextBlock**和三个用于启用、禁用和打开连接的按钮。
 
-:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml" id="snippet_AudioPlaybackConnectionXAML":::
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml" id="snippet_AudioPlaybackConnectionXAML":::
 
 ## <a name="use-devicewatcher-to-monitor-for-remote-devices"></a>使用 DeviceWatcher 监视远程设备
 
@@ -34,15 +34,15 @@ ms.locfileid: "83234950"
 
 调用[DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher.start)开始监视支持音频播放连接的连接设备。 在此示例中，当加载 UI 中的主**网格**控件时，将启动设备管理器。 有关使用**DeviceWatcher**的详细信息，请参阅[枚举设备](/windows/uwp/devices-sensors/enumerate-devices)。
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_MainGridLoaded":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_MainGridLoaded":::
 
 
 在设备观察程序的**添加**事件中，每个发现的设备均由一个[DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)对象表示。 将发现的每个设备添加到在 UI 中绑定到**ListView**控件的可观察集合。
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_DeclareDevices":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_DeclareDevices":::
 
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_DeviceWatcher_Added":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_DeviceWatcher_Added":::
 
 
 ## <a name="enable-and-release-audio-playback-connections"></a>启用和发布音频播放连接
@@ -53,9 +53,9 @@ ms.locfileid: "83234950"
 
 如果成功创建连接，请将新的**AudioPlaybackConnection**对象添加到应用的字典，为对象的[StateChanged](/uwp/api/windows.media.audio.audioplaybackconnection.statechanged)事件注册处理程序，并调用[channel.startasync](/uwp/api/windows.media.audio.audioplaybackconnection.startasync)通知系统新连接已启用。 
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_DeclareConnections":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_DeclareConnections":::
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_EnableAudioPlaybackConnection":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_EnableAudioPlaybackConnection":::
 
 
 ## <a name="open-the-audio-playback-connection"></a>打开音频播放连接
@@ -63,23 +63,23 @@ ms.locfileid: "83234950"
 在上一步中，已创建音频播放连接，但在通过调用[Open](/uwp/api/windows.media.audio.audioplaybackconnection.open)或[OpenAsync](/uwp/api/windows.media.audio.audioplaybackconnection.openasync)打开连接之前，不会开始播放声音。 在 "**打开音频播放连接**" 按钮上，单击 "处理程序"，获取当前所选的设备，并使用该 ID 从应用的连接字典中检索**AudioPlaybackConnection** 。 等待对**OpenAsync**的调用，并检查返回的[AudioPlaybackConnectionOpenResultStatus](/uwp/api/windows.media.audio.audioplaybackconnectionopenresult)对象的**状态**值，以查看连接是否已成功打开，如果是，则更新 "连接状态" 文本框。
 
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_OpenAudioPlaybackConnectionButton":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_OpenAudioPlaybackConnectionButton":::
 
 ## <a name="monitor-audio-playback-connection-state"></a>监视音频播放连接状态
 
 当连接的状态发生更改时，将引发[AudioPlaybackConnection ConnectionStateChanged](/uwp/api/windows.media.audio.audioplaybackconnection.statechanged)事件。 在此示例中，此事件的处理程序更新状态文本框。 请记住在对[RunAsync](/uwp/api/windows.ui.core.coredispatcher.runasync)的调用中更新 ui，以确保在 UI 线程上进行更新。
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_ConnectionStateChanged":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_ConnectionStateChanged":::
 
 ## <a name="release-connections-and-handle-removed-devices"></a>发布连接并处理删除的设备
 
 此示例提供了 "**发布音频播放" 连接**按钮，以允许用户释放音频播放连接。 在此事件的处理程序中，我们获取当前选定的设备，并使用设备的 ID 在字典中查找**AudioPlaybackConnection** 。 调用**Dispose**以释放引用并释放任何关联的资源，并从字典中删除连接。
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_ReleaseAudioPlaybackConnectionButton":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_ReleaseAudioPlaybackConnectionButton":::
 
 应处理在启用或打开连接时删除设备的情况。 为此，请为设备观察程序的[DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher.removed)事件实现一个处理程序。 首先，删除的设备的 ID 用于从绑定到应用的**ListView**控件的可观察集合中删除设备。 接下来，如果与此设备关联的连接在应用的字典中，则调用**Dispose**以释放关联的资源，然后从字典中删除连接。 所有这些都是在对**RunAsync**的调用中完成的，以确保在 ui 线程上执行 ui 更新。
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/MainPage.xaml.cs" id="snippet_DeviceWatcher_Removed":::
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioPlaybackConnectionExample/cs/MainPage.xaml.cs" id="snippet_DeviceWatcher_Removed":::
 
 ## <a name="related-topics"></a>相关主题
 
