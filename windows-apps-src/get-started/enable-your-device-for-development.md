@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 启用设备进行开发
 description: 配置 Windows 10 设备进行开发和调试。
 keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备
-ms.date: 04/09/2019
+ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b360f75ccf08d9cc00eeba2948215b7240627a8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: f41c7b706f4c088142a77092cf176ed543e21567
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80320414"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854773"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -19,23 +19,23 @@ ms.locfileid: "80320414"
 
 ![启用设备进行开发](images/developer-poster.png)
 
-如果你正在使用计算机进行一般的日常活动，如玩游戏、进行 Web 浏览、收发电子邮件或使用 Office 应用，则不需要激活开发人员模式，并且实际上不应该激活该模式  。 此页面上的其余信息对你来说并不重要，你可以放心地重新执行你正在执行的任何操作。 谢谢拜访！
+如果你正在使用计算机进行一般的日常活动，如玩游戏、进行 Web 浏览、收发电子邮件或使用 Office 应用，则不需要激活开发人员模式，并且实际上不应该激活该模式。 此页面上的其余信息对你来说并不重要，你可以放心地重新执行你正在执行的任何操作。 谢谢拜访！
 
-但是，如果你是首次在计算机上使用 Visual Studio 编写软件，则需要在开发电脑和用于测试代码的所有设备上启用开发人员模式  。 如果未启用开发人员模式，则打开 UWP 项目将会打开“面向开发人员”设置页，或导致在 Visual Studio 中出现以下对话框  ：
+但是，如果你是首次在计算机上使用 Visual Studio 编写软件，则需要在开发电脑和用于测试代码的所有设备上启用开发人员模式。 如果未启用开发人员模式，则打开 UWP 项目将会打开“面向开发人员”设置页，或导致在 Visual Studio 中出现以下对话框：
 
 ![启用在 Visual Studio 中显示的开发人员模式对话框](images/latestenabledialog.png)
 
-当看到此对话框时，请单击“开发人员设置”打开“面向开发人员”设置页   。
+当看到此对话框时，请单击“开发人员设置”打开“面向开发人员”设置页 。
 
 > [!NOTE]
-> 可以随时转到“面向开发人员”页启用或禁用开发人员模式：只需在任务栏中的 Cortana 搜索框中输入“面向开发人员”  。
+> 可以随时转到“面向开发人员”页启用或禁用开发人员模式：只需在任务栏中的 Cortana 搜索框中输入“面向开发人员”。
 
 ## <a name="accessing-settings-for-developers"></a>访问面向开发人员的设置
 
 若要启用开发人员模式或使用其他设置：
 
-1.  从“面向开发人员”设置对话框中，选择需要的访问级别  。
-2.  阅读所选设置的免责声明，然后单击“是”以接受更改  。
+1.  从“面向开发人员”设置对话框中，选择需要的访问级别。
+2.  阅读所选设置的免责声明，然后单击“是”以接受更改。
 
 > [!NOTE]
 > 启用开发人员模式需要管理员访问权限。 如果设备为组织所有，此选项可能已禁用。
@@ -51,8 +51,8 @@ ms.locfileid: "80320414"
 
  你可以启用设备以进行开发，或仅进行旁加载。
 
--   “Microsoft Store 应用”为默认设置  。 如果不是在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
--   “旁加载”是指安装未经 Microsoft Store 认证的应用，然后对其进行运行或测试的过程  。 例如，仅限公司内部使用的应用。
+-   “Microsoft Store 应用”为默认设置。 如果不是在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
+-   “旁加载”是指安装未经 Microsoft Store 认证的应用，然后对其进行运行或测试的过程。 例如，仅限公司内部使用的应用。
 -   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。
 
 默认情况下，只能从 Microsoft Store 安装通用 Windows 平台 (UWP) 应用。 将这些设置更改为使用开发人员功能时可能需更改设备的安全级别。 不应从未经验证的源安装应用。
@@ -62,7 +62,7 @@ ms.locfileid: "80320414"
 > [!NOTE]
 > 从 Windows 预览体验成员版本 18956 开始，默认启用旁加载。 现在可以在不进行特殊配置的情况下将签名的 MSIX 包部署到设备上。
 
-旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示  。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 中的应用部署入门](https://docs.microsoft.com/intune/deploy-use/add-apps)。
+旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章：[Windows 10 中的旁加载](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 基础知识](https://docs.microsoft.com/mem/intune/fundamentals/)。
 
 设备系列特定信息
 
@@ -82,8 +82,8 @@ ms.locfileid: "80320414"
 开发人员模式将替换 Windows 8.1 对于开发人员许可证的要求。  除了旁加载外，开发人员模式设置还支持调试和其他部署选项。 这包括启动 SSH 服务允许部署该设备。 为了停止运行此服务，必须禁用开发人员模式。
 
 在桌面上启用开发人员模式时，会安装功能包，其中包括：
-- Windows 设备门户。 仅当“启用设备门户”选项打开时，才会启用设备门户，并为它配置防火墙规则  。
-- 安装允许远程安装应用的 SSH 服务，并为其配置防火墙规则。 启用“设备发现”会打开 SSH 服务器  。
+- Windows 设备门户。 仅当“启用设备门户”选项打开时，才会启用设备门户，并为它配置防火墙规则。
+- 安装允许远程安装应用的 SSH 服务，并为其配置防火墙规则。 启用“设备发现”会打开 SSH 服务器。
 
 
 ## <a name="additional-developer-mode-features"></a>其他开发人员模式功能
@@ -131,7 +131,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>适用于 Windows 资源管理器、远程桌面和 PowerShell 的优化（仅限桌面设备）
 
- 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击“应用”或单击“显示设置”链接打开该选项的设置页   。
+ 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击“应用”或单击“显示设置”链接打开该选项的设置页 。
 
 
 ## <a name="notes"></a>注释
@@ -148,7 +148,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。
 
 > [!NOTE]
-> 如果在开发人员模式下无法正常安装，我们建议提出反馈请求。 在“反馈中心”应用中选择“添加新的反馈”，然后选择“开发人员平台”类别和“开发人员模式”子类别     。 提交反馈有助于 Microsoft 解决你所遇到的问题。
+> 如果在开发人员模式下无法正常安装，我们建议提出反馈请求。 在“反馈中心”应用中选择“添加新的反馈”，然后选择“开发人员平台”类别和“开发人员模式”子类别   。 提交反馈有助于 Microsoft 解决你所遇到的问题。
 
 ### <a name="failed-to-locate-the-package"></a>无法找到该程序包
 

@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 804c22b782dada9c0bde3c379ebfe5a37f1dcff9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 38ad2d4f2b0af65424e6d9fa50f2c21b626e1914
+ms.sourcegitcommit: 3125d5e2e32831481790266f44967851585888b3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759948"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172828"
 ---
 # <a name="move-to-cwinrt-from-c"></a>从 C# 移动到 C++/WinRT
 
@@ -24,10 +24,10 @@ ms.locfileid: "81759948"
 
 在所需的移植更改的类型方面，可以将其分组为四个类别。
 
-- [**移植语言投影**](#port-the-language-projection)。 Windows 运行时 (WinRT) 已*投影*到各种编程语言。 其中的每个语言投影均已设计为符合所涉及的编程语言的语言习惯。 对于 C#，某些 Windows 运行时类型被投影为 .NET 类型。 因此，例如，你会将 [**System.Collections.Generic.IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1) 转换回 [**Windows.Foundation.Collections.IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1)。 此外，在 C# 中，某些 Windows 运行时操作也被投影为方便的 C# 语言功能。 例如，在 C# 中，可以使用 `+=` 运算符语法来注册事件处理委托。 因此，你将转换语言功能，例如，转换回要执行的基本操作（在本示例中为事件注册）。
+- [**移植语言投影**](#port-the-language-projection)。 Windows 运行时 (WinRT) 已*投影*到各种编程语言。 其中的每个语言投影均已设计为符合所涉及的编程语言的语言习惯。 对于 C#，某些 Windows 运行时类型被投影为 .NET 类型。 因此例如，你会将 [System.Collections.Generic.IReadOnlyList\<T\>](/dotnet/api/system.collections.generic.ireadonlylist-1) 转换回 [Windows.Foundation.Collections.IVectorView\<T\>](/uwp/api/windows.foundation.collections.ivectorview-1) 。 此外，在 C# 中，某些 Windows 运行时操作也被投影为方便的 C# 语言功能。 例如，在 C# 中，可以使用 `+=` 运算符语法来注册事件处理委托。 因此，你将转换语言功能，例如，转换回要执行的基本操作（在本示例中为事件注册）。
 - [**移植语言语法**](#port-language-syntax)。 这些更改中的许多更改都是简单的机械转换（将一个符号替换为另一个符号）。 例如，将点 (`.`) 更改为双冒号 (`::`)。
 - [**移植语言过程**](#port-language-procedure)。 其中的一些可能是简单、重复的更改（例如 `myObject.MyProperty` 到 `myObject.MyProperty()`）。 其他移植则需要更深层次的更改（例如，将涉及使用 **System.Text.StringBuilder** 的过程迁移到涉及使用 **std::wostringstream** 的过程）。
-- [**迁移特定于 C++/WinRT 的任务**](#porting-tasks-that-are-specific-to-cwinrt)。 Windows 运行时的某些详细信息会在幕后由 C# 隐式处理。 这些详细信息在 C++/WinRT 中是显式处理的。 例如，使用 `.idl` 文件来定义运行时类。
+- [**与移植相关且特定于 C++/WinRT 的任务**](#porting-related-tasks-that-are-specific-to-cwinrt)。 Windows 运行时的某些详细信息会在幕后由 C# 隐式处理。 这些详细信息在 C++/WinRT 中是显式处理的。 例如，使用 `.idl` 文件来定义运行时类。
 
 本主题的其余部分根据该分类进行组织。
 
@@ -59,7 +59,7 @@ ms.locfileid: "81759948"
 
 在 C# 中，**OpenButton_Click** 方法可以是专用的，但 XAML 仍然能够将它连接到 *OpenButton* 引发的 [**ButtonBase.Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。
 
-在 C++/WinRT 中，**OpenButton_Click** 方法在你的[实现类型](/windows/uwp/cpp-and-winrt-apis/author-apis)中必须是公共的（如果你想要使用 XAML 标记注册该方法）。  如果只在命令性代码中注册事件处理程序，则该事件处理程序不需要是公共的。
+在 C++/WinRT 中，**OpenButton_Click** 方法在你的[实现类型](/windows/uwp/cpp-and-winrt-apis/author-apis)中必须是公共的（如果你想要使用 XAML 标记注册该方法）。 如果只在命令性代码中注册事件处理程序，则该事件处理程序不需要是公共的。
 
 ```cppwinrt
 namespace winrt::MyProject::implementation
@@ -89,6 +89,21 @@ namespace winrt::MyProject::implementation
 };
 ```
 
+最后一种方案是你要移植的 C# 项目绑定到标记中的事件处理程序（有关该方案的更多背景信息，请参阅 [x:Bind 中的函数](/windows/uwp/data-binding/function-bindings)）。
+
+```xaml
+<Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
+```
+
+只需将该标记更改为更简单的 `Click="OpenButton_Click"` 即可。 如果希望，也可将该标记保留原样。 要支持此操作，你只需在 IDL 中声明事件处理程序即可。
+
+```idl
+void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
+```
+
+> [!NOTE]
+> 将函数声明为 `void`，即使你将它作为[发后不理](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget) (Fire and forget) 来实现也是如此。
+
 ## <a name="port-language-syntax"></a>移植语言语法
 
 ||C#|C++/WinRT|另请参阅|
@@ -104,7 +119,7 @@ namespace winrt::MyProject::implementation
 |方法的参数声明|`MyType`|`MyType const&`|[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
 |异步方法的参数声明|`MyType`|`MyType`|[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
 |调用静态方法|`T.Method()`|`T::Method()`||
-|字符串|`string` 或 **System.String**|[winrt::hstring  ](/uw/cpp-ref-for-winrt/hstring)|[C++/WinRT 中的字符串处理](/windows/uwp/cpp-and-winrt-apis/strings)|
+|字符串|`string` 或 **System.String**|[winrt::hstring](/uw/cpp-ref-for-winrt/hstring)|[C++/WinRT 中的字符串处理](/windows/uwp/cpp-and-winrt-apis/strings)|
 |字符串文本|`"a string literal"`|`L"a string literal"`|[移植构造函数 **Current** 和 **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
 |原义/原始字符串文本|`@"verbatim string literal"`|`LR"(raw string literal)"`|[移植 **DisplayToast** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast)|
 |访问数据成员|`this.variable`|`this->variable`||
@@ -128,7 +143,7 @@ C# 静态字段会成为 C++/WinRT 静态访问器和/或赋值函数。 有关�
 
 ### <a name="porting-xaml-markup-and-asset-files"></a>移植 XAML 标记和资产文件
 
-在[将 Clipboard 示例从 C# 移植到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp)的案例中，我们能够在 C# 和 C++/WINRT 项目中使用  相同的 XAML 标记（包括资源）和资产文件。 在某些情况下，需要编辑标记才能实现此目的。 请参阅[复制完成移植 **MainPage** 所需的 XAML 和样式](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
+在[将 Clipboard 示例从 C# 移植到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp)的案例中，我们能够在 C# 和 C++/WINRT 项目中使用相同的 XAML 标记（包括资源）和资产文件。 在某些情况下，需要编辑标记才能实现此目的。 请参阅[复制完成移植 **MainPage** 所需的 XAML 和样式](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
 
 ## <a name="port-language-procedure"></a>移植语言过程
 
@@ -230,7 +245,7 @@ C# 有一个内置的 [**StringBuilder**](/dotnet/api/system.text.stringbuilder)
 
 另请参阅[移植 **BuildClipboardFormatsOutputString** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)和[移植 **DisplayChangedFormats** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats)。
 
-## <a name="porting-tasks-that-are-specific-to-cwinrt"></a>移植特定于 C++/WinRT 的任务
+## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>与移植相关且特定于 C++/WinRT 的任务
 
 ### <a name="define-your-runtime-classes-in-idl"></a>在 IDL 中定义运行时类
 
@@ -273,7 +288,7 @@ C# 自动将标量装箱到对象中。 C++/WinRT 要求你显式调用 [**winrt
 
 字符串在某些情况下是值类型，在另一些情况下是引用类型。 C# 和 C++/WinRT 对待字符串的方式有所不同。
 
-ABI 类型 [**HSTRING**](/windows/win32/winrt/hstring) 是一个指向引用计数字符串的指针。 但是，它并非派生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此从技术上来说它不是一个对象  。 另外，null **HSTRING** 表示空字符串。 将并非派生自 **IInspectable** 的项装箱时，需将其包装到 [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_) 中，而 Windows 运行时会以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 对象的形式提供标准实现（自定义类型以 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype) 形式报告）。
+ABI 类型 [**HSTRING**](/windows/win32/winrt/hstring) 是一个指向引用计数字符串的指针。 但是，它并非派生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此从技术上来说它不是一个对象。 另外，null **HSTRING** 表示空字符串。 将并非派生自 IInspectable 的项装箱时，需将其包装到 [IReference\<T\>](/uwp/api/windows.foundation.ireference_t_) 中，而 Windows 运行时会以 [PropertyValue](/uwp/api/windows.foundation.propertyvalue) 对象的形式提供标准实现（自定义类型以 [PropertyType::OtherType](/uwp/api/windows.foundation.propertytype) 形式报告）   。
 
 C# 将 Windows 运行时字符串表示为引用类型，而 C++/WinRT 则将字符串投影为值类型。 这意味着装箱的 null 字符串可能有不同的表示形式，具体取决于你所采用的方法。
 
@@ -303,13 +318,13 @@ C# 将 Windows 运行时字符串表示为引用类型，而 C++/WinRT 则将字
 
 在 C# 项目中，可以使用 XAML 标记中的专用成员和命名元素。 但在 C++/WinRT 中，以 XAML [ **{x:Bind} 标记扩展**](/windows/uwp/xaml-platform/x-bind-markup-extension)形式使用的所有实体必须在 IDL 中以公开方式公开。
 
-另外，绑定到布尔值时，在 C# 中会显示 `true` 或 `false`，但在 C++/WinRT 中会显示 **Windows.Foundation.IReference`1\<布尔值\>** 。
+另外，绑定到布尔值时，在 C# 中会显示 `true` 或 `false`，但在 C++/WinRT 中会显示 Windows.Foundation.IReference`1\<Boolean\>。
 
 有关详细信息和代码示例，请参阅[使用标记中的对象](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup)。
 
 ### <a name="making-a-data-source-available-to-xaml-markup"></a>使数据源可供 XAML 标记使用
 
-在 C++/WinRT 2.0.190530.8 及更高版本中，[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 创建一个可观测的支持 **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** 和 **IObservableVector\<IInspectable\>** 的矢量。 有关示例，请参阅 [移植 **Scenarios** 属性](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)。
+在 C++/WinRT 2.0.190530.8 及更高版本中，[winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 创建一个可观测的支持 [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\> 和 IObservableVector\<IInspectable\> 的矢量  。 有关示例，请参阅 [移植 **Scenarios** 属性](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)。
 
 你可以创作 **Midl 文件 (.idl)** ，如下所示（另请参阅[将运行时类重构到 Midl 文件 (.idl) 中](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)）。
 
@@ -359,7 +374,7 @@ private:
 
 ### <a name="making-a-data-source-available-to-xaml-markup-prior-to-cwinrt-201905308"></a>使数据源可供 XAML 标记使用（在 C++/WinRT 2.0.190530.8 之前）
 
-XAML 数据绑定要求项源实现 **[IIterable](/uwp/api/windows.foundation.collections.iiterable_t_)\<IInspectable\>** 以及下述接口组合之一。
+XAML 数据绑定要求项源实现 [IIterable](/uwp/api/windows.foundation.collections.iiterable_t_)\<IInspectable\> 以及下述接口组合之一。
 
 - **IObservableVector\<IInspectable\>**
 - **IBindableVector** 和 **INotifyCollectionChanged**
@@ -368,9 +383,9 @@ XAML 数据绑定要求项源实现 **[IIterable](/uwp/api/windows.foundation.co
 - **IVector\<IInspectable\>**
 - **IBindableIterable**（会通过迭代将元素保存到专用集合中）
 
-无法在运行时检测 **IVector\<T\>** 之类的泛型接口。 每个 **IVector\<T\>** 都有不同的接口标识符 (IID)，该标识符是 **T** 的函数。任何开发人员都可以随意扩展 **T** 集，因此，很明显 XAML 绑定代码不可能知道要查询的完整集。 该限制对 C# 来说不是问题，因为每个实现 **IEnumerable\<T\>** 的 CLR 对象都会自动实现 **IEnumerable**。 在 ABI 级别，这意味着每个实现 **IObservableVector\<T\>** 的对象都会自动实现 **IObservableVector\<IInspectable\>** 。
+无法在运行时检测到泛型接口（例如 IVector\<T\>）。 每个 IVector\<T\> 都有不同的接口标识符 (IID)，它是 T 的函数 。任何开发人员都可以随意扩展 **T** 集，因此，很明显 XAML 绑定代码不可能知道要查询的完整集。 该限制对 C# 来说不成问题，因为每个实现 IEnumerable\<T\> 的 CLR 对象都会自动实现 IEnumerable 。 在 ABI 级别，这意味着每个实现 IObservableVector\<T\> 的对象都会自动实现 IObservableVector\<IInspectable\> 。
 
-C++/WinRT 不提供该保证。 如果 C++/WinRT 运行时类实现 **IObservableVector\<T\>** ，则我们不能假定也会通过某种方式提供 **IObservableVector\<IInspectable\>** 的实现。
+C++/WinRT 不提供该保证。 如果 C++/WinRT 运行时类会实现 IObservableVector\<T\>则我们无法假定还将以某种方式提供 IObservableVector\<IInspectable\> 的实现 。
 
 因此，上一示例应如下所示。
 
@@ -424,7 +439,7 @@ Widget MyPage::BookstoreViewModel(winrt::hstring title)
 
 ### <a name="derived-classes"></a>派生类
 
-若要从运行时类派生，基类必须是可组合类。  C# 不需要你执行任何特殊步骤即可将类变为可组合类，但 C++/WinRT 需要。 请使用 [unsealed 关键字](/uwp/midl-3/intro#base-classes)来指示你希望将类用作基类。
+若要从运行时类派生，基类必须是可组合类。 C# 不需要你执行任何特殊步骤即可将类变为可组合类，但 C++/WinRT 需要。 请使用 [unsealed 关键字](/uwp/midl-3/intro#base-classes)来指示你希望将类用作基类。
 
 ```idl
 unsealed runtimeclass BasePage : Windows.UI.Xaml.Controls.Page

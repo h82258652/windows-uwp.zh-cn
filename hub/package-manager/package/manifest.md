@@ -6,12 +6,12 @@ ms.author: denelon
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 054c8cf7fc104b78f0397f4d1536e1130668f4f8
-ms.sourcegitcommit: 645cb099128072cfc905ec80b38bd280b98c9037
+ms.openlocfilehash: 8eceb29abbdc7f765628dbd8dbd6f6d0be21f132
+ms.sourcegitcommit: e2689c72d5b381eafdb1075090d1961f4c1cb37a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83825138"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84055151"
 ---
 # <a name="create-your-package-manifest"></a>创建程序包清单
 
@@ -43,23 +43,23 @@ ms.locfileid: "83825138"
 
 清单文件中的每个字段都必须采用 Pascal 大小写形式，并且不能重复。
 
-有关清单中的项的完整列表和说明，请参阅 [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) 存储库中的清单规范。
+有关清单中的项的完整列表和说明，请参阅 [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli) 存储库中的[清单规范](https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md)。
 
 ### <a name="minimal-required-schema"></a>必需的最小架构
 
 #### <a name="minimal-required-schema"></a>[必需的最小架构](#tab/minschema/)
 
 ```yaml
-Id: string # publisher.package format
-Publisher: string # the name of the publisher
-Name: string # the name of the application
-Version: string # version numbering format
-License: string # the open source license or copyright
-InstallerType: string # enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx)
+Id: string # Publisher.package format.
+Publisher: string # The name of the publisher.
+Name: string # The name of the application.
+Version: string # Version numbering format.
+License: string # The open source license or copyright.
+InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
-  - Arch: string # enumeration of supported architectures
-  - URL: string # path to download installation file
-  - Sha256: string # SHA256 calculated from installer
+  - Arch: string # Enumeration of supported architectures.
+  - URL: string # Path to download installation file.
+  - Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
 
@@ -86,40 +86,40 @@ ManifestVersion: 0.1.0
 #### <a name="complete-schema"></a>[完整架构](#tab/compschema/)
 
 ```yaml
-Id: string # publisher.package format
-Publisher: string # the name of the publisher
-Name: string # the name of the application
-AppMoniker: string # the common name someone may use to search for the package
-Version: string # version numbering format for package version
-Channel: string # a string representing the flight ring
-License: string # the open source license or copyright
-LicenseUrl: string # valid secure URL to license
-MinOSVersion: string # version numbering format for minimum version of Windows supported
-Description: string # description of the package
-Homepage: string # valid secure URL for the package
-Tags: list # additional strings a user would use to search for the package
-FileExtensions: list # list of file extensions the package could support
-Protocols: list # list of protocols the package provides a handler for
-Commands: list # list of commands or aliases the user would use to run the package
-InstallerType: string # enumeration of supported installer types (exe, msi, msix)
-Custom: string # custom switches passed to the installer
-Silent: string # switches passed to the installer for silent installation
-SilentWithProgress: string # switches passed to the installer for non-interactive install
-Interactive: string # experimental
-Language: string # experimental
-Log: string # specifies log redirection switches and path
-InstallLocation: string # specifies alternate location to install package
-Installers: # nested map of keys for specific installer
-  - Arch: string # enumeration of supported architectures
-  - URL: string # path to download installation file
-  - Sha256: string # SHA256 calculated from installer
-  - SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file
-  - Switches: # collection of entries to override root keys
-  - Scope: string # experimental
-  - SystemAppId: string # experimental
-Localization: # nested map of keys for localization
-  - Language: string # locale for display fields and localized URLs
-ManifestVersion: string # version number format for manifest version
+Id: string # Publisher.package format.
+Publisher: string # The name of the publisher.
+Name: string # The name of the application.
+AppMoniker: string # The common name someone may use to search for the package.
+Version: string # Version numbering format for package version.
+Channel: string # A string representing the flight ring.
+License: string # The open source license or copyright.
+LicenseUrl: string # Valid secure URL to license.
+MinOSVersion: string # Version numbering format for minimum version of Windows supported.
+Description: string # Description of the package.
+Homepage: string # Valid secure URL for the package.
+Tags: list # Additional strings a user would use to search for the package.
+FileExtensions: list # List of file extensions the package could support.
+Protocols: list # List of protocols the package provides a handler for.
+Commands: list # List of commands or aliases the user would use to run the package.
+InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
+Custom: string # Custom switches passed to the installer.
+Silent: string # Switches passed to the installer for silent installation.
+SilentWithProgress: string # Switches passed to the installer for non-interactive install.
+Interactive: string # Experimental.
+Language: string # Experimental.
+Log: string # Specifies log redirection switches and path.
+InstallLocation: string # Specifies alternate location to install package.
+Installers: # Nested map of keys for specific installer.
+  - Arch: string # Enumeration of supported architectures.
+  - URL: string # Path to download installation file.
+  - Sha256: string # SHA256 calculated from installer.
+  - SignatureSha256: string # SHA256 calculated from signature file's hash of MSIX file.
+  - Switches: # Collection of entries to override root keys. The primary supported values are: Custom, Silent, SilentWithProgress, Interactive. For a complete list see the specification at https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv0.1.md.
+  - Scope: string # Experimental.
+  - SystemAppId: string # Experimental.
+Localization: # Nested map of keys for localization.
+  - Language: string # Locale for display fields and localized URLs.
+ManifestVersion: string # Version number format for manifest version.
 ```
 
 #### <a name="good-example"></a>[良好的示例](#tab/good/)
@@ -161,6 +161,9 @@ ManifestVersion: 0.1.0
 ```
 
 * * *
+
+> [!NOTE]
+> 如果安装程序是 .exe，且它是使用 Nullsoft 或 Inno 构建的，则你可改为指定这些值。 指定 Nullsoft 或 Inno 后，客户端将为安装程序设置“无提示”和“无提示但有安装进度”行为。
 
 ## <a name="tips-and-best-practices"></a>技巧与最佳做法
 

@@ -6,16 +6,19 @@ ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: b44f20021a0fa33da862e2361be60b730b041b49
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: cb897f25324ab8a516d18f5defe7cffa3e6a0109
+ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83824968"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84166241"
 ---
 # <a name="source-command-winget"></a>source 命令 (winget)
 
 [!INCLUDE [preview-note](../../includes/package-manager-preview.md)]
+
+> [!NOTE]
+> source 命令目前仅供内部使用。 目前不支持其他源。
 
 [winget](index.md) 工具的 source 命令可管理 Windows 程序包管理器访问的存储库。 使用 source 命令，可以添加、删除、列出以及更新存储库。
 
@@ -76,16 +79,18 @@ add 子命令还支持可选的“type”参数。 “type”参数向客户端�
 
 list 子命令枚举当前已启用的源。 此子命令还提供特定源的详细信息。
 
-用法：`winget list [-n, --name] \<name>`
+用法：`winget source list [-n, --name] \<name>`
 
 ### <a name="list-all"></a>全部列出
 
 list 子命令本身会显示受支持源的完整列表。 例如：
 
 ```CMD
-> C:\winget list
-> Current sources:
->     Contoso ->  https://www.contoso.com/cache
+> C:\winget source list
+> Name   Arg
+> -----------------------------------------
+> winget https://winget.azureedge.net/cache
+
 ```
 
 ### <a name="list-source-details"></a>列出源详细信息
@@ -111,7 +116,7 @@ Updated 显示上次更新源的日期和时间。
 
 update 子命令强制更新单个源或所有源。
 
-用法：`winget update [-n, --name] \<name>`
+用法：`winget source update [-n, --name] \<name>`
 
 ### <a name="update-all"></a>全部更新
 
@@ -119,7 +124,7 @@ update 子命令本身会请求并更新每个存储库。 例如：`C:\winget u
 
 ### <a name="update-source"></a>更新源
 
-update 子命令与“--name”选项结合使用可定向到单个源并对其进行更新。 例如：`C:\winget update --name contoso`
+update 子命令与“--name”选项结合使用可定向到单个源并对其进行更新。 例如：`C:\winget source update --name contoso`
 
 ## <a name="remove"></a>删除
 
