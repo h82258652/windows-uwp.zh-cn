@@ -2,18 +2,22 @@
 Description: 了解有关 Windows 10 的一些基本开发人员问题的解答。
 title: Windows 10 10 开发人员常见问题解答
 ms.topic: article
-ms.date: 04/1/2020
+ms.date: 06/02/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: d168faf16bdd8a88e0cd4c52c680781061bfcf0d
-ms.sourcegitcommit: dadbc20564e4b0c0ecbab5fd5649dbf8ab08095a
+ms.openlocfilehash: 3ba14e33c098d3515522a9a5907065751fafba87
+ms.sourcegitcommit: 13bda6040988461a61b1b5561fde2f7a54835ccd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80581951"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84318233"
 ---
 # <a name="windows-10x-developer-faq"></a>Windows 10 10 开发人员常见问题解答
+
+> [!IMPORTANT]
+> 我们最近宣布了对 Windows 10 和 Windows 10 的优先级进行的一些更改。
+> 这些公告包括对 Windows 10 倍外形因素优先级的更改。 [在此处阅读详细信息。](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/)
 
 Windows 10 倍是 Windows 家族中的一系列产品系列，适用于在双屏幕设备上使用。 作为一名开发人员，您可以通过优化您的应用程序进行 Windows 10 倍，利用特定于移动用户和双屏幕观众的新功能，同时还能享受相同的 Windows 10 功能和丰富的桌面支持，从而实现更大的受众。 [我们已于2019晚的时间发布了 Windows 10](https://blogs.windows.com/windowsexperience/2019/10/02/introducing-windows-10x-enabling-dual-screen-pcs-in-2020/#6qxkItE2XMPu24uw.97)，我们期待在晚2020发布。
 
@@ -29,7 +33,7 @@ Windows 10 倍是 Windows 家族中的一系列产品系列，适用于在双屏
 
 ### <a name="does-this-replace-desktop-windows-10"></a>这是否会替代桌面 Windows 10？
 
-No。 Windows 10 会并行发布到 Windows 10 的桌面版本。 Windows 10 桌面版将继续提供新式桌面应用程序的增强功能和改进功能。 Windows 10 倍是经过优化的另一个平台，支持双屏幕平台。
+否。 Windows 10 会并行发布到 Windows 10 的桌面版本。 Windows 10 桌面版将继续提供新式桌面应用程序的增强功能和改进功能。 Windows 10 倍是经过优化的另一个平台，支持双屏幕平台。
 
 ### <a name="when-will-windows-10x-be-released"></a>何时会发布 Windows 10 倍？
 
