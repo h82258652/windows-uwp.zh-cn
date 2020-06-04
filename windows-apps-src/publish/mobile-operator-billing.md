@@ -2,19 +2,21 @@
 Description: Microsoft Store 提供移动运营商计费作为支持此功能的移动运营商支付方法。
 title: 移动运营商结算
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
-ms.date: 12/19/2018
+ms.date: 05/29/2020
 ms.topic: article
 keywords: windows 10, uwp, 移动运营商, 移动结算, 移动运营商结算
 ms.localizationpriority: medium
-ms.openlocfilehash: 77e157698203b5f55c3fd2ce9dd59e8c94051f5b
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: 16783e71a170118f470a351a7f5dc4c2a178405e
+ms.sourcegitcommit: 8eae7aec4c4ffb8a0c30e9d03744942fb23958d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545027"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84334212"
 ---
 # <a name="mobile-operator-billing"></a>移动运营商结算
 
+> [!NOTE]
+> 如果你正在寻找有关付款的支持，包括配置帐户、缺失付款、将付款置于保持状态或其他任何内容，请在[此处](https://developer.microsoft.com/windows/support)联系支持人员。
 
 Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的手机和 Xbox One 主机提供移动运营商结算作为付款方式。 如果客户的移动运营商支持此功能，客户可以将移动运营商结算添加为付款方式，并通过此方式使用其移动帐户进行 Microsoft Store 购买。
 
@@ -31,11 +33,11 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 奥地利              | Hutchison 3G Austria、A1 Telekom、T-Mobile / tele.ring  |
 | 比利时              | Base、Proximus                                          |
 | 加拿大               | Telus                                                   |
-| Czechia              | T-Mobile                                                |
+| 捷克              | T-Mobile                                                |
 | 丹麦              | 3、TDC / YouSee、Telenor、Telia                         |
 | 芬兰              | DNA、Elisa                                              |
-| France               | Orange                                                  |
-| Germany              | O2、Telekom Deutschland、Vodafone                       |
+| 法国               | 橙色                                                  |
+| 德国              | O2、Telekom Deutschland、Vodafone                       |
 | 匈牙利              | Telenor                                                 |
 | 意大利                | Wind Tre                                               |
 | 马来西亚             | Digi                                                    |
@@ -45,26 +47,11 @@ Microsoft Store 为运行 Windows 10 的设备、运行 Windows 10 移动版的�
 | 新加坡            | M1 受限，StarHub                                     |
 | 斯洛伐克             | Slovak Telekom                                          |
 | 南非         | Vodacom                                                 |
-| 西班牙                | Orange                                                  |
+| 西班牙                | 橙色                                                  |
 | 瑞典               | Telenor、3                                              |
 | 瑞士          | Swisscom, 日出                                       |
-| 中国台湾               | FarEasTone                                              |
+| 台湾               | FarEasTone                                              |
 | 土耳其               | Turkcell                                                |
 | 阿拉伯联合酋长国 | Etisalat                                                |
 | 美国        | Sprint、Verizon                                         |
 | 英国       | O2、3 UK、EE                                            |
-
- 
-
-
-
- 
-
-
- 
-
- 
-
-
-
-
