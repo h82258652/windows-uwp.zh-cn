@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, uwp, 税收, irs, 国内税收署, 税款, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: ab115b5cb2b64c6f5bd05b166e904773948a876c
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 4a385c9c351dc0bb5db857fe7d1f5f267347f1f1
+ms.sourcegitcommit: 31c925736391ab166c06f34258564b00aeebd83a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854703"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428915"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 发出的 IRS 税单
 
@@ -32,20 +32,21 @@ ms.locfileid: "83854703"
 税务窗体将从以下地址发送给你：
 
 **美国公民：**
-<table>
-<tr><th>业务组</th><th>法律实体</th><th>地址</th></tr>
-<tr><td>Windows、Office、Azure</td><td>Microsoft Corporation</td><td>One Microsoft Way<br>美国华盛顿特区98052</td></tr>
-<tr><td>广告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno、NV 89511 USA</td></tr>
-<table> 
+
+| 业务组         | 法律实体          | 地址                                          |
+|------------------------|-----------------------|--------------------------------------------------|
+| Windows、Office、Azure | Microsoft Corporation | One Microsoft Way<br>华盛顿98052州华盛顿特区       |
+| 广告            | Microsoft Online Inc。 | 6880塞拉利昂中心 Parkway<br>Reno、NV 98511 USA |
 
 **非美国公民：**
-<table>
-<tr><th>业务组</th><th>法律实体</th><th>地址</th></tr>
-<tr><td>Windows、Office、Azure</td><td>Microsoft 爱尔兰运营限制（由 microsoft Corporation 通过 microsoft 爱尔兰，由 microsoft corporation 作为合格中介）</td><td>一个 Microsoft 地方<br>南部 &nbsp; 县 &nbsp; 企业 &nbsp; 公园<br>Leopardstown，都柏林18爱尔兰</td></tr>
-<tr><td>广播</td><td>Microsoft 爱尔兰运营限制（由 microsoft Online Inc. 支付，由 microsoft 爱尔兰担任，作为 Microsoft Online Inc. 的支出代理。）</td><td>一个 Microsoft 地方<br>南部 &nbsp; 县 &nbsp; 企业 &nbsp; 公园<br>Leopardstown，都柏林18爱尔兰</td></tr>
-<tr><td>广告</td><td>Microsoft Online Inc。</td><td>6100 Neil 道路<br>Reno、NV 89511 USA</td></tr>
-<tr><td colspan="3">* 以下国家/地区的公民将通过 Microsoft 爱尔兰运营限制来支付广告收入：奥地利、比利时、保加利亚、克罗地亚、塞浦路斯、Czechia、丹麦、爱沙尼亚、芬兰、法国、德国、希腊、匈牙利、爱尔兰、Isle 的男士、意大利、拉脱维亚、列支敦士登、立陶宛、卢森堡、马耳他、摩纳哥、荷兰、挪威、波兰、葡萄牙、葡萄牙、斯洛伐克、斯洛文尼亚、葡萄牙、西班牙、瑞典、瑞士、英国</td></tr>
-</table>
+| 业务组         | 法律实体          | 地址                                          |
+|------------------------|-----------------------|--------------------------------------------------|
+| Windows、Office、Azure | Microsoft 爱尔兰运营限制（由 microsoft Corporation 通过 microsoft 爱尔兰，由 microsoft corporation 作为合格中介） | 一个 Microsoft 地方<br>南部 &nbsp; 县 &nbsp; 企业 &nbsp; 公园<br>Leopardstown，都柏林18爱尔兰|
+| 广告\*          | Microsoft 爱尔兰运营限制（由 microsoft Online Inc. 支付，由 microsoft 爱尔兰担任，作为 Microsoft Online Inc. 的支出代理。） | 一个 Microsoft 地方<br>南部 &nbsp; 县 &nbsp; 企业 &nbsp; 公园<br>Leopardstown，都柏林18爱尔兰 |
+| 广告            | Microsoft Online Inc。 | 6880塞拉利昂中心 Parkway<br>Reno、NV 98511 USA |
+
+>[!NOTE]
+> \*以下国家/地区的公民将通过 Microsoft 爱尔兰运营限制来支付广告收入：奥地利、比利时、保加利亚、克罗地亚、塞浦路斯、Czechia、丹麦、爱沙尼亚、芬兰、法国、德国、希腊、匈牙利、爱尔兰、Isle 的男士、意大利、拉脱维亚、列支敦士登、立陶宛、卢森堡、马耳他、摩纳哥、荷兰、挪威、波兰、葡萄牙、葡萄牙、斯洛伐克、斯洛文尼亚、葡萄牙、西班牙、瑞典、瑞士、英国
 
 ## <a name="for-developers-located-in-the-united-states"></a>针对位于美国的开发人员
 
@@ -61,7 +62,7 @@ ms.locfileid: "83854703"
   <tr> 
      <td valign="top">(i) 通过 Windows 10 上的 Microsoft Store 完成的巴西和中国应用销售或 (ii) 在 Minecraft（我的世界）卖场中的销售，我收到的<b>付款金额至少为 10 美元</b>。<br>
 <br>
-<b>或者</b><br>
+<b>OR</b><br>
 <br>
 在适用的税收年份内，我收到了至少 $600 与 Microsoft 的应用销售相关的付款（例如，来自比赛或促销的激励付款或付款）</td>
     <td valign="top"><b>1099-MISC</b> :<br>付款方：Microsoft Corporation<br>EIN： * * * * * * 4442<br><br><b>重要说明</b>：无论从 Microsoft 收到的付款金额如何，某些业务实体都不会收到 1099-MISC 窗体。  有关详细信息，请咨询税务专业人士。</td>
