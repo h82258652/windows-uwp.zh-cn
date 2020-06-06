@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f79b7247a7e1a1889c530a16c280f490db51042e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2e385f6b9977eead6aed52215080588e4f9d8c27
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970742"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262768"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>屏幕大小和断点
 
@@ -98,8 +98,3 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 使用最多三个列/区域。
 - 显示搜索框。
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于停靠模式，以使其始终显示。
-
->[!TIP] 
-> 借助[**适用于手机的 Continuum**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN)，用户可以将兼容的 Windows 10 移动版设备连接至监视器、鼠标和键盘，使手机像笔记本电脑一样工作。 针对特定断点进行设计时请关注这一新功能 - 移动手机将不会始终保持在尺寸级别。
-
-

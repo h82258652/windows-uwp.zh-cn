@@ -12,18 +12,18 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a8938d8c405a98275232c0905d04b4cf27cbae0e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 59fef3ea55d6aa0ddfa2ef809634be7565d54f90
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969082"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437162"
 ---
 # <a name="auto-suggest-box"></a>自动建议框
 
 使用 AutoSuggestBox 提供建议列表，以便用户在键入时从中进行选择。
 
-![自动建议框](images/controls/auto-suggest-box-open.png)
+![自动建议框](images/controls_autosuggest_expanded01.png)
 
 **获取 Windows UI 库**
 
