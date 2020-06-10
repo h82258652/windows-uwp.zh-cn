@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, COM, 组件, 类, 接口
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6ce3ce56b4afbf4c45b406c8af369bee4b55bb
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: d5fae09192262b63b11175bf08e7a2c522b31abd
+ms.sourcegitcommit: 82d441e3b9da920cf860fad6b59d6b848466c90f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619321"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84271876"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>通过 C++/WinRT 使用 COM 组件
 
@@ -22,7 +22,7 @@ ms.locfileid: "82619321"
 
 使用 COM 编程时，你会直接使用接口而不是对象（Windows 运行时 API 在幕后也是如此，这是 COM 的一种演进）。 若要针对 COM 类调用函数（例如，激活该类），需先获取一个接口，然后针对该接口调用该函数。 若要访问对象的状态，请不要直接访问其数据成员，而应该针对某个接口调用取值函数和赋值函数。
 
-更具体而言，我们将讨论如何与接口指针交互。  对于这种操作，我们可以受益于 C++/WinRT 中的 COM 智能指针类型 &mdash;[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 类型。
+更具体而言，我们将讨论如何与接口指针交互。 对于这种操作，我们可以受益于 C++/WinRT 中的 COM 智能指针类型 &mdash;[**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 类型。
 
 ```cppwinrt
 #include <d2d1_1.h>
@@ -127,13 +127,13 @@ winrt::check_hresult(D2D1CreateFactory(
 
 ## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>采用 **IUnknown** 接口指针的 COM 函数
 
-可以使用 [com_ptr::get](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function)，将 com_ptr 传递给采用 IUnknown 接口指针的函数    。
+可以使用 [com_ptr::get](/uwp/cpp-ref-for-winrt/com-ptr#com_ptrget-function)，将 com_ptr 传递给采用 IUnknown 接口指针的函数  。
 
-可以使用 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown) 自由函数返回投影类型的对象的基础原始 [IUnknown 接口](/windows/win32/api/unknwn/nn-unknwn-iunknown)的地址（也就是说，指向该接口的指针）  。 然后，可以将该地址传递给采用 IUnknown 接口指针的函数  。
+可以使用 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown) 自由函数返回投影类型的对象的基础原始 [IUnknown 接口](/windows/win32/api/unknwn/nn-unknwn-iunknown)的地址（也就是说，指向该接口的指针）。 然后，可以将该地址传递给采用 IUnknown 接口指针的函数。
 
-有关投影类型  的信息，请参阅[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+有关投影类型的信息，请参阅[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
 
-有关 get_unknown 的代码示例，请参阅 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown)，或本主题中的[一个精简 Direct2D 应用程序的完整源代码列表](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application)   。
+有关 get_unknown 的代码示例，请参阅 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown)，或本主题中的[一个精简 Direct2D 应用程序的完整源代码列表](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application) 。
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>传递和返回 COM 智能指针
 
@@ -168,9 +168,19 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>一个精简 Direct2D 应用程序的完整源代码列表
 
-若要生成并运行此源代码示例，请先在 Visual Studio 中创建一个新的 **Core 应用 (C++/WinRT)** 。 `Direct2D` 是项目的合理名称，但你可以指定任意名称。
+> [!NOTE]
+> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-打开 `pch.h`，并在包含 `windows.h` 后立即添加 `#include <unknwn.h>`。 这是因为我们使用的是 [winrt::get_unknown  ](/uwp/cpp-ref-for-winrt/get-unknown)。 在使用 winrt::get_unknown  时，即使该标头已包含在另一个标头中，显式执行 `#include <unknwn.h>` 仍是不错的做法。
+如果要生成和运行此源代码示例，请先安装（或更新）C++/WinRT Visual Studio 扩展 (VSIX) 的最新版本；请参阅上述说明。 然后，在 Visual Studio 中，新建 Core App (C++/WinRT)。 `Direct2D` 是项目的合理名称，但你可以指定任意名称。 面向 Windows SDK 的最新正式发布（非预览）版本。
+
+### <a name="step-1-edit-pchh"></a>步骤 1： 编辑 `pch.h`
+
+打开 `pch.h`，并在包含 `windows.h` 后立即添加 `#include <unknwn.h>`。 这是因为我们使用的是 [winrt::get_unknown](/uwp/cpp-ref-for-winrt/get-unknown)。 在使用 winrt::get_unknown 时，即使该标头已包含在另一个标头中，显式执行 `#include <unknwn.h>` 仍是不错的做法。
+
+> [!NOTE]
+> 如果省略此步骤，你将看到生成错误“'get_unknown':找不到标识符”。
+
+### <a name="step-2-edit-appcpp"></a>步骤 2： 编辑 `App.cpp`
 
 打开 `App.cpp`，删除其整个内容，然后粘贴以下列表。
 
@@ -504,7 +514,7 @@ using namespace winrt::Windows::Foundation;
 void MyFunction(IUnknown*); // error C2872:  'IUnknown': ambiguous symbol
 ```
 
-未限定的名称 *IUnknown* 在全局命名空间中发生冲突，因此会出现“符号不明确”编译器错误。  可以改将 C++/WinRT 版名称隔离到 **winrt** 命名空间中，如下所示。
+未限定的名称 *IUnknown* 在全局命名空间中发生冲突，因此会出现“符号不明确”编译器错误。 可以改将 C++/WinRT 版名称隔离到 **winrt** 命名空间中，如下所示。
 
 ```cppwinrt
 namespace winrt
