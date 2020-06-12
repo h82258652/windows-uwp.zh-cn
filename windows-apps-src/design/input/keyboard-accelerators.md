@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e2509743bf9e847fb740816e3552f4172cf644c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 694ab7a3897bdf13189d61ab70ed05b9169b834c
+ms.sourcegitcommit: 020d0ff0e5abf46b2ed660eac61251b32bf150bc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970702"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716035"
 ---
 # <a name="keyboard-accelerators"></a>键盘快捷键
 
@@ -331,7 +331,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 这或许并不总能实现，因为各个应用的功能不同。
 
-| **编辑** | **常用键盘加速键** |
+| **正在编辑** | **常用键盘加速键** |
 | ------------- | ----------------------------------- |
 | 启动编辑模式 | Ctrl+E |
 | 选择聚焦的控件或窗口中的所有项 | Ctrl + A |
@@ -358,7 +358,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 | **其他操作** | |
 | ------------- | ----------------------------------- |
-| 添加收藏夹 | Ctrl+D | 
+| 添加收藏夹 | Ctrl + D | 
 | 刷新 | F5 或 Ctrl + R | 
 | 放大 | Ctrl + + | 
 | 缩小 | Ctrl + - | 
@@ -530,8 +530,8 @@ KeyDown 事件也被一些控件用来实现内置的控件快捷方式。 当�
 预览输入事件在任何其他事件之前触发。 如果不处理这些事件，则会触发具有焦点的元素的快捷方式，然后触发 KeyDown 事件。 这两个事件均会浮升，直到被处理为止。
 
 
-![关键事件序列](images/accelerators/accelerators_keyevents.png)
-***键事件序列***
+![关键事件序列 ](images/accelerators/accelerators_keyevents.png)
+ ***键事件序列***
 
 事件的顺序：
 
@@ -576,8 +576,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 我们建议本地化所有键盘快捷方式。 你可以使用标准 UWP 资源 (.resw) 文件和 XAML 声明中的 X:uid 属性来执行此操作。 在此示例中，Windows 运行时将自动加载资源。
 
-![具有 uwp 资源的键盘快捷键本地化](images/accelerators/accelerators_localization.png)
-文件***的键盘快捷键本地化和 uwp 资源文件***
+![具有 UWP 资源的键盘快捷键本地化文件 ](images/accelerators/accelerators_localization.png)
+ ***的键盘快捷键本地化和 uwp 资源文件***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
@@ -602,8 +602,8 @@ void AddAccelerator(
       { 
         Modifiers = keyModifiers, Key = key
       };
-    accelerator.Invoked = handler;
-    this.KeyAccelerators.Add(accelerator);
+    accelerator.Invoked += handler;
+    this.KeyboardAccelerators.Add(accelerator);
   }
 ```
 
@@ -636,7 +636,7 @@ public class MyListView : ListView
 ## <a name="related-articles"></a>相关文章
 
 - [键盘交互](keyboard-interactions.md)
-- [访问键](access-keys.md)
+- [访问密钥](access-keys.md)
 
 ### <a name="samples"></a>示例
 
