@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fae8031ec8255cbfef313a9b75f459750be0aee3
-ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
+ms.openlocfilehash: 2528ae4dabf072872ce765eb7bfd696c2b29d3f7
+ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84257460"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84746777"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>适用于 Windows 应用的设计工具包和示例
 
@@ -45,22 +45,6 @@ v1901，2019 年 1 月<br>
     :::column-end:::
 :::row-end:::
 
-:::row:::
-    :::column:::
-![主图](images/adobe-illustrator.png)
-<b>Adobe Illustrator 工具包</b><br>
-v1806，2018 年 6 月<br>
-<a href="https://aka.ms/adobeillustratortoolkit">下载</a>
-    :::column-end:::
-    :::column:::
-![主图](images/adobe-photoshop.png)
-<b>Adobe Photoshop 工具包</b><br>
-v1705，2017 年 5 月<br>
-<a href="https://aka.ms/adobephotoshoptoolkit">下载</a>
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-:::row-end:::
 
 ## <a name="developer-toolkits-and-libraries"></a>开发人员工具包和库
 

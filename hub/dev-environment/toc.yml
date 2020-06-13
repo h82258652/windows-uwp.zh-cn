@@ -1,36 +1,6 @@
 - name: Windows 开发环境
   href: index.yml
   items:
-    - name: Windows 程序包管理器
-      items:
-        - name: 概述
-          href: ../package-manager/index.md
-        - name: 使用 winget 工具
-          items:
-            - name: 概述
-              href: ../package-manager/winget/index.md
-            - name: hash 命令
-              href: ../package-manager/winget/hash.md
-            - name: help 命令
-              href: ../package-manager/winget/help.md
-            - name: install 命令
-              href: ../package-manager/winget/install.md
-            - name: search 命令
-              href: ../package-manager/winget/search.md
-            - name: show 命令
-              href: ../package-manager/winget/show.md
-            - name: source 命令
-              href: ../package-manager/winget/source.md
-            - name: validate 命令
-              href: ../package-manager/winget/validate.md
-        - name: 提交程序包
-          items:
-            - name: 概述
-              href: ../package-manager/package/index.md
-            - name: 创建程序包清单
-              href: ../package-manager/package/manifest.md
-            - name: 将清单提交到存储库
-              href: ../package-manager/package/repository.md
     - name: 使用 Python 进行开发
       items:
         - name: 概述
@@ -83,6 +53,40 @@
           href: ../android/defender-settings.md
         - name: 在设备或仿真器上测试
           href: ../android/emulator.md
+    - name: Windows 程序包管理器
+      items:
+        - name: 概述
+          href: ../package-manager/index.md
+        - name: 使用 winget 工具
+          items:
+            - name: 概述
+              href: ../package-manager/winget/index.md
+            - name: hash 命令
+              href: ../package-manager/winget/hash.md
+            - name: help 命令
+              href: ../package-manager/winget/help.md
+            - name: install 命令
+              href: ../package-manager/winget/install.md
+            - name: search 命令
+              href: ../package-manager/winget/search.md
+            - name: show 命令
+              href: ../package-manager/winget/show.md
+            - name: source 命令
+              href: ../package-manager/winget/source.md
+            - name: validate 命令
+              href: ../package-manager/winget/validate.md
+        - name: 提交程序包
+          items:
+            - name: 概述
+              href: ../package-manager/package/index.md
+            - name: 创建程序包清单
+              href: ../package-manager/package/manifest.md
+            - name: 将清单提交到存储库
+              href: ../package-manager/package/repository.md
+    - name: 适用于 Linux 的 Windows 子系统
+      href: 'https://docs.microsoft.com/windows/wsl/'
+    - name: Windows 终端
+      href: 'https://docs.microsoft.com/windows/terminal/'
     - name: Mac 到 Windows 指南
       items:
         - name: 更改开发环境
@@ -95,21 +99,3 @@
           href: 'mac-to-windows.md#terminal-and-shell'
         - name: 应用和实用程序
           href: 'mac-to-windows.md#apps-and-utilities'
-    - name: 适用于 Linux 的 Windows 子系统
-      items:
-        - name: 关于 WSL
-          href: 'https://docs.microsoft.com/windows/wsl/about?context=/windows/dev-environment/dev-environment-context'
-        - name: 关于 WSL 2
-          href: 'https://docs.microsoft.com/windows/wsl/wsl2-about?context=/windows/dev-environment/dev-environment-context'
-        - name: WSL 1 和 WSL 2
-          href: 'https://docs.microsoft.com/windows/wsl/wsl2-ux-changes?context=/windows/dev-environment/dev-environment-context'
-        - name: 用户帐户和权限
-          href: 'https://docs.microsoft.com/windows/wsl/user-support?context=/windows/dev-environment/dev-environment-context'
-    - name: Windows 终端
-      items:
-        - name: 概述
-          href: 'https://github.com/microsoft/terminal#terminal--console-overview'
-        - name: 用户指南
-          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/index.md'
-        - name: 自定义设置
-          href: 'https://github.com/microsoft/terminal/blob/master/doc/user-docs/UsingJsonSettings.md'
