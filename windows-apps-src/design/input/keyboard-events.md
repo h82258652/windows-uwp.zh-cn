@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ce9d15139d45cce01feb979f18167abee89a1f28
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 73b9ba40eb11d67e82ca3014c2758746d45df40f
+ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82558814"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84978389"
 ---
 # <a name="keyboard-events"></a>键盘事件
 
@@ -94,12 +94,12 @@ void MyProject::MainPage::Grid_KeyUp(
 
 所有键盘事件对事件数据均使用 [**KeyRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs)，而且 **KeyRoutedEventArgs** 包含以下属性：
 
--   [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
+-   [**密钥**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key)
 -   [**KeyStatus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus)
--   [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
+-   [**已处理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled)
 -   [**OriginalSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.routedeventargs.originalsource)（继承自 [**RoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEventArgs)）
 
-### <a name="key"></a>Key
+### <a name="key"></a>密钥
 
 如果按下某个键，则引发 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 事件。 同样，如果释放某个键，则引发 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)。 通常会侦听这些事件以处理特定键值。 若要确定按下或释放了哪个键，请检查事件数据中的 [**Key**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key) 值。 **Key** 返回 [**VirtualKey**](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKey) 值。 **VirtualKey** 枚举包括所有受支持的键。
 
@@ -319,7 +319,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 ### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler 和 already-handled 键盘事件
 
-可以使用特殊技术来附加处理程序，该技术对已标记为已处理的事件进行操作。 此方法使用[**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法来注册处理程序，而不是使用 XAML 属性或语言特定的语法添加处理程序，如 C\#中的 + =。
+可以使用特殊技术来附加处理程序，该技术对已标记为已处理的事件进行操作。 此方法使用[**AddHandler**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)方法来注册处理程序，而不是使用 XAML 属性或语言特定的语法添加处理程序，如 C 中的 + = \# 。
 
 此技术的一般限制是 **AddHandler** API 带有一个类型为 [**RoutedEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.RoutedEvent) 的参数，该参数标识相关的路由事件。 并非所有路由事件都提供 **RoutedEvent** 标识符，因此此注意事项会影响在 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 情况下仍然可以处理的路由事件。 [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown) 和 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup) 事件在 [**UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydownevent) 上具有路由事件标识符（[**KeyDownEvent**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyupevent) 和 [**KeyUpEvent**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)）。 但是，其他事件（如 [**TextBox.TextChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.textchanged)）没有路由事件标识符，因此不能使用 **AddHandler** 技术。
 
@@ -365,9 +365,9 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 例如，[**ButtonBase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)（[**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的基类）处理 [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)，以便可以检查空格键或 Enter 键。 **ButtonBase** 认为 **KeyUp** 等同于按下鼠标左键以引发 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 在 **ButtonBase** 覆盖虚拟方法 [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup) 时完成此事件处理操作。 在其实现过程中，会将 [**Handled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled) 设置为 **true**。 如果空格键未接收到自己处理程序的 already-handled 事件，则结果为某个按钮的任意父按钮侦听键事件。
 
-另一个示例是 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)。 **TextBox** 不会将某些键（如箭头键）视为文本，而是视为特定于控件 UI 的行为。 **TextBox** 将这些事件案例标记为已处理。
+另一个示例是 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)。 某些键（如箭头键）不被**TextBox**视为文本，而是被视为特定于控件 UI 行为。 **TextBox** 将这些事件案例标记为已处理。
 
-自定义控件可以通过重写[**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown) / [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup)来实现其自己的键事件的类似替代行为。 如果你的自定义控件处理特定加速键或者具有类似于为 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 描述的方案的控件或焦点行为，则应该将该逻辑放置在自己的 **OnKeyDown** / **OnKeyUp** 重写中。
+自定义控件可以通过重写[**OnKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeydown)OnKeyUp 来实现其自己的键事件的类似替代行为  /  [**OnKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.onkeyup)。 如果你的自定义控件处理特定加速键或者具有类似于为 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 描述的方案的控件或焦点行为，则应该将该逻辑放置在自己的 **OnKeyDown** / **OnKeyUp** 重写中。
 
 ## <a name="the-touch-keyboard"></a>触摸键盘
 

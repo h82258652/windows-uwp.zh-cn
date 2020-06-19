@@ -6,25 +6,25 @@ ms.date: 03/25/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 96994566d19e03f1d85b751242331f04fef098ad
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 11d992baf42f320856134f0e8fba845c5ad61393
+ms.sourcegitcommit: 96b7be654a0922eeb421b5fa51ebfc586abe74fe
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210693"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84945925"
 ---
 # <a name="in-app-ads"></a>应用内广告
 
 >[!WARNING]
 > 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-使用[合作伙伴中心](https://partner.microsoft.com/dashboard)的**盈利**&gt;**应用内广告**页来创建和管理的 ad 单位：
+使用合作伙伴中心的 "**盈利** &gt; **应用内广告**" 页来创建和管理的 ad 单位： [Partner Center](https://partner.microsoft.com/dashboard)
 
 * 使用 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 的通用 Windows 平台 (UWP) 应用。
 * 以前发布的 Windows 8.x 和 Windows Phone 使用[适用于 windows 的 MICROSOFT ADVERTISING SDK 和 Windows Phone](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDKforWindowsandWindowsPhone8x)3.x 的应用。
 
 > [!IMPORTANT]
-> 从2018年10月31日起，新创建的产品不能包含面向 Windows 8.x/Windows Phone 3.x 或更早版本的包。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
+> 你不能再上传使用 Windows Phone 3.x SDK 生成的新 XAP 包。 已存储在 XAP 包中的应用将在 Windows 10 移动版设备上继续运行。 有关详细信息，请参阅此[博客文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
 
 有关如何将这些 SDK 与你的应用集成以显示广告的详细信息，请参阅[使用 Microsoft 广告 SDK 在你的应用中显示广告](../monetize/display-ads-in-your-app.md)。
 
@@ -34,7 +34,7 @@ ms.locfileid: "79210693"
 
 若要在你的应用中为[横幅广告](../monetize/banner-ads.md)、[间隙广告](../monetize/interstitial-ads.md)或[本机广告](../monetize/native-ads.md)创建广告单元，请执行以下操作：
 
-1.  在合作方中心中转到**盈利**&gt;**应用内广告**，并单击 "**创建 ad 单位**"。
+1.  在合作伙伴中心中转到**盈利** &gt; **应用内广告**页，并单击 "**创建 ad 单位**"。
 2.  在**应用名称**下拉列表中，选择将在其中使用广告单元的应用。
 3.  在**广告单元名称**字段中，输入广告单元的名称。 这可以是希望因报告目的而用来标识广告单元的任意描述性字符串。
 4.  在**广告单元类型**下拉列表中，选择广告类型。
@@ -43,7 +43,7 @@ ms.locfileid: "79210693"
     * 如果你在应用程序中显示插播式 video ad 或插播式横幅广告，请选择 "**视频插播式**" 或 "**横幅插播式**" （请务必为要显示的插播式类型选择合适的选项）。
     * 如果在应用中显示本机广告，请选择 "**本机**"。
 
-5. 在**设备系列**下拉框中，选择将在其中使用广告单元的应用所适用的设备系列。 可用选项包括：**UWP (Windows 10)** 、**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)** 。
+5. 在**设备系列**下拉框中，选择将在其中使用广告单元的应用所适用的设备系列。 可用选项包括：**UWP (Windows 10)**、**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)**。
 
 6. 根据需要配置以下其他设置：
 
@@ -51,18 +51,18 @@ ms.locfileid: "79210693"
     * 如果你为横幅广告单元选择**电脑/平板电脑 (Windows 8.1)** 或**移动设备 (Windows Phone 8.x)** 设备系列，则可以选择 **Show community ads in your app** 以选择加入[社区广告](about-community-ads.md)。
 
 7.  如果还没有为所选的应用设置 COPPA 合规性，请在 [COPPA 合规性](#coppa)部分中选择一个选项。
-8.  单击“创建广告单元”。
+8.  单击**创建广告单元**。
 
-创建新的 ad 单位后，它将显示在 "**盈利**&gt;**应用程序内广告**" 页中的可用 ad 单位表中。
+创建新的广告单元后，它将显示在**盈利** &gt; **应用内广告**页面内的可用广告单元表中。
 
 <span id="available-ad-units" />
 
 ## <a name="review-and-edit-ad-units"></a>查看和编辑广告单元
 
-为帐户中的一个或多个应用创建 ad 单位后，这些 ad 单元将显示在 "**盈利**&gt;**应用内广告**" 页底部的表中。 此表显示每个广告单元的**应用程序 ID** 和**广告单元 ID** 以及其他信息。 若要在应用中显示广告，需要在你的代码中使用这些值。 有关详细信息，请参阅[在应用中设置广告单元](../monetize/set-up-ad-units-in-your-app.md)。
+在你的帐户中为一个或多个应用创建广告单元后，这些广告单元会显示在**盈利** &gt; **应用内广告**页面底部的表中。 此表显示每个广告单元的**应用程序 ID** 和**广告单元 ID** 以及其他信息。 若要在应用中显示广告，需要在你的代码中使用这些值。 有关详细信息，请参阅[在应用中设置广告单元](../monetize/set-up-ad-units-in-your-app.md)。
 
-* 如果你的应用显示[横幅广告](../monetize/banner-ads.md)，请将这些值分配给 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 对象的 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 属性。
-* 如果你的应用显示[间隙广告](../monetize/interstitial-ads.md)，请将这些值传递给 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 对象的 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 方法。
+* 如果你的应用显示[横幅广告](../monetize/banner-ads.md)，请将这些值分配给 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 对象的 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 属性。
+* 如果你的应用显示[间隙广告](../monetize/interstitial-ads.md)，请将这些值传递给 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 对象的 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法。
 * 如果应用显示[本机广告](../monetize/native-ads.md)，请将这些值传递给**NativeAdsManagerV2**构造函数。
   > [!IMPORTANT]
   > 每个广告单元都只能在一个应用中使用。 如果在多个应用中使用某个广告单元，将不为该广告单元提供广告。
@@ -97,10 +97,10 @@ ms.locfileid: "79210693"
 
 3. 在**目标**下拉框中，选择**基线**为你的广告中介设置配置默认配置。 此默认配置将应用于除你在其中定义了市场特定配置之外的所有市场。
 4. 接下来，指定你希望在控件中显示的来自付费网络（针对广告印象向你支付收益）和其他广告网络（不针对广告印象向你支付收益）的广告的比例。 要执行此操作，请在**付费广告网络**和**其他广告网络**的**权重**字段中输入介于 0 至 100 之间的值。  
-5. 在**付费广告网络**部分中，针对要使用的每种**付费网络**，选中[活动](#paid-networks)列中的复选框，然后使用**排名**列中的箭头按名次为网络排序（这指定控件应使用每种网络的频率）。
+5. 在**付费广告网络**部分中，针对要使用的每种[付费网络](#paid-networks)，选中**活动**列中的复选框，然后使用**排名**列中的箭头按名次为网络排序（这指定控件应使用每种网络的频率）。
 6. 如果选择了**横幅**或**横幅间隙**广告单元，也将看到一个**其他广告网络**部分。 此部分中的网络不会因广告曝光而为你挣取收益。 相反，这些网络显示来自应用促销市场活动等来源的广告。
 
-    在**其他广告网络**部分中，针对希望使用的每种**其他网络**，选中[活动](#other-networks)列中的复选框，然后使用**排名**列中的箭头按名次为网络排序（这指定控件应使用每种网络的频率）。 当前支持以下其他网络：
+    在**其他广告网络**部分中，针对希望使用的每种[其他网络](#other-networks)，选中**活动**列中的复选框，然后使用**排名**列中的箭头按名次为网络排序（这指定控件应使用每种网络的频率）。 当前支持以下其他网络：
 
 7. 对于你想要为其替代默认中介配置的每个市场，请在**目标**下拉框中选择市场，然后更新广告网络选择和排名。
 8. 单击**创建广告单元**（如果你要创建新的广告单元）或**保存**（如果正在编辑现有广告单元）。
@@ -119,10 +119,10 @@ ms.locfileid: "79210693"
 | MSN 内容建议 |  选择此选项以提供 MSN 内容建议的广告。 |  横幅、横幅间隙  |
 | Outbrain |  选择此选项以提供来自 [Outbrain](https://www.outbrain.com/) 的广告。 |  横幅、横幅间隙  |
 | Revcontent |  选择此选项以提供来自 [Revcontent](https://www.revcontent.com/) 的广告。 |  横幅、本机  |
-| Smaato |  选择此选项以提供来自 [Smaato](https://www.smaato.com/) 的广告。 |  横幅  |
+| Smaato |  选择此选项以提供来自 [Smaato](https://www.smaato.com/) 的广告。 |  标题  |
 | smartclip |  选择此选项以提供来自 [smartclip](http://www.smartclip.com/) 的广告。 |  视频间隙  |
 | SpotX |  选择此选项以提供来自 [SpotX](https://www.spotx.tv/) 的广告。 |  视频间隙  |
-| Taboola |  选择此选项以提供来自 [Taboola](https://www.taboola.com/) 的广告。 |  横幅  |
+| Taboola |  选择此选项以提供来自 [Taboola](https://www.taboola.com/) 的广告。 |  标题  |
 | Vungle | 选择此选项以提供来自[Vungle](https://vungle.com/)的广告 | 视频间隙 |
 | Undertone | 选择此选项以提供来自[Undertone](https://www.undertone.com/)的广告。 | 横幅插播式 |
 
@@ -150,7 +150,7 @@ ms.locfileid: "79210693"
 | Revcontent | 巴西、加拿大、法国、德国、印度、日本、西班牙、英国、美国  |
 | Smaato | 巴西、加拿大、法国、德国、印度、日本、西班牙、英国、美国 |
 | smartclip | 奥地利、比利时、丹麦、芬兰、德国、意大利、荷兰、挪威、瑞典、瑞士  |
-| Undertone | 美国 |
+| Undertone | United States |
 
 <span id="coppa" />
 
