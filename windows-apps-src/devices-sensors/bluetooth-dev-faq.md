@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 584d327fc4882db6d3bf8d0cfd2a84b13023c6f4
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 7ff826be0f5b0b8e9a6723fbb1593663f1748c3d
+ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684843"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069474"
 ---
 # <a name="bluetooth-developer-faq"></a>蓝牙开发人员常见问题
 
 本文包含 UWP 蓝牙 API 的常见问题解答。
 
 ## <a name="what-apis-do-i-use-bluetooth-classic-rfcomm-or-bluetooth-low-energy-gatt"></a>使用哪些 API？ 经典蓝牙 (RFCOMM) 还是低耗电蓝牙 (GATT)？
-围绕这一常规主题存在多种线上讨论，因此我们直接从与 Windows 相关的差异出发来寻找答案。 下面是一些常规指南：
+围绕这一常规主题存在多种线上讨论，因此我们直接从与 Windows 相关的差异出发来寻找答案。 下面是一些一般准则：
 
 ### <a name="bluetooth-le-windowsdevicesbluetoothgenericattributeprofile"></a>蓝牙 LE (Windows.Devices.Bluetooth.GenericAttributeProfile)
 
@@ -31,7 +31,7 @@ ms.locfileid: "75684843"
 
 RFCOMM Api 为开发人员提供了用于执行双向串行端口样式通信的套接字。 获取套接字后，编写和读取的方法相当标准。 [Rfcomm 聊天示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)中演示了此套接字的实现。 
 
-**何时不使用 Bluetooth Rfcomm** 
+**何时不使用蓝牙 Rfcomm** 
 - 通知。 蓝牙 GATT 协议具有用于此方面的特定命令，功耗显著降低并且响应时间更快。 
 - 邻近感应检查或存在检测。 更好的做法是使用[播发 API](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement) 并通过蓝牙 LE 进行连接。 
 
@@ -63,7 +63,7 @@ RFCOMM Api 为开发人员提供了用于执行双向串行端口样式通信的
 
 如果使用 Bluetooth RFCOMM （经典），则无需对设备进行配对。 从 Windows 10 版本 1607 开始，只需查询附近设备即可连接。 更新后的 [RFCOMM 聊天示例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)展示了此项功能。 
 
-**（14393 及更低版本）** 低耗电蓝牙（GATT 客户端）不支持此功能，因此仍需要通过“设置”页面或使用 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration) API 进行配对才能访问这些设备。
+**（14393及更低）** 此功能不适用于蓝牙低功耗（GATT 客户端），因此你仍需要通过 "设置" 页或使用[Windows.. 枚举](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)api 来访问这些设备。
 
 **（15030 及更高版本）** 不再需要对蓝牙设备进行配对。 使用新的异步 API（如 GetGattServicesAsync 和 GetCharacteristicsAsync）查询远程设备的当前状态。 有关更多详细信息，请参阅[客户端文档](gatt-client.md)。 
 
@@ -72,7 +72,7 @@ RFCOMM Api 为开发人员提供了用于执行双向串行端口样式通信的
 
 ## <a name="do-all-windows-devices-support-peripheral-role"></a>所有 Windows 设备是否都支持外设角色？
 
-不相同。 这是一个与硬件相关的功能，但提供了一个方法 BluetoothAdapter. IsPeripheralRoleSupported，用于查询是否支持此功能。  当前支持的设备包括 8992+ 上的 Windows Phone 和 RPi3 (Windows IoT)。 
+不需要。 这是一个与硬件相关的功能，但提供了一个方法 BluetoothAdapter. IsPeripheralRoleSupported，用于查询是否支持此功能。  当前支持的设备包括 8992+ 上的 Windows Phone 和 RPi3 (Windows IoT)。 
 
 ## <a name="can-i-access-these-apis-from-win32"></a>是否可以从 Win32 访问这些 API？
 
@@ -82,4 +82,4 @@ RFCOMM Api 为开发人员提供了用于执行双向串行端口样式通信的
 **蓝牙 LE**：是的，所有功能都处于 OneCore 中，应在带有正常运行的蓝牙 LE 堆栈的最新设备上可用。 
 > 警告：外围角色依赖于硬件，某些 Windows Server 版本不支持蓝牙。 
 
-**蓝牙 BR/EDR （经典）** ：存在一些变体，但它们主要具有非常相似的配置文件级别支持。 请参阅[RFCOMM](send-or-receive-files-with-rfcomm.md)上的文档和适用于[电脑](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)和[手机](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)的这些受支持的配置文件文档
+**蓝牙 BR/EDR （经典）**：存在一些变体，但它们主要具有非常相似的配置文件级别支持。 请参阅[RFCOMM](send-or-receive-files-with-rfcomm.md)上的文档和适用于[电脑](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)和[手机](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)的这些受支持的配置文件文档

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
-title: 蓝牙 RFCOMM
+title: Bluetooth RFCOMM
 description: 本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。
 ms.date: 07/19/2018
 ms.topic: article
@@ -10,25 +10,25 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 1fb1a971e897bc88d090c589b266542c6de2d1c9
-ms.sourcegitcommit: b432a639fb3d15ebd22d429ccee4dbb03e8550ca
+ms.openlocfilehash: 2c48b4bbfb7fb361b598722d070962db32665042
+ms.sourcegitcommit: d708ac4ec4fac0135dafc0d8c5161ef9fd945ce7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77778518"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069466"
 ---
-# <a name="bluetooth-rfcomm"></a>蓝牙 RFCOMM
+# <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
 **重要的 API**
 
 - [**Windows. 蓝牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Rfcomm。** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
+- [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 本文提供通用 Windows 平台 (UWP) 应用中的蓝牙 RFCOMM 的概述，以及如何发送或接收文件的示例代码。
 
 ## <a name="overview"></a>概述
 
-[  **Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) 命名空间中的 API 基于面向 Windows.Devices 的现有模式生成，包括 [**enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 和 [**instantiation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice)。 数据读取和编写旨在充分利用 [**established data stream patterns**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 和 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 中的对象。 服务发现协议 (SDP) 属性有一个值和一个预期类型。 但是，一些常用的设备具有错误的 SDP 属性实现，其中的值不属于预期类型。 此外，RFCOMM 的许多用法完全不需要其他 SDP 属性。 因此，此 API 提供对未解析 SDP 数据的访问权限，开发人员可从这里获取所需的信息。
+[**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) 命名空间中的 API 基于面向 Windows.Devices 的现有模式生成，包括 [**enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 和 [**instantiation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice)。 数据读取和编写旨在充分利用 [**established data stream patterns**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 和 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 中的对象。 服务发现协议 (SDP) 属性有一个值和一个预期类型。 但是，一些常用的设备具有错误的 SDP 属性实现，其中的值不属于预期类型。 此外，RFCOMM 的许多用法完全不需要其他 SDP 属性。 因此，此 API 提供对未解析 SDP 数据的访问权限，开发人员可从这里获取所需的信息。
 
 RFCOMM API 使用服务标识符的概念。 尽管服务标识符只是一个 128 位 GUID，它通常还被指定为 16 或 32 位的整数。 RFCOMM API 为服务标识符提供包装器，允许将它们作为 128 位 GUID 以及 32 位整数来指定和使用，但是不提供 16 位整数。 这对 API 来说不是问题，因为语言可以自动扩大到 32 位整数，并且仍然可以正确生成标识符。
 
@@ -40,9 +40,9 @@ RFCOMM API 使用服务标识符的概念。 尽管服务标识符只是一个 1
 
 发送文件时，最基本的方案是基于所需服务连接到配对设备。 这包括以下步骤：
 
-- 使用**GetDeviceSelector\*** 功能可帮助生成一个 AQS 查询，该查询可用于枚举所需服务的成对设备实例。
+- 使用**GetDeviceSelector \* **函数可帮助生成可用于枚举所需服务的成对设备实例的 AQS 查询。
 - 选取一个枚举的设备，创建 [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)，并按需读取 SDP 属性（使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 解析该属性的数据）。
-- 创建一个套接字并使用 [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 的 [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 属性，通过 StreamSocket.ConnectAsync 操作连接到使用适当参数的远程设备服务。
+- 创建一个套接字并使用 [**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 的 [**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 属性，通过 StreamSocket.ConnectAsync 操作连接到使用适当参数的远程设备服务。
 - 按照现成的数据流模式从文件读取数据区块，并在该套接字的 [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) 上将其发送到设备。
 
 ```csharp
