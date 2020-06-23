@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 加载资源
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a779e0d17cdc3f5a11dd720467e3a0572e3c124
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 56eaebfeb6d644c4c15f14f0613b1e3b1781f637
+ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606306"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133990"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 游戏中加载资源
 
@@ -21,14 +21,14 @@ ms.locfileid: "82606306"
 
 例如，游戏中的多边形对象网格可能是使用其他工具创建的，并且已导出为某个特定格式。 纹理等也是一样：尽管大多数工具通常可以编写平面的未压缩的位图并且大多数图形 API 都可以理解，但这对于在游戏中的使用来说还远远不够。 下面我们将指导你完成加载三个不同类型的图形资源以便用于 Direct3D 的基本步骤：网格（模型）、纹理（位图）以及编译的着色器对象。
 
-## <a name="what-you-need-to-know"></a>须知内容
+## <a name="what-you-need-to-know"></a>需要了解的事项
 
 
 ### <a name="technologies"></a>技术
 
 -   并行模式库 (ppltasks.h)
 
-### <a name="prerequisites"></a>必备条件
+### <a name="prerequisites"></a>先决条件
 
 -   了解基本的 Windows 运行时
 -   了解异步任务
@@ -71,7 +71,7 @@ ms.locfileid: "82606306"
 
  
 
-## <a name="instructions"></a>说明
+## <a name="instructions"></a>Instructions
 
 ### <a name="asynchronous-loading"></a>异步加载
 
@@ -130,7 +130,7 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
 
 但是，你希望在所有异步加载都完成之后再正确启动游戏！ 创建用于指示何时加载完成的一些方法（如某个特定字段）并在你的加载方法上使用 lambda 来设置完成时的指示。 在启动使用这些加载的资源的任何组件之前，检查变量。
 
-下面是游戏启动时，使用 BasicLoader.cpp 中定义的异步方法加载着色器、网格以及纹理的示例。 请注意，当所有加载方法完成时，它将在游戏对象**m\_loadingComplete**上设置一个特定字段。
+下面是游戏启动时，使用 BasicLoader.cpp 中定义的异步方法加载着色器、网格以及纹理的示例。 请注意，当所有加载方法完成时，它将在游戏对象**m \_ loadingComplete**上设置一个特定字段。
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -209,7 +209,7 @@ void ResourceLoading::CreateDeviceResources()
 
 -   数据流的第一个 32 位（4 个字节）包含网格中的顶点数量 \(numVertices\)，表示为 uint32 值。
 -   数据流的下一个 32 位（4 个字节）包含网格中的索引数量 \(numIndices\)，表示为 uint32 值。
--   之后，后续（numVertices \* Sizeof （**BasicVertex**））位包含顶点数据。
+-   之后，后续（numVertices \* sizeof （**BasicVertex**））位包含顶点数据。
 -   最后（numIndices \* 16）的数据位包含索引数据，以 uint16 值的序列表示。
 
 重点是要知道你加载的网格数据的位级布局。 而且还要确保你符合字节序。 所有 Windows 8 平台都是低字节序。
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh**解释从文件加载的字节数据，并通过分别将顶点和索引列表传递到[**ID3D11Device：： CREATEBUFFER**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)并指定 D3D11\_绑定\_顶点\_缓冲区或 D3D11\_绑定\_索引\_缓冲区，为网格创建顶点缓冲区和索引缓冲区。 下面是 **BasicLoader** 中使用的代码：
+**CreateMesh**解释从文件加载的字节数据，并通过分别将顶点和索引列表传递到[**ID3D11Device：： CREATEBUFFER**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer)并指定 D3D11 \_ 绑定 \_ 顶点 \_ 缓冲区或 D3D11 \_ 绑定 \_ 索引 \_ 缓冲区，为网格创建顶点缓冲区和索引缓冲区。 下面是 **BasicLoader** 中使用的代码：
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -320,14 +320,14 @@ DDS 文件是包含以下信息的二进制文件：
 
 -   文件中数据的描述。
 
-    使用[**\_DDS 标头**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header)说明数据和标头说明;使用[**DDS\_PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)定义像素格式。 请注意， **dds\_标头**和**\_DDS PIXELFORMAT**结构将替换弃用的 DDSURFACEDESC2、DDSCAPS2 和 DDPIXELFORMAT DirectDraw 7 结构。 **DDS\_标头**是 DDSURFACEDESC2 和 DDSCAPS2 的二进制等效项。 **DDS\_PIXELFORMAT**是 DDPIXELFORMAT 的二进制等效项。
+    使用[**dds \_ 标题**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header)对数据进行了标头说明; 像素格式是使用[**dds \_ PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)定义的。 请注意， **dds \_ 标头**和**dds \_ PIXELFORMAT**结构将替换弃用的 DDSURFACEDESC2、DDSCAPS2 和 DDPIXELFORMAT DirectDraw 7 结构。 **DDS \_标头**是 DDSURFACEDESC2 和 DDSCAPS2 的二进制等效项。 **DDS \_PIXELFORMAT**是 DDPIXELFORMAT 的二进制等效项。
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    如果将[**\_DDS PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)中**DWFLAGS**的值设置为 DDPF\_FOURCC，并将**dwFourCC**设置为 "DX10"，则将存在一个额外的[**DDS\_标头\_DXT10**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10)结构，以容纳无法表示为 RGB 像素格式（如浮点格式、sRGB 格式等）的纹理数组或 DXGI 格式。当存在**DDS\_标\_头 DXT10**结构时，整个数据说明将如下所示。
+    如果将[**DDS \_ PIXELFORMAT**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-pixelformat)中**dwFlags**的值设置为 DDPF \_ FOURCC，并将**dwFourCC**设置为 "DX10"，则将存在一个额外的[**DDS \_ 标头 \_ DXT10**](https://docs.microsoft.com/windows/desktop/direct3ddds/dds-header-dxt10)结构，以容纳无法表示为 RGB 像素格式（如浮点格式、sRGB 格式等）的纹理数组或 DXGI 格式。当存在**DDS \_ 标头 \_ DXT10**结构时，整个数据说明将如下所示。
 
     ```cpp
     DWORD               dwMagic;
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-在此示例中，使用**BasicReaderWriter**实例（**m\_BasicReaderWriter**）以字节流的形式读入提供的已编译的着色器对象（cso）文件。 该任务完成后，lambda 使用从文件加载的字节数据调用 [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)。 你的回调必须设置某些指示加载成功的标志，并且你的代码必须在运行着色器之前检查该标志。
+在此示例中，使用**BasicReaderWriter**实例（**m \_ BasicReaderWriter**）以字节流的形式读入提供的已编译的着色器对象（cso）文件。 该任务完成后，lambda 使用从文件加载的字节数据调用 [**ID3D11Device::CreatePixelShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createpixelshader)。 你的回调必须设置某些指示加载成功的标志，并且你的代码必须在运行着色器之前检查该标志。
 
 顶点着色器稍微有点复杂。 对于顶点着色器，你还要加载一个单独的定义顶点数据的输入布局。 可以使用下列代码来异步加载顶点着色器以及自定义顶点输入布局。 确保你从网格加载的顶点信息可以由该输入布局正确表示！
 
@@ -685,20 +685,19 @@ task<void> BasicLoader::LoadShaderAsync(
         }
     });
 }
-
 ```
 
 在该代码中，你读取顶点着色器 CSO 文件中的字节数据之后，通过调用 [**ID3D11Device::CreateVertexShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createvertexshader) 创建顶点着色器。 之后，在同一个 lambda 中为着色器创建输入布局。
 
-其他着色器类型（如外壳着色器和几何体着色器）可能还需要特定配置。 [BasicLoader 的完整代码](complete-code-for-basicloader.md)和 [Direct3D 资源加载示例]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148)中提供了各种着色器加载方法的完整代码。
+其他着色器类型（如外壳着色器和几何体着色器）可能还需要特定配置。 [BasicLoader 的完整代码](complete-code-for-basicloader.md)和 [Direct3D 资源加载示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B)中提供了各种着色器加载方法的完整代码。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 此时，你应该已了解并且能够创建或修改用于异步加载常用游戏资源（如网格、纹理以及编译的着色器）的方法。
 
 ## <a name="related-topics"></a>相关主题
 
-* [Direct3D 资源加载示例]( https://code.msdn.microsoft.com/windowsapps/Direct3D-Resource-Loading-25406148)
+* [Direct3D 资源加载示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/Direct3D%20resource%20loading%20sample%20(Windows%208)/C%2B%2B)
 * [BasicLoader 的完整代码](complete-code-for-basicloader.md)
 * [BasicReaderWriter 的完整代码](complete-code-for-basicreaderwriter.md)
 * [DDSTextureLoader 的完整代码](complete-code-for-ddstextureloader.md)
