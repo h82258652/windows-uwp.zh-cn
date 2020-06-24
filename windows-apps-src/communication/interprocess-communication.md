@@ -4,18 +4,18 @@ description: 本主题介绍在通用 Windows 平台（UWP）应用程序与 Win
 ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp
-ms.openlocfilehash: 2407a54439157be16b186b48759746238962f8b4
-ms.sourcegitcommit: 2d375e1c34473158134475af401532cc55fc50f4
+ms.openlocfilehash: 5db029db3ffb538802f39aa616c96dbe75601eac
+ms.sourcegitcommit: bf7d4f6739aeeaac735aae3dd0dcbda63a8c5e69
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888505"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256377"
 ---
 # <a name="interprocess-communication-ipc"></a>进程间通信 (IPC)
 
 本主题介绍在通用 Windows 平台（UWP）应用程序与 Win32 应用程序之间执行进程间通信（IPC）的各种方式。
 
-## <a name="app-services"></a>应用服务
+## <a name="app-services"></a>应用程序服务
 
 应用服务使应用程序能够公开在后台接受和返回基元（[**ValueSet**](/uwp/api/Windows.Foundation.Collections.ValueSet)）属性包的服务。 如果对其进行[序列化](https://stackoverflow.com/questions/46367985/how-to-make-a-class-that-can-be-added-to-the-windows-foundation-collections-valu)，则可以传递丰富的对象。
 
@@ -29,11 +29,11 @@ ms.locfileid: "80888505"
 
 具有[runFullTrust](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)功能的打包应用程序可以通过[包清单](/uwp/schemas/appxpackage/uapmanifestschema/element-com-extension)为 IPC 注册进程外 COM 服务器。 这称为 "[打包的 COM](https://blogs.windows.com/windowsdeveloper/2017/04/13/com-server-ole-document-support-desktop-bridge/)"。
 
-## <a name="filesystem"></a>文件系统
+## <a name="filesystem"></a>Filesystem
 
 ### <a name="broadfilesystemaccess"></a>BroadFileSystemAccess
 
-打包的应用程序可以通过声明[broadFileSystemAccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations)受限功能来使用广泛的文件系统执行 IPC。
+打包的应用程序可以通过声明[broadFileSystemAccess](/windows/uwp/files/file-access-permissions#accessing-additional-locations)受限功能来使用广泛的文件系统执行 IPC。 此功能授予[Windows 存储](/uwp/api/Windows.Storage)Api 和[xxxFromApp](/previous-versions/windows/desktop/legacy/mt846585(v=vs.85)) Win32 api 对广泛文件系统的访问权限。
 
 默认情况下，使用打包应用程序的文件系统的 IPC 仅限于此部分中所述的其他机制。
 
@@ -73,25 +73,25 @@ ms.locfileid: "80888505"
 
 为了保持安全和网络隔离，默认情况下，针对打包的应用程序，会阻止 IPC 的环回连接。 可以使用[功能](/previous-versions/windows/apps/hh770532(v=win.10))和[清单属性](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)在受信任的打包应用程序之间启用环回连接。
 
-* 所有参与环回连接的打包应用程序都需要在其[包清单](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)中声明 `privateNetworkClientServer` 功能。
+* 所有参与环回连接的打包应用程序都需要 `privateNetworkClientServer` 在其[包清单](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)中声明此功能。
 * 两个打包的应用程序可以通过环回进行通信，方法是在其包清单中声明[LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules) 。
     * 每个应用程序都必须列出其[LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)中的另一个。 客户端为服务器声明了 "out" 规则，服务器为其支持的客户端声明了 "in" 规则。
 
 > [!NOTE]
 > 在开发时，可以通过 Visual Studio 中的包清单编辑器、通过 Microsoft Store 发布的应用程序的[合作伙伴中心](/windows/uwp/publish/view-app-identity-details)或已安装的应用程序的[add-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell 命令，在这些规则中标识应用程序所需的包系列名称。
 
-未打包的应用程序和服务没有包标识，因此不能在[LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)中声明它们。 你可以通过[CheckNetIsolation](/previous-versions/windows/apps/hh780593(v=win.10))将打包的应用程序配置为通过与未打包的应用程序和服务的环回进行连接，但这仅适用于你对计算机具有本地访问权限的旁加载或调试方案，并且你具有管理员权限。
+未打包的应用程序和服务没有包标识，因此不能在[LoopbackAccessRules](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-loopbackaccessrules)中声明它们。 你可以通过[CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))将打包的应用程序配置为通过与未打包的应用程序和服务的环回进行连接，但这仅适用于你对计算机具有本地访问权限的旁加载或调试方案，并且你具有管理员权限。
 
-* 所有参与环回连接的打包应用程序都需要在其[包清单](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)中声明 `privateNetworkClientServer` 功能。
+* 所有参与环回连接的打包应用程序都需要 `privateNetworkClientServer` 在其[包清单](/uwp/schemas/appxpackage/uapmanifestschema/element-capability)中声明功能。
 * 如果打包应用程序连接到未打包的应用程序或服务，则运行 `CheckNetIsolation.exe LoopbackExempt -a -n=<PACKAGEFAMILYNAME>` 为打包的应用程序添加环回例外。
 * 如果未打包的应用程序或服务正在连接到打包应用程序，请运行 `CheckNetIsolation.exe LoopbackExempt -is -n=<PACKAGEFAMILYNAME>` 以使打包的应用程序能够接收入站环回连接。
-    * 打包的应用程序侦听连接时， [CheckNetIsolation](/previous-versions/windows/apps/hh780593(v=win.10))必须连续运行。
-    * Windows 10 1607 版（10.0;）中引入了 `-is` 标志生成14393）。
+    * 打包的应用程序侦听连接时， [CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))必须连续运行。
+    * 该 `-is` 标志是在 Windows 10 版本1607（10.0;）中引入的。生成14393）。
 
 > [!NOTE]
-> 在开发时，可以通过 Visual Studio 中的包清单编辑器、通过 Microsoft Store 发布的应用程序的[合作伙伴中心](/windows/uwp/publish/view-app-identity-details)或已安装的应用[程序的 CheckNetIsolation PowerShell 命令](/powershell/module/appx/get-appxpackage?view=win10-ps)来查找[CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))标志 `-n` 所需的包系列名称。
+> 在 `-n` 开发时，可以通过 Visual Studio 中的包清单编辑器、通过 Microsoft Store 发布的应用程序的[合作伙伴中心](/windows/uwp/publish/view-app-identity-details)或已安装的应用程序的[add-appxpackage](/powershell/module/appx/get-appxpackage?view=win10-ps) PowerShell 命令来查找[CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))标志所需的包系列名称。
 
-[CheckNetIsolation](/previous-versions/windows/apps/hh780593(v=win.10))也可用于[调试网络隔离问题](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues)。
+[CheckNetIsolation.exe](/previous-versions/windows/apps/hh780593(v=win.10))对于[调试网络隔离问题](/previous-versions/windows/apps/hh780593(v=win.10)#debug-network-isolation-issues)也很有用。
 
 ## <a name="pipes"></a>管道
 
@@ -101,7 +101,7 @@ ms.locfileid: "80888505"
 
 * 默认情况下，仅在同一包中的进程之间支持打包应用程序中的命名管道，除非进程是完全信任。
 * 按照[共享命名对象](/windows/uwp/communication/sharing-named-objects)的准则，可以在包之间共享命名管道。
-* 打包的应用程序中的命名管道必须使用语法 `\\.\pipe\LOCAL\` 作为管道名称。
+* 打包的应用程序中的命名管道必须使用 `\\.\pipe\LOCAL\` 管道名称的语法。
 
 ## <a name="registry"></a>注册表
 
@@ -117,7 +117,7 @@ ms.locfileid: "80888505"
 
 RPC 终结点也可列入到特定的打包应用程序，将对终结点的访问限制为仅限这些应用程序，而无需使用自定义功能的管理开销。 可以使用[DeriveAppContainerSidFromAppContainerName](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername) API 从包系列名称中派生 SID，然后使用 SID 作为 RPC 终结点的 ACL，如[CustomCapability](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomCapability/Service/Server/RpcServer.cpp)示例中所示。
 
-## <a name="shared-memory"></a>共享内存
+## <a name="shared-memory"></a>Shared Memory
 
 [文件映射](/windows/win32/memory/sharing-files-and-memory)可用于在两个或多个进程之间共享文件或内存，但有以下限制：
 
