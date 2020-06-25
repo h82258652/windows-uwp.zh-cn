@@ -1,17 +1,15 @@
 ---
 title: 使用 winget 工具安装和管理应用程序
 description: 开发人员可以在 Windows 10 计算机上使用 winget 命令行工具来发现、安装、升级、删除和配置应用程序。
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d6280d725681704c41e0bbdb59c2a08fb75c302
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 3b3f108de117fb937a7a670497a4a1a1d5810aca
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580044"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334535"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>使用 winget 工具安装和管理应用程序
 

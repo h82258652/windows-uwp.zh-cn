@@ -1,17 +1,15 @@
 ---
 title: Windows 程序包管理器
-description: ''
-author: denelon
-ms.author: denelon
+description: Windows 程序包管理器是一个综合的程序包管理器解决方案，由一个命令行工具和一组用于在 Windows 10 上安装应用程序的服务组成。
 ms.date: 05/03/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f7a6533d3dea9c304e9be7d8e689ab537a46449
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 5b25f2c651e11a5ff97a630bb802b236771f5441
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580094"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334624"
 ---
 # <a name="windows-package-manager-preview"></a>Windows 程序包管理器（预览）
 
