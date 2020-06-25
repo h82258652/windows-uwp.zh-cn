@@ -200,7 +200,7 @@ Python 是一种解释型语言，支持不同类型的解释器（Python2、Ana
      * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
     ```
 
-14. 打开默认 Web 浏览器到呈现的页面，在终端中 Ctrl+单击http://127.0.0.1:5000/ URL。 应在浏览器中看到以下消息：
+14. 打开默认 Web 浏览器到呈现的页面，在终端中 Ctrl+单击 http://127.0.0.1:5000/ URL。 应在浏览器中看到以下消息：
 
     ![Hello, Flask!](../images/hello-flask.png)
 
