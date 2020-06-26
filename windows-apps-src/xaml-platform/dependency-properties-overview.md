@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 279f0d007be927e29632986ce8178c4e0b9778b3
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: db9d47fdef12e5d838c919b2b5b653ea00c1196d
+ms.sourcegitcommit: f44f94c2ef41b33c1a9719fa7b303ec525d479b5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259859"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85382707"
 ---
 # <a name="dependency-properties-overview"></a>依赖属性概述
 
@@ -30,7 +30,7 @@ ms.locfileid: "74259859"
 - 多用途模板模式，例如资源和样式
 - 通过与对象树中其他元素的父子关系知道的值
 
-依赖项属性表示或支持编程模型的特定功能，该功能使用 XAML 为 UI 和C#Microsoft Visual Basic 或 Visual C++ component extension （C++/cx）代码定义 Windows 运行时应用。 这些功能包括：
+依赖属性代表或支持编程模型的某种特定功能，用于定义 Windows 运行时应用，这种模型使用 XAML 编写 UI，使用 C#、Microsoft Visual Basic 或 Visual C++ 组件扩展 (C++/CX) 编写代码。 这些功能包括：
 
 - 数据绑定
 - 样式
@@ -55,28 +55,28 @@ ms.locfileid: "74259859"
 
 属性包装器不仅给调用方带来了方便，它还向任何为属性使用 Windows 运行时定义的过程、工具或投影公开该依赖属性。
 
-下面的示例定义一个自定义“IsSpinning”依赖属性，就像 C# 中的定义一样，然后显示依赖属性标识符与属性包装器之间的关系。
+下面的示例定义了一个为 c # 定义的自定义依赖属性，并显示了依赖属性标识符与属性包装之间的关系。
 
 ```csharp
-// IsSpinningProperty is the dependency property identifier
-// no need for info in the last PropertyMetadata parameter, so we pass null
-public static readonly DependencyProperty IsSpinningProperty =
-    DependencyProperty.Register(
-        "IsSpinning", typeof(Boolean),
-        typeof(ExampleClass), null
-    );
-// The property wrapper, so that callers can use this property through a simple ExampleClassInstance.IsSpinning usage rather than requiring property system APIs
-public bool IsSpinning
+public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
+  "Label",
+  typeof(string),
+  typeof(ImageWithLabelControl),
+  new PropertyMetadata(null)
+);
+
+
+public string Label
 {
-    get { return (bool)GetValue(IsSpinningProperty); }
-    set { SetValue(IsSpinningProperty, value); }
+    get { return (string)GetValue(LabelProperty); }
+    set { SetValue(LabelProperty, value); }
 }
 ```
 
 > [!NOTE]
-> 前面的示例不应作为如何创建自定义依赖项属性的完整示例。 它旨在为希望通过代码学习概念的人说明依赖属性概念。 有关更为完整的示例，请参阅[自定义依赖属性](custom-dependency-properties.md)。
+> 前面的示例不应作为如何创建自定义依赖项属性的完整示例。 它旨在为希望通过代码学习概念的人说明依赖属性概念。 有关此示例的更完整说明，请参阅[自定义依赖属性](custom-dependency-properties.md)。
 
-## <a name="dependency-property-value-precedence"></a>依赖属性值优先级
+## <a name="dependency-property-value-precedence"></a>依赖项属性值优先级
 
 当获得一个依赖属性的值时，你获得的值是通过任何一个参与 Windows 运行时属性系统的输入，针对该属性确定的。 依赖属性值存在优先级，因此 Windows 运行时属性系统可通过一种可预测的方式计算值，并且你需要熟悉基本的优先级顺序，这一点很重要。 否则你可能会遇到这样的情况：当你尝试在一个优先级别设置某个属性时，某些东西（系统、第三方调用方、你自己的代码）却在另一个级别设置了该属性，你会很难明白使用了哪个属性值以及该值的原始位置。
 
@@ -84,7 +84,7 @@ public bool IsSpinning
 
 ### <a name="dependency-property-precedence-list"></a>依赖属性优先级列表
 
-以下是属性系统在分配依赖属性的运行时值时采用的明确顺序。 优先级最高的会首先列出。 你将找到比此列表更加详细的解释。
+以下是属性系统在分配依赖属性的运行时值时采用的明确顺序。 最高优先级最先列出。 你将找到比此列表更加详细的解释。
 
 1. **动画值：** 活动动画、视觉状态动画或具有 [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) 行为的动画。 若要拥有任何实用效果，则适用于属性的动画必须拥有比基础（无动画）值更高的优先级，即使该值进行了本地设置也是如此。
 1. **本地值：** 本地值可通过属性包装器设置，这也等同于在 XAML 中设置为属性或属性元素，或通过使用特定实例的属性调用 [**SetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.setvalue) 方法来设置。 如果使用绑定或静态资源来设置本地值，优先级列表中的每个操作都认为本地值已设置，如果设置了一个新本地值，绑定或资源引用将被清除。
@@ -113,9 +113,9 @@ public bool IsSpinning
 
 对于一个动画属性，如果该动画没有显式指定 **From** 和 **To**，或如果动画在完成时将属性恢复到基值，那么基值仍然会影响动画的行为。 在这些情况下，一旦动画停止运行，便会再次使用余下的优先级。
 
-但是，如果动画为HoldEnd[**行为指定了**To](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior)，则在动画被删除以前，它可以一直替代本地值，甚至当动画在视觉上看似已经停止时也是如此。 从概念上来说，这类似于永久运行的动画，即使在 UI 中没有可视动画时也是如此。
+但是，如果动画为 [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) 行为指定了 **To**，则在动画被删除以前，它可以一直替代本地值，甚至当动画在视觉上看似已经停止时也是如此。 从概念上来说，这类似于永久运行的动画，即使在 UI 中没有可视动画时也是如此。
 
-可将多个动画应用于一个属性。 这其中每个动画都可能经过定义，以替换来自值优先级中不同点的基值。 但是，在运行时这些动画将同时运行，这通常意味着动画必须将它们的值组合起来，因为每个动画对值都具有同等的影响。 这取决于定义动画的方式和动画值的类型。
+可将多个动画应用于一个属性。 这其中每个动画都可能经过定义，以替换来自值优先级中不同点的基值。 但是，在运行时这些动画将同时运行，这通常意味着动画必须将它们的值组合起来，因为每个动画对值都具有同等的影响。 这完全取决于动画的定义方式以及进行动画处理的值类型。
 
 有关详细信息，请参阅[情节提要动画](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)。
 
@@ -129,16 +129,16 @@ public bool IsSpinning
 - 使用数字或布尔值（一种*值类型*）等基值的属性会使用预期的默认值作为该值。 例如，使用 0 作为整数和浮点数，使用 **false** 作为布尔值。
 - 使用 Windows 运行时结构的属性通过调用该结构的隐式默认构造函数获得默认值。 该构造函数会在结构中的每一个基值字段中使用默认值。 例如，[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 值的默认值会通过其 **X** 和 **Y** 值初始化为 0。
 - 使用枚举的属性以该枚举中首个定义成员的值为默认值。 检查特定枚举的引用，以查明默认值。
-- 使用字符串的属性（用于 .NET 的 [**System.String**](https://docs.microsoft.com/dotnet/api/system.string)，用于 C++/CX 的 [**Platform::String**](https://docs.microsoft.com/cpp/cppcx/platform-string-class)）以空字符串 ( **""** ) 为默认值。
+- 使用字符串的属性（用于 .NET 的 [**System.String**](https://docs.microsoft.com/dotnet/api/system.string)，用于 C++/CX 的 [**Platform::String**](https://docs.microsoft.com/cpp/cppcx/platform-string-class)）以空字符串 (**""**) 为默认值。
 - 集合属性通常不会实现为依赖属性，本主题进一步讨论了其原因。 但是如果你实现了自定义集合属性，并且你希望使其成为依赖属性，请避免*意外的 singleton*，如[自定义依赖属性](custom-dependency-properties.md)结尾部分所述。
 
-## <a name="property-functionality-provided-by-a-dependency-property"></a>依赖属性提供的属性功能
+## <a name="property-functionality-provided-by-a-dependency-property"></a>由依赖属性提供的属性功能
 
 ### <a name="data-binding"></a>数据绑定
 
 依赖属性可使它的值通过应用数据绑定进行设置。 数据绑定使用 XAML 中的 [{Binding} 标记扩展](binding-markup-extension.md)语法、[{x:Bind} 标记扩展](x-bind-markup-extension.md)或代码中的 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.Binding) 类。 对于数据绑定属性，其属性值的最终确定要延迟到运行时。 届时，将从数据源中获取值。 依赖属性系统在这里所起到的作用是在值还未知时为诸如加载 XAML 等操作启用占位符行为，然后在运行时通过与 Windows 运行时数据绑定引擎交互来提供值。
 
-以下示例使用 XAML 中的绑定设置 [**TextBlock**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 元素的 [**Text**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 值。 该绑定使用继承的数据上下文和对象数据源。 （这个简短示例中没有展示这些方面；有关展示上下文和来源的更完整示例，请参阅[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。）
+以下示例使用 XAML 中的绑定设置 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素的 [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 值。 该绑定使用继承的数据上下文和对象数据源。 （这个简短示例中没有展示这些方面；有关展示上下文和来源的更完整示例，请参阅[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。）
 
 ```xaml
 <Canvas>
@@ -159,14 +159,14 @@ public bool IsSpinning
 
 对于代码或 XAML，请记住 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 是一个 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 属性。 通过使用一种父子属性继承的形式（通常在 XAML 标记中建立），绑定系统可解析父元素上存在的 **DataContext**。 即使子对象（具有目标属性）不是 **FrameworkElement** 并且因此没有自身的 **DataContext** 值，此继承也可以进行评估。 但是，所继承的父元素必须是一个 **FrameworkElement**，才能设置和具有 **DataContext**。 否则，你必须定义绑定，这样它才可以使用 **DataContext** 的 **null** 值。
 
-对于大部分数据绑定方案，连接绑定并不是唯一需要的。 要让单向或双向绑定生效，来源属性必须支持能够传播到绑定系统并进而传播到目标的更改通知。 对于自定义绑定源，这意味着该属性必须是依赖属性，或者该对象必须支持 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged)。 集合应支持 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged)。 某些类在其实现中支持这些接口，以便它们可在数据绑定方案中用作基类；这种类的一个示例是 [**ObservableCollection&lt;T&gt;** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)。 有关数据绑定和数据绑定与属性系统之间关系的详细信息，请参阅[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
+对于大部分数据绑定方案，连接绑定并不是唯一需要的。 要让单向或双向绑定生效，来源属性必须支持能够传播到绑定系统并进而传播到目标的更改通知。 对于自定义绑定源，这意味着该属性必须是依赖属性，或者该对象必须支持 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged)。 集合应支持 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged)。 某些类在其实现中支持这些接口，以便它们可在数据绑定方案中用作基类；这种类的一个示例是 [**ObservableCollection&lt;T&gt;**](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)。 有关数据绑定和数据绑定与属性系统之间关系的详细信息，请参阅[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
 
 > [!NOTE]
 > 此处列出的类型支持 Microsoft .NET 数据源。 C++/CX 数据源可针对更改通知或可观察行为使用不同的接口，请参阅[深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)。
 
 ### <a name="styles-and-templates"></a>样式和模板
 
-样式和模板是两种将属性定义为依赖属性的场景。 样式对设置可定义应用 UI 的属性非常有用。 样式在 XAML 中定义为资源，作为 [**Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 集合中的一个条目，或者 XAML 文件（如主题资源字典）中的一个条目。 样式与属性系统交互，因为它们包含属性的资源库。 此处最重要的属性是 [**Control**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template) 的 [**Control.Template**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 属性：它定义 **Control** 的大部分可视外观和视觉状态。 有关样式和定义一个 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 并使用资源库的某些示例 XAML 的详细信息，请参阅[设置控件样式](https://docs.microsoft.com/windows/uwp/controls-and-patterns/styling-controls)。
+样式和模板是两种将属性定义为依赖属性的场景。 样式对设置可定义应用 UI 的属性非常有用。 样式在 XAML 中定义为资源，作为 [**Resources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 集合中的一个条目，或者 XAML 文件（如主题资源字典）中的一个条目。 样式与属性系统交互，因为它们包含属性的资源库。 此处最重要的属性是 [**Control**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 的 [**Control.Template**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template) 属性：它定义 **Control** 的大部分可视外观和视觉状态。 有关样式和定义一个 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 并使用资源库的某些示例 XAML 的详细信息，请参阅[设置控件样式](https://docs.microsoft.com/windows/uwp/controls-and-patterns/styling-controls)。
 
 来自样式或模板的值是延迟值，类似于绑定。 这样，控件用户可以重新创建控件模板或重新定义样式。 正因如此，样式中的属性设置器才只根据依赖属性（而非普通属性）来执行。
 
@@ -174,7 +174,7 @@ public bool IsSpinning
 
 你可以使用情节提要动画对依赖属性的值进行动画处理。 Windows 运行时中的情节提要动画不仅仅是视觉装饰。 更有用的做法是将动画视为一种状态机技术，你可以通过该技术设置单个属性或所有属性的值以及控件的视觉效果，并可在日后更改这些值。
 
-若要创建动画，动画的目标属性必须是一个依赖属性。 此外，若要创建动画，目标属性的值类型必须受现有 [**Timeline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline) 派生的动画类型之一支持。 [  **Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)、[**Double**](https://docs.microsoft.com/dotnet/api/system.double) 和 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 的值可使用内插或关键帧技术实现动画效果。 大部分其他值都可以使用离散式 **Object** 关键帧实现动画效果。
+若要创建动画，动画的目标属性必须是一个依赖属性。 此外，若要创建动画，目标属性的值类型必须受现有 [**Timeline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline) 派生的动画类型之一支持。 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color)、[**Double**](https://docs.microsoft.com/dotnet/api/system.double) 和 [**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 的值可使用内插或关键帧技术实现动画效果。 大部分其他值都可以使用离散式 **Object** 关键帧实现动画效果。
 
 当应用并运行一个动画时，动画值操作的优先级比该属性使用的任何其他值（例如本地值）更高。 动画还有一个可选的 [**HoldEnd**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior) 行为，该行为可能导致动画应用于属性值，即使动画在视觉上已停止也是如此。
 
@@ -194,9 +194,9 @@ Windows 10 引入了 [**RegisterPropertyChangedCallback**](https://docs.microsof
 
 ## <a name="dependencyobject-and-threading"></a>**DependencyObject** 和线程处理
 
-所有 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 实例都必须在与 Windows 运行时应用所显示的当前 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 相关联的 UI 线程上创建。 虽然每个 **DependencyObject** 都必须在主 UI 线程上创建，但可以通过访问 [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) 属性从其他线程使用调度程序引用来访问这些对象。 然后，你可以在 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 对象上调用诸如 [**RunAsync**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 的方法，并在 UI 线程上遵循线程限制规则执行你的代码。
+所有 [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 实例都必须在与 Windows 运行时应用所显示的当前 [**Window**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 相关联的 UI 线程上创建。 虽然每个 **DependencyObject** 都必须在主 UI 线程上创建，但可以通过访问 [**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) 属性从其他线程使用调度程序引用来访问这些对象。 然后，你可以在 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 对象上调用诸如 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 的方法，并在 UI 线程上遵循线程限制规则执行你的代码。
 
-[  **DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 的线程处理特性很重要，因为这通常意味着只有那些在 UI 线程上运行的代码才能更改或读取依赖属性的值。 在正确使用 **async** 模式和后台工作线程的典型 UI 代码中，通常可以避免线程处理问题。 通常，如果你定义自己的 **DependencyObject** 类型并尝试将这些类型用于 **DependencyObject** 未必适宜的数据源或其他场方案，只会遇到与 **DependencyObject** 相关的线程处理问题。
+[**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) 的线程处理特性很重要，因为这通常意味着只有那些在 UI 线程上运行的代码才能更改或读取依赖属性的值。 在正确使用 **async** 模式和后台工作线程的典型 UI 代码中，通常可以避免线程处理问题。 通常，如果你定义自己的 **DependencyObject** 类型并尝试将这些类型用于 **DependencyObject** 未必适宜的数据源或其他场方案，只会遇到与 **DependencyObject** 相关的线程处理问题。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -205,12 +205,12 @@ Windows 10 引入了 [**RegisterPropertyChangedCallback**](https://docs.microsof
 - [自定义依赖属性](custom-dependency-properties.md)
 - [附加属性概述](attached-properties-overview.md)
 - [深入了解数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
-- [Storyboarded 动画](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
+- [情节提要动画](https://docs.microsoft.com/windows/uwp/graphics/storyboarded-animations)
 - [创建 Windows 运行时组件](https://docs.microsoft.com/previous-versions/windows/apps/hh441572(v=vs.140))
-- [XAML 用户控件和自定义控件示例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [XAML 用户和自定义控件示例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
 
 ## <a name="apis-related-to-dependency-properties"></a>与依赖项属性相关的 Api
 
-- [**System.windows.dependencyobject>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)
-- [**System.windows.dependencyproperty>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)
+- [**DependencyObject**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject)
+- [**DependencyProperty**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty)
 
