@@ -1,26 +1,31 @@
 ---
 title: 蓝牙广告
 description: 本部分包含有关如何通过 AdvertisementWatcher 和 AdvertisementPublisher API 的用户将蓝牙低功耗 (LE) 广告集成到通用 Windows 平台 (UWP) 应用的文章。
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c4bef6045f75992e0fad503ff2a357d52363008
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2300871292e08588b0c2124c67a379d403ae53b3
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259689"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469522"
 ---
 # <a name="bluetooth-le-advertisements"></a>蓝牙低能耗广告
 
 
 **重要的 API**
 
--   [**Windows。** ](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
+-   [**Windows.Devices.Bluetooth.Advertisement**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement)
 
 本文概述了适用于通用 Windows 平台 (UWP) 应用的低功耗 (LE) 蓝牙广告信标。  
+
+> [!Important]
+> 必须在*appxmanifest.xml*中声明 "蓝牙" 功能。
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 ## <a name="overview"></a>概述
 
@@ -43,7 +48,7 @@ Github 上的[蓝牙广告示例](https://github.com/Microsoft/Windows-universal
 
 蓝牙 LE 广告允许你的设备不断以信标方式发出特定负载，称为广告。 如果任何附近支持蓝牙 LE 的设备都设置为侦听此特定广告，则这些设备可以看到此广告。
 
-> **注意**：出于用户隐私，广告的生命周期被绑定到应用的生命周期。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**：对于用户隐私，播发的生存期与你的应用程序的生存期相关联。 你可以创建 BluetoothLEAdvertisementPublisher，并在后台任务中为后台广告调用“开始”。 有关后台任务的详细信息，请参阅[启动、恢复和后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本发布
 
@@ -73,7 +78,7 @@ manufacturerData.Data = writer.DetachBuffer();
 publisher.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-现在，已创建和设置了发布者，你可以调用**开始**来开始发布广告。
+现在，已创建并设置了发布者，接下来可以**开始播发**。
 
 ```csharp
 publisher.Start();

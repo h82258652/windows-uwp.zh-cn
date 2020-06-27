@@ -1,16 +1,16 @@
 ---
 title: 蓝牙 GATT 客户端
 description: 本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性配置文件 (GATT) 客户端概述，以及用于常见用例的示例代码。
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e894b750ba2119e2cca6f316f9671c51386d800c
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 5c17351cf964ffb05dc60dbaf5c6ced1db467f78
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854673"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469532"
 ---
 # <a name="bluetooth-gatt-client"></a>蓝牙 GATT 客户端
 
@@ -21,6 +21,11 @@ ms.locfileid: "83854673"
 - 枚举设备的受支持服务和特征
 - 读取和写入特征
 - 订阅特征值更改时的通知
+
+> [!Important]
+> 必须在*appxmanifest.xml*中声明 "蓝牙" 功能。
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 > **重要的 API**
 >
@@ -196,7 +201,7 @@ if (result == GattCommunicationStatus.Success)
 - 写入客户端特征配置描述符 (CCCD)
 - 处理 Characteristic.ValueChanged 事件
 
-写入 CCCD 可向服务器设备告知此客户端要在该特定特征值每次更改时收到通知。 若要实现此目的，请执行以下操作：
+写入 CCCD 可向服务器设备告知此客户端要在该特定特征值每次更改时收到通知。 为此，请按以下步骤操作：
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(

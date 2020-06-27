@@ -1,40 +1,45 @@
 ---
 title: 蓝牙 GATT 服务器
 description: 本文提供用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性配置文件 (GATT) 服务器概述，以及用于常见用例的示例代码。
-ms.date: 02/08/2017
+ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cded3ee7fb2cc3157caa61939e022c3869f5232
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 65a4643e6a73e0eb015fc40c7354d0cd307fa0d1
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282367"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469542"
 ---
 # <a name="bluetooth-gatt-server"></a>蓝牙 GATT 服务器
 
+本文演示用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性 (GATT) 服务器 API 的用法，以及用于常见 GATT 服务器任务的示例代码：
 
-**重要的 API**
-- [**Windows. 蓝牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Bluetooth.genericattributeprofile 替换。** ](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
-
-
-本文演示用于通用 Windows 平台 (UWP) 应用的蓝牙通用属性 (GATT) 服务器 API 的用法，以及用于常见 GATT 服务器任务的示例代码： 
 - 定义支持的服务
 - 发布服务器，以便远程客户端可以它
 - 播发服务支持
 - 响应读取和写入请求
 - 向订阅的客户端发送通知
 
+> [!Important]
+> 必须在*appxmanifest.xml*中声明 "蓝牙" 功能。
+>
+> `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
+
+**重要的 API**
+
+- [**Windows. 蓝牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
+- [**Bluetooth.genericattributeprofile 替换。**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+
 ## <a name="overview"></a>概述
+
 Windows 通常采用客户端角色进行操作。 不过在许多方案中，也会要求 Windows 充当蓝牙 LE GATT 服务器。 针对 IoT 设备的几乎所有方案以及大多数跨平台 BLE 通信都要求 Windows 作为 GATT 服务器。 此外，向附近可穿戴设备发送通知也已成功需要此技术的常见方案。  
-> 在继续之前确保清楚了解 [GATT 客户端文档](gatt-client.md)中的所有概念。  
 
 服务器操作会围绕服务提供程序和 GattLocalCharacteristic 进行。 这两个类将提供声明、实现数据层次结构并将其公开到远程设备所需的功能。
 
 ## <a name="define-the-supported-services"></a>定义支持的服务
-应用可以声明将由 Windows 发布的一个或多个服务。 每个服务都通过 UUID 唯一地进行标识。 
+应用可以声明将由 Windows 发布的一个或多个服务。 每个服务都通过 UUID 唯一地进行标识。
 
 ### <a name="attributes-and-uuids"></a>属性和 UUID
 每个服务、特征和描述符都通过自己的唯一 128 位 UUID 进行定义。
@@ -144,8 +149,8 @@ GattServiceProviderAdvertisingParameters advParameters = new GattServiceProvider
 };
 serviceProvider.StartAdvertising(advParameters);
 ```
-- **IsDiscoverable**：将友好名称公布到播发中的远程设备，使设备可发现。
-- **IsConnectable**：公布用于外围角色的可连接播发。
+- **IsDiscoverable**：在播发中将友好名称播发到远程设备，从而使设备可发现。
+- **IsConnectable**：播发可连接的播发以便在外围角色中使用。
 
 > 当服务 Discoverable 且 Connectable 时，系统会将服务 Uuid 添加到播发数据包。  播发数据包中只有 31 个字节，128 位 UUID 会占用其中的 16 个字节！
 
@@ -154,7 +159,7 @@ serviceProvider.StartAdvertising(advParameters);
 ## <a name="respond-to-read-and-write-requests"></a>响应读取和写入请求
 正如我们上面在声明必需特征时所看到的那样，GattLocalCharacteristics 具有 3 种类型的事件，即 ReadRequested、WriteRequested 和 SubscribedClientsChanged。
 
-### <a name="read"></a>Read
+### <a name="read"></a>读取
 当远程设备尝试从特征读取值（并且它不是常数值）时，会调用 ReadRequested 事件。 对其调用读取的特征以及参数（包含有关远程设备的信息）会传递到委托： 
 
 ```csharp

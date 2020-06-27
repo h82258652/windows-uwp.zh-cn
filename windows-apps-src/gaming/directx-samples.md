@@ -6,36 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx, 示例, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d31c6e5b7307c7d93d7c06a0c4ae915ea788655
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 94c8b8051211d5f29bc32215b75d49e41feee713
+ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57618712"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85409526"
 ---
 # <a name="directx-samples"></a>DirectX 示例
 
 以下是用 DirectX 开发的部分游戏示例。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">主题</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p><a href="tutorial--create-your-first-uwp-directx-game.md">使用 DirectX 创建简单的 UWP 游戏</a></p></td>
-<td align="left"><p>使用 DirectX 和 C++创建基本的通用 Windows 平台 (UWP) 游戏 本套教程重点介绍了主要 UWP DirectX 游戏的开发技术和注意事项。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p><a href="developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md">开发 c + + 和 DirectX 中通用 Windows 平台游戏 Marble Maze</a></p></td>
-<td align="left"><p>创建可在各类设备（如平板电脑、台式机或笔记本电脑）上运行的 3D 游戏。</p></td>
-</tr>
-</tbody>
-</table>
+|主题|说明|
+|-|-|
+|[使用 DirectX 创建一款简单的 UWP 游戏](tutorial--create-your-first-uwp-directx-game.md)|在此教程集中，你将学习如何使用 DirectX 和[c + +/WinRT](/windows/uwp/cpp-and-winrt-apis/)创建名为**Simple3DGameDX**的基本通用 Windows 平台（UWP）示例游戏。 本套教程重点介绍了主要 UWP DirectX 游戏的开发技术和注意事项。|
+|[开发*大理石迷宫* &mdash; a 使用 c + + 生成的用于 DirectX 的通用 Windows 平台（UWP）游戏](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)|创建适用于各种类型的设备（例如平板电脑、台式 Pc 和便携式计算机）的3D 游戏。|
