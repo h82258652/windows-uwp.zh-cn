@@ -93,7 +93,7 @@
           items:
             - name: 设置项目
               href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
-            - name: UWP 框架
+            - name: UWP 应用框架
               href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
             - name: 游戏流管理
               href: ../gaming/tutorial-game-flow-management.md
@@ -173,7 +173,7 @@
               href: ../graphics-concepts/introduction-to-buffers.md
             - name: 索引缓冲区
               href: ../graphics-concepts/index-buffers.md
-        - name: 资源协议转换请求
+        - name: 设备
           href: ../graphics-concepts/devices.md
           items:
             - name: 设备类型

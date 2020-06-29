@@ -3,12 +3,12 @@ title: WinUI 3.0 预览版 1（2020 年 5 月）
 description: 概述 WinUI 3.0 预览版。
 ms.date: 05/14/2020
 ms.topic: article
-ms.openlocfilehash: 3aac14807f8455eb9a9294c40ddc76ddfa224659
-ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
+ms.openlocfilehash: cbf61c618685501957e7dec081ae132995f15df5
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83688485"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448377"
 ---
 # <a name="windows-ui-library-30-preview-1-may-2020"></a>Windows UI 库 3.0 预览版 1（2020 年 5 月）
 
@@ -109,6 +109,7 @@ WinUI 3.0 预览版 1 与运行 Windows 10 2018 年 4 月更新（版本 1803 - 
 
 ### <a name="developer-tools"></a>开发人员工具
 
+- 目前仅支持 C# 和 C++/WinRT 应用
 - 桌面应用支持 .NET 5 和 C# 8，并且必须打包。
 - UWP 应用支持 .NET Native 和 C# 7.3
 - Intellisense 不完整
