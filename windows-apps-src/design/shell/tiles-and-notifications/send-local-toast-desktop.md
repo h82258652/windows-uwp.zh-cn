@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: 'windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf'
 ms.localizationpriority: medium
-ms.openlocfilehash: 679254aa35ea49e72f7feaae02ba0ccbddeafdad
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 1d8332745b44bc688fbf2ca7cf3b42cf7300d579
+ms.sourcegitcommit: 179f8098d10e338ad34fa84934f1654ec58161cd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233663"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85717641"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
@@ -23,19 +23,14 @@ ms.locfileid: "83233663"
 > 如果要编写 UWP 应用，请参阅 [UWP 文档](send-local-toast.md)。 有关其他桌面语言，请参阅[桌面 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
 
 
-## <a name="step-1-enable-the-windows-runtime-apis"></a>步骤1：启用 Windows 运行时 Api
+## <a name="step-1-install-the-notifications-library"></a>步骤1：安装通知库
 
-如果你尚未从 Win32 应用程序中引用 Windows 运行时 Api，则必须先执行该操作。
+`Microsoft.Toolkit.Uwp.Notifications`在项目中安装[NuGet 包](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。
 
-只需 `Microsoft.Windows.SDK.Contracts` 在项目中安装[NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts)。 详细了解如何[在此处启用 Windows 运行时 api](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)。
-
-
-## <a name="step-2-copy-compat-library-code"></a>步骤 2：复制兼容库代码
-
-将 [GitHub 中的 DesktopNotificationManagerCompat.cs 文件](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs)复制到项目中。 兼容库很大程度上简化了桌面通知的复杂程度。 以下指令需用到兼容库。
+此[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)添加了兼容的库代码，用于从桌面应用程序中使用 toast 通知。 它还引用 UWP Sdk，允许使用 c # 而不是原始 XML 来构造通知。 此快速入门的其余部分取决于通知库。
 
 
-## <a name="step-3-implement-the-activator"></a>步骤3：实现激活器
+## <a name="step-2-implement-the-activator"></a>步骤2：实现激活器
 
 必须实现用于 toast 激活的处理程序，以便在用户单击 toast 时，应用程序可以执行一些操作。 这就要求将 toast 保留在操作中心内（因为 toast 可能会在应用关闭几天后被单击）。 可将此类置于项目中的任何位置。
 
@@ -58,7 +53,7 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 
-## <a name="step-4-register-with-notification-platform"></a>步骤4：注册到通知平台
+## <a name="step-3-register-with-notification-platform"></a>步骤3：注册到通知平台
 
 然后，必须注册通知平台。 具体步骤取决于你使用的是 .MSIX/稀疏包还是经典 Win32。 如果两者都支持，用于这两者的步骤均需执行（但无需对代码实施分支操作，库会自行执行此操作！）。
 
@@ -115,7 +110,7 @@ public class MyNotificationActivator : NotificationActivator
 
 选取用于识别 Win32 应用的唯一 AUMID。 通常采用 [CompanyName].[AppName] 的形式，但需确保它在所有应用中均为唯一（可根据需要在末尾添加一些数字）。
 
-#### <a name="step-41-wix-installer"></a>步骤4.1： WiX 安装程序
+#### <a name="step-31-wix-installer"></a>步骤3.1： WiX 安装程序
 
 如果对安装程序使用 WiX，则编辑 **Product.wxs** 文件，将两种快捷方式属性添加到“开始”菜单快捷方式中，如下所示。 请确保步骤 #3 的 GUID 包括在中， `{}` 如下所示。
 
@@ -137,7 +132,7 @@ public class MyNotificationActivator : NotificationActivator
 > 为使用通知，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 
 
-#### <a name="step-42-register-aumid-and-com-server"></a>步骤4.2：注册 AUMID 和 COM 服务器
+#### <a name="step-32-register-aumid-and-com-server"></a>步骤3.2：注册 AUMID 和 COM 服务器
 
 然后，无论你的安装程序在你的应用程序的启动代码中（在调用任何通知 Api 之前），请调用**RegisterAumidAndComServer**方法，并指定你的 notification activator 类（从步骤 #3 和你上面使用的 AUMID）。
 
@@ -151,7 +146,7 @@ DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivat
 使用此方法可调用兼容 API 来发送和管理通知，而无需总是提供 AUMID。 并且它会插入 COM 服务器的 LocalServer32 注册表项。
 
 
-## <a name="step-5-register-com-activator"></a>步骤5：注册 COM 激活器
+## <a name="step-4-register-com-activator"></a>步骤4：注册 COM 激活器
 
 对于 .MSIX/稀疏包和经典 Win32 应用，必须注册 notification activator 类型，以便可以处理 toast 激活。
 
@@ -163,7 +158,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 ```
 
 
-## <a name="step-6-send-a-notification"></a>步骤6：发送通知
+## <a name="step-5-send-a-notification"></a>步骤5：发送通知
 
 发送通知与在 UWP 应用中的操作几乎相同，不同之处在于需使用 **DesktopNotificationManagerCompat** 类创建 **ToastNotifier**。 兼容库自动处理 .MSIX/稀疏包和经典 Win32 之间的差异，因此你无需分叉你的代码。 对于经典 Win32，兼容库会缓存调用 **RegisterAumidAndComServer** 时提供的 AUMID，因此无需担心何时提供或不提供 AUMID 的问题。
 
@@ -177,32 +172,13 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 
 ```csharp
 // Construct the visuals of the toast (using Notifications library)
-ToastContent toastContent = new ToastContent()
-{
-    // Arguments when the user taps body of toast
-    Launch = "action=viewConversation&conversationId=5",
-
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Hello world!"
-                }
-            }
-        }
-    }
-};
-
-// Create the XML document (BE SURE TO REFERENCE WINDOWS.DATA.XML.DOM)
-var doc = new XmlDocument();
-doc.LoadXml(toastContent.GetContent());
+ToastContent toastContent = new ToastContentBuilder()
+    .AddToastActivationInfo("action=viewConversation&conversationId=5", ToastActivationType.Foreground)
+    .AddText("Hello world!")
+    .GetToastContent();
 
 // And create the toast notification
-var toast = new ToastNotification(doc);
+var toast = new ToastNotification(toastContent.GetXml());
 
 // And then show it
 DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
@@ -212,7 +188,7 @@ DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 > 经典 Win32 应用无法使用旧版 Toast 模板（例如 ToastText02）。 当指定 COM CLSID 时，激活旧版模板将失败。 必须使用 Windows 10 ToastGeneric 模板，如上所示。
 
 
-## <a name="step-7-handling-activation"></a>步骤7：处理激活
+## <a name="step-6-handling-activation"></a>步骤6：处理激活
 
 用户单击 toast 时，将调用 **NotificationActivator** 类的 **OnActivated** 方法。
 
@@ -345,7 +321,7 @@ protected override async void OnStartup(StartupEventArgs e)
 对于桌面应用，前台和后台激活的处理方式相同 - 即调用 COM 激活器。 是由应用的代码来决定是显示一个窗口，还是只执行一些操作后退出。 因此，在 toast 内容中指定**背景** **ActivationType**不会更改行为。
 
 
-## <a name="step-8-remove-and-manage-notifications"></a>步骤8：删除和管理通知
+## <a name="step-7-remove-and-manage-notifications"></a>步骤7：删除和管理通知
 
 删除和管理通知与 UWP 应用中的操作相同。 但是，建议使用兼容库来获取 **DesktopNotificationHistoryCompat**，这样如果使用经典 Win32，便无需担心提供 AUMID 的问题。
 
@@ -358,7 +334,7 @@ DesktopNotificationManagerCompat.History.Clear();
 ```
 
 
-## <a name="step-9-deploying-and-debugging"></a>步骤9：部署和调试
+## <a name="step-8-deploying-and-debugging"></a>步骤8：部署和调试
 
 若要部署和调试 .MSIX 应用，请参阅[运行、调试和测试打包的桌面应用](/windows/uwp/porting/desktop-to-uwp-debug)。
 
