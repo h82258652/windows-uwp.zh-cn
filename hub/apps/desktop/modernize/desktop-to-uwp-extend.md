@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a38f5fa7f3ef99f5970ec5d476fb65761aa39db4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 73e867071058dfde71979318d6d711d79460f30b
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302581"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334556"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用新式 UWP 组件扩展桌面应用
 
@@ -25,7 +25,7 @@ ms.locfileid: "75302581"
 
 如果你准备好了，那我们就开始吧。
 
-<a id="setup" />
+<a id="setup"></a>
 
 ## <a name="first-setup-your-solution"></a>首先，设置你的解决方案
 
@@ -110,7 +110,7 @@ ms.locfileid: "75302581"
 
 :five:[在 UWP 项目中，显示所需页面](#parse)
 
-<a id="solution-setup" />
+<a id="solution-setup"></a>
 
 ### <a name="setup-your-solution"></a>设置解决方案
 
@@ -122,7 +122,7 @@ ms.locfileid: "75302581"
 
 在该示例中，Windows 窗体项目被命名为“Landmarks”  ，包含 XAML UI 的 UWP 项目被命名为“MapUI”  。
 
-<a id="xaml-UI" />
+<a id="xaml-UI"></a>
 
 ### <a name="create-a-xaml-ui"></a>创建 XAML UI
 
@@ -171,7 +171,7 @@ ms.locfileid: "75302581"
 > [!NOTE]
 > 地图控件可从 Internet 下载数据，因此如果你使用一个地图控件，则还必须要向清单中添加“Internet 客户端”功能。
 
-<a id="start" />
+<a id="start"></a>
 
 ### <a name="start-the-uwp-app"></a>启动 UWP 应用
 
@@ -196,11 +196,11 @@ private async void ShowMap(double lat, double lon)
 }
 ```
 
-<a id="parse" />
+<a id="parse"></a>
 
 ### <a name="parse-parameters-and-show-a-page"></a>分析参数并显示页面
 
-在 UWP 项目的 App 类中，替代 OnActivated 事件处理程序。如果应用已通过协议激活，则分析参数并打开所需页面。
+在 UWP 项目的“应用”  类中，覆盖 OnActivated  事件处理程序。 如果应用已通过协议激活，则分析参数并打开所需页面。
 
 ```csharp
 protected override void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs e)
@@ -271,7 +271,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 :five:[修改桌面应用程序以获取共享文件](#modify-desktop)
 
-<a id="share-extension" />
+<a id="share-extension"></a>
 
 具体步骤如下  
 
@@ -299,11 +299,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 你还需要指定可与你的应用共享的文件类型。 在此示例中，我们将 [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) 桌面应用程序作为位图图像的共享目标，因此对于支持的文件类型，我们指定 `Bitmap`。
 
-<a id="override" />
+<a id="override"></a>
 
 ### <a name="override-the-onsharetargetactivated-event-handler"></a>覆盖 OnShareTargetActivated 事件处理程序
 
-在 UWP 项目的 App 类中，替代 OnShareTargetActivated 事件处理程序。
+在 UWP 项目的“应用”  类中，覆盖 OnShareTargetActivated  事件处理程序。
 
 此事件处理程序会在用户选择你的应用来共享他们的文件时被调用。
 
@@ -332,7 +332,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 在本代码中，我们将用户正在共享的图像保存到应用的本地存储文件夹中。 稍后，我们将修改桌面应用程序以从同一文件夹中拉取图像。 由于桌面应用程序包含在 UWP 应用所在的同一包中，因此可以执行此操作。
 
-<a id="desktop-extensions" />
+<a id="desktop-extensions"></a>
 
 ### <a name="add-desktop-extensions-to-the-uwp-project"></a>将桌面扩展添加到 UWP 项目
 
@@ -340,7 +340,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ![桌面扩展](images/desktop-to-uwp/desktop-extensions.png)
 
-<a id="full-trust" />
+<a id="full-trust"></a>
 
 ### <a name="add-the-full-trust-process-extension"></a>添加完全信任的进程扩展
 
@@ -356,7 +356,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 此扩展将允许 UWP 应用启动你要与之共享文件的桌面应用程序。 在本例中，我们引用 [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo) 桌面应用程序的可执行文件。
 
-<a id="modify-desktop" />
+<a id="modify-desktop"></a>
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改桌面应用程序以获取共享文件
 
@@ -414,7 +414,7 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 :three:[注册后台任务](#register-background-task)
 
-<a id="implement-task" />
+<a id="implement-task"></a>
 
 ### <a name="implement-the-background-task"></a>实施后台任务
 
@@ -455,7 +455,7 @@ public sealed class SiteVerifier : IBackgroundTask
     }
 ```
 
-<a id="configure-background-task" />
+<a id="configure-background-task"></a>
 
 ### <a name="configure-the-background-task"></a>配置后台任务
 
@@ -473,7 +473,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ![Timer 属性](images/desktop-to-uwp/background-task-entry-point.png)
 
-<a id="register-background-task" />
+<a id="register-background-task"></a>
 
 ### <a name="register-the-background-task"></a>注册后台任务
 
