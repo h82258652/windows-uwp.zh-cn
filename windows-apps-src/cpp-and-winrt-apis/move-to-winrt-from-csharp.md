@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 38ad2d4f2b0af65424e6d9fa50f2c21b626e1914
-ms.sourcegitcommit: 3125d5e2e32831481790266f44967851585888b3
+ms.openlocfilehash: 21032a99c389e968728fe2dac2875475efc351c4
+ms.sourcegitcommit: 379fd00bfcc6c5f1e3c7e379a367b08641a7f961
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84172828"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84819013"
 ---
 # <a name="move-to-cwinrt-from-c"></a>从 C# 移动到 C++/WinRT
 
@@ -24,14 +24,14 @@ ms.locfileid: "84172828"
 
 在所需的移植更改的类型方面，可以将其分组为四个类别。
 
-- [**移植语言投影**](#port-the-language-projection)。 Windows 运行时 (WinRT) 已*投影*到各种编程语言。 其中的每个语言投影均已设计为符合所涉及的编程语言的语言习惯。 对于 C#，某些 Windows 运行时类型被投影为 .NET 类型。 因此例如，你会将 [System.Collections.Generic.IReadOnlyList\<T\>](/dotnet/api/system.collections.generic.ireadonlylist-1) 转换回 [Windows.Foundation.Collections.IVectorView\<T\>](/uwp/api/windows.foundation.collections.ivectorview-1) 。 此外，在 C# 中，某些 Windows 运行时操作也被投影为方便的 C# 语言功能。 例如，在 C# 中，可以使用 `+=` 运算符语法来注册事件处理委托。 因此，你将转换语言功能，例如，转换回要执行的基本操作（在本示例中为事件注册）。
-- [**移植语言语法**](#port-language-syntax)。 这些更改中的许多更改都是简单的机械转换（将一个符号替换为另一个符号）。 例如，将点 (`.`) 更改为双冒号 (`::`)。
-- [**移植语言过程**](#port-language-procedure)。 其中的一些可能是简单、重复的更改（例如 `myObject.MyProperty` 到 `myObject.MyProperty()`）。 其他移植则需要更深层次的更改（例如，将涉及使用 **System.Text.StringBuilder** 的过程迁移到涉及使用 **std::wostringstream** 的过程）。
+- [**移植语言投影**](#changes-that-involve-the-language-projection)。 Windows 运行时 (WinRT) 已*投影*到各种编程语言。 其中的每个语言投影均已设计为符合所涉及的编程语言的语言习惯。 对于 C#，某些 Windows 运行时类型被投影为 .NET 类型。 因此例如，你会将 [System.Collections.Generic.IReadOnlyList\<T\>](/dotnet/api/system.collections.generic.ireadonlylist-1) 转换回 [Windows.Foundation.Collections.IVectorView\<T\>](/uwp/api/windows.foundation.collections.ivectorview-1) 。 此外，在 C# 中，某些 Windows 运行时操作也被投影为方便的 C# 语言功能。 例如，在 C# 中，可以使用 `+=` 运算符语法来注册事件处理委托。 因此，你将转换语言功能，例如，转换回要执行的基本操作（在本示例中为事件注册）。
+- [**移植语言语法**](#changes-that-involve-the-language-syntax)。 这些更改中的许多更改都是简单的机械转换（将一个符号替换为另一个符号）。 例如，将点 (`.`) 更改为双冒号 (`::`)。
+- [**移植语言过程**](#changes-that-involve-procedures-within-the-language)。 其中的一些可能是简单、重复的更改（例如 `myObject.MyProperty` 到 `myObject.MyProperty()`）。 其他移植则需要更深层次的更改（例如，将涉及使用 **System.Text.StringBuilder** 的过程迁移到涉及使用 **std::wostringstream** 的过程）。
 - [**与移植相关且特定于 C++/WinRT 的任务**](#porting-related-tasks-that-are-specific-to-cwinrt)。 Windows 运行时的某些详细信息会在幕后由 C# 隐式处理。 这些详细信息在 C++/WinRT 中是显式处理的。 例如，使用 `.idl` 文件来定义运行时类。
 
 本主题的其余部分根据该分类进行组织。
 
-## <a name="port-the-language-projection"></a>移植语言投影
+## <a name="changes-that-involve-the-language-projection"></a>涉及语言投影的更改
 
 ||C#|C++/WinRT|另请参阅|
 |-|-|-|-|
@@ -39,7 +39,8 @@ ms.locfileid: "84172828"
 |投影命名空间|`using System;`|`using namespace Windows::Foundation;`||
 ||`using System.Collections.Generic;`|`using namespace Windows::Foundation::Collections;`||
 |集合大小|`collection.Count`|`collection.Size()`|[移植 **BuildClipboardFormatsOutputString** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
-|只读集合|[**IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1)|[移植 **BuildClipboardFormatsOutputString** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
+|典型集合类型|[IList\<T\>](/dotnet/api/system.collections.generic.ilist-1)，以及用用于添加元素的 Add 。|[IVector\<T\>](/uwp/api/windows.foundation.collections.ivector-1)，以及用于添加元素的 Append 。 如果在任意位置使用 std::vector，则通过 push_back 添加元素 。||
+|只读集合类型|[**IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1)|[移植 **BuildClipboardFormatsOutputString** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
 |作为类成员的事件处理程序委托|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[移植 **EnableClipboardContentChangedNotifications** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#enableclipboardcontentchangednotifications)|
 |撤销事件处理程序委托|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[移植 **EnableClipboardContentChangedNotifications** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#enableclipboardcontentchangednotifications)|
 |关联容器|[**IDictionary\<K, V\>** ](/dotnet/api/system.collections.generic.idictionary-2)|[**IMap\<K, V\>** ](/uwp/api/windows.foundation.collections.imap-2)||
@@ -104,27 +105,30 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 > [!NOTE]
 > 将函数声明为 `void`，即使你将它作为[发后不理](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget) (Fire and forget) 来实现也是如此。
 
-## <a name="port-language-syntax"></a>移植语言语法
+## <a name="changes-that-involve-the-language-syntax"></a>涉及语言语法的更改
 
 ||C#|C++/WinRT|另请参阅|
 |-|-|-|-|
 |访问修饰符|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[移植 **Button_Click** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#button_click)|
+|访问数据成员|`this.variable`|`this->variable`||
 |异步行为|`async Task ...`|`IAsyncAction ...`||
 |异步操作|`async Task<T> ...`|`IAsyncOperation<T> ...`||
 |“发后不理”方法（意味着异步）|`async void ...`|`winrt::fire_and_forget ...`|[移植 **CopyButton_Click** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
-|配合地等待|`await ...`|`co_await ...`|[移植 **CopyButton_Click** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
 |访问枚举常量|`E.Value`|`E::Value`|[移植 **DisplayChangedFormats** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats)|
+|配合地等待|`await ...`|`co_await ...`|[移植 **CopyButton_Click** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copybutton_click)|
+|作为私有字段的投影类型集合|`private List<MyRuntimeClass> myRuntimeClasses = new List<MyRuntimeClass>();`|`std::vector`<br>`<MyNamespace::MyRuntimeClass>`<br>`m_myRuntimeClasses;`||
+|GUID 构造|`private static readonly Guid myGuid = new Guid("C380465D-2271-428C-9B83-ECEA3B4A85C1");`|`winrt::guid myGuid{ 0xC380465D, 0x2271, 0x428C, { 0x9B, 0x83, 0xEC, 0xEA, 0x3B, 0x4A, 0x85, 0xC1} };`||
 |命名空间分隔符|`A.B.T`|`A::B::T`||
 |Null|`null`|`nullptr`|[移植 **UpdateStatus** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#updatestatus)|
+|获取类型对象|`typeof(MyType)`|`winrt::xaml_typename<MyType>()`|[移植 **Scenarios** 属性](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#scenarios)|
 |方法的参数声明|`MyType`|`MyType const&`|[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
 |异步方法的参数声明|`MyType`|`MyType`|[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
 |调用静态方法|`T.Method()`|`T::Method()`||
 |字符串|`string` 或 **System.String**|[winrt::hstring](/uw/cpp-ref-for-winrt/hstring)|[C++/WinRT 中的字符串处理](/windows/uwp/cpp-and-winrt-apis/strings)|
 |字符串文本|`"a string literal"`|`L"a string literal"`|[移植构造函数 **Current** 和 **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
-|原义/原始字符串文本|`@"verbatim string literal"`|`LR"(raw string literal)"`|[移植 **DisplayToast** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast)|
-|访问数据成员|`this.variable`|`this->variable`||
-|Using 指令|`using A.B.C;`|`using namespace A::B::C;`|[移植构造函数 **Current** 和 **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
 |推断（或推导）的类型|`var`|`auto`|[移植 **BuildClipboardFormatsOutputString** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)|
+|Using 指令|`using A.B.C;`|`using namespace A::B::C;`|[移植构造函数 **Current** 和 **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
+|原义/原始字符串文本|`@"verbatim string literal"`|`LR"(raw string literal)"`|[移植 **DisplayToast** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast)|
 
 > [!NOTE]
 > 如果头文件没有包含用于给定命名空间的 `using namespace` 指令，则必须完全限定该命名空间的所有类型名称；或者至少对它们进行充分限定，以使编译器可以找到它们。 有关示例，请参阅[移植 **DisplayToast** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp##displaytoast)。
@@ -145,7 +149,7 @@ C# 静态字段会成为 C++/WinRT 静态访问器和/或赋值函数。 有关�
 
 在[将 Clipboard 示例从 C# 移植到 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp)的案例中，我们能够在 C# 和 C++/WINRT 项目中使用相同的 XAML 标记（包括资源）和资产文件。 在某些情况下，需要编辑标记才能实现此目的。 请参阅[复制完成移植 **MainPage** 所需的 XAML 和样式](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
 
-## <a name="port-language-procedure"></a>移植语言过程
+## <a name="changes-that-involve-procedures-within-the-language"></a>涉及语言内过程的更改
 
 ||C#|C++/WinRT|另请参阅|
 |-|-|-|-|
@@ -168,13 +172,39 @@ C# 静态字段会成为 C++/WinRT 静态访问器和/或赋值函数。 有关�
 |字符串生成|`StringBuilder builder;`<br>`builder.Append(...);`|`std::wostringstream builder;`<br>`builder << ...;`|[字符串生成](#string-building)|
 |字符串内插|`$"{i++}) {s.Title}"`|[**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) 和/或 [**winrt::hstring::operator+** ](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)|[移植 **OnNavigatedTo** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#onnavigatedto)|
 |用于比较的空字符串|**System.String.Empty**|[**winrt::hstring::empty**](/uwp/cpp-ref-for-winrt/hstring#hstringempty-function)|[移植 **UpdateStatus** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#updatestatus)|
+|创建空字符串|`var myEmptyString = String.Empty;`|`winrt::hstring myEmptyString{ L"" };`||
 |字典操作|`map[k] = v; // replaces any existing`<br>`v = map[k]; // throws if not present`<br>`map.ContainsKey(k)`|`map.Insert(k, v); // replaces any existing`<br>`v = map.Lookup(k); // throws if not present`<br>`map.HasKey(k)`||
 |类型转换（失败时引发）|`(MyType)v`|`v.as<MyType>()`|[移植 **Footer_Click** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#footer_click)|
 |类型转换（失败时为 null）|`v as MyType`|`v.try_as<MyType>()`|[移植 **PasteButton_Click** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#pastebutton_click)|
 |具有 x:Name 的 XAML 元素是属性|`MyNamedElement`|`MyNamedElement()`|[移植构造函数 **Current** 和 **FEATURE_NAME**](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#the-constructor-current-and-feature_name)|
 |切换到 UI 线程|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync** 或 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[移植 **NotifyUser** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#notifyuser)以及[移植 **HistoryAndRoaming** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#historyandroaming)|
+|XAML 页的强制性代码中的 UI 元素构造|请参阅 [UI 元素构造](#ui-element-construction)|请参阅 [UI 元素构造](#ui-element-construction)||
 
 以下部分更详细地介绍了该表中的某些项。
+
+### <a name="ui-element-construction"></a>UI 元素构造
+
+这些代码示例演示了 XAML 页面的强制性代码中的 UI 元素构造。
+
+```csharp
+var myTextBlock = new TextBlock()
+{
+    Text = "Text",
+    Style = (Windows.UI.Xaml.Style)this.Resources["MyTextBlockStyle"]
+};
+```
+
+```cppwinrt
+TextBlock myTextBlock;
+myTextBlock.Text(L"Text");
+myTextBlock.Style(
+    winrt::unbox_value<Windows::UI::Xaml::Style>(
+        Resources().Lookup(
+            winrt::box_value(L"MyTextBlockStyle")
+        )
+    )
+);
+```
 
 ### <a name="tostring"></a>ToString()
 
