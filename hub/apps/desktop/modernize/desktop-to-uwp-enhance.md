@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 444699c00a17dd90fe4c08c44ff56d540cadb3d6
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: fd561096dc53f85186698c981693693a6d3b9e64
+ms.sourcegitcommit: d95ccb47c616bd32c56e491490a6baf30185c8c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729860"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295534"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在桌面应用中调用 Windows 运行时 API
 
@@ -38,39 +38,39 @@ ms.locfileid: "82729860"
 
 1. 确保已启用[包引用](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)：
 
-    1. 在 Visual Studio 中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器设置”  。
-    2. 确保为“默认包管理格式”选择 PackageReference   。
+    1. 在 Visual Studio 中，单击“工具”->“NuGet 程序包管理器”->“程序包管理器设置”。
+    2. 确保为“默认包管理格式”选择 PackageReference 。
 
-2. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包”   。
+2. 在 Visual Studio 中打开项目后，在“解决方案资源管理器”中右键单击该项目，然后选择“管理 NuGet 包” 。
 
-3. 在“NuGet 包管理器”窗口中，选择“浏览”选项卡，然后搜索 `Microsoft.Windows.SDK.Contracts`  。
+3. 在“NuGet 包管理器”窗口中，选择“浏览”选项卡，然后搜索 `Microsoft.Windows.SDK.Contracts` 。
 
-4. 找到 `Microsoft.Windows.SDK.Contracts` 包后，在“NuGet 包管理器”窗口的右窗格中，根据要面向的 Windows 10 版本，选择要安装的包的“版本”   ：
+4. 找到 `Microsoft.Windows.SDK.Contracts` 包后，在“NuGet 包管理器”窗口的右窗格中，根据要面向的 Windows 10 版本，选择要安装的包的“版本” ：
 
     * **10.0.18362.xxxx**：对于 Windows 10 版本 1903，请选择此版本。
     * **10.0.17763.xxxx**：对于 Windows 10 版本 1809，请选择此版本。
     * **10.0.17134.xxxx**：对于 Windows 10 版本 1803，请选择此版本。
 
-5. 单击“安装”  。
+5. 单击“安装” 。
 
 #### <a name="to-add-the-required-references-manually"></a>若要手动添加所需引用，请执行以下操作：
 
-1. 打开“引用管理器”对话框，选择“浏览”按钮，然后选择“所有文件”    。
+1. 打开“引用管理器”对话框，选择“浏览”按钮，然后选择“所有文件”  。
 
     ![“添加引用”对话框](images/desktop-to-uwp/browse-references.png)
 
-2. 添加对以下文件的引用。
+2. 添加对以下所有文件的引用。
 
     |文件|位置|
     |--|--|
-    |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.WindowsRuntime.UI.Xaml|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.InteropServices.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<sdk version>\Facade |
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<sdk version>\Windows.Foundation.UniversalApiContract\<version>  |
-    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<sdk version>\Windows.Foundation.FoundationContract\<version>  |
+    |System.Runtime.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.WindowsRuntime.UI.Xaml.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |System.Runtime.InteropServices.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
+    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<sdk version>\Facade|
+    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<sdk version>\Windows.Foundation.UniversalApiContract\\<version> |
+    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<sdk version>\Windows.Foundation.FoundationContract\\<version> |
 
-3. 在“属性”窗口中，将每个 .winmd 文件的 Copy Local 字段设为 False     。
+3. 在“属性”窗口中，将每个 .winmd 文件的 Copy Local 字段设为 False 。
 
     ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
 
@@ -101,14 +101,14 @@ ms.locfileid: "82729860"
 
 :white_check_mark:**决定是增强还是扩展**
 
-你经常会听到我们使用术语“增强”和“扩展”，因此我们需要花些时间来说明一下这两个术语的确切含义   。
+你经常会听到我们使用术语“增强”和“扩展”，因此我们需要花些时间来说明一下这两个术语的确切含义 。
 
-我们使用术语“增强”来描述可以直接从桌面应用对其进行调用的 Windows 运行时 API（无论你是否选择将应用程序打包到 MSIX 包中）  。 当你选择 Windows 10 体验后，请确定创建它所需的 API，然后查看该 API 是否出现在此[列表](desktop-to-uwp-supported-api.md)中。 这是你可以直接从桌面应用中调用的 API 的列表。 如果你的 API 未出现在此列表中，那是因为与该 API 关联的功能只在 UWP 进程内运行。 通常情况下，其中包括呈现 UWP XAML（例如 UWP 地图控件或 Windows Hello 安全提示）的 API。
+我们使用术语“增强”来描述可以直接从桌面应用对其进行调用的 Windows 运行时 API（无论你是否选择将应用程序打包到 MSIX 包中）。 当你选择 Windows 10 体验后，请确定创建它所需的 API，然后查看该 API 是否出现在此[列表](desktop-to-uwp-supported-api.md)中。 这是你可以直接从桌面应用中调用的 API 的列表。 如果你的 API 未出现在此列表中，那是因为与该 API 关联的功能只在 UWP 进程内运行。 通常情况下，其中包括呈现 UWP XAML（例如 UWP 地图控件或 Windows Hello 安全提示）的 API。
 
 > [!NOTE]
 > 尽管通常不能直接从桌面调用呈现 UWP XAML 的 API，但你可以使用其他方法。 如果要托管 UWP XAML 控件或其他自定义视觉体验，则可以使用 [XAML 岛](xaml-islands.md)（从 Windows 10 版本 1903 开始）和[可视化层](visual-layer-in-desktop-apps.md)（从 Windows 10 版本 1803 开始）。 可以在打包或未打包的桌面应用中使用这些功能。
 
-如果已选择将桌面应用打包到 MSIX 包中，则另一种选择是通过向解决方案中添加 UWP 项目来“扩展”应用程序  。 桌面项目仍是应用程序的入口点，但 UWP 项目使你可以访问[此列表](desktop-to-uwp-supported-api.md)中未显示的所有 API。 桌面应用可以使用应用服务来与 UWP 进程通信，我们可针对如何进行相关设置提供很多指导。 如果你要添加的体验需要 UWP 项目，请参阅[使用 UWP 组件进行扩展](desktop-to-uwp-extend.md)。
+如果已选择将桌面应用打包到 MSIX 包中，则另一种选择是通过向解决方案中添加 UWP 项目来“扩展”应用程序。 桌面项目仍是应用程序的入口点，但 UWP 项目使你可以访问[此列表](desktop-to-uwp-supported-api.md)中未显示的所有 API。 桌面应用可以使用应用服务来与 UWP 进程通信，我们可针对如何进行相关设置提供很多指导。 如果你要添加的体验需要 UWP 项目，请参阅[使用 UWP 组件进行扩展](desktop-to-uwp-extend.md)。
 
 :white_check_mark:**引用 API 协定**
 
@@ -117,7 +117,7 @@ ms.locfileid: "82729860"
 
 ![API 协定表](images/desktop-to-uwp/contract-table.png)
 
-如果你有基于 .NET 的桌面应用，请添加对该 API 协定的引用，然后将该文件的 Copy Local 属性设置为 False   。 如果你有一个基于 C++ 的项目，请将包含此协定的文件夹的路径添加到“附加包含目录”中  。
+如果你有基于 .NET 的桌面应用，请添加对该 API 协定的引用，然后将该文件的 Copy Local 属性设置为 False 。 如果你有一个基于 C++ 的项目，请将包含此协定的文件夹的路径添加到“附加包含目录”中。
 
 :white_check_mark:**调用 API 以添加你的体验**
 
@@ -206,11 +206,11 @@ void UWP::ShowToast()
 
 对于该生成配置，请创建一个常量以标识调用 Windows 运行时 API 的代码。  
 
-对于基于 .NET 的项目，该常量称为“条件编译常量”  。
+对于基于 .NET 的项目，该常量称为“条件编译常量”。
 
 ![预处理器](images/desktop-to-uwp/compilation-constants.png)
 
-对于基于 C++ 的项目，该常量称为“预处理器定义”  。
+对于基于 C++ 的项目，该常量称为“预处理器定义”。
 
 ![预处理器](images/desktop-to-uwp/pre-processor.png)
 

@@ -1,17 +1,15 @@
 ---
 title: install 命令
 description: 安装指定的应用程序。
-author: KevinLaMS
-ms.author: kevinla
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c460ccd18bb1bb12e5322e0e08a17edbd9692f7
-ms.sourcegitcommit: 5a145eda92b5915393e58006867cdd8b98e922f5
+ms.openlocfilehash: 5daae6dabee1201dd9df0b83dc56f98b06b15487
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84166236"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334528"
 ---
 # <a name="install-command-winget"></a>install 命令 (winget)
 
@@ -78,6 +76,12 @@ winget install --id Microsoft.PowerToys --version 0.15.2
 ## <a name="multiple-selections"></a>多选
 
 如果提供给 winget 的查询未生成单个应用程序，则 winget 会显示搜索结果。 这将为你提供优化搜索所需的其他数据，以便正确进行安装。
+
+将所选内容限制为一个文件的最佳方式是结合使用应用程序的 ID 与 Exact 查询选项 。  例如：
+
+```CMD
+winget install --id Git.Git -e 
+```
 
 ## <a name="local-install"></a>本地安装
 

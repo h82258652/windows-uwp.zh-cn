@@ -1,17 +1,15 @@
 ---
 title: 将清单提交到存储库
-description: ''
-author: denelon
-ms.author: denelon
+description: 创建描述应用程序的程序包清单后，即可将清单提交到 Windows 程序包管理器存储库。
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c5ebcc564b4db16c1d16385cbeaf7fd6d82c8f18
-ms.sourcegitcommit: 8193aef04deb3514eb2d34bfe5cb9424ba12cd76
+ms.openlocfilehash: 19a66b2d0724eb0f4f8c3f171033e4e616751717
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83865024"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334599"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>将清单提交到存储库
 
@@ -112,7 +110,7 @@ winget validate \<manifest-file>
 
 * 清单符合[架构要求](manifest.md#manifest-contents)。
 * 清单中的所有 URL 都通向安全的网站。
-* 安装程序和应用程序中没有病毒。
+* 安装程序和应用程序中没有病毒。 程序包可能会被错误地标识为恶意软件。 如果你认为这是一个误报，则可以将安装程序提交给 Defender 团队，以便在[此处](https://www.microsoft.com/wdsi/filesubmission)进行分析。
 * 对于管理员和非管理员，应用程序都可以正确地安装和卸载。
 * 安装程序支持非交互模式。
 * 所有清单条目都准确且没有误导性。

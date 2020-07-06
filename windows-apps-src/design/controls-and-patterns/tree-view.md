@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 80072be15a28883e5d29a7393edd112cf6fa47be
-ms.sourcegitcommit: 7e8c7f89212c88dcc0274c69d2c3365194c0954a
+ms.openlocfilehash: d5308f49499f4bdec9db0087cef54ac2fa0bb805
+ms.sourcegitcommit: 69b7fe203d8384d0ade37122ae9d2c4568f6d168
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83688495"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267164"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -38,7 +38,7 @@ XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tree
 
 |  |  |
 | - | - |
-| ![WinUI 徽标](images/winui-logo-64x64.png) | TreeView  控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | TreeView 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 > **Windows UI 库 API：** [TreeView 类](/uwp/api/microsoft.ui.xaml.controls.treeview)、[TreeViewNode 类](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 属性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >
@@ -211,7 +211,7 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 ```
 
 > [!NOTE]
-> 为了能够访问 **Pictures** 文件夹，需要在应用清单中指定“图片库”  功能。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+> 为了能够访问 **Pictures** 文件夹，需要在应用清单中指定“图片库”功能。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
 可以提供 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 来指定数据项在树视图中的显示方式。
 
@@ -488,6 +488,10 @@ End Sub
 - 选择一个父节点也会选择该父级下的所有已实现子级。 同样，如果选择了所有子节点，则父节点也会被选中。
 - **SelectAll** 方法只会将已实现的节点添加到 **SelectedNodes** 集合中。
 - 如果选择了具有未实现子级的父节点，该子级将在实现时被选中。
+
+#### <a name="selecteditemselecteditems"></a>SelectedItem/SelectedItems
+
+从 WinUI 2.2 开始，TreeView 具有 [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditem) 和 [SelectedItems](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditems) 属性。 可以使用这些属性直接获取选定节点的内容。 如果启用了多个选项，则 SelectedItem 将包含 SelectedItems 集合中的第一项。
 
 ## <a name="code-examples"></a>代码示例
 
@@ -802,7 +806,7 @@ namespace TreeViewTest
 
 ### <a name="pictures-and-music-library-tree-view"></a>图片和音乐库树视图
 
-本示例介绍如何创建树视图来显示用户的“图片”和“音乐”库的内容和结构   。 因为无法预知项目数，因此每个节点都在展开时填充，在折叠时清空。
+本示例介绍如何创建树视图来显示用户的“图片”和“音乐”库的内容和结构 。 因为无法预知项目数，因此每个节点都在展开时填充，在折叠时清空。
 
 这里使用一个自定义项模板来显示数据项，这些数据项类型为 [IStorageItem](/uwp/api/windows.storage.istorageitem)。
 

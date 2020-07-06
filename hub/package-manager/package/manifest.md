@@ -1,17 +1,15 @@
 ---
 title: 创建程序包清单
-description: ''
-author: denelon
-ms.author: denelon
+description: 如果要将软件包提交到 Windows 程序包管理器存储库，请首先创建程序包清单。
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8eceb29abbdc7f765628dbd8dbd6f6d0be21f132
-ms.sourcegitcommit: e2689c72d5b381eafdb1075090d1961f4c1cb37a
+ms.openlocfilehash: 7ecc6687527ca330f466e6a97ef14c0b5c9b56cf
+ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84055151"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85334618"
 ---
 # <a name="create-your-package-manifest"></a>创建程序包清单
 
@@ -58,7 +56,7 @@ License: string # The open source license or copyright.
 InstallerType: string # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
 Installers:
   - Arch: string # Enumeration of supported architectures.
-  - URL: string # Path to download installation file.
+  - Url: string # Path to download installation file.
   - Sha256: string # SHA256 calculated from installer.
 ManifestVersion: 0.1.0
 ```
@@ -164,6 +162,17 @@ ManifestVersion: 0.1.0
 
 > [!NOTE]
 > 如果安装程序是 .exe，且它是使用 Nullsoft 或 Inno 构建的，则你可改为指定这些值。 指定 Nullsoft 或 Inno 后，客户端将为安装程序设置“无提示”和“无提示但有安装进度”行为。
+
+## <a name="installer-switches"></a>安装程序开关
+
+通常可以通过从命令行向安装程序传入 `-?` 来找出可用于安装程序的无提示 `Switches`。 下面是一些可用于不同安装程序类型的常见无提示 `Swtiches`。
+
+| 安装程序 | 命令  | 文档 |  
+| :--- | :-- | :--- |  
+| MSI | `/q` | [MSI 命令行选项](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| InstallShield | `/s`  | [InstallShield 命令行参数](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
+| Inno 设置 | `/SILENT or /VERYSILENT` | [Inno 设置文档](https://jrsoftware.org/ishelp/) |
+| Nullsoft | `/S` | [Nullsoft 无提示安装程序/卸载程序](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |
 
 ## <a name="tips-and-best-practices"></a>技巧与最佳做法
 

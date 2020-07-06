@@ -8,25 +8,25 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: ab67507153e0ff7065baffa92ea6ec35aee5b132
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8775113c22716259f9449899b577481738dc6c0f
+ms.sourcegitcommit: da1c0ae251883987f105bc2919b2d67846194bc5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580764"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85198515"
 ---
 # <a name="get-started-with-winui-30-for-desktop-apps"></a>适用于桌面应用的 WinUI 3.0 入门
 
-WinUI 3.0 预览版 1 引入了新的项目模板，可以使用这些模板创建托管桌面 C#/.NET 应用和原生 C++/Win32 桌面应用并采用完全基于 WinUI 的用户界面。 使用这些项目模板创建应用时，应用程序的整个用户界面都是使用 WinUI 3.0 提供的窗口、控件和其他 UI 类型实现的。 
+WinUI 3.0 预览版 1 引入了新的项目模板，可以使用这些模板创建托管桌面 C#/.NET 应用和原生 C++/Win32 桌面应用并采用完全基于 WinUI 的用户界面。 使用这些项目模板创建应用时，应用程序的整个用户界面都是使用 WinUI 3.0 提供的窗口、控件和其他 UI 类型实现的。
 
-WinUI 3.0 预览版 1 在 Visual Studio 2019 中添加了以下**桌面版 WinUI** 项目模板：
+WinUI 3.0 预览版 1 在 Visual Studio 2019 中添加了以下项目模板，以生成使用 WinUI 3.0 的桌面应用：
 
-* 面向 .NET 5 的 C# 应用和库：
-  * 打包的空白应用（桌面版 WinUI）
-  * 类库（桌面版 WinUI）
+* 面向 .NET 5 的 C# 应用和库的项目模版：
+  * **打包的空白应用（桌面版 WinUI）**
+  * **类库（桌面版 WinUI）**
 
-* C++/Win32 应用：
-  * 打包的空白应用（桌面版 WinUI）
+* 适用于 C++/Win32 应用的项目模板：
+  * **打包的空白应用（桌面版 WinUI）**
 
 应用项目模板会生成一个 WinUI 应用项目和一个 [Windows 应用程序打包项目](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，该项目经过配置后可以将应用生成为适合部署的 [MSIX 程序包](https://docs.microsoft.com/windows/msix/overview)。
 
@@ -41,6 +41,9 @@ WinUI 3.0 预览版 1 在 Visual Studio 2019 中添加了以下**桌面版 WinUI
 3. 安装 .NET 5 预览版 4 的 x64 和 x86 版本：
     * x64：[https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x64.exe)
     * x86：[https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview4/Sdk/dotnet-sdk-win-x86.exe)
+
+    > [!NOTE]
+    > WinUI 3.0 预览版 1 需要 .NET 5 预览版 4。 WinUI 3.0 预览版 1 不支持较高预览版本的 .NET 5。
 
 4. 安装 VSIX 扩展，其中包含适用于 Visual Studio 2019 的 WinUI 3.0 预览版 1 项目模板。 有关详细信息，请参阅[这些说明](index.md#visual-studio-project-templates)。
 

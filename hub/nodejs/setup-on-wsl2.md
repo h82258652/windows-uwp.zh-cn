@@ -7,13 +7,13 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 node, wsl 上的 node, windows 中 linux 上的 node, 在 windows 上安装 node, 具有 vs code 的 nodejs, 通过 windows 上的 node 进行开发, 通过 windows 上的 nodejs 进行开发, 在 WSL 上安装 node, 适用于 Linux 的 Windows 子系统上的 NodeJS
 ms.localizationpriority: medium
-ms.date: 09/19/2019
-ms.openlocfilehash: 1ea8973e1db665d1fe66ef6b5f5699319131d605
-ms.sourcegitcommit: 2af814b7f94ee882f42fae8f61130b9cc9833256
+ms.date: 06/09/2020
+ms.openlocfilehash: 494db609db577bd2b199f828fcf80e80a5c8c624
+ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83717126"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133970"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 设置 Node.js 开发环境
 
@@ -51,7 +51,12 @@ ms.locfileid: "83717126"
 
 1. 打开 Ubuntu 18.04 命令行。
 2. 使用以下命令安装 cURL（用于在命令行中从 Internet 下载内容的工具）：`sudo apt-get install curl`
-3. 使用以下命令安装 nvm：`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`
+3. 使用以下命令安装 nvm：`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
+
+> [!NOTE]
+> 发布时，NVM v0.35.3 是可用的最新版本。 你可以查看[最新版本的 NVM 的 GitHub 项目页](https://github.com/nvm-sh/nvm)，并调整上述命令以包含最新版本。
+使用 cURL 安装较新版本的 NVM 将替换旧版本，并使已使用 NVM 进行安装的 Node 版本保持不变。 例如：`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
+
 4. 若要验证安装，请输入：`command -v nvm`。此命令应返回“nvm”，如果你收到“找不到命令”或根本没有响应，请关闭当前终端，将其重新打开，然后重试。 [在 nvm github 存储库中了解详细信息](https://github.com/nvm-sh/nvm)。
 5. 列出当前安装的 Node 版本（此时应为无）：`nvm ls`
 
@@ -67,10 +72,6 @@ ms.locfileid: "83717126"
 10. 若要更改要用于项目的 Node.js 版本，请创建新的项目目录 `mkdir NodeTest`，输入目录 `cd NodeTest`，然后输入 `nvm use node` 切换到当前版本，或输入 `nvm use --lts` 切换到 LTS 版本。 你还可以使用已安装的任何其他版本的特定数量，如 `nvm use v8.2.1`。 （若要列出 Node.js 的所有可用版本，请使用以下命令：`nvm ls-remote`）。
 
 如果要使用 NVM 安装 Node.js 和 NPM，则不需要使用 SUDO 命令来安装新包。
-
-> [!NOTE]
-> 发布时，NVM v0.35.2 是可用的最新版本。 你可以查看[最新版本的 NVM 的 GitHub 项目页](https://github.com/nvm-sh/nvm)，并调整上述命令以包含最新版本。
-使用 cURL 安装较新版本的 NVM 将替换旧版本，并使已使用 NVM 进行安装的 Node 版本保持不变。 例如：`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash`
 
 ## <a name="alternative-version-managers"></a>替代版本管理器
 
@@ -131,11 +132,7 @@ ms.locfileid: "83717126"
 
 ## <a name="set-up-git-optional"></a>设置 Git（可选）
 
-如果计划与其他人协作，或是在开放源代码站点（如 GitHub）上托管项目，则 VS Code 支持[使用 Git 进行版本控制](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)。 VS Code 中的“源代码管理”选项卡可跟踪所有更改，并直接在 UI 中内置了常见 Git 命令（add、commit、push、pull）。
-
-1. Git 随适用于 Linux 的 Windows 子系统发行版本一起安装，但是，你将需要设置 git 配置文件。 为此，请在终端中输入：`git config --global user.name "Your Name"`，然后输入 `git config --global user.email "youremail@domain.com"`。 如果你还没有 Git 帐户，则可以[在 GitHub 上注册一个帐户](https://github.com/join)。 如果以前从未使用过 Git，则 [GitHub 指南](https://guides.github.com/)可以帮助入门。 如果需要编辑 git 配置，则可以使用内置文本编辑器（如 nano：`nano ~/.gitconfig`）来执行此操作。
-
-2. 建议向 Node 项目添加 [.gitignore 文件](https://help.github.com/en/articles/ignoring-files)。 此处是 [GitHub 用于 Node.js 的默认 gitignore 模板](https://github.com/github/gitignore/blob/master/Node.gitignore)。 如果你选择[使用 GitHub 网站创建新的存储库](https://help.github.com/articles/create-a-repo)，则会出现可用于使用自述文件初始化存储库的复选框，设置用于 Node.js 项目的 .gitignore 文件，以及用于添加许可证（如果需要）的选项。
+要为 WSL 上的 NodeJS 项目设置 Git，请参阅 WSL 文档中的文章[开始在适用于 Linux 的 Windows 子系统上使用 Git](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git)。
 
 ## <a name="next-steps"></a>后续步骤
 

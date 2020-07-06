@@ -1,16 +1,16 @@
 ---
 title: 在 UWP 应用中使用 SQL Server 数据库
 description: 在 UWP 应用中使用 SQL Server 数据库。
-ms.date: 03/28/2019
+ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, uwp, SQL Server, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: 54907dac63580794b7df42fa2e61162d16be8a1b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d5c5c0f107a9e9a2adb0587b544a2c74b8321886
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302561"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448337"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQL Server 数据库
 通过使用 [System.Data.SqlClient](https://docs.microsoft.com/dotnet/api/system.data.sqlclient) 命名空间中的类，你的应用可以直接连接到 SQL Server 数据库然后存储和检索数据。
@@ -27,11 +27,14 @@ ms.locfileid: "75302561"
 
 ![Windows SDK 的最低版本](images/min-version-fall-creators.png)
 
-在清单设计器中打开你的 UWP 项目的 Package.appxmanifest  文件。
+在清单设计器中打开你的 UWP 项目的 Package.appxmanifest 文件。
 
-在“功能”  选项卡中，如果要使用 Windows 身份验证对 SQL Server 进行身份验证，则选中“企业身份验证”  复选框。
+在“功能”选项卡中，如果要使用 Windows 身份验证对 SQL Server 进行身份验证，则选中“企业身份验证”复选框。
 
 ![企业身份验证功能](images/enterprise-authentication.png)
+
+> [!IMPORTANT]
+> 无论你是否使用 Windows 身份验证，都需要选择“Internet (客户端和服务器)”、“Internet (客户端)”和“私有网络(客户端和服务器)”  。
 
 <a id="use-data" />
 
@@ -54,7 +57,7 @@ ms.locfileid: "75302561"
 
 ### <a name="add-a-connection-string"></a>添加连接字符串
 
-在 App.xaml.cs  文件中，向 ``App`` 类添加一个属性，该属性为你的解决方案中的其他类提供了对连接字符串的访问权限。
+在 App.xaml.cs 文件中，向 ``App`` 类添加一个属性，该属性为你的解决方案中的其他类提供了对连接字符串的访问权限。
 
 我们的连接字符串指向 SQL Server Express 实例中的 Northwind 数据库。
 
@@ -153,7 +156,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="add-a-basic-user-interface"></a>添加基本用户界面
 
- 将以下 XAML 添加到 UWP 项目的 MainPage.xaml  文件。
+ 将以下 XAML 添加到 UWP 项目的 MainPage.xaml 文件。
 
  此 XAML 将创建一个 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)（用来显示你在上一个代码段中返回的每个产品），并会将 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 中的每个行的属性绑定到我们在 ``Product`` 类中定义的属性。
 
@@ -205,7 +208,7 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 
 ### <a name="show-products-in-the-listview"></a>在 ListView 中显示产品
 
-打开 MainPage.xaml.cs  文件，并将代码添加到 ``MainPage`` 类的构造函数，该类可将 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 ItemSource  属性设置为 ``Product`` 实例的 [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)。
+打开 MainPage.xaml.cs 文件，并将代码添加到 ``MainPage`` 类的构造函数，该类可将 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 ItemSource 属性设置为 ``Product`` 实例的 [ObservableCollection](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1)。
 
 ```csharp
 public MainPage()
@@ -223,7 +226,7 @@ public MainPage()
 
 ## <a name="trouble-connecting-to-your-database"></a>连接数据库时遇到问题？
 
-在大多数情况下，需要更改 SQL Server 配置的某些方面。 如果能够从其他类型的桌面应用程序（例如 Windows 窗体或 WPF 应用程序）连接到数据库，请确保已为 SQL Server 启用 TCP/IP。 可以在“计算机管理”  控制台中执行该操作。
+在大多数情况下，需要更改 SQL Server 配置的某些方面。 如果能够从其他类型的桌面应用程序（例如 Windows 窗体或 WPF 应用程序）连接到数据库，请确保已为 SQL Server 启用 TCP/IP。 可以在“计算机管理”控制台中执行该操作。
 
 ![筿福恨瞶](images/computer-management.png)
 
