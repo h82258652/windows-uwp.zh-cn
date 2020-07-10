@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: 6cc020930e3b768f74ddb7cdfef3338ae537bd5d
-ms.sourcegitcommit: f806d5f3b0c1e046c903d3388092c0e059d21858
+ms.openlocfilehash: 7d340b3db12aef964a65860855acc0f0722cda64
+ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791006"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85882929"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>适用于 Windows 应用创建者的 Fluent Design System
 
@@ -58,7 +58,7 @@ Fluent Design 功能内置于 UWP 中。 其中的一些功能（例如，有效
 </Grid>
 ```
 
-![](images/fluent/xaml-example.png)
+![XAML 示例](images/fluent/xaml-example.png)
 
 
 > 如果你是初次接触 UWP 开发，请查看我们的 [UWP 页面入门](/windows/uwp/get-started)。

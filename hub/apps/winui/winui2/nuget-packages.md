@@ -4,12 +4,12 @@ description: 列出 Windows UI 库的 NuGet 程序包
 ms.topic: article
 ms.date: 04/15/2020
 keywords: windows 10, uwp, 工具包 sdk
-ms.openlocfilehash: 2bda405977733a6191c4434fd8bd2c63b2ce10ce
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: fdb11193273f7f6c54ef82076939c033d5a4168c
+ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580704"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85882867"
 ---
 # <a name="windows-ui-library-nuget-packages"></a>Windows UI 库 NuGet 包
 
@@ -25,7 +25,7 @@ NuGet 是内置到 Visual Studio 中的 .Net 应用程序的标准包管理器�
 
 在 Visual Studio 包管理器中搜索时，应该会看到与此类似的列表（版本号可能不同，但名称应相同）。
 
-![](images/NugetPackages.png)
+![NuGet 包管理器](images/NugetPackages.png)
 
 ## <a name="update-nuget-packages"></a>更新 NuGet 程序包
 
