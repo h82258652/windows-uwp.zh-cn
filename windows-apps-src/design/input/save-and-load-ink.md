@@ -1,6 +1,6 @@
 ---
-Description: 支持 Windows 墨迹的 UWP 应用可以在笔划墨迹和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
-title: 存储和检索 Windows 笔划墨迹数据
+Description: 支持 Windows Ink 的 windows 应用可以序列化墨迹笔划并将其反序列化为墨迹序列化格式（ISF）文件。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
+title: 存储和检索 Windows Ink 笔划数据
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
@@ -8,28 +8,28 @@ keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eb7f085c5e4daa46cfa6c256ec3938be3c13d82
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 819358fb775444d62cbad414668a779fc5c305ca
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365348"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970242"
 ---
-# <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows 笔划墨迹数据
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>存储和检索 Windows Ink 笔划数据
 
 
-支持 Windows 墨迹的 UWP 应用可以在笔划墨迹和墨迹序列化格式 (ISF) 文件之间进行序列化，也可以进行反序列化。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
+支持 Windows Ink 的 windows 应用可以序列化墨迹笔划并将其反序列化为墨迹序列化格式（ISF）文件。 ISF 文件是一种 GIF 图像，带有适用于所有笔划墨迹属性和行为的其他元数据。 无法启用墨迹的应用可以查看静态 GIF 图像，包括 alpha 通道背景透明度。
 
 > [!NOTE]
 > ISF 为墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式（例如 GIF 文件），也可以直接放置在剪贴板上。
 
-> **重要的 API**：[**在 InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)， [ **Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **重要 API**：[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、[**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>将笔划墨迹保存到文件
 
 在此，我们展示如何保存在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件上绘制的笔划墨迹。
 
-**下载此示例从[保存和加载墨迹序列化格式 (ISF) 文件中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**下载此示例从[墨迹序列化格式（ISF）文件保存和加载墨笔划](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  首先，我们设置 UI。
 
@@ -63,7 +63,7 @@ ms.locfileid: "66365348"
 
 2.  然后，我们设置一些基本墨迹输入行为。
 
-    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，并且将声明用于按钮上的单击事件的侦听器。
+    [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，并且将声明用于按钮上的单击事件的侦听器。
 ```csharp
 public MainPage()
     {
@@ -83,9 +83,9 @@ public MainPage()
     }
 ```
 
-3.  最终，我们将墨迹保存在**保存**按钮的单击事件处理程序中。
+3.  最后，我们将墨迹保存在 "**保存**" 按钮的 click 事件处理程序中。
 
-    [  **FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 允许用户选择保存墨迹数据的文件和位置。
+    [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 允许用户选择保存墨迹数据的文件和位置。
 
     选定文件后，我们打开设置为 [**ReadWrite**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream)的 [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode) 流。
 
@@ -161,7 +161,7 @@ public MainPage()
 
 在此，我们展示如何从文件加载笔划墨迹，并在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控件上呈现它们。
 
-**下载此示例从[保存和加载墨迹序列化格式 (ISF) 文件中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+**下载此示例从[墨迹序列化格式（ISF）文件保存和加载墨笔划](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  首先，我们设置 UI。
 
@@ -195,7 +195,7 @@ public MainPage()
 
 2.  然后，我们设置一些基本墨迹输入行为。
 
-    [  **InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，并且将声明用于按钮上的单击事件的侦听器。
+    [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 配置为将来自笔和鼠标的输入数据解释为笔划墨迹 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，并且将声明用于按钮上的单击事件的侦听器。
 ```csharp
 public MainPage()
     {
@@ -215,9 +215,9 @@ public MainPage()
     }
 ```
 
-3.  最终，我们将墨迹加载到**加载**按钮的单击事件处理程序中。
+3.  最后，我们将墨迹加载到 "**加载**" 按钮的 click 事件处理程序中。
 
-    [  **FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 允许用户选择检索已保存墨迹数据的文件和位置。
+    [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 允许用户选择检索已保存墨迹数据的文件和位置。
 
     选定文件后，我们打开设置为 [**Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream) 的 [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode) 流。
 
@@ -262,7 +262,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 > [!NOTE]
 > GIF 是保存墨迹数据的唯一受支持的文件格式。 但是，[**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法不支持向后兼容的以下格式。
 
-| 格式                    | 描述 |
+| 格式                    | 说明 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | InkSerializedFormat       | 指定使用 ISF 持久保存的墨迹。 这是墨迹的最紧凑持久表现形式。 该格式可以嵌入到二进制文档格式，也可以直接放置在剪贴板上。                                                                                                                                                                                                         |
 | Base64InkSerializedFormat | 指定通过将 ISF 编码为 base64 流来持久保存墨迹。 提供该格式是为了在 XML 或 HTML 文件中直接对墨迹进行编码。                                                                                                                                                                                                                                                |
@@ -277,7 +277,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 在此示例中，我们会在使用笔桶按钮（或鼠标右键按钮）修改输入时启用笔划选择。 有关如何实现笔划选择的完整示例，请参阅[笔和触笔交互](pen-and-stylus-interactions.md)中的传递输入以进行高级处理。
 
-**下载此示例从[保存和加载从剪贴板中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
+**下载此示例从[剪贴板保存和加载墨笔划](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
 
 1.  首先，我们设置 UI。
 
@@ -365,13 +365,13 @@ public MainPage()
     }
 ```
 
-3.  最终，在添加笔划选择支持后，我们在**剪切**、**复制**和**粘贴**按钮的单击事件处理程序中实现剪贴板功能。
+3.  最后，在添加了笔划选择支持后，我们将在 "**剪切**"、"**复制**" 和 "**粘贴**" 按钮的 click 事件处理程序中实现剪贴板功能。
 
     对于剪切，我们首先在 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上调用 [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)。
 
     然后再调用 [**DeleteSelected**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected) 从墨迹画布中删除笔划。
 
-    最终，我们从选择画布中删除所有选择笔划。
+    最后，我们从选择画布中删除所有选择笔划。
     
 ```csharp
 private void btnCut_Click(object sender, RoutedEventArgs e)
@@ -434,19 +434,19 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-* [笔和触笔的交互](pen-and-stylus-interactions.md)
+* [笔和触笔交互](pen-and-stylus-interactions.md)
 
 **主题示例**
-* [保存并从墨迹序列化格式 (ISF) 文件加载的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
-* [保存和加载从剪贴板中的墨迹笔画](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+* [保存并从墨迹序列化格式 (ISF) 文件加载笔划墨迹](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [保存并从剪贴板加载笔划墨迹](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
 
 **其他示例**
-* [简单墨迹示例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [复杂墨迹示例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [墨迹示例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [入门教程：在 UWP 应用中支持墨迹](https://aka.ms/appsample-ink)
-* [着色通讯簿示例](https://aka.ms/cpubsample-coloringbook)
-* [系列说明示例](https://aka.ms/cpubsample-familynotessample)
+* [简单墨迹示例 (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
+* [复杂墨迹示例 (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
+* [墨迹示例 (JavaScript)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208))
+* [入门教程： Windows 应用中的支持墨迹](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [Coloring Book 示例](https://github.com/Microsoft/Windows-appsample-coloringbook)
+* [系列说明示例](https://github.com/Microsoft/Windows-appsample-familynotes)
 
 
 

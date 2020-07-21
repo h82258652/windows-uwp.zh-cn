@@ -1,6 +1,6 @@
 ---
-Description: 了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。
-title: UWP 设备的 UI 注意事项
+Description: 了解支持 Windows 应用的设备，将会帮助你针对每个外形规格提供最佳用户体验。
+title: Windows 设备的 UI 注意事项
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
@@ -8,18 +8,18 @@ keywords: 设备, 输入, 交互
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6333345a79d92394539d337f1f2390118cff1153
-ms.sourcegitcommit: 09edf480f2224e29e190fad8518f680c16e21c6d
+ms.openlocfilehash: 37b77e62f14418611047a3af49bd15ed4f8094b4
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065356"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234873"
 ---
-#  <a name="ui-considerations-for-uwp-devices"></a>UWP 设备的 UI 注意事项
+#  <a name="ui-considerations-for-windows-devices"></a>Windows 设备的 UI 注意事项
 
 ![设备](../images/devices-2x.png)
 
-了解支持通用 Windows 平台 (UWP) 应用的设备将帮助你提供每个外形规格的最佳用户体验。
+了解支持 Windows 应用的设备，将会帮助你针对每个外形规格提供最佳用户体验。
 
 ![支持 Windows 的设备](images/device-primer/device-primer-ramp.png)
 
@@ -47,12 +47,12 @@ UI 注意事项
 
 输入
 -   鼠标
--   键盘
+-   Keyboard
 -   笔记本电脑和一体机上的触摸。
 -   有时会使用游戏板，如 Xbox 控制器。
 
 典型设备功能
--   相机
+-   照相机
 -   麦克风
 
 ## <a name="tablets-and-2-in-1s"></a>平板电脑和二合一设备
@@ -77,14 +77,14 @@ UI 注意事项
 -   系统返回位于导航栏上。
 
 输入
--   触控
+-   触摸
 -   触笔
 -   外部键盘（有时）
 -   鼠标（有时）
 -   语音（有时）
 
 典型设备功能
--   相机
+-   照相机
 -   麦克风
 -   移动传感器
 -   位置传感器
@@ -96,7 +96,7 @@ UI 注意事项
 
 坐在房间中的沙发上使用游戏板或遥控器与电视交互的体验称为 **10 英尺体验**。 如此命名是因为用户通常坐在离屏幕大约 10 英尺的位置。 这提出了 *2 英尺*体验（假设）中或与电脑交互时所不存在的独特挑战。 如果你要为 Xbox One 或任何连接到电视屏幕并且可能使用游戏板或遥控器进行输入的其他设备开发应用，应始终牢记这一点。
 
-针对 10 英尺体验设计 UWP 应用与针对此处所列的任何其他设备类别进行设计大不相同。 有关详细信息，请参阅 [针对 Xbox 和电视进行设计](designing-for-tv.md)。
+针对 10 英尺体验设计 Windows 应用与针对此处所列的任何其他设备类别进行设计大不相同。 有关详细信息，请参阅 [针对 Xbox 和电视进行设计](designing-for-tv.md)。
 
 屏幕尺寸
 - 24 英寸及更大
@@ -118,7 +118,7 @@ UI 注意事项
 
 输入
 - 游戏板（例如 Xbox 手柄）
-- 遥控器
+- 远程
 - 语音（有时，如果客户有 Kinect 或耳机）
 
 典型设备功能
@@ -131,7 +131,7 @@ UI 注意事项
 
 手机是所有计算设备中最广泛使用的设备，它可以借助有限的屏幕空间和基本输入完成许多操作。 手机有多种尺寸可供选择；较大的手机称为平板手机。 平板手机上的应用体验类似于手机上的应用体验，但平板手机增加的屏幕空间支持在内容使用中进行某些关键更改。
 
-通过适用于手机的 Continuum（这是兼容 Windows 10 移动版设备的一种新体验），用户可以将手机连接到监视器，甚至使用鼠标和键盘来使手机像笔记本电脑一样工作。 （有关详细信息，请参阅[适用于手机的 Continuum 文章](https://go.microsoft.com/fwlink/p/?LinkID=699431)。）
+通过适用于手机的 Continuum（这是兼容 Windows 10 移动版设备的一种新体验），用户可以将手机连接到监视器，甚至使用鼠标和键盘来使手机像笔记本电脑一样工作。 （有关详细信息，请参阅[适用于手机的 Continuum 文章](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN)。）
 
 屏幕尺寸
 -   4 英寸到 5 英寸（对于手机）
@@ -155,12 +155,12 @@ UI 注意事项
 -   在横向和纵向方向中，确保在显示屏幕键盘时有足够的屏幕空间用于应用栏。
 
 输入
--   触控
+-   触摸
 -   语音
 
 典型设备功能
 -   麦克风
--   相机
+-   照相机
 -   移动传感器
 -   位置传感器
 
@@ -187,14 +187,14 @@ UI 注意事项
 -   系统返回是可选的。 当应用开发人员选择显示它时，它显示在应用标题栏中。
 
 输入
--   触控
+-   触摸
 -   笔
 -   语音
 -   键盘（屏幕上/远程）
 -   触摸板（远程）
 
 典型设备功能
--   相机
+-   照相机
 -   麦克风
 
  

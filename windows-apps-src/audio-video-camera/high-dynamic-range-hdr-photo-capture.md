@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b5a8e19961fa7cd1dd67e52339f49fd012f21f06
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 04133cc4a58ddbdbd45ba68b4c0635cd47ca2ca8
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361737"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74257005"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高动态范围 (HDR) 和低亮度照片捕获
 
@@ -39,7 +39,7 @@ ms.locfileid: "66361737"
 > [!NOTE] 
 > 本文以[使用 MediaCapture 捕获基本的照片、视频和音频](basic-photo-video-and-audio-capture-with-MediaCapture.md)中讨论的概念和代码为基础，该文章介绍了实现基本照片和视频捕获的步骤。 我们建议你先熟悉该文中的基本媒体捕获模式，然后再转到更高级的捕获方案。 本文中的代码假设你的应用已有一个正确完成初始化的 MediaCapture 的实例。
 
-有一个通用 Windows 示例展示了 **AdvancedPhotoCapture** 类的用法，你可以使用该类查看用在上下文中或用作自己应用起始点的 API。 有关详细信息，请参阅[相机高级捕获示例](https://go.microsoft.com/fwlink/?LinkID=620517)。
+有一个通用 Windows 示例展示了 **AdvancedPhotoCapture** 类的用法，你可以使用该类查看用在上下文中或用作自己应用起始点的 API。 有关详细信息，请参阅[相机高级捕获示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraAdvancedCapture)。
 
 ## <a name="advanced-photo-capture-namespaces"></a>高级照片捕获命名空间
 
@@ -51,7 +51,7 @@ ms.locfileid: "66361737"
 
 ### <a name="determine-if-hdr-photo-capture-is-supported-on-the-current-device"></a>确定 HDR 照片捕获在当前设备上是否受支持
 
-本文中介绍的 HDR 捕获技术使用 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 对象进行执行。 并非所有设备都支持使用 **AdvancedPhotoCapture** 的 HDR 捕获。 确定该技术在当前运行你的应用的设备上是否受支持，方法是获取 **MediaCapture** 对象的 [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController)，然后获取 [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) 属性。 检查视频设备控制器的 [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes) 集合以查看它是否包含 [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode)。如果包含，则支持使用 **AdvancedPhotoCapture** 的 HDR 捕获。
+本文中介绍的 HDR 捕获技术使用 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 对象进行执行。 并非所有设备都支持使用 **AdvancedPhotoCapture** 的 HDR 捕获。 确定该技术在当前运行你的应用的设备上是否受支持，方法是获取 **MediaCapture** 对象的 [**VideoDeviceController**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.VideoDeviceController)，然后获取 [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) 属性。 检查视频设备控制器的 [**SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes) 集合，以查看是否包含 [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode)。如果包含，则支持使用 **AdvancedPhotoCapture** 的 HDR 捕获。
 
 [!code-cs[HdrSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHdrSupported)]
 
@@ -61,17 +61,17 @@ ms.locfileid: "66361737"
 
 [!code-cs[DeclareAdvancedCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareAdvancedCapture)]
 
-在你的应用中，在初始化 **MediaCapture** 对象后，创建 [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) 对象并将模式设置为 [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode)。调用 [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) 对象的 [**Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure) 方法，传入创建的 **AdvancedPhotoCaptureSettings** 对象。
+在应用中，初始化 **MediaCapture** 对象后，请创建 [**AdvancedPhotoCaptureSettings**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings) 对象并将模式设置为 [**AdvancedPhotoMode.Hdr**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoMode)。调用 [**AdvancedPhotoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.AdvancedPhotoControl) 对象的 [**Configure**](https://docs.microsoft.com/uwp/api/windows.media.devices.advancedphotocontrol.configure) 方法，传入创建的 **AdvancedPhotoCaptureSettings** 对象。
 
 调用 **MediaCapture** 对象的 [**PrepareAdvancedPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync)，传入用于指定该捕获应使用的编码类型的 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 对象。 **ImageEncodingProperties** 类提供用于创建受 **MediaCapture** 支持的图像编码的静态方法。
 
-**PrepareAdvancedPhotoCaptureAsync** 返回将用于启动照片捕获的 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 对象。 你可以使用该对象来注册本文稍后将介绍的 [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 和 [**AllPhotosCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.allphotoscaptured) 的处理程序。
+**PrepareAdvancedPhotoCaptureAsync** 返回将用于启动照片捕获的 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 对象。 可以使用该对象来注册本文稍后将介绍的 [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 和 [**AllPhotosCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.allphotoscaptured) 的处理程序。
 
 [!code-cs[CreateAdvancedCaptureAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateAdvancedCaptureAsync)]
 
 ### <a name="capture-an-hdr-photo"></a>捕获 HDR 照片
 
-通过调用 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 对象的 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync) 方法，捕获 HDR 照片。 此方法将返回在其 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame) 属性中提供已捕获照片的 [**AdvancedCapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto) 对象。
+通过调用 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 对象的 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync) 方法，捕获 HDR 照片。 此方法将返回在其 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto) 属性中提供已捕获照片的 [**AdvancedCapturedPhoto**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame) 对象。
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
@@ -84,7 +84,7 @@ ms.locfileid: "66361737"
 HDR 进程捕获多个帧，然后在已捕获所有帧之后，将它们合成到单个图像中。 你可以在已捕获帧之后，但在完成整个 HDR 进程之前，通过处理 [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件来访问该帧。 如果你只对最终 HDR 照片结果感兴趣，你不需要执行此操作。
 
 > [!IMPORTANT]
-> [**OptionalReferencePhotoCaptured** ](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured)则不会引发支持硬件 HDR，因此不会生成参考帧的设备上。 你的应用应对不会引发此事件的这种情况进行处理。
+> 在支持硬件 HDR 的设备上不会引发[**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) ，因此不会生成引用帧。 你的应用应对不会引发此事件的这种情况进行处理。
 
 由于参考帧在调用 **CaptureAsync** 的上下文之外到达，因此提供了一个机制来将上下文信息传递到 **OptionalReferencePhotoCaptured** 处理程序。 首先，应调用一个对象，用来包含上下文信息。 此对象的名称和内容由你决定。 此示例定义一个对象，该对象具有可用于跟踪捕获的文件名和相机方向的成员。
 
@@ -94,19 +94,19 @@ HDR 进程捕获多个帧，然后在已捕获所有帧之后，将它们合成�
 
 [!code-cs[CaptureWithContext](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureWithContext)]
 
-在 [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件处理程序中，将 [**OptionalReferencePhotoCapturedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) 对象的 [**Context**](https://docs.microsoft.com/uwp/api/windows.media.capture.optionalreferencephotocapturedeventargs.context) 属性转换为上下文对象类。 此示例修改文件名以区分参考帧图像和最终的 HDR 图像，然后调用 **SaveCapturedFrameAsync** 帮助程序方法以保存该图像。
+在 [**OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件处理程序中，将 [**OptionalReferencePhotoCapturedEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.capture.optionalreferencephotocapturedeventargs.context) 对象的 [**Context**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) 属性转换为上下文对象类。 此示例修改文件名以区分参考帧图像和最终的 HDR 图像，然后调用 **SaveCapturedFrameAsync** 帮助程序方法以保存该图像。
 
 [!code-cs[OptionalReferencePhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOptionalReferencePhotoCaptured)]
 
 ### <a name="receive-a-notification-when-all-frames-have-been-captured"></a>当已捕获所有帧时将收到通知
 
-HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处理为最终的 HDR 图像。 仍在捕获源 HDR 帧期间，无法启动另一个捕获，但在捕获所有帧之后，在完成 HDR 后期处理之前，你可以启动一个捕获。 当完成 HDR 捕获时将引发 [**AllPhotosCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.allphotoscaptured) 事件，通知你可以启动另一个捕获。 典型方案是在 HDR 捕获开始时禁用你的 UI 的捕获按钮，然后在引发 **AllPhotosCaptured** 时重新启用它。
+HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处理为最终的 HDR 图像。 仍在捕获源 HDR 帧期间，无法启动另一个捕获，但在捕获所有帧之后，在完成 HDR 后期处理之前，你可以启动一个捕获。 当完成 HDR 捕获时将引发 [**AllPhotosCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.allphotoscaptured) 事件，通知你可以启动另一个捕获。 典型方案是在 HDR 捕获开始时禁用 UI 的捕获按钮，然后在引发 **AllPhotosCaptured** 时重新启用它。
 
 [!code-cs[AllPhotosCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAllPhotosCaptured)]
 
 ### <a name="clean-up-the-advancedphotocapture-object"></a>清理 AdvancedPhotoCapture 对象
 
-当你的应用完成捕获时，在释放 **MediaCapture** 对象之前，你应通过调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.finishasync) 并将你的成员变量设置为 Null 来关闭 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 对象。
+当你的应用完成捕获时，在释放 **MediaCapture** 对象之前，你应通过调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture) 并将你的成员变量设置为 Null 来关闭 [**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.finishasync) 对象。
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
@@ -142,18 +142,18 @@ HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
 ## <a name="working-with-advancedcapturedphoto-objects"></a>使用 AdvancedCapturedPhoto 对象
-[**AdvancedPhotoCapture.CaptureAsync** ](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync)返回[ **AdvancedCapturedPhoto** ](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto)对象，表示捕获的照片。 此对象将公开 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame) 属性，这可返回一个 [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) 对象，用来表示该图像。 [  **OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件还将在它的事件参数中提供一个 **CapturedFrame** 对象。 获取此类型的对象后，你可以对它执行各种操作，包括创建 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 或将该图像保存到文件。 
+[**AdvancedPhotoCapture**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.captureasync)返回表示捕获照片的[**AdvancedCapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto)对象。 此对象将公开 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedcapturedphoto.frame) 属性，这可返回一个 [**CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) 对象，用来表示该图像。 [  **OptionalReferencePhotoCaptured**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured) 事件还将在它的事件参数中提供一个 **CapturedFrame** 对象。 获取此类型的对象后，你可以对它执行各种操作，包括创建 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 或将该图像保存到文件。 
 
 ## <a name="get-a-softwarebitmap-from-a-capturedframe"></a>从 CapturedFrame 获取 SoftwareBitmap
 从 **CapturedFrame** 对象获取 **SoftwareBitmap** 轻而易举，只需访问该对象的 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) 属性即可。 不过，大多数编码格式都不会因 **AdvancedPhotoCapture** 而支持 **SoftwareBitmap**，因此在使用之前，应检查并确保该属性不为 null。
 
 [!code-cs[SoftwareBitmapFromCapturedFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapFromCapturedFrame)]
 
-在当前版本中，因 **AdvancedPhotoCapture** 而支持 **SoftwareBitmap** 的唯一编码格式是未压缩的 NV12。 因此，如果你想要使用此功能，必须在调用 [**PrepareAdvancedPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync) 时指定该编码格式。 
+在当前版本中，因 **AdvancedPhotoCapture** 而支持 **SoftwareBitmap** 的唯一编码格式是未压缩的 NV12。 因此，如果想要使用此功能，必须在调用 [**PrepareAdvancedPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync) 时指定该编码格式。 
 
 [!code-cs[UncompressedNv12](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUncompressedNv12)]
 
-当然，你可以始终将图像保存到某个文件，然后在单独的步骤中将该文件加载到 **SoftwareBitmap** 中。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[**创建、编辑和保存位图图像**](imaging.md)。
+当然，可以始终将图像保存到某个文件，然后在单独的步骤中将该文件加载到 **SoftwareBitmap** 中。 有关使用 **SoftwareBitmap** 的详细信息，请参阅[**创建、编辑和保存位图图像**](imaging.md)。
 
 ## <a name="save-a-capturedframe-to-a-file"></a>将 CapturedFrame 保存到文件
 [  **CapturedFrame**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedFrame) 类可实现 IInputStream 接口，因此可以将它用作对 [**BitmapDecoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapDecoder) 的输入，然后可以使用 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapEncoder) 将图像数据写入磁盘。
@@ -169,4 +169,4 @@ HDR 照片捕获具有两个步骤。 首先，捕获多个帧，然后将帧处
 ## <a name="related-topics"></a>相关主题
 
 * [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [带有 MediaCapture 的基本照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)

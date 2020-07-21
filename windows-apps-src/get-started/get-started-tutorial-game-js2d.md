@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 343fa50dbe9a0574914dc96b9fac450475a69b0a
-ms.sourcegitcommit: 87ddc67d31668a6351206bda3546ffbabb7b4551
+ms.openlocfilehash: 4ef4255c8ea1eb9db34f652e5974a4f341e5500d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807843"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80759449"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>用 JavaScript 创建 UWP 游戏
 
@@ -30,7 +30,7 @@ ms.locfileid: "68807843"
 
 此项目由使用 Visual Studio 的 JavaScript 创建。 除了一些细微差别，还可将其托管在网站上，或者对其进行调整以适应其他平台。 
 
-**注意：** 这不是一个完整的（或完好的！）游戏；它旨在展示使用 JavaScript 和第三方库将应用发布到 Microsoft Store 的准备工作。
+**注意：** 这不是一个完整的（或完好的！）游戏；它旨在展示使用 JavaScript 和第三方库将应用发布到 Microsoft Store 的准备工作。 
 
 
 ## <a name="requirements"></a>要求
@@ -42,8 +42,9 @@ ms.locfileid: "68807843"
 
 此项目使用 CreateJS JavaScript 框架。 CreateJS 是一组使用 MIT 许可证发布的免费工具，设计用于轻松创建基于子画面的游戏。 此项目已包含 CreateJS 库（在解决方案资源管理器视图中查找 js/easeljs-0.8.2.min.js 和 js/preloadjs-0.6.2.min.js）   。 有关 CreateJS 的更多信息，请查看 [CreateJS 主页](https://www.createjs.com)。
 
+**注意：** Visual Studio 2019 不支持 Javascript UWP 应用开发。 必须使用 Visual Studio 2017 开发 Javascript UWP 应用。
 
-## <a name="getting-started"></a>即刻体验
+## <a name="getting-started"></a>入门
 
 此应用的完整源代码存储于 [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js2d) 中。
 
@@ -165,8 +166,7 @@ EaselJS 可以为我们提供几种不同类型的图形对象。 我们可以�
 现在，我们将让云彩移动。 实际上，移动云彩以及任何对象的秘密在于设置 [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) 函数，该函数将在一秒内被反复调用多次。 每调用一次该函数，就会在略有不同的位置重新绘制图像。
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">请参阅 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 为云彩添加动画效果</a>，Microsoft Edge 文档 (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>)（位于 <a href="https://codepen.io">CodePen</a>）。</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
- 执行该操作的代码已位于 main.js 文件中，由 CreateJS 库 EaselJS 提供  。 它如下所示：
+ 执行该操作的代码已位于 main.js 文件中，由 CreateJS 库 EaselJS 提供  。 它的外观如下所示：
 
 ```
     // Set up the game loop and keyboard handler.
@@ -260,7 +260,7 @@ function animate_clouds()
 
 此流程包含几个步骤。
 
-1. 必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/en-us/store/register)。
+1. 必须以 Windows 开发人员的身份[注册](https://developer.microsoft.com/store/register)。
 2. 必须使用应用提交[清单](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 3. 必须提交此应用以进行[认证](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 

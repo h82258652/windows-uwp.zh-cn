@@ -1,24 +1,113 @@
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/
   items:
-    - name: Windows
-      tocHref: /windows/
-      topicHref: /windows/
+    - name: “应用”
+      tocHref: /windows/apps/
+      topicHref: /windows/apps/
       items:
-        - name: 应用
-          tocHref: /windows/apps/
-          topicHref: /windows/apps/
+        - name: 构建桌面应用
+          tocHref: /windows/apps/desktop/
+          topicHref: /windows/apps/desktop/
           items:
-            - name: 构建桌面应用
-              tocHref: /windows/apps/desktop/
-              topicHref: /windows/apps/desktop/
             - name: 实现桌面应用的现代化
               tocHref: /windows/apps/desktop/modernize/
               topicHref: /windows/apps/desktop/modernize/
+              items:
+                - name: 调用 Windows 运行时 API
+                  topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-enhance
+                  items:
+                    - name: 可用的 Windows 运行时 API
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-supported-api
+                - name: XAML 岛
+                  topicHref: /windows/apps/desktop/modernize/xaml-islands
+                  items:
+                    - name: 在 WPF 应用中托管标准 UWP 控件
+                      topicHref: /windows/apps/desktop/modernize/host-standard-control-with-xaml-islands
+                    - name: 在 WPF 应用中托管自定义 UWP 控件
+                      topicHref: /windows/apps/desktop/modernize/host-custom-control-with-xaml-islands
+                    - name: 使用 UWP XAML 托管 API
+                      topicHref: /windows/apps/desktop/modernize/using-the-xaml-hosting-api
+                    - name: 在 C++ Win32 应用中托管标准 UWP 控件
+                      topicHref: /windows/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp
+                    - name: 在 C++ Win32 应用中托管自定义 UWP 控件
+                      topicHref: /windows/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp
+                    - name: C++ Win32 应用中 XAML 岛的高级方案
+                      topicHref: /windows/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp
+                - name: 可视化层
+                  topicHref: /windows/apps/desktop/modernize/visual-layer-in-desktop-apps
+                  items:
+                    - name: WPF
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-wpf
+                    - name: Windows 窗体
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-windows-forms
+                    - name: Win32
+                      topicHref: /windows/apps/desktop/modernize/using-the-visual-layer-with-win32
+                - name: 需要包标识的功能
+                  topicHref: /windows/apps/desktop/modernize/modernize-packaged-apps
+                  items:
+                    - name: 集成包扩展
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-extensions
+                    - name: 使用 UWP 组件进行扩展
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-extend
+                    - name: 分发打包的桌面应用
+                      topicHref: /windows/apps/desktop/modernize/desktop-to-uwp-distribute
+                - name: 教程：实现 WPF 应用现代化
+                  topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial
+                  items:
+                    - name: 第 1 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-1
+                    - name: 第 2 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-2
+                    - name: 第 3 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-3
+                    - name: 第 4 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-4
+                    - name: 第 5 部分
+                      topicHref: /windows/apps/desktop/modernize/modernize-wpf-tutorial-5
+        - name: Windows UI 库 (WinUI)
+          tocHref: /windows/apps/winui/
+          topicHref: /windows/apps/winui/
+          items:
+            - name: WinUI 3
+              tocHref: /windows/apps/winui/winui3/
+              topicHref: /windows/apps/winui/winui3
+            - name: WinUI 2
+              tocHref: /windows/apps/winui/winui2/
+              topicHref: /windows/apps/winui/winui2
+        - name: .NET TraceProcessing
+          tocHref: /windows/apps/trace-processing/
+          topicHref: /windows/apps/trace-processing/overview
+        - name: 针对 Windows 10X 进行开发
+          topicHref: /windows/apps/10x/faq
+        - name: Fluent Design System
+          topicHref: /windows/apps/fluent-design-system
+        - name: 辅助功能
+          topicHref: /windows/apps/accessibility
+        - name: 语音
+          topicHref: /windows/apps/speech
+        - name: 功能和技术
+          topicHref: /windows/apps/features-and-technologies
+        - name: 最新文档更新
+          topicHref: /windows/apps/whats-new/latest-doc-updates
+    - name: 开发环境
+      tocHref: /windows/dev-environment/
+      topicHref: /windows/dev-environment/
+      items:
+        - name: Windows 程序包管理器
+          tocHref: /windows/package-manager/
+          topicHref: /windows/package-manager
         - name: Python
           tocHref: /windows/python/
-          topicHref: /windows/python/index
-        - name: NodeJS
+          topicHref: /windows/python
+        - name: Node.js
           tocHref: /windows/nodejs/
-          topicHref: /windows/nodejs/index
+          topicHref: /windows/nodejs
+        - name: Android
+          tocHref: /windows/android/
+          topicHref: /windows/android/overview
+        - name: Mac 到 Windows
+          topicHref: /windows/dev-environment/mac-to-windows
+        - name: 适用于 Linux 的 Windows 子系统
+          tocHref: /windows/dev-environment/wsl
+          topicHref: /windows/wsl/about

@@ -1,7 +1,7 @@
 ---
 Description: 在用户键入时提供建议的文本输入框。
-title: 组合框（下拉列表）
-label: Combo box
+title: 组合框和列表框
+label: Combo box and list box
 template: detail.hbs
 ms.date: 10/02/2018
 ms.topic: article
@@ -10,24 +10,30 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ea8c4476a47c8bd00ce74e893e2f0a730615a99
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f484df97c6d29281941c8eed7b91fd0b156fff60
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319166"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968775"
 ---
-# <a name="combo-box"></a>组合框
+# <a name="combo-box-and-list-box"></a>组合框和列表框
 
-使用组合框（也称下拉列表）可提供一个项列表供用户选择。 组合框最初处于紧凑状态，可展开以显示可选择项的列表。
+使用组合框（也称下拉列表）可提供一个项列表供用户选择。 组合框最初处于紧凑状态，可展开以显示可选择项的列表。 ListBox 类似于组合框，但不可折叠，也没有紧凑状态。 可以在本文末尾详细了解列表框。
 
 组合框在关闭后，会显示当前的选择或为空（如果没有选中项）。 当用户展开组合框时，它会显示可选择项的列表。
 
-> **重要的 API**：[ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
-
-处于紧凑状态的组合框，显示一个标题。
-
 ![处于紧凑状态的下拉列表示例](images/combo_box_collapsed.png)
+
+> 处于紧凑状态的组合框，显示一个标题。 
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [ComboBox 类](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 属性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 属性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -41,7 +47,7 @@ ms.locfileid: "67319166"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ComboBox">打开应用，了解 ComboBox 的实际操作</a>。</p>
     <ul>
@@ -240,13 +246,13 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 {
     if (byte.TryParse(e.Text, out double newValue))
     {
-        // Update the app’s font size.
+        // Update the app's font size.
         _fontSize = newValue;
     }
     else
     {
         // If the item is invalid, reject it and revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         sender.Text = sender.SelectedValue.ToString();
         e.Handled = true;
     }
@@ -279,7 +285,7 @@ private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSu
     else
     {
         // If the item is invalid, reject it but do not revert the text.
-        // Mark the event as handled so the framework doesn’t update the selected item.
+        // Mark the event as handled so the framework doesn't update the selected item.
         e.Handled = true;
     }
 }
@@ -295,6 +301,32 @@ bool IsValid(string Text)
 - 将组合框的文本内容限制为单行。
 - 以最合乎逻辑的顺序对组合框中的项进行排序。 将相关选项组合到一起并将最常见的选项置于顶部。 按字母顺序对名称进行排序、按数字顺序对数字进行排序，并按时间先后顺序对日期进行排序。
 
+## <a name="list-boxes"></a>列表框
+
+列表框允许用户从集合中选择单个项或多个项。 列表框类似于下拉列表，区别在于列表框始终处于打开状态，并且不存在紧凑式状态的列表框（不可进行展开）。 当没有空间来显示所有内容时，可滚动列表中的项。
+
+### <a name="is-this-the-right-control"></a>这是正确的控件吗？
+
+- 当列表中的项重要到需突出显示时，以及当没有足够的屏幕空间可用来显示整个列表时，列表框会很有用。
+- 列表框应将用户的注意力吸引到一项重要选择的全套备选项。 相比之下，下拉列表的设计初衷则是将用户的注意力吸引到某一选定项。
+- 当出现以下情况时，应避免使用列表框：
+    - 列表中的项数非常少。 始终具有两个相同选项的单选列表框可能更适合呈现为[单选按钮](radio-button.md)。 当列表中有 3 到 4 个静态项时，也可考虑使用单选按钮。
+    - 列表框为单选式且始终具有两个相同选项，其中一个可表示为另一个的对立面，例如“打开”和“关闭”。 使用单个复选框或切换开关。
+    - 项目数非常多。 网格视图和列表视图更适用于较长列表。 对于很长的分组数据列表，首选语义式缩放。
+    - 项为相邻的数字值。 如果是这种情况，应考虑使用[滑块](slider.md)。
+    - 选择项在你的应用流中不太重要，或者说对于大部分情况下的大部分用户，建议使用默认选项。 改用下拉列表。
+
+### <a name="recommendations"></a>建议
+
+- 在列表框中，项数的理想范围为 3 到 9 个。
+- 当列表框中的项可以动态变化时，其效果颇佳。
+- 如果可以，请设置列表框的大小，这样便无需平移或滚动其项列表。
+- 验证列表框的目的以及当前选择的项目是否明确。
+- 保留用于触摸反馈和选择的项目状态的视觉效果和动画。
+- 将列表框项目的文本内容限制为单行。 如果项是视觉对象，你可以自定义其大小。 如果项包括多行文本或多个图像，请改用网格视图或列表视图。
+- 使用默认字体，除非你的品牌指南指示使用其他字体。
+- 不要使用列表框执行命令或者动态显示或隐藏其他控件。
+
 ## <a name="get-the-sample-code"></a>获取示例代码
 
 - [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
@@ -307,4 +339,4 @@ bool IsValid(string Text)
 - [搜索](search.md)
 - [TextBox class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)（TextBox 类）
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)
+- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length)

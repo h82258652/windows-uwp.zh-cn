@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fdde696a0bc1dc7706f89ede5d525194e5d2830
-ms.sourcegitcommit: f0e539359b9766db0339ddbae3f7ccf0069011e8
+ms.openlocfilehash: faff0857679d50f6995640bbf9bf0222bb0d2e37
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67885656"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80081614"
 ---
 # <a name="pull-to-refresh"></a>下拉刷新
 
@@ -32,6 +32,22 @@ ms.locfileid: "67885656"
 如果你拥有用户希望定期刷新的数据列表或网格，并且应用可能在触摸优先的设备上运行，请使用下拉刷新。
 
 你也可以使用 [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) 创建以其他方式调用（例如，通过刷新按钮）的一致的刷新体验。
+
+## <a name="examples"></a>示例
+
+<table>
+<th align="left">XAML 控件库<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/PullToRefresh">打开此应用，了解 PullToRefresh 的实际应用</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## <a name="refresh-controls"></a>刷新控件
 
@@ -332,6 +348,10 @@ public class ListItemData
     public string Body { get; set; }
 }
 ```
+
+## <a name="get-the-sample-code"></a>获取示例代码
+
+- [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
 
 ## <a name="related-articles"></a>相关文章
 

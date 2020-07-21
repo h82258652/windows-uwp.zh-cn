@@ -10,16 +10,16 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 88836ac0363001e86c17486e1527b96a4eac0faa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 04f351a2eed5290e31a3f40c5421addf01422154
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371847"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262778"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>设置后台任务的运行条件
 
-**重要的 Api**
+**重要的 API**
 
 - [**SystemCondition**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemCondition)
 - [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)
@@ -29,7 +29,7 @@ ms.locfileid: "66371847"
 
 有时，后台任务还需要满足某些条件，才可以使后台任务继续进行。 你可以在注册后台任务时指定由 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) 指定的一个或多个条件。 引发触发器之后将检查条件。 后台任务将进入队列，但必须先满足所有所需条件才会运行。
 
-对后台任务设置条件可阻止任务不必要地运行，从而节省电池电量和 CPU。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)。 仅当计时器时间过去*以及* Internet 可用时运行后台任务，这有助于防止任务不必要地使用系统资源和电池使用时间。
+对后台任务设置条件可阻止任务不必要地运行，从而节省电池电量和 CPU。 例如，如果你的后台任务在计时器上运行并要求 Internet 连接，请在注册该任务之前将 **InternetAvailable** 条件添加到 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)。 这将有助于防止任务使用系统资源，并且仅在计时器已过去*并且*Internet 可用时才运行后台任务，从而不必要地使用电池生存期。
 
 还可以通过在同一 [**TaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 上多次调用 **AddCondition** 组合多个条件。 注意不要添加冲突条件，如 **UserPresent** 和 **UserNotPresent**。
 
@@ -93,11 +93,6 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 ```
 
 > [!NOTE]
-> 通用 Windows 应用必须在注册任何后台触发器类型之前调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。
-
-若要确保通用 Windows 应用在你发布更新后继续正常运行，必须在启动已经过更新的应用时调用 [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)，然后调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
-
-> [!NOTE]
 > 后台任务注册参数在注册时验证。 如果有任何注册参数无效，则会返回一个错误。 确保你的应用能够流畅地处理后台任务注册失败的情况，否则，如果你的应用依赖于在尝试注册任务后具备有效注册对象，则它可能会崩溃。
 
 ## <a name="place-multiple-conditions-on-your-background-task"></a>在后台任务上放置多个条件
@@ -105,9 +100,9 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 若要添加多个条件，你的应用需要多次调用 [**AddCondition**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition) 方法。 任务注册生效之前，必须进行这些调用。
 
 > [!NOTE]
-> 请注意不要将冲突条件添加到后台任务。
+> 请注意不要将冲突的条件添加到后台任务。
 
-以下代码片段显示了创建和注册后台任务的上下文中的多个条件。
+以下代码片段显示了在创建和注册后台任务的上下文中出现的多个条件。
 
 ```csharp
 // Set up the background task.
@@ -178,7 +173,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>备注
 
 > [!NOTE]
-> 选择后台任务的条件，以便仅在运行时它所需要的以及时它不应不会运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
+> 选择后台任务的条件，使其仅在需要时才运行，不应在不运行的情况下运行。 有关不同后台任务条件的描述，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 ## <a name="related-topics"></a>相关主题
 
@@ -194,4 +189,4 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)

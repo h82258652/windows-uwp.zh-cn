@@ -1,17 +1,17 @@
 ---
 title: 版本自适应代码
-description: 使用 ApiInformation 类以在保持与以前版本的兼容性的同时利用新 API
+description: 使用 ApiInformation 类，利用新 API 并保持与以前的版本兼容
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
-ms.openlocfilehash: f542c76d879881af296351ce51a803aa9986ecbb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.openlocfilehash: 2c03475c0c4007508a18c17645dbe99eeb7d6cb0
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66359713"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75681978"
 ---
 # <a name="version-adaptive-code"></a>版本自适应代码
 
@@ -21,9 +21,9 @@ ms.locfileid: "66359713"
 
 ### <a name="runtime-api-checks"></a>运行时 API 检查
 
-有条件地在代码中使用 [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) 类，测试是否存在要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 **True**，从而可调用该 API。 这将允许你编写版本自适应代码，以便创建相关应用，它们使用仅在特定操作系统版本上提供的 API。
+有条件地在代码中使用 [Windows.Foundation.Metadata.ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) 类，测试是否存在要调用的 API。 此条件将进行评估（无论你的应用在何处运行），但仅针对存在相应 API 的设备评估为 **True**，从而可调用该 API。 因此，你可以编写版本自适应代码以创建这样的应用，它们使用仅在特定 OS 版本上可用的 API。
 
-下面我们看一下面向 Windows Insider Preview 中的新功能的特定示例。 有关使用 **ApiInformation** 的总体概述，请参阅[设备系列概述](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code)和博客文章[使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)。
+下面我们看一下面向 Windows Insider Preview 中的新功能的特定示例。 有关使用 ApiInformation  的总体概述，请参阅[设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code)和博客文章[使用 API 协定动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)。
 
 > [!TIP]
 > 许多运行时 API 检查可能会影响你的应用的性能。 在这些示例中，我们将以内联形式演示检查。 在生产代码中，应执行检查一次并缓存结果，然后在整个应用中使用缓存的结果。 
@@ -42,7 +42,7 @@ ms.locfileid: "66359713"
 
 我们在此处比较这些选项。
 
-**应用程序代码**
+**应用代码**
 
 使用场合：
 - 推荐所有自适应代码方案，但下面针对可扩展触发器定义的特定情况除外。
@@ -71,9 +71,9 @@ ms.locfileid: "66359713"
 
 在本部分中，我们将显示多个使用 Windows 10 版本 1607 (Windows Insider Preview) 中新增 API 的自适应代码的示例。
 
-### <a name="example-1-new-enum-value"></a>示例 1：新枚举值
+### <a name="example-1-new-enum-value"></a>示例 1：新的枚举值
 
-Windows 10 版本 1607年添加到一个新值[InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue)枚举：**ChatWithoutEmoji**。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
+Windows 10 版本 1607 向 [InputScopeNameValue](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscopenamevalue) 枚举添加了一个新值：**ChatWithoutEmoji**。 这一新输入范围与 **Chat** 输入范围具有相同的输入行为（拼写检查、自动完成、首字母自动大写），但其无需表情符号按钮即可映射到触摸键盘。 如果你要创建自己的表情符号选取器，并希望禁用触摸键盘中内置的表情符号按钮，这将很有用。 
 
 此示例显示了如何检查是否存在 **ChatWithoutEmoji** 枚举值，并设置 **TextBox** 的 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性（如果存在该枚举值）。 如果在应用运行所在的系统上不存在该枚举值，则改为将 **InputScope** 设置为 **Chat**。 所示代码可放置在 Page 构造函数或 Page.Loaded 事件处理程序中。
 
@@ -154,7 +154,7 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 
 如果要在不检查的情况下在 XAML 或代码中使用 ChatWithoutEmoji 值，它将编译且不会出现错误，因为它存在于目标操作系统版本中。 它还将在具有目标操作系统版本的系统上运行且不会出现错误。 但是，当应用在使用最低操作系统版本的系统上运行时，它将在运行时崩溃，因为 ChatWithoutEmoji 枚举值不存在。 因此，你只能在代码中使用此值，并将其封装在运行时 API 检查中，以便它仅在当前系统上受支持时才调用。
 
-### <a name="example-2-new-control"></a>示例 2：新的控件
+### <a name="example-2-new-control"></a>示例 2：新控件
 
 新的 Windows 版本通常会将新控件引入到 UWP API 图面，进而为平台引入新功能。 若要利用存在的新控件，请使用 [ApiInformation.IsTypePresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) 方法。
 
@@ -267,7 +267,7 @@ namespace MediaApp
 > [!NOTE]
 > `MediaElementUserControl` 的代码页仅包含生成的代码，因此它不会显示。
 
-**初始化基于 IsTypePresent 的控件**
+**基于 IsTypePresent 初始化控件**
 
 在运行时，调用 **ApiInformation.IsTypePresent** 以检查 MediaPlayerElement。 如果存在，则加载 `MediaPlayerUserControl`；如果不存在，则加载 `MediaElementUserControl`。
 
@@ -303,7 +303,7 @@ public MainPage()
 
 应仅当不同操作系统版本之间的较小 UI 更改不影响其余 UI （例如控件上的属性或枚举值更改）时，才将状态触发器用于自适应代码。
 
-### <a name="example-1-new-property"></a>示例 1：新的属性
+### <a name="example-1-new-property"></a>示例 1：新属性
 
 设置可扩展状态触发器的第一步是子类化 [StateTriggerBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.statetriggerbase) 类来创建自定义触发器，该触发器将基于是否存在 API 来激活。 此示例演示了在存在属性与 XAML 中设置的 `_isPresent` 变量匹配时激活的触发器。
 
@@ -371,7 +371,7 @@ Windows 10 版本 1607 在 [FrameworkElement](https://docs.microsoft.com/uwp/api
 </Grid>
 ```
 
-### <a name="example-2-new-enum-value"></a>示例 2：新枚举值
+### <a name="example-2-new-enum-value"></a>示例 2：新的枚举值
 
 此示例演示了如何基于是否存在某个值设置不同的枚举值。 它使用自定义状态触发器来实现与之前的 chat 示例相同的效果。 在此示例中，使用新的 ChatWithoutEmoji 输入范围（如果设备运行的是 Windows 10 版本 1607），否则使用 **Chat** 输入范围。 使用此触发器的视觉状态可采用 *if-else* 样式进行设置，其中输入范围基于是否存在新的枚举值进行选择。
 
@@ -445,5 +445,5 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 ## <a name="related-articles"></a>相关文章
 
-- [设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-- [动态检测使用 API 协定的功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)（设备系列概述）
+- [使用 API 合约动态检测功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

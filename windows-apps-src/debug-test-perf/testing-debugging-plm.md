@@ -1,17 +1,17 @@
 ---
 description: 用于调试和测试应用如何与进程周期管理配合使用的工具和技术。
-title: 进程周期管理 (PLM) 的测试和调试工具
+title: 测试和调试进程周期管理
 ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d99492577fafc9f67929f795cd115d367940938
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
-ms.translationtype: MT
+ms.openlocfilehash: 6912d7faa3a86dade13b60eac5654aef8a52173d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713733"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74735012"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>进程周期管理 (PLM) 的测试和调试工具
 

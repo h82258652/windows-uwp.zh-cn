@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de9c5261afb7b76b2409599c9c1f88814d1dd6a1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 22d2f73ba6a14ace1319285ca436db4738f84548
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371778"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493292"
 ---
 # <a name="getting-started-navigation"></a>入门：导航
 
@@ -20,21 +20,21 @@ ms.locfileid: "66371778"
 
 iOS 提供 **UINavigationController** 类以帮助应用内导航：可按下和弹出视图，以创建定义应用的**UIViewControllers**层次结构。
 
-与此相反，Windows 10 应用，其中包含多个视图将多个 web 站点方法带到导航。 想象一下，用户在单击控件以其自己的方式浏览应用时，在页面间来回跳跃。 有关详细信息，请参阅[导航设计基础知识](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)。
+相比之下，包含多个视图的 Windows 10 应用需要更多网站方法进行导航。 想象一下，用户在单击控件以其自己的方式浏览应用时，在页面间来回跳跃。 有关详细信息，请参阅[导航设计基础知识](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)。
 
-管理 Windows 10 应用中的此导航的方法之一是使用[**帧**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)类。 以下演练将向你展示如何尝试执行此操作。
+在 Windows 10 应用中管理此导航的方法之一是使用 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 类。 下面的演练向你展示如何尝试执行此操作。
 
 继续使用之前启动的解决方案，打开 **MainPage.xaml** 文件，然后在 **“设计”** 视图中添加按钮。 将该按钮的 **Content** 属性从“Button”更改为“Go To Page”。 然后为按钮的 **Click** 事件创建一个处理程序，如下图所示。 如果忘记了如何执行此操作，可回顾之前部分中的操作实例（提示：双击 **“设计”** 视图中的按钮）。
 
 ![在 Visual Studio 中添加按钮及其 Click 事件](images/ios-to-uwp/vs-go-to-page.png)
 
-让我们添加新页面。 在 **“解决方案”** 视图中，点击 **“项目”** 菜单，然后点击 **“添加新项”** 。 如下图所示点击 **“空白页”** ，然后点击 **“添加”** 。
+让我们添加新页面。 在 **“解决方案”** 视图中，点击 **“项目”** 菜单，然后点击 **“添加新项”**。 如下图所示点击 **“空白页”**，然后点击 **“添加”**。
 
 ![在 Visual Studio 中添加新页面](images/ios-to-uwp/vs-add-new-page.png)
 
 接下来，向 BlankPage.xaml 文件中添加一个按钮。 我们可以使用 AppBarButton 控件并为它添加一个返回箭头图像：在 **“XAML”** 视图中，在 `<Grid> </Grid>` 元素之间添加 ` <AppBarButton Icon="Back"/>`。
 
-现在，让我们向按钮添加事件处理程序： 双击中的控件**设计**视图和 Microsoft Visual Studio 中添加文本"AppBarButton\_单击"向**单击**框，如下所示下图，然后添加并显示 BlankPage.xaml.cs 文件中的相应事件处理程序。
+现在，让我们向该按钮添加一个事件处理程序：在 "**设计**" 视图中双击该控件，然后 Microsoft Visual Studio 将文本 "AppBarButton \_ 单击" 添加到**单击**框（如下图所示），然后在 BlankPage.xaml.cs 文件中添加并显示相应的事件处理程序。
 
 ![在 Visual Studio 中添加一个后退按钮及其 Click 事件](images/ios-to-uwp/vs-add-back-button.png)
 
@@ -64,7 +64,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 现在运行该程序。 点击“Go To Page”按钮以转到另一页，然后点击后退箭头按钮返回到上一页。
 
-页面导航由 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 类管理。 作为**UINavigationController**中 iOS 所使用的类**pushViewController**并**popViewController**方法，**帧**类UWP 应用提供了[ **Navigate** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)并[ **GoBack** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)方法。 **Frame** 类还有一个名为 [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 的方法，该方法可以执行可能需要的操作。
+页面导航由 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 类管理。 由于 iOS 中的**UINavigationController**类使用**pushViewController**和**popViewController**方法，因此 UWP 应用的**Frame**类提供了[**导航**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)和[**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)方法。 **Frame** 类还有一个名为 [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 的方法，该方法可以执行可能需要的操作。
 
 此演练在每次导航到 BlankPage 时都会创建它的一个新实例。 （上一实例将被释放或自动*释放*）。 如果不希望每次都创建一个新实例，可将以下代码添加到 BlankPage.xaml.cs 文件中 BlankPage 类的构造函数。 这将启用 [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 行为。
 
@@ -79,11 +79,11 @@ public BlankPage()
 
 你还可以获取或设置 **Frame** 类的 [**CacheSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) 属性，以管理在导航历史记录中可以缓存多少页面。
 
-有关导航的详细信息，请参阅[导航](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)和 [XAML 个性化动画示例](https://go.microsoft.com/fwlink/p/?LinkID=242401)。
+有关导航的详细信息，请参阅[导航](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)和 [XAML 个性化动画示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20personality%20animations%20sample%20(Windows%208))。
 
-**请注意**  有关使用 JavaScript 和 HTML 的 UWP 应用的导航的信息，请参阅[快速入门：使用单页导航](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))。
+**注意**   有关使用 JavaScript 和 HTML 的 UWP 应用的导航的信息，请参阅[快速入门：使用单页导航](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))。
  
-### <a name="next-step"></a>下一步
+### <a name="next-step"></a>后续步骤
 
 [入门：动画](getting-started-animation.md)
 

@@ -1,5 +1,5 @@
 ---
-title: 使用流式资源时，模板格式不受支持
+title: 带有流式处理资源的模具格式不受支持
 description: 使用流式资源时，包含模板的格式不受支持。
 ms.assetid: 90A572A4-3C76-4795-BAE9-FCC72B5F07AD
 keywords:
@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d35813a6242abd555e87329c25a413285d1d948
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: db6476afe265ea4a2556a5f787a14daa2e212e61
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660982"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74735132"
 ---
 # <a name="stencil-formats-not-supported-with-streaming-resources"></a>使用流式资源时，模板格式不受支持
 
 
 使用流式资源时，包含模板的格式不受支持。
 
-包含模板的格式包括 DXGI\_格式\_D24\_UNORM\_S8\_UINT （及相关 R24G8 系列中的格式） 和 DXGI\_格式\_D32\_浮动\_S8X24\_UINT （及相关 R32G8X24 系列中的格式）。
+包含模具的格式包括 DXGI\_格式\_D24\_UNORM\_S8\_UINT （以及 R24G8 系列中的相关格式）和 DXGI\_格式\_D32\_FLOAT\_S8X24\_UINT （以及 R32G8X24 系列中的相关格式）。
 
 某些实现以独立分配方式存储深度和模板，而另一些实现将两者存储在一起。 针对两种方案的磁贴管理必须有所不同，并且任何单个 API 均不可抽象差异或使差异合理化。 我们建议使用未来的硬件，以支持独立深度和模板表面（均独立平铺）。
 
@@ -28,7 +28,7 @@ ms.locfileid: "57660982"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 
 
-[流式处理资源的跨进程和设备共享](streaming-resource-cross-process-and-device-sharing.md)
+[流式处理资源跨进程和设备共享](streaming-resource-cross-process-and-device-sharing.md)
 
  
 

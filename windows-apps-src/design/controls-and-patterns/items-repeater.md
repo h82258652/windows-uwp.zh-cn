@@ -7,26 +7,30 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a81501b524826484111419899675fbb99b86fa
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364754"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970402"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
 通过 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 创建使用灵活布局系统、自定义视图和虚拟化的自定义集合体验。
 
-与 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 不同，[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不提供综合性的最终用户体验 - 它没有没有默认 UI，不提供任何围绕焦点、选择或用户交互的策略， 而是一个构建基块，你可以使用它来创建自己的基于唯一集合的体验和自定义控件。 虽然它没有内置的策略，但允许你附加策略来构建所需的体验。 例如，你可以定义要使用的布局、键盘操作策略、选择策略等。
+与 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 不同，[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不提供综合性的最终用户体验 - 它没有没有默认 UI，不提供任何围绕焦点、选择或用户交互的策略， 而是一个构建基块，你可以使用它来创建自己的基于集合的独特体验和自定义控件。 虽然它没有内置的策略，但允许你附加策略来构建所需的体验。 例如，你可以定义要使用的布局、键盘操作策略、选择策略等。
 
 在概念上，可以将 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 视为数据驱动的面板，而不是 ListView 之类的完整控件。 可以指定要显示的数据项的集合、用于为每个数据项生成 UI 元素的项模板，以及用于确定如何设置元素大小和位置的布局。 然后，ItemsRepeater 会根据数据源生成子元素，并按项模板和布局的指定显示它们。 显示的项不需是同类的，因为 ItemsRepeater 可以在加载内容后根据你在数据模板选择器中指定的条件来表示数据项。
 
-| **获取 Windows UI 库** |
-| - |
-| 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+**获取 Windows UI 库**
 
-> **重要的 API**：[ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)、[ScrollViewer 类](/uwp/api/windows.ui.xaml.controls.scrollviewer)
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | ItemsRepeater 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [ItemsRepeater 类](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
+>
+> **平台 API：** [ScrollViewer 类](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -46,7 +50,7 @@ ItemsRepeater 没有内置的项集合。 如果需要直接提供项集合，�
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ItemsRepeater">ItemsRepeater</a> 的实际应用。</p>
     <ul>
@@ -256,7 +260,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 }
 ```
 
-## <a name="change-the-layout-of-items"></a>更改项目的布局
+## <a name="change-the-layout-of-items"></a>更改项的布局
 
 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 所显示的项由 [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) 对象进行排列，该对象可以管理其子元素的大小和位置设置。 与 ItemsRepeater 配合使用时，Layout 对象支持 UI 虚拟化。 提供的布局为 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) 和 [UniformGridLayout](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout)。 默认情况下，ItemsRepeater 使用垂直方向的 StackLayout。
 
@@ -264,7 +268,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 [StackLayout](/uwp/api/microsoft.ui.xaml.controls.stacklayout) 可以将元素按水平或垂直方向排列到单行中。
 
-可以通过设置 [Spacing](/en-us/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) 属性来调整项之间的空间大小。 间距会应用到布局的 [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) 属性所指定的方向。
+可以通过设置 [Spacing](/uwp/api/microsoft.ui.xaml.controls.stacklayout.spacing) 属性来调整项之间的空间大小。 间距会应用到布局的 [Orientation](/uwp/api/microsoft.ui.xaml.controls.stacklayout.orientation) 属性所指定的方向。
 
 ![堆栈布局间距](images/stack-layout.png)
 
@@ -294,13 +298,13 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 ![统一网格大小和间距](images/uniform-grid-sizing-spacing.png)
 
-根据项的最小大小和间距确定行或列中的项数以后，在行或列最后一项的后面可能还留有未使用的空间（如前面的图所示）。 可以指定是忽略额外的空间、使用额外的空间来增加每个项的大小，还是使用额外空间来增加项的间距。 这可以通过 [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) 和 [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) 属性来控制。
+根据项的最小大小和间距确定行或列中的项数以后，在行或列最后一项的后面可能还留有未使用的空间（如前图所示）。 可以指定是忽略额外的空间、使用额外的空间来增加每个项的大小，还是使用额外空间来增加项的间距。 这可以通过 [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) 和 [ItemsJustification](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification) 属性来控制。
 
 可以设置 [ItemsStretch](/uwp/api/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch) 属性，以便指定如何增加项大小来填充未使用的空间。
 
 以下列表显示了可用值。 这些定义假定默认的 **Orientation** 为 **Horizontal**。
 
-- **无**：行末尾的额外空间保留不用。 这是默认设置。
+- **None**：行末尾的额外空间保留不用。 这是默认设置。
 - **Fill**：增加项的宽度，直至用完可用空间（如果为垂直方向的布局，则增加项的高度）。
 - **Uniform**：按纵横比增加项的宽度和高度，直至用完可用空间（如果为垂直方向的布局，则高度和宽度互换）。
 
@@ -312,7 +316,7 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
 以下列表显示了可用值。 这些定义假定默认的 **Orientation** 为 **Horizontal**。
 
-- **开始**：项与行开头对齐。 行末尾的额外空间保留不用。 这是默认设置。
+- **Start**：项与行开头对齐。 行末尾的额外空间保留不用。 这是默认设置。
 - **Center**：项在行中心对齐。 额外空间在行的开头和末尾均匀分布。
 - **End**：项与行末尾对齐。 行开头的额外空间保留不用。
 - **SpaceAround**：项均匀分布。 在每个项的前面和后面添加的空间大小相同。
@@ -642,6 +646,12 @@ public sealed class MediaCollectionView : Control
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
+
+<Page.Resources>
+    <muxc:StackLayout x:Key="MyGroupLayout"/>
+    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
+</Page.Resources>
+
 <ScrollViewer>
   <muxc:ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
                       Layout="{StaticResource MyGroupLayout}">
@@ -650,7 +660,7 @@ public sealed class MediaCollectionView : Control
         <!-- Group -->
         <StackPanel>
           <!-- Header -->
-          TextBlock Text="{x:Bind AppTitle}"/>
+          <TextBlock Text="{x:Bind AppTitle}"/>
           <!-- Items -->
           <muxc:ItemsRepeater ItemsSource="{x:Bind Notifications}"
                               Layout="{StaticResource MyItemLayout}"
@@ -663,10 +673,11 @@ public sealed class MediaCollectionView : Control
   </muxc:ItemsRepeater>
 </ScrollViewer>
 ```
-
-以下示例演示某个应用的布局。该应用有各种可以随用户首选项变化的类别，这些类别以水平滚动列表形式呈现，如下所示。
+下图显示了使用以上示例作为指南创建的基本布局。
 
 ![ItemsRepeater 的嵌套式布局](images/items-repeater-nested-layout.png)
+
+下一示例演示某个应用的布局。该应用的各种类别可以随用户首选项变化，并且以水平滚动列表形式呈现。 此示例的布局也如上图所示。
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -729,22 +740,22 @@ public class MyPage : Page
 {
     // ...
 
-    protected override void OnNavigatedTo(NavigationEventArgs e)
+     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         base.OnNavigatedTo(e);
 
-            // retrieve saved offset + index(es) of the tracked element and then bring it into view.
-            // ... 
+        // retrieve saved offset + index(es) of the tracked element and then bring it into view.
+        // ... 
+        
+        var element = repeater.GetOrCreateElement(index);
 
-            var element = repeater.GetOrCreateElement(index);
+        // ensure the item is given a valid position
+        element.UpdateLayout();
 
-            // ensure the item is given a valid position
-            element.UpdateLayout();
-
-            element.StartBringIntoView(new BringIntoViewOptions()
-            {
-                VerticalOffset = relativeVerticalOffset
-            });
+        element.StartBringIntoView(new BringIntoViewOptions()
+        {
+            VerticalOffset = relativeVerticalOffset
+        });
     }
 
     protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -754,8 +765,8 @@ public class MyPage : Page
         // retrieve and save the relative offset and index(es) of the scrollviewer's current anchor element ...
         var anchor = this.scrollviewer.CurrentAnchor;
         var index = this.repeater.GetElementIndex(anchor);
-        var anchorBounds = anchor.TransformToVisual(this.scrollviewer).TransformBounds(new Rect(0, 0, anchor.ActualWidth, anchor.ActualHeight));
-        relativeVerticalOffset = this.sv.VerticalOffset – anchorBounds.Top;
+        var anchorBounds = anchor.TransformToVisual(this.scrollviewer).TransformBounds(new Rect(0, 0, anchor.ActualSize.X, anchor.ActualSize.Y));
+        relativeVerticalOffset = this.scrollviewer.VerticalOffset - anchorBounds.Top;
     }
 }
 
@@ -763,7 +774,7 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>启用辅助功能
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不提供默认的辅助功能体验。 有关 [UWP 应用中的可用性](/windows/uwp/design/usability)的文档提供了详细的信息，读后可确保应用提供包容性用户体验。 如果使用 ItemsRepeater 来创建自定义控件，则务必查看有关[自定义的自动化对等](/windows/uwp/design/accessibility/custom-automation-peers)的文档。
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 不提供默认的辅助功能体验。 有关 [Windows 应用的可用性](/windows/uwp/design/usability)的文档提供了详细信息，可帮助你确保应用提供包容性用户体验。 如果使用 ItemsRepeater 来创建自定义控件，则务必查看有关[自定义的自动化对等](/windows/uwp/design/accessibility/custom-automation-peers)的文档。
 
 ### <a name="keyboarding"></a>键盘操作
 根据 XAML 的[适用于键盘操作的 2D 定向导航](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard)中的说明，将会尽量减少针对焦点移动（由 ItemsRepeater 提供）的键盘操作支持。
@@ -777,7 +788,7 @@ ItemsRepeater 自动确保其项（不管是否已虚拟化）的默认 Tab 键�
 > [!NOTE]
 > ItemsRepeater 不会自动记住上一个聚焦项。  这意味着，当用户使用 Shift+Tab 时，系统可能会将其转到上一个实现的项。
 
-### <a name="announcing-item-x-of-y-in-screen-readers"></a>在屏幕阅读器中读出“_Y_ 的项 _X_”
+### <a name="announcing-item-_x_-of-_y_-in-screen-readers"></a>在屏幕阅读器中读出“_Y_ 的项 _X_”
 
 你需要管理相应自动化属性（例如 **PositionInSet** 和 **SizeOfSet** 的值）的设置，并确保这些属性在用户对项执行添加、移动、删除等操作时保持最新状态。
 

@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb91b37b1d2a6924a80bbe666129343ad778d8e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 098c46499e65c34e3699b09e137ea94c40590ef7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370469"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968003"
 ---
 # <a name="reveal-focus"></a>显示焦点
 
@@ -74,7 +74,7 @@ ms.locfileid: "66370469"
 
 在开始自定义之前，最好先对构成“显示焦点”的组件多一些了解。
 
-默认的“显示焦点”视觉对象分为三部分：主边框、辅助边框和显示明亮辉光。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。 “显示焦点”明亮辉光的粗细与主边框的粗细成比例，在主边框的“外部”周围运行  。
+默认的“显示焦点”视觉对象分为三部分：主边框、辅助边框和显示明亮辉光。 主边框为 2px 粗，在辅助边框的“外部”周围运行   。 辅助边框为 1px 粗，在主边框的“内部”周围运行   。 “显示焦点”明亮辉光的粗细与主边框的粗细成比例，在主边框的“外部”周围运行  。
 
 除静态元素外，“显示焦点”视觉对象还采用动画灯光，在静止状态它会跳动，当移动焦点时它会朝着焦点方向移动。
 
@@ -108,7 +108,7 @@ ms.locfileid: "66370469"
 
 ## <a name="customize-the-color"></a>自定义颜色
 
-若要更改显示焦点视觉对象的颜色，请使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) 属性。
+若要更改显示焦点视觉对象的颜色，请使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) 属性。
 
 | 属性 | 默认资源 | 默认资源值 |
 | ---- | ---- | --- | 
@@ -163,19 +163,19 @@ ms.locfileid: "66370469"
 
 ## <a name="use-your-own-focus-visuals"></a>使用你自己的焦点视觉对象
 
-自定义显示焦点的另一个方法是，通过使用视觉对象状态绘制你自己的焦点视觉对象来选择退出系统提供的焦点视觉对象。 若要了解详细信息，请参阅[焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)。
+自定义显示焦点的另一个方法是，通过使用视觉对象状态绘制你自己的焦点视觉对象来选择退出系统提供的焦点视觉对象。 若要了解详细信息，请参阅[焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)。
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>显示焦点和 Fluent Design 系统
 
-“显示焦点”是 Fluent Design 系统组件，用于将光线添加到应用。 若要了解有关 Fluent Design 系统及其其他组件的详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
+“显示焦点”是 Fluent Design 系统组件，用于将光线添加到应用。 若要了解有关 Fluent Design 系统及其其他组件的详细信息，请参阅 [Fluent Design 概述](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相关文章
 
 - [突出显示](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [针对 Xbox 和电视进行设计](/windows/uwp/design/devices/designing-for-tv)
 - [游戏板和遥控器交互](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 - [合成效果](https://docs.microsoft.com/windows/uwp/graphics/composition-effects)
 - [系统中的科学：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [系统中的科学：Fluent Design 和光线](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

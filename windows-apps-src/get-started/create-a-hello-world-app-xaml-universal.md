@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, Hello World
 ms.localizationpriority: medium
-ms.openlocfilehash: 65dfc7b5f9a870f3ccdd5c0c046b996a01c06a00
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 93c78845a218620a8a46fc4439733734099b9853
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321210"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "73847607"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>创建“Hello, world”应用 \(XAML\)
 
@@ -36,11 +36,9 @@ ms.locfileid: "67321210"
 
 ## <a name="video-summary"></a>视频摘要
 
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player]
 
-
-
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>第 1 步：在 Visual Studio 中创建新项目
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目
 
 1.  启动 Visual Studio。
 
@@ -125,7 +123,7 @@ App.xaml 和 App.xaml.cs
     如果查看 XAML 代码窗口，你会发现 Button 已添加到此窗口中：
 
  ```XAML
-<Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
+<Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
  ```
 
 4.  更改按钮的文本。
@@ -133,7 +131,7 @@ App.xaml 和 App.xaml.cs
     在 XAML 代码视图中单击一下，然后将内容从“Button”更改为“Hello, world!”。
 
 ```XAML
-<Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
+<Button x:Name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
 注意设计画布中显示的按钮如何更新显示新文本。
@@ -176,7 +174,7 @@ App.xaml 和 App.xaml.cs
 
 按 Windows 键以打开 **“开始”** 菜单，然后显示所有应用。 请注意，本地部署应用会将其磁贴添加到 **“开始”** 菜单。 若要稍后再次运行该应用（不是在调试模式下），请在“开始”菜单中点击或单击其磁贴  。
 
-它还无法执行很多操作，但祝贺你已构建了第一个 UWP 应用！
+它暂时还没有很多功能，但祝贺你已构建了自己的第一个 UWP 应用！
 
 停止调试 
 
@@ -194,7 +192,7 @@ App.xaml 和 App.xaml.cs
 
 “事件处理程序”听起来很复杂，但它只是事件发生（如用户单击按钮）时调用的代码的另一个名称。
 
-1.  如果你尚未这样做，请停止应用运行。
+1. 如果你还未停止运行应用，停止它。
 
 2.  双击设计画布中的按钮控件，让 Visual Studio 为该按钮创建事件处理程序。
 

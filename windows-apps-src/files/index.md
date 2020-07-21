@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7296923b3e991a56fed115527b28a6b62b3ffd6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 15e6ebd45d4f7069e09169a437476b0f785ea959
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369463"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74259592"
 ---
  # <a name="files-folders-and-libraries"></a>文件、文件夹和库
 
 
 使用 [Windows.Storage](https://docs.microsoft.com/uwp/api/Windows.Storage)、[Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 和 [Windows.Storage.Pickers](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers) 命名空间中的 API，以在文件中读取和写入文本和其他数据格式并管理文件和文件夹。 在本部分中，你还将了解有关读取和写入应用设置、文件和文件夹选取器、特殊沙盒式位置（如视频/音乐库）的信息。
 
-| 主题 | 描述  |
+| 主题 | 说明  |
 |-------|--------------|
 | [枚举和查询文件和文件夹](quickstart-listing-files-and-folders.md) | 访问位于文件夹、库、设备或网络位置的文件和文件夹。 还可以通过构造文件和文件夹查询来查询某个位置的文件和文件夹。 |
 | [创建、写入和读取文件](quickstart-reading-and-writing-files.md) | 使用 [StorageFile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象读取和写入文件。 |
@@ -36,11 +36,11 @@ ms.locfileid: "66369463"
 | [在 UWP 中快速访问文件属性](fast-file-properties.md) | 高效地从库中收集文件及其属性的列表以用于 UWP 应用。 |
 
 ## <a name="related-samples"></a>相关示例
-[文件夹枚举示例](https://go.microsoft.com/fwlink/p/?linkid=619993)
+[文件夹枚举示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration)
 
-[文件访问示例](https://go.microsoft.com/fwlink/p/?linkid=619995)
+[文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)
 
-[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)
+[文件选取器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)
  
 
  

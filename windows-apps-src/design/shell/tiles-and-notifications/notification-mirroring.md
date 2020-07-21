@@ -1,5 +1,5 @@
 ---
-Description: 了解如何使用通知镜像 toast 通知。
+Description: 了解如何在 toast 通知上使用通知镜像。
 title: 通知镜像
 label: Notification mirroring
 template: detail.hbs
@@ -7,25 +7,25 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, toast, 云中的操作中心, 通知镜像, 通知, 跨设备
 ms.localizationpriority: medium
-ms.openlocfilehash: dc870601159a80bc6d03a287fd19f082e968e09e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: b897c6574f6cbfe78406d1c624f2e3b7286ef582
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57657312"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971052"
 ---
 # <a name="notification-mirroring"></a>通知镜像
 
 通知镜像由云中的操作中心提供支持，借助通知镜像，用户可以在电脑上查看手机通知。
 
 > [!IMPORTANT]
-> **需要周年更新**:您必须运行版本 14393 或更高版本，请参阅通知镜像工作。 如果想要选择将应用退出通知镜像，则必须以 SDK 14393 为目标来访问镜像 API。
+> **需要周年更新**：必须运行内部版本 14393 或更高版本才能查看通知镜像工作。 如果想要选择将应用退出通知镜像，则必须以 SDK 14393 为目标来访问镜像 API。
 
 通过通知镜像和 Cortana，用户可以方便地从电脑上接收和操作手机的通知（Windows 移动版和 Android）。 开发人员无需执行任何操作即可启用通知镜像，镜像自动工作！ 点击镜像 Toast 上的按钮，就像快速回复消息一样，将会返回手机，调用后台任务或启动前台应用。
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-开发人员从通知镜像获取两个好处：镜像的通知会导致你的服务，使用多个用户参与度，它们还可帮助用户发现您的 Microsoft Store 桌面应用程序 ！ 用户甚至可能不知道有出色的 UWP 应用可用于他们的 Windows 10 桌面。 当用户从他们的手机收到镜像的通知时，用户可以单击 toast 通知，可以跳转到 Microsoft Store，他们可以在其中安装 UWP 桌面应用程序。
+开发人员从通知镜像中获得了两大好处：镜像通知会导致更多的用户与你的服务合作，同时还有助于用户发现你的 Microsoft Store 桌面应用程序！ 你的用户可能甚至还不知道，你有一个适用于 Windows 10 桌面的出色的 Windows 应用程序。 当用户从他们的手机接收到镜像通知时，用户可以单击 toast 通知进入 Microsoft Store，他们可以在其中安装 Windows 应用。
 
 镜像适用于 Windows Phone 和 Android。 用户需要同时在手机和桌面上登录 Cortana，通知镜像才能运行。
 
@@ -42,7 +42,7 @@ ms.locfileid: "57657312"
 
 ## <a name="how-to-opt-out-of-mirroring"></a>如何选择退出镜像
 
-UWP 应用开发人员、企业和用户可以选择禁用通知镜像。
+Windows 应用开发人员、企业和用户可以选择禁用通知镜像。
 
 > [!NOTE]
 > 禁用镜像还会禁用[通用消除](universal-dismiss.md)。
@@ -52,7 +52,7 @@ UWP 应用开发人员、企业和用户可以选择禁用通知镜像。
 
 有时可能不希望将一个特定于设备的通知镜像到其他设备。 可以通过在 Toast 通知上设置 **Mirroring** 属性来防止镜像特定通知。 目前，只能在本地通知上设置此镜像属性（在发送 WNS 推送通知时不能指定该属性）。
 
-**已知问题**:检索通过镜像属性`ToastNotificationHistory.GetHistory()`API 将始终返回默认值 (**允许**) 而不是你指定的选项。 不必担心，一切都正常运行 - 只是在检索已损坏的值。
+**已知问题**：通过 `ToastNotificationHistory.GetHistory()` API 检索镜像属性将始终返回默认值（**允许**）而不是指定的选项。 不必担心，一切都正常运行 - 只是在检索已损坏的值。
 
 ```csharp
 var toast = new ToastNotification(xml)
@@ -67,7 +67,7 @@ ToastNotificationManager.CreateToastNotifier().Show(toast);
 
 ### <a name="as-a-developer-opt-out-completely"></a>作为开发人员，选择完全退出
 
-某些开发人员可能会选择将应用完全退出通知镜像。 虽然我们相信，所有应用程序将受益于镜像，我们轻松选择退出。只需一次，调用以下方法和您的应用程序将退出。例如，在应用程序的构造函数中将此调用`App.xaml.cs`...
+某些开发人员可能会选择将应用完全退出通知镜像。 尽管我们认为镜像对所有的应用都有好处，但用户也可以轻松选择退出。只需调用以下方法一次，应用将会选择退出。例如，可以将此调用放置在 `App.xaml.cs` 内的应用的构造函数中...
 
 ```csharp
 public App()

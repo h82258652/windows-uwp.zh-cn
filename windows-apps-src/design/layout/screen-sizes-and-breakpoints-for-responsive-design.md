@@ -6,25 +6,25 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: 2e385f6b9977eead6aed52215080588e4f9d8c27
+ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57612922"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84262768"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>屏幕大小和断点
 
-UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、平板电脑、台式机、电视等。 鉴于 Windows 10 生态系统中海量的设备类型和屏幕尺寸，我们建议不要针对每种设备优化 UI，而是针对几个关键宽度类别（也称作“断点”）进行优化： 
+Windows 应用可以在运行 Windows 的任何设备上运行，其中包括手机、平板电脑、台式机、电视等。 鉴于 Windows 10 生态系统中的各种设备目标和屏幕大小，我们建议针对几个关键宽度类别（也称为“断点”）进行设计而不是为每台设备优化 UI： 
 - 小（640px 以下）
 - 中等（641px 到 1007px）
-- 大（1008px 和以上）
+- 大（不小于 1008px）
 
 > [!TIP]
 > 在针对特定断点进行设计时，请针对应用窗口的可用空间大小（而不是屏幕大小）进行设计。 当应用全屏运行时，应用窗口的大小与屏幕的大小相同；但当应用不全屏运行时，窗口的大小小于屏幕的大小。
 
 ## <a name="breakpoints"></a>断点
-此表描述了不同的大小级别和断点。
+下表展示了不同的大小级别和断点。
 
 ![响应式设计断点](images/breakpoints/size-classes.svg)
 
@@ -47,10 +47,10 @@ UWP 应用可以在运行 Windows 10 的任何设备上运行，包括手机、�
 <td style="vertical-align:top;">320x569、360x640、480x854</td>
 </tr>
 <tr class="odd">
-<td style="vertical-align:top;">中等</td>
+<td style="vertical-align:top;">中</td>
 <td style="vertical-align:top;">641px 到 1007px</td>
 <td style="vertical-align:top;">7&quot; 到 12&quot;</td>
-<td style="vertical-align:top;">平板电脑</td>
+<td style="vertical-align:top;">平板手机、平板电脑</td>
 <td style="vertical-align:top;">960x540</td>
 </tr>
 <tr class="even">
@@ -71,7 +71,7 @@ UWP 的有效像素系统会自动替你解决观看距离问题。 当你为控
 
 ## <a name="effective-pixels-and-scale-factor"></a>有效像素和缩放比例
 
-UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都清晰可见。 Windows 会根据其 DPI（每英寸点数）和设备的观看距离为每台显示器自动缩放。 用户可以通过转到**设置** > **显示器** > **缩放和布局**设置页覆盖默认值。 
+UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都清晰可见。 Windows 会根据其 DPI（每英寸点数）和设备的观看距离为每台显示器自动缩放。 用户可以通过转到“设置”   > “显示器”   > “缩放和布局”  设置页覆盖默认值。 
 
 
 ## <a name="general-recommendations"></a>常规建议
@@ -84,13 +84,13 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于覆盖模式，以节省屏幕空间。
 - 如果你使用的是[大纲细节模式](../controls-and-patterns/master-details.md)，请使用堆叠演示模式来节省屏幕空间。
 
-### <a name="medium"></a>中等
-- 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建可视间隔。
+### <a name="medium"></a>中
+- 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建一个可视间隔。
 - 将命令元素（如[应用栏](../controls-and-patterns/app-bars.md)）放置在应用窗口顶部。
 - 使用最多两个列/区域。
 - 显示搜索框。
-- 使[导航窗格](../controls-and-patterns/navigationview.md)处于紧缩模式，以便始终在狭长的条带区域内显示图标。
-- 请考虑针对[电视体验](https://go.microsoft.com/fwlink/?LinkId=760736)进行进一步定制。
+- 使[导航窗格](../controls-and-patterns/navigationview.md)处于长条模式，以便始终显示窄带的图标。
+- 请考虑针对[电视体验](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)进行进一步定制。
 
 ### <a name="large"></a>大
 - 将左右窗口边距设置为 24px 以在应用窗口的左侧和右侧边缘之间创建可视间隔。
@@ -98,8 +98,3 @@ UWP 应用会自动缩放 UI，以保证应用在所有 Windows 10 设备上都�
 - 使用最多三个列/区域。
 - 显示搜索框。
 - 使[导航窗格](../controls-and-patterns/navigationview.md)处于停靠模式，以使其始终显示。
-
->[!TIP] 
-> 使用[手机版 Continuum](https://go.microsoft.com/fwlink/p/?LinkID=699431) 时，用户可以将监视器、 鼠标和键盘连接到兼容的 Windows 10 移动设备上，让移动设备像笔记本电脑一样工作。针对特定断点进行设计时请记住这一新功能 - 手机将不会始终保持在固定的尺寸级别。
-
-

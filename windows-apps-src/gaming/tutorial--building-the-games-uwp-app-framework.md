@@ -1,101 +1,52 @@
 ---
 title: 定义游戏的 UWP 应用框架
-description: 为通用 Windows 平台 (UWP) DirectX 游戏进行编码的第一部分是生成使游戏对象与 Windows 交互的框架。
+description: 编写通用 Windows 平台（UWP）游戏的第一步是生成框架，该框架使应用对象能够与 Windows 交互。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
-ms.date: 10/24/2017
+ms.date: 06/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 游戏, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 940de8c00dc2639785ae82e87d63f4994b1b6b2e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5052b4e71196950b6a8a91aaa271b5550fb448b5
+ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367738"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85409616"
 ---
-#  <a name="define-the-uwp-app-framework"></a>定义 UWP 应用框架
+#  <a name="define-the-games-uwp-app-framework"></a>定义游戏的 UWP 应用框架
 
-构建框架以让游戏对象与 Windows 交互，包括 Windows 运行时属性（如暂停-恢复事件处理、窗口焦点的改变和贴靠）。
+> [!NOTE]
+> 本主题是[使用 DirectX 教程系列创建简单通用 Windows 平台（UWP）游戏](tutorial--create-your-first-uwp-directx-game.md)的一部分。 该链接上的主题设置了序列的上下文。
 
-若要设置此框架，首先获取视图提供程序，以使应用单一实例（即定义运行应用的实例的 Windows 运行时对象）能够访问其所需的图形资源。 通过 Windows 运行时，你的游戏还可以直接与图形界面连接，这让你可以指定所需的资源和处理资源的方式。
+编写通用 Windows 平台（UWP）游戏的第一步是生成框架，该框架使应用对象能够与窗口进行交互，包括挂起-resume 事件处理、窗口焦点变化和对齐等 Windows 运行时功能。
 
-视图提供程序对象实现 __IFrameworkView__ 界面，其包括一系列创建此游戏示例需要配置的方法。
+## <a name="objectives"></a>目标
 
-你需要实现应用单一实例调用的以下五个方法：
-* [__初始化__](#initialize-the-view-provider)
-* [__SetWindow__](#configure-the-window-and-display-behaviors)
-* [__负载__](#load-method-of-the-view-provider)
-* [__Run__](#run-method-of-the-view-provider)
-* [__取消初始化__](#uninitialize-method-of-the-view-provider)
+* 为通用 Windows 平台（UWP） DirectX 游戏设置框架，并实现定义整个游戏流的状态机。
 
-__Initialize__ 方法在应用程序启动时调用。 __SetWindow__ 方法在 __Initialize__ 之后调用。 然后调用 __Load__ 方法。 __Run__ 方法在游戏运行时调用。 当游戏结束时，调用 __Uninitialize__ 方法。 有关详细信息，请参阅 [__IFrameworkView__ API 参考](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview)。 
+> [!NOTE]
+> 若要遵循本主题，请查看下载的[Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/)示例游戏的源代码。
 
->[!Note]
->如果你尚未下载适用于此示例的最新游戏代码，请转到 [Direct3D 游戏示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此示例是大型 UWP 功能示例集合的一部分。 有关如何下载示例的说明，请参阅[从 GitHub 获取 UWP 示例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
+## <a name="introduction"></a>简介
 
-## <a name="objective"></a>目标
+在[设置游戏项目](tutorial--setting-up-the-games-infrastructure.md)主题中，我们引入了**WWinMain**函数以及[**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)和[**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)接口。 我们了解到**App**类（可以在 `App.cpp` **Simple3DGameDX**项目中的源代码文件中定义）同时用作*视图提供程序工厂*和*视图提供程序*。
 
-为通用 Windows 平台 (UWP) DirectX 游戏设置框架，以及实现定义整个游戏流的状态机。
+本主题从这里开始，并详细了解游戏中的**应用**类应如何实现**IFrameworkView**方法。
 
-## <a name="define-the-view-provider-factory-and-view-provider-object"></a>定义视图提供程序工厂和视图提供程序对象
+## <a name="the-appinitialize-method"></a>App：： Initialize 方法
 
-我们来检查一下 __App.cpp__ 中的__主__循环。 
+在应用程序启动时，Windows 调用的第一种方法是实现[**IFrameworkView：： Initialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)。
 
-在此步骤中，我们将为视图创建工厂（实现 __IFrameworkViewSource__），这反过来创建定义视图的视图提供程序对象的实例（实现 __IFrameworkView__）。
+你的实现应处理 UWP 游戏的最基本的行为，例如，确保游戏可以通过订阅这些事件来处理挂起（和可能的更高版本）事件。 我们还可以在此处访问显示适配器设备，因此，我们可以创建依赖于该设备的图形资源。
 
-### <a name="main-method"></a>主要方法
-
-如果你已加载 GitHub 示例代码，则创建新的 __DirectXApplicationSource__。 （如果你使用原始 DirectX 模板，则使用 __Direct3DApplicationSource__）这是实现 __IFrameworkViewSource__ 的视图提供程序工厂。 视图提供程序工厂的 __IFrameworkViewSource__ 界面定义了一个方法 __CreateView__。
-
-在 __CoreApplication::Run__ 中，__CreateView__ 方法在传递 __Direct3DApplicationSource__ 或 __DirectXApplicationSource__ 时由应用单一实例调用。
-
-__CreateView__ 返回对实现 __IFrameworkView__ 的应用对象的新实例的引用，即此示例中的 __App__ 类对象。 __App__ 类对象是视图提供程序对象。
-
-```cpp
-// The main function is only used to initialize our IFrameworkView class.
-[Platform::MTAThread]
-int main(Platform::Array<Platform::String^>^)
+```cppwinrt
+void Initialize(CoreApplicationView const& applicationView)
 {
-    auto directXApplicationSource = ref new DirectXApplicationSource();
-    CoreApplication::Run(directXApplicationSource);
-    return 0;
-}
+    applicationView.Activated({ this, &App::OnActivated });
 
-//--------------------------------------------------------------------------------------
+    CoreApplication::Suspending({ this, &App::OnSuspending });
 
-IFrameworkView^ DirectXApplicationSource::CreateView()
-{
-    return ref new App();
-}
-```
-
-## <a name="initialize-the-view-provider"></a>初始化视图提供程序
-
-创建视图提供程序对象后，应用单一实例在应用程序启动时调用 [**Initialize**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.initialize) 方法。 因此，使用此方法处理 UWP 游戏的大多数基本行为非常重要，如处理主窗口的激活以及确保游戏可以处理突然暂停（可能随后恢复）事件。
-
-此时，游戏应用可以处理暂停（或继续）消息。 但仍没有要使用的窗口，并且游戏未初始化。 还需要提供更多内容！
-
-### <a name="appinitialize-method"></a>App::Initialize 方法
-
-在此方法中，为激活、暂停和恢复游戏创建各种事件处理程序。
-
-获取对设备资源的访问权限。 __make_shared__ 函数用于在首次创建内存资源时创建 __shared_ptr__。 使用 __make_shared__ 的好处是它是防异常的。 它还使用同一调用为控制块和资源分配内存，从而减少构造开销。
-
-```cpp
-void App::Initialize(
-    CoreApplicationView^ applicationView
-    )
-{
-    // Register event handlers for app lifecycle. This example includes Activated, so that we
-    // can make the CoreWindow active and start rendering on the window.
-    applicationView->Activated +=
-        ref new TypedEventHandler<CoreApplicationView^, IActivatedEventArgs^>(this, &App::OnActivated);
-
-    CoreApplication::Suspending +=
-        ref new EventHandler<SuspendingEventArgs^>(this, &App::OnSuspending);
-
-    CoreApplication::Resuming +=
-        ref new EventHandler<Platform::Object^>(this, &App::OnResuming);
+    CoreApplication::Resuming({ this, &App::OnResuming });
 
     // At this point we have access to the device. 
     // We can create the device-dependent resources.
@@ -103,98 +54,80 @@ void App::Initialize(
 }
 ```
 
-## <a name="configure-the-window-and-display-behaviors"></a>配置窗口和显示行为
+尽可能避免原始指针（几乎总是可能的）。
 
-现在，我们来看看 [__SetWindow__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow) 的实现。 在 __SetWindow__ 方法中，你配置窗口和显示行为。
+- 对于 Windows 运行时类型，几乎可以完全避免指针，而只是在堆栈上构造值。 如果确实需要一个指针，请使用[**winrt：： com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （我们很快就会看到一个示例）。
+- 对于唯一指针，请使用[**std：： unique_ptr**](/cpp/cpp/how-to-create-and-use-unique-ptr-instances)和**std：： make_unique**。
+- 对于共享指针，请使用[**std：： shared_ptr**](/cpp/cpp/how-to-create-and-use-shared-ptr-instances)和**std：： make_shared**。
 
-### <a name="appsetwindow-method"></a>App::SetWindow 方法
+## <a name="the-appsetwindow-method"></a>App：： SetWindow 方法
 
-应用单一实例提供一个表示游戏主窗口的 [__CoreWindow__](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 对象，并将其资源和事件提供给游戏。 现在，已经有一个要处理的窗口了，游戏现在可以开始在基本 UI 组件和事件中进行添加了。
+**初始化**之后，Windows 将调用[**IFrameworkView：： SetWindow**](/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)的实现，并传递一个[**CoreWindow**](/uwp/api/windows.ui.core.corewindow)对象，该对象表示游戏的主窗口。
 
-然后，使用 __CoreCursor__ 方法创建指针，此方法可由鼠标和触摸控件使用。
+在**App：： SetWindow**中，我们订阅与窗口相关的事件，并配置某些窗口和显示行为。 例如，我们构造了鼠标指针（通过[**CoreCursor**](/uwp/api/windows.ui.core.corecursor)类），鼠标和触控控件都可使用该指针。 我们还将窗口对象传递到与设备相关的资源对象。
 
-最后，为调整窗口大小、关闭和 DPI 更改（如果显示设备更改）创建基本事件。 有关事件的详细信息，请转到[事件处理](tutorial-game-flow-management.md#events-handling)。
+我们将详细讨论如何处理[游戏流管理](tutorial-game-flow-management.md#event-handling)主题中的事件。
 
-```cpp
-void App::SetWindow(
-    CoreWindow^ window
-    )
+```cppwinrt
+void SetWindow(CoreWindow const& window)
 {
-    // Codes added to modify the original DirectX template project
-    window->PointerCursor = ref new CoreCursor(CoreCursorType::Arrow, 0);
+    //CoreWindow window = CoreWindow::GetForCurrentThread();
+    window.Activate();
 
-    PointerVisualizationSettings^ visualizationSettings = PointerVisualizationSettings::GetForCurrentView();
-    visualizationSettings->IsContactFeedbackEnabled = false;
-    visualizationSettings->IsBarrelButtonFeedbackEnabled = false;
-    // --end of codes added
-    
+    window.PointerCursor(CoreCursor(CoreCursorType::Arrow, 0));
+
+    PointerVisualizationSettings visualizationSettings{ PointerVisualizationSettings::GetForCurrentView() };
+    visualizationSettings.IsContactFeedbackEnabled(false);
+    visualizationSettings.IsBarrelButtonFeedbackEnabled(false);
+
     m_deviceResources->SetWindow(window);
 
-    window->Activated +=
-        ref new TypedEventHandler<CoreWindow^, WindowActivatedEventArgs^>(this, &App::OnWindowActivationChanged);
+    window.Activated({ this, &App::OnWindowActivationChanged });
 
-    window->SizeChanged +=
-        ref new TypedEventHandler<CoreWindow^, WindowSizeChangedEventArgs^>(this, &App::OnWindowSizeChanged);
+    window.SizeChanged({ this, &App::OnWindowSizeChanged });
 
-    window->VisibilityChanged +=
-        ref new TypedEventHandler<CoreWindow^, VisibilityChangedEventArgs^>(this, &App::OnVisibilityChanged);
-        
-    window->Closed +=
-        ref new TypedEventHandler<CoreWindow^, CoreWindowEventArgs^>(this, &App::OnWindowClosed);
+    window.Closed({ this, &App::OnWindowClosed });
 
-    DisplayInformation^ currentDisplayInformation = DisplayInformation::GetForCurrentView();
+    window.VisibilityChanged({ this, &App::OnVisibilityChanged });
 
-    currentDisplayInformation->DpiChanged +=
-        ref new TypedEventHandler<DisplayInformation^, Platform::Object^>(this, &App::OnDpiChanged);
+    DisplayInformation currentDisplayInformation{ DisplayInformation::GetForCurrentView() };
 
-    currentDisplayInformation->OrientationChanged +=
-        ref new TypedEventHandler<DisplayInformation^, Object^>(this, &App::OnOrientationChanged);
-    
-    // Codes added to modify the original DirectX template project
-    currentDisplayInformation->StereoEnabledChanged +=
-        ref new TypedEventHandler<DisplayInformation^, Platform::Object^>(this, &App::OnStereoEnabledChanged);
-    // --end of codes added
-    
-    DisplayInformation::DisplayContentsInvalidated +=
-        ref new TypedEventHandler<DisplayInformation^, Platform::Object^>(this, &App::OnDisplayContentsInvalidated);
+    currentDisplayInformation.DpiChanged({ this, &App::OnDpiChanged });
+
+    currentDisplayInformation.OrientationChanged({ this, &App::OnOrientationChanged });
+
+    currentDisplayInformation.StereoEnabledChanged({ this, &App::OnStereoEnabledChanged });
+
+    DisplayInformation::DisplayContentsInvalidated({ this, &App::OnDisplayContentsInvalidated });
 }
 ```
 
-## <a name="load-method-of-the-view-provider"></a>视图提供程序的 Load 方法
+## <a name="the-appload-method"></a>App：： Load 方法
 
-在设置主窗口之后，应用单一实例将调用 [__Load__](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.load)。 此方法使用一组异步任务来创建游戏对象、加载图形资源以及初始化游戏的状态机。 如果你希望预取游戏数据或资源，此位置比 **SetWindow** 或 **Initialize** 更好。 
+设置主窗口后，将调用[**IFrameworkView：： Load**](/uwp/api/windows.applicationmodel.core.iframeworkview.load)的实现。 **负载**是预提取游戏数据或资产的更好位置，而不是**初始化**和**SetWindow**。
 
-由于 Windows 会对你的游戏在必须开始处理输入前所能花费的时间施加限制，因此你需要为快速完成 __Load__ 方法进行设计，以使其可以开始处理输入。 如果加载需要一段时间或者如果有很多资源，则向用户提供一个定期更新的进度栏。 此方法还用于在游戏开始之前做一些必要的准备，如设置任意开始状态或全局值。
-
-如果你不熟悉异步编程和任务并行度概念，请转到[使用 C++ 进行异步编程](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
-
-### <a name="appload-method"></a>App::Load 方法
-
-创建包含加载任务的 __GameMain__ 类。
-
-```cpp
-void App::Load(
-    Platform::String^ entryPoint
-    )
+```cppwinrt
+void Load(winrt::hstring const& /* entryPoint */)
 {
-        if (!m_main)
+    if (!m_main)
     {
-        m_main = std::unique_ptr<GameMain>(new GameMain(m_deviceResources));
+        m_main = winrt::make_self<GameMain>(m_deviceResources);
     }
 }
-````
+```
 
-### <a name="gamemain-constructor"></a>GameMain 构造函数
+正如您所看到的，实际工作会被委托给我们在此处进行的**GameMain**对象的构造函数。 **GameMain**类在和中定义 `GameMain.h` `GameMain.cpp` 。
 
-* 创建和初始化游戏呈现器。 有关详细信息，请参阅[呈现框架实现：简介呈现](tutorial--assembling-the-rendering-pipeline.md)。
-* 创建和初始化 Simple3Dgame 对象。 有关详细信息，请参阅[定义主游戏对象](tutorial--defining-the-main-game-loop.md)。    
-* 创建游戏 UI 控件对象和显示游戏信息覆盖层以在加载资源文件时显示进度栏。 有关详细信息，请参阅[添加用户界面](tutorial--adding-a-user-interface.md)。
-* 创建控制器，使它可以从控制器（触摸、鼠标或 XBox 无线控制器）读取输入。 有关详细信息，请参阅[添加控件](tutorial--adding-controls.md)。
-* 控制器初始化后，我们在屏幕的左下角和右下角定义了两个矩形区域，分别用于移动和相机触摸控件。 左下角的矩形通过调用 **SetMoveRect** 定义，玩家将该矩形用作虚拟控制板来前后左右移动相机。 右下角的矩形由 **SetFireRect** 方法定义，可用作设计弹药的虚拟按钮。
-* 使用 __create_task__ 和 __create_task::then__ 将资源加载划分为两个独立的阶段。 由于对 Direct3D 11 设备上下文的访问被限制到创建设备上下文的线程，而为对象创建对 Direct3D 11 设备的访问无线程限制，这意味着 **CreateGameDeviceResourcesAsync** 任务可以从完成任务 (*FinalizeCreateGameDeviceResources*) 在单独的线程上运行，其在初始线程上运行。 我们通过 **LoadLevelAsync** 和 **FinalizeLoadLevel** 使用类似的模式来加载关卡资源。
+### <a name="the-gamemaingamemain-constructor"></a>GameMain：： GameMain 构造函数
 
-```cpp
-GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) :
+**GameMain**构造函数（以及它所调用的其他成员函数）将开始一组异步加载操作，以创建游戏对象、加载图形资源并初始化游戏的状态机。 在游戏开始之前，我们还执行任何必要的准备工作，如设置任何起始状态或全局值。
+
+Windows 在开始处理输入之前会对游戏的时间施加限制。 因此使用异步，正如我们在这里所做的那样，这意味着**负载**可以快速返回，而它已经开始在后台继续进行。 如果加载时间较长，或者有大量资源，则为用户提供经常更新的进度条是一个好主意。 
+
+如果你不熟悉异步编程，请参阅[c + +/WinRT 的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+
+```cppwinrt
+GameMain::GameMain(std::shared_ptr<DX::DeviceResources> const& deviceResources) :
     m_deviceResources(deviceResources),
     m_windowClosed(false),
     m_haveFocus(false),
@@ -205,21 +138,21 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 {
     m_deviceResources->RegisterDeviceNotify(this);
 
-    m_renderer = ref new GameRenderer(m_deviceResources);
-    m_game = ref new Simple3DGame();
+    m_renderer = std::make_shared<GameRenderer>(m_deviceResources);
+    m_game = std::make_shared<Simple3DGame>();
 
     m_uiControl = m_renderer->GameUIControl();
 
-    m_controller = ref new MoveLookController(CoreWindow::GetForCurrentThread());
+    m_controller = std::make_shared<MoveLookController>(CoreWindow::GetForCurrentThread());
 
     auto bounds = m_deviceResources->GetLogicalSize();
 
     m_controller->SetMoveRect(
-        XMFLOAT2(0.0f, bounds.Height - GameConstants::TouchRectangleSize),
-        XMFLOAT2(GameConstants::TouchRectangleSize, bounds.Height)
+        XMFLOAT2(0.0f, bounds.Height - GameUIConstants::TouchRectangleSize),
+        XMFLOAT2(GameUIConstants::TouchRectangleSize, bounds.Height)
         );
     m_controller->SetFireRect(
-        XMFLOAT2(bounds.Width - GameConstants::TouchRectangleSize, bounds.Height - GameConstants::TouchRectangleSize),
+        XMFLOAT2(bounds.Width - GameUIConstants::TouchRectangleSize, bounds.Height - GameUIConstants::TouchRectangleSize),
         XMFLOAT2(bounds.Width, bounds.Height)
         );
 
@@ -227,97 +160,132 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
     m_uiControl->SetAction(GameInfoOverlayCommand::None);
     m_uiControl->ShowGameInfoOverlay();
 
-    create_task([this]()
+    // Asynchronously initialize the game class and load the renderer device resources.
+    // By doing all this asynchronously, the game gets to its main loop more quickly
+    // and in parallel all the necessary resources are loaded on other threads.
+    ConstructInBackground();
+}
+
+winrt::fire_and_forget GameMain::ConstructInBackground()
+{
+    auto lifetime = get_strong();
+
+    m_game->Initialize(m_controller, m_renderer);
+
+    co_await m_renderer->CreateGameDeviceResourcesAsync(m_game);
+
+    // The finalize code needs to run in the same thread context
+    // as the m_renderer object was created because the D3D device context
+    // can ONLY be accessed on a single thread.
+    // co_await of an IAsyncAction resumes in the same thread context.
+    m_renderer->FinalizeCreateGameDeviceResources();
+
+    InitializeGameState();
+
+    if (m_updateState == UpdateEngineState::WaitingForResources)
     {
-        // Asynchronously initialize the game class and load the renderer device resources.
-        // By doing all this asynchronously, the game gets to its main loop more quickly
-        // and in parallel all the necessary resources are loaded on other threads.
-        m_game->Initialize(m_controller, m_renderer);
+        // In the middle of a game so spin up the async task to load the level.
+        co_await m_game->LoadLevelAsync();
 
-        return m_renderer->CreateGameDeviceResourcesAsync(m_game);
-
-    }).then([this]()
+        // The m_game object may need to deal with D3D device context work so
+        // again the finalize code needs to run in the same thread
+        // context as the m_renderer object was created because the D3D
+        // device context can ONLY be accessed on a single thread.
+        m_game->FinalizeLoadLevel();
+        m_game->SetCurrentLevelToSavedState();
+        m_updateState = UpdateEngineState::ResourcesLoaded;
+    }
+    else
     {
-        // The finalize code needs to run in the same thread context
-        // as the m_renderer object was created because the D3D device context
-        // can ONLY be accessed on a single thread.
-        m_renderer->FinalizeCreateGameDeviceResources();
+        // The game is not in the middle of a level so there aren't any level
+        // resources to load.
+    }
 
-        InitializeGameState();
+    // Since Game loading is an async task, the app visual state
+    // may be too small or not have focus. Put the state machine
+    // into the correct state to reflect these cases.
 
-        if (m_updateState == UpdateEngineState::WaitingForResources)
-        {
-            // In the middle of a game so spin up the async task to load the level.
-            return m_game->LoadLevelAsync().then([this]()
-            {
-                // The m_game object may need to deal with D3D device context work so
-                // again the finalize code needs to run in the same thread
-                // context as the m_renderer object was created because the D3D
-                // device context can ONLY be accessed on a single thread.
-                m_game->FinalizeLoadLevel();
-                m_game->SetCurrentLevelToSavedState();
-                m_updateState = UpdateEngineState::ResourcesLoaded;
-
-            }, task_continuation_context::use_current());
-        }
-        else
-        {
-            // The game is not in the middle of a level so there aren't any level
-            // resources to load.  Creating a no-op task so that in both cases
-            // the same continuation logic is used.
-            return create_task([]()
-            {
-            });
-        }
-    }, task_continuation_context::use_current()).then([this]()
+    if (m_deviceResources->GetLogicalSize().Width < GameUIConstants::MinPlayableWidth)
     {
-        // Since Game loading is an async task, the app visual state
-        // may be too small or not have focus.  Put the state machine
-        // into the correct state to reflect these cases.
+        m_updateStateNext = m_updateState;
+        m_updateState = UpdateEngineState::TooSmall;
+        m_controller->Active(false);
+        m_uiControl->HideGameInfoOverlay();
+        m_uiControl->ShowTooSmall();
+        m_renderNeeded = true;
+    }
+    else if (!m_haveFocus)
+    {
+        m_updateStateNext = m_updateState;
+        m_updateState = UpdateEngineState::Deactivated;
+        m_controller->Active(false);
+        m_uiControl->SetAction(GameInfoOverlayCommand::None);
+        m_renderNeeded = true;
+    }
+}
 
-        if (m_deviceResources->GetLogicalSize().Width < GameConstants::MinPlayableWidth)
-        {
-            m_updateStateNext = m_updateState;
-            m_updateState = UpdateEngineState::TooSmall;
-            m_controller->Active(false);
-            m_uiControl->HideGameInfoOverlay();
-            m_uiControl->ShowTooSmall();
-            m_renderNeeded = true;
-        }
-        else if (!m_haveFocus)
-        {
-            m_updateStateNext = m_updateState;
-            m_updateState = UpdateEngineState::Deactivated;
-            m_controller->Active(false);
-            m_uiControl->SetAction(GameInfoOverlayCommand::None);
-            m_renderNeeded = true;
-        }
-    }, task_continuation_context::use_current());
+void GameMain::InitializeGameState()
+{
+    // Set up the initial state machine for handling Game playing state.
+    ...
 }
 ```
 
-## <a name="run-method-of-the-view-provider"></a>视图提供程序的 Run 方法
+下面概述了构造函数启动的工作序列。
 
-早期的三种方法：__初始化__， __SetWindow__，和__负载__已设置此阶段。 现在游戏可进入 **Run** 方法了，启动有趣的游戏吧！ 用于在游戏状态之间转换的事件将被发送和处理。 在游戏循环周期，图形被更新。
+- 创建和初始化**GameRenderer**类型的对象。 有关详细信息，请参阅[呈现框架 I：呈现简介](tutorial--assembling-the-rendering-pipeline.md)。
+- 创建和初始化**Simple3DGame**类型的对象。 有关详细信息，请参阅[定义主游戏对象](tutorial--defining-the-main-game-loop.md)。
+- 创建游戏 UI 控件对象，并显示游戏信息覆盖，以便在资源文件加载时显示进度栏。 有关详细信息，请参阅[添加用户界面](tutorial--adding-a-user-interface.md)。
+- 创建控制器对象，以从控制器（触摸、鼠标或 Xbox 无线控制器）读取输入。 有关详细信息，请参阅[添加控件](tutorial--adding-controls.md)。
+- 分别在屏幕的左下角和右下角定义两个矩形区域，分别用于移动和照相机触摸控件。 播放机使用左下角的矩形（在对**SetMoveRect**的调用中定义）作为虚拟控制板，以便向前和向后移动照相机，并向后端移动。 右下方矩形（由**SetFireRect**方法定义）用作触发 ammo 的虚拟按钮。
+- 使用协同程序将资源加载分解为单独的阶段。 访问 Direct3D 设备上下文仅限于创建设备上下文的线程;尽管对用于对象创建的 Direct3D 设备的访问是自由线程的。 因此， **GameRenderer：： CreateGameDeviceResourcesAsync**协同程序可以在独立于完成任务（**GameRenderer：： FinalizeCreateGameDeviceResources**）的线程上运行，该任务在原始线程上运行。
+- 使用**Simple3DGame：： LoadLevelAsync**和**Simple3DGame：： FinalizeLoadLevel**的负载级别资源时，使用类似的模式。
 
-### <a name="apprun"></a>App::Run
+下一主题（[游戏流管理](tutorial-game-flow-management.md)）将详细介绍**GameMain：： InitializeGameState** 。
 
-启动一个 __while__ 循环，当玩家关闭游戏窗口时该循环将终止。
+## <a name="the-apponactivated-method"></a>App：： OnActivated 方法
 
-示例代码在游戏引擎状态机中转换为以下两个状态之一：
-    * __停用__:游戏窗口停用（失去焦点）或贴靠。 在发生此事件时，游戏将暂停事件处理并等待窗口获得焦点或取消贴靠。
-    * __TooSmall__:游戏更新其自己的状态，并将呈现用于显示图形。
+接下来，引发[**CoreApplicationView：：已激活**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)事件。 因此，将调用你拥有的任何**OnActivated**事件处理程序（例如，**应用：： OnActivated**方法）。
 
-在你的游戏获得焦点时，必须处理消息队列中到达的每个事件，因此必须使用 **ProcessAllIfPresent** 选项调用 [**CoreWindowDispatch.ProcessEvents**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)。 其他选项可能导致延迟处理消息事件，这会让人感到游戏停止响应，或者导致触摸行为反应慢和没有“粘合力”。
+```cppwinrt
+void OnActivated(CoreApplicationView const& /* applicationView */, IActivatedEventArgs const& /* args */)
+{
+    CoreWindow window = CoreWindow::GetForCurrentThread();
+    window.Activate();
+}
+```
 
-当游戏不可见、暂停或贴靠时，你不希望应用使用任何资源循环去调度永不会到达的消息。 这种情况下，你的游戏必须使用 **ProcessOneAndAllPending**，它在获得事件前将进行阻止，随即在获得事件后处理该事件以及处理队列中在处理第一个事件期间到达的任何其他事件。 [**ProcessEvents** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents)然后立即返回处理队列后。
+此处的唯一工作就是激活主要[**CoreWindow**](/uwp/api/windows.ui.core.corewindow)。 或者，你可以选择在**App：： SetWindow**中执行此操作。
 
-```cpp
-void App::Run()
+## <a name="the-apprun-method"></a>App：： Run 方法
+
+**Initialize**、 **SetWindow**和**Load**已设置该阶段。 既然游戏已启动并正在运行，就会调用[**IFrameworkView：： Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run)的实现。
+
+```cppwinrt
+void Run()
 {
     m_main->Run();
 }
+```
 
+同样，将工作委托给**GameMain**。
+
+### <a name="the-gamemainrun-method"></a>GameMain：： Run 方法
+
+**GameMain：： Run**是游戏的主要循环;可以在中找到该文件 `GameMain.cpp` 。 基本逻辑是：当游戏的窗口保持打开状态，调度所有事件，更新计时器，然后呈现并显示图形管道的结果。 此外，还会调度并处理用于在游戏状态间转换的事件。
+
+此处的代码还涉及游戏引擎状态机中的两个状态。
+
+- **UpdateEngineState：:D eactivated**。 这会指定禁用游戏窗口（失去焦点）或将其对齐。 
+- **UpdateEngineState：： TooSmall**。 这将指定客户端区域太小，无法在中呈现游戏。
+
+在这两种状态中，游戏会挂起事件处理，并等待窗口聚焦、unsnap 或调整大小。
+
+在你的游戏获得焦点时，必须处理消息队列中到达的每个事件，因此必须使用 **ProcessAllIfPresent** 选项调用 [**CoreWindowDispatch.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents)。 其他选项可能会导致在处理消息事件时出现延迟，这会使您的游戏感觉不到响应，或者导致触摸行为缓慢。
+
+如果游戏未显示、挂起和捕捉，则不希望它使用任何资源循环来调度永远不会到达的消息。 在这种情况下，游戏必须使用**ProcessOneAndAllPending**选项。 该选项将一直阻止到获取事件，然后处理该事件（以及在处理第一个过程中到达进程队列的任何其他事件）。 CoreWindowDispatch 在队列处理后立即返回**ProcessEvents。**
+
+```cppwinrt
 void GameMain::Run()
 {
     while (!m_windowClosed)
@@ -359,12 +327,12 @@ void GameMain::Run()
                 if (!m_renderNeeded)
                 {
                     // The App is not currently the active window and not in a transient state so just wait for events.
-                    CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
+                    CoreWindow::GetForCurrentThread().Dispatcher().ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
                     break;
                 }
                 // otherwise fall through and do normal processing to get the rendering handled.
             default:
-                CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
+                CoreWindow::GetForCurrentThread().Dispatcher().ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
                 Update();
                 m_renderer->Render();
                 m_deviceResources->Present();
@@ -373,39 +341,35 @@ void GameMain::Run()
         }
         else
         {
-            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
+            CoreWindow::GetForCurrentThread().Dispatcher().ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
         }
     }
-    m_game->OnSuspending();  // exiting due to window close.  Make sure to save state.
+    m_game->OnSuspending();  // Exiting due to window close, so save state.
 }
 ```
 
-## <a name="uninitialize-method-of-the-view-provider"></a>视图提供程序的 Uninitialize 方法
+## <a name="the-appuninitialize-method"></a>App：：取消初始化方法
 
-当用户最终结束游戏会话时，我们需要清理。 这时要使用 **Uninitialize**。
+游戏结束时，将调用[**IFrameworkView：：**](/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize) 这是我们执行清理的机会。 关闭应用程序窗口不会终止应用程序的进程;但会将应用程序的状态编写为内存。 如果在系统回收此内存（包括对资源进行任何特殊清理）时必须进行特殊的操作，请将该清理的代码放入 "取消**初始化**"。
 
-在 Windows 10 中，关闭应用窗口不会终止应用程序的进程，但改为写入内存的应用程序的单一实例的状态。 如果在系统回收此内存时必须执行一些特殊操作（包括任何特殊的资源清除），则将执行该清除的代码放入此方法。
-
-### <a name="app-uninitialize"></a>应用程序::Uninitialize
+在我们的示例中，**应用：：取消初始化**是一个无操作。
 
 ```cpp
-void App::Uninitialize()
+void Uninitialize()
 {
 }
 ```
 
 ## <a name="tips"></a>提示
 
-在开发自己的游戏时，请围绕这些方法设计启动代码。 此处是对各方法的基本建议的简单列表：
+开发您自己的游戏时，请根据本主题中所述的方法来设计您的启动代码。 下面是每种方法的基本建议的简单列表。
 
--   使用 **Initialize** 分配主类和连接基本事件处理程序。
--   使用 **SetWindow** 创建主窗口和连接任何特定于窗口的事件。
--   使用 **Load** 来处理任何其余设置、启动对象的异步创建和加载资源。 如果需要创建任何临时文件或数据，如按顺序生成的资源，也在这里完成。
-
+- 使用**Initialize**分配主类，并连接基本的事件处理程序。
+- 使用**SetWindow**订阅任何特定于窗口的事件，并将主窗口传递到设备相关的资源对象，以便在创建交换链时可以使用该窗口。
+- 使用**Load**处理任何其他设置，并启动异步创建对象和加载资源。 如果需要创建任何临时文件或数据（如过程生成的资产），也可以在此处执行此操作。
 
 ## <a name="next-steps"></a>后续步骤
 
-这包括采用 DirectX 的 UWP 游戏的基本结构。 请记住这五种方法，我们将在此演练的其他部分加以参考。 接下来，我们将深入了解如何管理游戏状态和事件处理以按照[游戏流管理](tutorial-game-flow-management.md)让游戏顺畅进行。
+本主题介绍了使用 DirectX 的 UWP 游戏的一些基本结构。 请记住这些方法，因为我们将在后面的主题中回顾其中一些方法。
 
-
-
+在下一主题 " &mdash; [游戏流管理](tutorial-game-flow-management.md)" 中， &mdash; 我们将深入了解如何管理游戏状态和事件处理，以使游戏流动。

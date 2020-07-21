@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d8695a385dbc6d550a8002a5f64b7d777e95594e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360029"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74255126"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>绑定分层数据和创建大纲/细节视图
 
 
 
-> **请注意**  另请参阅[母版/详细信息示例](https://go.microsoft.com/fwlink/p/?linkid=619991)。
+> 注意：  另请参阅  主/细节示例[。](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail)
 
 你可以通过将项目控件绑定到 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 实例（它们绑定在同一个链中），从而生成分层数据的多级主视图/详细信息视图（也称为列表详细信息视图）。 在本主题中，我们将尽可能使用 [{x:Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，并根据需要使用更为灵活（但性能较低）的 [{Binding} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)。
 

@@ -5,18 +5,18 @@ ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a6a1d93b1deaad084ff25db946199b678b35703c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: dcbeffc7e3db8f3df9c197e8c388f30faf7ad03d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369514"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75685241"
 ---
 # <a name="best-practices-for-writing-to-files"></a>向文件进行写入的最佳做法
 
 **重要的 API**
 
-* [**FileIO 类**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
+* [FileIO 类](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) 
 * [**PathIO 类**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)
 
 开发人员在使用 [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO) 和 [**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 类的 **Write** 方法执行文件系统 I/O 操作时，偶尔会遇到一系列常见问题。 例如，这些常见问题包括：
@@ -44,7 +44,7 @@ ms.locfileid: "66369514"
 使用 **StorageFile** 执行 I/O 时，了解这一概念很有好处。 例如，[写入文件](quickstart-reading-and-writing-files.md#writing-to-a-file)部分演示了写入文件的三种方式：
 
 * 使用 [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync) 方法。
-* 创建一个缓冲区，然后调用 [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync) 方法。
+* 创建一个缓冲区，然后调用 [**FileIO.WriteBufferAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writebufferasync) 方法。
 * 使用流的四步模型：
   1. [打开](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync)文件以获取流。
   2. [获取](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)输出流。
@@ -82,7 +82,7 @@ ms.locfileid: "66369514"
 |  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  原始文件 (file.txt) 已被使用，因此无法将其替换。 在替换之前，另一个进程或操作已获取了该文件的访问权限。  |  重试操作。</br>确保对文件的访问权限已同步。  |
 |  ERROR_DISK_FULL (0x80070070)  |  7、14、16、20  |  事务处理模型创建了额外的文件，这消耗了额外的存储。  |    |
 |  ERROR_OUTOFMEMORY (0x8007000E)  |  14、16  |  此错误的原因可能是存在多个未完成的 I/O 操作，或文件很大。  |  以更精细的方法控制流可能会解决该错误。  |
-|  E_FAIL (0x80004005) |  Any  |  其他  |  重试操作。 如果仍然失败，则可能表示平台出错，应用应该终止，因为它处于不一致状态。 |
+|  E_FAIL (0x80004005) |  Any  |  杂项  |  重试操作。 如果仍然失败，则可能表示平台出错，应用应该终止，因为它处于不一致状态。 |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>可能导致出错的其他文件状态考虑因素
 
@@ -98,7 +98,7 @@ ms.locfileid: "66369514"
 
 ### <a name="files-from-knownfolders"></a>KnownFolders 中的文件
 
-你的应用可能不是唯一一个尝试访问任何 [ **KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) 中的文件的应用。 无法保证当操作成功时，应用写入到该文件的内容在下一次尝试读取该文件时保持不变。 此外，在这种情况下，拒绝共享或访问错误会更常见。
+你的应用可能不是唯一一个尝试访问任何 [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) 中的文件的应用。 无法保证当操作成功时，应用写入到该文件的内容在下一次尝试读取该文件时保持不变。 此外，在这种情况下，拒绝共享或访问错误会更常见。
 
 ### <a name="conflicting-io"></a>有冲突的 I/O
 

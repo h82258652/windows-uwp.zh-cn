@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 798199269a4fd02eebef7dcd46cd5781ba561250
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634132"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493422"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化日期/时间/数字格式
 
@@ -24,7 +24,7 @@ ms.locfileid: "57634132"
 
 不同地区和文化使用不同的日期和时间格式。 它们包含在以下方面的使用惯例：日期中的日和月顺序、时间中的小时和分钟的分隔，甚至用作分隔符的标点符号。 此外，可以采用各种长格式（“星期三，2012 年 3 月 28 日”）或短格式（“12/3/28”）显示日期，这些格式因文化而异。 当然，星期中某天和年份中的某月的名称和缩写也因语言而异。
 
-可以预览用于不同语言的格式。 转到**设置** > **时间和语言** > **区域和语言**，单击**其他日期、时间和区域设置** > **更改日期、时间或数字格式**。 在**格式**选项卡上，从**格式**下拉菜单中选择一种语言，并在**示例**中预览此格式。
+可以预览用于不同语言的格式。 转到**Settings**  >  "设置" "**时间" & 语言**  >  **区域 & 语言**"，然后单击"**其他日期、时间、& 区域设置**  >  **更改日期、时间或数字格式**"。 在**格式**选项卡上，从**格式**下拉菜单中选择一种语言，并在**示例**中预览此格式。
 
 本主题使用术语“用户配置文件语言列表”、“应用清单语言列表”和“应用运行时语言列表”。 有关这些术语到底款意味着什么，以及如何访问其值的详细信息，请参阅[了解用户配置文件语言和应用清单语言](manage-language-and-region.md)。
 
@@ -52,7 +52,7 @@ ms.locfileid: "57634132"
 可在你自己的电脑上按此操作测试以上代码。
 
 - 请确保同时针对“en-US”和“de-DE”限定了项目中的资源文件（请参阅[针对语言、缩放、高对比度和其他限定符定制资源](../../app-resources/tailor-resources-lang-scale-contrast.md)）。
-- 在**设置** > **时间和语言** > **区域和语言** > **语言**中更改你的用户配置文件语言列表。 添加德语(德国)，使其成为默认语言，并再次运行代码。
+- 在 "**设置**时间" 中更改用户配置文件语言列表，  >  **& 语言**  >  **区域 & 语言**  >  **Languages**。 添加德语(德国)，使其成为默认语言，并再次运行代码。
 
 ## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>设置用户配置文件语言列表的日期和时间格式
 
@@ -70,7 +70,7 @@ ms.locfileid: "57634132"
     var results = "Short Date: " + shortDateFormatter.Format(DateTime.Now);
 ```
 
-## <a name="format-numbers-and-currencies-appropriately"></a>设置相应的数字和货币格式
+## <a name="format-numbers-and-currencies-appropriately"></a>设置适当的数字和货币格式
 
 不同的文化设置数字格式的方式也不相同。 格式差异可能包括显示多少小数位数、什么字符用作小数分隔符以及要使用什么货币符号。 使用 [**NumberFormatting**](/uwp/api/windows.globalization.numberformatting?branch=live) 命名空间中的类来显示小数、分数、千分比和货币。 大多数情况下，建议使用这些格式化程序类，将最佳格式用于用户配置文件。 但是你可以使用格式化程序显示任何区域或格式的货币。
 
@@ -104,7 +104,7 @@ ms.locfileid: "57634132"
                     "Formatted Euro (fr-FR defaults): " + currencyValueEuroFR;
 ```
 
-通过更改**设置** > **时间和语言** > **区域和语言** > **国家或地区**中的国家或地区，可在自己的电脑上测试以上代码。 选择一个国家或地区（如冰岛），并再次运行代码。
+可以通过在 "设置时间" 中更改国家或地区来测试上面的代码**Settings**  >  **& 语言**  >  **区域 & 语言**"  >  **国家或地区**"。 选择一个国家或地区（如冰岛），并再次运行代码。
 
 ## <a name="use-a-culturally-appropriate-calendar"></a>使用与文化相对应的日历
 
@@ -116,9 +116,9 @@ ms.locfileid: "57634132"
 
 设置电话号码格式的方式因区域而异。 电话号码的数字位数、数字组合方式和某些部分的重要性因国家/地区而异。 从 Windows 10 版本 1607 开始，可以使用 [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) 命名空间中的类为当前区域设置适当的电话号码格式。
 
-[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live)分析数字的字符串，并且可以： 确定是否数字是否为有效的电话号码中的当前区域; 比较两个数字的相等性; 并提取手机的不同功能部分数，例如国家/地区代码或地理区域代码。
+[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) 可解析一串数字，并允许你：确定这些数字在当前区域中是否是有效的电话号码；比较两组数字是否相等；提取电话号码的不同功能部分，例如国家/地区代码或地理区域代码。
 
-[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)格式的数字的字符串，或者**PhoneNumberInfo**进行显示，即使数字的字符串表示部分电话号码。 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
+[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)将数字字符串或**PhoneNumberInfo**的格式设置为显示，即使数字字符串表示部分电话号码也是如此。 你可以使用此部分号码格式设置，将号码设置为用户输入该号码时所示的格式。
 
 下面的示例显示了如何使用 **PhoneNumberFormatter** 将电话号码设置为输入时所示的格式。 每当名为 phoneNumberInputTextBox 的 **TextBox** 中的文本发生更改时，文本框内容都会使用当前默认区域进行格式设置并显示在名为 phoneNumberOutputTextBlock 的 **TextBlock** 中。 出于演示目的，该字符串也使用新西兰区域进行格式设置，并显示在名为 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
   
@@ -151,7 +151,7 @@ ms.locfileid: "57634132"
     }
 ```    
 
-通过更改**设置** > **时间和语言** > **区域和语言** > **国家或地区**中的国家或地区，可在自己的电脑上测试以上代码。 选择一个国家或地区（可能是新西兰，以便确认格式匹配），并再次运行代码。 对于测试数据，可以针对新西兰的商业电话号码进行 Web 搜索。
+可以通过在 "设置时间" 中更改国家或地区来测试上面的代码**Settings**  >  **& 语言**  >  **区域 & 语言**"  >  **国家或地区**"。 选择一个国家或地区（可能是新西兰，以便确认格式匹配），并再次运行代码。 对于测试数据，可以针对新西兰的商业电话号码进行 Web 搜索。
 
 ## <a name="the-users-language-and-cultural-preferences"></a>用户的语言和文化首选项
 
@@ -161,19 +161,19 @@ ms.locfileid: "57634132"
 
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
-* [日历](/uwp/api/windows.globalization.calendar?branch=live)
+* [日程表](/uwp/api/windows.globalization.calendar?branch=live)
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## <a name="related-topics"></a>相关主题
 
-* [日历、 日期和时间控件](../controls-and-patterns/date-and-time.md)
-* [了解用户配置文件的语言和应用程序清单语言](manage-language-and-region.md)
+* [日历、日期和时间控件](../controls-and-patterns/date-and-time.md)
+* [了解用户配置文件语言和应用清单语言](manage-language-and-region.md)
 * [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>示例
 
-* [日历的详细信息和数学示例](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [日期和时间格式设置示例](https://go.microsoft.com/fwlink/p/?linkid=231618)
-* [全球化首选项示例](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [数字格式设置和分析示例](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [日历详细信息和数学示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Calendar%20details%20and%20math%20sample%20(Windows%208))
+* [设置日期和时间格式示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))
+* [全球化首选项示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Globalization%20preferences%20sample%20(Windows%208))
+* [数字格式和分析示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Number%20formatting%20and%20parsing%20sample%20(Windows%208))

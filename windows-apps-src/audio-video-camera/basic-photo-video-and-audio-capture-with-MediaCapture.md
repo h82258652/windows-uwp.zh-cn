@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47134c951fe0351966a34b4a58fe657a6aeeb602
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: d758a19800f52284011b3260f83826f7cde300f3
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317569"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683900"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 捕获基本的照片、视频和音频
 
@@ -20,18 +20,18 @@ ms.locfileid: "67317569"
 
 如果你仅希望捕获照片或视频，不想添加任何其他媒体捕获功能，或者如果你不想创建自己的相机 UI，则可能希望使用 [**CameraCaptureUI**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CameraCaptureUI) 类，它允许你仅启动 Windows 内置相机应用，并且接收捕获的照片或视频文件。 有关详细信息，请参阅[**使用 Windows 内置相机 UI 捕获照片和视频**](capture-photos-and-video-with-cameracaptureui.md)
 
-本文中的代码源自 [**Camera starter kit**](https://go.microsoft.com/fwlink/?linkid=619479) 示例。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
+本文中的代码源自 [**Camera starter kit**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraStarterKit) 示例。 你可以下载该示例以查看上下文中使用的代码，或将该示例用作你自己的应用的起始点。
 
 ## <a name="add-capability-declarations-to-the-app-manifest"></a>向应用清单中添加功能声明
 
 为了让你的应用可以访问设备的相机，必须声明你的应用要使用 *webcam* 和 *microphone* 设备功能。 如果你想要将已捕获的照片和视频保存到用户的图片库或视频库，还必须声明 *picturesLibrary* 和 *videosLibrary* 功能。
 
-**若要将功能添加到应用程序清单**
+**向应用程序清单添加功能**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。  
+1.  在 Microsoft Visual Studio 的**解决方案资源管理器**中，通过双击 **package.appxmanifest** 项，打开应用程序清单的设计器。
 2.  选择**功能**选项卡。
-3.  选中“摄像头”框和“麦克风”框。  
-4.  若要访问图片库和视频库，请选中“图片库”框和“视频库”框。  
+3.  选中**摄像头**框和**麦克风**框。
+4.  若要访问图片库和视频库，请选中**图片库**框和**视频库**框。
 
 
 ## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 对象
@@ -47,7 +47,7 @@ ms.locfileid: "67317569"
 ## <a name="capture-a-photo-to-a-softwarebitmap"></a>将照片捕获到 SoftwareBitmap
 Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 类，可跨多项功能提供图像的通用表示形式。 如果你想捕获照片并立即在应用中使用捕获的图像（例如在 XAML 中显示它，而非捕获到某个文件），则应捕获到 **SoftwareBitmap**。 你仍可选择在以后将图像保存到磁盘。
 
-初始化 **MediaCapture** 对象后，可使用 [**LowLagPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.LowLagPhotoCapture) 类将照片捕获到 **SoftwareBitmap**。 通过调用 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync)（该函数在指定所需图像格式的 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 对象中传递），获取此类的实例。 [**CreateUncompressed** ](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed)创建具有指定的像素格式的未压缩的编码。 通过调用返回 [**CapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedPhoto) 对象的 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 捕获照片。 通过依次访问 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedphoto.frame) 属性和 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) 属性，获取 **SoftwareBitmap**。
+初始化 **MediaCapture** 对象后，可使用 [**LowLagPhotoCapture**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.LowLagPhotoCapture) 类将照片捕获到 **SoftwareBitmap**。 通过调用 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync)（该函数在指定所需图像格式的 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 对象中传递），获取此类的实例。 [**CreateUncompressed**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed)创建具有指定像素格式的未压缩编码。 通过调用返回 [**CapturedPhoto**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.CapturedPhoto) 对象的 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 捕获照片。 通过依次访问 [**Frame**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedphoto.frame) 属性和 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.softwarebitmap) 属性，获取 **SoftwareBitmap**。
 
 如果需要，可重复调用 **CaptureAsync** 来捕获多张照片。 在完成捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.advancedphotocapture.finishasync) 以关闭 **LowLagPhotoCapture** 会话，并释放关联的资源。 调用 **FinishAsync** 后，若要开始重新捕获照片，需要在调用 [**CaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotocapture.captureasync) 之前重新调用 [**PrepareLowLagPhotoCaptureAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) 以重新初始化捕获会话。
 
@@ -59,12 +59,12 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 若要详细了解如何设置捕获设备控件值，请参阅[用于照片和视频的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)。
 
-自 Windows 10 版本 1803 起，可通过访问 **MediaCapture** 返回的 **CapturedFrame** 的 [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 属性，获取以未压缩格式捕获的照片的元数据，如 EXIF 信息。 在以前的版本中，仅能在以压缩文件格式捕获的照片的标题中访问此数据。 手动写入图像文件时，可向 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) 提供此数据。 有关位图编码的详细信息，请参阅[创建、编辑和保存位图图像](imaging.md)。  还可通过访问 [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues) 属性访问捕获图像时使用的帧控件值，如曝光度和闪光设置。 有关详细信息，请参阅[用于照片和视频捕获的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)。
+自 Windows 10 版本 1803 起，可通过访问 **MediaCapture** 返回的 **CapturedFrame** 的 [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 属性，获取以未压缩格式捕获的照片的元数据，如 EXIF 信息。 在以前的版本中，仅能在以压缩文件格式捕获的照片的标题中访问此数据。 手动写入图像文件时，可向 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) 提供此数据。 有关位图编码的详细信息，请参阅[创建、编辑和保存位图图像](imaging.md)。  还可通过访问 [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues) 属性访问捕获图像时使用的帧控件值，如曝光度和闪光设置。 有关详细信息，请参阅[用于照片和视频捕获的捕获设备控件](capture-device-controls-for-photo-and-video-capture.md)。
 
 ## <a name="capture-a-photo-to-a-file"></a>将照片捕获到文件
 典型的摄影应用会将捕获的照片保存到磁盘或云存储，并且需要将元数据（例如照片方向）添加到文件。 以下示例显示如何将照片捕获到文件。 你仍可选择在以后从图像文件中创建 **SoftwareBitmap**。 
 
-此示例中显示的技术将照片捕获到内存流，然后从该内存流将照片转码到磁盘上的某个文件。 此示例使用 [**GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync) 获取用户的图片库，然后使用 [**SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder) 属性获取参考默认保存文件夹。 请记住，将“图片库”功能添加到应用部件清单才能访问此文件夹。  [**CreateFileAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync)创建一个新[ **StorageFile** ](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)照片保存到。
+此示例中显示的技术将照片捕获到内存流，然后从该内存流将照片转码到磁盘上的某个文件。 此示例使用 [**GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync) 获取用户的图片库，然后使用 [**SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder) 属性获取参考默认保存文件夹。 请记住，将**图片库**功能添加到应用部件清单才能访问此文件夹。 [**CreateFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfileasync)创建要将照片保存到的新[**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 。
 
 创建 [**InMemoryRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.InMemoryRandomAccessStream)，然后调用 [**CapturePhotoToStreamAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.capturephototostreamasync) 以将照片捕获到流，该照片在流和指定应使用的图像格式的 [**ImageEncodingProperties**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) 对象中传递。 可通过自行初始化对象来创建自定义编码属性，但类提供用于常见编码格式的静态方法，例如 [**ImageEncodingProperties.CreateJpeg**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.imageencodingproperties.createjpeg)。 接下来，通过调用 [**OpenAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync) 创建输出文件的文件流。 创建 [**BitmapDecoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapDecoder) 以解码内存流中的图像，然后创建 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.BitmapEncoder) 以通过调用 [**CreateForTranscodingAsync**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder.createfortranscodingasync) 将图像编码到文件。
 
@@ -74,14 +74,14 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[CaptureToFile](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToFile)]
 
-有关使用文件和文件夹的详细信息，请参阅[**文件、文件夹和库**](https://docs.microsoft.com/windows/uwp/files/index)。
+若要详细了解如何使用文件和文件夹，请参阅[**文件、文件夹和库**](https://docs.microsoft.com/windows/uwp/files/index)。
 
 ## <a name="capture-a-video"></a>捕获视频
 通过使用 [**LowLagMediaRecording**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.LowLagMediaRecording) 类将视频捕获快速添加到应用。 首先，声明对象的类变量。
 
 [!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
 
-接下来，创建将保存视频的 **StorageFile** 对象。 请注意，若要保存到用户的视频库（如本示例所示），必须将“视频库”功能添加到应用部件清单。  调用 [**PrepareLowLagRecordToStorageFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) 以初始化媒体录制，该媒体录制在存储文件和指定视频编码的 [**MediaEncodingProfile**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) 对象中传递。 该类提供用于创建常见视频编码配置文件的静态方法，例如 [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)。
+接下来，创建将保存视频的 **StorageFile** 对象。 请注意，若要保存到用户的视频库（如本示例所示），必须将**视频库**功能添加到应用部件清单。 调用 [**PrepareLowLagRecordToStorageFileAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) 以初始化媒体录制，该媒体录制在存储文件和指定视频编码的 [**MediaEncodingProfile**](https://docs.microsoft.com/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) 对象中传递。 该类提供用于创建常见视频编码配置文件的静态方法，例如 [**CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)。
 
 最后，调用 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.startasync) 以开始捕获视频。
 
@@ -91,11 +91,11 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-可以继续调用 **StartAsync** 和 **StopAsync** 以捕获其他视频。 完成视频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，在调用 **StartAsync** 之前必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话。
+可继续调用 **StartAsync** 和 **StopAsync** 以捕获其他视频。 完成视频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话，然后才可 **StartAsync**。
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-在捕获视频时，应为 **MediaCapture** 对象的 [**RecordLimitationExceeded**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.recordlimitationexceeded) 事件注册处理程序，如果超过单次录制的时限（当前为三小时），操作系统将引发该事件。 在该事件的处理程序中，应通过调用 [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.stopasync) 完成录制。
+在捕获视频时，应为 **MediaCapture** 对象的 [**RecordLimitationExceeded**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.recordlimitationexceeded) 事件注册处理程序，如果超过单次录制的时限（当前为三小时），操作系统将引发该事件。 在事件的处理程序中，应通过调用 [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.stopasync) 完成录制。
 
 [!code-cs[RecordLimitationExceeded](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
 
@@ -119,11 +119,11 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 
 [!code-cs[PauseCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseCaptureWithResult)]
 
-在恢复录制时，可将图像源设置为 null 以将其隐藏。
+在恢复录制时，可将图像源设置为 NULL 以将其隐藏。
 
 [!code-cs[ResumeCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeCaptureWithResult)]
 
-请注意，在通过调用 [**StopWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.stopwithresultasync) 停止视频时也可获得结果帧。
+请注意，在通过调用 [**StopWithResultAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.stopwithresultasync) 停止视频时还可获得结果帧。
 
 
 ## <a name="capture-audio"></a>捕获音频 
@@ -132,14 +132,14 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
 
 
-调用 [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync) 以停止音频录制。
+若要停止音频录制，请调用 [**StopAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync)。
 
 ## <a name="related-topics"></a>相关主题
 
 * [摄像头](camera.md)  
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
-可多次调用 **StartAsync** 和 **StopAsync** 以录制多个音频文件。 完成音频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，在调用 **StartAsync** 之前必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话。
+可多次调用 **StartAsync** 和 **StopAsync** 以录制多个音频文件。 完成音频捕获后，调用 [**FinishAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 以释放捕获会话并清理关联的资源。 完成此调用后，必须重新调用 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化捕获会话，然后才可 **StartAsync**。
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
@@ -162,8 +162,8 @@ Windows 10 引入了 [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/Win
 [!code-cs[RenderSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRenderSoundLevelChanged)]
 
 
-* [使用 Windows 内置照相机 UI 捕捉照片和视频](capture-photos-and-video-with-cameracaptureui.md)
-* [处理与 MediaCapture 设备方向](handle-device-orientation-with-mediacapture.md)
+* [利用 Windows 内置照相机 UI 捕获照片和视频](capture-photos-and-video-with-cameracaptureui.md)
+* [用 MediaCapture 处理设备方向](handle-device-orientation-with-mediacapture.md)
 * [创建、编辑和保存位图图像](imaging.md)
 * [文件、文件夹和库](https://docs.microsoft.com/windows/uwp/files/index)
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a91c080805bca5d536aad3755ca7edf052d1fe0e
-ms.sourcegitcommit: b8087f8b6cf8367f8adb7d6db4581d9aa47b4861
+ms.openlocfilehash: 5340c8375be9cf33a8f56fdba7bd36e9743767ab
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414061"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80482315"
 ---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>向 UWP 概念性文档投稿
 
@@ -22,7 +22,7 @@ ms.locfileid: "67414061"
 
 如果已处于公共内容存储库中，请首先导航到要更改的文件。 在此处，选择显示的内容上方的铅笔图标以开始编辑。
 
-或者，如果在 docs.microsoft.com 中查看页面，则可以选择页面右上角的“编辑”  按钮。 这会使你重定向到存储库中的关联源文件。
+或者，如果在 [docs.microsoft.com](https://docs.microsoft.com) 中查看页面，则可以选择页面右上角的“编辑”按钮。  这会使你重定向到存储库中的关联源文件。
 
 开始编辑时，GitHub 会自动将官方存储库分叉到你的个人 GitHub 帐户中，在其中可以进行更改。 完成后，将拉取请求提交回“文档”  分支。
 
@@ -56,4 +56,4 @@ ms.locfileid: "67414061"
 
 如果要提供有关文档的反馈，而不是自己进行编辑，则可以[在公共存储库中创建问题](https://github.com/MicrosoftDocs/windows-uwp/issues)。 选择“问题”  选项卡并选择“新问题”  按钮。 请务必包含主题标题和页面的 URL。 问题会被分配给 UWP 文档团队成员进行审阅。
 
-* 对于内部问题，使用 [WDG 内容请求工具](https://aka.ms/pubrequest)。
+* 对于内部问题，使用 [WDG 内容请求工具](http://sesuw2-iis02a/WSCPubRequest/WindowsContentRequestTool.aspx)。

@@ -6,20 +6,20 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5dfd09f2a1a3ab326c09434ee2c613ae57214d59
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57593982"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254646"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>指定应用使用的默认资源
 
 如果应用不具有与客户设备的特定设置相匹配的资源，则使用应用的默认资源。 本主题介绍如何指定这些默认资源是什么。
 
-当客户从 Microsoft Store 安装应用时，客户设备上的设置与应用的可用资源相匹配。 完成此匹配后，只需为该用户下载并安装适当的资源。 例如，使用最合适的用户语言首选项的字符串和图像，以及设备的分辨率和 DPI 设置。 例如，`scale` 的默认值是 `200`，但可根据自己的意愿使用其他值替代该默认值。
+当客户从 Microsoft Store 安装应用时，客户设备上的设置与应用的可用资源相匹配。 完成此匹配后，只需为该用户下载并安装适当的资源。 例如，使用最合适的用户语言首选项的字符串和图像，以及设备的分辨率和 DPI 设置。 例如，`200` 的默认值是 `scale`，但可根据自己的意愿使用其他值替代该默认值。
 
-即使对于不进入自己资源包的资源（如为高对比度设置定制的图像），如果无法找到与用户设置匹配的资源，则可以指定应用在运行时应该使用的默认资源。 例如，`contrast` 的默认值是 `standard`，但可根据自己的意愿使用其他值替代该默认值。
+即使对于不进入自己资源包的资源（如为高对比度设置定制的图像），如果无法找到与用户设置匹配的资源，则可以指定应用在运行时应该使用的默认资源。 例如，`standard` 的默认值是 `contrast`，但可根据自己的意愿使用其他值替代该默认值。
 
 这些默认值以默认资源限定符值的形式指定。 有关什么是资源限定符及其用法和目的的说明，请参阅[定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "57593982"
    </default>
    ```
    
-   **注意** 值 `LANGUAGE-TAG(S)` 需要与应用的默认语言保持同步。 如果该值是单一的 [BCP 47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)，则应用的默认语言必须是同一个标记。 如果它是一个以逗号分隔的语言标记列表，则应用的默认语言必须是列表中的第一个标记。 在应用包清单源文件 (`Package.appxmanifest`) 中的**应用程序**选项卡上，在**默认语言**字段中设置应用的默认语言。
+   **注意** 值 `LANGUAGE-TAG(S)` 需要与应用的默认语言保持同步。 如果该值是单一的 [BCP 47 语言标记](https://tools.ietf.org/html/bcp47)，则应用的默认语言必须是同一个标记。 如果它是一个以逗号分隔的语言标记列表，则应用的默认语言必须是列表中的第一个标记。 在应用包清单源文件 ( **) 中的**应用程序**选项卡上，在**默认语言`Package.appxmanifest`字段中设置应用的默认语言。
 
 4. 每个`<qualifier>`元素指示 Visual Studio 将何值用作每个限定符名称的默认值。 就目前拥有的文件内容来说，实际上尚未更改 Visual Studio 的行为。 换言之，Visual Studio *已表现得如同*该文件已存在这些内容，因为这些都是默认值。 因此若要使用自己的默认值替代默认值，需要更改文件中的值。 以下示例是编辑前三个值后该文件的外观。
    ```xml
@@ -103,5 +103,5 @@ ms.locfileid: "57593982"
 ## <a name="related-topics"></a>相关主题
 
 * [定制语言、比例、高对比度和其他限定符的资源](tailor-resources-lang-scale-contrast.md)
-* [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)
 * [使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)

@@ -9,18 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f7cc27df92329157f2987d8d02eb59039534d166
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: c69e8618aaba58fd3b8de163ce990371bbf3c945
+ms.sourcegitcommit: ce7610916fd662d4bb95d4bfe5c4cf0e45303014
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370098"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71681991"
 ---
 # <a name="generate-a-3mf-package"></a>生成 3MF 程序包
 
-**重要的 Api**
+**重要的 API**
 
--   [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
+-   [**Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 
 本指南介绍了 3D 制造格式文档的结构以及如何使用 [**Windows.Graphics.Printing3D**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d) API 创建和操作该文档。
 
@@ -28,7 +28,7 @@ ms.locfileid: "66370098"
 
 3D 制造格式是有关出于制造目的（3D 打印）使用 XML 描述 3D 模型的外观和结构的一组约定。 它定义一组部件（有些必选，有些可选）及其关系，目的是向 3D 制造设备提供所有必要的信息。 符合 3D 制造格式的数据集可以另存为带有 .3mf 扩展名的文件。
 
-在 Windows 10 中， [ **Printing3D3MFPackage** ](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage)类**Windows.Graphics.Printing3D**命名空间相当于一个单一.3mf 文件和其他类映射到文件中的特定 XML 元素。 本指南介绍如何以编程方式创建和设置 3MF 文档的每个主要部分、如何利用 3MF Materials Extension 以及最后如何将 **Printing3D3MFPackage** 对象转换并另存为 .3mf 文件。 有关 3MF 的标准或 3MF Materials Extension 的详细信息，请参阅 [3MF 规范](https://3mf.io/what-is-3mf/3mf-specification/)。
+在 Windows 10 中， **Printing3D**命名空间中的[**Printing3D3MFPackage**](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage)类类似于单个3mf 文件，而其他类则映射到文件中的特定 XML 元素。 本指南介绍如何以编程方式创建和设置 3MF 文档的每个主要部分、如何利用 3MF Materials Extension 以及最后如何将 **Printing3D3MFPackage** 对象转换并另存为 .3mf 文件。 有关 3MF 的标准或 3MF Materials Extension 的详细信息，请参阅 [3MF 规范](https://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -83,7 +83,7 @@ ms.locfileid: "66370098"
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
-> 3D 生产设备将确定向其虚拟材料元素存储在 3MF 哪些可用的物理材质映射。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
+> 3D 制造设备将确定哪些可用的物理材料映射到3MF 中存储的虚拟材料元素。 材料映射并不一定是 1:1：如果 3D 打印机只使用一种材料，无论向哪些对象或面分配了不同的材料，它都将以该材料打印整个模型。
 
 ### <a name="color-materials"></a>颜色材料
 
@@ -131,6 +131,10 @@ ms.locfileid: "66370098"
 
 [!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
 
+此函数可确保正确指定纹理。
+
+[!code-cs[FixTexture](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetFixTexture)]
+
 我们可以从此处在应用内启动打印作业（请参阅[从应用进行 3D 打印](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)），或者将此 **Printing3D3MFPackage** 另存为 .3mf 文件。
 
 以下方法选取已完成的 **Printing3D3MFPackage** 并将其数据保存到.3mf 文件。
@@ -139,7 +143,7 @@ ms.locfileid: "66370098"
 
 ## <a name="related-topics"></a>相关主题
 
-[从您的应用程序的 3D 打印](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[从应用进行3D 打印](https://docs.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
 [3D 打印 UWP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 

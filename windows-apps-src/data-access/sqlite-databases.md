@@ -1,16 +1,16 @@
 ---
 title: 在 UWP 应用中使用 SQLite 数据库
 description: 在 UWP 应用中使用 SQLite 数据库。
-ms.date: 11/30/2018
+ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 数据库
 ms.localizationpriority: medium
-ms.openlocfilehash: 465376214f1bf1b390ec6db8609783e4e7872196
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: c8eb384be08addd75e77f37d6fb579a179e68581
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362789"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448347"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 应用中使用 SQLite 数据库
 可以使用 SQLite 在用户设备上的轻量级数据库中存储和检索数据。 本指南演示如何执行该操作。
@@ -39,7 +39,7 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 ### <a name="sqlite-library"></a>SQLite 库
 
-[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 库可在 [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common?redirectedfrom=MSDN) 命名空间中实现接口。 Microsoft 将主动保留这些实现，它们提供了围绕低级别本机 SQLite API 的直观的包装器。
+[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 库可在 [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common) 命名空间中实现接口。 Microsoft 将主动保留这些实现，它们提供了围绕低级别本机 SQLite API 的直观的包装器。
 
 本指南的其余部分将帮助你使用此库。
 
@@ -55,23 +55,23 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 ### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>项目的最低版本没有将 Fall Creators Update 作为目标
 
-如果使用的是 Visual Studio 2015，请单击“帮助”  ->“关于 Microsoft Visual Studio”  。 然后，在已安装程序的列表中，确保你具有 NuGet 包管理器版本 **3.5** 或更高版本。 如果版本号较低，请安装[此处](https://www.nuget.org/downloads)提供的更高版本的 NuGet。 在该页面上，你将发现所有版本的 Nuget 都在 **Visual Studio 2015** 标题下方列出。
+如果使用的是 Visual Studio 2015，请单击“帮助”->“关于 Microsoft Visual Studio”。 然后，在已安装程序的列表中，确保你具有 NuGet 包管理器版本 **3.5** 或更高版本。 如果版本号较低，请安装[此处](https://www.nuget.org/downloads)提供的更高版本的 NuGet。 在该页面上，你将发现所有版本的 Nuget 都在 **Visual Studio 2015** 标题下方列出。
 
 接下来，将类库添加到解决方案。 你不必使用类库来包含你的数据访问代码，但我们会使用一个我们的示例。 我们将库命名为 **DataAccessLibrary**，并将库中的类命名为 **DataAccess**。
 
 ![类库](images/class-library.png)
 
-右键单击该解决方法，然后单击“管理解决方案的 NuGet 包”  。
+右键单击该解决方法，然后单击“管理解决方案的 NuGet 包”。
 
 ![管理 NuGet 包](images/manage-nuget.png)
 
-如果使用的是 Visual Studio 2015，请选择“已安装”  选项卡，并确保 **Microsoft.NETCore.UniversalWindowsPlatform** 程序包的版本号为 **5.2.2** 或更高。
+如果使用的是 Visual Studio 2015，请选择“已安装”选项卡，并确保 **Microsoft.NETCore.UniversalWindowsPlatform** 程序包的版本号为 **5.2.2** 或更高。
 
 ![.NETCore 的版本](images/package-version.png)
 
 如果不是，请将包更新到更新的版本。
 
-选择“浏览”  选项卡，然后搜索“Microsoft.Data.SQLite”  程序包。 安装该程序包的版本 **1.1.1**（或更低）。
+选择“浏览”选项卡，然后搜索“Microsoft.Data.SQLite”程序包。 安装该程序包的版本 **1.1.1**（或更低）。
 
 ![SQLite 程序包](images/sqlite-package.png)
 
@@ -95,9 +95,12 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 ![类库](images/dot-net-standard.png)
 
-右键单击该解决方法，然后单击“管理解决方案的 NuGet 包”  。
+右键单击该解决方法，然后单击“管理解决方案的 NuGet 包”。
 
 ![管理 NuGet 包](images/manage-nuget-2.png)
+
+> [!NOTE]
+> 如果希望 .NET Standard 类库能够访问 UWP 应用的应用文件夹和图像资产，则需要将其标记为其属性中的 EmbeddedResource 和 CopyAlways  。
 
 此时，你已经有一个选择。 你可以使用 Windows 附带的 SQLite 版本，如果你出于某种原因要使用特定版本的 SQLite，则可以在程序中包含 SQLite 库。
 
@@ -105,17 +108,17 @@ Entity Framework (EF) 是一个对象关系映射程序，可用于使用特定�
 
 #### <a name="to-use-the-version-of-sqlite-that-is-installed-with-windows"></a>使用随 Windows 一起安装的 SQLite 版本
 
-选择“浏览”  选项卡，搜索“Microsoft.Data.SQLite.core”  程序包，然后安装它。
+选择“浏览”选项卡，搜索“Microsoft.Data.SQLite.core”程序包，然后安装它。
 
 ![SQLite Core 程序包](images/sqlite-core-package.png)
 
-搜索“SQLitePCLRaw.bundle_winsqlite3”  程序包，然后仅将它安装到应用程序中的 UWP 项目。
+搜索“SQLitePCLRaw.bundle_winsqlite3”程序包，然后仅将它安装到应用程序中的 UWP 项目。
 
 ![SQLite PCL Raw 程序包](images/sqlite-raw-package.png)
 
 #### <a name="to-include-sqlite-with-your-app"></a>将 SQLite 包含在你的应用中
 
-你不必执行此操作。 但如果你出于某种原因要将特定版本的 SQLite 包含在你的应用中，请选择“浏览”  选项卡，然后搜索“Microsoft.Data.SQLite”  程序包。 安装该程序包的版本 **2.0**（或更低）。
+你不必执行此操作。 但如果你出于某种原因要将特定版本的 SQLite 包含在你的应用中，请选择“浏览”选项卡，然后搜索“Microsoft.Data.SQLite”程序包。 安装该程序包的版本 **2.0**（或更低）。
 
 ![SQLite 程序包](images/sqlite-package-v2.png)
 
@@ -177,10 +180,12 @@ using System.Collections.Generic;
 向 **DataAccess** 类添加一个初始化 SQLite 数据库的方法。
 
 ```csharp
-public static void InitializeDatabase()
-{
-    using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+public async static void InitializeDatabase()
+{ 
+     await ApplicationData.Current.LocalFolder.CreateFileAsync("sqliteSample.db", CreationCollisionOption.OpenIfExists);
+     string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+     using (SqliteConnection db =
+        new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -221,8 +226,9 @@ public App()
 ```csharp
 public static void AddData(string inputText)
 {
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
     using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+      new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -252,8 +258,9 @@ public static List<String> GetData()
 {
     List<String> entries = new List<string>();
 
-    using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+   string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+   using (SqliteConnection db =
+      new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 

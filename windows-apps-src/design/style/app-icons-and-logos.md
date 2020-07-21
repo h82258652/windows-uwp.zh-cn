@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 760beb6b9baf63b23efb531567f4b5319f95845c
-ms.sourcegitcommit: e9dc2711f0a0758727468f7ccd0d0f0eee3363e3
+ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979359"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971002"
 ---
 # <a name="app-icons-and-logos"></a>应用图标和徽标 
 
@@ -29,7 +29,7 @@ ms.locfileid: "69979359"
         * Microsoft Store
     :::column-end:::
     :::column:::
-        ![windows 10 start and tiles](images/assetguidance01.jpg)
+        ![Windows 10“开始”菜单和磁贴](images/assetguidance01.jpg)
     :::column-end:::
 :::row-end:::
 
@@ -59,14 +59,13 @@ ms.locfileid: "69979359"
 比例系数决定 UI 元素（例如文本）的大小。 比例系数范围是：100%到 400%。 较大的值会创建较大的 UI 元素，可以轻松地在高 DPI 显示器上查看。 
 
 :::row:::
-    :::column:::
-        Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
-
-        (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
-    :::column-end:::
-    :::column:::
-        ![](images/icons/display-settings-screen.png)
-    :::column-end:::
+   :::column:::
+      Windows 会根据每个显示器的 DPI（每英寸点数）和设备的观看距离自动为显示器设置缩放比例。 
+      （用户可以转到“设置”&gt;“显示器”&gt;“缩放和布局”  页来重写默认值。）
+   :::column-end:::
+   :::column:::
+      ![](images/icons/display-settings-screen.png)
+   :::column-end:::
 :::row-end:::  
 
 
@@ -76,7 +75,7 @@ ms.locfileid: "69979359"
 
 “如何在 Microsoft Store 中为我的应用列表指定图像？”
 
-默认情况下，我们使用 Store 的包中的一些图像，正如此页顶部表中所述（以及其他[提交过程中提供的图像](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)。 但是，当在 Windows 10（包括 Xbox）上向客户显示你的列表时，可以选择阻止应用商店使用应用包中的徽标图像，让其仅使用你上传的图像。 这可以使你能在整个应用商店的各种显示中更好地控制应用外观。 （请注意你的产品是否支持早期的 OS 版本，即使使用此选项，客户仍可能会看到来自你的包的图像。）可以在提交过程的“Store 列表”步骤的“Store 徽标”部分执行此操作   。
+默认情况下，我们使用 Store 的包中的一些图像，正如此页顶部表中所述（以及其他[提交过程中提供的图像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。 但是，当在 Windows 10（包括 Xbox）上向客户显示你的列表时，可以选择阻止应用商店使用应用包中的徽标图像，让其仅使用你上传的图像。 这可以使你能在整个应用商店的各种显示中更好地控制应用外观。 （请注意你的产品是否支持早期的 OS 版本，即使使用此选项，客户仍可能会看到来自你的包的图像。）可以在提交过程的“Store 列表”步骤的“Store 徽标”部分执行此操作   。
 
 ![在应用提交过程中指定 Store 徽标](images/app-icons/storelogodisplay.png)
 
@@ -134,15 +133,15 @@ Visual Studio 提供了一个非常有用的工具来管理应用图标，名为
         2. 在解决方案资源管理器中，双击 Package.appxmanifest 文件  。
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![Visual Studio 2019 清单设计器](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-            Visual Studio displays the Manifest Designer.
+            Visual Studio 将显示清单设计器。
     :::column-end:::
     :::column:::
-            ![The Visual Assets tab](images/icons/vs-manfiest-designer.png)
+            ![“可视化资源”选项卡](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
@@ -150,7 +149,7 @@ Visual Studio 提供了一个非常有用的工具来管理应用图标，名为
         3. 单击“可视化资源”选项卡  。
     :::column-end:::
     :::column:::
-        ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![“可视化资源”选项卡](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 
@@ -170,7 +169,7 @@ Visual Studio 提供了一个非常有用的工具来管理应用图标，名为
 
     b.  **显示名称**：指示是否要在中等磁贴、宽磁贴或大磁贴上显示短名称。 
 
-    c. **磁贴背景**：指定磁贴背景色的十六进制值或颜色名称。 例如， `#464646`。 默认值为 `transparent`。
+    c. **磁贴背景**：指定磁贴背景色的十六进制值或颜色名称。 例如，`#464646`。 默认值为 `transparent`。
 
     d. **初始屏幕背景**：指定初始屏幕背景的十六进制值或颜色名称。 
 
@@ -186,7 +185,7 @@ filename-scale-scale factor.png
 
 Square150x150Logo-scale-100.png、Square150x150Logo scale 200.png、Square150x150Logo scale 400.png
 
-请注意，在默认情况下，Visual Studio 不会生成锁屏提醒徽标。 因为锁屏提醒徽标是唯一的且可能不应该与其他应用图标匹配。 有关详细信息，请参阅[适用于UWP 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。 
+请注意，在默认情况下，Visual Studio 不会生成锁屏提醒徽标。 因为锁屏提醒徽标是唯一的且可能不应该与其他应用图标匹配。 有关详细信息，请参阅[适用于 Windows 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。 
 
 
 ## <a name="more-about-app-icon-assets"></a>有关应用图标资源的详细信息
@@ -224,7 +223,7 @@ Visual Studio 将生成你的项目所需的所有应用图标资源，但如果
 
 \*我们建议至少提供这些大小。 
 
-无需向这些资源添加填充；Windows 会根据需要添加填充。 这些资源应占据最少 16 pixel 的占用空间。 
+无需向这些资源添加填充；Windows 会根据需要添加填充。 这些资源应占据最少 16 像素的占用空间。 
 
 以下是这些资源在 Windows 任务栏上的图标中显示时的示例：
 
@@ -254,13 +253,13 @@ Windows 默认在彩色背板顶部上使用基于目标的资源。 如果需�
 
 
 ## <a name="more-about-splash-screen-assets"></a>初始屏幕资源的详细信息
-有关初始屏幕的详细信息，请参阅 [UWP 初始屏幕文章](/windows/uwp/launch-resume/splash-screens)。
+有关初始屏幕的详细信息，请参阅 [Windows 应用初始屏幕](/windows/uwp/launch-resume/splash-screens)。
 
 ## <a name="more-about-badge-logo-assets"></a>锁屏提醒徽标资源的详细信息
 
 使用资源生成器以生成所需的所有资源时，默认情况下不会生成锁屏提醒徽标的原因是：它们与其他应用资源有很大的差别。 锁屏提醒徽标是出现在通知和应用磁贴上的状态图像。 
 
-有关详细信息，请参阅 [UWP 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。
+有关详细信息，请参阅[适用于 Windows 应用的锁屏提醒通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。
 
 
 ## <a name="customizing-asset-padding"></a>自定义资源填充
@@ -294,7 +293,7 @@ Windows 默认在彩色背板顶部上使用基于目标的资源。 如果需�
 
 对于大磁贴，将图标宽度限制为磁贴大小的 66%，将高度限制为 50%：
 
-![大磁贴大小比率](images/assetguidance12.png)
+![大磁贴大小调整比率](images/assetguidance12.png)
 
 某些图标专用于水平或垂直方向，而其他图标具有更复杂形状，使它们无法完全拟合目标尺寸。 居中显示的图标可向一侧加权。 在此情况下，如果图标占据的视觉权重与完全拟合的图标相同，则该图标的一部分可能悬挂在建议的占用之外：
 

@@ -1,0 +1,124 @@
+- name: 构建 Windows 应用
+  href: index.yml
+  items:
+    - name: 构建桌面应用
+      items:
+        - name: 概述
+          href: desktop/index.md
+        - name: 选择应用平台
+          href: desktop/choose-your-platform.md
+        - name: 实现桌面应用的现代化
+          items:
+            - name: 概述
+              href: desktop/modernize/index.md
+            - name: 调用 Windows 运行时 API
+              items:
+                - name: 概述
+                  href: desktop/modernize/desktop-to-uwp-enhance.md
+                - name: 可用的 Windows 运行时 API
+                  href: desktop/modernize/desktop-to-uwp-supported-api.md
+            - name: 托管 UWP XAML 控件（XAML 岛）
+              items:
+                - name: 概述
+                  href: desktop/modernize/xaml-islands.md
+                - name: WPF 和 Windows 窗体应用中的 XAML Islands
+                  items:
+                    - name: 托管标准 UWP 控件
+                      href: desktop/modernize/host-standard-control-with-xaml-islands.md
+                    - name: 托管自定义 UWP 控件
+                      href: desktop/modernize/host-custom-control-with-xaml-islands.md
+                - name: C++ Win32 应用中的 XAML Islands
+                  items:
+                    - name: 使用 UWP XAML 托管 API
+                      href: desktop/modernize/using-the-xaml-hosting-api.md
+                    - name: 托管标准 UWP 控件
+                      href: desktop/modernize/host-standard-control-with-xaml-islands-cpp.md
+                    - name: 托管自定义 UWP 控件
+                      href: desktop/modernize/host-custom-control-with-xaml-islands-cpp.md
+                    - name: 高级方案
+                      href: desktop/modernize/advanced-scenarios-xaml-islands-cpp.md
+            - name: 使用可视化层 (Windows.UI.Composition)
+              items:
+                - name: 概述
+                  href: desktop/modernize/visual-layer-in-desktop-apps.md
+                - name: WPF
+                  href: desktop/modernize/using-the-visual-layer-with-wpf.md
+                - name: Windows 窗体
+                  href: desktop/modernize/using-the-visual-layer-with-windows-forms.md
+                - name: Win32
+                  href: desktop/modernize/using-the-visual-layer-with-win32.md
+            - name: 需要包标识的功能
+              items:
+                - name: 概述
+                  href: desktop/modernize/modernize-packaged-apps.md
+                - name: 集成包扩展
+                  href: desktop/modernize/desktop-to-uwp-extensions.md
+                - name: 使用 UWP 组件进行扩展
+                  href: desktop/modernize/desktop-to-uwp-extend.md
+                - name: 分发打包的应用
+                  href: desktop/modernize/desktop-to-uwp-distribute.md
+            - name: 教程：实现 WPF 应用现代化
+              items:
+                - name: 概述
+                  href: desktop/modernize/modernize-wpf-tutorial.md
+                - name: 将 Contoso Expenses 应用迁移到 .NET Core 3
+                  href: desktop/modernize/modernize-wpf-tutorial-1.md
+                - name: 使用 XAML Islands 添加 UWP InkCanvas 控件
+                  href: desktop/modernize/modernize-wpf-tutorial-2.md
+                - name: 使用 XAML Islands 添加 UWP CalendarView 控件
+                  href: desktop/modernize/modernize-wpf-tutorial-3.md
+                - name: 添加 Windows 10 用户活动和通知
+                  href: desktop/modernize/modernize-wpf-tutorial-4.md
+                - name: 使用 MSIX 打包和部署
+                  href: desktop/modernize/modernize-wpf-tutorial-5.md
+            - name: 向未打包的桌面应用授予标识
+              href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
+    - name: Windows UI 库 (WinUI)
+      items:
+        - name: 概述
+          href: winui/index.md
+        - name: Windows UI 库 3.0 预览版 1
+          items:
+            - name: 下载和发行说明
+              href: winui/winui3/index.md
+            - name: 适用于桌面应用的 WinUI 3.0 入门
+              href: winui/winui3/get-started-winui3-for-desktop.md
+        - name: Windows UI 2.x 库
+          href: winui/winui2/index.md
+          items:
+            - name: 安装
+              items:
+                - name: 入门
+                  href: winui/winui2/getting-started.md
+                - name: NuGet 包列表
+                  href: winui/winui2/nuget-packages.md
+            - name: 发行说明
+              items:
+                - name: 概述
+                  href: winui/winui2/release-notes/index.md
+                - name: WinUI 2.4
+                  href: winui/winui2/release-notes/winui-2.4.md
+                - name: WinUI 2.3
+                  href: winui/winui2/release-notes/winui-2.3.md
+                - name: WinUI 2.2
+                  href: winui/winui2/release-notes/winui-2.2.md
+                - name: WinUI 2.1
+                  href: winui/winui2/release-notes/winui-2.1.md
+                - name: WinUI 2.0
+                  href: winui/winui2/release-notes/winui-2.0.md
+    - name: 针对 Windows 10 进行开发
+      items:
+        - name: Windows 10X 开发常见问题解答
+          href: 10x/faq.md
+    - name: Fluent Design System
+      href: fluent-design-system.md
+    - name: 辅助功能
+      href: accessibility.md
+    - name: 语音
+      href: speech.md
+    - name: 功能和技术
+      href: features-and-technologies.md
+    - name: 最新文档更新
+      href: whats-new/latest-doc-updates.md
+    - name: 与 Microsoft Build 2020 相关的文档
+      href: whats-new/build2020-docs.md

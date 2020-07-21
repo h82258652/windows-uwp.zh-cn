@@ -1,37 +1,36 @@
 ---
 title: 创建和托管应用扩展
-description: 编写并托管通用 Windows 平台 (UWP) 应用扩展，这些扩展允许你通过用户可从 Microsoft Store 中安装的程序包来扩展你的应用。
+description: 编写和托管应用扩展，以便通过用户可从 Microsoft Store 安装的包扩展应用。
 keywords: 应用扩展, 应用服务, 后台
-ms.date: 10/05/2017
+ms.date: 01/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd6d3fb875e95f251e02f07e7af563c95a400a6
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: d315fb89f38e517e61194adf5b75a28b4675de9c
+ms.sourcegitcommit: 09571e1c6a01fabed773330aa7ead459a47d94f7
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682786"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929277"
 ---
 # <a name="create-and-host-an-app-extension"></a>创建和托管应用扩展
 
-本文向你介绍如何创建 UWP 应用扩展以及如何在 UWP 应用中托管该扩展。
+本文介绍如何创建 Windows 10 应用扩展并将其托管在应用中。 UWP 应用和[打包桌面应用](/windows/apps/desktop/modernize/#msix-packages)支持应用扩展。
 
-本文伴有代码示例：
+为了演示如何创建应用扩展，本文使用了[数学扩展代码示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/MathExtensionSample)中的包清单 XML 和代码片段。 此示例是 UWP 应用，但示例中演示的功能也适用于打包的桌面应用。 按照以下说明开始示例：
+
 - 下载并解压缩[数学扩展代码示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)。
-- 在 Visual Studio 2019 中, 打开 MathExtensionSample。 将生成类型设置为 x86（**生成** > **Configuration Manager**，然后针对两个项目将**平台**更改为 **x86**）。
-- 部署解决方案:  生成 > **部署解决方案**。
+- 在 Visual Studio 2019 中，打开 MathExtensionSample。 将生成类型设置为 x86（**生成** > **Configuration Manager**，然后针对两个项目将**平台**更改为 **x86**）。
+- 部署解决方案：**生成** > **部署解决方案**。
 
 ## <a name="introduction-to-app-extensions"></a>应用扩展简介
 
-在通用 Windows 平台 (UWP) 中，应用扩展提供的功能类似于插件、外接程序和加载项在其他平台上提供的功能。 例如，Microsoft Edge 扩展就属于 UWP 应用扩展。 Windows 10 周年纪念版（版本 1607，内部版本 10.0.14393）中引入了 UWP 应用扩展。
+在 Windows 10 中，应用扩展提供了类似于其他平台上的插件、外接程序和外接程序的功能。 Windows 10 周年版（版本1607，build 10.0.14393）中引入了应用扩展。
 
-UWP 应用扩展是 UWP 应用，这些应用具有的扩展声明允许它们与主机应用共享内容和部署事件。 扩展应用可以提供多个扩展。
+应用扩展是 UWP 应用或打包桌面应用，它们具有一个扩展声明，使其能够与主机应用共享内容和部署事件。 扩展应用可以提供多个扩展。
 
-由于应用扩展只是 UWP 应用，因此它们也可以是功能齐全的应用、托管扩展以及向其他应用提供扩展，所有这一切都无需创建单独的应用包。
+由于应用扩展只是 UWP 应用或打包桌面应用，因此它们也可以是完整的功能应用、主机扩展并为其他应用提供扩展，所有这些都不需要创建单独的应用包。
 
-当你创建应用扩展主机时，就创造了围绕应用开发生态系统的机会，在此生态系统中，其他开发人员可以通过你可能未曾想到或无资源进行实施的方法来增强你的应用。 请考虑 Microsoft Office 扩展、Visual Studio 扩展、浏览器扩展等。这为那些超出其随附功能的应用创建了更丰富的体验。 扩展可以增加你的应用的价值和寿命。
-
-**概述**
+当你创建应用扩展主机时，就创造了围绕应用开发生态系统的机会，在此生态系统中，其他开发人员可以通过你可能未曾想到或无资源进行实施的方法来增强你的应用。 请考虑 Microsoft Office 扩展、Visual Studio 扩展、浏览器扩展等。这些扩展会针对应用创建更丰富的体验，远远超出了应用附带的功能。 扩展可以增加你的应用的价值和寿命。
 
 为了在高级别设置应用扩展关系，我们需要：
 
@@ -41,7 +40,7 @@ UWP 应用扩展是 UWP 应用，这些应用具有的扩展声明允许它们�
 4. 定义主机及其扩展的通信方式。
 5. 使用主机应用中的 [Windows.ApplicationModel.AppExtensions](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppExtensions) API 访问扩展。
 
-我们来看一下如何通过检查[数学扩展代码示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)来完成此操作，此代码示例实现了一个假想的计算器，你可以使用扩展向该计算器添加新的函数。 在 Microsoft Visual Studio 2019 中, 从代码示例加载**MathExtensionSample** 。
+我们来看一下如何通过检查[数学扩展代码示例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/MathExtensionSample.zip)来完成此操作，此代码示例实现了一个假想的计算器，你可以使用扩展向该计算器添加新的函数。 在 Microsoft Visual Studio 2019 中，从代码示例加载**MathExtensionSample** 。
 
 ![数学扩展代码示例](images/mathextensionhost-calctab.png)
 
@@ -74,7 +73,7 @@ _MathExtensionHost 项目中的 appxmanifest.xml_
 
 请注意 `xmlns:uap3="http://..."`，以及 `IgnorableNamespaces` 中 `uap3` 的状态。 由于我们使用的是 uap3 命名空间，因此这些项是必需的。
 
-`<uap3:Extension Category="windows.appExtensionHost">`将此应用程序标识为扩展主机。
+`<uap3:Extension Category="windows.appExtensionHost">` 将此应用标识为扩展主机。
 
 `<uap3:AppExtensionHost>` 中的 **Name**  元素是_扩展约定_名称。 当扩展指定相同的扩展约定名称时，主机将能够找到它。 按照惯例，我们建议使用你的应用或发布者名称来生成扩展约定名称，以避免可能与其他扩展约定名称发生冲突。
 
@@ -84,7 +83,7 @@ _MathExtensionHost 项目中的 appxmanifest.xml_
 
 应用通过在其 **Package.appxmanifest** 文件中声明 `<uap3:AppExtension>` 元素，将自己标识为应用扩展。 打开 **MathExtension** 项目中的 **Package.appxmanifest** 文件以查看如何完成此操作。
 
-_MathExtension 项目中的 appxmanifest.xml:_
+_MathExtension 项目中的 appxmanifest.xml：_
 ```xml
 <Package
   ...
@@ -116,19 +115,19 @@ _MathExtension 项目中的 appxmanifest.xml:_
 
 同样，请注意 `xmlns:uap3="http://..."` 行，以及 `IgnorableNamespaces` 中 `uap3` 的状态。 由于我们使用的是 `uap3` 命名空间，因此这些项是必需的。
 
-`<uap3:Extension Category="windows.appExtension">`将此应用程序标识为扩展。
+`<uap3:Extension Category="windows.appExtension">` 将此应用程序标识为扩展。
 
 `<uap3:AppExtension>` 属性的含义如下：
 
-|特性|描述|必填|
+|属性|描述|必需|
 |---------|-----------|:------:|
 |**名称**|这是扩展约定名称。 当它与主机中声明的 **Name** 匹配时，该主机将能够找到此扩展。| :heavy_check_mark: |
 |**ID**| 唯一标识此扩展。 因为可能存在多个使用相同扩展约定名称的扩展（请设想一个支持一些扩展的画图应用），所以你可以使用 ID 将它们区分开来。 应用扩展主机可以使用 ID 推断有关扩展类型的内容。 例如，你可能具有一个针对桌面设计的扩展和另一个针对移动设备设计的扩展，并且可以用 ID 进行区分。 为此，你还可以使用以下讨论的 **Properties** 元素。| :heavy_check_mark: |
 |**DisplayName**| 可以从主机应用中使用它来识别用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
-|**说明** | 可以从主机应用中使用它来描述用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
+|**描述** | 可以从主机应用中使用它来描述用户的扩展。 它可以从[新资源管理系统](https://docs.microsoft.com/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games) (`ms-resource:TokenName`) 中查询，并且可以使用该系统进行本地化。 本地化的内容从应用扩展包中加载，而不是从主机应用中加载。 | |
 |**PublicFolder**|相对于程序包根目录的文件夹（你可以与扩展主机共享该文件夹中的内容）的名称。 按照惯例，此名称是“Public”，但是你可以使用与扩展中的文件夹匹配的任何名称。| :heavy_check_mark: |
 
-`<uap3:Properties>`是一个可选元素, 其中包含宿主可在运行时读取的自定义元数据。 在代码示例中，扩展以应用服务形式来实现，因此主机需要一种方法来获取该应用服务的名称，以便主机可以调用该服务。 此应用服务的名称在我们所定义的 <Service> 元素中定义（我们可以将其叫做我们想要的任何名称）。 此代码示例中的主机会在运行时查找此属性以了解应用服务的名称。
+`<uap3:Properties>` 是一个可选元素，其中包含宿主可在运行时读取的自定义元数据。 在代码示例中，扩展以应用服务形式来实现，因此主机需要一种方法来获取该应用服务的名称，以便主机可以调用该服务。 此应用服务的名称在我们所定义的 <Service> 元素中定义（我们可以将其叫做我们想要的任何名称）。 此代码示例中的主机会在运行时查找此属性以了解应用服务的名称。
 
 ## <a name="decide-how-you-will-implement-the-extension"></a>确定你将如何实现扩展。
 
@@ -211,7 +210,7 @@ _MathExtension 项目中的 appxmanifest.xml_
 
 当主机加载扩展时，像这样的代码会从扩展的 Package.appxmanifest 中定义的属性中提取服务的名称：
 
-_`Update()`在 ExtensionManager.cs 中的 MathExtensionHost 项目中_
+_ExtensionManager.cs 中的 `Update()`，请在 MathExtensionHost 项目中_
 ```cs
 ...
 var properties = await ext.GetExtensionPropertiesAsync() as PropertySet;
@@ -233,13 +232,13 @@ if (_properties != null)
 
 在 `_serviceName` 中存储应用服务的名称后，主机可以使用它来调用应用服务。
 
-调用应用服务还需要包含应用服务的程序包的包系列名称。 幸运的是, 应用扩展 API 提供以下信息:`connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
+调用应用服务还需要包含应用服务的程序包的包系列名称。 幸运的是，应用扩展 API 提供了在以下行中获取的信息： `connection.PackageFamilyName = AppExtension.Package.Id.FamilyName;`
 
 ### <a name="define-how-the-host-and-the-extension-will-communicate"></a>定义主机和扩展的通信方式
 
 应用服务使用 [ValueSet](https://docs.microsoft.com/uwp/api/windows.foundation.collections.valueset) 交换信息。 作为主机的作者，你需要提供一个灵活的协议以与扩展进行通信。 在此代码示例中，这意味着要考虑将来可能会采用 1 个、2 个或更多个参数的扩展。
 
-对于此示例，参数协议是 **ValueSet**，其中包含名为“Arg”的键值对以及参数编号，例如 `Arg1` 和 `Arg2`。 主机将传递 **ValueSet** 中的所有参数，扩展将使用它所需要的参数。 如果扩展能够计算结果，则主机期望从扩展中返回的 **ValueSet** 具有一个名为 `Result` 且包含计算值的键。 如果该键不存在，则主机认为扩展无法完成计算。
+在此示例中，参数的协议是包含名为 "Arg" + 参数号的键值对的**ValueSet** ，例如 `Arg1` 和 `Arg2`。 主机将传递 **ValueSet** 中的所有参数，扩展将使用它所需要的参数。 如果扩展能够计算结果，则主机期望从扩展中返回的 **ValueSet** 具有一个名为 `Result` 且包含计算值的键。 如果该键不存在，则主机认为扩展无法完成计算。
 
 ### <a name="extension-app-service-code"></a>扩展应用服务代码
 
@@ -357,7 +356,7 @@ public ExtensionManager(string extensionContractName)
 
 如果你的扩展主机在连接到扩展的应用服务时遇到问题，请确保 `<uap:AppService Name="...">` 属性与你放入 `<Service>` 元素中的内容匹配。 如果它们不匹配，则你的扩展提供给主机的服务名称将与你实现的应用服务名称不匹配，并且主机将无法激活你的扩展。
 
-_MathExtension 项目中的 appxmanifest.xml:_
+_MathExtension 项目中的 appxmanifest.xml：_
 ```xml
 <Extensions>
    <uap:Extension Category="windows.appService">
@@ -386,7 +385,7 @@ _MathExtension 项目中的 appxmanifest.xml:_
 - 运行主机，然后将扩展应用更新为较新的版本。
     - 主机是否会选择更改并正确卸载旧版本的扩展？  
 
-**要测试的高级方案:**
+**要测试的高级方案：**
 
 - 运行主机，将扩展应用移动到可移动媒体，删除该媒体
     - 主机是否会检测到程序包状态的变化并禁用扩展？
@@ -407,7 +406,7 @@ _MathExtension 项目中的 appxmanifest.xml:_
 
 应用扩展属于开放式生态系统。 如果你的应用可以托管应用扩展，则只要遵循你的扩展信息传递/接收方法，任何人都可以为你的主机编写扩展。 这与属于封闭式生态系统的可选包不同，在该系统中，发布者决定允许谁制作可与应用配合使用的可选包。
 
-应用扩展是独立的程序包，并且可能是独立的应用。 它们不能依赖于另一个应用进行部署。 可选包需要主程序包，并且没有主程序包就无法运行。
+应用扩展是独立的程序包，并且可能是独立的应用。 它们不能依赖于另一个应用进行部署。 可选包需要主包，并且无法在没有它的情况下运行。
 
 游戏扩展包将非常适合作为可选包，因为它紧紧地绑定到游戏上，不能独立于游戏而运行，并且你可能不希望扩展包随便由生态系统中的任何开发者进行创建。
 

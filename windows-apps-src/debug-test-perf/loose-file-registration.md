@@ -3,75 +3,75 @@ title: 通过松散文件注册部署应用
 description: 本指南展示了如何使用松散文件布局来验证和共享 Windows 10 应用，不需要将它们进行打包。
 ms.date: 06/01/2018
 ms.topic: article
-keywords: windows 10、 uwp、 设备门户、 应用程序管理器、 部署、 sdk
+keywords: windows 10, uwp, 设备门户, 应用管理器, 部署, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 3369f3a982efec258fb5ac2358b2962e84e6cefb
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
-ms.translationtype: MT
+ms.openlocfilehash: 7bf3dab97be67a3b97aca4b3132bd9fe18691d15
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713763"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75681928"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>通过松散文件注册部署应用 
 
-本指南展示了如何使用松散文件布局来验证和共享 Windows 10 应用，不需要将它们进行打包。 注册松散文件布局允许开发人员能够快速验证自己的应用而无需打包和安装的应用。 
+本指南展示了如何使用松散文件布局来验证和共享 Windows 10 应用，不需要将它们进行打包。 通过注册宽松文件布局，开发人员可以快速验证他们的应用，而无需打包和安装应用。 
 
-## <a name="what-is-a-loose-file-layout"></a>什么是松散文件布局？
+## <a name="what-is-a-loose-file-layout"></a>什么是宽松文件布局？
 
-松散文件布局是只需在不经过打包过程的文件夹中放置应用内容的行为。 包内容位于"松散"可用文件夹中并不打包。 
+简单来说，宽松文件布局会将应用内容放置于文件夹中，而不必经过打包过程。 包内容在文件夹中是“宽松的”可用且未被打包。 
 
 > [!WARNING]
-> 松散文件布局注册是用于开发人员和设计人员可以快速在活动开发过程中验证自己的应用。 这种方法不应使用到"dogfood"或网络应用程序。 我们建议使用受信任的证书签名的打包应用程序执行最终验证。 
+> 宽松文件布局使开发人员和设计人员能够在主动开发期间快速验证他们的应用。 此方法不应用于对应用进行 dogfood 或外部测试。 我们建议对使用受信任证书签名的打包应用执行最终验证。 
 
-## <a name="advantages-of-loose-file-registration"></a>松散文件注册的优点
+## <a name="advantages-of-loose-file-registration"></a>宽松文件注册的优点
 
-- **快速验证**-因为应用程序文件已解包后，用户可以快速注册松散文件布局和启动该应用程序。 就像一个常规的应用，用户将能够使用应用程序，因为其设计初衷。 
-- **简单网络中分发**-如果的松散文件位于网络共享，而不是本地驱动器中，开发人员可以将网络共享位置发送到其他用户有权访问网络，并且他们可以注册松散文件布局，并运行应用程序。 这允许多个用户同时验证该应用程序。 
-- **协作**的松散文件注册允许开发人员和设计人员可以注册应用程序时继续处理视觉对象资产。 在启动应用时，用户将看到这些更改。 请注意，您可以只更改静态资产以这种方式。 如果需要修改任何代码或动态创建的内容，则必须重新编译应用程序。
+- **快速验证** - 由于应用文件已经解包，因此用户可以快速注册宽松文件布局并启动应用。 与常规应用一样，用户能够按设计目的来使用应用。 
+- **轻松的网络内分发** - 如果宽松文件位于网络共享而不是本地驱动器内，开发人员则可以将网络共享位置发送给其他可以访问该网络的用户，并且他们可以注册宽松文件布局和运行应用。 这可使多名用户同时对应用进行验证。 
+- **协作** - 通过宽松文件注册，开发人员和设计人员能够在应用注册期间继续处理可视资产。 用户在启动应用时会看到这些更改。 请注意，你只能以这种方式更改静态资产。 如果需要修改任何代码或动态创建的内容，则必须重新编译应用。
 
-## <a name="how-to-register-a-loose-file-layout"></a>如何注册松散文件布局
+## <a name="how-to-register-a-loose-file-layout"></a>如何注册宽松文件布局
 
-Windows 提供了多个开发人员工具来注册在本地和远程设备上的松散文件布局。 您可以从中`WinDeployAppCmd`（Windows SDK 工具），Windows Device Portal、 PowerShell，并[Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network)。 下面我们将详细阐述如何注册使用这些工具的松散文件。 但首先，确保您具有以下设置：
+Windows 提供有多种用于在本地和远程设备上注册宽松文件布局的开发人员工具。 可以选择 `WinDeployAppCmd`（Windows SDK 工具）、Windows 设备门户、PowerShell 或 [Visual Studio](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#register-layout-from-network)。 下面我们将介绍如何使用这些工具注册宽松文件。 首先，请确保你具有以下设置：
 
-- 你的设备必须在 Windows 10 创意者更新 (生成 14965) 或更高版本。
-- 您将需要启用[开发人员模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)并[设备发现](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#device-discovery)在所有设备上。
+- 你的设备必须运行 Windows 10 创意者更新（内部版本 14965）或更高版本。
+- 你需要在所有设备上启用[开发者模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)和[设备发现](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery)。
 
 > [!IMPORTANT]
-> 松散文件注册才支持网络共享 (SMB) 协议的设备上可用：桌面和 Xbox。 
+> 只有在支持网络共享 (SMB) 协议的设备上才可以使用宽松文件注册：台式电脑和 Xbox。 
 
-### <a name="register-with-windeployappcmd"></a>注册 WinDeployAppCmd
+### <a name="register-with-windeployappcmd"></a>使用 WinDeployAppCmd 注册
 
-如果使用对应于 Windows 10 创意者更新 (生成 14965) 或更高版本的 SDK 工具，则可以使用`WinDeployAppCmd`命令，在命令提示符。
+如果使用与 Windows 10 创意者更新（内部版本 14965）或更高版本相应的 SDK 工具，则可以在命令提示符中使用 `WinDeployAppCmd` 命令。
 
 ```cmd
 WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Address> -pin <target machine PIN>
 ```
 
-**网络路径**– 应用程序的松散文件的路径。
+**网络路径** – 应用的宽松文件的路径。
 
-**IP 地址**– 目标计算机的 IP 地址。
+**IP 地址** – 目标计算机的 IP 地址。
 
-**目标计算机的 PIN** – PIN，如果需要，以建立与目标设备的连接。 系统会提示使用重试`-pin`选项则是必需的身份验证。 请参阅[设备发现](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery)若要了解如何获取 PIN。
+**目标计算机 PIN** - 与目标设备建立连接时所需的 PIN（如果需要）。 如果需要身份验证，系统将提示你使用 `-pin` 选项重试。 如需了解如何获取 PIN，请参阅[设备发现](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#device-discovery)。
 
-### <a name="windows-device-portal"></a>Windows Device Portal
+### <a name="windows-device-portal"></a>Windows 设备门户
 
-Windows Device Portal 可在所有 Windows 10 设备上，并由开发人员用于测试和验证他们的工作。 它适用于所有用户使用其浏览器 UX 开发人员社区和 REST 终结点。 设备门户的详细信息，请参阅[Windows Device Portal 概述](device-portal.md)。
+Windows 设备门户在所有 Windows 10 设备上均可用，开发人员可使用它来测试和验证他们的工作。 它向开发者社区的所有受众提供了其浏览器 UX 和 REST 终结点。 有关设备门户的详细信息，请参阅 [Windows 设备门户概述](device-portal.md)。
 
-若要在设备门户中注册的松散文件布局，请按照下列步骤。
+若要在设备门户中注册宽松文件布局，请执行以下步骤。
 
-1. 连接到设备门户中的步骤**安装程序**一部分[Windows Device Portal 概述](device-portal.md)。
-1. 在应用程序管理器选项卡，选择**从网络共享注册**。
-1. 网络共享路径输入到松散文件布局中。 
-1. 如果主机设备不具有访问网络共享位置，将提示输入所需的凭据。
-1. 注册完成后，可以启动应用。
+1. 按照 [Windows 设备门户概述](device-portal.md)“设置”  部分中的步骤连接到设备门户。
+1. 在“应用管理器”选项卡中，选择“从网络共享注册”  。
+1. 输入宽松文件布局的网络共享路径。 
+1. 如果主机设备没有网络共享的访问权限，系统则会提示输入所需的凭据。
+1. 注册完成后，你就可以启动应用了。
 
-在设备门户应用程序管理器页上，您也可以注册可选松散文件布局在主要应用通过选择**我想要指定可选包**复选框，然后指定网络共享路径的可选应用程序. 
+在设备门户的“应用管理器”页面，还可以为你的主要应用注册可选的宽松文件布局：选中“我要指定可选包”复选框，然后指定可选应用的网络共享路径  。 
 
 ### <a name="powershell"></a>PowerShell 
 
-Windows PowerShell 还可以注册松散文件布局，但只能在本地设备上。 如果你需要注册到远程设备的布局，您需要使用其他方法之一。 
+通过 Windows PowerShell 还可注册宽松文件布局，但仅支持在本地设备上注册。 如需将布局注册到远程设备，则需要使用其他方法。 
 
-若要注册的松散文件布局，请启动 PowerShell 并输入以下信息。
+若要注册宽松文件布局，请启动 PowerShell 并输入以下命令。
 
 ```PowerShell
 Add-AppxPackage -Register <path to manifest file>
@@ -80,10 +80,10 @@ Add-AppxPackage -Register <path to manifest file>
 ## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="mapped-network-drives"></a>映射网络驱动器
-目前，映射的网络驱动器不支持的松散文件注册。 请参阅与完整的映射驱动器的网络共享路径。
+目前，宽松文件注册不支持映射的网络驱动器。 如需查看完整的网络共享路径，请参阅映射驱动器。
 
 ### <a name="registration-failure"></a>注册失败
-在其正在进行注册。 设备需要有权访问文件布局。 如果文件布局位于网络共享上，请确保该设备具有访问权限。 
+进行注册的设备需要有权访问文件布局。 如果文件布局托管在网络共享上，请确保该设备具有访问权限。 
 
-### <a name="modifications-to-visual-assets-arent-being-loaded-in-the-app"></a>对视觉对象资产的修改不是在应用中加载 
-应用程序将在启动时加载其视觉对象资产。 如果启动应用后，对视觉对象资产进行修改，必须重新启动应用程序以查看最新更改。
+### <a name="modifications-to-visual-assets-arent-being-loaded-in-the-app"></a>应用中未加载对可视对象的修改 
+应用在启动时会加载其可视资产。 如果在启动应用后对可视对象进行了修改，则必须重新启动应用才能查看最新更改。

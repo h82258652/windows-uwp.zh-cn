@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 18dc65198d476204cfd54bd241fbd3c9ac401155
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: fcdeaec3728306de420baa4a2aea06ef1952641e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485169"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82255261"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 创作 API
 
@@ -114,7 +114,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ...
 ```
 
-由于 App 类型是 IFrameworkViewSource，因此你可以传递一个到 Run     。
+由于 App 类型是 IFrameworkViewSource，因此可以直接传递一个到 Run     。
 
 ```cppwinrt
 using namespace Windows::ApplicationModel::Core;
@@ -126,7 +126,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果你正在 Windows 运行时组件中创作一个运行时类
 
-如果类型打包在一个 Windows 运行时组件中以便从应用程序中使用，则它需要是一个运行时类。 在 Microsoft 接口定义语言 (IDL) (.idl) 文件中声明运行时类（请参阅[将运行时类重构到 Midl 文件 (.idl) 中](#factoring-runtime-classes-into-midl-files-idl)）。
+如果类型打包在一个 Windows 运行时组件中以方便从应用程序中使用，则它需要是一个运行时类。 在 Microsoft 接口定义语言 (IDL) (.idl) 文件中声明运行时类（请参阅[将运行时类重构到 Midl 文件 (.idl) 中](#factoring-runtime-classes-into-midl-files-idl)）。
 
 每个 IDL 文件生成一个 `.winmd` 文件，Visual Studio 会将所有这些合并为一个与根命名空间同名的文件。 最后生成的 `.winmd` 文件将是组件使用者将参考的文件。
 
@@ -239,7 +239,7 @@ Visual Studio 项目和项模板为每个运行时类生成一个单独的 IDL �
 下面是一些示例。
 
 - 可以放宽对参数类型的要求。 例如，如果在 IDL 中，你的方法接受 **SomeClass**，那么可以选择在实现中将其更改为 **IInspectable**。 这会起作用，因为任何 **SomeClass** 均可转发到 **IInspectable**（当然，反之则不然）。
-- 可以按值（而不是按引用）接受可复制的参数。 例如，将 `SomeClass const&` 更改为 `SomeClass const&`。 这在你需要避免将引用捕获到协同例程时是必要的（请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)）。
+- 可以按值（而不是按引用）接受可复制的参数。 例如，将 `SomeClass const&` 更改为 `SomeClass`。 这在你需要避免将引用捕获到协同例程时是必要的（请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)）。
 - 可以放宽对返回值的要求。 例如，可以将 **void** 更改为 [**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget)。
 
 编写异步事件处理程序时，最后两个都非常有用。
@@ -276,7 +276,13 @@ namespace MyProject
 }
 ```
 
-若要从 **MyType** 获得你可以使用或作为投影的一部分返回的 **IStringable** 或 **IClosable** 对象，应调用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函数模板。 make 将返回实现类型的默认接口  。
+不能直接分配实现类型。
+
+```cppwinrt
+MyType myimpl; // error C2259: 'MyType': cannot instantiate abstract class
+```
+
+但是，可以从 MyType 获得你可以使用或作为投影的一部分返回的 IStringable 或 IClosable 对象，只需调用 [winrt::make](/uwp/cpp-ref-for-winrt/make) 函数模板即可     。 make 将返回实现类型的默认接口  。
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -310,7 +316,7 @@ MyType 类不是投影的一部分；它是实现  。 但是，通过这种方�
 > [!NOTE]
 > 如果你尚未安装 Windows SDK 版本 10.0.17763.0（Windows 10 版本 1809）或更高版本，则需调用 [winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)，而不是 [winrt::get_self](/uwp/cpp-ref-for-winrt/get-self)   。
 
-下面提供了一个示例。 [实现 BgLabelControl 自定义控件类](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)中还有另一示例  。
+下面是一个示例。 [实现 BgLabelControl 自定义控件类](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)中还有另一示例  。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -329,36 +335,73 @@ impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 
-实现类型本身不会从 winrt::Windows::Foundation::IUnknown 派生，因此它没有 as 函数   。 即便如此，也也可实例化一个，并访问其所有接口的成员。 但如果你这样做，请勿将原始实现类型实例返回给调用方。 而应使用上面显示的方法之一，返回一个投影接口或 com_ptr  。
+实现类型本身不会从 winrt::Windows::Foundation::IUnknown 派生，因此它没有 as 函数   。 即便如此，你也可以访问其所有接口的成员，如上面的 **ImplFromIClosable** 函数所述。 但如果你那样做，请勿将原始实现类型实例返回给调用方。 而应使用已显示的方法之一，返回一个投影接口或 com_ptr  。
+
+如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做，如以下代码示例所示。 实现类型上存在一个转换运算符（前提是实现类型是由 `cppwinrt.exe` 工具生成的），可以帮助完成此工作。 可以将实现类型值直接传递给期望得到相应投影类型值的方法。 从实现类型成员函数，可以将 `*this` 传递给期望得到相应投影类型值的方法。
 
 ```cppwinrt
-MyType myimpl;
-myimpl.ToString();
-myimpl.Close();
-IClosable ic1 = myimpl.as<IClosable>(); // error
-```
-
-如果你有一个实现类型的实例，并且需要将它传递给期望相应的投影类型的函数，那么你可以这样做。 实现类型上存在一个转换运算符（前提是实现类型是由 `cppwinrt.exe` 工具生成的），可以帮助完成此工作。 可以将实现类型值直接传递给期望得到相应投影类型值的方法。 从实现类型成员函数，可以将 `*this` 传递给期望得到相应投影类型值的方法。
-
-```cppwinrt
-// MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.
-
-void MyOtherType::DoWork(MyProject::MyType const&){ ... }
-
-...
-
-void FreeFunction(MyProject::MyOtherType const& ot)
+// MyClass.idl
+import "MyOtherClass.idl";
+namespace MyProject
 {
-    MyType myimpl;
-    ot.DoWork(myimpl);
+    runtimeclass MyClass
+    {
+        MyClass();
+        void MemberFunction(MyOtherClass oc);
+    }
 }
 
+// MyClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyClass : MyClassT<MyClass>
+    {
+        MyClass() = default;
+        void MemberFunction(MyProject::MyOtherClass const& oc) { oc.DoWork(*this); }
+    };
+}
 ...
 
-void MyType::MemberFunction(MyProject::MyOtherType const& ot)
+// MyOtherClass.idl
+import "MyClass.idl";
+namespace MyProject
 {
-    ot.DoWork(*this);
+    runtimeclass MyOtherClass
+    {
+        MyOtherClass();
+        void DoWork(MyClass c);
+    }
 }
+
+// MyOtherClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyOtherClass : MyOtherClassT<MyOtherClass>
+    {
+        MyOtherClass() = default;
+        void DoWork(MyProject::MyClass const& c){ /* ... */ }
+    };
+}
+...
+
+//main.cpp
+#include "pch.h"
+#include <winrt/base.h>
+#include "MyClass.h"
+#include "MyOtherClass.h"
+using namespace winrt;
+
+// MyProject::MyClass is the projected type; the implementation type would be MyProject::implementation::MyClass.
+
+void FreeFunction(MyProject::MyOtherClass const& oc)
+{
+    auto defaultInterface = winrt::make<MyProject::implementation::MyClass>();
+    MyProject::implementation::MyClass* myimpl = winrt::get_self<MyProject::implementation::MyClass>(defaultInterface);
+    oc.DoWork(*myimpl);
+}
+...
 ```
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>从一个具有非默认构造函数的类型派生
@@ -416,7 +459,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 ...
 ```
 
-基类构造函数需要一个 ToggleButton  。 且 MySpecializedToggleButton 即是 ToggleButton    。
+基类构造函数需要一个 ToggleButton  。 **MySpecializedToggleButton** 是一个  **ToggleButton**。
 
 在你按照上面所述进行编辑（将构造函数参数传递给基类）之前，编译器将标记构造函数并指出：在一个名为 MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt; 的类型（在此情况中）上没有适当的默认构造函数  。 这实际上是实现类型的基类的基类。
 
@@ -430,7 +473,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 下表显示了需要在不同的上下文中使用的最小命名空间限定。
 
-|上下文中的命名空间|指定投影类型|指定投影类型|
+|上下文中的命名空间|指定投影类型|指定实现类型|
 |-|-|-|
 |**winrt::MyProject**|`MyRuntimeClass`|`implementation::MyRuntimeClass`|
 |**winrt::MyProject::implementation**|`MyProject::MyRuntimeClass`|`MyRuntimeClass`|
@@ -449,17 +492,17 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 |功能|接受|注释|
 |-|-|-|
 |`T`（表示智能指针）|投影|请参阅[命名空间：投影类型、实现类型和工厂](#namespaces-projected-types-implementation-types-and-factories)中有关错误地使用实现类型的警告。|
-|`agile_ref<T>`|两者|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
+|`agile_ref<T>`|双向|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
 |`com_ptr<T>`|实现|使用投影类型将生成错误：`'Release' is not a member of 'T'`。|
-|`default_interface<T>`|两者|如果使用实现类型，则会返回第一个已实现的接口。|
+|`default_interface<T>`|双向|如果使用实现类型，则会返回第一个已实现的接口。|
 |`get_self<T>`|实现|使用投影类型将生成错误：`'_abi_TrustLevel': is not a member of 'T'`。|
-|`guid_of<T>()`|两者|返回默认接口的 GUID。|
+|`guid_of<T>()`|双向|返回默认接口的 GUID。|
 |`IWinRTTemplateInterface<T>`<br>|投影|使用实现类型进行了编译，但这是一个错误 &mdash; 请参阅[命名空间：投影类型、实现类型和工厂](#namespaces-projected-types-implementation-types-and-factories)中的警告。|
 |`make<T>`|实现|使用投影类型将生成错误：`'implements_type': is not a member of any direct or indirect base class of 'T'`。|
-| `make_agile(T const&amp;)`|两者|如果使用实现类型，则该参数必须为 `com_ptr<T>`。|
+| `make_agile(T const&amp;)`|双向|如果使用实现类型，则该参数必须为 `com_ptr<T>`。|
 | `make_self<T>`|实现|使用投影类型将生成错误：`'Release': is not a member of any direct or indirect base class of 'T'`|
 | `name_of<T>`|投影|如果使用实现类型，则将获得默认接口的字符串化 GUID。|
-| `weak_ref<T>`|两者|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
+| `weak_ref<T>`|双向|如果使用实现类型，则该构造函数参数必须为 `com_ptr<T>`。|
 
 ## <a name="opt-in-to-uniform-construction-and-direct-implementation-access"></a>选择加入统一构造和直接实现访问
 

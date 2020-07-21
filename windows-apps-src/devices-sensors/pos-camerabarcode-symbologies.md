@@ -5,15 +5,23 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 481d10f2fea076f45124a3c75819dfe6494300bf
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57610322"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448397"
 ---
 # <a name="symbologies"></a>标志
-本主题提供了每个支持的 Windows 10，包括随附软件条形码解码器符号示例条形码：UPC/EAN、 代码 39、 代码 128，二五，堆积数据条全向、 数据条，QR 码和 GS1DWCode。
+
+本主题为 Windows 10 附带的软件条形码解码器支持的每个标志提供示例条形码，包括：UPC/EAN、Code 39、Code 128、Interleaved 2 of 5、Databar Omnidirectional、Databar Stacked、QR 码和 GS1DWCode。
+
+Windows 10 使用与软件解码器结合使用的标准镜头照相机来生成条形码扫描器。 本文是指软件解码器支持的符号。 具有内置硬件解码器的专用条形码扫描器设备可能支持其他符号，请联系条形码扫描器制造商获取详细信息。 除非另行指定，否则在 Windows 10 build 17134 或更高版本的所有版本中都支持所列的符号。
+
+使用[GetSupportedSymbologiesAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getsupportedsymbologiesasync)确定条形码扫描器支持的特定符号。
+
+> [!NOTE]
+> Windows 10 中内置的软件解码器由[*Digimarc Corporation*](https://www.digimarc.com/)提供。
 
 ## <a name="1d-symbologies"></a>1D 标志
 
@@ -52,7 +60,10 @@ ms.locfileid: "57610322"
 
 请使用你的相机条形码扫描仪应用程序扫描下方的包装图像查看实际的 GS1DWCode。  此图像使用 UPCA 856107006854 编码。  请访问 http://www.digimarc.com 了解有关 GS1DWCode 功能的详细信息。
 
-![示例条形码 - GS1DWCode](images/pos/rice-box-v7.jpg)
+![示例条形码 - GS1DWCode](images/pos/Rice-Box-V7.jpg)
 
-> [!NOTE]
-> 内置于 Windows 10 的软件解码器提供 [*Digimarc Corporation*](https://www.digimarc.com/) 的成果
+## <a name="see-also"></a>请参阅
+
+### <a name="samples"></a>示例
+
+- [条形码扫描仪示例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

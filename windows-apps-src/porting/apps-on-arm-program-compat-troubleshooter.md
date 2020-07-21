@@ -5,18 +5,18 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, 兼容性疑难解答, 基于 ARM 的 windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 6573bedb97a7081681e5ecc600bb473f6d0b83bf
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57647612"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683950"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>ARM 上的程序兼容性疑难解答
 模拟以支持 x86 应用是为基于 ARM64 的 Windows 10 创建的一项新功能。 有时，模拟可以执行优化，但无法提供最佳体验。 你可以使用程序兼容性疑难解答切换 x86 应用的模拟设置，从而减少默认优化并有可能提高兼容性。
 
 ## <a name="start-the-program-compatibility-troubleshooter"></a>启动程序兼容性疑难解答
-以在任何 Windows 10 电脑上相同的方式手动启动[程序兼容性疑难解答](https://support.microsoft.com/en-us/help/15078/windows-make-older-programs-compatible)：右键单击可执行 (.exe) 文件，然后选择**疑难解答兼容性**。 将出现下面的屏幕。
+以在任何 Windows 10 电脑上相同的方式手动启动[程序兼容性疑难解答](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible)：右键单击可执行 (.exe) 文件，然后选择**疑难解答兼容性**。 将出现下面的屏幕。
 
 ![兼容性疑难解答选项屏幕截图](images/arm/Capture4.png)
 
@@ -32,7 +32,7 @@ ms.locfileid: "57647612"
 
 你可以右键单击可执行文件并选择**属性**来切换模拟设置。
 
-在 ARM，部分标题为**ARM 上的 Windows 10**中将可**兼容性**选项卡。单击**更改模拟设置**来启动第二个窗口，如以下所示。
+在 ARM 上，**兼容性**选项卡中提供了标题为**基于 ARM 的 Windows 10** 的部分。单击 **Change emulation settings** 启动下图所示的第二个窗口。
 
 ![更改模拟设置屏幕截图](images/arm/Capture.png)
 

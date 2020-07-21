@@ -1,17 +1,17 @@
 ---
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
-title: 音乐、图片和视频库中的文件和文件夹
+title: 管理音乐、图片和视频库
 description: 将现有的音乐、图片和视频文件夹添加到相应的库。 你还可以从库中删除文件夹、获取库中的文件夹列表，并发现存储的照片、音乐和视频。
 ms.date: 06/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f9dba57d8e75ba105a2154be5add5b101a4a6aa4
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 4c75bd62fb5548cc03247772427fb5aabac4fb5a
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369335"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74735072"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音乐、图片和视频库中的文件和文件夹
 
@@ -19,7 +19,7 @@ ms.locfileid: "66369335"
 
 库是虚拟的文件夹集合，其中包括一个默认的已知文件夹，以及用户通过使用你的应用或任一内置应用添加到库的任何其他文件夹。 例如，图片库默认包含“图片”已知文件夹。 用户可以通过使用你的应用或内置的“照片”应用，将文件夹添加到图片库或从中删除它们。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**

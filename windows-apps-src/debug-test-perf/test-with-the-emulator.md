@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe6a8b7efd358640e59445c2f8fa9cb49ff6a67
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
-ms.translationtype: MT
+ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317564"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148694"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用适用于 Windows 10 移动版的 Microsoft 模拟器进行测试
 
 通过适用于 Windows 10 移动版的 Microsoft 仿真器随附的工具，模拟与某个设备的真实交互并测试你的应用功能。 该仿真器是一个桌面应用程序，它可以模拟运行 Windows 10 的移动设备。 它提供了一个虚拟环境，你可以在其中调试并测试 Windows App，而无需使用物理设备。 它还为你的应用程序原型提供了隔离的环境。
 
-该模拟器旨在提供与实际设备相当的性能。 但是，在将你的应用发布到 Microsoft Store 之前，我们建议你先在物理设备上测试你的应用。
+该模拟器旨在提供与实际设备相当的性能。 但是，建议先在物理设备上测试你的应用，再将其发布到 Microsoft Store。
 
 你可以通过针对各种屏幕分辨率和屏幕大小配置使用唯一的 Windows 10 移动版模拟器图像，测试自己的通用应用。 通过使用 Microsoft 模拟器随附的工具，你可以模拟与某台设备的真实交互并测试你的应用的各种功能。
 
@@ -25,9 +25,9 @@ ms.locfileid: "67317564"
 
 你的计算机必须满足以下要求：
 
-CPU （这些设置，如果可用，可以为在 BIOS 中启用）
+CPU（如果这些设置可用，可以在 BIOS 中启用它们）
 
--   硬件辅助虚拟化 ([检查兼容性](https://www.microsoft.com/download/details.aspx?id=592))。
+-   硬件协助的虚拟化（[检查兼容性](https://www.microsoft.com/download/details.aspx?id=592)）。
 -   二级地址转换 (SLAT)。
 -   基于硬件的数据执行保护 (DEP)。
 
@@ -45,16 +45,16 @@ RAM
 
 若要查看 RAM 和操作系统的要求，请在“控制面板”中选择“系统和安全”  ，然后选择“系统”  。
 
-适用于 Windows 10 移动版的 Microsoft 仿真程序需要 Visual Studio 2015 或更高版本;它不是与 Visual Studio 的早期版本向后兼容。
+适用于 Windows 10 移动版的 Microsoft 模拟器要求使用 Visual Studio 2015 或更高版本；它不后向兼容早期版本的 Visual Studio。
 
 适用于 Windows 10 移动版的 Microsoft 模拟器无法加载面向 Windows Phone OS 7.1 之前的 Windows Phone 操作系统版本的应用。
 
-## <a name="installing-uninstalling-and-running-the-emulator"></a>安装、 卸载和运行仿真程序
+## <a name="installing-uninstalling-and-running-the-emulator"></a>安装、卸载和运行模拟器
 
 ### <a name="installing"></a>安装
-适用于 Windows 10 移动版的 Microsoft 模拟器作为 Windows 10 SDK 的一部分进行提供。 Windows 10 SDK 和模拟器可作为 Visual Studio 安装的一部分进行安装。 请参阅 [Visual Studio 下载页](https://go.microsoft.com/fwlink/p/?LinkId=534785)。
+适用于 Windows 10 移动版的 Microsoft 模拟器作为 Windows 10 SDK 的一部分进行提供。 Windows 10 SDK 和模拟器可随 Visual Studio 安装。 请参阅 [Visual Studio 下载页](https://developer.microsoft.com/windows/downloads)。
 
-你还可以使用 [Microsoft 模拟器安装程序](https://go.microsoft.com/fwlink/p/?LinkID=615095)来安装适用于 Windows 10 移动版的 Microsoft 模拟器。
+你还可以使用 [Microsoft 模拟器安装程序](https://download.microsoft.com/download/E/3/4/E347E8C5-BD79-49AF-941C-D08893A45268/emulator/EmulatorSetup.exe)来安装适用于 Windows 10 移动版的 Microsoft 模拟器。
 
 ### <a name="uninstalling"></a>卸载
 
@@ -62,9 +62,9 @@ RAM
 
 当卸载适用于 Windows 10 移动版的 Microsoft 模拟器时，为供该模拟器使用而创建的 Hyper-V 虚拟以太网适配器不会自动删除。 你可以从“控制面板”  的“网络连接”  中手动删除此虚拟适配器。
 
-### <a name="running"></a>正在运行
+### <a name="running"></a>运行
 
-若要在模拟器中运行应用，只需选择从模拟的设备**运行**Visual Studio 中的下拉列表菜单。
+从 Visual Studio 的“运行”下拉菜单中选择模拟设备，即可在该模拟器中运行应用  。
 
 ![提供模拟器以及分辨率、大小和内存](images/em-list.png)
 
@@ -144,7 +144,7 @@ RAM
 
 请注意，在仿真器中内部版本 10.0.14332 中，计算机硬件键映射已更改。 下表第二列中的值表示这些新键。 
 
-计算机硬件键（仿真器内部版本 10.0.14295 及更早版本） | 计算机硬件键（仿真器内部版本 10.0.14332 及更早版本） | Windows Phone 硬件按钮 | 说明
+计算机硬件键（仿真器内部版本 10.0.14295 及更早版本） | 计算机硬件键（仿真器内部版本 10.0.14332 及更早版本） | Windows Phone 硬件按钮 | 注意
 --------------------- | ------------------------- | ----------------------------- | -----
 F1 | WIN + ESC | BACK | 长按可实现预期效果。
 F2 | WIN + F2 | START | 长按可实现预期效果。
@@ -177,7 +177,7 @@ ESC | WIN + ESC | BACK | 长按可实现预期效果。
 -   右上角部分会列出日志。 当你将一对设备触碰到一起（或触碰到 POS 终端）时，将记录触碰事件，而当设备取消触碰时，将记录取消触碰事件。 此部分还记录你的应用是否在连接中断前响应或记录你在模拟器 UI 中执行的任何其他操作，并带有时间戳。 日志在模式切换后仍然保留，并且你可以随时通过点击“日志”  屏幕上方的“清除”  按钮清除日志。
 -   屏幕的下半部分是消息日志，显示通过当前选择的连接发送或接收的所有消息的报道，具体取决于所选择的模式。
 
-> **重要**  后首次启动 tapper 工具，你将获得 Windows 防火墙提示。 你必须选中全部 3 个复选框，并允许该工具通过防火墙，否则该工作将在无提示的情况下无法运行。
+> **重要提示**：首次启动触碰器工具时，你会收到一个 Windows 防火墙提示。   你必须选中全部 3 个复选框，并允许该工具通过防火墙，否则该工作将在无提示的情况下无法运行。
 
 在启动快速启动安装程序后，请确保按照上述说明选中防火墙提示上的全部 3 个复选框。 此外，必须安装触碰器工具，并且在与 Microsoft 模拟器相同的物理主机上使用它。
 
@@ -232,12 +232,12 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 -   通过在下拉菜单中选择脚本并点击“删除”  按钮来删除脚本。
 -   仿真器工具不会检查脚本的语法，直到你使用“播放”  按钮运行脚本。 由脚本发送的消息取决于卡仿真应用的实现。
 
-你还可以使用 MasterCard 中的终端模拟器工具 ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) 进行支付应用测试。
+还可以使用 MasterCard 提供的终端模拟器工具 ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) 进行支付应用测试。
 
 -   选中脚本编辑器窗口下的“启用 MasterCard”  侦听器复选框，然后从 MasterCard 启动模拟器。
 -   使用此工具，你可以生成通过 NFC 工具中继到在模拟器上运行的应用程序的命令。
 
-若要了解有关 HCE 支持以及在 Windows 10 移动版中如何开发 HCE 应用的详细信息，请参考 [Microsoft NFC 团队博客](https://go.microsoft.com/fwlink/?LinkId=534749)。
+若要了解有关 HCE 支持以及在 Windows 10 移动版中如何开发 HCE 应用的详细信息，请参考 [Microsoft NFC 团队博客](https://blogs.msdn.com/b/nfc/)。
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>如何创建用于 HCE 测试的脚本
 
@@ -299,7 +299,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 2.  -   选择输入的类型。
 
-        **实时需输入运行模拟**
+        **由实时输入运行模拟**
 
         在加速计模拟器的中间，拖动彩色点以模拟设备在三维平面中的移动。
 
@@ -307,7 +307,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
         可选，单击“重置”  以还原起始方向。
 
-    -   **若要运行使用模拟记录输入**
+    -   **由录制的输入运行模拟**
 
         在“记录的数据”  部分中，单击“播放”  按钮以开始播放模拟的数据。 “记录的数据”  列表中提供的唯一选项是摇动。 当模拟器播放数据时，它不会在屏幕上移动。
 
@@ -345,29 +345,29 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 -   通过删除图钉（在“固定”模式中）或路点（在“路线”模式中）修改路线。
 
-**准确性配置文件**
+**准确度配置文件**
 
 在位置模拟器的所有模式中，你可以选择“精度配置文件”  下拉列表中的以下精度配置文件之一。
 
-| 配置文件  | 描述                                        |
+| 配置文件  | 说明                                        |
 |----------|----------------------------------------------------|
 | 固定点 | 假设完全准确的位置读数。 此设置不实际，但对于测试应用的逻辑很有用。  |
 | 城市    | 假设建筑限制视图中的卫星数量，但通常具有高密度手机基站和可用于定位的 Wi-Fi 接入点。 |
 | 城郊 | 假设卫星定位相对较好，且手机基站的密度也良好，但 Wi-Fi 接入点的密度并不高。  |
 | 农村    | 假设卫星定位良好，但手机基站的密度较低，并且几乎没有可用于定位的 Wi-Fi 接入点。 |
 
-**速度的配置文件**
+**速度配置文件**
 
 在“路线”  模式中，你可以选择下拉列表中的以下速度配置文件之一。
 
-| 配置文件 | 每小时速度               | 每秒速度 | 描述 | 
+| 配置文件 | 每小时速度               | 每秒速度 | 说明 | 
 |---------|------------------------------|------------------|-------------|
 | 速度限制 | 路线的速度限制 | 不适用   | 以发布的速度限制遍历路线。 |
 | 步行     | 5 km/h                   | 1.39 m           | 以 5 km/h 的自然步行速度遍历路线。 |
 | 骑行      | 25 km/h                  | 6.94 m           | 以 25 km/h 的自然骑行速度遍历路线。 |
 | 迅速        |                          |                  |以快于发布的速度限制的速度遍历路线。 | 
 
-**路由模式**
+**“路线”模式**
 
 “路线”模式具有以下功能和限制。
 
@@ -385,7 +385,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ![模拟器的“其他工具”中的“位置”页面](images/em-drive.png)
 
-**有关定位模拟器的详细信息**
+**有关位置模拟器的详细信息**
 
 -   你可以请求一个位置，其精度设置为“默认值”。 已修复 Windows Phone 8 版本的位置模拟器中存在的限制，该限制要求你请求其精度设置为“高”的某个位置。
 
@@ -393,7 +393,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 -   模拟的位置属性只包括“纬度”、“经度”、“精度”和PositionSource。 位置模拟器不会模拟其他属性，例如“速度”、“方向”等。
 
-## <a name="network"></a>网络
+## <a name="network"></a>Network (网络)
 
 通过仿真器的“其他工具”  的“网络”  选项卡，使用不同的网络速度和不同的信号强度测试你的应用。 如果你的应用调用 Web 服务或传输数据，此功能将很有用。
 
@@ -452,7 +452,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
         -   如果你在同步操作正在进行时单击“取消同步”  ，将弹出该卡，并且同步操作的结果会不完整。
     -   “弹出 SD 卡”  按钮将更改回“插入 SD 卡”  。
 
-> **请注意**  使用 FAT32 文件系统格式化由于 SD 卡使用的电话，32 GB 的最大大小。
+> **注意**：由于手机使用的 SD 卡已使用 FAT32 文件系统进行格式化，所以最大容量为 32GB。  
 
 读取和写入模拟 SD 卡的速度受到限制以模仿真实速度。 访问 SD 卡的速度慢于访问计算机的硬盘驱动器的速度。
 
@@ -466,7 +466,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
     选择“已启用”  后，在仿真器上部署的所有应用都使用模拟引擎，而非 WNS 或 MPN 服务，直到禁用模拟。
 
-2.  **选择一个应用以接收通知。**
+2.  **选择某个应用以接收通知。**
 
     将使用部署到仿真器的支持推送通知的所有应用自动填充AppId  列表。 在下拉列表中选择某个应用。
 
@@ -492,7 +492,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
             当应用使用 WNS 通知并且你选择“Toast”  通知类型时，模拟选项卡将显示“标记”  和“组”  字段。 你可以选择这些选项并输入“标记”  和“组”  值，以管理通知中心中的 Toast 通知。
 
         -   Tile
-        -   Badge
+        -   徽章
 
     -   支持以下 MPN 通知类型。
 
@@ -506,7 +506,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
     模拟支持所有模板类型。
 
-6.  **（可选） 更改通知有效负载。**
+6.  **可选择更改通知负载。**
 
     在“模板”  列表中选择某个模板后，将使用适用于该模板的示例负载自动填充“通知负载”  文本框。 在“通知负载”  文本框中查看示例负载。
 
@@ -563,10 +563,10 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 | 功能            | Windows Phone 8.0 相机 | Windows Phone 8.1 相机  |
 |--------------------|--------------------------|---------------------------|
-| 分辨率         | 640 x 480 (VGA)          | 640 x 480 (VGA) 或更高 |
+| 解决方法         | 640 x 480 (VGA)          | 640 x 480 (VGA) 或更高 |
 | Autofocus          | 是                      | 是                       |
 | Flash              | 否                       | 是                       |
-| Zoom               | 2x（数字或光学）  | 2x（数字或光学）   |
+| 缩放               | 2x（数字或光学）  | 2x（数字或光学）   |
 | 视频分辨率   | 640 x 480 (VGA)          | 640 x 480 (VGA) 或更高 |
 | 预览分辨率 | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
 
@@ -576,11 +576,11 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 ![Windows Phone 模拟器中的帧速率计数器](images/em-frameratecounters.PNG)
 
-**帧速率计数器的说明**
+**帧速率计数器说明**
 
 下表介绍了每个帧速率计数器。
 
-| 帧速率计数器                           | 描述        |
+| 帧速率计数器                           | 说明        |
 |----------------------------------------------|--------------------|
 | 复合（渲染）线程帧速率 (FPS) | 更新的屏幕的速率。  |
 | 用户界面线程帧速率 (FPS)       | 正在运行的 UI 线程的速率。    |
@@ -589,7 +589,7 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 | 中间表面计数器                 | 作为缓存表面的结果而生成的隐式表面的数量。    |
 | 屏幕填充率计数器                     | 对于屏幕而言，每帧绘制的像素的数量。 值 1 表示当前屏幕分辨率中的像素数量，例如 480 x 800 像素。 |
 
-**启用和禁用的帧速率计数器**
+**启用和禁用帧速率计数器**
 
 你可以在代码中启用或禁用显示帧速率计数器。 在 Visual Studio 中创建 Windows Phone 应用项目时，默认情况下，以下用于启用帧速率计数器的代码将添加在文件 App.xaml.cs 中。 若要禁用帧速率计数器，请将 **EnableFrameRateCounter** 设置为 **false** 或注释掉代码行。
 
@@ -619,25 +619,25 @@ Windows 8 驱动程序工具包 (WDK) 包括一个驱动程序示例，该示例
 
 下面是模拟器的已知问题，以及解决问题的建议方法（如果遇到问题）。
 
-### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>错误消息："删除虚拟以太网交换机时失败"
+### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>错误消息：“删除虚拟以太网交换机时失败”
 
-在某些情况下，包括后更新到新的 Windows 10 航班，仿真程序与关联的虚拟网络交换机可以让其中不能删除通过用户界面的状态。
+在某些情况下，包括在更新到新的 Windows 10 外部测试版之后，与模拟器相关联的虚拟网络交换机可能会进入无法通过用户界面删除的状态。
 
 若要在此情况下恢复，请在管理员命令提示符下运行“netcfg -d”：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 当命令结束运行时，需要重新启动计算机才能完成恢复过程。
 
-**请注意**  此命令将删除所有网络设备，而不仅仅是那些与仿真程序相关联。 当计算机再次启动时，将自动发现所有硬件网络设备。
+**注意**：此命令将删除所有网络设备，而不仅仅是与模拟器相关联的设备。   当计算机再次启动时，将自动发现所有硬件网络设备。
  
 ### <a name="unable-to-launch-the-emulators"></a>无法启动模拟器
 
 Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机、diff 磁盘和特定于模拟器的网络交换机，它已随附于模拟器 (XDE) 二进制文件。 如果仿真器虚拟机进入错误状态，你应使用此工具将其清理。 从管理员命令提示符运行该工具：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **请注意**  XDECleanup.exe 删除所有仿真程序特定的 HYPER-V Vm，并且它还将删除任何虚拟机检查点或已保存状态。
+> **注意**：XDECleanup.exe 会删除所有特定于模拟器的 Hyper-V VM，还会删除任何 VM 检查点或已保存的状态。  
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>卸载 Windows 10 移动版映像
 
-当你安装仿真器时，Windows 10 移动版 VHD 映像已安装，它在控制面板的“程序和功能”  列表中获取自己的条目。 如果你想要卸载该映像，请在已安装的程序列表中找到“Windows 10 移动版映像 - <version>”  、右键单击它，然后选择“卸载”  。
+当你安装仿真器时，Windows 10 移动版 VHD 映像已安装，它在控制面板的“程序和功能”  列表中获取自己的条目。 如果你想要卸载该映像，请在已安装的程序列表中找到“Windows 10 移动版映像 - **版本\<”，右键单击它，然后选择“卸载”\>**  。
 
-在当前版本中，必须随后手动删除模拟器的 VHD 文件。 如果在仿真程序安装到默认路径，VHD 文件位于 c:\\Program Files (x86)\\Windows 工具包\\10\\仿真\\移动\\<version> \\flash.vhd。
+在当前版本中，必须随后手动删除模拟器的 VHD 文件。 如果已将模拟器安装到默认路径，则 VHD 文件位于 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd。
 
 ### <a name="how-to-disable-hardware-accelerated-graphics"></a>如何禁用硬件加速图形
 
@@ -646,17 +646,17 @@ Microsoft 模拟器包括 XDECleanup.exe，此工具用于删除所有虚拟机�
 若要禁用硬件加速，请执行以下操作：
 
 1. 启动“注册表编辑器”。
-2. 如果不存在，请创建以下注册表子项：HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
+2. 创建以下注册表子项（如果不存在）：HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
 3. 右键单击 10.0 文件夹、指向“新建”  ，然后单击“DWORD 值”  。
 4. 键入DisableRemoteFx  ，然后按 Enter。
 5. 双击DisableRemoteFx  、在“值”  数据框中输入 1、选择“十进制”  选项，然后单击“确定”  。
-6. 打开注册表编辑器。
+6. 关闭注册表编辑器。
 
-**注意：** 设置此注册表值后，你必须删除中的 HYPER-V 管理器的配置的 Visual Studio 中启动的虚拟机，然后重新启动软件呈现图形的仿真程序。
+**注意：** 设置此注册表值后，必须针对你在 Visual Studio 中启动的配置删除 Hyper-V 管理器中的虚拟机，然后重新启动使用软件呈现图形的仿真器。
 
 ## <a name="support-resources"></a>支持资源
 
-若要在开始使用 Windows 10 工具时查找答案并解决问题，请访问 [Windows 10 工具论坛](https://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看 Windows 10 开发的所有论坛，请访问[此链接](https://go.microsoft.com/fwlink/?LinkId=535000)。
+若要在开始使用 Windows 10 工具时查找答案并解决问题，请访问 [Windows 10 工具论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)。 若要查看 Windows 10 开发的所有论坛，请访问[此链接](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)。
 
 ## <a name="related-topics"></a>相关主题
 

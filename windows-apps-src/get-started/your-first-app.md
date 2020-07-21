@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, 第一个应用, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: c6f66d90e96b0dfe941e4311ebf79cd3b9b5f4ae
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: d0870212df4deb7f12f790107ec988fac3eb69ab
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318752"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75685152"
 ---
 # <a name="create-your-first-app"></a>创建你的第一个应用
 
@@ -23,13 +23,13 @@ ms.locfileid: "67318752"
 
 运用 .NET、WPF 或 Silverlight 方面的技能，使用 XAML 和 C# 生成应用。
 
-* [使用 XAML 和 C 创建“Hello, world”应用](create-a-hello-world-app-xaml-universal.md)
+* [使用 XAML 和 C# 创建“Hello, world”应用](create-a-hello-world-app-xaml-universal.md)
 
 若要了解基础知识，或只需更新记忆，请尝试阅读：
 
-* [面向完全初学者的 C# 基础知识](https://go.microsoft.com/fwlink/?linkid=850801)
-* [面向完全初学者的 VB 基础知识](https://go.microsoft.com/fwlink/?linkid=850802)
-* [Windows 10 的开发人员指南](https://go.microsoft.com/fwlink/?linkid=850804)
+* [面向完全初学者的 C# 基础知识](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
+* [面向完全初学者的 VB 基础知识](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
+* [Windows 10 的开发人员指南](https://docs.microsoft.com/learn/)
 
 如果你准备尝试一些比“Hello, World!”更有趣的内容，请尝试以下教程：
 
@@ -61,7 +61,7 @@ ms.locfileid: "67318752"
 将 JavaScript 和 HTML 技能扩展到 UWP 之外以创建 Web 应用，或使用 WebVR 在 Web 上探索虚拟现实
 
 * [Microsoft Edge 开发人员文档](https://docs.microsoft.com/microsoft-edge/)
-* [将 WebVR 与 Microsoft Edge 结合使用](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [将 WebVR 与 Microsoft Edge 结合使用](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Web 应用可以作为托管的 Web 应用轻松地打包到 UWP 框架中，并且可在 Microsoft Store 中进行升级。
 

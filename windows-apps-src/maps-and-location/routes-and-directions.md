@@ -6,12 +6,12 @@ ms.date: 09/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, 路线, 地图, 位置, 方向
 ms.localizationpriority: medium
-ms.openlocfilehash: 196cb4801436e8094dae4ead363ff86cc746034e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e9e464f9a3b49d3a94edbc8593df58e1e7c24515
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371695"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259341"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>在地图上显示路线和方向
 
@@ -20,7 +20,7 @@ ms.locfileid: "66371695"
 请求路线和方向并在应用中显示它们。
 
 >[!Note]
->若要了解有关在应用中使用地图的详细信息，请下载[通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
+>若要了解有关在应用中使用地图的详细信息，请下载[通用 Windows 平台 (UWP) 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)。
 >如果映射不是你的应用的核心功能，请考虑改为启动 Windows 地图应用。 你可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 方案来将 Windows 地图应用启动为特定的地图和路线规划。 有关详细信息，请参阅[启动 Windows 地图应用](https://docs.microsoft.com/windows/uwp/launch-resume/launch-maps-app)。
 
  
@@ -31,11 +31,11 @@ ms.locfileid: "66371695"
 
 * [  **MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder) 类提供了获取路线和方向的方法。 这些方法将返回一个 [**MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult)。
 
-* [  **MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) 包含一个 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 对象。 通过 **MapRouteFinderResult** 的 [**Route**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route) 属性访问该对象。
+* [  **MapRouteFinderResult**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinderResult) 包含一个 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 对象。 通过 [MapRouteFinderResult**的**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinderresult.route)Route 属性访问该对象。
 
-* [  **MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 包含 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 对象的集合。 通过 **MapRoute** 的 [**Legs**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute.legs) 属性访问该集合。
+* [  **MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 包含 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 对象的集合。 通过 [MapRoute**的**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute.legs)Legs 属性访问该集合。
 
-* 每个 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 都包含一个 [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) 对象的集合。 通过 **MapRouteLeg** 的 [**Maneuvers**](https://docs.microsoft.com/uwp/api/windows.services.maps.maprouteleg.maneuvers) 属性访问该集合。
+* 每个 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 都包含一个 [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) 对象的集合。 通过 [MapRouteLeg**的**](https://docs.microsoft.com/uwp/api/windows.services.maps.maprouteleg.maneuvers)Maneuvers 属性访问该集合。
 
 通过调用 [**MapRouteFinder**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteFinder) 类的方法，获取驾车或步行路线和方向。 例如，[**GetDrivingRouteAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getdrivingrouteasync) 或 [**GetWalkingRouteAsync**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutefinder.getwalkingrouteasync)。
 
@@ -58,7 +58,7 @@ ms.locfileid: "66371695"
 计算的 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 具有多个属性，可提供遍历该路线所需的时间、路线的长度以及包含路线段的 [**MapRouteLeg**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteLeg) 对象的集合。 每个 **MapRouteLeg** 对象都包含 [**MapRouteManeuver**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRouteManeuver) 对象的集合。 **MapRouteManeuver** 对象包含可以通过其 [**InstructionText**](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutemaneuver.instructiontext) 属性进行访问的路线。
 
 >[!IMPORTANT]
->必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
+>必须先指定地图验证密钥，才能使用地图服务。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
  
 
@@ -138,10 +138,10 @@ You have reached your destination.
 ## <a name="display-routes"></a>显示路线
 
 
-若要在 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 上显示 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute)，请使用 **MapRoute** 构建一个 [**MapRouteView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView)。 然后，将 **MapRouteView** 添加到 **MapControl** 的 [**Routes**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes) 集合。
+若要在 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps.MapRoute) 上显示 [**MapRoute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)，请使用 [MapRoute**构建一个**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapRouteView)MapRouteView。 然后，将 **MapRouteView** 添加到 [MapControl**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.routes)Routes 集合。
 
 >[!IMPORTANT]
->必须先指定地图身份验证密钥，然后才能使用地图服务或地图控件。 有关详细信息，请参阅[请求地图验证密钥](authentication-key.md)。
+>必须先指定地图身份验证密钥，然后才能使用地图服务或地图控件。 有关详细信息，请参阅[请求地图身份验证密钥](authentication-key.md)。
 
  
 
@@ -190,7 +190,7 @@ private async void ShowRouteOnMap()
 }
 ```
 
-此示例在名为 **MapWithRoute** 的 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 上显示以下内容。
+此示例在名为 [MapWithRoute**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)MapControl 上显示以下内容。
 
 ![显示路线的地图控件。](images/routeonmap.png)
 
@@ -242,7 +242,7 @@ private async void ShowRouteOnMap()
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [地图设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [生成2015视频：跨 Windows 应用中的手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 路况应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)

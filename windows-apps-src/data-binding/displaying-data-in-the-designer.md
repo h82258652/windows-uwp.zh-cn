@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e7b3cd9185e64d701571532d0b632c270476492
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.openlocfilehash: 5f08c2cc39bb4cdf9a49351f70143a0f86df1fb7
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362556"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74254727"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>设计面图上以及用于原型制作的示例数据
 =============================================================================================
 
 
 
-**请注意**  需要示例数据的程度 — 多少，它将帮助您 — 取决于您的绑定的使用是否[{Binding} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)或[{x： 绑定} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension). 本主题中所述的技术基于对 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 的使用，因此它们仅适用于 **{Binding}** 。 但是，如果你使用的是 **{x:Bind}** ，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
+**注意**   你需要示例数据的程度（以及它可以给你带来多少帮助）取决于你的绑定是使用 [{Binding} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)还是使用 [{x: Bind} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)。 本主题中所述的技术基于对 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 的使用，因此它们仅适用于 **{Binding}** 。 但是，如果你使用的是 **{x:Bind}** ，而你的绑定至少显示了设计面图上的占位符值（甚至是项目控件的占位符值），这样你便无需完全相同的示例数据。
 
 也许是不可能或不需要（可能是出于隐私或性能的原因）为你的应用在 Microsoft Visual Studio 或 Blend for Visual Studio 中的设计图面上显示实时数据。 为了使你的控件填充数据（以便你可以处理应用的布局、模板和其他视觉属性），你可以通过各种方式使用设计时示例数据。 如果你正要生成一个草图（或原型）应用，则示例数据可能真的非常有用而且节省时间。 你可以在运行时在草图或原型中使用示例数据来阐明你的想法，而无需连接到真实且实时的数据。
 
-**演示 {Binding} 应用程序示例**
+**用于演示 {Binding} 的应用示例**
 
--   下载 [Bookstore1](https://go.microsoft.com/fwlink/?linkid=532950) 应用。
--   下载 [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952) 应用。
+-   下载 [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) 应用。
+-   下载 [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) 应用。
 
 <a name="setting-datacontext-in-markup"></a>在标记中设置 DataContext
 -----------------------------
@@ -44,7 +44,7 @@ public MainPage()
 
 ![稀疏的设计 UI。](images/displaying-data-in-the-designer-01.png)
 
-第一个补救方法是尝试注释掉该 **DataContext** 分配，改为在页面标记中设置 **DataContext**。 这样，你的实时数据在设计时和运行时都会显示出来。 若要执行此操作，请首先打开你的 XAML 页面。 然后，在**文档大纲**窗口中，单击根可设计元素 (通常带有标签 **\[页\]** ) 以将其选中。 在 **“属性”** 窗口中，查找**DataContext**属性（位于“通用”类别内），然后单击 **“新建”** 。 从 **“选择对象”** 对话框中单击你的视图模型类型，然后单击 **“确定”** 。
+第一个补救方法是尝试注释掉该 **DataContext** 分配，改为在页面标记中设置 **DataContext**。 这样，你的实时数据在设计时和运行时都会显示出来。 若要执行此操作，请首先打开你的 XAML 页面。 然后，在“文档大纲”窗口中，单击根可设计元素（通常带有标签 **Page**）来选择它 **\[\]** 。 在 **“属性”** 窗口中，查找**DataContext**属性（位于“通用”类别内），然后单击 **“新建”** 。 从 **“选择对象”** 对话框中单击你的视图模型类型，然后单击 **“确定”** 。
 
 ![用于设置 DataContext 的 UI。](images/displaying-data-in-the-designer-02.png)
 
@@ -97,9 +97,9 @@ else
 
 各种 xmlns 声明意味着具有 **d:** 前缀的属性只有在设计时才会解释，而且只有在运行时才会忽略。 因此 **d:DataContext** 属性只会在设计时影响 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 属性的值，而在运行时不起任何作用。 如果你愿意，甚至可以在标记中同时设置 **d:DataContext** 和 **DataContext**。 **d:DataContext** 将在设计时进行替代，而 **DataContext** 将在运行时进行替代。 这些相同的替代规则适用于所有设计时和运行时属性。
 
-**d:DataContext** 属性及所有其他设计时属性都已记录在[设计时属性](https://go.microsoft.com/fwlink/p/?LinkId=272504)主题中，这对通用 Windows 平台 (UWP) 应用仍然有效。
+**d:DataContext** 属性及所有其他设计时属性都已记录在[设计时属性](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx)主题中，这对通用 Windows 平台 (UWP) 应用仍然有效。
 
-[**CollectionViewSource** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)没有**DataContext**属性，但它确实有**源**属性。 因此，你可以使用 **d:Source** 属性在 **CollectionViewSource** 上设置仅设计时示例数据。
+[CollectionViewSource **没有 DataContext 属性，不过它有 Source 属性**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)   。 因此，你可以使用 **d:Source** 属性在 **CollectionViewSource** 上设置仅设计时示例数据。
 
 ``` xaml
     <Page.Resources>
@@ -132,14 +132,14 @@ else
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-到目前为止，我们一直在使用 **d:DesignData** 从 XAML 或 JSON 文件中加载设计时示例数据。 另一种替代选项是 **d:DesignInstance** 标记扩展，它指示设计时源基于 **Type** 属性指定的类。 下面提供了一个示例。
+到目前为止，我们一直在使用 **d:DesignData** 从 XAML 或 JSON 文件中加载设计时示例数据。 另一种替代选项是 **d:DesignInstance** 标记扩展，它指示设计时源基于 **Type** 属性指定的类。 下面是一个示例。
 
 ``` xaml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-**IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 所有设计工具的都功能，用例是分析其可绑定属性的类并在中显示这些**数据**面板并在**创建数据绑定**对话框。
+**IsDesignTimeCreatable** 属性指示设计工具应实际创建一个类的实例，这表示该类具有一个公共的默认构造函数，而且它会自行填充数据（实际或示例）。 如果你未设置 **IsDesignTimeCreatable**（或如果将其设置为 **False**），你将不会获取显示在设计图面上的示例数据。 设计工具在此情况下所做的只是针对该类的可绑定属性而分析该类，并将这些显示在“数据”面板和“创建数据绑定”对话框中   。
 
 <a name="sample-data-for-prototyping"></a>用于原型制作的示例数据
 --------------------------------------------------------

@@ -6,12 +6,12 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 73d279ca0afe67fa6c7d2240fb62c91d1ab3c4c3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7ca567d34c98deb75d7ebfa5ec9f70688ad18fdb
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370576"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259421"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用后台任务支持应用
 
@@ -42,13 +42,13 @@ ms.locfileid: "66370576"
 若要快速开始使用进程外后台任务，请参阅[创建和注册进程外后台任务](create-and-register-a-background-task.md)。
 
 > [!TIP]
-> 从 Windows 10 开始，不再需要将应用放在锁定屏幕上为注册后台任务的必备组件。
+>从 Windows 10 开始，你不再需要将应用放置在锁定屏幕上，作为为其注册后台任务的先决条件。  
 
 ## <a name="background-tasks-for-system-events"></a>系统事件的后台任务
 
 应用可以通过使用 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 类注册后台任务来响应系统生成的事件。 应用可以使用以下任意系统事件触发器（在 [**SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 中定义）
 
-| 触发器名称                     | 描述                                                                                                    |
+| 触发器名称                     | 说明                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
 | **InternetAvailable**            | Internet 变为可用。                                                                                |
 | **NetworkStateChange**           | 网络更改，如开销或连接性发生更改。                                              |
@@ -62,7 +62,7 @@ ms.locfileid: "66370576"
 
 你可以控制后台任务何时运行，通过添加条件，甚至可以在任务触发后进行控制。 在触发后，后台任务将不再运行，直至所有条件均符合为止。 可以使用以下条件（由 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType) 枚举表示）。
 
-| 条件名称           | 描述                       |
+| 条件名称           | 说明                       |
 |--------------------------|-----------------------------------|
 | **InternetAvailable**    | Internet 必须可用。   |
 | **InternetNotAvailable** | Internet 必须不可用。 |
@@ -73,7 +73,7 @@ ms.locfileid: "66370576"
 
 将 **InternetAvailable** 条件添加到你的后台任务 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以将后台任务触发时间延迟到网络堆栈运行后。 此条件可以省电，因为必须有可用网络才会执行后台任务。 此条件不提供实时激活。
 
-如果后台任务需要网络连接，请设置 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果后台任务不会设置**IsNetworkRequested**，则后台任务将不能访问网络时在连接待机模式 （例如，当手机的屏幕处于关闭状态时。）  
+如果后台任务需要网络连接，请设置 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)，以确保在后台任务运行时网络保持连接。 这将告知后台任务基础结构在执行任务时保持网络运行，即使设备已进入连接待机模式也是如此。 如果后台任务未设置**IsNetworkRequested**，则在处于连接备用模式（例如，当手机的屏幕关闭时），后台任务将无法访问网络。  
 有关后台任务条件的详细信息，请参阅[设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)。
 
 ## <a name="application-manifest-requirements"></a>应用程序清单要求
@@ -84,10 +84,10 @@ ms.locfileid: "66370576"
 
 以下实时触发器可用于在后台运行轻型自定义代码：
 
-| 实时触发器  | 描述 |
+| 实时触发器  | 说明 |
 |--------------------|-------------|
 | **控制通道** | 后台任务通过使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 可以使连接保持活动状态，在控制通道上接收消息。 如果你的应用正在侦听套接字，可以使用套接字代理而不是 **ControlChannelTrigger**。 有关使用套接字代理的详细信息，请参阅 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 **ControlChannelTrigger** 在 Windows Phone 上不受支持。 |
-| **计时器** | 后台任务运行的频率可以为每 15 分钟一次，并且可以通过使用 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger) 将它们设置在特定时间运行。 有关详细信息，请参阅[通过计时器运行后台任务](run-a-background-task-on-a-timer-.md)。 |
+| **记** | 后台任务运行的频率可以为每 15 分钟一次，并且可以通过使用 [**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger) 将它们设置在特定时间运行。 有关详细信息，请参阅[通过计时器运行后台任务](run-a-background-task-on-a-timer-.md)。 |
 | **推送通知** | 后台任务响应 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) 以接收原始推送通知。 |
 
 **注意**  
@@ -96,13 +96,13 @@ ms.locfileid: "66370576"
 
 若要确保通用 Windows 应用在你发布更新后继续正常运行，请在启动已经过更新的应用时调用 [**RemoveAccess**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.removeaccess)，然后调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)。 有关详细信息，请参阅[后台任务指南](guidelines-for-background-tasks.md)。
 
-**触发器实例数的限制：** 有多少个实例的某些触发器应用可以注册限制。 对于应用的每个实例，应用只能注册一次 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396)。 如果应用超出此限制，注册会引发异常。
+**限制触发器实例数：** 应用可注册的某些触发器的实例数存在限制。 对于应用的每个实例，应用只能注册一次 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396)。 如果应用超出此限制，注册会引发异常。
 
 ## <a name="system-event-triggers"></a>系统事件触发器
 
 [  **SystemTriggerType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 枚举表示以下系统事件触发器：
 
-| 触发器名称            | 描述                                                       |
+| 触发器名称            | 说明                                                       |
 |-------------------------|-------------------------------------------------------------------|
 | **UserPresent**         | 后台任务在用户出现后触发。   |
 | **UserAway**            | 后台任务在用户离开后触发。    |
@@ -112,7 +112,7 @@ ms.locfileid: "66370576"
    
 以下系统事件触发器将指示用户何时将应用移到或移出锁屏界面。
 
-| 触发器名称                     | 描述                                  |
+| 触发器名称                     | 说明                                  |
 |----------------------------------|----------------------------------------------|
 | **LockScreenApplicationAdded**   | 向锁屏中添加应用磁贴。     |
 | **LockScreenApplicationRemoved** | 从锁屏中删除应用磁贴。 |
@@ -138,7 +138,7 @@ ms.locfileid: "66370576"
 
 除非你豁免你的应用，以便它可以在节电模式打开时仍可以运行后台任务和接收推送通知，否则当节电模式功能启用时，如果设备未连接到外部电源且电量低于指定剩余电量，它将阻止后台任务运行。 这不会阻止你注册后台任务。
 
-但是，对于企业应用程序，将不会在 Microsoft Store 中发布的应用，请参阅[无限期地运行在后台](run-in-the-background-indefinetly.md)若要了解如何使用功能在后台中运行后台任务或扩展的执行会话无限期。
+但是，对于企业应用程序和将不在 Microsoft Store 中发布的应用程序，请参阅[无限期在后台运行](run-in-the-background-indefinetly.md)，了解如何使用功能在后台无限期运行后台任务或扩展执行会话。
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>后台任务资源保证实时通信
 
@@ -157,7 +157,7 @@ ms.locfileid: "66370576"
 > [!IMPORTANT]
 > **DeviceUseTrigger** 和 **DeviceServicingTrigger** 不能用于进程内后台任务。
 
-某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅[设备同步和 Microsoft Store 的设备应用程序的更新](https://go.microsoft.com/fwlink/p/?LinkId=306619)
+某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅[Microsoft Store 设备应用的设备同步和更新](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx)
 
 ## <a name="managing-background-tasks"></a>管理后台任务
 
@@ -170,9 +170,9 @@ ms.locfileid: "66370576"
 
 ## <a name="related-topics"></a>相关主题
 
-**Windows 10 中的多任务的概念性指南**
+**Windows 10 中的多任务的概念指南**
 
-* [启动、 恢复和多任务](index.md)
+* [启动、恢复和多任务](index.md)
 
 **相关的后台任务指南**
 
@@ -180,20 +180,20 @@ ms.locfileid: "66370576"
 * [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)
 * [创建和注册进程外后台任务](create-and-register-a-background-task.md)
-* [将进程外后台任务转换为进程内的后台任务](convert-out-of-process-background-task.md)
+* [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)
 * [调试后台任务](debug-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [分组后台任务注册](group-background-tasks.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
+* [如何在 UWP 应用中触发挂起、继续和后台事件（调试时）](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
-* [在背景中播放媒体](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [在后台播放媒体](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [注册后台任务](register-a-background-task.md)
 * [使用后台任务响应系统事件](respond-to-system-events-with-background-tasks.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [更新你的 UWP 应用时运行后台任务](run-a-background-task-during-updatetask.md)
+* [更新 UWP 应用时运行后台任务](run-a-background-task-during-updatetask.md)
 * [在后台无限期运行](run-in-the-background-indefinetly.md)
 * [设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)
-* [触发后台任务从您的应用程序](trigger-background-task-from-app.md)
+* [从应用触发后台任务](trigger-background-task-from-app.md)
 * [使用后台任务更新动态磁贴](update-a-live-tile-from-a-background-task.md)
 * [使用维护触发器](use-a-maintenance-trigger.md)

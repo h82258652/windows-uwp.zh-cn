@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 线程, 线程池
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ff0eca18eeab72dbf0a2f9a539e452a5923392d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a9da63e05380987d69d97a74123e593acd0b8cb1
+ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322019"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619341"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>向线程池提交工作项
 
-\[ 更新适用于 Windows 10 上的 UWP 应用。 Windows 8.x 文章，请参阅[存档](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[已针对 Windows 10 上的 UWP 应用进行更新。 有关 Windows 2.x 的文章，请参阅[存档](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)\]
 
-<b>重要的 Api</b>
+<b>重要的 API</b>
 
 -   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
 -   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
@@ -28,10 +28,10 @@ ms.locfileid: "67322019"
 
 通过调用 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 创建工作项。 提供委派来完成工作（你可使用一个 lambda 或 delegate 函数）。 请注意，**RunAsync** 返回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) 对象；存储此对象以用于下一个步骤。
 
-[  **RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
+[**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 有 3 个版本，你可指定工作项的优先级，控制它是否与其他工作项同时运行。
 
 >[!NOTE]
->使用[ **CoreDispatcher.RunAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)访问 UI 线程并显示从工作项的进度。
+>使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)可访问 UI 线程并显示工作项的进度。
 
 以下示例创建工作项并提供 lambda 以执行此工作：
 
@@ -348,9 +348,9 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 请注意，完成处理程序在分派 UI 更新之前会检查工作项是否已被取消。
 
-## <a name="summary-and-next-steps"></a>摘要和后续步骤
+## <a name="summary-and-next-steps"></a>总结和后续步骤
 
-您可以了解详细信息，请从本快速入门中下载代码[创建线程池工作项示例](https://go.microsoft.com/fwlink/p/?LinkID=328569)编写的 Windows 8.1 和重新使用的源代码中 win\_unap Windows 10 应用。
+若要了解详细信息，可在创建为 Windows 8.1 编写的[ThreadPool 工作项示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample)中下载此快速入门中的代码，并在 Win\_unap Windows 10 应用中重复使用源代码。
 
 ## <a name="related-topics"></a>相关主题
 

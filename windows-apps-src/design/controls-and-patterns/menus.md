@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e3465d108fc725c45999782eff80593832208b5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 884bd2e1eded5e3c0dfa92f1488fe0b8661af18d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319512"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970352"
 ---
 # <a name="menus-and-context-menus"></a>菜单和上下文菜单
 
@@ -26,13 +26,15 @@ ms.locfileid: "67319512"
 
 ![典型上下文菜单示例](images/contextmenu_rs2_icons.png)
 
-| **获取 Windows UI 库** |
-| - |
-| 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+**获取 Windows UI 库**
 
-| **平台 API** | **Windows UI 库** |
+|  |  |
 | - | - |
-| [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | MenuBar 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [MenuBar 类](/uwp/api/microsoft.ui.xaml.controls.menubar)
+>
+> **平台 API：** [MenuFlyout 类](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 类](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 属性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -57,7 +59,7 @@ MenuBar 和 CommandBar 都表示可用于向用户公开命令的表面。 MenuB
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/MenuFlyout">打开此应用，了解 MenuFlyout 的实际应用</a>。</p>
     <ul>
@@ -90,7 +92,7 @@ MenuBar 和 CommandBar 都表示可用于向用户公开命令的表面。 MenuB
 - 具有始终显示的单个入口点（例如，位于屏幕顶部的“文件”菜单）。
 - 通常附加到某个按钮或父菜单项。
 - 通过左键单击（或等效操作，例如用手指点击）进行调用。
-- 通过 [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) 或 [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) 属性与元素相关联，或在应用窗口顶部的菜单栏中进行分组。
+- 通过 [Flyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button.flyout) 或 [FlyoutBase.AttachedFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) 属性与元素相关联，或在应用窗口顶部的菜单栏中进行分组。
 
 ### <a name="context-menus"></a>上下文菜单
 

@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d5861e65a85a07cdda486ddb9c9634c388e819
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: b9c5348063f277d4d76cbea120689328bcc217b1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820458"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75684155"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -30,7 +30,7 @@ ms.locfileid: "67820458"
 
 * Visual Studio 2019：[下载 Visual Studio 2019 Community（免费）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10 SDK（10.0.15063.468 或更高版）：[下载最新的 Windows SDK（免费）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows 移动版模拟器：[下载 Windows 10 移动版模拟器（免费）](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Windows 移动版模拟器：[下载 Windows 10 移动版模拟器（免费）](https://developer.microsoft.com/windows/downloads/sdk-archive)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：从 github 获取起始代码
 
@@ -46,11 +46,15 @@ ms.locfileid: "67820458"
     **如果你不熟悉 GitHub:**
     
     a. 单击“下载 ZIP”  并在本地保存文件。 这将下载一个包含你需要的所有项目文件的 .zip 文件。
-    b. 将该文件解压缩。 使用文件资源管理器导航到你刚才下载的 .zip 文件，右键单击它，然后选择“全部解压缩…”  。c. 导航到示例的本地副本，然后访问 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目录。    
+
+    b. 将该文件解压缩。 使用文件资源管理器导航到你刚才下载的 .zip 文件，右键单击它，然后选择“全部解压缩…”  。 
+
+    c. 导航到示例的本地副本，然后访问 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` 目录。    
 
     **如果你熟悉 GitHub：**
 
     a. 在本地克隆 repo 的主分支。
+
     b. 导航到 `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` 目录。
 
 3. 通过单击 `Photolab.sln` 打开项目。

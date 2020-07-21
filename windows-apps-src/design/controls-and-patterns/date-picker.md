@@ -13,23 +13,29 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e0a7d1732833f8e6fc750f8ee481fa3c1116b50
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d26d11c25829cc82257701ea315e18a944838c54
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66823601"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969992"
 ---
 # <a name="date-picker"></a>日期选取器
 
- 
+日期选取器向你提供了一种标准化方式，可使用户通过触摸、鼠标或键盘输入选取本地化格式的日期值。
 
-日期选取器向你提供了一种标准化方式，可使用户通过触摸、鼠标或键盘输入选取本地化格式的日期值。 
+![日期选取器示例](images/date-picker-closed.png)
 
-> **重要的 API**：[DatePicker class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DatePicker)（DatePicker 类），[Date 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.date)
+**获取 Windows UI 库**
 
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)（DatePicker 类），[Date 属性](/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
+
 使用日期选取器以使用户选取日历上下文不重要的已知日期，例如生日。
 
 有关选择正确日期控件的详细信息，请参阅[日期和时间控件](date-and-time.md)文章。
@@ -39,7 +45,7 @@ ms.locfileid: "66823601"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/DatePicker">打开此应用，了解 DatePicker 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>

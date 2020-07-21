@@ -27,7 +27,7 @@
 - name: 音频、视频和相机
   href: ../audio-video-camera/index.md
   items:
-    - name: 相机
+    - name: 照相机
       href: ../audio-video-camera/camera.md
       items:
         - name: 使用 Windows 内置相机 UI 捕获照片和视频
@@ -99,6 +99,8 @@
               href: ../audio-video-camera/dash-profile-support.md
         - name: 媒体转换
           href: ../audio-video-camera/media-casting.md
+        - name: 启用从蓝牙连接的远程设备播放音频
+          href: ../audio-video-camera/enable-remote-audio-playback.md
         - name: PlayReady DRM
           href: ../audio-video-camera/playready-client-sdk.md
           items:
@@ -160,6 +162,8 @@
           href: ../app-to-app/receive-data.md
         - name: 复制和粘贴
           href: ../app-to-app/copy-and-paste.md
+    - name: 进程间通信 (IPC)
+      href: ../communication/interprocess-communication.md
     - name: 网络和 Web 服务
       href: ../networking/index.md
       items:
@@ -179,6 +183,8 @@
           href: ../networking/web-feeds.md
         - name: 后台传输
           href: ../networking/background-transfers.md
+    - name: 共享命名对象
+      href: ../communication/sharing-named-objects.md
 - name: 数据和文件
   items:
     - name: 应用资源
@@ -299,7 +305,7 @@
           href: ../debug-test-perf/loose-file-registration.md
         - name: Beta 测试
           href: ../debug-test-perf/beta-testing.md
-        - name: Windows Device Portal
+        - name: Windows 设备门户
           href: ../debug-test-perf/device-portal.md
           items:
             - name: 适用于桌面设备的 Device Portal
@@ -351,7 +357,7 @@
               href: ../debug-test-perf/optimize-suspend-resume.md
             - name: 优化文件访问
               href: ../debug-test-perf/optimize-file-access.md
-            - name: Windows 运行时组件和优化的互操作
+            - name: Windows 运行时组件和优化互操作
               href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
             - name: 用于分析和性能的工具
               href: ../debug-test-perf/tools-for-profiling-and-performance.md
@@ -432,7 +438,7 @@
               href: ../monetize/set-up-ad-units-in-your-app.md
             - name: Microsoft 广告中介服务
               href: ../monetize/ad-mediation-service.md
-            - name: 最佳做法
+            - name: 最佳实践
               href: ../monetize/best-practices-for-ads-in-apps.md
               items:
                 - name: UI 和用户体验指南
@@ -553,19 +559,6 @@
                           href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
                 - name: Xbox One 游戏和 Xbox Live
                   items:
-                    - name: 获取 Xbox One 游戏购置
-                      href: ../monetize/get-xbox-one-game-acquisitions.md
-                    - name: 获取 Xbox One 的加载项购置
-                      href: ../monetize/get-xbox-one-add-on-acquisitions.md
-                    - name: 获取 Xbox One 游戏的错误报告数据
-                      href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
-                      items:
-                        - name: 获取 Xbox One 游戏内错误的详细信息
-                          href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
-                        - name: 获取 Xbox One 游戏内错误的堆栈跟踪
-                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
-                        - name: 下载 Xbox One 游戏内错误的 CAB 文件
-                          href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
                     - name: 获取 Xbox Live 分析数据
                       href: ../monetize/get-xbox-live-analytics.md
                       items:
@@ -756,7 +749,7 @@
       items:
         - name: 简介
           href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-        - name: 立即开始行动
+        - name: 入门
           href: ../cpp-and-winrt-apis/get-started.md
         - name: 新增功能
           href: ../cpp-and-winrt-apis/news.md
@@ -806,6 +799,8 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: 从 WRL 移动到 C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: '从 C# 移植示例应用'
+          href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
         - name: '从 C# 移动到 C++/WinRT'
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: 与 ABI 互操作
@@ -816,7 +811,7 @@
           href: ../cpp-and-winrt-apis/agile-objects.md
         - name: 诊断直接分配
           href: ../cpp-and-winrt-apis/diag-direct-alloc.md
-        - name: 有关析构函数的详细信息
+        - name: 用于实现类型的扩展点
           href: ../cpp-and-winrt-apis/details-about-destructors.md
         - name: 一个简单的 C++WinRT WinUI 示例
           href: ../cpp-and-winrt-apis/simple-winui-example.md
@@ -824,7 +819,9 @@
           items:
             - name: 值类别和引用
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
-    - name: 安全性
+    - name: 'C#/WinRT'
+      href: ../csharp-winrt/index.md
+    - name: 安全
       href: ../security/index.md
       items:
         - name: 安全 Windows 应用开发简介
@@ -935,7 +932,7 @@
       items:
         - name: 使用 C++/CX 创建 Windows 运行时组件
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-        - name: '操作实例：使用 C++/CX 创建一个基本 Windows 运行时组件并通过 JavaScript 或 C# 调用此组件'
+        - name: C++/CX Windows 运行时组件的演练
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
         - name: '使用 C# 和 Visual Basic 创建 Windows 运行时组件'
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
@@ -948,9 +945,9 @@
               href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
             - name: 分配托管的 Windows 运行时组件
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-            - name: Windows 运行时类型的 .NET Framework 映射
+            - name: Windows 运行时类型的 .NET 映射
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: 操作实例：创建简单的 Windows 运行时组件并通过 JavaScript 调用它
+        - name: 'C# 或 Visual Basic Windows 运行时组件的演练'
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: 在 Windows 运行时组件中引发事件
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
@@ -1108,7 +1105,7 @@
               href: ../devices-sensors/pos-basics-claim.md
             - name: 与他人共享外设
               href: ../devices-sensors/pos-basics-sharing.md
-            - name: 即刻体验
+            - name: 入门
               href: ../devices-sensors/pos-get-started.md
         - name: 硬件支持
           href: ../devices-sensors/pos-device-support.md
@@ -1128,7 +1125,7 @@
               items:
                 - name: 系统要求
                   href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-                - name: 即刻体验
+                - name: 入门
                   href: ../devices-sensors/pos-camerabarcode-get-started.md
                 - name: 托管相机预览
                   href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
@@ -1165,7 +1162,7 @@
           href: ../devices-sensors/use-the-light-sensor.md
         - name: 使用方向传感器
           href: ../devices-sensors/use-the-orientation-sensor.md
-    - name: 蓝牙
+    - name: Bluetooth
       href: ../devices-sensors/bluetooth.md
       items:
         - name: RFCOMM
@@ -1367,6 +1364,8 @@
               href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
             - name: 创建和托管应用扩展
               href: ../launch-resume/how-to-create-an-extension.md
+            - name: 创建托管应用
+              href: ../launch-resume/hosted-apps.md
         - name: 使用后台任务支持应用
           href: ../launch-resume/support-your-app-with-background-tasks.md
           items:

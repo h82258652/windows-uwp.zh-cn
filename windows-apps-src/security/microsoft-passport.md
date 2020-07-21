@@ -6,20 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e69d3489bcc41f40eca07aff628425d34819c4b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 06699d01dad5aec107fbecf8450bd10fa51f9230
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320592"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259835"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-本文介绍的新 Windows Hello 技术作为 Windows 10 操作系统的一部分提供，并讨论了如何开发人员可以实现这一技术来保护其通用 Windows 平台 (UWP) 应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解由使用传统凭据引发的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。
+本文介绍作为 Windows 10 操作系统的一部分提供的新 Windows Hello 技术，并讨论开发人员如何实现此技术来保护其通用 Windows 平台（UWP）应用和后端服务。 它重点介绍了这些技术的特定功能，这些功能有助于缓解由使用传统凭据引发的威胁，并提供有关设计和部署这些技术作为 Windows 10 部署的一部分的指南。
 
 请注意，本文侧重于应用开发。 有关 Windows Hello 的体系结构和实现细节的信息，请参阅 [TechNet 上的 Windows Hello 指南](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)。
 
-有关完整代码示例，请参阅 [GitHub 上的 Windows Hello 代码示例](https://go.microsoft.com/fwlink/?LinkID=717812)。
+有关完整代码示例，请参阅 [GitHub 上的 Windows Hello 代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)。
 
 有关使用 Windows Hello 创建 UWP 应用和支持身份验证服务的分步演练，请参阅 [Windows Hello 登录应用](microsoft-passport-login.md)和 [Windows Hello 登录服务](microsoft-passport-login-auth-service.md)文章。
 
@@ -43,7 +43,7 @@ ms.locfileid: "67320592"
 
 ### <a name="12-solving-credential-problems"></a>1.2 解决凭据问题
 
-解决密码带来的问题很棘手。 仅收紧密码策略不会起效：用户可能只会循环使用、共享或者写下密码。 尽管用户教育对于身份验证安全很关键，但仅凭教育也无法消除该问题。
+解决密码带来的问题很棘手。 仅收紧密码策略不会起效：用户可能只会循环使用、共享或者写下密码。 尽管用户教育对于身份验证安全至关重要，但仅凭教育也无法消除该问题。
 
 Windows Hello 使用强有力的双因素身份验证 (2FA) 来替换密码，方法是验证现有凭据并创建一个受用户手势（基于生物识别或 PIN）保护的特定于设备的凭据。 
 
@@ -275,9 +275,9 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 
 ![Windows Hello 质询响应](images/passport-challenge-response.png)
 
-接下来，服务器必须验证签名。 当您请求的公钥并将其发送到服务器以用于将来的验证时，它是 (ASN.1） 编码 publicKeyInfo blob 中。 如果您看一下[Windows Hello 的代码示例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)，您将看到有帮助程序类来包装 Crypt32 函数转换到 CNG blob，更常用于 (ASN.1） 编码的 blob。 该 blob 包含公钥算法（即 RSA ）和 RSA 公钥。
+接下来，服务器必须验证签名。 当你请求公钥并将其发送到服务器以供将来进行验证时，它位于 publicKeyInfo 编码的 blob 中。 如果你查看[GitHub 上的 Windows Hello 代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)，你将看到有一些 helper 类可用于包装 crypt32.dll 函数，以将 ASN. 1 编码的 blob 转换为 CNG blob （更常用）。 该 blob 包含公钥算法（即 RSA ）和 RSA 公钥。
 
-在示例中，我们将 (ASN.1） 编码 blob 转换为 CNG blob 的原因是，以便它可以使用 cng （/windows/desktop/SecCNG/cng-门户） 和 BCrypt API。 如果查找 CNG blob 时，它将指向您的相关[BCRYPT_KEY_BLOB 结构](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 可以进行身份验证和加密在 Windows 应用程序中的使用此 API 图面。 ASN.1 是有案可稽的标准用于通信的可序列化数据结构，并且它通常用于在公钥加密和证书。 这就是为什么这种方式返回公钥信息。 公钥是 RSA 密钥;而这是 Windows Hello 时使用数据进行签名的算法。
+在此示例中，我们将对 BCrypt 编码的 blob 转换为 CNG blob 的原因是，它可以与 CNG （/windows/desktop/SecCNG/cng-portal）和 API 一起使用。 如果你查找 CNG blob，则会指向相关的[BCRYPT_KEY_BLOB 结构](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 此 API surface 可用于 Windows 应用程序中的身份验证和加密。 对于可以进行序列化的通信数据结构，ASN. 1 是记录的标准，通常用于公钥加密和证书。 这就是以这种方式返回公钥信息的原因。 公钥为 RSA 密钥;这是 Windows Hello 在签名数据时使用的算法。
 
 具有 CNG blob 后，你需要针对用户的公钥验证已签名的质询。 由于每个人都使用他或她自己的系统或后端技术，因此没有实现此逻辑的通用方法。 我们正在使用 SHA256 作为哈希算法并针对 SignaturePadding 使用 Pkcs1，因此请确保你在从客户端验证已签名的响应时使用它们。 同样，指向该示例作为在服务器上使用 .NET 4.6 执行此操作的方法，但它大致上如下所示：
 
@@ -408,8 +408,8 @@ Windows 10 引入了更高级别且易于实施的安全性。 Windows Hello 提
 ### <a name="61-articles-and-sample-code"></a>6.1 文章和示例代码
 
 - [Windows Hello 概述](https://support.microsoft.com/help/17215)
-- [Windows hello 企业实现详细信息](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
-- [Windows Hello 的代码示例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)
+- [Windows Hello 实现的详细信息](https://docs.microsoft.com/windows/keep-secure/microsoft-passport-guide)
+- [GitHub 上的 Windows Hello 代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)
 
 ### <a name="62-terminology"></a>6.2 术语
 

@@ -6,18 +6,18 @@ keywords: 联系人，选择 选择单个联系人 选择多个联系人 联系�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: facad25446dca286ac150e59d0418c2dd8bfc896
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 634b72032b37fe4a6bc4ea44a2e4fe27abede47d
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66361272"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74255075"
 ---
 # <a name="select-contacts"></a>选择联系人
 
 
 
-[  **Windows.ApplicationModel.Contacts**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts) 命名空间提供了多个用来选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
+[  **Windows.ApplicationModel.Contacts**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts) 命名空间提供了多个用于选择联系人的选项。 下面，我们将向你介绍如何选择一个联系人或多个联系人，并且还介绍如何将联系人选取器配置为仅检索应用所需的联系人信息。
 
 ## <a name="set-up-the-contact-picker"></a>设置联系人选取器
 
@@ -60,7 +60,7 @@ contacts = await contactPicker.PickContactsAsync();
 
 当选取器返回时，检查用户是否选择了任何联系人。 如果选择了联系人，则处理联系人信息。
 
-此示例显示如何处理一个联系人。 下面我们检索联系人的姓名并将该姓名复制到称为 *OutputName* 的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 控件中。
+此示例显示如何处理一个联系人。 下面我们检索联系人的姓名并将该姓名复制到称为 [OutputName**的**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)TextBlock 控件中。
 
 ```cs
 if (contact != null)
@@ -167,7 +167,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 
 ## <a name="complete-example-multiple-contacts"></a>完整示例（多个联系人）
 
-该示例使用联系人选取器检索多个联系人，然后将联系人添加到名为 `OutputContacts` 的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控件中。
+该示例使用联系人选取器检索多个联系人，然后将联系人添加到名为 [ 的ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)`OutputContacts` 控件中。
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -230,4 +230,4 @@ public class ContactItemAdapter
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 
-现在，你基本了解了如何使用联系人选取器检索联系人信息。 从 GitHub 下载[通用 Windows 应用示例](https://go.microsoft.com/fwlink/p/?linkid=619979)来查看更多有关如何使用联系人和联系人选取器的示例。
+现在，你基本了解了如何使用联系人选取器检索联系人信息。 从 GitHub 下载[通用 Windows 应用示例](https://github.com/Microsoft/Windows-universal-samples)来查看更多有关如何使用联系人和联系人选取器的示例。

@@ -1,23 +1,23 @@
 ---
 title: 覆盖地图上的平铺图像
-description: 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据），或者使用磁贴源替换所有默认地图。
+description: 使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 图像, 覆盖
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b4d439958e6cfbf0845aaf5bcd31644ff39432
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 501e28f88d07a85c1ded3ae880d1e679169ac36a
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371686"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260377"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>覆盖地图上的平铺图像
 
-使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据），或者使用磁贴源替换所有默认地图。
+使用磁贴源覆盖地图上的第三方或自定义平铺图像。 使用磁贴源可覆盖专业信息（例如，天气数据、人口数据或地震数据）；或者使用磁贴源替换所有默认地图。
 
-**提示** 若要了解有关在应用中使用地图的详细信息，请在 Github 上下载[通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
+**提示** 若要了解有关在应用中使用地图的详细信息，请在 Github 上下载[通用 Windows 平台 (UWP) 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)。
 
 <a id="tileintro" />
 
@@ -25,9 +25,9 @@ ms.locfileid: "66371686"
 
 地图服务（例如 Nokia 地图和必应地图）将地图剪切成多个方形磁贴，以供快速检索和显示。 这些磁贴的大小为 256 像素 X 256 像素，并以多个级别的详细信息的形式进行预呈现。 许多第三方服务还提供剪切成磁贴的基于地图的数据。 使用磁贴源可检索第三方磁贴，还可以创建你自己的自定义磁贴，并且可覆盖显示在 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 中的地图上的这些磁贴。
 
-**重要**  使用磁贴源时，无需编写代码，若要请求或定位的各个磁贴。 [  **MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 会按需请求磁贴。 每个请求均会为单个磁贴指定 X 和 Y 坐标以及缩放级别。 仅需指定要使用的 URI 或文件名的格式，即可检索采用 **UriFormatString** 属性的磁贴。 换言之，在基本 URI 或文件名中插入可替换的参数，以指示每个磁贴的 X 和 Y 坐标及缩放级别的传递位置。
+**重要**   使用磁贴源时，无需编写代码来请求或定位单个磁贴。 [  **MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 会按需请求磁贴。 每个请求均会为单个磁贴指定 X 和 Y 坐标以及缩放级别。 仅需指定要使用的 URI 或文件名的格式，即可检索采用 **UriFormatString** 属性的磁贴。 换言之，在基本 URI 或文件名中插入可替换的参数，以指示每个磁贴的 X 和 Y 坐标及缩放级别的传递位置。
 
-下面是 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 属性的示例，并显示了 X 和 Y 坐标及缩放级别的可替换参数。
+下面是 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 属性的示例，并显示了 X 和 Y 坐标及缩放级别的可替换参数。
 
 ```syntax
 http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -35,7 +35,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 （X 和 Y 坐标以指定级别的详细信息形式表示单个磁贴在世界地图中的位置。 磁贴编号系统从位于地图左上角的 {0, 0} 开始。 例如，坐标为 {1, 2} 的磁贴位于磁贴网格中的第 2 列，第 3 行。）
 
-有关地图服务使用的磁贴系统的详细信息，请参阅[必应地图磁贴系统](https://go.microsoft.com/fwlink/p/?LinkId=626692)。
+有关地图服务使用的磁贴系统的详细信息，请参阅[必应地图磁贴系统](https://docs.microsoft.com/bingmaps/articles/bing-maps-tile-system?redirectedfrom=MSDN)。
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>覆盖来自磁贴源的磁贴
 
@@ -49,16 +49,16 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
     通过在基本 Uri 或文件名中插入可替换参数，将 **UriFormatString** 配置为用于请求磁贴。
 
-    以下示例将实例化 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)。 该示例在 **HttpMapTileDataSource** 的构造函数中指定 [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的值。
+    以下示例将实例化 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)。 该示例在 [HttpMapTileDataSource**的构造函数中指定**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)UriFormatString 的值。
 
     ```csharp
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
-2.  实例化并配置 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)。 指定 [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource)，它在之前的步骤中已配置为 **MapTileSource** 的 [**DataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource)。
+2.  实例化并配置 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)。 指定 [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource)，它在之前的步骤中已配置为 [MapTileSource**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource)DataSource。
 
-    以下示例在 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的构造函数中指定 [**DataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource)。
+    以下示例在 [**MapTileSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource) 的构造函数中指定 [**DataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)。
 
     ```csharp
         MapTileSource tileSource = new MapTileSource(dataSource);
@@ -71,7 +71,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
     也可以配置影响磁贴加载或显示的 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的其他属性，例如 [**Layer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer)、[**AllowOverstretch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.allowoverstretch)、[**IsRetryEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.isretryenabled) 和 [**IsTransparencyEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.istransparencyenabled)。
 
-3.  将 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 添加到 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 的 [**TileSources**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.tilesources) 集合。
+3.  将 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 添加到 [**MapControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.tilesources) 的 [**TileSources**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 集合。
 
     ```csharp
          MapControl1.TileSources.Add(tileSource);
@@ -219,10 +219,10 @@ void MainPage::AddHttpMapTileSource()
 
 ## <a name="provide-a-custom-uri"></a>提供自定义 URI
 
-如果没有足够的由 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 属性或 [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 属性提供的可替换参数来检索磁贴，则必须创建自定义 Uri。 通过为 **UriRequested** 事件提供自定义处理程序创建和返回自定义 Uri。 每个单独的磁贴都会引发 **UriRequested** 事件。
+如果没有足够的由 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 属性或 [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource) 属性提供的可替换参数来检索磁贴，则必须创建自定义 Uri。 通过为 **UriRequested** 事件提供自定义处理程序创建和返回自定义 Uri。 每个单独的磁贴都会引发 **UriRequested** 事件。
 
-1.  在 **UriRequested** 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.x)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.y) 及 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.zoomlevel) 属性进行合并，以创建自定义 Uri。
-2.  在 [**MapTileUriRequest**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequest)（它包含在 [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) 的 [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.request) 属性中）的 [**Uri**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequest.uri) 属性中返回自定义 Uri。
+1.  在 **UriRequested** 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.x) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.y)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.zoomlevel) 及 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) 属性进行合并，以创建自定义 Uri。
+2.  在 [**MapTileUriRequest**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequest.uri)（它包含在 [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequest) 的 [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.request) 属性中）的 [**Uri**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) 属性中返回自定义 Uri。
 
 以下示例显示了如何通过为 **UriRequested** 事件创建自定义处理程序来提供自定义 Uri。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义 Uri。
 
@@ -268,10 +268,10 @@ using System.Threading.Tasks;
 
 若要创建或加载自定义磁贴，请为 [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested) 事件提供自定义处理程序。 每个单独的磁贴都会引发 **BitmapRequested** 事件。
 
-1.  在 [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested) 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y) 及 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) 属性进行合并，以创建或检索自定义磁贴。
-2.  在 [**MapTileBitmapRequest**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest)（它包含在 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 的 [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.request) 属性中）的 [**PixelData**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequest.pixeldata) 属性中返回自定义磁贴。 **PixelData** 属性属于类型 [**IRandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStreamReference)。
+1.  在 [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested) 事件的自定义处理程序中，将所需的自定义参数与 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) 及 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 属性进行合并，以创建或检索自定义磁贴。
+2.  在 [**MapTileBitmapRequest**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequest.pixeldata)（它包含在 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest) 的 [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.request) 属性中）的 [**PixelData**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 属性中返回自定义磁贴。 **PixelData** 属性属于类型 [**IRandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStreamReference)。
 
-以下示例显示了如何通过为 **BitmapRequested** 事件创建自定义处理程序来提供自定义磁贴。 此示例创建相同的红色磁贴，这些磁贴局部是透明的。 该示例忽略了 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y) 和 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) 属性。 尽管这不是真实的示例，但该示例演示了如何在内存中快速创建自定义磁贴。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义磁贴。
+以下示例显示了如何通过为 **BitmapRequested** 事件创建自定义处理程序来提供自定义磁贴。 此示例创建相同的红色磁贴，这些磁贴局部是透明的。 该示例忽略了 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) 和 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 属性。 尽管这不是真实的示例，但该示例演示如何在内存中快速创建自定义磁贴。 该示例还显示了如何在必须异步执行某些操作的情况下，实现延迟模式来创建自定义磁贴。
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -415,13 +415,13 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 
 使用第三方或自定义磁贴来替换所有默认地图：
 
--   将 [**MapTileLayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileLayer).**BackgroundReplacement** 指定为 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的 [**Layer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer) 属性的值。
--   将 [**MapStyle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle).**None** 指定为 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 的 [**Style**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) 属性的值。
+-   将 [**MapTileLayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileLayer).**BackgroundReplacement** 指定为 [**MapTileSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer) 的 [**Layer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 属性的值。
+-   将 [**MapStyle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle).**None** 指定为 [**MapControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) 的 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 属性的值。
 
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [地图设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [生成2015视频：跨 Windows 应用中的手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 路况应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)

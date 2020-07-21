@@ -1,28 +1,28 @@
 ---
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: 帐户类型、位置和费用
-description: 我们在许多国家和地区都提供个人开发者帐户和公司开发者帐户。
+description: 我们在许多国家和地区提供了个人开发者帐户和公司开发者帐户。
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 开发者帐户, 个人, 公司, 业务, windows 10, uwp, developer account, individual, company, business
 ms.localizationpriority: medium
-ms.openlocfilehash: 92f657386c3a5d1ca6815b9b0a9e56b4d6f2578b
-ms.sourcegitcommit: 35a511c2b29ae3d5008612a5fc13d3eb6370d2d0
+ms.openlocfilehash: 829bbc857f3856962dfbbbc4bb589fa677b8e264
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67495744"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234817"
 ---
 # <a name="account-types-locations-and-fees"></a>帐户类型、位置和费用
 
-Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)提供了这两个个人和公司帐户中许多[国家和地区](#developer-account-and-app-submission-markets)。 任一类型的帐户可以访问要将应用发布到应用商店并参与其他 Microsoft 程序。
+[合作伙伴中心](https://partner.microsoft.com/dashboard)的 Windows 程序在许多[国家和地区](#developer-account-and-app-submission-markets)提供个人帐户和公司帐户。 无论使用哪种类型的帐户，你都可以访问将应用发布到应用商店并参与其他 Microsoft 程序。
 
 > [!NOTE]
-> 打开时开发人员帐户，请确保登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)你想要使用开发人员帐户的 Microsoft 帐户。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
+> 打开开发人员帐户时，请确保使用要用于开发人员帐户的 Microsoft 帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。 稍后你将可以选择[向帐户添加其他用户](manage-account-users.md)。
 
-在[开始注册过程](https://go.microsoft.com/fwlink/p/?LinkId=615100)时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
+在[开始注册过程](https://developer.microsoft.com/store/register) 时，你需要选择是创建个人帐户还是公司帐户。 这两种类型的帐户均允许你提交应用、游戏、加载项和服务。
 
-公司帐户用于组织和企业。 对于公司帐户，我们还需要进一步进行[验证](#account-verification)，以确保已向你授权为公司设置该帐户。 个人帐户通常适用于自行开发的单个开发人员，但你可以选择将其他帐户用户添加到任一帐户类型。
+公司帐户用于组织和企业。 对于公司帐户，我们需要进行更多[验证](#account-verification)，以确认你有权为你的公司设置帐户。 个人帐户通常适用于自行开发的单个开发人员，但你可以选择将其他帐户用户添加到任一帐户类型。
 
 > [!IMPORTANT]
 > 由于在选择后无法更改帐户类型，因此，请务必选择正确的类型。
@@ -33,30 +33,19 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 |--------------------|-----------------|
 | <ul><li>大约花费 19 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>较短的帐户验证过程</li></ul> | <ul><li>大约花费 99 美元（一次性注册费用；具体金额因你所在的国家或地区而异）</li><li>需要更高的帐户验证</li><li>需要你的公司的真实性在其所在国家或地区得到确认</li><li>能够提交具有受限功能的应用（如 [Microsoft Store 策略](store-policies.md#1014-account-type)中所述）</li></ul> |
 
-公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 每个[商店策略](store-policies.md#1014-account-type)、 使用某些功能，如那些访问财务应用程序的帐户信息或需要身份验证 （不使用安全的专用第三方访问的主要功能身份验证提供程序），仅可以由公司帐户发布。
+公司帐户花费稍多，这主要是因为我们要采取一些额外步骤来确保你有权代表公司建立该帐户。 根据[应用商店策略](store-policies.md#1014-account-type)，具有特定功能的应用，如访问财务帐户信息或需要身份验证访问主要功能的应用程序（不使用安全专用第三方身份验证提供程序），只能由公司帐户发布。
 
 ## <a name="account-verification"></a>帐户验证
 
-完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 之前进行验证，但你可以在等待时不能提交应用中的公司帐户[应用程序名称保留](create-your-app-by-reserving-a-name.md)继续构建和测试应用程序，以及在准备您提交的工作。
+完成注册过程后，帐户将进行验证过程。 对于个人帐户，我们将进行检查，确保其他公司没有在使用该发布者显示名称。 对于公司帐户，我们的验证合作伙伴 Dun & Bradstreet 将确认你是否有权为你所代表的公司创建帐户。 此过程可能历时几天到几周不等，并经常会致电贵公司（因此请确保你在填写注册表单时所填写的所有联系信息是最新的）。 在验证之前，你无法从公司帐户提交应用，但在等待时，你可以[保留应用名称](create-your-app-by-reserving-a-name.md)继续生成和测试应用，并准备就绪。
 
-可在**帐户设置**页上查看验证状态。 
-
+您可以在 "**帐户设置**" 页上检查您的验证状态。
 
 ## <a name="developer-account-and-app-submission-markets"></a>开发者帐户和应用提交市场
 
 如果你居住在下面列出的国家或地区或在这些地方开展业务，你将能够注册你的开发者帐户并提交应用。
 
-在下表中，**注册费**是你当前注册开发者帐户时需支付的费用。 这是一次性费用，之后不会收取任何费用。 请注意，以下价格可能会随时发生变化。
-
-> [!NOTE]
-> 当你注册时，我们会在注册费的基础上增加任何适用的税款和费用。 同时，当我们向你付款时，你的银行可能会收取一定的费用才能收到付款。
-
-**付款**列介绍了我们如何[向你支付](getting-paid-apps.md) 通过应用赚取的利润。 你可以选择[付款帐户](setting-up-your-payout-account-and-tax-forms.md)，我们会将你的应用收益存入该帐户。
-
-> [!NOTE]
-> 某些市场不支持付费应用（**付款**）。 在这些市场中，只能提交免费应用。
-
-**PayPal** 列说明了是否支持[付款帐户](setting-up-your-payout-account-and-tax-forms.md)使用 PayPal 作为付款方式（以及使用该付款方式支付开发者帐户注册费，除非另有说明）。
+在下表中，**注册费用**是注册开发人员帐户的当前成本。 这是一次性费用，之后不会收取任何费用。 请注意，以下价格可能会随时发生变化。
 
 | 国家/地区                    | 个人注册费用 | 公司注册费用 |
 |-----------------------------------|---------------------|------------------|
@@ -73,7 +62,7 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 | 阿塞拜疆                        | 19 USD              | 99 USD           |  
 | 巴哈马                       | 19 USD              | 99 USD           |  
 | 巴林                           | 7 BHD               | 38 BHD           |  
-| 孟加拉国                        | 1468 BDT            | 7600 BDT         |  
+| 孟加拉                        | 1468 BDT            | 7600 BDT         |  
 | 巴巴多斯                          | 19 USD              | 99 USD           |  
 | 白俄罗斯                           | 19 USD              | 99 USD           |  
 | 比利时                           | 14 EUR              | 75 EUR           |  
@@ -91,7 +80,7 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 | 佛得角                        | 19 USD              | 99 USD           |  
 | 柬埔寨                          | 19 USD              | 99 USD           |  
 | 喀麦隆                          | 19 USD              | 99 USD           |  
-| 加拿大                            | 20 CAD              | 99 CAD           |  
+| Canada                            | 20 CAD              | 99 CAD           |  
 | 中非共和国          | 19 USD              | 99 USD           |  
 | 乍得                              | 19 USD              | 99 USD           |  
 | 智利                             | 9776 CLP            | 46,000 CLP        |  
@@ -104,10 +93,10 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 | 科特迪瓦                     | 19 USD              | 99 USD           |  
 | 克罗地亚                           | 107 HRK             | 500 HRK          |  
 | 塞浦路斯                            | 14 EUR              | 75 EUR           |  
-| 捷克共和国                    | 365 CZK             | 1720 CZK         |  
+| 捷克                           | 365 CZK             | 1720 CZK         |  
 | 丹麦                           | 106 DKK             | 530 DKK          |  
-| 吉布提                          | 19 USD              | 99 USD           | 
-| 多米尼加                          | 19 USD              | 99 USD           | 
+| 吉布提                          | 19 USD              | 99 USD           |
+| 多米尼加                          | 19 USD              | 99 USD           |
 | 多米尼加共和国                | 19 USD              | 99 USD           |  
 | 厄瓜多尔                           | 19 USD              | 99 USD           |  
 | 埃及                             | 133 EGP             | 600 EGP          |  
@@ -151,7 +140,7 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 | 基里巴斯                          | 19 USD              | 99 USD           |  
 | 韩国                             | 21216 KRW           | 108,000 KRW       |  
 | 科威特                            | 5 KWD               | 28 KWD           |  
-| 吉尔吉斯坦                        | 19 USD              | 99 USD           |  
+| 吉尔吉斯斯坦                        | 19 USD              | 99 USD           |  
 | 老挝                              | 19 USD              | 99 USD           |  
 | 拉脱维亚                            | 14 EUR              | 75 EUR           |  
 | 黎巴嫩                           | 28690 LBP           | 149686 LBP       |  
@@ -162,7 +151,6 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 | 立陶宛                         | 14 EUR              | 75 EUR           |  
 | 卢森堡                        | 14 EUR              | 75 EUR           |  
 | 澳门特别行政区                         | 19 USD              | 99 USD           |  
-| 马其顿语(马其顿共和国)                 | 19 USD              | 99 USD           |  
 | 马达加斯加                        | 19 USD              | 99 USD           |  
 | 马拉维                            | 19 USD              | 99 USD           |  
 | 马来西亚                          | 62 MYR              | 300 MYR          |  
@@ -187,7 +175,8 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 | 新西兰                       | 24 NZD              | 140 NZD          |  
 | 尼加拉瓜                         | 19 USD              | 99 USD           |  
 | 尼日尔                             | 19 USD              | 99 USD           |  
-| 尼日利亚                           | 3700 NGN            | 19500 NGN        |  
+| 尼日利亚                           | 3700 NGN            | 19500 NGN        |
+| 北马其顿                   | 19 USD              | 99 USD           |    
 | 挪威                            | 113 NOK             | 580 NOK          |  
 | 阿曼                              | 7 OMR               | 40 OMR           |  
 | 巴基斯坦                          | 1959 PKR            | 9000 PKR         |  
@@ -241,8 +230,8 @@ Windows 程序中[合作伙伴中心](https://partner.microsoft.com/dashboard)�
 | 乌干达                            | 19 USD              | 99 USD           |  
 | 乌克兰                           | 156 UAH             | 800 UAH          |  
 | 阿拉伯联合酋长国              | 19 USD              | 99 USD           |  
-| 英国                    | 12 GBP              | 65 GBP           |  
-| 美国                     | 19 USD              | 99 USD           |  
+| United Kingdom                    | 12 GBP              | 65 GBP           |  
+| United States                     | 19 USD              | 99 USD           |  
 | 乌拉圭                           | 19 USD              | 99 USD           |  
 | 乌兹别克斯坦                        | 19 USD              | 99 USD           |  
 | 瓦努阿图                           | 19 USD              | 99 USD           |  

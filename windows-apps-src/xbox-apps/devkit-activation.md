@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 3664ecae152b7178709bffc373a877e58a86461a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 95b65e63c081734a560a852a5d064ef76c423ef6
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57590532"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258727"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 开发人员模式激活
 
@@ -38,17 +38,17 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
 
     ![激活步骤 5](images/activation-step-5.png)  
     
-5.  [在合作伙伴中心中注册应用程序开发人员帐户](https://developer.microsoft.com/store/register)。  这也是发布您的游戏，第一个步骤。
+5.  [在合作伙伴中心注册应用开发人员帐户](https://developer.microsoft.com/store/register)。  这也是发布游戏的第一步。
 
-6.  登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)有效，当前合作伙伴中心应用开发者帐户。  如果看不到多个选项在左侧导航窗格中，或者看**创建新的应用**选项**概述**部分中，以下步骤和激活链接_不起作用_; 请确保完全注册应用程序开发人员帐户从上一步。
+6.  通过有效的当前合作伙伴中心应用开发者帐户登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)。  如果左侧导航窗格中未显示多个选项，或者在 "**概述**" 部分中看不到 "**创建新应用**" 选项，以下步骤和激活链接_将无法工作_;请确保已完全注册了上一步中的应用开发人员帐户。
 
-7.  转到[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)。
+7.  请参阅[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)。
 
-8.  输入“开发人员模式激活”应用中显示的激活代码。 与你的帐户关联的激活次数有限制。 激活开发人员模式后，合作伙伴中心将显示指示使用了与你的帐户相关联的激活次数之一。
+8.  输入“开发人员模式激活”应用中显示的激活代码。 与你的帐户关联的激活次数有限制。 激活开发人员模式后，合作伙伴中心将指示你已使用与你的帐户关联的某个激活。
 
     ![激活步骤 8](images/activation-step-8-rs2.png)    
     
-9.  单击**同意并激活**。 这将导致页面重新加载，并且你将看到你的设备已填充到表中。 可以在 [Xbox One 开发人员模式激活计划](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 开发人员模式激活计划协议的条款。
+9.  单击**同意并激活**。 这将导致页面重新加载，并且你将看到你的设备已填充到表中。 可以在 [Xbox One 开发人员模式激活计划](https://docs.microsoft.com/legal/windows/agreements/xbox-one-developer-mode-activation)中找到 Xbox One 开发人员模式激活计划协议的条款。
 
 10. 输入激活代码之后，主机将显示激活过程的进度屏幕。  
     
@@ -59,7 +59,7 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
 ## <a name="switch-between-retail-and-developer-mode"></a>在零售模式和开发人员模式之间切换
 在主机上启用了开发人员模式后，可使用**开发人员主页**在零售模式和开发人员模式之间切换。 若要了解有关启动和使用开发人员主页的详细信息，请参阅 [Xbox One 工具简介](introduction-to-xbox-tools.md)。
 
-* 若要切换到零售模式，请打开**开发人员主页**。 在**快速操作**下选择**退出开发人员模式**。 这将在零售模式下重新启动主机。    
+* 若要切换到零售模式，请打开**开发人员主页**。 在**快速操作**下选择**退出开发人员模式**。 这将在零售模式下重启主机。    
 
   ![激活步骤 13](images/activation-step-13-rs4.png)  
   
@@ -68,5 +68,5 @@ Xbox One 具有两种模式，即*零售* 模式 (**1**) 和*开发人员* 模�
   ![激活步骤 14](images/activation-step-12.png)  
 
 ## <a name="see-also"></a>另请参阅
-- [Xbox 一个开发人员模式下停用](devkit-deactivation.md)
-- [在 Xbox One 上 UWP](index.md)
+- [Xbox One 开发人员模式停用](devkit-deactivation.md)
+- [Xbox one 上的 UWP](index.md)

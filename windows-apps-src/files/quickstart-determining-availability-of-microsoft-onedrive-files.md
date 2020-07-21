@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: effb28fa453ec884152dbc404245f00f4893ef5a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 36835a198d03a8ad5f5e811a74e120c9bbd25c08
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369425"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74258591"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>确定 Microsoft OneDrive 文件的可用性
 
@@ -24,7 +24,7 @@ ms.locfileid: "66369425"
 
 使用 [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 属性确定 Microsoft OneDrive 文件是否可用。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
 
@@ -53,7 +53,7 @@ ms.locfileid: "66369425"
 
 1.  声明适用于要访问的库的功能。
 2.  包括 [**Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空间。 此命名空间包含用于管理文件、文件夹和应用程序设置的类型。 它还包含所需的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 类型。
-3.  获取所需文件的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象。 如果你枚举一个库，则通常通过以下方法来完成此步骤：调用 [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery) 方法，然后调用生成的 [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult) 对象的 [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 方法。 **GetFilesAsync** 方法返回 **StorageFile** 对象的 [IReadOnlyList](https://go.microsoft.com/fwlink/p/?LinkId=324970) 集合。
+3.  获取所需文件的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象。 如果你枚举一个库，则通常通过以下方法来完成此步骤：调用 [**StorageFolder.CreateFileQuery**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.createfilequery) 方法，然后调用生成的 [**StorageFileQueryResult**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.StorageFileQueryResult) 对象的 [**GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 方法。 **GetFilesAsync** 方法返回 **StorageFile** 对象的 [IReadOnlyList](https://msdn.microsoft.com/library/hh192385.aspx) 集合。
 4.  有权访问表示所需文件的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象后，[**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 属性的值会反映该文件是否可用。
 
 以下通用方法说明了如何枚举任一文件夹，并返回此文件夹的 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) 对象集合。 调用方法随后会迭代返回的集合，该集合引用了每个文件的 [**StorageFile.IsAvailable**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.isavailable) 属性。

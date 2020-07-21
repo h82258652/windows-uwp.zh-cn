@@ -1,24 +1,24 @@
 ---
-description: 本主题介绍了如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。
+description: 本主题介绍将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的源代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 项目中的等效项时所涉及的技术细节。
 title: 从 C++/CX 移动到 C++/WinRT
 ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 404a6985c95718363f3dbbc3b8f27a7793b28e86
-ms.sourcegitcommit: ba4a046793be85fe9b80901c9ce30df30fc541f9
+ms.openlocfilehash: c5f8b9548bba704a7035b014ca3728db8bcbcc16
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68328852"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80662410"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>从 C++/CX 移动到 C++/WinRT
 
-本主题介绍了如何将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的等效项。
+本主题介绍将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的源代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 项目中的等效项时所涉及的技术细节。
 
 ## <a name="porting-strategies"></a>移植策略
 
-如果要将 C++/CX 代码逐渐移植到 C++/WinRT，那么可以这样做。 C++/CX 和C++/WinRT 代码可以在同一个项目中共存，但是 XAML 编译器支持和 Windows 运行时组件除外。 对于这两种例外情况，需要在同一个项目中针对 C++/CX 或 C++/WinRT。
+如果要将 C++/CX 代码逐渐移植到 C++/WinRT，那么可以这样做。 C++/CX 和 C++/WinRT 代码可以在同一个项目中共存，但是 XAML 编译器支持和 Windows 运行时组件除外。 对于这两种例外情况，需要在同一个项目中针对 C++/CX 或 C++/WinRT。
 
 > [!IMPORTANT]
 > 如果项目生成 XAML 应用程序，则一个建议工作流是首先在 Visual Studio 中使用 C++/WinRT 项目模板之一创建新项目（请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 随后，开始从 C++/CX 项目复制源代码和标记。 可以使用“项目”  \>“添加新项...”  \>“Visual C++”   > “空白页(C++/WinRT)”  来添加新 XAML 页面。
@@ -28,9 +28,9 @@ ms.locfileid: "68328852"
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 Windows SDK 都在根命名空间 Windows  中声明类型。 投影到 C++/WinRT 的 Windows 类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ winrt  命名空间中。 这些不同的命名空间可让你按照自己的节奏从 C++/CX 移植到 C++/WinRT。
 
-请牢记上面提到的例外情况，将 C++/CX 项目移植到 C++/WinRT 的第一步是向它手动添加 C++/WinRT 支持（请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT  ，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 让支持处于关闭状态是一个好办法，这样生成消息可帮助你可以找到（并移植）C++/CX 上的所有依赖项，或者你可以将支持重新打开（在项目属性，“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>“是(/ZW)”  ），然后逐渐移植。
+请牢记上面提到的例外情况，将 C++/CX 项目移植到 C++/WinRT 的第一步是向它手动添加 C++/WinRT 支持（请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT  ，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   这一更改的一个效果是对 C++/CX 的支持在项目中关闭。 让支持处于关闭状态是一个好办法，这样生成消息可帮助你找到（并移植）C++/CX 上的所有依赖项，也可将支持重新打开（在项目属性中，单击“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>“是(/ZW)”  ），然后逐渐移植。
 
-也可使用 Visual Studio 中的 C++/WinRT 项目属性页将以下属性手动添加到 `.vcxproj` 文件。 如需类似自定义选项（用于优化 `cppwinrt.exe` 工具的行为）的列表，请参阅 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
+也可使用 Visual Studio 中的 C++/WinRT 项目属性页将以下属性手动添加到 `.vcxproj` 文件。 如需类似自定义选项（用于优化 `cppwinrt.exe` 工具的行为）的列表，请参阅 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
 
 ```xml
 <syntaxhighlight lang="xml">
@@ -186,7 +186,7 @@ class MyClass
 
 有关 C++/WinRT 中的等效项，请参阅[延迟初始化](consume-apis.md#delayed-initialization)。
 
-## <a name="properties"></a>属性
+## <a name="properties"></a>“属性”
 
 C++/CX 语言扩展包括属性概念。 编写 C++/CX 源代码时，你可以像访问字段那样访问属性。 标准 C++ 没有属性概念，因此，在 C++/WinRT 中，你调用获取和设置函数。
 
@@ -309,7 +309,18 @@ C++ 集合类型使用默认构造函数，这可能导致意外的对象构造�
 | 空引用的数组 | `TextBox^ boxes[2];` | `// Creates 2 TextBox objects!`<br/>`TextBox boxes[2];` | `TextBox boxes[2] = { nullptr, nullptr };` |
 | 配对 | `std::pair<TextBox^, String^> p;` | `// Creates a TextBox!`<br/>`std::pair<TextBox, String> p;` | `std::pair<TextBox, String> p{ nullptr, nullptr };` |
 
-没有速记可以用来创建空引用的数组。 必须针对数组中的每个元素重复执行 `nullptr`。 如果构造的数目太少，则会默认构造额外的。
+### <a name="more-about-collections-of-empty-references"></a>有关空引用集合的详细信息
+
+只要在 C++/CX 中有一个 **Platform::Array\^** （参见[移植 **Platform::Array\^** ](#port-platformarray)），即可将其移植到 C++/WinRT 中的 **std::vector**（事实上，可以将其移植到任何邻近的容器），而不是将其作为数组保留。 选择 **std::vector** 有多种优势。
+
+例如，尽管存在用于创建固定大小的空引用矢量（参见上表）的速记，但没有用于创建空引用数组  的速记。 必须针对数组中的每个元素重复执行 `nullptr`。 如果构造的数目太少，则会默认构造额外的。
+
+对于矢量，可以在初始化时使用空引用填充它（如上表所示），也可以借助如下所示的代码在初始化后使用空引用填充它。
+
+```cppwinrt
+std::vector<TextBox> boxes(10); // 10 default-constructed TextBoxes.
+boxes.resize(10, nullptr); // 10 empty references.
+```
 
 ### <a name="more-about-the-stdmap-example"></a>有关 **std::map** 示例的详细信息
 
@@ -468,24 +479,23 @@ C++/CX 将 Windows 运行时字符串表示为引用类型，而 C++/WinRT 则�
 
 另外，C++/CX 允许取消引用 null **String^** ，在这种情况下，其行为类似于字符串 `""`。
 
+| 行为 | C++/CX | C++/WinRT|
+|-|-|-|
+| 声明 | `Object^ o;`<br>`String^ s;` | `IInspectable o;`<br>`hstring s;` |
+| 字符串类型类别 | 引用类型 | 值类型 |
+| null **HSTRING** 投影方式 | `(String^)nullptr` | `hstring{}` |
+| null 和 `""` 是否相同？ | 是 | 是 |
+| null 的有效性 | `s = nullptr;`<br>`s->Length == 0`（有效） | `s = hstring{};`<br>`s.size() == 0`（有效） |
+| 如果将 null 字符串分配给对象 | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{});`<br>`o != nullptr` |
+| 如果将 `""` 分配给对象 | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr` |
+
+基本装箱和取消装箱。
+
 | 操作 | C++/CX | C++/WinRT|
 |-|-|-|
-| 字符串类型类别 | 引用类型 | 值类型 |
-| null **HSTRING** 投影方式 | `(String^)nullptr` | `hstring{ nullptr }` |
-| null 和 `""` 是否相同？ | 是 | 是 |
-| null 的有效性 | `s = nullptr;`<br>`s->Length == 0`（有效） | `s = nullptr;`<br>`s.size() == 0`（有效） |
-| 将字符串装箱 | `o = s;` | `o = box_value(s);` |
-| 如果 `s` 为 `null` | `o = (String^)nullptr;`<br>`o == nullptr` | `o = box_value(hstring{nullptr});`<br>`o != nullptr` |
-| 如果 `s` 为 `""` | `o = "";`<br>`o == nullptr` | `o = box_value(hstring{L""});`<br>`o != nullptr;` |
-| 将字符串装箱，保留 null | `o = s;` | `o = s.empty() ? nullptr : box_value(s);` |
-| 将字符串强制装箱 | `o = PropertyValue::CreateString(s);` | `o = box_value(s);` |
-| 取消已知字符串的装箱 | `s = (String^)o;` | `s = unbox_value<hstring>(o);` |
-| 如果 `o` 为 null | `s == nullptr; // equivalent to ""` | 崩溃 |
-| 如果 `o` 不是装箱的字符串 | `Platform::InvalidCastException` | 崩溃 |
-| 取消字符串的装箱，在为 null 的情况下使用回退；任何其他情况则崩溃 | `s = o ? (String^)o : fallback;` | `s = o ? unbox_value<hstring>(o) : fallback;` |
-| 尽可能取消字符串的装箱；在任何其他情况下使用回退 | `auto box = dynamic_cast<IBox<String^>^>(o);`<br>`s = box ? box->Value : fallback;` | `s = unbox_value_or<hstring>(o, fallback);` |
-
-在上面的两个包含回退的取消装箱示例中，  null 字符串可能是强制装箱的，这种情况下不会使用回退。 生成的值将是空字符串，因为箱中为空。
+| 将字符串装箱 | `o = s;`<br>空字符串变为 nullptr。 | `o = box_value(s);`<br>空字符串变为非 null 对象。 |
+| 取消已知字符串的装箱 | `s = (String^)o;`<br>Null 对象变为空字符串。<br>如果不是字符串，则引发 InvalidCastException。 | `s = unbox_value<hstring>(o);`<br>Null 对象崩溃。<br>如果不是字符串，则崩溃。 |
+| 将可能的字符串取消装箱 | `s = dynamic_cast<String^>(o);`<br>Null 对象或非字符串变为空字符串。 | `s = unbox_value_or<hstring>(o, fallback);`<br>Null 或非字符串变为 fallback。<br>空字符串被保留。 |
 
 ## <a name="concurrency-and-asynchronous-operations"></a>并发和异步操作
 
@@ -514,7 +524,7 @@ C++/CX 在平台  命名空间中提供了多个数据类型。 这些类型不�
 | Platform::Object\^  | winrt::Windows::Foundation::IInspectable  |
 | Platform::String\^  | [winrt::hstring  ](/uwp/cpp-ref-for-winrt/hstring) |
 
-### <a name="port-platformagile-to-winrtagileref"></a>将 Platform::Agile\^  移植到 winrt::agile_ref 
+### <a name="port-platformagile-to-winrtagile_ref"></a>将 Platform::Agile\^  移植到 winrt::agile_ref 
 
 C++/CX 中的 Platform::Agile\^  类型表示可以从任何线程访问的 Windows 运行时类。 C++/WinRT 的等效项是 [winrt::agile_ref  ](/uwp/cpp-ref-for-winrt/agile-ref)。
 
@@ -532,9 +542,11 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### <a name="port-platformarray"></a>移植 Platform::Array\^ 
 
-选项包括使用初始值设定项列表、std::array  或 std::vector  。 有关详细信息和代码示例，请参阅[标准初始值设定项列表](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[标准数组和矢量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
+在 C++/CX 要求使用数组的情况下，C++/WinRT 允许使用任何相邻的容器。 请参阅[默认构造函数如何影响集合](#how-the-default-constructor-affects-collections)，了解为何可以使用 **std::vector**。
 
-### <a name="port-platformexception-to-winrthresulterror"></a>将 Platform::Exception\^  移植到 winrt::hresult_error 
+因此，只要在 C++/CX 中有 **Platform::Array\^** ，移植选项中就会包括使用初始值设定项列表、**std::array** 或 **std::vector** 的选项。 有关详细信息和代码示例，请参阅[标准初始值设定项列表](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists)和[标准数组和矢量](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-arrays-and-vectors)。
+
+### <a name="port-platformexception-to-winrthresult_error"></a>将 Platform::Exception\^  移植到 winrt::hresult_error 
 
 当 Windows 运行时 API 返回非 S\_OK HRESULT 时，Platform::Exception\^  类型在 C++/CX 中生成。 C++/WinRT 的等效项是 [winrt::hresult_error  ](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)。
 
@@ -647,7 +659,7 @@ auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 
 C++/WinRT 也支持 [**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring)，但仅限数目有限的一些类型。 对于任何其他需要字符串化的类型，你需要添加重载。
 
-| 语言 | 将整数字符串化 | 将枚举字符串化 |
+| Language | 将整数字符串化 | 将枚举字符串化 |
 | - | - | - |
 | C++/CX | `String^ result = "hello, " + intValue.ToString();` | `String^ result = "status: " + status.ToString();` |
 | C++/WinRT | `hstring result = L"hello, " + to_hstring(intValue);` | `// must define overload (see below)`<br>`hstring result = L"status: " + to_hstring(status);` |

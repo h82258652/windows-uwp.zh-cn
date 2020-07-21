@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cb076de6cd9c44280bf7030a59c645f601487bd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66370435"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82971072"
 ---
 # <a name="reveal-highlight"></a>突出显示
 
@@ -23,7 +23,7 @@ ms.locfileid: "66370435"
 
 突出显示是当用户在交互式元素（如命令栏）附近移动指针时突出显示这些元素的灯光效果。 
 
-> **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **重要的 API**：[RevealBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) 和 [VisualState 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>工作原理
 当指针靠近时，突出显示通过显示元素的容器来引起对交互式元素的注意，如此图所示：
@@ -88,7 +88,7 @@ ms.locfileid: "66370435"
 若要应用这些样式，只需设置控件的[样式](/uwp/api/Windows.UI.Xaml.Style)属性：
 
 ```xaml
-<Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
+<Button Content="Button Content" Style="{ThemeResource ButtonRevealStyle}"/>
 ```
 
 ### <a name="reveal-in-themes"></a>主题中的展示
@@ -282,7 +282,7 @@ ms.locfileid: "66370435"
 
 ## <a name="reveal-and-the-fluent-design-system"></a>展示和 Fluent Design 系统
 
- Fluent Design 系统可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 展示是 Fluent Design 系统组件，用于将光线添加到应用。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
+ Fluent Design 系统可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 展示是 Fluent Design 系统组件，用于将光线添加到应用。 若要了解详细信息，请参阅 [Fluent Design 概述](/windows/apps/fluent-design-system)。
 
 ## <a name="related-articles"></a>相关文章
 

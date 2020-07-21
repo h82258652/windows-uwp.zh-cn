@@ -1,6 +1,6 @@
 ---
 title: 处理应用暂停
-description: 了解当系统暂停你的应用时如何保存重要的应用程序数据。
+description: 了解当系统挂起你的应用时如何保存重要的应用程序数据。
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ms.date: 07/06/2018
 ms.topic: article
@@ -11,22 +11,22 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 6d1b97e76dc1bf15bded6f44c38a67f40babf7b6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f912e6212346a4019d8421c542a81eb2318dc5d9
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370537"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74260410"
 ---
 # <a name="handle-app-suspend"></a>处理应用暂停
 
-**重要的 Api**
+**重要的 API**
 
-- [**挂起**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
+- [**封存**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
 
-了解当系统暂停你的应用时如何保存重要的应用程序数据。 以下示例向事件处理程序注册 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件并将字符串保存到文件中。
+了解当系统挂起你的应用时如何保存重要的应用程序数据。 以下示例向事件处理程序注册 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件并将字符串保存到文件中。
 
-## <a name="register-the-suspending-event-handler"></a>注册暂停事件处理程序
+## <a name="register-the-suspending-event-handler"></a>注册暂停的事件处理程序
 
 注册以处理 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件，该事件指示在系统暂停你的应用之前，应用应该保存其应用程序数据。
 
@@ -137,22 +137,22 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 当终止应用时系统不会通知应用，因此当暂停应用时，你的应用必须保存其应用程序数据并释放独占资源和文件句柄，并且在终止后又激活应用时还原这些内容。
 
-如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) 对象上的 [**GetDeferral**](https://aka.ms/Kt66iv) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 对象上的 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 方法。
+如果在处理程序中执行异步调用，控件将立即从该异步调用中返回。 这意味着，执行之后会从事件处理程序中返回，并且应用会转变为下一个状态，即使异步调用尚未完成。 使用传递给事件处理程序的 [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 对象上的 [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 方法以延迟暂停，直到调用返回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 对象上的 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 方法。
 
-延迟并不会增加应用终止之前需要运行的代码量。 它仅延迟终止，直到调用延迟的 *Complete* 方法，或者达到延迟期限 - *以先发生者为准*。 要延长处于“暂停中”状态的事件，请使用 [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
+延迟并不会增加应用终止之前需要运行的代码量。 它只延迟终止，直到调用延迟的 *Complete* 方法，或者达到截止时间，*以先发生者为准*。 要延长处于“暂停中”状态的事件，请使用 [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
-> 若要提高系统在 Windows 8.1 中的响应能力，应用程序被授予低优先级服务访问权限资源后它们将被挂起。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
+> 若要提高 Windows 8.1 中的系统响应能力，在挂起应用程序后，将对其授予低优先级访问资源的权限。 为了支持新的优先级，延长了暂停操作超时，以便应用具有与普通优先级相当的 5 秒（在 Windows 上）或者 1 到 10 秒超时（在 Windows Phone 上）。 你无法扩展或改变此超时窗口。
 
-**有关使用 Visual Studio 进行调试的说明：** Visual Studio 会阻止 Windows 挂起的应用程序附加到调试器。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保 **“调试位置”** 工具栏正在显示，然后单击 **“暂停”** 图标。
+**有关使用 Visual Studio 进行调试的注释：** Visual Studio 阻止 Windows 暂停连接到调试程序的应用。 这是为了允许用户在应用正在运行时查看 Visual Studio 调试 UI。 调试应用时，可以使用 Visual Studio 将一个暂停事件发送给该应用。 请确保 **“调试位置”** 工具栏正在显示，然后单击 **“暂停”** 图标。
 
 ## <a name="related-topics"></a>相关主题
 
 * [应用生命周期](app-lifecycle.md)
 * [处理应用激活](activate-an-app.md)
 * [处理应用恢复](resume-an-app.md)
-* [有关启动时，用户体验指南挂起，并继续](https://docs.microsoft.com/windows/uwp/launch-resume/index)
-* [扩展的执行](run-minimized-with-extended-execution.md)
+* [启动、挂起和恢复的 UX 指导原则](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [扩展执行](run-minimized-with-extended-execution.md)
 
  
 

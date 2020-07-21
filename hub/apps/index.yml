@@ -1,0 +1,163 @@
+### YamlMime:Hub
+title: Windows 应用开发人员文档
+summary: 了解如何设计、开发和部署适用于 Windows 电脑和其他设备的应用和解决方案。
+brand: windows
+metadata:
+  title: Windows 开发人员文档
+  description: 设计、开发和部署适用于 Windows 电脑和其他设备的应用和解决方案。
+  author: mcleanbyron
+  ms.author: mcleans
+  ms.topic: hub-page
+  ms.date: 11/08/2019
+  ms.localizationpriority: medium
+  uhfHeaderId: MSDocsHeader-WinDevCenter
+  ms.openlocfilehash: bbd56295c7a44c4d2c7d212f9e824dea6d5be64a
+  ms.sourcegitcommit: ad5a03ea01a3d825931a1abc40f472e88a41c04f
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 06/02/2020
+  ms.locfileid: "84303874"
+highlightedContent:
+  items:
+  - title: 获取 Visual Studio 和 Windows SDK
+    itemType: download
+    url: https://developer.microsoft.com/windows/downloads
+  - title: 最新版本中面向开发人员的新增功能
+    itemType: overview
+    url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-build-19041
+  - title: 加入预览体验计划
+    itemType: overview
+    url: https://docs.microsoft.com/windows-insider
+  - title: 面向 Windows 应用开发人员的在线培训
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=windows
+productDirectory:
+  title: 针对 Windows 进行开发
+  items:
+  - title: 适用于 Windows 的桌面应用
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
+    links:
+    - url: /windows/apps/desktop/
+      text: 入门
+  - title: Windows UI 库 (WinUI)
+    imageSrc: images/logo-winui.svg
+    links:
+    - url: /windows/apps/winui/
+      text: 入门
+  - title: 适用于 Linux 的 Windows 子系统、Windows 终端、Python 和其他工具
+    imageSrc: https://docs.microsoft.com/media/logos/logo_linux-color.svg
+    links:
+    - url: /windows/dev-environment/
+      text: 入门
+conceptualContent:
+  title: 应用平台和框架
+  items:
+  - title: UWP
+    links:
+    - text: 概述
+      url: /windows/uwp/
+      itemType: overview
+    - text: 入门
+      url: /windows/uwp/get-started/
+      itemType: get-started
+    - text: API、架构等的参考
+      url: https://docs.microsoft.com/uwp/
+      itemType: reference
+    - text: API 命名空间
+      url: https://docs.microsoft.com/uwp/api/
+      itemType: reference
+    - text: 示例
+      url: https://github.com/Microsoft/Windows-universal-samples
+      itemType: sample
+  - title: Win32
+    links:
+    - text: 概述
+      url: https://docs.microsoft.com/windows/win32/
+      itemType: overview
+    - text: 入门
+      url: https://docs.microsoft.com/windows/win32/desktop-programming/
+      itemType: get-started
+    - text: API 参考（按标题）
+      url: https://docs.microsoft.com/windows/win32/api/
+      itemType: reference
+    - text: API 参考（按功能）
+      url: https://docs.microsoft.com/windows/win32/apiindex/windows-api-list
+      itemType: reference
+    - text: 示例
+      url: https://github.com/Microsoft/Windows-classic-samples
+      itemType: sample
+  - title: WPF
+    links:
+    - text: 概述
+      url: https://docs.microsoft.com/dotnet/desktop-wpf/overview/?view=vs-2019
+      itemType: overview
+    - text: 入门
+      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json&view=vs-2019
+      itemType: get-started
+    - text: API 参考 (.NET Core)
+      url: https://docs.microsoft.com/dotnet/api/index?view=netcore-3.1
+      itemType: reference
+    - text: API 参考 (.NET Framework)
+      url: https://docs.microsoft.com/dotnet/api/index?view=netframework-4.8
+      itemType: reference
+    - text: 示例
+      url: https://github.com/Microsoft/WPF-Samples
+      itemType: sample
+  - title: Windows 窗体
+    links:
+    - text: 概述
+      url: https://docs.microsoft.com/dotnet/framework/winforms/
+      itemType: overview
+    - text: 入门
+      url: https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms
+      itemType: get-started
+    - text: API 参考 (.NET Core)
+      url: https://docs.microsoft.com/dotnet/api/index?view=netcore-3.1
+      itemType: reference
+    - text: API 参考 (.NET Framework)
+      url: https://docs.microsoft.com/dotnet/api/index?view=netframework-4.8
+      itemType: reference
+tools:
+  title: 设备平台
+  items:
+  - title: Windows PCs
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: /windows/apps/desktop/
+  - title: 混合现实和 HoloLens
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows/mixed-reality/
+  - title: 适用于 IoT 的 Windows
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://docs.microsoft.com/windows/iot-core/windows-iot-core
+  - title: Xbox One
+    imageSrc: https://docs.microsoft.com/media/logos/logo_windows.svg
+    url: https://www.xbox.com/developers
+additionalContent:
+  sections:
+  - title: 任务和技术
+    items:
+    - title: 面向开发人员的 Windows 功能
+      summary: 了解不同应用平台中 Windows 功能的支持方式。
+      url: /windows/apps/features-and-technologies/
+    - title: 将 Windows 10 功能添加到桌面应用
+      summary: 增强现有的桌面应用程序并使其现代化，以使用 Windows 10 中的最新功能。
+      url: /windows/apps/desktop/modernize
+    - title: MSIX
+      summary: 采用新式通用打包格式打包和部署任何 Windows 应用。
+      url: https://docs.microsoft.com/windows/msix/
+    - title: 针对移动设备进行开发
+      summary: 探索 Microsoft 服务，以便构建安全、可靠且基于云的移动应用程序。
+      url: https://docs.microsoft.com/azure/mobile-apps/
+    - title: 发布到 Microsoft Store
+      summary: 使用合作伙伴中心将 Windows 应用和游戏发布到 Microsoft Store。
+      url: /windows/uwp/publish/
+    - title: 使应用可供访问
+      summary: 将辅助功能内置于应用程序中，使其可供能力不同的各种用户使用。
+      url: /windows/apps/accessibility/
+    - title: Windows AI
+      summary: 使用 Windows AI 构建智能解决方案来处理应用中的复杂问题。
+      url: https://docs.microsoft.com/windows/ai/
+    - title: Windows 上的容器
+      summary: 在运行快速、完全隔离的 Windows 环境中将应用程序与其依赖项打包在一起。
+      url: https://docs.microsoft.com/virtualization/windowscontainers/
+  footer: '[@WindowsDocs在 Twitter 上](https://twitter.com/WindowsDocs) - [YouTube 上的 OneDevMinute](https://aka.ms/OneDevMinute) - [Windows 开发人员支持](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)'

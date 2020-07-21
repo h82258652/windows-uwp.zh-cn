@@ -5,24 +5,24 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c715a48e0f9d6dea5939e6363441b0300544c252
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321908"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75684754"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 以下功能概述、开发人员指南和示例在发布 Fall Creators Update 之后提供，包含了面向 Windows 开发人员的新增和更新的信息。
 
-只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality：发烧友指南
 
-[发烧友指南](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)面向探索混合现实领域的技术发烧友，回答了大家对 Windows Mixed Reality 的主要问题。 
+[发烧友指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/)面向探索混合现实领域的技术发烧友，回答了大家对 Windows Mixed Reality 的主要问题。 
 
 在该指南中，你将了解： 
 - 购买前常见问题解答， 
@@ -44,7 +44,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详情](https://docs.microsoft.com/collaborate/)。
+Microsoft Collaborate 门户提供广泛的工具和服务，旨在通过分享工程系统工作项（bug、功能请求等）以及分配内容（版本、文档、规范）来简化 Microsoft 生态系统中的工程协作。 [了解详细信息](https://docs.microsoft.com/collaborate/)。
 
 ![合作伙伴中心内的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
 

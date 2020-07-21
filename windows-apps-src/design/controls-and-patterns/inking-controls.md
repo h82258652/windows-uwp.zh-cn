@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b34f88d198ec80c67e5aac7b57001e42fe5c516
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 56104dd5608356b47a405c37eba71e544c5ba23c
+ms.sourcegitcommit: 37e4af3ba203295c7e88448414cf7ea537ab5402
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66825027"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84257416"
 ---
 # <a name="inking-controls"></a>墨迹书写控件
 
 
 
-有两种不同的控件可促进通用 Windows 平台 (UWP) 应用中的墨迹书写：[InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 和 [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)。
+有两种不同的控件可促进 Windows 应用中的墨迹书写：[InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 和 [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar)。
 
 InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默认设置）或擦除笔划。 此控件是一个透明的覆盖层，该覆盖层不包含任何用于更改默认笔划墨迹属性的内置 UI。
 
@@ -54,7 +54,7 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/InkCanvas">打开此应用，了解 InkCanvas 的实际应用</a>。</p>
     <ul>
@@ -67,12 +67,12 @@ InkCanvas 控件将笔输入呈现为笔划墨迹（使用颜色和粗细的默�
 
 **Microsoft Edge**
 
-Microsoft Edge 针对“Web 笔记”使用 InkCanvas 和 InkToolbar  。  
+Microsoft Edge 针对“Web 笔记”使用 InkCanvas 和 InkToolbar。  
 ![InkCanvas 用于在 Microsoft Edge 中进行墨迹书写](images/ink-tools-edge.png)
 
 **Windows Ink 工作区**
 
-InkCanvas 和 InkToolbar 还用于 **Windows Ink 工作区**中的**草图板**和**屏幕草图**。  
+InkCanvas 和 InkToolbar 还用于 Windows Ink 工作区中的“截图和草图” 。  
 ![Windows Ink 工作区中的 InkToolbar](images/ink-tools-ink-workspace.png)
 
 ## <a name="create-an-inkcanvas-and-inktoolbar"></a>创建 InkCanvas 和 InkToolbar
@@ -80,16 +80,16 @@ InkCanvas 和 InkToolbar 还用于 **Windows Ink 工作区**中的**草图板**�
 将 InkCanvas 添加到应用只需一行标记：
 
 ```xaml
-<InkCanvas x:Name=“myInkCanvas”/>
+<InkCanvas x:Name="myInkCanvas"/>
 ```
 
 > [!NOTE]
-> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“UWP 应用中的笔交互和 Windows Ink”](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)。
+> 有关使用 InkPresenter 进行的详细的 InkCanvas 自定义，请参阅[“Windows 应用中的笔交互和 Windows Ink”](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)一文。
 
 InkToolbar 控件必须与 InkCanvas 结合使用。 将 InkToolbar（以及所有内置工具）合并到应用需要一行额外的标记：
 
  ```xaml
-<InkToolbar TargetInkCanvas=“{x:Bind myInkCanvas}”/>
+<InkToolbar TargetInkCanvas="{x:Bind myInkCanvas}"/>
  ```
 
 这显示以下 InkToolbar：
@@ -139,7 +139,7 @@ InkToolbar 由两组不同的按钮类型组成：
 > [!NOTE]
 > 你无法更改内置按钮的显示顺序。 默认的显示顺序为：圆珠笔、铅笔、荧光笔、橡皮擦和标尺。 自定义笔附加到最后一个默认笔，自定义工具按钮添加到最后一个笔按钮和橡皮擦按钮之间，而自定义切换按钮添加到标尺按钮之后。 （自定义按钮按照指定它们的顺序添加。）
 
-尽管 InkToolbar 可以是顶级项目，但它通常通过“墨迹书写”按钮或命令公开。 我们建议使用 Segoe MLD2 Assets 字体中的 EE56 字形作为顶级图标。
+尽管 InkToolbar 可以是最高级别项目，但它通常通过“墨迹书写”按钮或命令公开。 我们建议使用 Segoe MLD2 Assets 字体中的 EE56 字形作为顶级图标。
 
 ## <a name="inktoolbar-interaction"></a>InkToolbar 交互
 
@@ -157,8 +157,8 @@ InkToolbar 由两组不同的按钮类型组成：
 - InkCanvas 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，我们建议支持使用鼠标和触控（包括被动笔）输入的墨迹书写。
 - 将 InkToolbar 控件与 InkCanva 结合使用来提供基本墨迹书写功能和设置。 InkCanvas 和 InkToolbar 均可以采用编程方式自定义。
 - InkToolbar 和通常的墨迹书写可通过主动笔获得最佳体验。 但是，如果应用需要，可以支持使用鼠标和触控的墨迹书写。
-- 如果支持使用触控输入的墨迹书写，我们建议为切换按钮使用 Segoe MLD2 Assets 字体中的 ED5F 图标，并附带“触控书写”工具提示。
-- 如果提供笔划选择，我们建议为工具按钮使用 Segoe MLD2 Assets 字体中的 EF20 图标，并附带“选择工具”工具提示。
+- 如果支持使用触控输入的墨迹书写，我们建议为切换按钮使用“Segoe MLD2 Assets”中的“ED5F”图标，并附带“触摸写入”工具提示。
+- 如果提供笔划选择，我们建议为工具按钮使用“Segoe MLD2 Assets”字体中的“EF20”图标，并附带“选择”工具提示。
 - 如果使用多个 InkCanvas，我们建议使用单个 InkToolbar 控制跨画布的墨迹书写。
 - 为了实现最佳性能，我们建议更改默认的浮出控件，而不是为默认和自定义工具都创建一个自定义浮出控件。
 
@@ -170,6 +170,6 @@ InkToolbar 由两组不同的按钮类型组成：
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用中的笔交互和 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
+- [Windows 应用中的笔交互和 Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)
 - [将 Windows Ink 笔划识别为文本和形状](https://docs.microsoft.com/windows/uwp/design/input/convert-ink-to-text)
 - [存储和检索 Windows Ink 墨迹数据](https://docs.microsoft.com/windows/uwp/design/input/save-and-load-ink)

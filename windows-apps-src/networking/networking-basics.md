@@ -6,12 +6,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1c23bc205c5f9e2ad24e201e9583e19f2d6ec35
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 1cf9d4866ddb72da0a284bcdcff07e3420f2880e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320674"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80404909"
 ---
 # <a name="networking-basics"></a>网络基础知识
 针对任何支持网络的应用的必做事项。
@@ -21,7 +21,7 @@ ms.locfileid: "67320674"
 
 以下是最常用的网络功能。
 
-| 功能 | 描述 |
+| 功能 | 说明 |
 |------------|-------------|
 | **internetClient** | 提供对 Internet 及公共场所（如机场和咖啡厅）网络的出站访问。 大部分需要 Internet 访问的应用都应使用此功能。 |
 | **internetClientServer** | 为应用提供来自 Internet 及公共场所（如机场和咖啡厅）网络的入站和出站访问。 |
@@ -29,7 +29,7 @@ ms.locfileid: "67320674"
 
 在某些情况下，你的应用可能还需要具备其他功能。
 
-| 功能 | 描述 |
+| 功能 | 说明 |
 |------------|-------------|
 | **enterpriseAuthentication** | 允许应用连接至要求提供域凭据的网络资源。 例如，某个应用从专用 Intranet 上的 SharePoint 服务器中检索数据。 通过此功能可以使用你的凭据来访问要求提供凭据的网络中的网络资源。 具有此功能的应用可在网络上模拟其用户。 无需使用此功能即可让应用通过身份验证的代理访问 Internet。<br/><br/>有关更多详细信息，请参阅[受限功能](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)中“企业”功能方案的文档  。 |
 | **邻近感应** | 与邻近计算机的设备进行近距离感应通信所必需的功能。 近距离感应可用于向附近设备上的应用程序发送邀请或与其进行连接。 <br/><br/> 此功能让应用可以访问邻近设备网络，并在用户同意发送或接受邀请的情况下与这些设备进行连接。 |
@@ -45,7 +45,7 @@ ms.locfileid: "67320674"
 ### <a name="choosing-a-network-trigger"></a>选择网络触发器
 在一些应用场景中，这两种触发器均适宜。 当你选择要在应用中使用的触发器类型时，请考虑以下建议。
 
--   如果你使用的是 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)、[**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 或 [System.Net.Http.HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638)，则必须使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
+-   如果你使用的是 [**IXMLHTTPRequest2**](https://docs.microsoft.com/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2)、[**System.Net.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 或 [System.Net.Http.HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(VS.110).aspx)，则必须使用 [**ControlChannelTrigger**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)。
 -   如果使用的是已启用推送的 **StreamSockets**，则可以使用控制通道触发器，不过应该首选 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。 当目前未使用连接时，选择后者允许系统释放内存并会降低电源要求。
 -   如果你想要在当前没有服务网络请求时最大程度减少你的应用的内存占用，则首选 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)（如果可能）。
 -   如果你希望你的应用能够在系统处于连接待机模式下时接收数据，应使用 [**SocketActivityTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger)。
@@ -460,11 +460,11 @@ using Windows::Storage::Streams;
 
 如果客户端发出的初始请求不包含此值，或提供了与服务器的预期不相符的值，则预期值会在发生 WebSocket 握手错误时 从服务器发送到客户端。
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>身份验证
 如何在通过网络进行连接时提供身份验证凭据。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
-[  **Windows.Networking.StreamSocket**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocket) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，可以在 [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) 对象上提供客户端证书（这必须在启动 TLS 握手之前进行设置）。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
+[**Windows.Networking.Sockets.StreamSocket**](/uwp/api/windows.networking.sockets.streamsocket) 类支持使用 SSL/TLS 应用来验证应用正在与其交互的服务器。 在某些情况下，应用还需要使用 TLS 客户端证书对服务器进行自身验证。 在 Windows 10 中，可以在 [**StreamSocket.Control**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamSocketControl) 对象上提供客户端证书（这必须在启动 TLS 握手之前进行设置）。 如果服务器请求客户端证书，Windows 将通过提供的证书做出响应。
 
 下面是演示如何实现此目的的代码段：
 

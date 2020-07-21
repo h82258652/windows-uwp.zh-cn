@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在通用 Windows 平台 (UWP) 应用中启用两个基础页面之间的对等导航。
+Description: 了解如何在 Windows 应用中启用两个基础页面之间的对等导航。
 title: 两个页面之间的对等导航
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -13,40 +13,40 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 3bc377e87d01106a1a2e7157dbe08f1ab022f52a
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 50211600931fc67c43aa577fabe23f1277a0e897
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361054"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233827"
 ---
 # <a name="implement-navigation-between-two-pages"></a>实现两个页面之间的导航
 
 了解如何使用框架和页面在你的应用中实现基本对等导航。 
 
-> **重要的 API**：[Windows.UI.Xaml.Controls.Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 类、[Windows.UI.Xaml.Controls.Page](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 类、[Windows.UI.Xaml.Navigation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation) 命名空间   
+> **重要的 API**：[Windows.UI.Xaml.Controls.Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 类、[Windows.UI.Xaml.Controls.Page](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 类、[Windows.UI.Xaml.Navigation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation) 命名空间  
 
 ![对等导航](images/peertopeer.png)
 
 ## <a name="1-create-a-blank-app"></a>1.创建空白应用
 
-1.  在 Microsoft Visual Studio 菜单上，依次选择“文件” > “新建项目”   。
-2.  在“新建项目”对话框的左侧窗格中，依次选择“Visual C#” > “Windows” > “通用”节点或“Visual C++” > “Windows” > “通用”节点        。
-3.  在中心窗格中，选择“空白应用”  。
-4.  在“名称”  框中，输入 **NavApp1**，然后选择“确定”  按钮。
-    解决方案已创建并且项目文件显示在“解决方案资源管理器”  中。
-5.  若要运行程序，请从菜单中依次选择“调试”   > “启动调试”  ，或按 F5。
+1.  在 Microsoft Visual Studio 菜单上，依次选择“文件” > “新建项目” 。
+2.  在“新建项目”对话框的左侧窗格中，依次选择“Visual C#” > “Windows” > “通用”节点或“Visual C++” > “Windows” > “通用”节点      。
+3.  在中心窗格中，选择“空白应用”。
+4.  在“名称”框中，输入 **NavApp1**，然后选择“确定”按钮。
+    解决方案已创建并且项目文件显示在“解决方案资源管理器”中。
+5.  若要运行程序，请从菜单中依次选择“调试” > “启动调试”，或按 F5。
     将显示一个空白页面。
-6.  要停止调试并返回到 Visual Studio，退出该应用，或从菜单中单击“停止调试”  。
+6.  要停止调试并返回到 Visual Studio，退出该应用，或从菜单中单击“停止调试”。
 
 ## <a name="2-add-basic-pages"></a>2.添加基本页面
 
 接下来，将两个页面添加到项目。
 
-1.  在“解决方案资源管理器”  中，右键单击“空白应用”  项目节点打开快捷菜单。
-2.  从快捷菜单中依次选择“添加”   > “新建项”  。
-3.  在“添加新项”  对话框中，选择中间窗格中的“空白页面”  。
-4.  在“名称”  框中，输入 **Page1**（或 **Page2**）并按“添加”  按钮。
+1.  在“解决方案资源管理器”中，右键单击“空白应用”项目节点打开快捷菜单。
+2.  从快捷菜单中依次选择“添加” > “新建项”。
+3.  在“添加新项”对话框中，选择中间窗格中的“空白页面”。
+4.  在“名称”框中，输入 **Page1**（或 **Page2**）并按“添加”按钮。
 5. 重复步骤 1-4 以添加第二个页面。
 
 现在，这些文件应列为 NavApp1 项目的一部分。
@@ -82,19 +82,19 @@ ms.locfileid: "66361054"
 
 在 Page1.xaml 中，添加以下内容：
 
--   名为 `pageTitle` 的 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素作为根 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素   。 将 [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 属性更改为 `Page 1`。
+-   名为 `pageTitle` 的 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素作为根 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素 。 将 [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 属性更改为 `Page 1`。
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素作为根 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素并位于 `pageTitle` [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之后    。
+-   [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素作为根 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素并位于 `pageTitle` [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之后  。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
                  HorizontalAlignment="Center"/>
 ```
 
-在 Page1.xaml 代码隐藏文件中，添加以下代码以处理添加的 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的 `Click` 事件来导航到 Page2.xaml  。
+在 Page1.xaml 代码隐藏文件中，添加以下代码以处理添加的 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的 `Click` 事件来导航到 Page2.xaml。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -119,19 +119,19 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 在 Page2.xaml 中，添加以下内容：
 
--   名为 `pageTitle` 的 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素作为根 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素   。 将 [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 属性的值更改为 `Page 2`。
+-   名为 `pageTitle` 的 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素作为根 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素 。 将 [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 属性的值更改为 `Page 2`。
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素作为根 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素并位于 `pageTitle` [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之后    。
+-   [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素作为根 [Grid](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素并位于 `pageTitle` [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之后  。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
                  HorizontalAlignment="Center"/>
 ```
 
-在 Page2.xaml 代码隐藏文件中，添加以下代码以处理添加的 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的 `Click` 事件来导航到 Page1.xaml  。
+在 Page2.xaml 代码隐藏文件中，添加以下代码以处理添加的 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的 `Click` 事件来导航到 Page1.xaml。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -296,7 +296,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> 如果导航至应用的初始窗口框架失败，则此处的代码会使用 [Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 的返回值引发应用异常  。 当 **Navigate** 返回 **true** 时，就会进行导航。
+> 如果导航至应用的初始窗口框架失败，则此处的代码会使用 [Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 的返回值引发应用异常。 当 **Navigate** 返回 **true** 时，就会进行导航。
 
 现在，生成并运行应用。 单击显示“单击以转到第 2 页”的链接。 在顶部显示“第 2 页”的第二个页面应加载并显示在框架中。
 
@@ -304,21 +304,21 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 在将更多功能添加到我们的应用之前，让我们来看看我们所添加的页面如何在我们的应用内提供导航。
 
-首先，为 App.xaml 代码隐藏文件中 `App.OnLaunched` 方法中的应用创建一个名为 `rootFrame` 的 [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)  。 Frame 类支持 [Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)、[GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) 和 [GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 等各种导航方法以及 [BackStack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack)、[ForwardStack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack) 和 [BackStackDepth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstackdepth) 等属性        。
+首先，为 App.xaml 代码隐藏文件中 `App.OnLaunched` 方法中的应用创建一个名为 `rootFrame` 的 [Frame](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)。 Frame 类支持 [Navigate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)、[GoBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) 和 [GoForward](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 等各种导航方法以及 [BackStack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack)、[ForwardStack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack) 和 [BackStackDepth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstackdepth) 等属性       。
  
-[  **Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 方法用于在此 **Frame** 中显示内容。 默认情况下，此方法加载 MainPage.xaml。 在我们的示例中，`Page1` 将传递到 Navigate 方法，因此该方法会加载 Frame 中的 `Page1`   。 
+[  **Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 方法用于在此 **Frame** 中显示内容。 默认情况下，此方法加载 MainPage.xaml。 在我们的示例中，`Page1` 将传递到 Navigate 方法，因此该方法会加载 Frame 中的 `Page1` 。 
 
-`Page1` 是 [Page](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 类的子类  。 Page 类具有一个只读 Frame 属性，可获取包含 Page 的 Frame     。 当 `Page1` 中 HyperlinkButton 的 Click 事件处理程序调用 `this.Frame.Navigate(typeof(Page2))` 时，Frame 将显示 Page2.xaml 的内容    。
+`Page1` 是 [Page](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 类的子类。 Page 类具有一个只读 Frame 属性，可获取包含 Page 的 Frame   。 当 `Page1` 中 HyperlinkButton 的 Click 事件处理程序调用 `this.Frame.Navigate(typeof(Page2))` 时，Frame 将显示 Page2.xaml 的内容  。
 
-最后，每当页面加载到框架中时，该页面作为 [PageStackEntry](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) 添加到 [Frame](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.frame) 的 [BackStack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack) 或 [ForwardStack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack)，从而支持[历史记录和向后导航](navigation-history-and-backwards-navigation.md)     。
+最后，每当页面加载到框架中时，该页面作为 [PageStackEntry](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) 添加到 [Frame](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.frame) 的 [BackStack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack) 或 [ForwardStack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack)，从而支持[历史记录和向后导航](navigation-history-and-backwards-navigation.md)   。
 
 ## <a name="3-pass-information-between-pages"></a>3.在页面之间传递信息
 
 我们的应用可在两个页面之间导航，但它还没有什么真正有趣的功能。 当一个应用包含多个页面时，这些页面经常需要共享信息。 让我们将一些信息从第一页传递到第二页。
 
-在 Page1.xaml 中，将你之前添加的 HyperlinkButton 替换为以下 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)   。
+在 Page1.xaml 中，将你之前添加的 HyperlinkButton 替换为以下 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 。
 
-我们在此处添加 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 标签和 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) (`name`)，用于输入文本字符串   。
+这里，我们添加 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 标签和 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) `name`，用于输入文本字符串。
 
 ```xaml
 <StackPanel>
@@ -355,7 +355,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 在 Page2.xaml 中，将你之前添加的 **HyperlinkButton** 替换为以下 **StackPanel**。
 
-我们在此处添加 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 来显示从 Page1 传递的文本字符串  。
+我们在此处添加 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 来显示从 Page1 传递的文本字符串。
 
 ```xaml
 <StackPanel>
@@ -414,17 +414,17 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-运行应用、在文本框中键入你的名字，然后单击显示“单击以转到第 2 页”  的链接。 
+运行应用、在文本框中键入你的名字，然后单击显示“单击以转到第 2 页”的链接。 
 
-当 `Page1` 中 HyperlinkButton 的 Click 事件调用 `this.Frame.Navigate(typeof(Page2), name.Text)` 时，`name.Text` 属性将传递给 `Page2`，并且事件数据中的值将用于在页面上显示的消息   。
+当 `Page1` 中 HyperlinkButton 的 Click 事件调用 `this.Frame.Navigate(typeof(Page2), name.Text)` 时，`name.Text` 属性将传递给 `Page2`，并且事件数据中的值将用于在页面上显示的消息 。
 
 ## <a name="4-cache-a-page"></a>4.缓存页面
 
 默认情况下不缓存页面内容和状态，因此如果你要缓存信息，必须在应用的每个页面中启用它。
 
-在我们的基本对等示例中，没有后退按钮（我们在[向后导航](navigation-history-and-backwards-navigation.md)中演示了后退导航），但如果你确实单击 `Page2` 上的后退按钮，则 `Page1` 上的 TextBox（以及任何其他字段）将设置为其默认状态  。 解决此问题的一种方法是使用 [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 属性指定需要添加到框架的页面缓存中的页面。 
+在我们的基本对等示例中，没有后退按钮（我们在[向后导航](navigation-history-and-backwards-navigation.md)中演示了后退导航），但如果你确实单击 `Page2` 上的后退按钮，则 `Page1` 上的 TextBox（以及任何其他字段）将设置为其默认状态。 解决此问题的一种方法是使用 [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 属性指定需要添加到框架的页面缓存中的页面。 
 
-在 `Page1` 的构造函数中，可以将 NavigationCacheMode 设置为“已启用”，以为该页面保留所有内容和状态值，直到超出框架的页面缓存   。 如果忽略 [CacheSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) 限制，将 [NavigationCacheMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 设置为 [Required](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.NavigationCacheMode)，这将为框架指定导航历史记录中可缓存的页数    。 但是，请记住，根据设备的内存限制，缓存大小限制可能非常重要。
+在 `Page1` 的构造函数中，可以将 NavigationCacheMode 设置为“已启用”，以为该页面保留所有内容和状态值，直到超出框架的页面缓存 。 如果忽略 [CacheSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) 限制，将 [NavigationCacheMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 设置为 [Required](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.NavigationCacheMode)，这将为框架指定导航历史记录中可缓存的页数  。 但是，请记住，根据设备的内存限制，缓存大小限制可能非常重要。
 
 ```csharp
 public Page1()
@@ -451,6 +451,6 @@ Page1::Page1()
 ```
 
 ## <a name="related-articles"></a>相关文章
-* [UWP 应用的导航设计基础知识](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
-* [表和透视表指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)
-* [导航窗格指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)
+* [Windows 应用的导航设计基础知识](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
+* [透视表](../controls-and-patterns/pivot.md)
+* [导航视图](../controls-and-patterns/navigationview.md)

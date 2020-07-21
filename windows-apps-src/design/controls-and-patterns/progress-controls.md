@@ -4,7 +4,7 @@ title: 进度控件指南
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 11/29/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -12,20 +12,44 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a409c4b940ad0e194428981f536823d880e56302
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 34eca0c822b0da96cae39463777c5c3e9888240c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364493"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970802"
 ---
 # <a name="progress-controls"></a>进度控件
 
- 
-
 进度控件将为用户提供关于正在处理运行时间较长的操作的反馈。 这意味着，在进度指示器可见，并且还可以根据所使用的指示器指示等待时长时，用户无法与该应用交互。
 
-> **重要的 API**：[ProgressBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | ProgressBar 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [ProgressBar 类](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 类](https://docs.microsoft.com/uwp/api/Microsoft.UI.Xaml.Controls.ProgressRing)、[IsActive 属性](https://docs.microsoft.com/uwp/api/Microsoft.ui.xaml.controls.progressring.isactive)
+>
+> **平台 API：** [ProgressBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressBar)、[IsIndeterminate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate)、[ProgressRing 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ProgressRing)、[IsActive 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.progressring.isactive)
+
+> [!NOTE]
+> ProgressBar 和 ProgressRing 控件有两个版本：一个在平台中，以 Windows.UI.Xaml 命名空间为代表；另一个在 Windows UI 库中，以 Microsoft.UI.Xaml 命名空间为代表。 尽管 ProgressRing 和 ProgressBar 的 API 是相同的，但这两个版本之间的控件外观有所不同。 本文档将显示较新版 Windows UI 库的映像。
+在本文档中，我们将使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
+
+```xaml
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+```
+
+在后面的代码中，我们还将使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：
+
+```csharp
+using muxc = Microsoft.UI.Xaml.Controls;
+```
+
+```vb
+Imports muxc = Microsoft.UI.Xaml.Controls
+```
 
 ## <a name="types-of-progress"></a>进度类型
 
@@ -37,7 +61,7 @@ ms.locfileid: "66364493"
 
 另外，进度控件为只读，不具有交互性。 这意味着用户无法直接调用或使用这些控件。
 
-![ProgressBar 状态](images/ProgressBar_TwoStates.png)
+![ProgressBar 状态](images/progress-bar-two-states.png)
 
 *自顶到底 - 不确定 ProgressBar 和确定 ProgressBar*
 
@@ -50,7 +74,7 @@ ms.locfileid: "66364493"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ProgressBar">ProgressBar</a> 或 <a href="xamlcontrolsgallery:/item/ProgressRing">ProgressRing</a> 的实际应用。</p>
     <ul>
@@ -63,7 +87,7 @@ ms.locfileid: "66364493"
 
 ## <a name="when-to-use-each-control"></a>使用每个控件的时间
 
-在尝试显示正在执行的操作时，通常不清楚要使用的控件和所处的状态（确定和不确定）。 有时，任务明显不需要进度控件，但有时即使使用了进度控件，仍需要使用一行文本才能向用户解释正在进行的操作。
+在尝试显示正在执行的操作时，通常不清楚要使用的控件和所处的状态（确定和不确定）。 有时不需要进度控件也明显可知任务执行进度，而有时即使使用了进度控件，仍需要使用一行文本向用户解释正在进行的操作。
 
 ### <a name="progressbar"></a>进度栏
 -   **该控件是否具有已定义的持续时间，或者结束时间是否已预测？**
@@ -72,11 +96,11 @@ ms.locfileid: "66364493"
 
 -   **用户是否可以在不监视操作进度的情况下继续操作？**
 
-    当 ProgressBar 处在使用状态下时，交互为非模式交互，这通常意味着用户没有因操作未完成而受到阻止，并且可以继续以其他方式使用应用，直到这个方面完成。
+    当 ProgressBar 处于使用中时，交互是非模态的，这通常意味着用户不会因该操作的未完成而受到阻止，而是可以在该操作完成之前继续以其他方式使用应用。
 
 -   **关键字**
 
-    如果操作属于这些关键字范围内，或者显示进度操作旁边与这些关键字匹配的文本，请考虑使用 ProgressBar：
+    如果你的操作与这些关键字相近，或者你想在进行中的操作旁显示与这些关键字相同的文本，请考虑使用 ProgressBar：
 
     - 正在加载... 
     - 正在检索 
@@ -90,11 +114,11 @@ ms.locfileid: "66364493"
 
 -   **应用是否需要等待用户完成某个任务？**
 
-    如果是，请使用 ProgressRing，因为它们为用户指示未知的等待时间。
+    如果是，请使用 ProgressRing，因为它的用途是告知用户等待时间未知。
 
 -   **关键字**
 
-    如果操作属于这些关键字范围内，或者显示进度操作旁边与这些关键字匹配的文本，请考虑使用 ProgressRing：
+    如果你的操作与这些关键字相近，或者你想在进行中的操作旁显示与这些关键字相同的文本，请考虑使用 ProgressRing：
 
     - *正在刷新*
     - *正在登录...*
@@ -103,7 +127,7 @@ ms.locfileid: "66364493"
 ### <a name="no-progress-indication-necessary"></a>不需要进度指示
 -   **用户需要知道发生了什么情况吗？**
 
-    例如，如果应用正在后台下载文件，但是用户没有启动下载，则用户不一定需要知道有关该下载的信息。
+    例如，如果应用在后台下载内容，但下载不是由用户启动的，则不一定要将此行为告知用户。
 
 -   **操作是否属于不会阻止用户活动且用户基本不感兴趣（但略有趣）的后台活动？**
 
@@ -111,21 +135,21 @@ ms.locfileid: "66364493"
 
 -   **用户是否仅仅关注操作完成与否？**
 
-    有时最好仅在操作完成后显示一条通知，或者提供操作刚才已完成的视觉效果，最后在后台进行处理。
+    有时最好仅在操作完成后显示一条通知，或者从视觉上提示已瞬时完成操作，并在后台进行最后的处理。
 
 ## <a name="progress-controls-best-practices"></a>进度控件最佳做法
 
-有时最好可以看到何时在何处使用这些不同进度控件的视觉表示形式：
+也许通过图像最好理解应该在什么情况下使用各种进度控件：
 
 **ProgressBar - 确定**
 
-![ProgressBar 确定示例](images/PB_DeterminateExample.png)
+![ProgressBar 确定示例](images/progress-bar-determinate-example.png)
 
 第一个示例是确定 ProgressBar。 如果已知操作持续时间，则最好使用确定 ProgressBar 显示何时安装、下载、设置等。
 
 **ProgressBar - 不确定**
 
-![ProgressBar 不确定示例](images/PB_IndeterminateExample.png)
+![ProgressBar 不确定示例](images/progress-bar-indeterminate-example.png)
 
 如果不知道操作持续时间，请使用不确定 ProgressBar。 在填充虚拟化列表和在不确定和确定 ProgressBar 之间创建流畅的视觉过渡时，也可以使用不确定 ProgressBar。
 
@@ -137,7 +161,7 @@ ms.locfileid: "66364493"
 
 ![ProgressRing 不确定示例](images/PR_IndeterminateExample.png)
 
-如果暂停任何其他用户应用交互，或者应用在等待用户输入内容才能继续操作，则使用不确定 ProgressRing。 上述“正在登录…” 示例是 ProgressRing 的完美方案，在登录完成前，用户无法继续使用该应用。
+当暂时不允许用户与应用进行任何进一步交互，或应用正在等待用户输入以便继续运行时，应使用不确定性 ProgressRing。 上面的“正在登录…”一例是最适合使用 ProgressRing 的场景：在登录完成前，用户无法继续使用该应用。
 
 ## <a name="customizing-a-progress-control"></a>自定义进度控件
 
@@ -168,14 +192,14 @@ progressRing.IsActive = true;
 
 ```XAML
 <ProgressRing IsActive="True" Height="100" Width="100" Foreground="Blue"/>
-<ProgressBar Width="100" Foreground="Green"/>
+<muxc:ProgressBar Width="100" Foreground="Green"/>
 ```
 
-更改 ProgressRing 的前景色将更改点颜色。 进度条的前景属性可以更改进度条的填充颜色；若要更改进度条的未填充部分，只需重写背景属性。
+更改 ProgressRing 的前景色将更改进度环的填充颜色。 进度条的前景属性可以更改进度条的填充颜色；若要更改进度条的未填充部分，只需重写背景属性。
 
 **显示等待光标**
 
-有时，如果应用或操作需要时间考虑，并且你需要向用户指示在等待光标消失前不应与等待光标可见的应用或区域交互，最好只简短地显示等待光标。
+当应用或操作需要反应时间，最好只显示简单的等待光标，指示用户不应与应用或显示了等待光标的区域交互，直到等待光标消失。
 
 ```C#
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
@@ -192,4 +216,4 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 **面向开发人员 (XAML)**
 - [添加进度控件](https://docs.microsoft.com/previous-versions/windows/apps/hh780651(v=win.10))
-- [如何为 Windows Phone 创建自定义不确定进度栏](https://go.microsoft.com/fwlink/p/?LinkID=392426)
+- [如何为 Windows Phone 创建自定义不确定进度栏](https://msdn.microsoft.com/library/windows/apps/gg442303.aspx)

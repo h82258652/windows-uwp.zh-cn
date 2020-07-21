@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ea6ec3b879ebfe997e565488828ee9942d4ecb13
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8c8e870680805a223ca948aab11113ceaeca4e61
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66366112"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340352"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>关键帧动画以及缓动函数动画
 
@@ -25,7 +25,7 @@ ms.locfileid: "66366112"
 
 ## <a name="animating-using-key-frame-animations"></a>使用关键帧动画创建动画
 
-关键帧动画允许沿动画时间线到达一个点的多个目标值。 换句话说，每个关键帧可以指定一个不同的中间值，并且到达的最后一个关键帧为最终动画值。 通过指定多个值来创建动画，你可以做出更复杂的动画。 关键帧动画还会启用不同的内插逻辑，每个内插逻辑根据动画类型作为不同的 **KeyFrame** 子类实现。 确切地说，每个关键帧动画类型具有其 **KeyFrame** 类的 **Discrete**、**Linear**、**Spline** 和 **Easing** 变体，用于指定其关键帧。 例如，若要指定以 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) 为目标并使用关键帧的动画，可声明具有 [**DiscreteDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteDoubleKeyFrame)、[**LinearDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.LinearDoubleKeyFrame)、[**SplineDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.SplineDoubleKeyFrame) 和 [**EasingDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EasingDoubleKeyFrame) 的关键帧。 你可以在一个 **KeyFrames** 集合中使用任一和所有这些类型，以更改每次新关键帧到达时的内插。
+关键帧动画允许沿动画时间线到达一个点的多个目标值。 换句话说，每个关键帧可以指定一个不同的中间值，并且到达的最后一个关键帧为最终动画值。 通过指定多个值来创建动画，你可以做出更复杂的动画。 关键帧动画还会启用不同的内插逻辑，每个内插逻辑根据动画类型作为不同的 **KeyFrame** 子类实现。 确切地说，每个关键帧动画类型具有其 **KeyFrame** 类的 **Discrete**、**Linear**、**Spline** 和 **Easing** 变体，用于指定其关键帧。 例如，若要指定以 [**Double**](https://docs.microsoft.com/dotnet/api/system.double) 为目标并使用关键帧的动画，可声明具有 [**DiscreteDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteDoubleKeyFrame)、[**LinearDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.LinearDoubleKeyFrame)、[**SplineDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.SplineDoubleKeyFrame) 和 [**EasingDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EasingDoubleKeyFrame) 的关键帧。 你可以在一个 **KeyFrames** 集合中使用任一和所有这些类型，以更改每次新关键帧到达时的内插。
 
 对于内插行为，每个关键帧控制该内插，直至到达其 **KeyTime** 时间。 其 **Value** 也会在该时间到达。 如果有更多关键帧超出范围，则该值将成为序列中下一个关键帧的起始值。
 
@@ -35,14 +35,14 @@ ms.locfileid: "66366112"
 
 除了 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration)，你还可以在关键帧动画上设置所有基于 [**Timeline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline) 的属性，例如，你可以设置具有 **From**/**To**/**By** 的动画，因为关键帧动画类也派生自 **Timeline**。 这些是：
 
--   [**AutoReverse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.autoreverse): 帧到达最后一个关键帧时，会按相反的顺序重复从末尾。 这使得动画的显示持续时间加倍。
--   [**BeginTime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.begintime)： 动画开始。 帧内 **KeyTime** 值的时间线在 **BeginTime** 到达前不开始计数，因此不存在截断帧的风险
--   [**FillBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior)： 控制在到达最后一个关键帧时，会发生什么情况。 **FillBehavior** 不会对任何中间关键帧产生任何影响。
--   [**RepeatBehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
+-   [**System.windows.media.animation.timeline.autoreverse**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.autoreverse)：到达最后一个关键帧后，帧将按反向顺序从末尾重复。 这使得动画的显示持续时间加倍。
+-   [**System.windows.media.animation.timeline.begintime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.begintime)：延迟动画的开始时间。 帧内 **KeyTime** 值的时间线在 **BeginTime** 到达前不开始计数，因此不存在截断帧的风险
+-   [**System.windows.media.animation.timeline.fillbehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior)：控制到达最后一个关键帧后发生的情况。 **FillBehavior** 不会对任何中间关键帧产生任何影响。
+-   [**System.windows.media.animation.timeline.repeatbehavior**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty)：
     -   如果设置为 **Forever**，则关键帧及其时间线将一直重复。
     -   如果设置为一个迭代计数，则时间线将重复该计数多次。
     -   如果设置为 [**Duration**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Duration)，则时间线在到达该时间前一直重复。 如果该数不是时间线的隐式持续时间的整数倍数，则这可能会截断关键帧序列中的部分动画。
--   [**SpeedRatio** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.speedratioproperty) （不常使用）
+-   [**SpeedRatio**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.speedratioproperty) （不常用）
 
 ### <a name="linear-key-frames"></a>线性关键帧
 
@@ -71,13 +71,13 @@ ms.locfileid: "66366112"
 离散式关键帧根本不使用任何内插。 在 **KeyTime** 到达后，只是简单地应用新的 **Value**。 根据要创建动画的 UI 属性，这种方式常常会产生动画仿佛在“跳”的感觉。 请确保这正是你确实需要的艺术行为。 你可以通过增加声明的关键帧数目来最大程度地减少明显的跳跃感，但如果你需要流畅的动画效果，最好是改为使用线性或样条关键帧。
 
 > [!NOTE]
-> 离散式关键帧是为其类型不是 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 和 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 的值（具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame)）创建动画的唯一方法。 我们将在本主题的后面部分更详细地讨论此方法。
+> 离散式关键帧是为其类型不是 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 和 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 的值（具有 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame)）创建动画的唯一方法。 我们将在本主题的后面部分更详细地讨论此方法。
 
 ### <a name="spline-key-frames"></a>样条关键帧
 
-样条关键帧根据 **KeySpline** 属性的值在值之间创建可变的过渡。 此属性指定贝塞尔曲线的第一个控制点和第二个控制点，可描述动画的加速。 基本上，[**KeySpline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.KeySpline) 定义了一个时间函数关系，其中函数-时间图形采用贝塞尔曲线的形状。 你通常在 XAML 速记属性字符串中指定一个 **KeySpline** 值，该字符串具有四个以空格或逗号分隔的 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) 值。 这些值是用作贝塞尔曲线的两个控制点的“X,Y”对。 “X”是时间，而“Y”是对值的函数修饰符。 每个值应始终介于 0 到 1 之间（包含这两个值）。 如果不将控制点修改为 **KeySpline**，则从 0,0 到 1,1 的直线是线性内插的时间函数的表示形式。 控制点更改该曲线的形状，并因此更改样条动画的时间函数的行为。 最好是在图形上以可视化方式查看此方法。 你可以在浏览器中运行 [Silverlight 主曲线可视化工具示例](https://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample)以查看控制点如何修改曲线以及示例动画在将其用作 **KeySpline** 值时如何运行。
+样条关键帧根据 **KeySpline** 属性的值在值之间创建可变的过渡。 此属性指定贝塞尔曲线的第一个控制点和第二个控制点，可描述动画的加速。 基本上，[**KeySpline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.KeySpline) 定义了一个时间函数关系，其中函数-时间图形采用贝塞尔曲线的形状。 你通常在 XAML 速记属性字符串中指定一个 **KeySpline** 值，该字符串具有四个以空格或逗号分隔的 [**Double**](https://docs.microsoft.com/dotnet/api/system.double) 值。 这些值是用作贝塞尔曲线的两个控制点的“X,Y”对。 “X”是时间，而“Y”是对值的函数修饰符。 每个值应始终介于 0 到 1 之间（包含这两个值）。 如果不将控制点修改为 **KeySpline**，则从 0,0 到 1,1 的直线是线性内插的时间函数的表示形式。 控制点更改该曲线的形状，并因此更改样条动画的时间函数的行为。 最好是在图形上以可视化方式查看此方法。 你可以在浏览器中运行 [Silverlight 主曲线可视化工具示例](https://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample)以查看控制点如何修改曲线以及示例动画在将其用作 **KeySpline** 值时如何运行。
 
-此下一示例展示应用于一个动画的三个不同关键帧，其最后一帧为 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN) 值的主曲线动画 ([**SplineDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.SplineDoubleKeyFrame))。 请注意应用于 **KeySpline** 的字符串“0.6,0.0 0.9,0.00”。 这会生成一条曲线，其中动画在开始时缓慢运行，但随后在刚刚到达 **KeyTime** 前快速到达该值。
+此下一示例展示应用于一个动画的三个不同关键帧，其最后一帧为 [**Double**](https://docs.microsoft.com/dotnet/api/system.double) 值的主曲线动画 ([**SplineDoubleKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.SplineDoubleKeyFrame))。 请注意应用于 **KeySpline** 的字符串“0.6,0.0 0.9,0.00”。 这会生成一条曲线，其中动画在开始时缓慢运行，但随后在刚刚到达 **KeyTime** 前快速到达该值。
 
 ```xml
 <Storyboard x:Name="myStoryboard">
@@ -154,17 +154,17 @@ ms.locfileid: "66366112"
 
 下面是缓动函数的列表：
 
--   [**BackEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BackEase):略微收回动画的动作，然后再开始进行动画处理指示的路径中。
--   [**BounceEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BounceEase):创建弹跳效果。
--   [**CircleEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.CircleEase):创建动画加速或减速使用循环函数。
--   [**CubicEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.CubicEase):创建的动画加速或减速使用公式 f(t) = t3。
--   [**ElasticEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ElasticEase):创建类似于弹簧来回直到静止的动画。
--   [**ExponentialEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ExponentialEase):创建动画加速或减速使用指数公式。
--   [**PowerEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PowerEase):创建的动画加速或减速使用公式 f(t) = 其中 p 等于的 tp [**电源**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.powerease.power)属性。
--   [**带**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.QuadraticEase):创建的动画加速或减速使用公式 f(t) = t2。
--   [**QuarticEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.QuarticEase):创建的动画加速或减速使用公式 f(t) = t4。
--   [**QuinticEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.QuinticEase):创建一个动画加速或减速使用公式 f(t) = t5。
--   [**SineEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.SineEase):创建动画加速或减速使用正弦公式。
+-   [**BackEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BackEase)：稍微收回动画运动，然后它开始在指示的路径中进行动画处理。
+-   [**BounceEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BounceEase)：创建弹跳效果。
+-   [**CircleEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.CircleEase)：使用循环函数创建加速或减速的动画。
+-   [**CubicEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.CubicEase)：使用公式 f （t） = t3 创建加速或减速的动画。
+-   [**带**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ElasticEase)：创建类似弹簧前后振荡的动画，直到其进入 rest 状态。
+-   [**ExponentialEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ExponentialEase)：使用指数公式创建加速或减速的动画。
+-   [**System.windows.media.animation.powerease>** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PowerEase)：使用公式 f （t） = tp，其中 p 等于[**电源**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.powerease.power)属性，创建加速或减速的动画。
+-   [**带**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.QuadraticEase)：使用公式 f （t） = t2 创建加速或减速的动画。
+-   [**带**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.QuarticEase)：使用公式 f （t） = t4 创建加速或减速的动画。
+-   [**带**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.QuinticEase)：使用公式 f （t） = t5 创建加速或减速的动画。
+-   [**SineEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.SineEase)：使用正弦公式创建加速或减速的动画。
 
 某些缓动函数具有其自己的属性。 例如，[**BounceEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BounceEase) 具有两个属性（[**Bounces**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.bounceease.bounces) 和 [**Bounciness**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.bounceease.bounciness)），用于修改该特定 **BounceEase** 的时间函数行为。 其他缓动函数（例如 [**CubicEase**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.CubicEase)）不具有除所有缓动函数共享的 [**EasingMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.easingfunctionbase.easingmode) 属性之外的任何属性，并且始终产生相同的时间函数行为。
 
@@ -194,13 +194,13 @@ ms.locfileid: "66366112"
 
 当缓动函数应用到 **From**/**To**/**By** 动画时，它会更改时间函数的特性，该特性确定值如何随着动画的 [**Duration**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 内插到 **From** 与 **To** 值之间。 如果没有缓动函数，则该内插将为线性内插。
 
-## <a name="span-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>离散对象值动画
+## <a name="span-iddiscrete_object_value_animationsspanspan-iddiscrete_object_value_animationsspanspan-iddiscrete_object_value_animationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>离散对象值动画
 
-有一种类型的动画值得特别提出，因为它是可以将动画化的值应用于其类型不是 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 或 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 的属性的唯一方法。 它就是关键帧动画 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)。 使用 [**Object**](https://docs.microsoft.com/dotnet/api/system.object?redirectedfrom=MSDN) 值的动画非常不同，因为不可能在帧之间内插值。 当帧的 [**KeyTime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.keytime) 到达时，动画化的值将立即设置为关键帧的 **Value** 中指定的值。 由于没有内插，没有在中使用的一个关键帧**ObjectAnimationUsingKeyFrames**关键帧集合：[**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame)。
+有一种类型的动画值得特别提出，因为它是可以将动画化的值应用于其类型不是 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 或 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 的属性的唯一方法。 它就是关键帧动画 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames)。 使用 [**Object**](https://docs.microsoft.com/dotnet/api/system.object) 值的动画非常不同，因为不可能在帧之间内插值。 当帧的 [**KeyTime**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.keytime) 到达时，动画化的值将立即设置为关键帧的 **Value** 中指定的值。 由于没有内插， **system.windows.media.animation.objectanimationusingkeyframes>** 关键帧集合中只使用了一个关键帧：[**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame)。
 
-[**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 的 [**Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 通常使用属性元素语法设置，因为你尝试设置的对象值通常不可表示为字符串以采用属性语法填充 **Value**。 如果你使用引用，例如 [StaticResource](https://docs.microsoft.com/windows/uwp/xaml-platform/staticresource-markup-extension)，则仍可以使用属性语法。
+[  **DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 的 [**Value**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.objectkeyframe.value) 通常使用属性元素语法设置，因为你尝试设置的对象值通常不可表示为字符串以采用属性语法填充 **Value**。 如果你使用引用，例如 [StaticResource](https://docs.microsoft.com/windows/uwp/xaml-platform/staticresource-markup-extension)，则仍可以使用属性语法。
 
-你将发现默认模板中使用的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 的一个情况是在模板属性引用 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 资源时。 这些资源是 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 对象，而不仅仅是 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 值，并且它们使用定义为系统主题 ([**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)) 的资源。 可以将它们直接分配给 **Brush** 类型的值，例如 [**TextBlock.Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground)，并且不需要使用间接目标。 但由于 **SolidColorBrush** 不是 [**Double**](https://docs.microsoft.com/dotnet/api/system.double?redirectedfrom=MSDN)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 或 **Color**，因此你必须使用 **ObjectAnimationUsingKeyFrames** 才能使用该资源。
+你将发现默认模板中使用的 [**ObjectAnimationUsingKeyFrames**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) 的一个情况是在模板属性引用 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 资源时。 这些资源是 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 对象，而不仅仅是 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 值，并且它们使用定义为系统主题 ([**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)) 的资源。 可以将它们直接分配给 **Brush** 类型的值，例如 [**TextBlock.Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.foreground)，并且不需要使用间接目标。 但由于 **SolidColorBrush** 不是 [**Double**](https://docs.microsoft.com/dotnet/api/system.double)、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point) 或 **Color**，因此你必须使用 **ObjectAnimationUsingKeyFrames** 才能使用该资源。
 
 ```xml
 <Style x:Key="TextButtonStyle" TargetType="Button">
@@ -272,4 +272,4 @@ ms.locfileid: "66366112"
 * [属性路径语法](https://docs.microsoft.com/windows/uwp/xaml-platform/property-path-syntax)
 * [依赖属性概述](https://docs.microsoft.com/windows/uwp/xaml-platform/dependency-properties-overview)
 * [**情节提要**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)
-* [**Storyboard.TargetProperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)
+* [**System.windows.media.animation.storyboard.targetproperty**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)

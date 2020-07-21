@@ -11,11 +11,11 @@ template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a2f73fe6280d3a86510ce48f47017dd4897139a
-ms.sourcegitcommit: 3ec8c1d0ea3798cdb2745e7a941a025cf3cf21c8
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650778"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "79208982"
 ---
 # <a name="xaml-styles"></a>XAML 样式
 
@@ -66,8 +66,8 @@ ms.locfileid: "67650778"
 
 如果你将样式定义为资源，有两种方法可将其应用到控件：
 
--   隐式方法，通过仅指定 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 的 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype)。
--   显式方法，通过指定 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 的 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) 和 [x:Key 特性](../../xaml-platform/x-key-attribute.md)这一特性，然后通过使用显式键的 [{StaticResource} 标记扩展](https://docs.microsoft.com/windows/uwp/xaml-platform/staticresource-markup-extension)引用设置目标控件的 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 属性。
+-   隐式方法，通过仅指定 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) 的 [TargetType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)。
+-   显式方法，通过指定 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) 的 [TargetType](../../xaml-platform/x-key-attribute.md) 和 [x:Key 特性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style)这一特性，然后通过使用显式键的 [{StaticResource} 标记扩展](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style)引用设置目标控件的 [Style](https://docs.microsoft.com/windows/uwp/xaml-platform/staticresource-markup-extension) 属性。
 
 如果样式包含 [x:Key 特性](../../xaml-platform/x-key-attribute.md)，则只能通过将控件的 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 属性设置为键控样式，从而将其应用到控件。 相反，没有 x:Key 特性的样式会自动应用到其目标类型的每个控件，这些控件没有显示样式设置。
 
@@ -208,4 +208,4 @@ ms.locfileid: "67650778"
 
 ## <a name="the-template-property"></a>template 属性
 
-样式 setter 可用于 [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 的 [Template](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template) 属性，实际上，此样式构成了多数典型的 XAML 样式和应用的 XAML 资源。 此内容将在主题[控件模板](control-templates.md)中更详细地讨论。
+样式 setter 可用于 [Control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template) 的 [Template](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 属性，实际上，此样式构成了多数典型的 XAML 样式和应用的 XAML 资源。 此内容将在主题[控件模板](control-templates.md)中更详细地讨论。

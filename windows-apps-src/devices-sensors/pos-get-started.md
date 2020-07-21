@@ -1,22 +1,22 @@
 ---
 title: 服务点入门
-description: 本文包含有关服务点 UWP API 入门的信息。
+description: 本文包含有关服务点 Windows 运行时 Api 入门的信息。
 ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服务点, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: d059f0e33f7343fa0ac9919a243008ed486e31ff
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: f5f19d1337a7ae49f46ab65d8420fedb775eeb2f
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63772735"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730388"
 ---
 # <a name="getting-started-with-point-of-service"></a>服务点入门
 
 服务点、销售点或服务点设备是用于帮助零售交易的计算机外设。 服务点设备的示例包括电子收银机、条形码扫描仪、磁条阅读器和收据打印机。
 
-下面将介绍使用通用 Windows 平台 (UWP) PointOfService API 连接服务点设备的基础知识。 我们将介绍设备枚举、检查设备功能、声明设备和设备共享。 我们以条形码扫描仪设备为例，但这里的几乎所有指南都适用于任何兼容 UWP 的服务点设备。 （有关受支持的设备的列表，请参阅[服务点设备支持](pos-device-support.md)）。
+在这里，你将了解使用服务 Api 的 Windows 运行时点与服务点交互相关的基础知识。 我们将介绍设备枚举、检查设备功能、声明设备和设备共享。 我们以条形码扫描仪设备为例，但这里的几乎所有指南都适用于任何兼容 UWP 的服务点设备。 （有关受支持的设备的列表，请参阅[服务点设备支持](pos-device-support.md)）。
 
 ## <a name="finding-and-connecting-to-point-of-service-peripherals"></a>查找和连接到服务点外设
 
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>保留设备
-当通过网络或蓝牙连接使用服务点设备时，你可能希望与网络上的其他应用共享该设备。 (有关详细信息，请参阅[共享的设备](#sharing-a-device-between-apps)。)在其他情况下，你可能想要保存到适用于长时间使用的设备。 此示例演示在另一个应用请求发布设备后，如何保留已声明的条形码扫描仪。
+当通过网络或蓝牙连接使用服务点设备时，你可能希望与网络上的其他应用共享该设备。 （有关详细信息，请参阅[共享设备](#sharing-a-device-between-apps)。）在其他情况下，你可能要保留此设备以便长期使用。 此示例演示在另一个应用请求发布设备后，如何保留已声明的条形码扫描仪。
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -208,9 +208,9 @@ if (claimedBarcodeScanner != null)
 > 已声明和未声明的服务点设备类会实现 [IClosable 接口](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable)。 如果设备已通过网络或蓝牙连接到应用，在连接另一个应用前必须丢弃已声明和未声明的对象。
 
 ## <a name="see-also"></a>请参阅
-+ [条形码扫描程序示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [现金抽屉示例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [条形码扫描仪示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
++ [收银机示例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
 + [行显示示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
-+ [磁条读取器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
++ [磁条阅读器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
 + [POSPrinter 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 文件, 文件 io, 读取文件, 写入文件, 创建文件, 写入文本, 读取文本
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 29cfeef852f240548f1cd961f73766346da7afa4
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321135"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730057"
 ---
 # <a name="work-with-files"></a>处理文件
 
@@ -26,7 +26,7 @@ ms.locfileid: "67321135"
 下面是需要了解的在文件读取或写入文本的主要类型：
 
 - [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) 表示文件。 此类具有提供文件相关信息的属性，以及创建、打开、复制、删除和重命名文件的方法。
-可以用来处理字符串路径。 某些 UWP API 获取字符串路径，但更多情况下，你将使用 **StorageFile** 表示文件，因为在 UWP 中处理的某些文件可能没有路径，或者可能具有不实用的路径。 使用 [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 将字符串路径转换为 **StorageFile**。 
+可以用来处理字符串路径。 某些 Windows 运行时 API 会获取字符串路径，但更多情况下，你将使用 StorageFile  表示文件，因为在 UWP 中处理的某些文件可能没有路径，或者路径繁复。 使用 [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 将字符串路径转换为 **StorageFile**。 
 
 - [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) 类提供读取和写入文本的简单方式。 此类还可以读取/写入字节数组或缓冲区内容。 此类与 [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 类非常相似。 主要区别在于它不像 **PathIO** 那样获取字符串路径，而是获取 **StorageFile**。
 - [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) 表示文件夹（目录）。 此类具有创建文件、查询文件夹内容以及创建、重命名和删除文件夹的方法，并具有提供文件夹相关信息的属性。 
@@ -108,7 +108,7 @@ UWP 应用必须通过在其清单中添加相应的功能来声明访问特定�
 
 ### <a name="useful-apis"></a>有用的 API
 
-| API | 描述 |
+| API | 说明 |
 |------|---------------|
 |  [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) | 提供文件相关信息，以及创建、打开、复制、删除和重命名文件的方法。 |
 | [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) | 提供文件夹相关信息、创建文件的方法以及创建、重命名、删除文件夹的方法。 |
@@ -123,7 +123,7 @@ UWP 应用必须通过在其清单中添加相应的功能来声明访问特定�
 
 ### <a name="useful-docs"></a>有用的文档
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|----------------|
 | [Windows.Storage 命名空间](https://docs.microsoft.com/uwp/api/windows.storage) | API 参考文档。 |
 | [文件、文件夹和库](https://docs.microsoft.com/windows/uwp/files/) | 概念文档。 |
@@ -139,10 +139,10 @@ UWP 应用必须通过在其清单中添加相应的功能来声明访问特定�
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 
-| 代码示例 | 描述 |
+| 代码示例 | 说明 |
 |-----------------|---------------|
-| [应用程序数据示例](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | 展示如何通过使用应用程序数据 API 来存储和检索特定于每个用户的数据。 |
+| [应用程序数据示例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/applicationdata/) | 展示如何通过使用应用程序数据 API 来存储和检索特定于每个用户的数据。 |
 | [文件访问示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | 展示如何创建、读取、写入、复制和删除文件。 |
-| [文件选取器示例](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | 展示如何通过让用户使用 UI 选择文件和文件夹来访问它们，以及如何保存文件，以便用户可以指定要保存文件的名称、文件类型和位置。 |
+| [文件选取器示例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/filepicker/) | 展示如何通过让用户使用 UI 选择文件和文件夹来访问它们，以及如何保存文件，以便用户可以指定要保存文件的名称、文件类型和位置。 |
 | [JSON 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 展示如何使用 [Windows.Data.Json 命名空间](https://docs.microsoft.com/uwp/api/Windows.Data.Json)编码和解码 JavaScript 对象表示法 (JSON) 的对象、数组、字符串、数字和布尔值。 |
 | [其他代码示例](https://developer.microsoft.com/windows/samples) | 在类别下拉列表中选择**文件、文件夹和库**。 |

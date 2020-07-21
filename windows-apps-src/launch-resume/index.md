@@ -6,12 +6,12 @@ ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, 后台任务, 应用服务, 连接设备, 远程系统
 ms.localizationpriority: medium
-ms.openlocfilehash: 79f3f1d28294527d6987540a159baa31d663db4c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9280a240f35c2fdf5290c94d837e2fafc008dbfd
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371720"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80483007"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>启动、恢复和后台任务
 
@@ -31,7 +31,7 @@ ms.locfileid: "66371720"
 
 本部分详细介绍 Windows 10 通用 Windows 平台 (UWP) 应用的生命周期，从其激活时直到其关闭。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [应用生命周期](app-lifecycle.md)               | 了解有关 UWP 应用的生命周期，以及在 Windows 启动、暂停和恢复你的应用时会发生什么情况。 |
 | [处理应用预启动](handle-app-prelaunch.md) | 了解如何处理应用预启动。                                                                              |
@@ -43,14 +43,14 @@ ms.locfileid: "66371720"
 
 ## <a name="launch-apps"></a>启动应用
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [创建通用 Windows 平台控制台应用](console-uwp.md) | 了解如何编写在控制台窗口中运行的通用 Windows 平台应用。 |
 | [创建多实例 UWP 应用](multi-instance-uwp.md) | 了解如何编写多实例通用 Windows 平台应用。 |
 
 [使用 URI 启动应用](launch-app-with-uri.md)部分详细介绍了如何使用统一资源标识符 (URI) 来启动应用。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [启动 URI 的默认应用](launch-default-app.md) | 了解如何启动统一资源标识符 (URI) 的默认应用。 URI 允许你启动其他应用以执行特定任务。 本主题还提供许多内置于 Windows 的 URI 方案的概述。 |
 | [处理 URI 激活](handle-uri-activation.md) | 了解如何将应用注册为统一资源标识符 (URI) 方案名称的默认处理程序。 |
@@ -64,14 +64,14 @@ ms.locfileid: "66371720"
 
 [通过文件激活启动应用](launch-app-from-file.md)部分详细介绍如何将应用设置为在打开特定类型的文件时启动。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [启动文件的默认应用](launch-the-default-app-for-a-file.md) | 了解如何启动文件的默认应用。 |
 | [处理文件激活](handle-file-activation.md) | 了解如何注册你的应用以成为某个文件类型的默认处理程序。 |
 
 请参阅下面与启动应用相关的其他主题。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [即便跨设备，也继续用户活动](useractivities.md) | 通过在用户离开的位置启动应用，即使跨设备也可以让用户重新使用应用。 |
 | [借助自动播放功能自动启动](auto-launching-with-autoplay.md) | 可以使用自动播放功能在用户将设备连接到其电脑时，将应用作为一个选项提供。 这包括非卷设备（如相机或媒体播放器）或卷设备（如 U 盘、SD 卡或 DVD）。 |
@@ -81,7 +81,7 @@ ms.locfileid: "66371720"
 
 [应用服务和扩展](app-services.md)部分介绍了如何将应用服务集成到你的 UWP 应用，从而允许跨应用共享数据和功能。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [创建和使用应用服务](how-to-create-and-consume-an-app-service.md) | 了解如何编写可以向其他 UWP 应用提供服务的通用 Windows 平台 (UWP) 应用，以及如何使用这些服务。 |
 | [将应用服务转换为与其主机应用在同一个进程中运行](convert-app-service-in-process.md) | 将在单独的后台进程中运行的应用服务代码转换为在与应用服务提供程序相同的进程中运行的代码。 |
@@ -92,12 +92,13 @@ ms.locfileid: "66371720"
 
 [后台任务](support-your-app-with-background-tasks.md)部分显示了如何使在后台运行的轻型代码响应触发器。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [后台任务指南](guidelines-for-background-tasks.md)                                       | 确保你的应用满足运行后台任务的要求。 |
 | [从后台任务访问传感器和设备](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 |
 | [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)       | 创建和注册在前台应用所在的同一进程中运行的后台任务。 |
 | [创建和注册进程外后台任务](create-and-register-a-background-task.md)           | 创建和注册一个与你的应用不在同一个进程中运行的后台任务，然后将它注册为在应用不在前台运行时运行。 |
+| [为 winmain 应用创建和注册 COM 后台任务](create-and-register-a-winmain-background-task.md) | 创建一个 COM 后台任务，当打包的 winmain 应用可能未在运行时，该任务可以在在你的主进程中运行，也可以在进程外运行。 |
 | [将进程外后台任务移植到进程内后台任务](convert-out-of-process-background-task.md) | 了解如何将进程外后台任务移植到与前台应用在同一进程中运行的进程内后台任务。|
 | [调试后台任务](debug-a-background-task.md)                                                       | 了解如何调试后台任务，包括后台任务激活和调试 Windows 事件日志中的跟踪。 |
 | [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md) | 通过在应用清单中将后台任务声明为扩展，以实现对后台任务的使用。 |
@@ -119,7 +120,7 @@ ms.locfileid: "66371720"
 
 [连接的应用和设备（项目 Rome）](connected-apps-and-devices.md)介绍了如何使用远程系统平台发现远程设备、在远程设备上启动应用，以及与远程设备上的应用服务通信。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [发现远程设备](discover-remote-devices.md)  | 了解如何发现可以连接的设备。 |
 | [启动远程设备上的应用](launch-a-remote-app.md) | 了解如何启动远程设备上的应用。  |
@@ -130,7 +131,7 @@ ms.locfileid: "66371720"
 
 [初始屏幕](splash-screens.md)部分介绍如何设置和配置应用的初始屏幕。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [添加初始屏幕](add-a-splash-screen.md) | 设置你的应用的初始屏幕图像和背景色。 |
 | [延长显示初始屏幕的时间](create-a-customized-splash-screen.md) | 通过为你的应用创建延长的初始屏幕，延长显示初始屏幕的时间。 此延长的屏幕将模仿你的应用启动时显示的初始屏幕，并且可以进行自定义。 |

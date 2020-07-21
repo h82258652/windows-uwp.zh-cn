@@ -8,18 +8,18 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bb24002e3738213ba3e784e6b91ff55d970a26a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5b94c946222f510c7f1b1f7619b67ee83e6c2256
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363630"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74258007"
 ---
 # <a name="define-custom-recognition-constraints"></a>定义自定义识别约束
 
 了解如何为语音识别定义和使用自定义约束。
 
-> **重要的 API**：[**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
+> **重要 API**：[**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)、[**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)、[**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 语音识别至少需要一个约束，才能定义可识别的词汇。 如果未指定任何约束，将使用通用 Windows 应用的预定义听写语法。 请参阅[语音识别](speech-recognition.md)。
 
@@ -27,11 +27,11 @@ ms.locfileid: "66363630"
 
 使用 [**SpeechRecognizer.Constraints**](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) 属性向语音识别器添加约束。
 
-我们在此处介绍三种可在应用内使用的语音识别约束。 (有关 Cortana 语音命令约束，请参阅[启动包含在 Cortana 中的语音命令的前景色应用](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。)
+我们在此处介绍三种可在应用内使用的语音识别约束。 （对于 Cortana 语音命令约束，请参阅[使用 cortana 中的语音命令启动前台应用](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。）
 
-- [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)— 约束基于预定义的语法 （听写或 web 搜索）。
-- [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)— 约束基于词或短语的列表。
-- [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)-语音识别语法规范 (SRGS) 文件中定义的约束。
+- [**SpeechRecognitionTopicConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)—基于预定义语法（听写或 web 搜索）的约束。
+- [**SpeechRecognitionListConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)-基于单词或短语列表的约束。
+- [**SpeechRecognitionGrammarFileConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)—语音识别语法规范（SRGS）文件中定义的约束。
 
 每个语音识别器都可具有一个约束集合。 只有以下约束组合有效：
 
@@ -137,7 +137,7 @@ SRGS 提供一组完整的功能，可帮助你为应用构建复杂的语音交
 - 使用语义定义语音识别对你的应用的意义。
 - 在语法中以内联方式或通过指向词典的链接来指定发音。
 
-有关 SRGS 元素和属性的详细信息，请参阅 [SRGS 语法 XML 参考](https://go.microsoft.com/fwlink/p/?LinkID=269886)。 若要开始创建 SRGS 语法，请参阅[如何创建基本的 XML 语法](https://go.microsoft.com/fwlink/p/?LinkID=269887)。
+有关 SRGS 元素和属性的详细信息，请参阅 [SRGS 语法 XML 参考](https://msdn.microsoft.com/library/hh361653)。 若要开始创建 SRGS 语法，请参阅[如何创建基本的 XML 语法](https://msdn.microsoft.com/library/hh361658)。
 
 请牢记以下几点：
 
@@ -171,7 +171,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 World Wide Web 联合会 (W3C) 语法必须符合 [语义转译为语音识别 (SISR) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765)规范。
+该 SRGS 文件 (srgs.grxml) 包含语义翻译标记。 这些标记提供了用于将语法匹配数据返回应用的机制。 语法必须符合 [语音识别（SISR） 1.0](https://www.w3.org/TR/semantic-interpretation/)规范的万维网联合会（W3C）语义解释。
 
 我们在此处侦听“是”和“否”的变体。
 
@@ -228,4 +228,4 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ### <a name="samples"></a>示例
 
-- [语音识别和语音合成示例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+- [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

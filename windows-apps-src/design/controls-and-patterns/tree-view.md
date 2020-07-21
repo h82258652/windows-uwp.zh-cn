@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8e18455a39441d46e13e5a9a72291c9cd379c310
-ms.sourcegitcommit: 9effd88952bd26611f7b0a0e7baa68aba7d0ee8d
+ms.openlocfilehash: d5308f49499f4bdec9db0087cef54ac2fa0bb805
+ms.sourcegitcommit: 69b7fe203d8384d0ade37122ae9d2c4568f6d168
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68616527"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267164"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -34,29 +34,20 @@ XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tree
 - **TreeViewItem** 中任意类型的内容
 - 在树视图之间拖放
 
-| **获取 Windows UI 库** |
-| - |
-| 此控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，包含新控件和 UWP 应用的 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库概述](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+**获取 Windows UI 库**
 
-| **平台 API** | **Windows UI 库** |
+|  |  |
 | - | - |
-| [TreeView 类](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode 类](/uwp/api/windows.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [TreeView 类](/uwp/api/microsoft.ui.xaml.controls.treeview)、[TreeViewNode 类](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 属性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | TreeView 控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
-在本文档中，我们将使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：
+> **Windows UI 库 API：** [TreeView 类](/uwp/api/microsoft.ui.xaml.controls.treeview)、[TreeViewNode 类](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 属性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
+>
+> **平台 API：** [TreeView 类](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode 类](/uwp/api/windows.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
 
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-```
-
-在后面的代码中，我们还将使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：
-
-```csharp
-using muxc = Microsoft.UI.Xaml.Controls;
-```
-
-```vb
-Imports muxc = Microsoft.UI.Xaml.Controls
-```
+> [!TIP]
+> 在本文档中，我们使用 XAML 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们已将此项添加到我们的[页](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page)元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+>
+>在后面的代码中，我们还使用 C# 中的 **muxc** 别名表示我们已包含在项目中的 Windows UI 库 API。 我们在文件顶部添加了此 **using** 语句：`using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -69,7 +60,7 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TreeView">打开此应用，了解 TreeView 的实际应用</a>。</p>
     <ul>
@@ -220,7 +211,7 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 ```
 
 > [!NOTE]
-> 为了能够访问 **Pictures** 文件夹，需要在应用清单中指定“图片库”  功能。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+> 为了能够访问 **Pictures** 文件夹，需要在应用清单中指定“图片库”功能。 有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
 可以提供 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 来指定数据项在树视图中的显示方式。
 
@@ -283,7 +274,7 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
         <muxc:TreeViewItem>
             <StackPanel Orientation="Horizontal">
                 <Image Width="20" Source="Assets/file.png"/>
-                <TextBlock Text="{Binding Name}"/>
+                <TextBlock Text="{x:Bind Name}"/>
             </StackPanel>
         </muxc:TreeViewItem>
     </DataTemplate>
@@ -481,7 +472,7 @@ End Sub
 
 启用多选后，每个树节点旁会显示一个复选框，选中的项突出显示。 用户可以使用复选框选择或取消选择项；单击项仍将导致项被调用。
 
-选择或取消选择父节点时，会选择或取消选择该节点下的所有子节点。 如果父节点下的部分（但并非所有）子节点处于选中状态，则父节点的复选框会显示为不确定（在其中填充黑框）。
+选择或取消选择父节点时，会选择或取消选择该节点下的所有子节点。 如果父节点下的部分（但并非所有）子节点处于选中状态，则父节点的复选框会以非确定的状态显示。
 
 ![树视图中的多选](images/treeview-selection.png)
 
@@ -497,6 +488,10 @@ End Sub
 - 选择一个父节点也会选择该父级下的所有已实现子级。 同样，如果选择了所有子节点，则父节点也会被选中。
 - **SelectAll** 方法只会将已实现的节点添加到 **SelectedNodes** 集合中。
 - 如果选择了具有未实现子级的父节点，该子级将在实现时被选中。
+
+#### <a name="selecteditemselecteditems"></a>SelectedItem/SelectedItems
+
+从 WinUI 2.2 开始，TreeView 具有 [SelectedItem](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditem) 和 [SelectedItems](/uwp/api/microsoft.ui.xaml.controls.treeview.selecteditems) 属性。 可以使用这些属性直接获取选定节点的内容。 如果启用了多个选项，则 SelectedItem 将包含 SelectedItems 集合中的第一项。
 
 ## <a name="code-examples"></a>代码示例
 
@@ -811,7 +806,7 @@ namespace TreeViewTest
 
 ### <a name="pictures-and-music-library-tree-view"></a>图片和音乐库树视图
 
-本示例介绍如何创建树视图来显示用户的“图片”和“音乐”库的内容和结构   。 因为无法预知项目数，因此每个节点都在展开时填充，在折叠时清空。
+本示例介绍如何创建树视图来显示用户的“图片”和“音乐”库的内容和结构 。 因为无法预知项目数，因此每个节点都在展开时填充，在折叠时清空。
 
 这里使用一个自定义项模板来显示数据项，这些数据项类型为 [IStorageItem](/uwp/api/windows.storage.istorageitem)。
 
@@ -825,54 +820,55 @@ namespace TreeViewTest
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TreeViewTest"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:storage="using:Windows.Storage"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <DataTemplate x:Key="TreeViewItemDataTemplate">
+        <DataTemplate x:Key="TreeViewItemDataTemplate" x:DataType="muxc:TreeViewNode">
             <Grid Height="44">
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:IStorageItem)Content).Name}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>
             </Grid>
         </DataTemplate>
 
-        <DataTemplate x:Key="MusicItemDataTemplate">
+        <DataTemplate x:Key="MusicItemDataTemplate" x:DataType="muxc:TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="Audio" Margin="0,0,4,0"/>
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:StorageFile)Content).DisplayName}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="PictureItemDataTemplate">
+        <DataTemplate x:Key="PictureItemDataTemplate" x:DataType="muxc:TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB9F;"
                           Margin="0,0,4,0"/>
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:StorageFile)Content).DisplayName}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="MusicFolderDataTemplate">
+        <DataTemplate x:Key="MusicFolderDataTemplate" x:DataType="muxc:TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="MusicInfo" Margin="0,0,4,0"/>
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:StorageFolder)Content).DisplayName}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="PictureFolderDataTemplate">
+        <DataTemplate x:Key="PictureFolderDataTemplate" x:DataType="muxc:TreeViewNode">
             <StackPanel Height="44" Orientation="Horizontal">
                 <SymbolIcon Symbol="Pictures" Margin="0,0,4,0"/>
-                <TextBlock Text="{Binding Content.DisplayName}"
+                <TextBlock Text="{x:Bind ((storage:StorageFolder)Content).DisplayName}"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Style="{ThemeResource BodyTextBlockStyle}"/>

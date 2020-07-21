@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 了解轨迹, 数据绑定, 列表
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c4d339a1eedb798f11d5567be6a48ec2269cf8ac
-ms.sourcegitcommit: 280193dfe5a106fc6b4c85df3ac40535547b855c
+ms.openlocfilehash: 3cebf51bdf9fa9942a0b88ed7b4cf66204671781
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67235154"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "71340334"
 ---
 # <a name="display-customers-in-a-list"></a>以列表形式显示客户
 
@@ -102,7 +102,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="edit-your-customers-through-the-ui"></a>通过 UI 编辑客户
 
-你已经以列表形式显示了客户，而数据 B=binding 可以让你做得更多。 如果可以直接从 UI 编辑数据会怎样？ 若要执行此操作，我们首先来讨论一下三种数据绑定模式：
+你已经以列表形式显示了客户，而数据绑定可以让你做得更多。 如果可以直接从 UI 编辑数据会怎样？ 若要执行此操作，我们首先来讨论一下三种数据绑定模式：
 
 * *一次性*：此数据绑定只激活一次，并且不会对更改作出响应。
 * *单向*：此数据绑定将使用对数据源所做的所有更改更新 UI。
@@ -110,7 +110,7 @@ public sealed partial class MainPage : Page
 
 如果你已遵循之前的代码段，所做的绑定将使用 x:Bind 且不指定模式，这使其成为一次性绑定。 如果想要直接从 UI 编辑客户，则需要将其更改为双向绑定，以便对数据的更改传递回客户对象。 [深入了解数据绑定](../data-binding/data-binding-in-depth.md)提供了详细信息。
 
-如果数据源更改，双向绑定还将更新 UI。 若要实现此功能，必须在源上实现 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN)，并确保其属性设置器发起 **PropertyChanged** 事件。 常见做法是让它们调用 **OnPropertyChanged** 这样的帮助程序方法，如下所示：
+如果数据源更改，双向绑定还将更新 UI。 若要实现此功能，必须在源上实现 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged)，并确保其属性设置器发起 **PropertyChanged** 事件。 常见做法是让它们调用 **OnPropertyChanged** 这样的帮助程序方法，如下所示：
 
 ```csharp
 public class Customer : INotifyPropertyChanged
@@ -163,19 +163,19 @@ public class Customer : INotifyPropertyChanged
 
 ### <a name="useful-apis"></a>有用的 API
 
-| API | 描述 |
+| API | 说明 |
 |------|---------------|
 | [数据模板](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | 描述数据对象的可视结构，以允许在 UI 中显示特定元素。 |
 | [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 有关推荐的 x:Bind 标记扩展的文档。 |
 | [Binding](../xaml-platform/binding-markup-extension.md) | 有关以前的 Binding 标记扩展的文档。 |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | 显示垂直堆栈中的数据项的 UI 控件。 |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 在 UI 中显示可编辑文本数据的基本文本控件。 |
-| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?redirectedfrom=MSDN) | 让数据可供观察、将数据提供给数据绑定的接口。 |
+| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) | 让数据可供观察、将数据提供给数据绑定的接口。 |
 | [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | 此类的 **ItemsSource** 属性允许 ListView 绑定到数据源。 |
 
 ### <a name="useful-docs"></a>有用的文档
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|----------------|
 | [深入了解数据绑定](../data-binding/data-binding-in-depth.md) | 数据绑定原则的基本概述 |
 | [数据绑定概述](../data-binding/data-binding-quickstart.md) | 有关数据绑定的详细概念信息。 |
@@ -183,7 +183,7 @@ public class Customer : INotifyPropertyChanged
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 
-| 代码示例 | 描述 |
+| 代码示例 | 说明 |
 |-----------------|---------------|
 | [数据绑定教程](../data-binding/xaml-basics-data-binding.md) | 数据绑定基础知识的分步指南体验。 |
 | [ListView 和 GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) | 通过数据绑定探索更复杂的 ListView。 |

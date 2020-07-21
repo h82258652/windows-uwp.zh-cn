@@ -12,20 +12,18 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b17220a039612e0b13cd9842800c37c39bf194dd
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: fa4ff0cbc2bd361b241f660f9c6b28f03bc7c24c
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362761"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80080900"
 ---
 # <a name="hyperlinks"></a>超链接
 
- 
-
 超链接会将用户导航到应用的另一部分、导航到另一个应用，或使用单独的浏览器应用启动特定的统一资源标识符 (URI)。 可使用两种方法向 XAML 应用添加超链接：**Hyperlink** 文本元素和 **HyperlinkButton** 控件。
 
-> **重要的 API**：[Hyperlink 文本元素](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)，[HyperlinkButton 控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **平台 API**：[Hyperlink 文本元素](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)，[HyperlinkButton 控件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![“超链接”按钮](images/controls/hyperlink-button.png)
 
@@ -45,7 +43,7 @@ ms.locfileid: "66362761"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/HyperlinkButton">打开此应用，了解 HyperlinkButton 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>

@@ -1,5 +1,5 @@
 ---
-Description: 通用 Windows 平台 (UWP) 中的用户交互组合了输入和输出源（例如鼠标、键盘、笔、触摸、触摸板、语音、Cortana、控制器、手势、注视等）以及支持扩展体验（包括鼠标滚轮和按钮、笔橡皮擦、筒状按钮、触摸键盘和后台应用服务）的各种模式或修饰符。
+Description: Windows 应用中的用户交互是输入和输出源（如鼠标、键盘、笔、触摸、触摸板、语音、Cortana、控制器、手势、注视等）的组合，以及支持扩展体验的各种模式或修饰符（包括鼠标滚轮和按钮、笔橡皮擦和圆筒按钮、触控键盘和后台应用服务）。
 title: 交互入门
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 55879c33e30564f4639b8880c3a12f4b4181245e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ef3adfd192acbef45ee341b133e4133e1f1ff586
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365924"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968153"
 ---
 # <a name="interaction-primer"></a>交互入门
 
 ![Windows 输入类型](images/input-interactions/icons-inputdevices03.png)
 
-通用 Windows 平台 (UWP) 中的用户交互组合了输入和输出源（例如鼠标、键盘、笔、触摸、触摸板、语音、**Cortana**、控制器、手势、注视等）以及支持扩展体验（包括鼠标滚轮和按钮、笔橡皮擦、筒状按钮、触摸键盘和后台应用服务）的各种模式或修饰符。
+Windows 应用中的用户交互是输入和输出源（如鼠标、键盘、笔、触摸、触摸板、语音、 **Cortana**、控制器、手势、注视等）的组合，以及支持扩展体验的各种模式或修饰符（包括鼠标滚轮和按钮、笔橡皮擦和圆筒按钮、触控键盘和后台应用服务）。
 
-UWP 使用“智能”的上下文交互系统，在大多数情况下消除了单独处理应用接收的独特输入类型的需要。 这包括处理作为泛型指针类型的触摸、触摸板、鼠标和笔输入，以支持静态手势（例如点击或长按）、操作手势（例如滑动平移或呈现数字墨迹）。
+UWP 使用 "智能" 上下文交互系统，在大多数情况下，无需单独处理应用收到的唯一输入类型。 这包括处理作为泛型指针类型的触摸、触摸板、鼠标和笔输入，以支持静态手势（例如点击或长按）、操作手势（例如滑动平移或呈现数字墨迹）。
 
 当与特定的外形规格配对时，自行熟悉每个输入设备类型及其行为、功能和限制。 这可以帮助你决定平台控件和提示是足够用于应用，还是要求你提供自定义的交互体验。
 
@@ -30,20 +30,20 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 对于 **Windows 10 2018 年 4 月更新**，我们使用眼睛和头部跟踪输入设备引入了对凝视输入的支持。 
 
 > [!NOTE]
-> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。
+> **Windows 10 Fall Creators Update** 以及[目视控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control)中引入了对目视跟踪硬件的支持，这是一项内置功能，让你可以使用眼睛控制屏幕指针，使用屏幕键盘键入，并使用文本到语音转换与其他人交流。
 
 ### <a name="device-support"></a>设备支持
 
-- Tablet
+- 平板电脑
 - 电脑和笔记本电脑
 
 ### <a name="typical-usage"></a>典型用法
 
-根据用户眼睛的位置及移动，跟踪用户的凝视、注意和状态。 这一使用 UWP 应用并与之交互的新方式对于以下用户是特别有用的辅助技术：患有神经肌肉疾病（如 ALS），以及有其他受损肌肉或神经功能方面的残障。 凝视输入还为游戏（包括目标获取和跟踪）和传统的生产力应用程序、展台及其他交互式场景提供具有吸引力的机会，如传统输入设备（键盘、鼠标和触控）不可用或可能对释放用户双手以执行其他任务（如提购物袋）非常有用/有帮助的情况。
+根据用户眼睛的位置及移动，跟踪用户的凝视、注意和状态。 这种用于使用和与 Windows 应用交互的功能强大的新方法特别适用于具有神经-muscular 疾病（如 ALS）的用户的辅助技术，以及涉及障碍判断力或勇气函数的其他残障人士。 凝视输入还为游戏（包括目标获取和跟踪）和传统的生产力应用程序、展台及其他交互式场景提供具有吸引力的机会，如传统输入设备（键盘、鼠标和触控）不可用或可能对释放用户双手以执行其他任务（如提购物袋）非常有用/有帮助的情况。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
-[注视交互和的眼跟踪](gaze-interactions.md)
+[凝视交互和目视跟踪](gaze-interactions.md)
 
 ## <a name="surface-dial"></a>Surface Dial
 
@@ -51,25 +51,25 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 ### <a name="device-support"></a>设备支持
 
-- Tablet
+- 平板电脑
 - 电脑和笔记本电脑
 
 ### <a name="typical-usage"></a>典型用法
 
 借助基于旋转操作（或手势）的外形规格，Surface Dial 旨在成为对主设备输入进行补充或修改的多模态辅助输入设备。 在大多数情况下，用户使用其惯用手执行某个任务（如使用笔进行墨迹书写）期间，该设备由其非惯用手操控。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
-[图面上拨设计指南](windows-wheel-interactions.md)
+[Surface Dial 设计指南](windows-wheel-interactions.md)
 
 ## <a name="cortana"></a>Cortana
 
-在 Windows 10 中， **Cortana**扩展性可处理来自用户的语音命令并启动应用程序以执行单个操作。
+在 Windows 10 中，你可以使用 **Cortana** 扩展性来处理用户的语音命令，并启动应用程序来执行单个操作。
 
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   Tablet
+-   平板电脑
 -   电脑和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -84,7 +84,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 通过集成应用的基本功能，并为用户提供中心入口点以便在无需直接打开应用的情况下完成大多数任务，**Cortana** 成为了应用和用户之间的联络人。 在大多数情况下，这可以为用户节省大量时间和精力。 有关详细信息，请参阅 [Cortana 设计指南](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
 [Cortana 设计指南](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
  
@@ -100,7 +100,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   Tablet
+-   平板电脑
 -   电脑和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -133,7 +133,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 听写通常在应用无需理解含义或意图的情况下使用。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
 [语音设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
  
@@ -142,7 +142,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 
 笔（或触笔）可用作像素精确的定位设备（如鼠标），并且是用于数字墨迹输入的最佳设备。
 
-**请注意**  笔设备的两种类型： 主动和被动。
+**请注意**  ，有两种类型的笔设备：主动和被动。
   -   被动式笔中不包含电子组件，并且可以有效模仿手指的触摸输入。 它们要求能够识别基于触点压力的输入的基本设备屏幕。 因为用户在输入面上书写时经常把手放在上面，所以输入数据由于防误触失败会受到污染。
   -   主动式笔中包含电子组件，并且可以与复杂的设备屏幕结合使用，以向系统和应用提供更广泛的输入数据（包括悬停或邻近数据）。 防误触功能更加强大。
 
@@ -151,7 +151,7 @@ UWP 使用“智能”的上下文交互系统，在大多数情况下消除了�
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   Tablet
+-   平板电脑
 -   电脑和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -166,19 +166,19 @@ Windows 墨迹平台与笔设备相得益彰，提供了一种创建手写便笺
 
 应该提供特定于笔的 UI 命令或提示来支持这些交互。 例如，使用“上一页”和“下一页”（或 + 和 -）按钮，使用户可以翻阅网页内容，或者旋转对象、调整对象大小和对对象进行缩放。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
 [笔设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
  
 
-## <a name="touch"></a>触控
+## <a name="touch"></a>触摸
 
 借助触摸，可以将一个或多个手指组成的肢体手势用作一种备用输入法（类似于鼠标或笔）来模拟 UI 元素的直接操作（如平移、旋转、调整大小或移动），也可以将其用作一种补充输入法来修改其他输入的各个方面（例如涂抹使用笔绘制的笔划墨迹）。 当用户在屏幕上与元素进行交互时，此类可触知体验可以为用户提供更自然的真实感觉。
 
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   Tablet
+-   平板电脑
 -   电脑和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -201,7 +201,7 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 -   对设备方向没有限制。
 -   用于所有交互，包括文本输入（触摸键盘）和墨迹书写（应用配置）。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
 [触摸设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)
  
@@ -225,21 +225,21 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 
 应该提供特定于鼠标的 UI 命令或提示来支持这些交互。 例如，使用“上一页”和“下一页”（或 + 和 -）按钮，使用户可以翻阅网页内容，或者旋转对象、调整对象大小和对对象进行缩放。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
 [触摸板设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
  
 
-## <a name="keyboard"></a>键盘
+## <a name="keyboard"></a>Keyboard
 
 键盘是主要的文本输入设备。对于残障人士，或者认为键盘是与应用交互的最快和最有效方法的用户而言，键盘通常非常重要。
 
-与[手机的 Continuum](https://go.microsoft.com/fwlink/p/?LinkID=699431)，兼容的 Windows 10 移动版设备的新体验，用户可以连接自己的手机，到鼠标和键盘进行自己的工作方式是便携式计算机类似的手机。
+通过兼容 Windows 10 移动版设备新体验的[适用于手机的 Continuum](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN)，用户可以将手机连接鼠标和键盘来使手机像笔记本电脑一样工作。
 
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   Tablet
+-   平板电脑
 -   电脑和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -254,9 +254,9 @@ Surface Hub 设备可以识别 100 个独特的并发触摸点。
 
 OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或其他定位设备（不需要触摸屏）来使用屏幕键盘代替物理键盘键入和输入数据。 OSK 是针对没有物理键盘的系统提供的，或者是为行动有障碍而无法使用传统物理输入设备的用户而提供的。 OSK 可模拟硬件键盘的大部分功能（如果不是全部功能）。
 
-触摸键盘是一种借助触摸屏输入来输入文本的可视软件键盘。 触摸键盘不可以代替 OSK，因为它仅用于文本输入（它不模拟硬件键盘），并且仅在文本字段或其他可编辑的文本控件获得焦点时显示。 触摸键盘不支持应用或系统命令。
+触摸键盘是一种借助触摸输入来输入文本的可视软件键盘。 触摸键盘不可以代替 OSK，因为它仅用于文本输入（它不模拟硬件键盘），并且仅在文本字段或其他可编辑的文本控件获得焦点时显示。 触摸键盘不支持应用或系统命令。
 
-**请注意**  OSK 优先于触摸键盘，不会显示 OSK 是否存在。
+**请注意**  ，OSK 的优先级高于触摸键盘，如果 OSK 存在，则不会显示。
 
 一般而言，键盘：
 
@@ -265,7 +265,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 -   用于文本输入、导航、玩游戏以及辅助功能。
 -   始终可用，无论是主动式还是被动式。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
 [键盘设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
  
@@ -277,7 +277,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   Tablet
+-   平板电脑
 -   电脑和笔记本电脑
 -   Surface Hub
 -   IoT
@@ -292,7 +292,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 
 应该提供特定于鼠标的 UI 命令或提示来支持这些交互。 例如，使用“上一页”和“下一页”（或 + 和 -）按钮，使用户可以翻阅网页内容，或者旋转对象、调整对象大小和对对象进行缩放。
 
-### <a name="more-info"></a>详细信息
+### <a name="more-info"></a>更多信息
 
 [鼠标设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
  
@@ -335,7 +335,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 -   IoT
 -   Xbox
 
-![控制器](images/input-interactions/icons-controller01.png)
+![controller](images/input-interactions/icons-controller01.png)
 
 ### <a name="typical-usage"></a>典型用法
 
@@ -349,7 +349,7 @@ OSK 是一种可视软件键盘，你可以借助触摸、鼠标、笔/触笔或
 ### <a name="device-support"></a>设备支持
 
 -   手机和平板手机
--   Tablet
+-   平板电脑
 -   电脑和笔记本电脑
 -   Surface Hub
 -   IoT

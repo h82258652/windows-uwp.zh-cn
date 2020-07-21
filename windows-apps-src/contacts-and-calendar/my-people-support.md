@@ -5,14 +5,17 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67a96b8423d589036ef1c6896f056d097282dc33
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 9e58334dafa35004080b7ed109fa90e253399040
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820228"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683475"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>为应用程序添加“我的人脉”支持
+
+> [!Note]
+> 从 Windows 10 2019 更新版（版本1903）中，默认情况下，新的 Windows 10 安装将不再显示 "任务栏中的人员"。 客户可以通过右键单击任务栏并按 "在任务栏上显示人员" 来启用此功能。 不建议开发人员将我的人员支持添加到其应用程序，并应访问[Windows 开发人员博客](https://blogs.windows.com/windowsdeveloper/)，了解有关优化 windows 10 应用的详细信息。
 
 利用“我的人脉”功能，用户可以从应用程序中将联系人直接固定到其任务栏，从而创建一个可通过多种方式与之进行交互的新联系人对象。 本文介绍如何为此功能添加支持，以允许用户直接从应用固定联系人。 固定联系人后，可以使用新型用户交互，如[“我的人脉”共享](my-people-sharing.md)和[通知](my-people-notifications.md)。
 
@@ -20,15 +23,15 @@ ms.locfileid: "67820228"
 
 ## <a name="requirements"></a>要求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++ Windows 10 和 Microsoft Visual Studio 2019。 有关安装详细信息，请参阅[设置 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
++ C# 或类似面向对象的编程语言的基础知识。 若要开始使用 C#，请参阅[创建“Hello, world”应用](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="overview"></a>概述
 
 你需要执行以下三项操作以使应用程序能够使用“我的人脉”功能：
 
-1. [声明对应用程序清单中的 shareTarget 激活协定的支持。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [批注的用户可以使用您的应用程序共享的联系人。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+1. [在应用程序清单中声明对 shareTarget 激活约定的支持。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
+2. [使用你的应用来批注用户可以共享的联系人。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  支持同时运行应用程序的多个实例。 用户必须能够与完整版本的应用程序进行交互，并且可以同时在联系人面板中使用该应用程序。  他们甚至可以同时在多个联系人面板中使用该应用程序。  为了对此提供支持，应用程序需要能够同时运行多个视图。 若要了解如何执行此操作，请参阅文章[“显示应用的多个视图”](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views)。
 
 完成此操作后，应用程序将显示在已注释联系人的联系人面板中。
@@ -101,7 +104,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，并在“打包”选项卡中查找。在此，“应用”是与应用程序启动视图相对应的可激活类。
+“appId”是后跟“!” 和可激活的类 ID 的包系列名称。 若要查找你的包系列名称，请使用默认编辑器打开 **Package.appxmanifest**，然后查找“Packaging”选项卡。在这里，“App”是指与应用程序启动视图对应的可激活类。
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>允许联系人邀请新的潜在用户
 
@@ -169,7 +172,7 @@ override protected void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-使用此合约激活应用程序后，它将收到 [ContactPanelActivatedEventArgs 对象](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs)。  这包含应用程序启动时尝试与之进行交互的联系人的 ID，以及 [ContactPanel](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactpanel) 对象。 你应该保留对此 ContactPanel 对象的引用，这样，你将可以与面板进行交互。
+使用此合约激活应用程序后，它将收到 [ContactPanelActivatedEventArgs 对象](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.contactpanelactivatedeventargs)。  这包含应用程序启动时尝试与之进行交互的联系人的 ID，以及 [ContactPanel](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactpanel) 对象。 你应该保留对此 ContactPanel 对象的引用，这样，你将可以与面板进行交互。
 
 ContactPanel 对象有应用程序应该侦听的两个事件：
 + 当用户调用了要求在其自己的窗口中启动完整应用程序的 UI 元素后，将会发送 **LaunchFullAppRequested** 事件。  你的应用程序负责自行启动并传递所有必需的上下文。  但是，你可以根据喜好自由地执行此操作（例如，通过协议启动）。
@@ -179,13 +182,13 @@ ContactPanel 对象还允许你设置联系人面板标题的背景颜色（如�
 
 ## <a name="supporting-notification-badging"></a>支持通知锁屏提醒
 
-如果想要任务栏中固定的联系人在应用收到来自与该联系人相关的新通知时进行锁屏提醒，则你必须将 **hint-people**参数包含在 [Toast 通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) 中并在[“我的人脉”通知](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications)中体现出来。
+如果想要任务栏中固定的联系人在应用收到来自与该联系人相关的新通知时进行锁屏提醒，则你必须将 **hint-people**参数包含在 [Toast 通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) 中并在[“我的人脉”通知](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-notifications)中体现出来。
 
 ![人脉通知锁屏提醒](images/my-people-badging.png)
 
 若要为联系人设置锁屏提醒，最高级 Toast 节点必须包含 hint-people 参数，以表示发送或相关联系人。 此参数可能具有以下任何值：
 + **电子邮件地址** 
-    + 例如 [https://doi.org/10.13012/J8PN93H8](mailto:johndoe@mydomain.com)
+    + 例如 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](mailto:johndoe@mydomain.com)
 + **电话号码** 
     + 例如 tel:888-888-8888
 + **远程 ID** 
@@ -203,12 +206,12 @@ ContactPanel 对象还允许你设置联系人面板标题的背景颜色（如�
 ```
 
 > [!NOTE]
-> 如果应用使用 [ContactStore API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore)，并且使用 [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 属性将存储在电脑上的联系人链接至远程存储的联系人，则 RemoteId 属性的值必须稳定并且是唯一的。 这意味着远程 ID 必须一致地标识单个用户帐户，并且应包含唯一标记，以保证它不与电脑上其他联系人（包括其他应用所拥有的联系人）的远程 ID 冲突。
+> 如果应用使用 [ContactStore API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore)，并且使用 [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 属性将存储在电脑上的联系人链接至远程存储的联系人，则 RemoteId 属性的值必须稳定并且是唯一的。 这意味着远程 ID 必须一致地标识单个用户帐户，并且应包含唯一标记，以保证它不与电脑上其他联系人（包括其他应用所拥有的联系人）的远程 ID 冲突。
 > 如果无法保证应用所使用的远程 ID 的稳定性和唯一性，则可以使用本主题后面所显示的 RemoteIdHelper 类，以便在将所有远程 ID 添加到系统之前，先将唯一标记添加到这些 ID 中。 或者你可以选择彻底不使用 RemoteId 属性，而是创建一个自定义扩展属性来存储联系人的远程 ID。
 
 ## <a name="the-pinnedcontactmanager-class"></a>PinnedContactManager 类
 
-[PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) 用于管理将哪些联系人固定到任务栏。 利用此类，你可以固定和取消固定联系人、确定是否固定了联系人，并确定当前运行应用程序的系统是否支持在特定图面上进行固定。
+[PinnedContactManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager) 用于管理将哪些联系人固定到任务栏。 利用此类，你可以固定和取消固定联系人、确定是否固定了联系人，并确定当前运行应用程序的系统是否支持在特定图面上进行固定。
 
 你可以使用 **GetDefault** 方法检索 PinnedContactManager 对象：
 
@@ -248,11 +251,11 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **注意：** 
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 + [“我的人脉”共享](my-people-sharing.md)
-+ [我的用户通知](my-people-notifications.md)
-+ [第 9 频道视频添加到应用程序支持我的人](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [我的人员的集成示例](https://aka.ms/mypeoplebuild2017)
-+ [请联系卡示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
-+ [PinnedContactManager 类文档](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [将你的应用与联系人卡片上的操作关联起来](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [我的人员通知](my-people-notifications.md)
++ [向应用程序添加我的人员支持时的第9频道视频](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [我的人员集成示例](https://github.com/tonyPendolino/MyPeopleBuild2017)
++ [联系人卡片示例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [PinnedContactManager 类文档](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [将你的应用与联系人卡片上的操作关联起来](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/integrating-with-contacts)

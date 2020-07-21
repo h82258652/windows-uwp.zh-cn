@@ -8,10 +8,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "63808749"
 ---
 # <a name="thumbnail-images"></a>缩略图图像
@@ -100,7 +100,7 @@ ms.locfileid: "63808749"
 <th>使用以下方法检索时： <ul><li>SingleItem</ul></th>
 <tr>
 <tr>
-<td>Picture</td>
+<td>图片</td>
 <td>缩略图使用文件的原始纵横比。 <br />
 <img src="images/thumbnail-pic-picvidmode.png" alt="Picture thumbnail in picture or video mode"/></td>
 <td>缩略图裁剪为平方纵横比。 <br />

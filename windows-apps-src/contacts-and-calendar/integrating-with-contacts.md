@@ -7,16 +7,16 @@ ms.topic: article
 keywords: windows 10, uwp, 联系人, 联系人卡片, 注释
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 506f0d2c778a934c3f8861493f4a512a39fe66fc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8310b7c5b629d8d3a35a05b1124b140ebf35cf17
+ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360456"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73061870"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>将你的应用与联系人卡片上的操作关联起来
 
-你的应用可以显示在联系人卡片或微型联系人卡片上的操作旁边。 用户可以选择你的应用执行某项操作，如打开个人资料页面、打电话或发送消息。
+你的应用可以显示在联系人卡片或微型联系人卡片上的操作旁边。 用户可以选择你的应用来执行某项操作，如打开个人资料页面、打电话或发送消息。
 
 ![联系人卡片和微型联系人卡片](images/all-contact-cards.png)
 
@@ -136,7 +136,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
   </uap:Extension>
 </Extensions>
 ```
-你还可以在 Visual Studio 中的清单设计器的“声明”  选项卡中添加这些协议处理程序。
+你还可以在 Visual Studio 中的清单设计器的“声明”选项卡中添加这些协议处理程序。
 
 ![清单设计器的“声明”选项卡](images/manifest-designer-protocols.png)
 
@@ -154,7 +154,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
 
 ![微型联系人卡片](images/mini-contact-card.png)
 
-“邮件”  应用等应用会打开微型联系人卡片。 你的应用也可以打开它们。 此代码演示如何执行该操作。
+“邮件”应用等应用会打开微型联系人卡片。 你的应用也可以打开它们。 此代码演示如何执行该操作。
 
 ```cs
 public async void OpenContactCard(object sender, RoutedEventArgs e)
@@ -185,7 +185,7 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 在页面的代码隐藏文件中，替代 [Page.OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 方法。 联系人卡片向此方法传递操作名称和用户 ID。
 
-若要启动的视频或音频的调用，请参阅此示例：[VoIP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 你将在 [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls) 命名空间中找到完整的 API。
+若要启动视频或音频通话，请参阅此示例：[VoIP 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 你将在 [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls) 命名空间中找到完整的 API。
 
 若要促进消息传送，请参阅 [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat) 命名空间。
 
@@ -204,7 +204,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
         var options = new Windows.System.LauncherOptions();
         options.DisplayApplicationPicker = true;
 
-        options.TargetApplicationPackageFamilyName = “ContosoApp”;
+        options.TargetApplicationPackageFamilyName = "ContosoApp";
 
         string launchString = args.uri.Scheme + ":" + args.uri.Query;
         var launchUri = new Uri(launchString);

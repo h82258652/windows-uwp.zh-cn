@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ecb325566733e57c1ae9d1a13c68b25794e9e87
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.openlocfilehash: ae37ab763b6705fbb3f341569904972ebb181412
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360040"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74254687"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>应用启动性能的最佳实践
 
@@ -32,7 +32,7 @@ ms.locfileid: "66360040"
 
 以下过程描述了如何运行 Ngen.exe 来编译你的应用。
 
-**若要运行 Ngen.exe**
+**运行 Ngen.exe**
 
 1.  至少运行你的应用一次，以确保 Ngen.exe 能检测到它。
 2.  通过执行以下操作之一，打开“任务计划程序”  ：
@@ -54,7 +54,7 @@ Ngen.exe 编译计算机上所有已被使用和不拥有本机映像的应用�
 
 ### <a name="defer-work-as-long-as-possible"></a>尽量推迟工作
 
-要增加应用的启动时间，请仅处理必须要完成的工作，以让用户开始与应用交互。 如果你可延迟加载其他程序集，这样会十分有利。 常见语言运行时间加载首次使用的程序集。 如果你能将所加载的程序集数目降至最低，则应该能够改善应用的启动时间及其内存消耗。
+要改善应用的启动时间，请仅处理必须要完成的工作，以让用户开始与应用交互。 如果你可延迟加载其他程序集，这样会十分有利。 常见语言运行时间加载首次使用的程序集。 如果你能将所加载的程序集数目降至最低，则应该能够改善应用的启动时间及其内存消耗。
 
 ### <a name="do-long-running-work-independently"></a>独立执行长时间的运行工作
 
@@ -323,7 +323,7 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 > End Class
 > ```
 
-有关使用延长的初始屏幕的示例，请参阅[初始屏幕示例](https://go.microsoft.com/fwlink/p/?linkid=234889)。
+有关使用延长的初始屏幕的示例，请参阅[初始屏幕示例](https://code.msdn.microsoft.com/windowsapps/Splash-screen-sample-89c1dc78)。
 
 ### <a name="phase-3"></a>第 3 阶段
 
@@ -339,7 +339,7 @@ XAML 应用中的启动性能与启动期间创建的元素数直接关联。 �
 
 可重用的代码经常以在一个项目中包含的多个模块 (DLL) 的形式出现。 加载这些模块要求访问磁盘，你可以想象得出来，这样做会增加开销。 虽然这对冷启动的影响最大，但对热启动同样有影响。 对于 C# 和 Visual Basic，CLR 将通过按需加载程序集尽可能力求延迟该开销。 即，在已执行的方法引用某个模块之前，CLR 不会加载该模块。 因此，请在启动代码中仅引用启动你的应用所必需的程序集，这样 CLR 就不会加载不必要的模块。 如果包含不必要的引用的启动路径中有未使用的代码路径，那么你可以将这些代码路径移动到其他方法，以避免不必要的负载。
 
-减少模块负载的另一个方法是组合你的应用模块。 加载一个大型程序集花费的时间通常比加载两个小型程序集的时间要少。 该方法并非始终可用。并且，仅当组合模块不会对开发人员生产效率或代码可重用性造成实质性影响时，你才应组合模块。 你可以使用 [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 性能分析器 (WPA)](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) 等工具来查明在启动时加载了哪些模块。
+减少模块负载的另一个方法是组合你的应用模块。 加载一个大型程序集花费的时间通常比加载两个小型程序集的时间要少。 该方法并非始终可用。并且，仅当组合模块不会对开发人员生产效率或代码可重用性造成实质性影响时，你才应组合模块。 你可以使用 [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) 或 [Windows 性能分析器 (WPA)](https://docs.microsoft.com/previous-versions/windows/desktop/xperf/windows-performance-analyzer--wpa-) 等工具来查明在启动时加载了哪些模块。
 
 ### <a name="make-smart-web-requests"></a>发出智能 Web 请求
 

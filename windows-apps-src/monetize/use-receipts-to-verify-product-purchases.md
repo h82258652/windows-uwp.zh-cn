@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: windows 10, uwp, 应用内购买, IAP, 收据, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cae88e57a61e6d4e982f1eac7e65582861ef5d2
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: ba87de0755469f373f9000f3d96d3021c9197985
+ms.sourcegitcommit: 28bd367ab8acc64d4b6f3f73adca12100cbd359f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58335005"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82148889"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收据验证产品购买
 
@@ -87,7 +87,7 @@ ms.locfileid: "58335005"
 
 ## <a name="validating-a-receipt"></a>验证收据
 
-若要验证收据的真实性，需要后端系统（Web 服务或类似系统）使用公钥证书检查收据的签名。 若要获取此证书，请使用 URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```，其中 ```CertificateId``` 是收据中的 **CertificateId** 值。
+若要验证收据的真实性，需要后端系统（Web 服务或类似系统）使用公钥证书检查收据的签名。 若要获取此证书，请使用```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ```URL CertificateId "" 是回执中的**CertificateId**值。
 
 以下是该验证过程的一个示例。 此代码在 .NET Framework 控制台应用程序中运行，该应用程序包含对 **System.Security** 程序集的引用。
 
@@ -104,15 +104,15 @@ ms.locfileid: "58335005"
 
 此文件的根元素是 **Receipt** 元素，其中包含应用和应用内购买的信息。 此元素包含以下子元素。
 
-|  元素  |  必需  |  数量  |  描述   |
+|  元素  |  必选  |  数量  |  说明   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含当前应用的购买信息。            |
-|  [ProductReceipt](#productreceipt)  |     否       |  0 或更多    |   包含有关当前应用的应用内购买的信息。     |
-|  签名  |      是      |  1   |   此元素是一种标准 [XML-DSIG 构造](https://go.microsoft.com/fwlink/p/?linkid=251093)。 它包含 **SignatureValue** 元素（其中包含可用于验证收据的签名）和 **SignedInfo** 元素。      |
+|  [ProductReceipt](#productreceipt)  |     否       |  0 个或更多    |   包含有关当前应用的应用内购买的信息。     |
+|  签名  |      是      |  1   |   此元素是一种标准 [XML-DSIG 构造](https://www.w3.org/TR/xmldsig-core/)。 它包含 **SignatureValue** 元素（其中包含可用于验证收据的签名）和 **SignedInfo** 元素。      |
 
 **Receipt** 具有以下必属性。
 
-|  特性  |  描述   |
+|  特性  |  说明   |
 |-------------|-------------------|
 |  **版本**  |    收据的版本号。            |
 |  **CertificateId**  |     用于对收据进行签名的证书指纹。          |
@@ -127,12 +127,12 @@ ms.locfileid: "58335005"
 
 **AppReceipt** 具有以下属性。
 
-|  特性  |  描述   |
+|  特性  |  说明   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     操作系统用于该应用的程序包系列名称值。           |
 |  **LicenseType**  |    **完整**，如果用户购买了完整版本的应用。 **试用**，如果用户下载了应用的试用版。           |  
-|  **PurchaseDate**  |    获得应用的日期。          |  |
+|  **购买日期**  |    获得应用的日期。          |  |
 
 <span id="productreceipt" />
 
@@ -142,13 +142,13 @@ ms.locfileid: "58335005"
 
 **ProductReceipt** 具有以下属性。
 
-|  特性  |  描述   |
+|  特性  |  说明   |
 |-------------|-------------------|
 |  **Id**  |    标识购买。           |
 |  **AppId**  |     标识应用，用户通过该应用进行购买。           |
 |  **ProductId**  |     标识购买的产品。           |
 |  **ProductType**  |    确定产品类型。 当前仅支持值 **Durable**。          |  
-|  **PurchaseDate**  |    购买发生的日期。          |  |
+|  **购买日期**  |    购买发生的日期。          |  |
 
  
 

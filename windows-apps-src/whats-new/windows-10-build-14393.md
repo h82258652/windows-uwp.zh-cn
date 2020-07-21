@@ -1,39 +1,39 @@
 ---
-title: 面向开发人员的 Windows 10 的新增功能、工具和功能
+title: Windows 10 内部版本 14393 中的新增功能
 description: Windows 10 内部版本 14393 和新开发人员工具将提供新的通用 Windows 平台支持的工具、功能和体验。
-keywords: 新增功能, 新增功能, 更新, 更新, 功能, 新, Windows 10, 1607, 7 月, 最新, 14393
+keywords: Windows 10, 1607, 14393
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: 037963109fd6f70a60c17dc1b6c1b4eef82fb080
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: e3d21531e2fc1b0ec8aee513d5a7b86281232d95
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67821108"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234648"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>面向开发人员的 Windows 10 内部版本 14393 中的新增功能
 
-Windows 10 内部版本 14939（又称周年更新或版本 1607）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 14939（又称周年更新或版本 1607）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-下面是开发人员感兴趣的新功能和改进的功能列表。 有关添加到 Windows SDK 的新命名空间的原始列表，请参阅 [Windows 10 内部版本 14393 API 更改](windows-10-build-14393-api-diff.md)。 有关此更新中亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。
+下面是开发人员感兴趣的新功能和改进的功能列表。 有关添加到 Windows SDK 的新命名空间的原始列表，请参阅 [Windows 10 内部版本 14393 API 更改](windows-10-build-14393-api-diff.md)。 有关此更新中亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。
 
 ## <a name="windows-10-build-14393---july-2016"></a>Windows 10 内部版本 14393 - 2016 年 7 月
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 XAML 元素的访问密钥 | 可以使用新的 [**AccessKey**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.accesskey) 属性和 [**AccessKeyManager**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.accesskeymanager) 改进应用的键盘辅助功能。
 动态 GIF 支持 | XAML [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) 元素支持动态 GIF。 可对 [**BitmapImage**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 使用这些新成员来控制播放：[**AutoPlay**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.autoplay)、[**IsAnimatedBitmap**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.isanimatedbitmap)、[**IsPlaying**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.isplaying)、[**Play**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.play)、[**Stop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.stop)。
-应用可扩展性 | 编写 UWP 应用的[扩展](https://aka.ms/appextensibility)。 允许 UWP 应用托管由其他 UWP 应用提供的内容。  从这些应用发现、枚举和访问只读内容。
+应用可扩展性 | 编写 UWP 应用的[扩展](https://github.com/microsoft/App-Extensibility-Sample)。 允许 UWP 应用托管由其他 UWP 应用提供的内容。  从这些应用发现、枚举和访问只读内容。
 评估测试 | [参加测验](https://docs.microsoft.com/education/windows/take-tests-in-windows-10?f=255&MSPPError=-2147217396)是基于浏览器的应用，为高风险测试提供锁定的在线评估。 使用[参加测验 API](../apps-for-education/take-a-test-api.md) 防止学生在测试时使用其他计算机或 Internet 资源。
-后台智能传输服务 (BITS) | 现在可以在 PowerShell 远程会话中使用 [BITS](https://docs.microsoft.com/windows/desktop/Bits/background-intelligent-transfer-service-portal) COM API 和 PowerShell cmdlet（如果可用）。 管理没有本地登录功能的 Windows Server 2016 Technical Preview 版本时，此功能尤其有用。 BITS 作业通过在会话的用户帐户上下文中运行的 PowerShell 远程会话启动，并且仅在至少有一个与该用户帐户关联的活动本地登录会话或 PowerShell 远程会话时才会取得进展。 有关如何管理传输运行时间较长的会话的详细信息，请参阅[管理 PowerShell 远程会话](https://docs.microsoft.com/windows/desktop/Bits/using-windows-powershell-to-create-bits-transfer-jobs)。<br/><br/>在支持 [BITS 帮助程序令牌](https://docs.microsoft.com/windows/desktop/Bits/helper-tokens-for-bits-transfer-jobs)的以前版本的 Windows 中，作业所有者实际上必须要有管理员权限才能设置帮助程序令牌。 在此版本中，BITS 作业所有者现在无需成为管理员即可设置帮助程序令牌，前提是帮助程序令牌没有管理员功能。 通过使这些令牌在低权限的 NetworkService 帐户而非在具有管理权限的帐户下运行，这可以减少后台下载或更新工具的漏洞占用。
-改进了对颜色字体的支持 | Direct2D 现在支持呈现更多种颜色字体格式，这允许开发人员在支持 Direct2D 的应用中使用比以前更多的字体类型。 这包括对以下内容的支持： <br/>&bull;“sbix”OpenType 表，在字体中支持颜色位图内容。<br/>&bull;“SVG”OpenType 表，在字体中支持 SVG 内容。<br/>&bull;“CBDT”OpenType 表，在字体中支持颜色位图内容。 <br/><br/>启用 **D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT** 标志时，Direct2D 自动支持这些颜色字体格式。  有关详情，请参阅以下主题： <br>&bull;[**ID2D1DeviceContext4**](https://go.microsoft.com/fwlink/?LinkId=822793)<br>&bull;[**D2D1_DRAW_TEXT_OPTIONS**](https://go.microsoft.com/fwlink/?LinkId=822794)<br>&bull;[**ID2D1SvgGlyphStyle**](https://go.microsoft.com/fwlink/?LinkId=822795)     
+后台智能传送服务 (BITS) | 现在可以在 PowerShell 远程会话中使用 [BITS](https://docs.microsoft.com/windows/desktop/Bits/background-intelligent-transfer-service-portal) COM API 和 PowerShell cmdlet（如果可用）。 管理没有本地登录功能的 Windows Server 2016 Technical Preview 版本时，此功能尤其有用。 BITS 作业通过在会话的用户帐户上下文中运行的 PowerShell 远程会话启动，并且仅在至少有一个与该用户帐户关联的活动本地登录会话或 PowerShell 远程会话时才会取得进展。 有关如何管理传输运行时间较长的会话的详细信息，请参阅[管理 PowerShell 远程会话](https://docs.microsoft.com/windows/desktop/Bits/using-windows-powershell-to-create-bits-transfer-jobs)。<br/><br/>在支持 [BITS 帮助程序令牌](https://docs.microsoft.com/windows/desktop/Bits/helper-tokens-for-bits-transfer-jobs)的以前版本的 Windows 中，作业所有者实际上必须要有管理员权限才能设置帮助程序令牌。 在此版本中，BITS 作业所有者现在无需成为管理员即可设置帮助程序令牌，前提是帮助程序令牌没有管理员功能。 通过使这些令牌在低权限的 NetworkService 帐户而非在具有管理权限的帐户下运行，这可以减少后台下载或更新工具的漏洞占用。
+改进了对颜色字体的支持 | Direct2D 现在支持呈现更多种颜色字体格式，这允许开发人员在支持 Direct2D 的应用中使用比以前更多的字体类型。 这包括对以下内容的支持： <br/>&bull;“sbix”OpenType 表，在字体中支持颜色位图内容。<br/>&bull;“SVG”OpenType 表，在字体中支持 SVG 内容。<br/>&bull;“CBDT”OpenType 表，在字体中支持颜色位图内容。 <br/><br/>启用 **D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT** 标志时，Direct2D 自动支持这些颜色字体格式。  有关详情，请参阅以下主题： <br>&bull;[**ID2D1DeviceContext4**](https://docs.microsoft.com/windows/win32/api/d2d1_3/nn-d2d1_3-id2d1devicecontext4?redirectedfrom=MSDN)<br>&bull;[**D2D1_DRAW_TEXT_OPTIONS**](https://docs.microsoft.com/windows/win32/api/d2d1/ne-d2d1-d2d1_draw_text_options?redirectedfrom=MSDN)<br>&bull;[**ID2D1SvgGlyphStyle**](https://docs.microsoft.com/windows/win32/api/d2d1_3/nn-d2d1_3-id2d1svgglyphstyle?redirectedfrom=MSDN)     
 CommandBar 动态溢出 | 没有足够空间显示全部内容时，[**Commandbar**](https://docs.microsoft.com/windows/uwp/controls-and-patterns/app-bars) 中的主要命令现在可自动移至溢出菜单。
 组合交互 API| 新的 [**Windows.UI.Composition.Interactions**](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions) 命名空间允许你访问促进动画和效果的输入。  可视化层中的新 API 系列有助于使应用即使在 UI 线程停顿和繁忙时也可以即时响应。  
 Windows.UI.Composition | [  **Windows.UI.Composition**](https://docs.microsoft.com/uwp/api/windows.ui.composition) 命名空间添加了对许多功能的支持，包括： <br/><br/>&bull; 阴影 - 用于向应用提供现实世界的深入体验 <br/>&bull; 场景照明 - 通过照射控件并为应用程序提供不同效果，可以多角度查看控件和 UI。<br/>&bull; 模糊效果 - 允许你聚焦正确信息，模糊其他信息。 可以动画方式模糊 UI，以使它们更生动。  <br/>&bull; 隐式动画 - 隐式动画有助于在视觉效果属性更改时对视觉进行动画处理。 可以使用隐式动画执行布局动画，即当应用布局更改时，可以在其新位置对它们进行动画处理。 <br/>&bull; CompositionBackdropBrush - CompositionBackdropBrush 是新的画笔类型，可用于选择当前 RenderTarget 作为效果输入内容。<br/>&bull; LayerVisual - 用于将某个效果应用到某个视觉效果集合中。 例如 UI 的灰度部分指示 UI 的禁用部分<br/>&bull; CompositionMashBrush - 用于指定不透明蒙板<br/>&bull; 剪裁转换 - 用于将转换应用到剪裁矩形<br/>&bull; 表面画笔转换 - 用于将转换应用到 CompositionSurfaceBrush<br/>&bull; CompositionNineGridBrush - 用于在图像上指定九网格大小调整插入，或者创建矩形纯色边框。<br/>&bull; 表达式字符串添加 - 表达式字符串支持新函数、表达式运算符和关键字。
 连接的动画 | [  **ConnectedAnimationService**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) 允许你当用户在场景或页面之间移动时运行动画。 有关详细信息，请参阅此[连接的动画](https://channel9.msdn.com/Events/Build/2016/P485)视频。
-连接的应用 | 发现连接了云的设备或附近设备，并生成在这些设备之间无缝过渡的体验。 有关详细信息，请参阅[连接的应用和设备](https://aka.ms/Bttm1d)。
+连接的应用 | 发现连接了云的设备或附近设备，并生成在这些设备之间无缝过渡的体验。 有关详细信息，请参阅[连接的应用和设备](https://docs.microsoft.com/windows/uwp/launch-resume/connected-apps-and-devices?redirectedfrom=MSDN)。
 桌面应用转换器 | 桌面应用转换器是一款工具，允许你将为 .NET 4.6.1 或 Win32 编写的现有桌面应用发布到通用 Windows 平台 (UWP)。
 开发应用的辅助功能 | 使用[应用辅助功能指南](https://developer.microsoft.com/windows/accessible-apps)设计非独占软件，提升可用性和客户满意度。 从辅助功能技术产品案例中获得启发。 在新的开发人员中心查找向所有人提供应用的信息。
 Direct3D | 已向 Direct 3D 文档中添加了许多新主题。 有关这些更新的详细信息，请参阅 [Direct3D 12 新版本页面](https://docs.microsoft.com/windows/desktop/direct3d12/new-releases)中的 **Windows 10 版本 1607**。
@@ -56,9 +56,9 @@ StreamSocket | 向 [**StreamSocket**](https://docs.microsoft.com/uwp/api/windows
 XAML ComboBox 中的文本搜索 | 当用户在组合框中键入内容时，会显示与用户键入的字符串相匹配的候选项。
 UI 自动化 | UI 自动化提供程序现在可以通过调用 [**UiaRaiseChangesEvent**](https://docs.microsoft.com/windows/desktop/api/uiautomationcoreapi/nf-uiautomationcoreapi-uiaraisechangesevent) 函数通知系统文档的更改。
 Xbox One 上的 UWP | 此更新以作为 Xbox One 上的通用 Windows 平台 (UWP) 的第一个完整版本为特色。 它包含新功能，对现有功能的更新和 Bug 修补程序。 有关详细信息，请参阅 [Xbox One 上的 UWP](https://docs.microsoft.com/windows/uwp/xbox-apps/index) 主题。
-Web 到应用链接 | 将应用与网站关联起来。 当用户打开指向网站的链接时，会打开应用。 有关详细信息，请参阅[使用 Uri 处理程序支持 Web 到应用链接](https://aka.ms/Hxfg4m)。
+Web 到应用链接 | 将应用与网站关联起来。 当用户打开指向网站的链接时，会打开应用。 有关详细信息，请参阅[使用 Uri 处理程序支持 Web 到应用链接](https://docs.microsoft.com/windows/uwp/launch-resume/web-to-app-linking?redirectedfrom=MSDN)。
 WebSockets | 添加了对 [**MessageWebSockets**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.messagewebsocket) 和 [**StreamWebSockets**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamwebsocket) 的支持，用于查看服务器证书、查看 SSL 协商期间服务器发送的中间证书、执行自定义服务器证书验证，以及指定要忽略的某些服务器证书错误。
 Windows 信息保护 (WIP) API | [**WIP**](https://docs.microsoft.com/windows/uwp/enterprise/wip-hub) 是台式机、笔记本电脑、平板电脑和手机上的一组用于移动设备管理 (MDM) 的功能。 WIP 可使企业更好地控制数据在企业管理的设备上的处理方式。 <br/><br/>可使用 WIP API 生成尊重数据策略的应用，同时将员工的个人数据分离，使其不受这些策略影响。 策略管理员将信任应用，允许它们使用组织数据。 员工也愿意他们的个人数据在设备上保持不变，即使取消注册组织的移动设备管理 (MDM) 或完全退出组织也是如此。
 Windows IOT 核心版 | Windows IoT 核心版现在完全支持 Raspberry Pi 3 以及远程屏幕体验，使用户能够远程查看和控制在 IoT 核心版设备上运行的 UWP 应用程序。
-具有配套 (IoT) 设备的 Windows 解锁 | 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用[配套设备框架](https://docs.microsoft.com/windows/uwp/security/companion-device-unlock)，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。
+具有配套 (IoT) 设备的 Windows 解锁 | 配套设备是可以与你的 Windows 10 桌面版一起使用来增强用户身份验证体验的设备。 通过使用[配套设备框架](https://docs.microsoft.com/windows/uwp/security/companion-device-unlock)，即使是在 Windows Hello 不可用时（例如 Windows 10 桌面版缺少相机进行面部身份验证或缺少指纹读取器设备），配套设备也能提供丰富的 Microsoft Passport 体验。
 Winsock | 通过设置 TCP_FASTOPEN 套接字选项，TCP 套接字现在可使用 [Winsock](https://tools.ietf.org/html/rfc7413) 进行配置，以使用 [RFC 7413](https://tools.ietf.org/html/rfc7413) TCP Fast Open。

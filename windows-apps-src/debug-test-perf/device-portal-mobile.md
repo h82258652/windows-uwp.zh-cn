@@ -4,14 +4,14 @@ title: 适用于移动设备的 Device Portal
 description: 了解 Windows Device Portal 是如何支持你远程配置和管理你的移动设备。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，设备门户
+keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 879f4b9fd8806565eedeabda95f0c24c5b7931d7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597222"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "72281889"
 ---
 # <a name="device-portal-for-mobile"></a>适用于移动设备的 Device Portal
 
@@ -31,25 +31,25 @@ ms.locfileid: "57597222"
 
 ![开发人员模式设备发现设置](images/device-portal/mob-dev-mode-pairing.png)
 
-你可以从连接到设备门户的三种方法中进行选择：USB、 本地主机，并通过本地网络 （包括 VPN 和 tethering）。
+你可以从 3 种方法中选择一种方法连接到 Device Portal：USB、本地主机和通过本地网络（包括 VPN 和网络共享）。
 
-**若要连接到设备门户**
+**连接到设备门户**
 
 1. 在浏览器中，针对使用的连接类型输入地址，如下所示。
 
-    - USB: `http://127.0.0.1:10080`
+    - USB：`http://127.0.0.1:10080`
 
     当手机通过 USB 连接连接到电脑时，使用此地址。 两台设备必须具有版本 1511 或更高版本的 Windows 10。
     
-    - 本地主机： `http://127.0.0.1`
+    - Localhost：`http://127.0.0.1`
 
     使用此地址，可通过手机上的 Windows 10 移动版 Microsoft Edge 以本地方式查看 Device Portal。
     
-    - 本地网络： `https://<The IP address or hostname of the phone>`
+    - 本地网络：`https://<The IP address or hostname of the phone>`
 
     使用此地址通过本地网络进行连接。
 
-    手机的 IP 地址显示在其 Device Portal 设置中。 身份验证和安全通信要求使用 HTTPS。 主机名（可在“设置”>“系统”>“关于”中进行编辑）还可用于访问本地网络（例如 http://Phone360)）上的设备门户，这对于可能频繁更改网络或 IP 地址的设备或者需要共享的设备非常有用。 
+    手机的 IP 地址显示在其 Device Portal 设置中。 身份验证和安全通信要求使用 HTTPS。 也可使用主机名（可在“设置”>“系统”>“关于”中进行编辑）在本地网络（例如 http://Phone360) ）上访问设备门户，对于可能频繁更换网络或 IP 地址的设备，或者需要共享的设备，这非常有用。 
 
 2. 在手机上按“配对”按钮以生成和显示所需的安全代码
 
@@ -78,10 +78,10 @@ Windows 移动版 Device Portal 中并未包含可以终止任意进程的功能
 - 性能图表
 - Windows 事件跟踪 (ETW)
 - 性能跟踪 (WPR) 
-- 设备
+- 资源协议转换请求
 - 网络
 
 ## <a name="see-also"></a>另请参阅
 
-* [Windows Device Portal 概述](device-portal.md)
-* [设备门户 core API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Windows 设备门户概述](device-portal.md)
+* [设备门户核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

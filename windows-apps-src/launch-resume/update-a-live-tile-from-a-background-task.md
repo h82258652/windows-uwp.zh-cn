@@ -7,16 +7,16 @@ ms.date: 01/11/2018
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: 280f2253fda7de816ee753798dcab754d58ae847
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f2700f0e5ffa8c2d1c9f0500e967096763757cd9
+ms.sourcegitcommit: 9aef3bc26a56b8d266b3089d509f79b119234b6f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370555"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80538192"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>使用后台任务更新动态磁贴
 
-**重要的 Api**
+**重要的 API**
 
 -   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
 -   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
@@ -29,11 +29,11 @@ ms.locfileid: "66370555"
 
 ## <a name="create-the-background-task-project"></a>创建后台任务项目  
 
-要为应用启用动态磁贴，请向你的解决方案中添加一个新的 Windows 运行时组件项目。 这是一个独立程序集，当用户安装你的应用时，OS 需要在后台加载并运行该程序集。
+若要为应用程序启用动态磁贴，请将新的 Windows 运行时组件项目添加到解决方案中。 这是一个独立程序集，当用户安装你的应用时，OS 需要在后台加载并运行该程序集。
 
 1.  在“解决方案资源管理器”中，右键单击该解决方案、单击**添加**，然后单击**新建项目**。
-2.  在**添加新项目**对话框的**已安装 &gt; 其他语言 &gt; Visual C# &gt; Windows Universal** 部分中，选择 **Windows 运行时组件**模板。
-3.  将项目命名为 BackgroundTasks，然后单击或点击“确定”  。 Microsoft Visual Studio 即会将这个新项目添加到该解决方案。
+2.  在**添加新项目**对话框的**已安装**  其他语言  **Visual C# &gt; Windows Universal&gt; 部分中，选择 &gt;Windows 运行时组件**模板。
+3.  将项目命名为 BackgroundTasks，然后单击或点击“确定”。 Microsoft Visual Studio 即会将这个新项目添加到该解决方案。
 4.  在主项目中，向 BackgroundTasks 项目添加一个引用。
 
 ## <a name="implement-the-background-task"></a>实施后台任务
@@ -114,7 +114,7 @@ namespace BackgroundTasks
             // Create a tile notification for each feed item.
             foreach( var item in feed.Items )
             {
-                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWideText03 );
+                XmlDocument tileXml = TileUpdateManager.GetTemplateContent( TileTemplateType.TileWide310x150Text03 );
 
                 var title = item.Title;
                 string titleText = title.Text == null ? String.Empty : title.Text;
@@ -145,23 +145,23 @@ namespace BackgroundTasks
 若要设置包清单，请打开它并添加一个新的后台任务声明。 将该任务的入口点设置为类名称，包括其命名空间。
 
 1.  在解决方案资源管理器中，打开“Package.appxmanifest”。
-2.  单击或点击“声明”  选项卡。
-3.  在“可用声明”  下，选择BackgroundTasks  ，然后单击“添加”  。 Visual Studio 即会将BackgroundTasks  添加到“支持的声明”  下。
-4.  在“支持的任务类型”  下，确保已选中“计时器”  。
-5.  在“应用设置”  下，将入口点设置为BackgroundTasks.BlogFeedBackgroundTask  。
-6.  单击或点击“应用程序 UI”  选项卡。
-7.  将“锁屏界面通知”  设置为“锁屏提醒和磁贴文本”  。
-8.  在“锁屏提醒徽标”  字段中，将路径设置为 24x24 像素图标。
-    **重要**  此图标必须使用单色和透明像素。
-9.  在“小徽标”  字段中，将路径设置为 30x30 像素图标。
-10. 在“宽徽标”  字段中，将路径设置为 310x150 像素图标。
+2.  单击或点击“声明”选项卡。
+3.  在“可用声明”下，选择BackgroundTasks，然后单击“添加”。 Visual Studio 即会将BackgroundTasks添加到“支持的声明”下。
+4.  在“支持的任务类型”下，确保已选中“计时器”。
+5.  在“应用设置”下，将入口点设置为BackgroundTasks.BlogFeedBackgroundTask。
+6.  单击或点击“应用程序 UI”选项卡。
+7.  将“锁屏界面通知”设置为“锁屏提醒和磁贴文本”。
+8.  在“锁屏提醒徽标”字段中，将路径设置为 24x24 像素图标。
+    **重要**  此图标必须仅使用单色和透明像素。
+9.  在“小徽标”字段中，将路径设置为 30x30 像素图标。
+10. 在“宽徽标”字段中，将路径设置为 310x150 像素图标。
 
 ## <a name="register-the-background-task"></a>注册后台任务
 
 
 创建 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 以注册你的任务。
 
-> **请注意**  从 Windows 8.1，后台任务注册参数进行验证时注册。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
+> **注意**  从 Windows 8.1 开始，注册时将验证后台任务注册参数。 如果有任何注册参数无效，则会返回一个错误。 你的应用必须能够处理后台任务注册失败的情况，例如，使用条件语句检查注册错误，然后使用其他参数值重试失败的注册。
  
 
 在应用的主页中，添加 **RegisterBackgroundTask** 方法并在 **OnNavigatedTo** 事件处理程序中进行调用。
@@ -213,8 +213,8 @@ namespace ContosoApp
         private async void RegisterBackgroundTask()
         {
             var backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
-            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity ||
-                backgroundAccessStatus == BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity )
+            if( backgroundAccessStatus == BackgroundAccessStatus.AllowedSubjectToSystemPolicy ||
+                backgroundAccessStatus == BackgroundAccessStatus.AlwaysAllowed )
             {
                 foreach( var task in BackgroundTaskRegistration.AllTasks )
                 {
@@ -241,16 +241,16 @@ namespace ContosoApp
 ## <a name="debug-the-background-task"></a>调试后台任务
 
 
-若要调试后台任务，请在该任务的 Run 方法中设置一个断点。 在“调试位置”  工具栏中，选择你的后台任务。 这将导致系统立即调用 Run 方法。
+若要调试后台任务，请在该任务的 Run 方法中设置一个断点。 在“调试位置”工具栏中，选择你的后台任务。 这将导致系统立即调用 Run 方法。
 
 1.  在该任务的 Run 方法中设置一个断点。
-2.  按 F5 或点击“调试”&gt;“开始调试”  以部署和运行该应用。
+2.  按 F5 或点击“调试” **“开始调试”&gt;** 以部署和运行该应用。
 3.  应用启动后，切换回 Visual Studio。
-4.  确保显示“调试位置”  工具栏。 该工具栏位于“查看”&gt;“工具栏”  菜单上。
-5.  在“调试位置”  工具栏上，单击“暂停”  下拉菜单，然后选择BlogFeedBackgroundTask  。
+4.  确保显示“调试位置”工具栏。 该工具栏位于“查看” **“工具栏”&gt;** 菜单上。
+5.  在“调试位置”工具栏上，单击“暂停”下拉菜单，然后选择BlogFeedBackgroundTask。
 6.  Visual Studio 会在断点位置暂停执行。
-7.  按 F5 或点击“调试”&gt;“继续”  以继续运行该应用。
-8.  按 Shift+F5 或点击“调试”&gt;“停止调试”  以停止调试。
+7.  按 F5 或点击“调试” **“继续”&gt;** 以继续运行该应用。
+8.  按 Shift+F5 或点击“调试” **“停止调试”&gt;** 以停止调试。
 9.  返回到“开始”屏幕上的该应用磁贴。 几秒钟后，你的应用磁贴上将会显示磁贴通知。
 
 ## <a name="related-topics"></a>相关主题
@@ -259,8 +259,8 @@ namespace ContosoApp
 * [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 * [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager)
 * [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)
-* [支持使用后台任务对应用程序](support-your-app-with-background-tasks.md)
-* [指南和磁贴和徽章的核对清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
+* [支持包含后台任务的应用](support-your-app-with-background-tasks.md)
+* [磁贴和徽章的准则和核对清单](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)
 
  
 

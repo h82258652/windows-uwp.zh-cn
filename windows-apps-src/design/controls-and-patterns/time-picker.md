@@ -12,19 +12,27 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e8be583778ccbf47c61466033c58c784c4df4395
-ms.sourcegitcommit: e0ae346eadda864dcad1453cd1644668549e66e1
+ms.openlocfilehash: 9b1ae96b3a66a2c4644789fe0e2e38d5bded80a4
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68603417"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82967952"
 ---
 # <a name="time-picker"></a>时间选取器
  
 
-时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。 
+时间选取器提供了一种标准化途径，可使用户使用触摸、鼠标或键盘输入选取时间值。
 
-> **重要的 API**：[TimePicker 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、[Time 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
+![时间选取器示例](images/time-picker-closed.png)
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[TimePicker 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、[Time 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
@@ -37,7 +45,7 @@ ms.locfileid: "68603417"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TimePicker">打开此应用，了解 TimePicker 的实际应用</a>。</p>
     <ul>

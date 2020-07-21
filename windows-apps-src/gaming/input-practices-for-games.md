@@ -6,12 +6,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 游戏, 输入
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 8235b2c2029b2bb3b9351263a3c908879b4beba9
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634942"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210563"
 ---
 # <a name="input-practices-for-games"></a>游戏输入实践
 
@@ -298,13 +298,13 @@ if (buttonArrangement == buttonSelection)
 
 ## <a name="get-the-state-of-the-battery"></a>获取电池状态
 
-对于实现 [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) 界面的任何游戏控制器，你可以调用控制器实例上的 [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) 来获取提供控制器中电池信息的 [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) 对象。 你可以获取诸如电池正在充电的速度 ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts))、新电池的估计能量容量 ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)) 以及当前电池的完整充电电量 ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)) 这样的属性。
+对于实现 [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) 界面的任何游戏控制器，你可以调用控制器实例上的 [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport) 来获取提供控制器中电池信息的 [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) 对象。 你可以获取诸如电池正在充电的速度 ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts))、新电池的估计能量容量 ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours)) 以及当前电池的完整充电电量 ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours)) 这样的属性。
 
 对于支持详细电池报告的游戏控制器，你可以获取有关电池的这一信息及更多信息，在[获取电池信息](../devices-sensors/get-battery-info.md)中作了详细介绍。 但是，大部分游戏控制器不支持该电池报告级别，而是使用成本较低的硬件。 对于这些控制器，你需要记住以下注意事项：
 
 * **ChargeRateInMilliwatts** 和 **DesignCapacityInMilliwattHours** 将始终为 **NULL**。
 
-* 你可以通过计算 [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours** 来获取电池电量百分比。 你应该忽略这些属性的值，而仅处理计算得出的百分比。
+* 你可以通过计算 [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours** 来获取电池电量百分比。 你应该忽略这些属性的值，而仅处理计算得出的百分比。
 
 * 上一条中所述的百分比始终是以下值之一：
 
@@ -315,8 +315,8 @@ if (buttonArrangement == buttonSelection)
 
 如果你的代码根据剩余的电池使用时间百分比执行某些操作（如绘制 UI），请确保它与上面的值相符。 例如，如果你想要警告玩家控制器的电池电量不足，则在到达 10% 时执行此操作。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-* [Windows.System.User 类](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Windows.Gaming.Input.IGameController 接口](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.GamepadButtons 枚举](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Windows. User 类](https://docs.microsoft.com/uwp/api/windows.system.user)
+* [IGameController 接口。](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows GamepadButtons 枚举](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)

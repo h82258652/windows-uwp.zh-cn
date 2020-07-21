@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b60fbe26de6a3400972bdd216f292a45cb89df9e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4f609f7ec989cf334d6b21a32ee8bde0e43203f0
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319504"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80081502"
 ---
 # <a name="text-block"></a>文本块
 
@@ -24,13 +24,13 @@ ms.locfileid: "67319504"
 
  文本块是应用中用于显示只读文本的主要控件。 你可以使用它来显示单行或多行文本、内联超链接以及粗体、斜体或带下划线格式的文本。
  
- > **重要的 API**：[TextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)、[Inlines 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **平台 API**：[TextBlock 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)、[Inlines 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 文本块相比格式文本块通常更易于使用，并且提供更好的文本呈现性能，因此它优先用于大部分应用 UI 文本。 你可以通过获取 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 属性轻松地访问和使用应用的文本块中的文本。 它还提供许多用于自定义文本呈现方式的相同格式设置选项。
 
-虽然你可以在文本中放入换行符，但文本块设计为显示一个段落且不支持文本缩进。 如果你需要支持多段落、多列文本或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。
+虽然可以在文本中放入换行符，但文本块设计为显示一个段落且不支持文本缩进。 如果你需要支持多段落、多列文本或其他复杂文本布局或者内联 UI 元素（例如图像），请使用 **RichTextBlock**。
 
 有关选择正确的文本控件的详细信息，请参阅[文本控件](text-controls.md)文章。
 
@@ -39,7 +39,7 @@ ms.locfileid: "67319504"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TextBlock">打开此应用，了解 TextBlock 的实际应用</a>。</p>
     <ul>
@@ -200,4 +200,4 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [文本输入指南](text-controls.md)
 - [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [Windows.UI.Xaml.Controls PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)
+- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length)

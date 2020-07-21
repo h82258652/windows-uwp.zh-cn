@@ -1,24 +1,24 @@
 ---
-Description: 了解如何在 UWP 应用中实现向后导航以遍历用户的导航历史记录。
-title: 导航历史记录和向后导航（Windows 应用）
+Description: 了解如何在 Windows 应用中实现向后导航以遍历用户的导航历史记录。
+title: 导航历史记录和向后导航
 template: detail.hbs
 op-migration-status: ready
 ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: de2e70a09f75ed5380a47bed225c0689eb029e89
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 705b0ecb474c0bb821c3a21f4b8b66073984827f
+ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713801"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469572"
 ---
-# <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP 应用的导航历史记录和向后导航
+# <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 应用的导航历史记录和向后导航
 
 > **重要的 API**：[BackRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 类](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
-通用 Windows 平台 (UWP) 提供了一个一致的后退导航系统，用于遍历用户在应用内和应用之间（具体取决于设备）的导航历史记录。
+Windows 应用提供了一个一致的后退导航系统，用于遍历用户在应用内和应用之间（具体取决于设备）的导航历史记录。
 
 要在应用中实现向后导航，请在应用的 UI 的左上角放置一个[后退按钮](#back-button)。 如果你的应用使用了 [NavigationView](../controls-and-patterns/navigationview.md) 控件，你可以使用 [NavigationView 的内置后退按钮](../controls-and-patterns/navigationview.md#backwards-navigation)。
 
@@ -201,7 +201,7 @@ App.xaml 代码隐藏：
 ```csharp
 // App.xaml.cs
 Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
-Frame rootFrame = Window.Current.Content;
+Frame rootFrame = Window.Current.Content as Frame;
 rootFrame.PointerPressed += On_PointerPressed;
 
 private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
@@ -294,7 +294,7 @@ bool App::On_BackRequested()
 
 我们建议对后退导航支持以下输入。 （请注意，这些输入中有一些不受系统 BackRequested 的支持，必须由单独的事件处理。）
 
-| Input | 事件 |
+| 输入 | 事件 |
 | --- | --- |
 | Windows-Backspace 键 | BackRequested |
 | 硬件后退按钮 | BackRequested |

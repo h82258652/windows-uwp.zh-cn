@@ -11,21 +11,28 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 6e7661beb52438640c570e1a5ec4d7f60502e119
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63801318"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968892"
 ---
 # <a name="color-picker"></a>颜色选取器
 
 颜色选取器用于浏览和选择颜色。 默认情况下，它使用户可以在色谱上浏览颜色，或在红-绿-蓝 (RGB)、色调饱和度值 (HSV) 或十六进制文本框中指定颜色。
 
-> **重要的 API**：[ColorPicker 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
-
 ![默认颜色选取器](images/color-picker-default.png)
 
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | ColorPicker  控件作为 Windows UI 库的一部分提供，该库是一个 Nuget 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [ColorPicker 类](/uwp/api/microsoft.ui.xaml.controls.colorpicker)、[Color 属性](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
+>
+> **平台 API：** [ColorPicker 类](/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color 属性](/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -38,7 +45,7 @@ ms.locfileid: "63801318"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ColorPicker">打开此应用，了解 ColorPicker 的实际应用</a>。</p>
     <ul>
@@ -67,7 +74,7 @@ ms.locfileid: "63801318"
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"
-             ColorSpectrumShape=”Ring”
+             ColorSpectrumShape="Ring"
              IsColorPreviewVisible="False"
              IsColorChannelTextInputVisible="False"
              IsHexInputVisible="False"/>
@@ -188,7 +195,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 下表显示可以用于配置 ColorPicker 控件的所有选项。
 
-功能 | 属性
+功能 | “属性”
 --------|-----------
 色谱 | IsColorSpectrumVisible、ColorSpectrumShape、ColorSpectrumComponents
 颜色预览 | IsColorPreviewVisible
@@ -213,11 +220,11 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用中的笔和触笔交互](../input/pen-and-stylus-interactions.md)
+- [Windows 应用中的笔和触笔交互](../input/pen-and-stylus-interactions.md)
 - [墨迹书写](inking-controls.md)
 
 <!--
-<div class=”microsoft-internal-note”>
+<div class="microsoft-internal-note">
 <p>
 <p>
 Note: For more info, see the [color picker redlines](https://uni/DesignDepot.FrontEnd/#/ProductNav/3666/15/dv/?t=Windows%7CControls&f=RS2) on UNI.

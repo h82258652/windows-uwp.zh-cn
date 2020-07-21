@@ -1,18 +1,21 @@
 ---
-description: 了解如何在 UWP 应用中使用主题色和主题。
-title: UWP 应用中的颜色
+description: 了解如何在 Windows 应用中使用主题色和主题。
+title: Windows 应用中的颜色
 ms.date: 04/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5f040060b1c3931e9ef1634fddd65febb1be7dbc
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: c87dfbdc00df36c75a5b0b865376af352edcabbb
+ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867719"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83867357"
 ---
 # <a name="color"></a>颜色
 
@@ -20,7 +23,7 @@ ms.locfileid: "68867719"
 
 使用颜色可在应用中向用户直观传达信息：颜色可用于指示交互性、针对用户操作提供反馈并保证应用界面的视觉连续性。
 
-在 UWP 应用中，颜色主要由主题色和主题决定。 本文介绍如何在应用中使用颜色，同时介绍如何使用主题色和主题资源来让 UWP 应用可用于任何主题上下文。
+在 Windows 应用中，颜色主要由主题色和主题决定。 本文介绍如何在应用中使用颜色，同时介绍如何使用主题色和主题资源来让 Windows 应用可用于任何主题上下文。
 
 ## <a name="color-principles"></a>颜色使用原则
 
@@ -48,7 +51,7 @@ ms.locfileid: "68867719"
 
 ## <a name="themes"></a>主题
 
-可对 UWP 应用使用浅色或深色应用程序主题。 主题将对应用背景、文本、图标和[常见控件](../controls-and-patterns/index.md)的颜色造成影响。
+Windows 应用可使用浅色或深色应用程序主题。 主题将对应用背景、文本、图标和[常见控件](../controls-and-patterns/index.md)的颜色造成影响。
 
 ### <a name="light-theme"></a>浅色主题
 
@@ -58,7 +61,7 @@ ms.locfileid: "68867719"
 
 ![深色主题](images/color/dark-theme.svg)
 
-默认情况下，UWP 应用的主题是 Windows 设置中的用户首选主题或设备的默认主题（即 XBox 上的深色主题）。 但是，可设置 UWP 应用的主题。
+默认情况下，Windows 应用的主题是 Windows 设置中的用户首选主题或设备的默认主题（即 Xbox 上的深色主题）。 你也可以自己设置 Windows 应用的主题。
 
 ### <a name="changing-the-theme"></a>更改主题
 
@@ -219,13 +222,13 @@ Windows Shell 中的主题色算法可生成主题色的浅色和深色底纹。
 
 ## <a name="color-api"></a>颜色 API
 
-多个 API 可用于向应用程序添加颜色。 首先，[**Colors**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors) 类可实现广泛的预定义颜色。 可通过 XAML 属性自动访问这些预定义颜色。 在以下示例中，我们创建了一个按钮并将背景色属性和前景色属性设置为 **Colors** 类的成员。
+多个 API 可用于向应用程序添加颜色。 首先，[**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors) 类可实现广泛的预定义颜色。 可通过 XAML 属性自动访问这些预定义颜色。 在以下示例中，我们创建了一个按钮并将背景色属性和前景色属性设置为 **Colors** 类的成员。
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-可使用 XAML 中的 [**Color**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.color) 结构通过 RGB 或十六进制值自行创建颜色。
+可使用 XAML 中的 [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.color) 结构通过 RGB 或十六进制值自行创建颜色。
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
@@ -236,13 +239,16 @@ Windows Shell 中的主题色算法可生成主题色的浅色和深色底纹。
 ```csharp
 Color LightBlue = Color.FromArgb(255,54,192,255);
 ```
+```cppwinrt
+Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255);
+```
 
 “Argb”中的各字母分别代表 Alpha（不透明度）、红、绿和蓝，这四个部分共同组成一种颜色。 每个参数的值可介于 0 至 255 之间。 可选择忽略第一个值，此操作将默认选定 255 或 100% 的透明度。
 
 > [!Note]
-> 如果使用 C++，则必须使用 [**ColorHelper**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colorhelper) 类创建颜色。
+> 如果使用 C++，则必须使用 [**ColorHelper**](https://docs.microsoft.com/uwp/api/windows.ui.colorhelper) 类创建颜色。
 
-**Color** 最常用作 [**SolidColorBrush**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.solidcolorbrush) 的参数，该参数可用于以单一纯色绘制 UI 元素。 通常在 [**ResourceDictionary**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定义这些画笔，以便画笔可重复用于多个元素。
+**Color** 最常用作 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.solidcolorbrush) 的参数，该参数可用于以单一纯色绘制 UI 元素。 通常在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定义这些画笔，以便画笔可重复用于多个元素。
 
 ```xaml
 <ResourceDictionary>
@@ -267,9 +273,9 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 ### <a name="how-to-use-colorpaletteresources"></a>如何使用 ColorPaletteResources
 
 ColorPaletteResources API 告知系统在何处限定了资源的范围。 ColorPaletteResources 必须采用提供以下三个选项之一的 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)：
-- 默认
+- 默认值
   * 显示[浅色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)和[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)主题中的颜色变化
-- 浅色
+- 轻型
   * 显示[浅色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)主题中的颜色变化
 - 深色
   * 显示[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)主题中的颜色变化

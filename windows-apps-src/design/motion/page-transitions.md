@@ -1,6 +1,6 @@
 ---
-Description: 了解如何在 UWP 应用中使用页面过渡。
-title: UWP 应用中的页面过渡
+Description: 了解如何在 Windows 应用程序中使用页面转换。
+title: 页面过渡
 template: detail.hbs
 ms.date: 04/08/2018
 ms.topic: article
@@ -8,12 +8,12 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9b3244c24ff4fa8e3c85ee9970536b1b35d8efd5
-ms.sourcegitcommit: cc0ef75f314658b14376eb60ef8e5bb4d7726e04
+ms.openlocfilehash: 6239d8409767cab06d4d2c8c9c3abb9d743ca1c9
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65444193"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970512"
 ---
 # <a name="page-transitions"></a>页面过渡
 
@@ -28,7 +28,7 @@ ms.locfileid: "65444193"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果有<strong style="font-weight: semi-bold">XAML 控件库</strong>应用程序安装，请单击此处<a href="xamlcontrolsgallery:/item/PageTransition">打开应用并在操作中看到页面过渡</a>。</p>
+    <p>如果安装了<strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/PageTransition">打开应用，并查看操作中的页面过渡</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">获取 XAML 控件库应用 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">获取源代码 (GitHub)</a></li>
@@ -45,7 +45,7 @@ ms.locfileid: "65444193"
 
 ![页面刷新动画](images/page-refresh.gif)
 
-页面刷新动画由 [**EntranceNavigationTransitionInfoClass**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo) 表示。
+页面刷新动画由[**EntranceNavigationTransitionInfoClass**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo)表示。
 
 ```csharp
 // Explicitly play the page refresh animation
@@ -53,7 +53,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**注意**：一个[**帧**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)会自动使用[ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition)进行动画处理两个页面间导航。 默认情况下，动画是页面刷新。
+**注意**：[**帧**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)自动使用 [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) 对两个页面之间的导航进行动画处理。 默认情况下，动画是页面刷新。
 
 ## <a name="drill"></a>钻取
 
@@ -63,18 +63,18 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ![钻取动画](images/drill.gif)
 
-钻取动画由 [**DrillInNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) 类表示。
+钻取动画由[**DrillInNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo)类表示。
 
 ```csharp
 // Play the drill in animation
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 ```
 
-## <a name="horizontal-slide"></a>水平幻灯片
+## <a name="horizontal-slide"></a>水平滑动
 
-使用水平幻灯片来显示同级页挨着出现。 [NavigationView](../controls-and-patterns/navigationview.md)控件将自动使用为顶部导航栏中的此动画，但如果要构建自己的水平导航体验，则可以实现与 SlideNavigationTransitionInfo 水平幻灯片。
+使用水平滑动显示同级页面彼此相邻显示。 [NavigationView](../controls-and-patterns/navigationview.md)控件自动将此动画用于顶部导航，但如果您要构建自己的水平导航体验，则可以使用 SlideNavigationTransitionInfo 来实现水平滑动。
 
-所需的感受是用户在彼此相邻的页之间导航。 
+所需的感觉是，用户在彼此相邻的页面之间导航。 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -84,9 +84,9 @@ myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { 
 myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft } );
 ```
 
-## <a name="suppress"></a>禁止显示
+## <a name="suppress"></a>取消
 
-要避免在导航期间播放任何动画，请使用位于其他 **NavigationTransitionInfo** 子类型的位置的 [**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)。
+若要避免在导航过程中播放任何动画，请使用[**SuppressNavigationTransitionInfo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)来代替其他**NavigationTransitionInfo**子类型。
 
 ```csharp
 // Suppress the default animation
@@ -103,5 +103,5 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 
 ## <a name="related-topics"></a>相关主题
 
-- [两个页面之间导航](../basics/navigate-between-two-pages.md)
-- [在 UWP 应用中的动作](index.md)
+- [在两个页面之间导航](../basics/navigate-between-two-pages.md)
+- [UWindowsWP 应用中的运动](index.md)

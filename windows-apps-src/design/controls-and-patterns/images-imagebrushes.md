@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 59678dc5eca7dec0857cadd9249dd19e25b3430b
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a07fc5c669d3c9cd374a4a031fba2ee6ef6d5756
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319048"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74257280"
 ---
 # <a name="images-and-image-brushes"></a>图像和图像画笔
 
@@ -44,7 +44,7 @@ ms.locfileid: "67319048"
 
 ## <a name="create-an-image"></a>创建图像
 
-### <a name="image"></a>图像
+### <a name="image"></a>映像
 本示例显示了如何使用 [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image) 对象创建图像。
 
 
@@ -80,7 +80,7 @@ ms.locfileid: "67319048"
 
 如果你没有设置 Image 的 [Width](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.width) 或 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 值，将以 Source 指定的图像的尺寸显示   。 设置 **Width** 和 **Height** 可创建显示图像所在的封闭矩形区域。 你可通过使用 [Stretch](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.stretch) 属性指定图像填充此封闭区域的方式。 Stretch 属性接受 [Stretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Stretch) 枚举定义的以下值：
 
--   **无**：该图像未拉伸以适合输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) 一样。
+-   **None**：该图像未拉伸以适合输出尺寸。 注意此 Stretch 设置：如果源图像大于封闭区域，你的图像将被剪切，但通常不符合预期的，因为你对视口没有任何控制权，就像你处理精修的 [Clip](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.clip) 一样。
 -   **Uniform**：缩放图像以适应输出尺寸。 但是会保留内容的纵横比。 这是默认值。
 -   **UniformToFill**：缩放图像以完全填满输出区域，但保留其原始的纵横比。
 -   **填充**：缩放图像以适应输出尺寸。 因为内容的高度和宽度是独立缩放的，所以可能不能保留图像的原始纵横比。 即，图像可能为了完全填满输出区域而失真。
@@ -155,7 +155,7 @@ ms.locfileid: "67319048"
 
 使用 XAML 指定 Image 和 ImageBrush 比使用代码指定更为典型。 这是因为这些元素通常是设计工具的输出，它们作为 XAML UI 定义的一部分。
 
-如果要使用代码定义一个 Image 或 ImageBrush，请使用默认的构造函数，然后设置相关的源属性（[Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 或 [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)）。 在你使用代码设置源属性时，它们需要 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage)（而非 URI）。 如果源是一个流，请使用 [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法来初始化该值。 如果源是一个 URI（其中包含应用中使用 ms-appx 或 ms-resource 方案的内容），请使用获取 URI 的 [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 构造函数   。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件。 有关示例代码，请参阅 [XAML 图像示例](https://go.microsoft.com/fwlink/p/?linkid=238575)。
+如果要使用代码定义一个 Image 或 ImageBrush，请使用默认的构造函数，然后设置相关的源属性（[Image.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.source) 或 [ImageBrush.ImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)）。 在你使用代码设置源属性时，它们需要 [BitmapImage](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage)（而非 URI）。 如果源是一个流，请使用 [SetSourceAsync](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync) 方法来初始化该值。 如果源是一个 URI（其中包含应用中使用 ms-appx 或 ms-resource 方案的内容），请使用获取 URI 的 [BitmapImage](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage) 构造函数   。 如果在检索或解码图像资源时存在任何计时问题，而你可能在图像资源可用前需要使用替代内容用以显示，则还可以考虑处理 [ImageOpened](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.imageopened) 事件。 有关示例代码，请参阅 [XAML 图像示例](https://code.msdn.microsoft.com/windowsapps/0f5d56ae-5e57-48e1-9cd9-993115b027b9)。
 
 > [!NOTE]
 > 如果你使用代码建立图像，可以使用自动处理来访问具有当前规模和区域性限定符的非限定资源，或者可以使用具有区域性和规模限定符的 [ResourceManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) 和 [ResourceMap](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) 来直接获取资源。 有关详细信息，请参阅[资源管理系统](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))。

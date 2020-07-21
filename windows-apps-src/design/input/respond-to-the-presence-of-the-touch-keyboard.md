@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: 键盘, 辅助功能, 导航, 焦点, 文本, 输入, 用户交互
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: 192c016dfa61f39074d99bccf58ff9371f16d16f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 969d0c24c86a47e72cbfec08d835c25b6e6779c4
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365421"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234888"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>响应触摸键盘的存在
 
@@ -25,9 +25,9 @@ ms.locfileid: "66365421"
 
 ![默认布局模式中的触摸键盘](images/keyboard/default.png)
 
-<sup>触摸屏输入在默认键盘布局模式</sup>
+<sup>默认布局模式下的触摸键盘</sup>
 
-对于支持触摸的设备，触摸键盘支持文本输入。 当用户点击可编辑的输入字段时，通用 Windows 平台 (UWP) 文本输入控件会默认调用触摸键盘。 当用户在表单的控件之间导航时，触摸键盘通常保持可见，不过此行为可能因表单内其他控件类型的不同而有所不同。
+对于支持触摸的设备，触摸键盘支持文本输入。 默认情况下，当用户点击可编辑的输入字段时，Windows 应用文本输入控件将调用触摸键盘。 当用户在表单的控件之间导航时，触摸键盘通常保持可见，不过此行为可能因表单内其他控件类型的不同而有所不同。
 
 若要针对并非派生自标准文本输入控件的自定义文本输入控件支持相应的触摸键盘行为，必须使用 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> 类向 Microsoft UI 自动化公开控件，并实现正确的 UI 自动化控件模式。 请参阅[键盘辅助功能](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility)和[自定义的自动化对等](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers)。
 
@@ -39,14 +39,14 @@ ms.locfileid: "66365421"
 
 你应该对标准键盘交互、处理键盘输入和事件以及 UI 自动化有一个基本了解。
 
-如果你还不熟悉通用 Windows 平台 (UWP) 应用开发，请仔细阅读这些主题来熟悉此处讨论的技术。
+如果你不熟悉如何开发 Windows 应用程序，请参阅这些主题，了解此处讨论的技术。
 
-- [创建你的第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
+- [创建第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 - 借助[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
 
 **用户体验指南：**
 
-有关设计针对键盘输入进行了优化的有用、 更具吸引力的应用程序的有用提示，请参阅[键盘交互](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions)。
+有关设计适用于键盘输入的有用且具有吸引力的应用程序的有用技巧，请参阅[键盘交互](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions)。
 
 ## <a name="touch-keyboard-and-a-custom-ui"></a>触摸键盘和自定义 UI
 
@@ -54,15 +54,15 @@ ms.locfileid: "66365421"
 
 - 在与表单的整个交互中显示触摸键盘。
 
-- 确保你的自定义控件具有相应的 UI 自动化 [AutomationControlType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)适用于键盘焦点移到从文本输入的上下文中的一个文本输入字段时保存。 例如，如果在文本输入时打开了一个菜单，但你希望该键盘一直显示，则该菜单必须具有 **AutomationControlType** 菜单。
+- 确保当焦点从文本输入字段移到文本输入字段时，您的自定义控件具有适当的 UI 自动化 [AutomationControlType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 。 例如，如果在文本输入时打开了一个菜单，但你希望该键盘一直显示，则该菜单必须具有 **AutomationControlType** 菜单。
 
 - 不要操作 UI 自动化属性来控制触摸键盘。 其他辅助工具依赖于 UI 自动化属性的精度。
 
 - 确保用户在交互时始终可以看到输入字段。
 
-    触摸键盘会遮挡住大部分屏幕，不过 UWP 可确保当用户在表单上的不同控件（包括当前不在视图中的控件）之间导航时，具有焦点的输入字段滚动到视图中。
+    由于触摸键盘在屏幕上 occludes，因此在用户浏览窗体上的控件（包括当前不在视图中的控件）时，Windows 将确保带有焦点的输入字段滚动到视图中。
 
-    在自定义 UI，提供类似的行为的触摸键盘的外观的处理[显示](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing)并[隐藏](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding)通过公开事件[ **InputPane**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane)对象。
+    自定义 UI 时，可通过处理 [InputPane](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) 对象所公开的 [Showing](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) 和 [**Hiding**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) 事件，针对触摸键盘的外观提供相似的行为。
 
     ![显示和没有显示触摸键盘的表单](images/touch-keyboard-pan1.png)
 
@@ -72,7 +72,7 @@ ms.locfileid: "66365421"
 
 ## <a name="handling-the-showing-and-hiding-events"></a>处理 Showing 和 Hiding 事件
 
-下面是附加的事件处理程序的示例[显示](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing)并[隐藏](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding)触摸键盘事件。
+下面的示例演示如何为触摸键盘的[显示](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing)和[隐藏](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding)事件附加事件处理程序。
 
 ```csharp
 using Windows.UI.ViewManagement;
@@ -212,15 +212,15 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 - [键盘交互](keyboard-interactions.md)
 - [键盘辅助功能](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
-- [自定义自动化对等](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
+- [自定义的自动化对等](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
 
-**示例**
+### <a name="samples"></a>示例
 
 - [触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 
-**存档示例**
+### <a name="archive-samples"></a>存档示例
 
-- [输入：触摸键盘示例](https://go.microsoft.com/fwlink/p/?linkid=246019)
-- [响应的外观的屏幕键盘示例](https://go.microsoft.com/fwlink/p/?linkid=231633)
-- [XAML 文本编辑示例](https://go.microsoft.com/fwlink/p/?LinkID=251417)
-- [XAML 可访问性示例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+- [输入：触摸键盘示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+- [响应屏幕键盘外观示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Responding%20to%20the%20appearance%20of%20the%20on-screen%20keyboard%20sample)
+- [XAML 文本编辑示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BVB%5D-Windows%208%20app%20samples/VB/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
+- [XAML 辅助功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)

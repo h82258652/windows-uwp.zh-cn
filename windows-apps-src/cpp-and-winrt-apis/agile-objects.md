@@ -6,10 +6,10 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 敏捷, 对象, 敏捷性, IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 82dff619e6fa3934f69b93090bee90de6359ca07
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66360324"
 ---
 # <a name="agile-objects-in-cwinrt"></a>C++/WinRT 中的敏捷对象
@@ -74,7 +74,7 @@ struct MyImplementation: implements<MyImplementation, IStringable, winrt::non_ag
 }
 ```
 
-如果你正在创作运行时类。
+如果正在创作运行时类。
 
 ```cppwinrt
 struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
@@ -87,7 +87,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 
 无论是否选择退出敏捷性，均可自行实现 IMarshal  。 例如，可使用 winrt::non_agile 标记来避免默认的敏捷性实现，并自行实现 IMarshal（可能是为了支持按值封送语义）   。
 
-## <a name="agile-references-winrtagileref"></a>敏捷引用 (winrt::agile_ref)
+## <a name="agile-references-winrtagile_ref"></a>敏捷引用 (winrt::agile_ref)
 
 如果你正在使用一个非敏捷对象，但你需要在某些潜在的敏捷上下文中传递该对象，那么一个选项是使用 [winrt::agile_ref](/uwp/cpp-ref-for-winrt/agile-ref) 结构模板来获取对非敏捷类型的实例或非敏捷对象的接口的敏捷引用  。
 

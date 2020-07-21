@@ -10,20 +10,20 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed9feb6edae58b906d4f37f0e1f011d4fa42ee9
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867735"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968452"
 ---
 # <a name="acrylic-material"></a>亚克力材料
 
 ![主图](images/header-acrylic.svg)
 
-Acrylic 是一种[画笔](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将 Acrylic 应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic 是一种[画笔](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush)，用于创建半透明纹理。 你可以将 Acrylic 应用到应用图面中，并帮助构建视觉层次结构。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
+> **重要的 API**：[AcrylicBrush 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background)
 
 :::row:::
     :::column:::
@@ -36,7 +36,7 @@ Acrylic 在深色主题中的应用 ![Acrylic 在深色主题中的应用](image
 
 ## <a name="acrylic-and-the-fluent-design-system"></a>Acrylic 和 Fluent Design 系统
 
- Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 Acrylic 是一种 Fluent Design 系统组件，用于在你的应用中添加物理纹理（材料）和深度。 要了解详细信息，请参阅 [UWP 的 Fluent Design 概述](/windows/apps/fluent-design-system)。
+ Fluent Design System 可帮助你创建包含光线、深度、动画、材料和比例的现代粗体 UI。 Acrylic 是一种 Fluent Design 系统组件，用于在你的应用中添加物理纹理（材料）和深度。 若要了解详细信息，请参阅 [Fluent Design 概述](/windows/apps/fluent-design-system)。
 
  ## <a name="video-summary"></a>视频摘要
 
@@ -77,15 +77,6 @@ Acrylic 最明显的特征是其透明度。 有两种 Acrylic 混合类型可�
 
 考虑以下使用模式，确定将 Acrylic 融入应用的最佳方式：
 
-### <a name="horizontal-navigation-or-commanding"></a>水平导航或命令
-
-如果你的应用无法使用 NavigationView，而你计划自行添加 Acrylic，我们建议使用相对半透明的 Acrylic（色调不透明度 60%）。
- - 窗格以覆盖形式在其他应用内容上打开时，应设置为 [60% 应用内 Acrylic](#acrylic-theme-resources)
-
-![使用应用内水平命令的地图应用](images/Maps_In_App_Acrylic_1.png)
-
-此外，在顶部的 Acrylic 下扩展或滚动内容将为应用带来更为沉浸式和无缝的体验。
-
 ### <a name="vertical-panes"></a>垂直窗格
 
 对于有助于将应用内容分段的垂直窗格或图面，我们建议使用不透明背景，而不是 Acrylic。 如果垂直窗格在内容上方展开（比如在 NavigationView 的“精简”或“最小”模式下），建议使用应用内 acrylic 来帮助在用户展开此窗格时维护页面的上下文   。
@@ -111,7 +102,7 @@ Acrylic 外观可自动适应各种设备和上下文。
 
 此外，只有背景 Acrylic 会将半透明度和纹理替换为纯色：
  - 桌面上的应用窗口停用时
- - UWP 应用在手机、Xbox、HoloLens 或平板电脑模式下运行时
+ - Windows 应用在手机、Xbox、HoloLens 或平板电脑模式下运行时
 
 ### <a name="legibility-considerations"></a>可读性注意事项
 请务必确保应用上显示的任何文本[满足对比率要求](../accessibility/accessible-text-requirements.md)。 我们已优化 Acrylic 设置，因此，增强色的黑色、白色甚至中间色的灰色文本在 Acrylic 上显示时都能满足对比率要求。 平台提供的主题资源的默认对比色调为 80% 不透明度。 在 Acrylic 上放置增强色正文文本时，你可以在降低色调不透明度的同时保持可读性。 在深色模式下，色调不透明度可设为 70%，而在浅色模式下，Acrylic 可满足 50% 不透明度条件下的对比率要求。
@@ -202,7 +193,7 @@ Acrylic 外观可自动适应各种设备和上下文。
 
 若要添加 Acrylic 画笔，请定义用于深色、浅色和高对比度主题的三个资源。 请注意，在高对比度主题中，我们建议使用 x:Key 与深色/浅色 AcrylicBrush 相同的 SolidColorBrush。
 
-> [!Note] 
+> [!Note]
 > 如果未指定 TintLuminosityOpacity 值，系统将根据 TintColor 和 TintOpacity 自动调整其值。
 
 ```xaml
@@ -235,7 +226,7 @@ Acrylic 外观可自动适应各种设备和上下文。
 下面的示例显示了如何在代码中声明 AcrylicBrush。 如果你的应用支持多个操作系统目标，请务必检查以确认此 API 在用户计算机上可用。
 
 ```csharp
-if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.Xaml.Media.XamlCompositionBrushBase"))
+if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.Xaml.Media.AcrylicBrush"))
 {
     Windows.UI.Xaml.Media.AcrylicBrush myBrush = new Windows.UI.Xaml.Media.AcrylicBrush();
     myBrush.BackgroundSource = Windows.UI.Xaml.Media.AcrylicBackgroundSource.HostBackdrop;

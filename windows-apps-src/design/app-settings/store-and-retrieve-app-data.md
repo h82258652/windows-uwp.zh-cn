@@ -8,35 +8,36 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3958d69dc3142702eb2d2a41d6dba5ebeb9fa8ce
-ms.sourcegitcommit: 2fa2d2236870eaabc95941a95fd4e358d3668c0c
-ms.translationtype: MT
+ms.openlocfilehash: 0eb7ef49d0ce1876635dc36e84f43432c13e1791
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70076383"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "72690370"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>存储和检索设置以及其他应用数据
 
-*应用程序数据*是由特定应用程序创建和管理的可变数据。 它包括运行时状态、应用设置、用户首选项、引用内容 (如字典应用中的字典定义) 和其他设置。 应用数据不同于*用户数据*，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
+应用数据是由特定应用创建和管理的可变数据  。 它包含运行时状态、应用设置、用户首选项、参考内容（如字典应用中的字典定义）以及其他设置。 应用数据不同于*用户数据*，它是用户使用应用时创建和管理的数据。 用户数据包含文档或媒体文件、电子邮件或通信脚本或保留用户所创建内容的数据库记录。 用户数据可能对于多个应用都非常有用或有意义。 通常，此为用户要操作或作为独立于应用自身的实体进行传输的数据，例如文档。
 
-**有关应用数据的重要说明:** 应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
+**关于应用数据的重要说明：** 应用数据的生命周期与应用的生命周期相关联。 如果应用被删除，则会丢失所有应用数据。 不要使用应用数据存储用户数据或用户可能视作有价值和不可替代内容的任何数据。 我们建议使用用户的库和 Microsoft OneDrive 存储此类信息。 应用数据非常适合存储特定于应用的用户首选项、设置和收藏夹。
 
 ## <a name="types-of-app-data"></a>应用数据类型
 
 应用数据有两类：设置和文件。
 
-### <a name="settings"></a>设置
+### <a name="settings"></a>Settings
 
 使用设置存储用户首选项和应用程序状态信息。 应用数据 API 使你能够轻松创建和检索设置（我们将在本文的后面部分介绍一些示例）。
 
 下面是可以用于应用设置的数据类型：
 
 - **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
-- **Boolean**
+- 布尔 
 - **Char16**、**String**
-- [**DateTime**](https://docs.microsoft.com/uwp/api/Windows.Foundation.DateTime)、 [ **TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan)
+- [DateTime](/uwp/api/Windows.Foundation.DateTime)、[TimeSpan](/uwp/api/Windows.Foundation.TimeSpan)  
+    - 对于 C#/.NET，请使用：[System.DateTimeOffset](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0)、[System.TimeSpan](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)  
 - **GUID**、[**Point**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Point)、[**Size**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)、[**Rect**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect)
-- [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue):必须以原子方式进行序列化和反序列化的一组相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
+- [ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue)  ：一组必须按原子方式序列化和反序列化的相关应用设置。 使用复合设置可轻松处理相互依赖的设置的原子更新。 系统会在并发访问和漫游时确保复合设置的完整性。 复合设置针对少量数据进行了优化，如果将它们用于大型数据集，性能可能很差。
 
 ### <a name="files"></a>文件
 
@@ -168,11 +169,11 @@ async void ReadTimestamp()
 - 不要漫游特定于设备的应用数据。 某些信息仅在本地才合理，例如指向本地文件资源的路径名。 如果你决定漫游本地信息，请确保信息在第二台设备上无效时该应用可以进行恢复。
 - 不要漫游较大的应用数据集。 应用可以漫游的应用数据量存在限制；使用 [**RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) 属性获取这个最大值。 如果应用达到该上限，在应用数据存储的大小不再超过该限制之前，不能漫游任何数据。 在你设计应用时，必须考虑如何为较大数据设置一个限制以免超过此限值。 例如，如果每保存一个游戏状态需要 10KB，则应用可能仅允许用户最多储存 10 个游戏。
 - 不要为依赖即时同步的数据使用漫游。 Windows 不保证实现即时同步；如果用户脱机或在严重延迟的网络上，漫游可能会大大延迟。 请确保你的 UI 不依赖即时同步。
-- 不要将漫游用于经常更改的数据。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
+- 请勿针对频繁更改的数据使用漫游。 例如，如果你的应用跟踪频繁更改信息（例如歌曲中每秒的进度位置），则不要将此类信息存储为漫游应用数据。 相反，选取较不频繁但仍提供良好用户体验的表示形式，例如当前播放的歌曲。
 
 ### <a name="roaming-pre-requisites"></a>漫游先决条件
 
-如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或禁用漫游数据功能, 她仍可以使用您的应用程序, 但应用程序数据将是每个设备的本地应用程序数据。
+如果用户使用 Microsoft 帐户登录相应的设备，则任何用户都可以享受到漫游应用数据的益处。 但是，用户和组策略管理员可以随时在设备上关闭漫游应用数据。 如果用户选择不使用 Microsoft 帐户或者禁用漫游数据功能，她仍可以使用你的应用，但应用数据都将留在每台设备本地。
 
 [  **PasswordVault**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.PasswordVault) 中存储的数据仅将在用户使设备成为“受信任”设备的情况下传输。 如果设备不受信任，则不会漫游在该保管库中安全存储的数据。
 
@@ -434,8 +435,8 @@ localSettings.DeleteContainer("exampleContainer");
 
 ## <a name="related-articles"></a>相关文章
 
-* [**ApplicationData**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData)
-* [**ApplicationData. RoamingSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings)
-* [**ApplicationData. RoamingFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder)
-* [**ApplicationData. RoamingStorageQuota**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota)
-* [**ApplicationDataCompositeValue**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue)
+* [Windows.Storage.ApplicationData](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData) 
+* [Windows.Storage.ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) 
+* [Windows.Storage.ApplicationData.RoamingFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingfolder) 
+* [Windows.Storage.ApplicationData.RoamingStorageQuota](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingstoragequota) 
+* [Windows.Storage.ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 

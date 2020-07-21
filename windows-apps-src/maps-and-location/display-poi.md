@@ -6,31 +6,31 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: windows 10, uwp, 地图, 位置, 图钉
 ms.localizationpriority: medium
-ms.openlocfilehash: 2aca8f4daea39a190af4dd1007a6b961198994dd
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 6bf8009232dbe3afcab2af28b76785fb261200f7
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370546"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210293"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地图上显示目标点
 
 使用图钉、图像、图形和 XAML UI 元素向地图添加目标点 (POI)。 POI 是地图上表示对某事物感兴趣的特殊的点。 例如，企业、城市或好友的位置。
 
-若要了解有关在您的应用程序中显示 POI 的详细信息，下载以下示例从[Windows 通用示例存储库](https://go.microsoft.com/fwlink/p/?LinkId=619979)GitHub 上：[通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
+若要了解有关在你的应用上显示 POI 的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](https://github.com/Microsoft/Windows-universal-samples)下载以下示例：[通用 Windows 平台 (UWP) 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)。
 
-通过将  [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)、[**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)、[**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) 和 [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) 对象添加到 [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) 对象的 **MapElements** 集合，在地图上显示图钉、图像和图形。 然后，将该层对象添加到地图控件的 **Layers** 集合。
+通过将  [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)、[**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)、[**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) 和 [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) 对象添加到MapElementsLayer[**对象的**MapElements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) 集合，在地图上显示图钉、图像和图形。 然后，将该层对象添加到地图控件的 **Layers** 集合。
 
 >[!NOTE]
 > 在以前的版本中，此指南向您展示如何将地图元素添加到 [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.MapElements)集合。 虽然你仍然可以使用此方法，但将无法利用新地图层模型的一些优势。 若要更多信息，请参阅本指南的[使用层](#layers)部分。
 
-你还可以通过将 XAML 用户界面元素（例如，[**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)、 [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 或 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)）添加到 [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) 或添加为 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 的 [**Children**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children)，在地图上显示它们。
+你还可以通过将 XAML 用户界面元素（例如，[**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)、 [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 或 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)）添加到 [**MapItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapItemsControl) 或添加为 [**MapControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.children) 的 [**Children**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)，在地图上显示它们。
 
 如果你想要将大量元素放置在地图上，请考虑[在地图上覆盖平铺图像](overlay-tiled-images.md)。 若要在地图上显示道路，请参阅[显示路线和方向](routes-and-directions.md)
 
 ## <a name="add-a-pushpin"></a>添加图钉
 
-通过使用 [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) 类在地图上显示图像（例如图钉）和可选文本。 可以接受默认图像或通过使用 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) 属性提供自定义图像。 以下图像显示了未为 [**Title**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) 属性指定任何值、具有短标题、具有长标题和具有非常长的标题的 **MapIcon** 的默认图像。
+通过使用 [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) 类在地图上显示图像（例如图钉）和可选文本。 可以接受默认图像或通过使用 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) 属性提供自定义图像。 以下图像显示了未为Title[**属性指定任何值、具有短标题、具有长标题和具有非常长的标题的**MapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.title) 的默认图像。
 
 ![具有不同长度的磁贴的 MapIcon 示例。](images/mapctrl-mapicons.png)
 
@@ -72,7 +72,7 @@ public void AddSpaceNeedleIcon()
 
 ![带 MapIcon 的地图](images/displaypoidefault.png)
 
-下面的代码行将显示 [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) 和保存在项目“资源”文件夹中的自定义图像。 **MapIcon** 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image) 属性需要类型 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) 的值。 此类型需要 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 命名空间的 **using** 声明。
+下面的代码行将显示 [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon) 和保存在项目“资源”文件夹中的自定义图像。 [MapIcon**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapicon.image)Image 属性需要类型 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) 的值。 此类型需要Windows.Storage.Streams[**命名空间的**using](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 声明。
 
 >[!NOTE]
 >如果将同一图像用于多个地图图标，请声明页面级别或应用级别的 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) 以获得最佳性能。
@@ -92,7 +92,7 @@ public void AddSpaceNeedleIcon()
 
 ## <a name="add-a-3d-pushpin"></a>添加 3D 图钉
 
-你可以在地图中添加三维对象。 使用 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 类从 [3D 制造格式 (3MF)](https://3mf.io/specification/) 文件中导入 3D 对象。
+可以在地图中添加三维对象。 使用 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 类从 [3D 制造格式 (3MF)](https://3mf.io/specification/) 文件中导入 3D 对象。
 
 这张图使用 3D 咖啡杯标记邻近咖啡店的位置。
 
@@ -163,11 +163,11 @@ public void AddLandmarkPhoto()
 }
 ```
 
-没有需要研究一些更接近此代码的三个部分：图像、 引用照像机上，并[ **NormalizedAnchorPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint)属性。
+这段代码中有三个部分值得更仔细地进行检查：图像、参考照相机，以及 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 属性。
 
-### <a name="image"></a>Image
+### <a name="image"></a>映像
 
-此示例显示在项目的**资源**文件夹中保存的自定义图像。 [  **MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) 属性需要类型 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) 的值。 此类型需要 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 命名空间的 **using** 声明。
+此示例显示在项目的**资源**文件夹中保存的自定义图像。 [  **MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 属性需要类型 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) 的值。 此类型需要Windows.Storage.Streams[**命名空间的**using](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 声明。
 
 >[!NOTE]
 >如果将同一图像用于多个地图图标，请声明页面级别或应用级别的 [**RandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference) 以获得最佳性能。
@@ -176,17 +176,17 @@ public void AddLandmarkPhoto()
 
  因为 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 图像随 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) 的变化而缩放，请务必定义正常的一倍尺寸图像以哪个 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ZoomLevel) 显示。 该位置在 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的参考照相机中定义，为了设置它，你必须将 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 对象传递到 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的构造函数中。
 
- 你可以在 [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) 中定义任意位置，然后使用该 [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) 来创建一个 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 对象。  但是，在此示例中，我们只需使用地图控件的 [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ActualCamera) 属性返回的 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 对象。 这是地图内部照相机。 该照相机的当前位置成为参考照相机位置；[**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 图像以 1 倍尺寸显示的位置。
+ 你可以在 [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) 中定义任意位置，然后使用该 [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) 来创建一个 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 对象。  但是，在此示例中，我们只需使用地图控件的 [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 属性返回的 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.ActualCamera) 对象。 这是地图内部照相机。 该照相机的当前位置成为参考照相机位置；[**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 图像以 1 倍尺寸显示的位置。
 
  如果你的应用允许用户缩小地图，图像将缩小，因为地图内部照相机的高度将上升，而 1 倍大小的图像将仍然保持在参考照相机的位置上不动。
 
 ### <a name="normalizedanchorpoint"></a>NormalizedAnchorPoint
 
-[  **NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 是图像上锚定到 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 属性的点。 点 0.5,1 是图像的底部中心。 由于我们已经将 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 属性设置为图像控件的中心，该图像的底部中心将锚定到图像控件的中心。 如果希望图像以某个点为中心显示出来，请将 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 设置为 0.5,0.5。  
+[  **NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 是图像上锚定到 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 属性的点。 点 0.5,1 是图像的底部中心。 由于我们已经将 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 属性设置为图像控件的中心，该图像的底部中心将锚定到图像控件的中心。 如果希望图像以某个点为中心显示出来，请将 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 设置为 0.5,0.5。  
 
 ## <a name="add-a-shape"></a>添加形状
 
-通过使用 [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) 类在地图上显示多点形状。 以下 [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例将在地图上显示一个具有蓝色边框的红色框。
+通过使用 [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon) 类在地图上显示多点形状。 以下 [UWP 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)中的示例将在地图上显示一个具有蓝色边框的红色框。
 
 ```csharp
 public void HighlightArea()
@@ -229,7 +229,7 @@ public void HighlightArea()
 ## <a name="add-a-line"></a>添加线条
 
 
-通过使用 [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) 类在地图上显示线条。 以下 [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)中的示例将在地图上显示一条虚线。
+通过使用 [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline) 类在地图上显示线条。 以下 [UWP 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)中的示例将在地图上显示一条虚线。
 
 ```csharp
 public void DrawLineOnMap()
@@ -352,7 +352,7 @@ public Geopoint BellevueLocation { get; set; }
 </maps:MapControl>
 ```
 
-以上示例中的 ``ItemsSource`` 属性绑定到代码隐藏文件中一个类型为 [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) 的属性。
+以上示例中的 ``ItemsSource`` 属性绑定到代码隐藏文件中一个类型为 [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist) 的属性。
 
 ```csharp
 public sealed partial class Scenario1 : Page
@@ -474,10 +474,10 @@ public myMapPage()
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [地图设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [生成2015视频：跨 Windows 应用中的手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 路况应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)
 * [**MapIcon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapIcon)
 * [**MapPolygon**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolygon)
 * [**MapPolyline**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapPolyline)

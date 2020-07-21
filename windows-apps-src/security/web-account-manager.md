@@ -6,25 +6,25 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: f567637f3d38ce80c320bfe92fff392efadeda8d
-ms.sourcegitcommit: 7803f11ba4c9194c350217cc06069a4707f15ed6
+ms.openlocfilehash: e5b835c837ca750f2ccc1ebad9ec119047b02ce7
+ms.sourcegitcommit: 97d2ef33253af210ad2d4f036b4820056ff03f62
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017432"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441624"
 ---
 # <a name="web-account-manager"></a>Web 帐户管理器
 
-本文介绍如何通过 Windows 10 Web 帐户管理器 API，使用 **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** 将通用 Windows 平台 (UWP) 应用连接到外部标识提供者，如 Microsoft 或 Facebook。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本操作（如获取配置文件数据或将文件上传到他们的 OneDrive 帐户）。 相关步骤类似于通过支持 Web 帐户管理器的任何标识提供者来获取用户权限和访问权限。
+本文介绍如何使用**[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** 将通用 WINDOWS 平台（UWP）应用程序连接到外部标识提供程序（如 Microsoft 或 Facebook），使用 Windows 10 Web 帐户管理器 api。 你将了解如何请求用户的权限以使用其 Microsoft 帐户、获取访问令牌，并使用它来执行基本操作（如获取配置文件数据或将文件上传到他们的 OneDrive 帐户）。 相关步骤类似于通过支持 Web 帐户管理器的任何标识提供者来获取用户权限和访问权限。
 
 > [!NOTE]
-> 有关完整代码示例，请参阅 [GitHub 上的 WebAccountManagement 示例](https://go.microsoft.com/fwlink/p/?LinkId=620621)。
+> 有关完整代码示例，请参阅 [GitHub 上的 WebAccountManagement 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)。
 
 ## <a name="get-set-up"></a>准备工作
 
 首先，在 Visual Studio 中创建一个新的空白应用。 
 
-第二，你需要将你的应用与应用商店关联，以便连接到标识提供者。 若要执行此操作，请右键单击你的项目、依次选择**应用商店** > **将应用与应用商店关联**，然后按照向导的说明进行操作。 
+第二，你需要将你的应用与应用商店关联，以便连接到标识提供者。 为此，请右键单击项目 **，选择 "** 将  >  **应用与**应用商店关联"，然后按照向导的说明进行操作。 
 
 第三，创建一个非常基本的 UI，由一个简单的 XAML 按钮和两个文本框组成。
 
@@ -76,11 +76,11 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格为空的原因是系统只提供了一个 UI shell，这取决于开发人员是否使用标识提供者以编程方式填充窗格。 
 
 > [!TIP]
-> （可选） 可以使用 **[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是 **[显示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)** ，这将返回 **[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** ，若要查询操作的状态。 
+> 或者，您可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是**[Show](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，这将返回**[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)** 以查询操作的状态。 
 
 ## <a name="register-for-accountcommandsrequested"></a>注册 AccountCommandsRequested
 
-若要向窗格添加命令，请先注册 AccountCommandsRequested 事件处理程序。 当用户要求查看窗格时（例如，单击 XAML 按钮），此事件处理程序将告知系统来运行生成逻辑。 
+若要向窗格添加命令，请先注册 AccountCommandsRequested 事件处理程序。 这会告知系统在用户要求查看窗格时（例如，单击 XAML 按钮）运行生成逻辑。 
 
 在隐藏代码中，替代 OnNavigatedTo 和 OnNavigatedFrom 事件，并向它们添加以下代码： 
 
@@ -116,7 +116,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory, 它是 "https\://login.microsoft.com"。 
+接下来，使用 WebAuthenticationCoreManager.FindAccountProviderAsync 方法获取提供程序。 提供程序的 URL 因提供程序而异，并且可以在提供程序的文档中找到。 对于 Microsoft 帐户和 Azure Active Directory，它是 "https \: //login.microsoft.com"。 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -133,7 +133,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 请注意，我们还向可选 *authority* 参数传递字符串“consumers”。 这是因为 Microsoft 提供了两种不同类型的身份验证，即适用于“消费者”的 Microsoft 帐户 (MSA) 和适用于“组织”的 Azure Active Directory (AAD)。 “consumers”颁发机构指示我们需要 MSA 选项。 如果在开发一款企业应用，请使用“organizations”字符串。
 
-最后，通过新建 **[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** 将提供商添加到 **AccountsSettingsPane**，如下所示： 
+最后，通过创建新的**[WebAccountProviderCommand](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** （如下所示）将提供程序添加到**AccountsSettingsPane** ： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -172,13 +172,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-在此示例中，我们向_作用域_参数传递字符串“wl.basic”。 作用域表示你正在从提供给特定用户的服务请求的信息类型。 某些作用域仅提供对用户基本信息的访问权限，例如姓名和电子邮件地址，而其他作用域可能允许访问敏感信息，如用户的照片或电子邮件收件箱。 通常，应用应该至少使用实现其功能所必需的最小许可作用域。 有关需要哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供商将提供相关文档。 
+在此示例中，我们将字符串 "wl. basic" 传递到_scope_参数。 作用域表示你正在从提供给特定用户的服务请求的信息类型。 某些作用域仅提供对用户基本信息的访问权限，例如姓名和电子邮件地址，而其他作用域可能允许访问敏感信息，如用户的照片或电子邮件收件箱。 通常，应用应该至少使用实现其功能所必需的最小许可作用域。 有关需要哪些作用域才能获得用以与它们的服务结合使用的令牌，服务提供商将提供相关文档。 
 
-* 有关 Office 365 和 Outlook.com 的范围，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://developer.microsoft.com/graph/docs/concepts/auth_overview)。 
+* 有关 Office 365 和 Outlook.com 的作用域，请参阅 [使用 v2.0 身份验证终结点对 Office 365 和 Outlook.com API 进行身份验证](https://developer.microsoft.com/graph/docs/concepts/auth_overview)。 
 * 有关 OneDrive 的作用域，请参阅 [OneDrive 身份验证和登录](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> （可选） 如果您的应用程序使用的登录提示 （若要填充默认电子邮件地址的用户字段） 或其他与登录体验相关的特殊属性，将其列在 **[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性。 这将导致系统在缓存 web 帐户时忽略属性, 这会阻止缓存中的帐户不匹配。
+> （可选）如果你的应用使用登录提示（使用默认电子邮件地址填充 "用户" 字段）或其他与登录体验相关的特殊属性，请在**[WebTokenRequest. AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 属性中列出它。 这将导致系统在缓存 web 帐户时忽略属性，这会阻止缓存中的帐户不匹配。
 
 如果在开发企业应用，可能需要连接到 Azure Active Directory (AAD) 实例，并使用 Microsoft Graph API，而非常规的 MSA 服务。 在此方案中，使用以下代码： 
 
@@ -196,7 +196,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 
 ## <a name="use-the-token"></a>使用令牌
 
-RequestTokenAsync 方法会返回一个 WebTokenRequestResult 对象，它包含你请求的结果。 如果你的请求成功，它将包含一个令牌。  
+RequestTokenAsync 方法会返回一个 WebTokenRequestResult 对象，它包含你请求的结果。 如果请求成功，它将包含一个令牌。  
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -214,7 +214,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 > [!NOTE]
 > 如果在请求令牌时收到错误，请确保已将应用与 Microsoft Store 关联，如步骤一中所述。 如果你跳过此步骤，你的应用将无法获取令牌。 
 
-获得令牌后，可以使用它来调用提供程序的 API。 在以下代码中，我们将调用[用户信息 Microsoft Live API](https://docs.microsoft.com/office/)，以获取有关用户的基本信息并将其显示在我们的 UI 中。 但请注意，在大多数情况下，建议获取令牌后立即存储，然后以单独的方法使用该令牌。
+获得令牌后，可以使用它来调用提供商的 API。 在以下代码中，我们将调用[用户信息 Microsoft Live API](https://docs.microsoft.com/office/)，以获取有关用户的基本信息并将其显示在我们的 UI 中。 但请注意，在大多数情况下，建议获取令牌后立即存储，然后以单独的方法使用该令牌。
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -338,7 +338,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="remove-a-stored-account"></a>删除已存储帐户
 
-如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样, 他们就可以有效地 "注销" 应用程序: 启动时, 将不再自动加载其帐户信息。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
+如果保留 web 帐户，你可能希望用户能够解除他们的帐户与你的应用之间的关联。 这样，他们就可以有效地 "注销" 应用程序：启动时，将不再自动加载其帐户信息。 若要执行此操作，首先从存储中删除任何保存的帐户和提供商信息。 然后，调用 **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** 清除缓存，并使应用可能拥有的任何现有令牌失效。 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)
@@ -351,7 +351,7 @@ private async Task SignOutAccountAsync(WebAccount account)
 
 ## <a name="add-providers-that-dont-support-webaccountmanager"></a>添加不支持 WebAccountManager 的提供程序
 
-如果想要将身份验证从某个服务集成到应用中，但该服务不支持 WebAccountManager（例如 Google+ 或 Twitter），仍可以将该提供商手动添加到 **AccountsSettingsPane**。 若要执行此操作，请新建 WebAccountProvider 对象，并提供自己的名称和 .png 图标，然后将其添加到 WebAccountProviderCommands 列表。 下面是一些存根代码： 
+例如，如果你想要将身份验证从服务集成到你的应用，但该服务不支持 WebAccountManager-Google + 或 Twitter，则你仍可以将该提供程序手动添加到**AccountsSettingsPane**中。 若要执行此操作，请新建 WebAccountProvider 对象，并提供自己的名称和 .png 图标，然后将其添加到 WebAccountProviderCommands 列表。 下面是一些存根代码： 
 
  ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -373,7 +373,7 @@ private async void GetTwitterTokenAsync(WebAccountProviderCommand command)
 ```
 
 > [!NOTE] 
-> 这只会将图标添加到 **AccountsSettingsPane** 并在单击该图标时运行指定的方法（在本例中为 GetTwitterTokenAsync）。 必须提供用于处理实际身份验证的代码。 有关详细信息，请参阅（Web 身份验证代理）[web-authentication-broker]，它提供了使用 REST 服务进行身份验证的帮助程序方法。 
+> 这只会将图标添加到 **AccountsSettingsPane** 并在单击该图标时运行指定的方法（在本例中为 GetTwitterTokenAsync）。 必须提供用于处理实际身份验证的代码。 有关详细信息，请参阅[Web 身份验证代理](web-authentication-broker.md)，它提供使用 REST 服务进行身份验证的帮助器方法。 
 
 ## <a name="add-a-custom-header"></a>添加自定义标题
 
@@ -422,14 +422,14 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 ## <a name="see-also"></a>请参阅
 
-[Windows. System.web 命名空间](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
+[Windows.Security.Authentication.Web.Core 命名空间](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core)
 
-[Windows 安全凭据命名空间](https://docs.microsoft.com/uwp/api/windows.security.credentials)
+[Windows.Security.Credentials 命名空间](https://docs.microsoft.com/uwp/api/windows.security.credentials)
 
 [AccountsSettingsPane 类](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane)
 
 [Web 身份验证代理](web-authentication-broker.md)
 
-[Web 帐户管理示例](https://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Web 帐户管理示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAccountManagement)
 
-[就餐计划程序应用](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
+[Lunch Scheduler 应用](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

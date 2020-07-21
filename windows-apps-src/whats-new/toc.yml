@@ -1,61 +1,65 @@
-items:
-- name: 面向开发人员的 Windows 10 版本 17763 中的新增功能
-  href: ../whats-new/windows-10-build-17763.md
+- name: 面向开发人员的 Windows 10 内部版本 19041 中的新增功能
+  href: ../whats-new/windows-10-build-19041.md
   items:
-  - name: Windows 10 版本 17763 中的 API 新增内容
-    href: ../whats-new/windows-10-build-17763-api-diff.md
-- name: 2019 年 1 月 Windows 文档中的新增内容
-  href: ../whats-new/windows-docs-january-2019.md
-  items:
-  - name: 2018 年 9 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-september-2018.md
-  - name: 2018 年 8 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-august-2018.md
-  - name: 2018 年 7 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-july-2018.md
-  - name: 2018 年 5 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-may-2018.md
-  - name: 2018 年 2 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-february-2018.md
-  - name: 2017 年 12 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-december-2017.md
-  - name: 2017 年 9 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-september-2017.md
-  - name: 2017 年 8 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-august-2017.md
-  - name: 2017 年 7 月 Windows 文档中的新增内容
-    href: ../whats-new/windows-docs-july-2017.md
+    - name: Windows 10 内部版本 19041 中的 API 新增内容
+      href: ../whats-new/windows-10-build-19041-api-diff.md
 - name: 以前版本的 Windows 10
   items:
-  - name: 面向开发人员的 Windows 10 版本 17134 中的新增功能
-    href: ../whats-new/windows-10-build-17134.md
-    items:
-    - name: Windows 10 版本 17134 中的 API 新增内容
-      href: ../whats-new/windows-10-build-17134-api-diff.md
-  - name: 面向开发人员的 Windows 10 版本 16299 中的新增功能
-    href: ../whats-new/windows-10-build-16299.md
-    items:
-    - name: Windows 10 版本 16299 中的 API 新增内容
-      href: ../whats-new/windows-10-build-16299-api-diff.md
-  - name: Windows 10 版本 15063 中的新增功能
-    href: ../whats-new/windows-10-build-15063.md
-    items:
-    - name: Windows 10 版本 15063 中的 API 新增内容
-      href: ../whats-new/windows-10-build-15063-api-diff.md
-  - name: Windows 10 版本 14393 中的新增功能
-    href: ../whats-new/windows-10-build-14393.md
-    items:
-    - name: Windows 10 版本 14393 中的 API 新增内容
-      href: ../whats-new/windows-10-build-14393-api-diff.md
-  - name: Windows 10 版本 10586 中的新增功能
-    href: ../whats-new/windows-10-build-10586.md
-  - name: Windows 10 版本 10240 中的新增功能
-    href: ../whats-new/windows-10-build-10240.md
+    - name: 面向开发人员的 Windows 10 内部版本 18362 中的新增功能
+      href: ../whats-new/windows-10-build-18362.md
+      items:
+        - name: Windows 10 版本 18362 中的 API 新增内容
+          href: ../whats-new/windows-10-build-18362-api-diff.md
+    - name: 面向开发人员的 Windows 10 版本 17763 中的新增功能
+      href: ../whats-new/windows-10-build-17763.md
+      items:
+        - name: Windows 10 版本 17763 中的 API 新增内容
+          href: ../whats-new/windows-10-build-17763-api-diff.md
+    - name: 面向开发人员的 Windows 10 版本 17134 中的新增功能
+      href: ../whats-new/windows-10-build-17134.md
+      items:
+        - name: Windows 10 版本 17134 中的 API 新增内容
+          href: ../whats-new/windows-10-build-17134-api-diff.md
+    - name: 面向开发人员的 Windows 10 版本 16299 中的新增功能
+      href: ../whats-new/windows-10-build-16299.md
+      items:
+        - name: Windows 10 版本 16299 中的 API 新增内容
+          href: ../whats-new/windows-10-build-16299-api-diff.md
+    - name: Windows 10 版本 15063 中的新增功能
+      href: ../whats-new/windows-10-build-15063.md
+      items:
+        - name: Windows 10 版本 15063 中的 API 新增内容
+          href: ../whats-new/windows-10-build-15063-api-diff.md
+    - name: Windows 10 版本 14393 中的新增功能
+      href: ../whats-new/windows-10-build-14393.md
+      items:
+        - name: Windows 10 版本 14393 中的 API 新增内容
+          href: ../whats-new/windows-10-build-14393-api-diff.md
+    - name: Windows 10 版本 10586 中的新增功能
+      href: ../whats-new/windows-10-build-10586.md
+    - name: Windows 10 版本 10240 中的新增功能
+      href: ../whats-new/windows-10-build-10240.md
+- name: 以前的文档更新摘要
+  items:
+    - name: 2019 年 1 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-january-2019.md
+    - name: 2018 年 9 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-september-2018.md
+    - name: 2018 年 8 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-august-2018.md
+    - name: 2018 年 7 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-july-2018.md
+    - name: 2018 年 5 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-may-2018.md
+    - name: 2018 年 2 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-february-2018.md
+    - name: 2017 年 12 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-december-2017.md
+    - name: 2017 年 9 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-september-2017.md
+    - name: 2017 年 8 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-august-2017.md
+    - name: 2017 年 7 月 Windows 文档中的新增内容
+      href: ../whats-new/windows-docs-july-2017.md
 - name: 实验性 API
   href: ../whats-new/experimental-apis.md
-ms.openlocfilehash: 136c6bd34dd3358d3f089aa06a664029a446b368
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582080"

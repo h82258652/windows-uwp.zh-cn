@@ -4,14 +4,14 @@ title: 适用于 Windows 桌面的设备门户
 description: 了解 Windows Device Portal 如何在 Windows 桌面上打开诊断和自动化。
 ms.date: 02/06/2019
 ms.topic: article
-keywords: windows 10，uwp，设备门户
+keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cf497d5d57f5a3cdc5c52ecfeead7885ff7d56
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
-ms.translationtype: MT
+ms.openlocfilehash: 73f7e827c0ec8ca289d3523da06601de978a91d2
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67713802"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "79210183"
 ---
 # <a name="device-portal-for-windows-desktop"></a>适用于 Windows 桌面的设备门户
 
@@ -35,7 +35,7 @@ Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗
 
 ### <a name="turn-on-device-portal"></a>打开设备门户
 
-您可以在**设置**的**面向开发人员**部分中启用设备门户。 当你启用它时，你还必须创建相应的用户名和密码。 不要使用你的 Microsoft 帐户或其他 Windows 凭据。 
+可以在“设置”  的“面向开发人员”  部分中启用设备门户。 在启用设备门户时，还必须创建相应的用户名和密码。 不要使用你的 Microsoft 帐户或其他 Windows 凭据。 
 
 ![“设置”应用的“设备门户”部分](images/device-portal/device-portal-desk-settings.png) 
 
@@ -47,8 +47,8 @@ Windows 设备门户允许你查看诊断信息，并通过 HTTP 从浏览器窗
 
 要通过本地主机进行连接，打开浏览器窗口，然后输入你正在使用的连接类型在此处显示的地址。
 
-* Localhost:`http://127.0.0.1:<PORT>`或 `http://localhost:<PORT>`
-* 本地网络： `https://<IP address of the desktop>:<PORT>`
+* Localhost：`http://127.0.0.1:<PORT>` 或 `http://localhost:<PORT>`
+* 本地网络：`https://<IP address of the desktop>:<PORT>`
 
 身份验证和安全通信要求使用 HTTPS。
 
@@ -71,7 +71,7 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 - 功能
 - 混合现实
 - 流式安装调试程序
-- Location
+- 位置
 - Scratch
 
 ## <a name="more-device-portal-options"></a>更多设备门户选项
@@ -80,22 +80,22 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
 
 如果你希望为 Device Portal 选择端口号（如 80 和 443），你可以设置以下 RegKey：
 
-- 在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`：所需的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
-    - `HttpPort`：所需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。    
-    - `HttpsPort`：所需的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
+- （位于 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service` 下面）
+    - `UseDynamicPorts`：一个必需的 DWORD。 将其设置为 0，以便保留你已选择的端口号。
+    - `HttpPort`：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTP 连接的端口号。    
+    - `HttpsPort`：一个必需的 DWORD。 包含 Device Portal 将在其上侦听 HTTPS 连接的端口号。
     
-在相同的 RegKey 路径下，你也可以关闭身份验证要求：
-- `UseDefaultAuthorizer` - `0` 已禁用，`1`启用的。  
+在相同的 regkey 路径下，还可以关闭身份验证要求：
+- `UseDefaultAuthorizer` - `0` 为禁用，`1` 为启用。  
     - 这可控制每个连接的基本身份验证要求以及从 HTTP 到 HTTPS 的重定向。  
     
 ### <a name="command-line-options-for-device-portal"></a>设备门户的命令行选项
-通过管理命令提示符，你可以启用和配置设备门户的部件。 若要查看最新支持你的生成上的命令集，可以运行 `webmanagement /?`
+通过管理命令提示符，可以启用和配置设备门户的部件。 要查看版本上支持的最新命令集，可以运行 `webmanagement /?`
 
 - `sc start webmanagement` 或 `sc stop webmanagement` 
     - 打开或关闭该服务。 这仍需要启用开发人员模式。 
 - `-Credentials <username> <password>` 
-    - 设置设备门户的用户名和密码。 用户名必须符合基本身份验证标准，因此不得包含冒号 (:) 且应从标准 ASCII 字符（如 [a-zA-Z0-9]）中构建，因为浏览器不会以标准方式解析全字符集。  
+    - 设置设备门户的用户名和密码。 用户名必须符合基本身份验证标准，因此不得包含冒号 (:) 且应从标准 ASCII 字符（例如 [a-zA-Z0-9]）中构建，因为浏览器不会以标准方式解析全字符集。  
 - `-DeleteSSL` 
     - 这将重置用于 HTTPS 连接的 SSL 证书缓存。 如果你遇到无法避免的 TLS 连接错误（而不是预期的证书警告），此选项可为你解决该问题。 
 - `-SetCert <pfxPath> <pfxPassword>`
@@ -103,33 +103,33 @@ Windows 桌面上的设备门户提供了一组标准页面。 有关这些页�
     - 这将允许你安装自己的 SSL 证书来修复通常显示在设备门户中的 SSL 警告页面。 
 - `-Debug <various options for authentication, port selection, and tracing level>`
     - 运行独立版本的具有特定配置和可见调试消息的设备门户。 这对于生成[打包的插件](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)最为有用。 
-    - 有关如何作为系统运行此项以完全测试你的打包插件的详细信息，请参阅 [MSDN 杂志文章](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx)。
+    - 有关如何作为系统运行此项以完全测试你的打包插件的详细信息，请参阅 [MSDN 杂志文章](https://msdn.microsoft.com/magazine/mt826332.aspx)。
 
 ## <a name="common-errors-and-issues"></a>常见错误和问题
 
-以下是设置设备门户时可能遇到的一些常见错误。
+下面介绍在设置设备门户时可能会遇到的一些常见错误。
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch 返回更新的数目无效 (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbs_e_invalid_windows_update_count"></a>WindowsUpdateSearch 返回无效的更新数 (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
 
-尝试在预发布版本的 Windows 10 上安装开发人员包时，可能会收到此错误。 Windows 更新上托管这些功能按需 (FoD) 包，并在预发行内部版本中将其下载要求你选择加入外部测试。 如果安装未选择加入外部测试版本正确无误和环组合，负载不会下载。 请仔细检查以下：
+尝试在 Windows 10 的预发行版上安装开发人员包时，可能会收到此错误。 这些按需功能 (FoD) 包托管在 Windows 更新上，要在预发行版本上下载它们，则需要选择加入外部测试。 如果安装没有选择加入外部测试以查找正确的版本和环组合，则将无法下载有效负载。 仔细检查以下内容：
 
-1. 导航到**设置 > 更新和安全 > Windows 预览体验计划**，并确认**Windows Insider 帐户**部分具有正确的帐户信息。 如果看不到该部分，选择**Windows Insider 帐户链接**中，添加你的电子邮件帐户，并确认它显示在下面**Windows Insider 帐户**标题 (可能需要选择**Windows Insider 帐户链接**第二个时间实际上链接到新添加的帐户)。
+1. 导航到“设置”>“更新和安全性”>“Windows 预览体验计划”  ，并确认“Windows 预览体验成员帐户”  部分中包含正确的帐户信息。 如果没有看到该部分，请选择“链接 Windows 预览体验成员帐户”  ，添加电子邮件帐户，并确认它显示在“Windows 预览体验成员帐户”  标题下（可能需要再次选择“链接 Windows 预览体验成员帐户”  以实际链接新添加的帐户）。
  
-2. 下**要接收的内容类型？** ，请确保**开发的 Windows**处于选中状态。
+2. 在“要接收哪种类型的内容?”  下，确保选中“Windows 积极开发”  。
  
-3. 下**想要获取新生成哪些进度？** ，请确保**快速 Windows Insider**处于选中状态。
+3. 在“要以什么进度来获取新版本?”  下，确保选中“Windows 预览体验 - 快”  。
  
-4. 现在应能够安装 FoDs。 如果你在快速 Windows 预览体验和仍不能安装 FoDs，请提供反馈并附加下的日志文件已确认**C:\Windows\Logs\CBS**。
+4. 现即可安装 FoDs。 如果确认使用的是 Windows 预览体验 - 快，但仍然无法安装 FoDs，请提供反馈并将日志文件附加在 C:\Windows\Logs\CBS  下。
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC]StartService:OpenService 失败 1060年:指定的服务不是已安装的服务
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC] StartService：OpenService FAILED 1060：指定的服务不作为已安装的服务存在
 
-如果未安装开发人员包，可能会收到此错误。 如果没有开发人员包中，没有 web 管理服务。 请尝试再次安装开发人员包。
+如果未安装开发人员包，则可能会收到此错误。 没有开发人员包，就没有 Web 管理服务。 尝试再次安装开发人员包。
 
-### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>CBS 无法启动下载，因为系统位于按流量计费的网络 (CBS_E_METERED_NETWORK)
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbs_e_metered_network"></a>CBS 无法开始下载，因为系统位于按流量计费的网络 (CBS_E_METERED_NETWORK)
 
-如果您是按流量计费的 internet 连接，可能会收到此错误。 你将无法下载开发人员包按流量计费的连接。
+如果使用的是按流量计费的 Internet 连接，则可能会收到此错误。 你将无法通过按流量计费的连接下载开发人员包。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-* [Windows Device Portal 概述](device-portal.md)
-* [设备门户 core API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [Windows 设备门户概述](device-portal.md)
+* [设备门户核心 API 参考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

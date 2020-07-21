@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8278e02de4d0f9a0efa301051a57bf59bce8d520
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 42913aae69e5d049530d649c031351f4f3ab9ace
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66363302"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75684977"
 ---
 # <a name="sockets"></a>套接字
 套接字是实现许多网络协议所基于的低级数据传输技术。 UWP 为客户端-服务器或对等应用程序提供 TCP 和 UDP 套接字类，无论连接长期存在还是不需要建立连接。
@@ -521,7 +521,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-从 StreamSocket 的角度来看，完成处理程序在延续体运行前已执行完毕（因此套接字符合处置条件）  。 因此，如果想要在延续中使用该套接字，就需要避免处置它。为此，需要直接引用（通过 lambda 捕获）套接字并使用，或者间接引用（通过在延续内继续访问 `args->Socket`）套接字，或者强制延续任务内联。 可在 [StreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620609)中看到第一种方法（lambda 捕获）的实际用法。 上文[构建基本的 TCP 套接字客户端和服务器](#build-a-basic-tcp-socket-client-and-server)部分中的 C++/CX 代码使用了第二种方法 &mdash; 它以响应的形式回显了请求，并从最内层的延续中访问了 `args->Socket`。
+从 StreamSocket 的角度来看，完成处理程序在延续体运行前已执行完毕（因此套接字符合处置条件）  。 因此，如果想要在延续中使用该套接字，就需要避免处置它。为此，需要直接引用（通过 lambda 捕获）套接字并使用，或者间接引用（通过在延续内继续访问 `args->Socket`）套接字，或者强制延续任务内联。 可在 [StreamSocket 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)中看到第一种方法（lambda 捕获）的实际用法。 上文[构建基本的 TCP 套接字客户端和服务器](#build-a-basic-tcp-socket-client-and-server)部分中的 C++/CX 代码使用了第二种方法 &mdash; 它以响应的形式回显了请求，并从最内层的延续中访问了 `args->Socket`。
 
 不需要回显响应时，可以采用第三种方法。 可以使用 `task_continuation_context::use_synchronous_execution()` 选项强制 PPL 以内联形式执行延续体。 下面的代码示例演示了如何执行该操作。
 
@@ -1274,13 +1274,13 @@ private:
 
 在代码中使用批量发送存在一些很大的局限性。
 
--   在异步写入尚未完成之前，你将无法修改当前写入的 **IBuffer** 实例的内容。
--   **FlushAsync** 模式仅适用于 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
+-   在异步写入尚未完成之前，你将无法修改当前写入的 IBuffer 实例的内容  。
+-   FlushAsync 模式仅适用于 StreamSocket.OutputStream 和 DatagramSocket.OutputStream    。
 -   FlushAsync 模式适仅用于 Windows 10 以及更高版本  。
--   在其他情况下，用 [Task.WaitAll ](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) 来代替 FlushAsync 模式   。
+-   在其他情况下，用 [Task.WaitAll ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) 来代替 FlushAsync 模式   。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的端口共享
-可以配置 [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket)，与绑定到相同地址/端口的其他 Win32 或 UWP 多播套接字共存  。 要执行该操作，请在绑定或连接套接字前将 [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) 设置为 `true`  。 可以通过 DatagramSocket 对象的 [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket.Control) 属性从该对象本身访问 DatagramSocketControl 实例    。
+可以配置 [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket)，与绑定到相同地址/端口的其他 Win32 或 UWP 多播套接字共存  。 要执行该操作，请在绑定或连接套接字前将 [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) 设置为 `true` 。 可以通过 DatagramSocket 对象的 [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket.Control) 属性从该对象本身访问 DatagramSocketControl 实例    。
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>通过 StreamSocket 类提供客户端证书
 [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket) 支持使用 SSL/TLS 对客户端应用正在与其交互的服务器进行身份验证  。 在某些情况下，客户端应用需要使用 SSL/TLS 客户端证书对服务器进行身份验证。 在绑定或连接套接字前，可以使用 [StreamSocketControl.ClientCertificate](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) 属性提供客户端证书（必须在启动 SSL/TLS 握手前设置）  。 可以通过 StreamSocket 对象的 [StreamSocket.Control](/uwp/api/windows.networking.sockets.streamsocket.Control) 属性从该对象本身访问 StreamSocketControl 实例    。 如果服务器请求客户端证书，Windows 将通过提供的客户端证书做出响应。
@@ -1384,4 +1384,4 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [Windows 套接字 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>示例
-* [StreamSocket 示例](https://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [StreamSocket 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

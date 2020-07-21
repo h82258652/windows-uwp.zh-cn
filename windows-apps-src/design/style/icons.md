@@ -1,5 +1,5 @@
 ---
-Description: 良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅交流所需内容。
+Description: 良好的图标会与版式和设计语言的其余部分相协调。 它们不会混合隐喻，并且会尽快且尽量简单地仅传达所需内容。
 title: 图标
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
@@ -11,14 +11,14 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5e464251200812e79474d05d9d0a680b49167871
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 7c44baee7d3201e2e554604405afe337007dd510
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64564545"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970952"
 ---
-# <a name="icons-for-uwp-apps"></a>适用于 UWP 应用的图标
+# <a name="icons-for-windows-apps"></a>适用于 Windows 应用的图标
 
 ![图标标题图像](images/icons/header-icons.png)
 
@@ -28,16 +28,14 @@ ms.locfileid: "64564545"
 
 :::row:::
     :::column:::
-        **Icons inside the app**
+        应用中的图标 
 
-        ![icons inside the app](images/icons/inside-icons.png)
-应用内，使用图标表示复制文本或导航到设置页等动作。
+        ![应用中的图标](images/icons/inside-icons.png)应用内，使用图标表示复制文本或导航到设置页等动作。
     :::column-end:::
     :::column:::
 应用外的图标 
 
-        ![icons outside the app](images/icons/outside-icons.jpg)
-应用外，Windows 在开始菜单和任务栏中使用图标表示应用。 如果用户选择将应用固定到开始菜单，则应用的开始磁贴可以显示应用图标。 应用图标在标题栏中显示，你可以选择创建带有应用徽标的闪屏。
+        ![应用外的图标](images/icons/outside-icons.jpg)应用外，Windows 在开始菜单和任务栏中使用图标表示应用。 如果用户选择将应用固定到开始菜单，则应用的开始磁贴可以显示应用图标。 应用图标在标题栏中显示，你可以选择创建带有应用徽标的闪屏。
     :::column-end:::
 :::row-end:::
 
@@ -49,14 +47,12 @@ ms.locfileid: "64564545"
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        ![icons standard image](images/icons/icons-standard.svg)<br>
+        ![应做事项](images/do.svg)![图标标准图像](images/icons/icons-standard.svg)<br>
 
 将图标用于剪切、复制、粘贴和保存等操作，或用于导航菜单中的导航项。
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        ![icons concept image](images/icons/icons-concept.svg)<br>
+        ![禁止事项](images/dont.svg)![图标概念图像](images/icons/icons-concept.svg)<br>
 
 如果要表示的概念已具有图标，则使用图标。 （若要查看图标是否存在，检查 Segoe 图标列表。）
     :::column-end:::
@@ -64,14 +60,12 @@ ms.locfileid: "64564545"
 
 :::row:::
     :::column:::
-        ![do](images/do.svg)
-        ![icon shopping cart](images/icons/icon-shopping-cart.svg)<br>
+        ![应做事项](images/do.svg)![图标购物车](images/icons/icon-shopping-cart.svg)<br>
 
 如果用户可以轻松地理解图标的含义，且以小尺寸表达含义足够简单，则使用图标。
     :::column-end:::
     :::column:::
-        ![dont](images/dont.svg)
-        ![icons concept image](images/icons/icon-bad-example.png)<br>
+        ![禁做事项](images/dont.svg)![图标概念图像](images/icons/icon-bad-example.png)<br>
 
 如果图标的含义不清晰，或者需要复杂的外形才能清晰表达，则不要使用图标。
     :::column-end:::
@@ -89,7 +83,7 @@ ms.locfileid: "64564545"
 Microsoft 提供 1000 多个 Segoe MDL2 Assets 字体格式的图标。 从字体获取图标可能不直观，但我们的字体显示技术意味着这些图标在任何显示器、任何分辨率、任何尺寸下都能够有简洁、清晰的外观。 有关说明，请参阅 [Segoe MDL2 图标](segoe-ui-symbol-font.md)。
     :::column-end:::
     :::column:::
-        ![pre-defined icon image](images/icons/predefined-icon.png)
+        ![预定义的图标图像](images/icons/predefined-icon.png)
     :::column-end:::
 :::row-end:::
 
@@ -99,7 +93,7 @@ Microsoft 提供 1000 多个 Segoe MDL2 Assets 字体格式的图标。 从字�
 不一定要使用 Segoe MDL2 Assets 字体，可以使用用户在其系统上安装的任何字体，如 Wingdings 或 Webdings。
     :::column-end:::
     :::column:::
-        ![wingdings image](images/icons/wingdings.png)
+        ![wingdings 图像](images/icons/wingdings.png)
     :::column-end:::
 :::row-end:::
 
@@ -109,7 +103,7 @@ Microsoft 提供 1000 多个 Segoe MDL2 Assets 字体格式的图标。 从字�
 SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下看起来都很清晰。 大多数绘图应用程序都可以导出为 SVG。 有关说明，请参阅 [SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)。
     :::column-end:::
     :::column:::
-        ![SVG image](images/icons/icon-scale.gif)
+        ![SVG 图像](images/icons/icon-scale.gif)
     :::column-end:::
 :::row-end:::
 
@@ -119,7 +113,7 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 与 SVG 文件一样，几何图形也是一种基于矢量的资源，所以看起来始终很清晰。 不过，创建几何图形比较复杂，因为必须单独指定每个点和曲线。 如果需要在应用运行时修改图标（以便对其进行动画处理等），它确实是很好的选择。 有关说明，请参阅[用于移动和绘制几何图形的命令](../../xaml-platform/move-draw-commands-syntax.md)。 
     :::column-end:::
     :::column:::
-        ![Geometry objects image](images/icons/geometry-objects.png)
+        ![几何图形对象图像](images/icons/geometry-objects.png)
     :::column-end:::
 :::row-end:::
 
@@ -129,8 +123,7 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 位图以特定尺寸创建，因此它们必须根据你需要的图标大小和屏幕分辨率放大或缩小。 当图像缩小（收缩）时，它可能显示得比较模糊；当放大时，它可能显示为像素颗粒。 如果必须使用位图，建议使用 PNG 或 GIF 而不是 JPEG。 
     :::column-end:::
     :::column:::
-        ![don't](images/dont.svg)
-        ![Bitmap image](images/icons/bitmap-image.png)
+        ![禁止事项](images/dont.svg)![位图图像](images/icons/bitmap-image.png)
     :::column-end:::
 :::row-end:::
 
@@ -148,11 +141,11 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 
 :::row:::
     :::column span="2":::
-        <b>Step 1</b><br>
+        <b>步骤 1</b><br>
 将按钮的字体系列设置为 `Segoe MDL2 Assets`，并将其内容属性设置为要使用的字形的 Unicode 值：
     :::column-end:::
     :::column:::
-        ![Create an icon button step 1](images/icons/create-icon-step-1.svg)
+        ![创建图标按钮步骤 1](images/icons/create-icon-step-1.svg)
     :::column-end:::
 :::row-end:::
 
@@ -162,11 +155,11 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 
 :::row:::
     :::column span="2":::
-        <b>Step 2</b><br>
+        <b>步骤 2</b><br>
 可使用以下图标元素对象之一：[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon)、[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)、[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) 或 [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon)。 这提供了更多图标类型供你选择，并让你能够根据需要将图标和其他内容类型（如文本）组合起来：
     :::column-end:::
     :::column:::
-        ![Create an icon button step 2](images/icons/icon-text-step-2.svg)
+        ![创建图标按钮步骤 2](images/icons/icon-text-step-2.svg)
     :::column-end:::
 :::row-end:::
 
@@ -183,10 +176,10 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 
 :::row:::
     :::column span:::
-当你有一系列要组合使用的命令（如剪切/复制/粘贴）或一组照片编辑程序的绘图命令时，可以在[命令栏](../controls-and-patterns/app-bars.md)上将它们放在一起。 命令栏采用一个或多个应用栏按钮或应用栏切换按钮，每个按钮表示一项操作。 每个按钮都有一个 [Icon](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) 属性，可用于控制要显示的图标。 可以通过多种方式指定图标。 
+当你有一系列要组合使用的命令（如剪切/复制/粘贴）或一组照片编辑程序的绘图命令时，可以在[命令栏](../controls-and-patterns/app-bars.md)上将它们放在一起。 命令栏采用一个或多个应用栏按钮或应用栏切换按钮，每个按钮表示一项操作。 每个按钮都有一个 [Icon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon) 属性，可用于控制要显示的图标。 可以通过多种方式指定图标。 
     :::column-end:::
     :::column:::
-        ![Example of a command bar with icons](images/icons/create-icon-command-bar.svg)
+        ![带有图标的命令栏示例](images/icons/create-icon-command-bar.svg)
     :::column-end:::
 :::row-end:::
 
@@ -218,4 +211,4 @@ SVG 资源非常适合作为图标，因为它们在任何尺寸或分辨率下�
 
 ## <a name="related-articles"></a>相关文章
 
-* [磁贴和图标资源指南](../shell/tiles-and-notifications/app-assets.md)
+* [应用图标和徽标](app-icons-and-logos.md)

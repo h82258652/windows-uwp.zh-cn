@@ -5,24 +5,24 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 5 月, �
 ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d8b72501c298f3814092ec4567a5fb608c4bb88f
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: cd84892f9d90a69379ac5a7f84dfa188adf1211e
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682766"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74258785"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>2018 年 5 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 五月份提供了与 [Microsoft Build 2018](https://www.microsoft.com/build/) 开发人员大会一致的以下功能概述、开发人员指南、视频和示例。
 
-只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
 ### <a name="motion-in-fluent-design"></a>Fluent Design 中的动作
 
-Fluent Design System 中，动作的使用基于计时、缓动、方向性和重力的基本原理在不断发展。 应用这些基本原理将有助于指导用户使用应用程序，并通过反映自然世界将用户与其数字体验联系起来。 在以下文章中了解更多信息：
+Fluent Design System 中，动作的使用基于计时、缓动、方向性和重力的基本原理在不断发展。 应用这些基本原理有助于指导用户使用应用，并通过反映自然世界将用户与其数字体验联系起来。 在以下文章中了解更多信息：
 
 * [动作概述](../design/motion/index.md)已更新，可反映这些基本原理。
 * [实践中的动作](../design/motion/motion-in-practice.md)展示了应用中如何应用这些基本原理的示例。
@@ -63,7 +63,7 @@ Fluent Design System 中，动作的使用基于计时、缓动、方向性和�
 
 可以在将来版本的 Windows 社区工具包中找到 WebView 等其他控件。 有关详细信息，请参阅[在 WPF 和 Windows 窗体应用程序中承载 UWP 控件](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)。
 
-### <a name="gaze-input-and-interactions"></a>视线输入和交互
+### <a name="gaze-input-and-interactions"></a>凝视输入和交互
 
 [根据用户眼睛的位置及移动，跟踪用户的视线、注意和状态。](../design/input/gaze-interactions.md) 作为一种辅助技术，这种使用 UWP 应用并与之交互的全新强大方式特别有用。 视线输入还为游戏（包括目标采集和跟踪）及其他无法使用传统输入设备（键盘、鼠标、触摸）的交互式场景提供了颇具吸引力的机会。
 
@@ -99,7 +99,7 @@ Windows Insider Preview 内部版本中推出了“集”功能。 使用“集�
 
 ## <a name="developer-guidance"></a>开发人员指南
 
-### <a name="get-started"></a>立即开始行动
+### <a name="get-started"></a>入门
 
 我们已根据新的学习轨迹大范围改动了入门内容。 这些新主题旨在为新的 Windows 10 开发人员提供有关他们可能想要完成的一些常见任务的信息。 这些主题并非教程，也不提供手把手的演练，而是指出现有文档的位置及其用法。 请查看改编的[开始编写代码](../get-started/create-uwp-apps.md)页，或者浏览每篇个人学习轨迹文章：
 

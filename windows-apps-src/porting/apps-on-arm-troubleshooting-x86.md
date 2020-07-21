@@ -5,12 +5,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, 始终连接, ARM 上的 x86 模拟, 疑难解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 480d9cd6508b149e0d4966bae8835c05d30db7af
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: a71f33438a336aba67afbb30b19987b0e0aef83b
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682746"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683930"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>x86 桌面应用疑难解答
 >[!IMPORTANT]
@@ -20,7 +20,7 @@ ms.locfileid: "68682746"
 
 |问题|解决方案|
 |-----|--------|
-| 你的应用依赖于不是为 ARM 设计的驱动程序。 | 将你的 x86 驱动程序重新编译为 ARM64 驱动程序。 请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)。 |
+| 你的应用依赖于不是为 ARM 设计的驱动程序。 | 将你的 x86 驱动程序重新编译为 ARM64 驱动程序。 请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)。 |
 | 你的应用只适用于 x64。 | 如果你的应用是为 Microsoft Store 开发的，请提交应用的 ARM 版本。 有关详细信息，请参阅[应用包体系结构](/windows/msix/package/device-architecture)。 如果你是 Win32 开发人员，我们建议将你的应用重新编译到 ARM64。 有关更多信息，请参阅[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 |
 | 你的应用使用了高于 1.1 版本的 OpenGL，或者需要硬件加速的 OpenGL。 | 如果可用，请使用应用的 DirectX 模式。 使用 DirectX 9、DirectX 10、DirectX 11 和 DirectX 12 的 x86 应用将可在 ARM 上正常运行。 有关详细信息，请参阅 [DirectX 图形和游戏](https://docs.microsoft.com/windows/desktop/directx)。 |
 | 你的 x86 应用无法按预期工作。 | 按照 [ARM 上的程序兼容性疑难解答](apps-on-arm-program-compat-troubleshooter.md)中的指南尝试使用兼容性疑难解答。 有关其他一些疑难解答步骤，请参阅[基于 ARM 的 x86 应用疑难解答](apps-on-arm-troubleshooting-x86.md)。 |
@@ -39,16 +39,16 @@ ms.locfileid: "68682746"
 ## <a name="drivers"></a>Drivers 
 所有内核模式驱动程序、[用户模式驱动程序框架 (UMDF)](https://docs.microsoft.com/windows-hardware/drivers/wdf/overview-of-the-umdf) 驱动程序和打印驱动程序都必须进行编译，以匹配操作系统的体系结构。 如果 x86 应用具有驱动程序，则必须为 ARM64 重新编译该驱动程序。 x86 应用也许能够在模拟环境中良好运行，但必须为 ARM64 重新编译其驱动程序，并且依赖该驱动程序的任何应用体验都将无法使用。 有关为 ARM64 编译驱动程序的详细信息，请参阅[使用 WDK 构建 ARM64 驱动程序](https://docs.microsoft.com/windows-hardware/drivers/develop/building-arm64-drivers)。
 
-## <a name="shell-extensions"></a>外壳扩展 
-尝试连接 Windows 组件或将 DLL 加载到 Windows 进程中的应用需要重新编译这些 DLL，以匹配系统的体系结构，即 ARM64。 输入法编辑器 (IME)、辅助技术、shell 扩展应用（例如，在资源管理器中显示云存储图标或右键单击上下文菜单）通常会使用这种方法。 若要了解如何将应用或 DLL 重新编译到 ARM64，请参阅博客文章[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 
+## <a name="shell-extensions"></a>Shell 扩展 
+尝试连接 Windows 组件或将 DLL 加载到 Windows 进程中的应用需要重新编译这些 DLL，以匹配系统的体系结构，即 ARM64。 通常，这些由输入法编辑器（Ime）、辅助技术和 shell 扩展应用程序使用（例如，在资源管理器中显示云存储图标或右键单击上下文菜单）。 若要了解如何将应用或 DLL 重新编译到 ARM64，请参阅博客文章[针对 ARM 开发的 Visual Studio 早期预览版 Windows 10 支持](https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/)。 
 
 ## <a name="debugging"></a>调试
-要更深入地调查应用的行为，请参阅[在 ARM 上进行调试](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64)，以详细了解在 ARM 上进行调试的工具和策略。
+要更深入地调查应用的行为，请参阅[在 ARM 上进行调试](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugging-arm64)，以详细了解在 ARM 上进行调试的工具和策略。
 
 ## <a name="virtual-machines"></a>虚拟机
 Qualcomm Snapdragon 835 移动电脑平台不支持 Windows 虚拟机监控程序平台。 因此，使用 Hyper-V 运行虚拟机将失败。 我们将继续在未来的 Qualcomm 芯片组上投资这些技术。 
 
 ## <a name="dynamic-code-generation"></a>动态代码生成
-X86 桌面应用程序在 ARM64 上通过系统生成 ARM64 指令在运行时进行模拟。 这意味着, 如果 x86 桌面应用在其进程中阻止动态代码生成或修改, 则无法支持在 ARM64 上以 x86 身份运行该应用。 
+X86 桌面应用程序在 ARM64 上通过系统生成 ARM64 指令在运行时进行模拟。 这意味着，如果 x86 桌面应用在其进程中阻止动态代码生成或修改，则无法支持在 ARM64 上以 x86 身份运行该应用。 
 
-这是在使用带有`ProcessDynamicCodePolicy`标志的[SetProcessMitigationPolicy](https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 对其进程启用的安全缓解措施。 若要在 ARM64 上成功运行作为 x86 进程, 则必须禁用此缓解策略。 
+这是在使用带有 `ProcessDynamicCodePolicy` 标志的[SetProcessMitigationPolicy](https://docs.microsoft.com/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy) API 对其进程启用的安全缓解措施。 若要在 ARM64 上成功运行作为 x86 进程，则必须禁用此缓解策略。 

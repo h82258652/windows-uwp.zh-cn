@@ -9,16 +9,16 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c227629ace1f3fdbb2af8582401f9273cf11c2e
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63799639"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968752"
 ---
 # <a name="contact-card"></a>联系人卡片
 
-联系人卡片显示[联系人](/uwp/api/Windows.ApplicationModel.Contacts.Contact)（UWP 用来表示用户和企业的机制）的联系人信息，例如姓名、电话号码和地址。  联系人卡片还允许用户编辑联系人信息。 可以选择显示紧凑式联系人卡片或包含更多信息的完整联系人卡片。
+联系人卡片显示[联系人](/uwp/api/Windows.ApplicationModel.Contacts.Contact)（Windows 用来表示用户和企业的机制）的信息，例如姓名、电话号码和地址。  联系人卡片还允许用户编辑联系人信息。 可以选择显示紧凑式联系人卡片或包含更多信息的完整联系人卡片。
 
 > **重要的 API**：[ShowContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、[ShowFullContactCard 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard)、[IsShowContactCardSupported 方法](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[Contact 类](/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
@@ -181,5 +181,5 @@ private void onUserClickShowContactCard()
 
 ## <a name="related-articles"></a>相关文章
 - [联系人和日历](/windows/uwp/contacts-and-calendar/)
-- [Contact cards sample](https://go.microsoft.com/fwlink/p/?LinkId=624040)（联系人卡片示例）
+- [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)（联系人卡片示例）
 - [个人图片控件](/windows/uwp/controls-and-patterns/person-picture/)

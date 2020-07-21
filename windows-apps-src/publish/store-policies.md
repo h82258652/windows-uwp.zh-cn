@@ -1,25 +1,24 @@
 ---
 title: Microsoft Store 策略
 description: Microsoft Store 中的产品必须满足我们的认证标准，为客户提供真正有用且引人入胜的体验，并与 Microsoft Store 完美兼容。
-layout: LandingPage
-ms.date: 03/05/2019
+ms.date: 10/01/2019
 ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 3511fb221e1e087f7ced5ce11aca8d53bd027079
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826474"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "79209352"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 策略
 
 
-**文档版本：7.11**
+**文档版本：7.12**
 
-**文档日期：2019 年 3 月 5 日**
+**文档日期：2019 年 10 月 1 日**
 
 > [!NOTE]
 > 有关本协议近期更改的总结，请参阅[更改历史记录](store-policies-change-history.md)。
@@ -36,7 +35,7 @@ ms.locfileid: "66826474"
 
 你的产品对于亿万客户的使用体验而言至关重要。 我们迫不及待想要看到你的作品，并且十分乐意向全世界推广你的产品。
 
-如果你想提供关于这些策略的反馈，请在[我们的论坛](http://go.microsoft.com/fwlink/p/?LinkId=224196)上发表评论告知我们。 我们会认真对待每一条评论。
+如果你想提供关于这些策略的反馈，请在[我们的论坛](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=windowsstore)上发表评论告知我们。 我们会认真对待每一条评论。
 
 
 ## <a name="table-of-contents"></a>目录
@@ -72,9 +71,9 @@ ms.locfileid: "66826474"
 - [11.9 过度亵渎和不恰当内容](#119-excessive-profanity-and-inappropriate-content)
 - [11.10 国家/地区特定的要求](#1110-countryregion-specific-requirements)
 - [11.11 年龄分级](#1111-age-ratings)
+- [11.12 用户生成的内容](#1112-user-generated-content)
 
 ## <a name="product-policies"></a>产品策略
-
 
 ### <a name="101-distinct-function--value-accurate-representation"></a>10.1 与众不同的功能和价值；准确的展示
 
@@ -114,7 +113,7 @@ ms.locfileid: "66826474"
 
 **10.2.3**
 
-你的产品不得包含或启用恶意软件（Microsoft 在[不需要的软件和恶意软件](http://go.microsoft.com/fwlink/?LinkId=821298)中对恶意软件进行了定义）。
+你的产品不得包含或启用恶意软件（Microsoft 在[不需要的软件和恶意软件](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria)中对恶意软件进行了定义）。
 
 **10.2.4**
 
@@ -128,6 +127,9 @@ ms.locfileid: "66826474"
 
 你的所有可从 Microsoft Store 获取的产品和产品内服务必须仅能通过 Microsoft Store 进行安装和更新。
 
+**10.2.6**
+
+禁用了用于在设备上挖掘加密货币的应用。 允许使用用于对挖掘加密货币进行远程管理的应用。
 
 ### <a name="103-product-is-testable"></a>10.3 产品可测试
 
@@ -219,7 +221,7 @@ ms.locfileid: "66826474"
 
 你必须使用 Microsoft Store 产品内购买 API，以销售在产品内消费或使用的数字商品或服务。 你的产品可以支持用户使用之前购买的数字内容或服务，但不得将用户导向 Microsoft Store 产品内购买 API 以外的购买机制。
 
-你的产品中出售的产品内产品不能转换为任何法律上有效的货币（如美元、欧元等）或者任何实体商品或服务。
+你的产品中出售的产品内产品不能转换为任何法律上有效的货币（例如美元、欧元等）或者任何实体商品或服务。
 
 **10.8.2**
 
@@ -238,7 +240,9 @@ ms.locfileid: "66826474"
 
 **10.8.4**
 
-产品及其关联元数据必须提供产品内购买类型和价格范围的相关信息。 不得误导客户，你必须清楚地了解你的产品内促销和产品/服务的性质，包括任何试用体验的范围和条款。 如果用户在试用产品期间或之后无法访问所创建的内容，则用户必须提前获得通知。 此外，当用户即将在你的产品中发起购买选项时，你的产品必须给予明确提醒。 
+产品及其关联元数据必须提供产品内购买类型和价格范围的相关信息。 不得误导客户，你必须清楚地了解你的产品内促销和产品/服务的性质，包括任何试用体验的范围和条款。 如果用户在试用产品期间或之后无法访问所创建的内容，则用户必须提前获得通知。 此外，当用户即将在你的产品中发起购买选项时，你的产品必须给予明确提醒。
+
+如果你的游戏提供了“虚拟抽奖”或其他提供随机化虚拟商品的机制，那么你必须在客户购买前向其披露收到每个商品的可能性。 这些披露可以出现：在产品内（如在应用内的应用商店、Microsoft Store 产品描述页 (PDP) 和/或开发人员或发布者网站上），带有来自 Microsoft Store 产品描述页 (PDP) 和/或应用内的链接。
 
 **10.8.6**
 
@@ -246,6 +250,9 @@ ms.locfileid: "66826474"
 - 你可以为订阅增值，但不能删除用户先前购买订阅时的值。
 - 若要中止某个有效订阅，你必须继续提供已购买的数字商品或服务，直至该订阅到期。
 
+**10.8.7**
+
+你的数字产品或服务的所有定价（包括销售或折扣）都应遵守所有适用的法律、法规和监管准则，包括但不限于联邦贸易委员会的[反欺骗定价指南](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl)。 
 
 ### <a name="109-notifications"></a>10.9 通知
 
@@ -279,14 +286,15 @@ ms.locfileid: "66826474"
 - 你的产品不得以引导用户点击广告为主要目的。
 - 你的产品不得执行以下任何操作：干扰或减损产品所显示广告的可见性、价值或质量。
 - 你的产品必须遵循用户所选的广告 ID 设置。
+- 所有广告必须真实、不易产生误解，并遵守所有适用的法律、法规和监管准则。
 
 **10.10.2**
 
-如果你通过合作伙伴中心内的广告活动功能购买或创建促销性广告活动来促销你的产品，则你提供给 Microsoft 的所有广告资料（包括任何相关的登录页面）必须符合 Microsoft [创意规范策略](http://go.microsoft.com/fwlink/p/?LinkId=532593)和[创意认可策略](http://go.microsoft.com/fwlink/p/?LinkId=532595)。
+如果你通过合作伙伴中心内的广告活动功能购买或创建促销性广告活动来促销你的产品，则你提供给 Microsoft 的所有广告资料（包括任何相关的登录页面）必须符合 Microsoft [创意规范策略](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-specs)和[创意认可策略](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)。
 
 **10.10.3**
 
-你的产品所显示的所有广告内容都必须遵循 Microsoft 的 [创意认可策略](http://go.microsoft.com/fwlink/p/?LinkId=532595)。
+你的产品所显示的所有广告内容都必须遵循 Microsoft 的 [创意认可策略](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)。
 
 如果你的产品需要显示广告，则所显示的所有内容都必须符合[应用开发人员协议](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的广告要求，其中包括以下要求：
 
@@ -300,13 +308,11 @@ ms.locfileid: "66826474"
 
 **10.10.6**
 
-如果你的产品面向 13 岁以下的儿童（如[儿童在线隐私保护法](http://go.microsoft.com/fwlink/p/?LinkID=623015)中定义），则必须在合作伙伴中心中将这一事实通知 Microsoft，并且确保产品中所显示的所有广告内容都适合 13 岁以下的儿童。
-
+如果你的产品面向 13 岁以下的儿童（如[儿童在线隐私保护法](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy)中定义），则必须在合作伙伴中心中将这一事实通知 Microsoft，并且确保产品中所显示的所有广告内容都适合 13 岁以下的儿童。
 
 ### <a name="1011-mobile-voice-plans"></a>10.11 移动语音计划
 
 你的产品不得出售、链接到或以其他方式推销移动语音计划。
-
 
 ### <a name="1012-edge-extensions"></a>10.12 Microsoft Edge 扩展
 
@@ -317,18 +323,17 @@ Microsoft Edge 扩展遵循以下附加要求：
 - 如果你的扩展收集 Web 浏览活动，则它必须仅在显著公开且面向用户的功能需要时进行收集，或将其仅用于该功能的目的。
 - 扩展不得以编程方式更改或看起来更改浏览器功能或设置，包括但不限于：地址栏搜索提供程序和建议、起始页或主页、新建标签页以及添加或删除收藏夹和阅读列表项。
 
-
 ### <a name="1013-gaming-and-xbox"></a>10.13 游戏和 Xbox
 
 对于以游戏体验为主或面向 Xbox One 的产品，应满足以下要求：
 
 **10.13.1**
 
-面向 Xbox One 的游戏产品必须通过 [Xbox Live 创意者](https://go.microsoft.com/fwlink/?linkid=844722)或 [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) 计划才能使用 Xbox Live 服务。
+面向 Xbox One 的游戏产品（包括主要为其他设备或平台上运行的游戏提供远程玩/控制游戏功能的产品）必须通过 [Xbox Live 创意者](https://go.microsoft.com/fwlink/?linkid=844722)或 [ID@Xbox](https://www.xbox.com/Developers/id) 计划使用 Xbox Live 服务。
 
 **10.13.2**
 
-支持在 Xbox One 设备上跨玩家交流或同步网络播放的游戏产品必须使用 Xbox Live，且须通过 [ID@Xbox](http://go.microsoft.com/fwlink/?LinkId=821742) 计划获得批准。
+支持在 Xbox One 设备上跨玩家交流或同步网络播放的游戏产品必须使用 Xbox Live，且须通过 [ID@Xbox](https://www.xbox.com/Developers/id) 计划获得批准。
 
 **10.13.3**
 
@@ -350,7 +355,7 @@ Xbox One 上的游戏产品不得显示经由非 Xbox Live 服务获取的备用
 
 对于使用 Xbox Live 和提供多玩家游戏的游戏产品，用户生成的内容或用户通信应遵守：
 - 用户登录到 Xbox Live 之前不得允许开始游戏。
-- 必须遵守[家长和服务的管控](https://go.microsoft.com/fwlink/?linkid=860295)。
+- 必须遵守[家长和服务的管控](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity)。
 
 **10.13.7**
 
@@ -379,11 +384,9 @@ Xbox Live 的游戏产品必须遵守针对服务使用量的以下要求：
 - 游戏中必须合理使用服务和用户数据。 此数据包括（但不限于）使用情况数据、帐户标识符以及其他任何个人身份数据、统计数据、得分、评分、排名、与其他用户的联络信息和与用户的社交活动相关的其他任何数据。
 - 不得存储任何 Xbox Live 社交图片数据（例如，好友列表），但已将其 Xbox Live 帐户与你的游戏关联的用户的帐户标识符除外。
 - 当你将你的游戏从我们的服务中删除时，或当用户取消其 Xbox Live 帐户与你的游戏的关联时，请删除所有帐户标识符。 请勿将服务或用户数据（即使是匿名的、汇总的或衍生的数据）共享到任何广告网络、数据中介或其他广告或盈利相关的服务。
-- 当 Microsoft 收到来自最终用户的删除个人数据请求时，我们将通过提供最终用户标识符列表的方式和你沟通这些请求。 你必须至少每 30 天检查一次列表，以确保收到所有的删除请求，列表中提供的信息只可用于满足最终用户的删除请求。 你可以通过[删除的帐户列表工具](https://aka.ms/xbox-deleted)查找相关流程的详情。 
+- 当 Microsoft 收到来自最终用户的删除个人数据请求时，我们将通过提供最终用户标识符列表的方式和你沟通这些请求。 你必须至少每 30 天检查一次列表，以确保收到所有的删除请求，列表中提供的信息只可用于满足最终用户的删除请求。 你可以通过[删除的帐户列表工具](https://forums.xboxlive.com/users/login.html)查找相关流程的详情。
 
 ### <a name="1014-account-type"></a>10.14 帐户类型
-
-从 2018 年 4 月 17 日开始，新发布的需要鉴定才能访问主要功能的产品必须使用安全专用的第三方鉴定提供商，或者必须通过公司帐户类型来发布。 注意，如果所有应用都需要策略 10.8.3 中所述的财务帐户信息，则必须使用公司帐户。
 
 如果理性的消费者将你的发布商帐户名称解释为商业实体的名称，则必须通过公司帐户类型而非个人帐户类型来发布。
 
@@ -400,7 +403,6 @@ Xbox Live 的游戏产品必须遵守针对服务使用量的以下要求：
 ### <a name="112-content-including-names-logos-original-and-third-party"></a>11.2 内容（包含名称、徽标、原创和第三方）
 
 你的产品中的所有内容和相关联的元数据都必须由应用程序提供商原创、通过第三方权限持有者适当地授权、在权限持有者允许下使用，或者在法律允许的其他情况下使用。
-
 
 ### <a name="113-risk-of-harm"></a>11.3 伤害风险
 
@@ -443,7 +445,6 @@ Xbox Live 的游戏产品必须遵守针对服务使用量的以下要求：
 - 你的产品不得包含过多或不必要的亵渎语言。
 - 你的产品不得包含或显示正常人会认为是淫秽的内容。
 
-
 ### <a name="1110-countryregion-specific-requirements"></a>11.10 国家/地区特定的要求
 
 不允许出现在你的产品所适用的任何国家/地区中具有冒犯性的内容。 由于当地法律或文化规范，一些内容可能会在某些国家/地区视为冒犯性内容。 在某些国家/地区可能被视为具有冒犯性的内容示例包括以下各项：
@@ -454,7 +455,6 @@ Xbox Live 的游戏产品必须遵守针对服务使用量的以下要求：
 - 有争议的领土或区域引用
 - 提供或允许对违反适用的当地法律的内容或服务的访问
 
-
 ### <a name="1111-age-ratings"></a>11.11 年龄分级
 
 当你在合作伙伴中心中提交产品或游戏时，你必须获取它的年龄分级。 你负责准确完成分级调查问卷，以获取适当的分级。
@@ -463,6 +463,12 @@ Xbox Live 的游戏产品必须遵守针对服务使用量的以下要求：
 
 如果你的产品所提供的内容（例如用户生成的内容、零售内容或其他基于 Web 的内容）可能适合的年龄分级高于其指定的分级，你必须允许用户使用内容筛选器或通过预先存在的帐户登录，从而选择是否接收此类内容。
 
+### <a name="1112-user-generated-content"></a>11.12 用户生成的内容
+
+用户生成的内容是用户为应用或产品贡献的内容，可供某些或全部用户查看或访问。 如果你的产品包含 UGC，则必须
+
+- 发布并向用户提供服务的产品条款和/或内容指导原则
+- 为用户提供一种在产品中报告不适当内容的方法
 
 ---
 <sup>1</sup>“Store”或“Microsoft Store”（不论其称谓如何）是指 Microsoft 拥有或由其运作的平台，通过该平台，应用可以提供给客户或由客户获取。 除非另行说明，否则 Store 包括 Microsoft Store、Windows 应用商店、Xbox 商店、适用于企业的 Microsoft Store 和适用于教育的 Microsoft Store。

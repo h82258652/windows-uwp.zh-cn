@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60abc29ad4f9e16dc9d37e99f94c9f30039c0087
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 170452443588399e0257bb49f3c63604bc0a7830
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360703"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75683880"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 处理音频帧
 
@@ -21,16 +21,16 @@ ms.locfileid: "66360703"
 > 本文中讨论的功能仅从 Windows 10 版本 1803 开始提供。
 
 > [!NOTE] 
-> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)。
+> 文中提供了一个通用 Windows 应用示例，介绍使用 **MediaFrameReader** 显示不同帧源（包括彩色、深度和红外相机）的帧。 有关详细信息，请参阅[相机帧示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)。
 
 ## <a name="setting-up-your-project"></a>设置项目
 获取音频帧的过程在很大程度上与获取其他类型的媒体帧相同。 对于使用 **MediaCapture** 的任何应用，在尝试访问任何相机设备前都必须声明应用使用 *webcam* 功能。 如果应用从音频设备捕获音频，还应声明 *microphone* 设备功能。 
 
-**将功能添加到应用程序清单**
+**向应用程序清单添加功能**
 
-1.  在 Microsoft Visual Studio 的“解决方案资源管理器”中，通过双击“package.appxmanifest”项，打开应用程序清单的设计器。  
+1.  在 Microsoft Visual Studio 的**解决方案资源管理器**中，通过双击 **package.appxmanifest** 项，打开应用程序清单的设计器。
 2.  选择**功能**选项卡。
-3.  选中“摄像头”框和“麦克风”框。  
+3.  选中**摄像头**框和**麦克风**框。
 4.  若要访问图片库和视频库，请选中**图片库**框和**视频库**框。
 
 
@@ -72,15 +72,15 @@ ms.locfileid: "66360703"
 
 [!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
 
-可以使用 [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) 对象将媒体帧捕获的音频数据传递到 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph)。 将帧传递到 [**AudioFrameInputNode**](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeinputnode)的 [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) 方法。 有关使用音频图捕获、处理和混合音频信号的详细信息，请参阅[音频图](audio-graphs.md)。
+可以使用 [**AudioFrame**](https://docs.microsoft.com/uwp/api/windows.media.audioframe) 对象将媒体帧捕获的音频数据传递到 [**AudioGraph**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph)。 将帧传递到 [**AudioFrameInputNode**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode)的 [**AddFrame**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.addframe) 方法。 有关使用音频图捕获、处理和混合音频信号的详细信息，请参阅[音频图](audio-graphs.md)。
 
 ## <a name="related-topics"></a>相关主题
 
-* [处理媒体帧与 MediaFrameReader](process-media-frames-with-mediaframereader.md)
+* [用 MediaFrameReader 处理媒体帧](process-media-frames-with-mediaframereader.md)
 * [摄像头](camera.md)
-* [基本的照片、 视频和音频捕获与 MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [相机帧示例](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [音频图形](audio-graphs.md)
+* [带有 MediaCapture 的基本照片、视频和音频捕获](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [照相机框架示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [音频图](audio-graphs.md)
  
 
 

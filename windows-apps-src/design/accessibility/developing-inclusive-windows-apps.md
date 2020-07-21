@@ -1,5 +1,5 @@
 ---
-Description: 了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
+Description: 了解如何开发可访问的 Windows 应用，包括键盘导航、颜色和对比度设置以及辅助技术支持。
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: 开发非独占 Windows 10 应用
 label: Developing inclusive Windows 10 apps
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f9d3f20974c1e1ce7ef62c01c26a44d3ff4889
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 37fb7cc81d1a86a159526af5d580a02482d13f9a
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319230"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233978"
 ---
 # <a name="developing-inclusive-windows-apps"></a>开发非独占 Windows 应用  
 
-本文讨论了如何开发辅助通用 Windows 平台 (UWP) 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。 了解如何开发辅助 Windows 10 UWP 应用，其中包含键盘导航、颜色和对比度设置以及对辅助技术的支持。
+本文介绍如何开发可访问的 Windows 应用。 具体而言，它假定你了解如何为应用设计逻辑层次结构。 了解如何开发可访问的 Windows 应用，包括键盘导航、颜色和对比度设置以及辅助技术支持。
 
 如果你尚未了解，请首先阅读[设计非独占软件](designing-inclusive-software.md)。
 
@@ -27,7 +27,7 @@ ms.locfileid: "67319230"
 2. 确保你的应用针对无法使用鼠标或触摸屏的用户支持[键盘导航](#keyboard-navigation)。
 3. 确保你的应用支持辅助[颜色和对比度](#color-and-contrast)设置。
 
-## <a name="programmatic-access"></a>编程访问  
+## <a name="programmatic-access"></a>以编程方式访问  
 在应用中创建辅助功能时，编程访问至关重要。 通过为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）来实现此操作。 这可确保将 UI 控件公开给屏幕阅读器（例如讲述人）或替代输出设备（如盲文屏幕）等辅助技术 (AT)。 如果没有编程访问，辅助技术的 API 将无法正确解释信息，从而导致用户无法充分使用产品，或者迫使辅助技术使用从未旨在用作辅助功能接口的未记录编程接口或技术。 当将 UI 控件公开给辅助技术时，辅助技术可以确定用户可以使用哪些操作和选项。  
 
 有关使应用 UI 元素可用于辅助技术 (AT) 的详细信息，请参阅[公开基本的辅助功能信息](basic-accessibility-information.md)。
@@ -71,19 +71,19 @@ XAML
 ## <a name="accessibility-checklist"></a>辅助功能清单  
 下面是简化版的辅助功能清单：
 
-1. 为应用中的内容和交互 UI 元素设置辅助名称（必选）和辅助说明（可选）。
+1. 为应用中的内容和交互式 UI 元素设置辅助名称（必选）和描述（可选）。
 2. 实现键盘辅助功能。
-3. 以直观的方式验证你的 UI 以确保文本对比度足够大，元素以高对比度主题正确呈现以及使用了正确颜色。
-4. 运行辅助功能工具，解决报告的问题以及验证屏幕读取体验。 （请参阅辅助功能测试主题。）
+3. 以直观方式验证你的 UI 以确保文本对比度足够大、元素以高对比度主题正确呈现以及使用了正确的颜色。
+4. 运行辅助功能工具、解决报告的问题并验证屏幕阅读体验。 （请参阅辅助功能测试主题。）
 5. 确保你的应用清单设置遵循辅助功能指南。
-6. 在 Microsoft Store 中将你的应用声明为辅助应用。 （请参阅[应用商店中的辅助功能](accessibility-in-the-store.md)主题。）
+6. 在 Microsoft Store 中将你的应用声明为辅助应用。 （请参阅 [Microsoft Store 中的辅助功能](accessibility-in-the-store.md)主题。）
 
 有关更多详细信息，请参阅完整的[辅助功能清单](accessibility-checklist.md)主题。
 
 ## <a name="related-topics"></a>相关主题  
 * [设计非独占软件](designing-inclusive-software.md)  
 * [非独占设计](https://www.microsoft.com/design/inclusive/)
-* [要避免的可访问性做法](practices-to-avoid.md)
-* [可访问性的工程软件](https://www.microsoft.com/download/details.aspx?id=19262)
+* [要避免的辅助功能做法](practices-to-avoid.md)
+* [针对辅助功能设计软件](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 辅助功能开发人员中心](https://developer.microsoft.com/windows/accessible-apps)
 * [辅助功能](accessibility.md)

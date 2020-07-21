@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 自定义, 模板化, 控件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c0b2d8fb17b90bc55834f6bf2200b22af9352ef6
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: a6cde5a62367dccd83ca8dc6a46c203587850422
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270081"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80760529"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>XAML 自定义（模板化）控件与 C++/WinRT
 
@@ -21,7 +21,12 @@ ms.locfileid: "68270081"
 通用 Windows 平台 (UWP) 最强大的功能之一是，用户界面 (UI) 堆栈所提供基于 XAML [控件](/uwp/api/windows.ui.xaml.controls.control)类型创建自定义控件的灵活性  。 XAML UI 框架提供[自定义依赖项属性](/windows/uwp/xaml-platform/custom-dependency-properties)[附加属性](/windows/uwp/xaml-platform/custom-attached-properties)以及[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)等功能，使用这些功能可以更轻松地创建功能丰富且可自定义的控件。 本主题引导你完成使用 C++/WinRT 创建自定义（模板化）控件的步骤。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>创建空白应用 (BgLabelControlApp)
-首先在 Microsoft Visual Studio 中创建新项目。 创建“空白应用 (C++/WinRT)”项目，然后将其命名为 BgLabelControlApp   。 本主题的后续部分将指导你如何生成项目（在此之前暂时不要生成）。
+首先在 Microsoft Visual Studio 中创建新项目。 创建“空白应用(C++/WinRT)”  项目，将其名称设置为 *BgLabelControlApp*，并确保取消选中“将解决方案和项目放在同一目录中”（使文件夹结构与此演练匹配）。 
+
+本主题的后续部分将指导你如何生成项目（但在那之前暂时不要生成）。
+
+> [!NOTE]
+> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 我们将创作新类来表示自定义的（模板化）控件。 我们要在同一编译单元内创作和使用该类。 但我们希望能够从 XAML 标记实例化此类，因此，它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
 
@@ -49,62 +54,79 @@ namespace BgLabelControlApp
 
 将这些存根文件 `BgLabelControl.h` 和 `BgLabelControl.cpp` 从 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` 复制到项目文件夹中，即 `\BgLabelControlApp\BgLabelControlApp\`。 在 **“解决方案资源管理器”** 中，请确保将 **“显示所有文件”** 切换为打开。 右键单击已复制的存根文件，然后单击“包括在项目中”  。
 
+你会在 `BgLabelControl.h` 和 `BgLabelControl.cpp` 的顶部看到 `static_assert`，需要在生成项目之前将其删除。
+
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>实现 BgLabelControl 自定义控件类 
 现在，让我们打开 `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` 和 `BgLabelControl.cpp` 并实现运行时类。 在 `BgLabelControl.h` 中，更改构造函数以设置默认样式密钥、实现 Label 和 LabelProperty，添加名为 OnLabelChanged 的静态事件处理程序以处理对依赖项属性值的更改，并添加私有成员以存储 LabelProperty 的备份字段     。
 
-在添加这些内容后，`BgLabelControl.h` 将如下所示。
+在添加这些内容后，`BgLabelControl.h` 将如下所示。 可以复制并粘贴这些列出的代码来替换 `BgLabelControl.h` 的内容。
 
 ```cppwinrt
 // BgLabelControl.h
-...
-struct BgLabelControl : BgLabelControlT<BgLabelControl>
+#pragma once
+#include "BgLabelControl.g.h"
+
+namespace winrt::BgLabelControlApp::implementation
 {
-    BgLabelControl() { DefaultStyleKey(winrt::box_value(L"BgLabelControlApp.BgLabelControl")); }
-
-    winrt::hstring Label()
+    struct BgLabelControl : BgLabelControlT<BgLabelControl>
     {
-        return winrt::unbox_value<winrt::hstring>(GetValue(m_labelProperty));
-    }
+        BgLabelControl() { DefaultStyleKey(winrt::box_value(L"BgLabelControlApp.BgLabelControl")); }
 
-    void Label(winrt::hstring const& value)
+        winrt::hstring Label()
+        {
+            return winrt::unbox_value<winrt::hstring>(GetValue(m_labelProperty));
+        }
+
+        void Label(winrt::hstring const& value)
+        {
+            SetValue(m_labelProperty, winrt::box_value(value));
+        }
+
+        static Windows::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
+
+        static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const&, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const&);
+
+    private:
+        static Windows::UI::Xaml::DependencyProperty m_labelProperty;
+    };
+}
+namespace winrt::BgLabelControlApp::factory_implementation
+{
+    struct BgLabelControl : BgLabelControlT<BgLabelControl, implementation::BgLabelControl>
     {
-        SetValue(m_labelProperty, winrt::box_value(value));
-    }
-
-    static Windows::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
-
-    static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const&, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const&);
-
-private:
-    static Windows::UI::Xaml::DependencyProperty m_labelProperty;
-};
-...
+    };
+}
 ```
 
-在 `BgLabelControl.cpp` 中定义静态成员，如下所示。
+在 `BgLabelControl.cpp` 中定义静态成员，如下所示。 可以复制并粘贴这些列出的代码来替换 `BgLabelControl.cpp` 的内容。
 
 ```cppwinrt
 // BgLabelControl.cpp
-...
-Windows::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
-    Windows::UI::Xaml::DependencyProperty::Register(
-        L"Label",
-        winrt::xaml_typename<winrt::hstring>(),
-        winrt::xaml_typename<BgLabelControlApp::BgLabelControl>(),
-        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &BgLabelControl::OnLabelChanged } }
-);
+#include "pch.h"
+#include "BgLabelControl.h"
+#include "BgLabelControl.g.cpp"
 
-void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+namespace winrt::BgLabelControlApp::implementation
 {
-    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
-    {
-        // Call members of the projected type via theControl.
+    Windows::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
+        Windows::UI::Xaml::DependencyProperty::Register(
+            L"Label",
+            winrt::xaml_typename<winrt::hstring>(),
+            winrt::xaml_typename<BgLabelControlApp::BgLabelControl>(),
+            Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &BgLabelControl::OnLabelChanged } }
+    );
 
-        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::get_self<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
-        // Call members of the implementation type via ptr.
+    void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+    {
+        if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+        {
+            // Call members of the projected type via theControl.
+
+            BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::get_self<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
+            // Call members of the implementation type via ptr.
+        }
     }
 }
-...
 ```
 
 本演练中，我们不会使用 OnLabelChanged  。 但在此处将使用，以便你理解如何为属性更改回调注册依赖项属性。 OnLabelChanged 的实现还展示如何从基本投影类型获取派生投影类型（本例中，基本投影类型为 DependencyObject）   。 它展示之后如何获取指针，该指针指向实现投影类型的类型。 第二个操作自然只能在实现投影类型的项目（即实现运行时类的项目）中执行。
@@ -116,7 +138,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 
 在其构造函数中，BgLabelControl 为自身设置默认样式密钥  。 但默认样式是什么  ？ 自定义（模板化）控件需要具有包含默认控件模板的默认样式，在控件的使用者未设置样式和/或模板时，可用于呈现。 在本节中，我们将向包含默认样式的项目添加标记文件。
 
-在项目节点下，新建文件夹，并将其命名为“主题”。 在 `Themes` 下，添加类型为“Visual C++” > “XAML” > “XAML View”的新项目，并将其命名为“Generic.xaml”    。 文件夹和文件的名称必须与如下类似，以便 XAML 框架查找自定义控件的默认样式。 删除 `Generic.xaml` 的默认内容，并粘贴到下方标记中。
+确保“显示所有文件”仍处于打开状态（在“解决方案资源管理器”中）。   在项目节点下，新建文件夹（不是筛选器，而是文件夹），并将其命名为“Themes”。 在 `Themes` 下，添加类型为“Visual C++” > “XAML” > “XAML View”的新项目，并将其命名为“Generic.xaml”    。 文件夹和文件的名称必须与如下类似，以便 XAML 框架查找自定义控件的默认样式。 删除 `Generic.xaml` 的默认内容，并粘贴到下方标记中。
 
 ```xaml
 <!-- \Themes\Generic.xaml -->

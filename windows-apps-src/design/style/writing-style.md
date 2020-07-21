@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f5f38fdfb3ba9fd32a6e06ec19cdbfb6c3b09f24
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867688"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970602"
 ---
 # <a name="writing-style"></a>写入样式
 
@@ -103,7 +103,7 @@ ms.locfileid: "68867688"
 
 :::row:::
     :::column:::
-![应做事项](images/do.svg) 通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。 通过每个 UWP 应用中包含的设计功能，你可以构建适用于一系列设备的用户界面 (UI)。
+![应做事项](images/do.svg) 使用 Windows 应用设计指南可帮助你设计和构建美观、精良的应用。 通过每个 Windows 应用中包含的设计功能，你可以构建适用于一系列设备的用户界面 (UI)。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -212,7 +212,7 @@ ms.locfileid: "68867688"
     :::column:::
 ![应做事项](images/do.svg)
 * 立即安装
-* Share
+* 共享
     :::column-end:::
 :::row-end:::
 

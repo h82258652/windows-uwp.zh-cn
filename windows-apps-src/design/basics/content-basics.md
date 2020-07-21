@@ -1,6 +1,6 @@
 ---
-Description: 概述在 UWP 应用中显示内容时常见的页面模式和 UI 元素。
-title: 通用 Windows 平台 (UWP) 应用的内容设计基础知识
+Description: 概述在 Windows 应用中显示内容时常见的页面模式和 UI 元素。
+title: Windows 应用的内容设计基础知识
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
@@ -9,14 +9,14 @@ ms.date: 12/01/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e5b46223ea7dfa5e43b5a50a04a4c3f31307d49
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2ea7d6da9461aa3c8dc2bd4d3f50c5d14c3928bb
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63796310"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233937"
 ---
-# <a name="content-design-basics-for-uwp-apps"></a>UWP 应用的内容设计基础知识
+# <a name="content-design-basics-for-windows-apps"></a>Windows 应用的内容设计基础知识
 
 任何应用的主要用途都是提供对内容的访问权限。 由于应用出于许多不同的用途而存在，因此内容具有多种形式：在照片编辑应用中，照片即是内容；在旅行应用中，地图和旅行目的地信息即是内容；等等。 
 
@@ -73,7 +73,7 @@ ms.locfileid: "63796310"
 <tr class="header">
 <th align="left">类别</th>
 <th align="left">元素</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>

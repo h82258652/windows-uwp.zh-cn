@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 七月
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4030796e942c76ccf32e04dbf951cac68718a6a5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: f4e9ce391aa485e681fc198e14fe3374edb72aa1
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320386"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75684710"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>2018 年 7 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 七月当月提供了以下功能概述、开发人员指南、视频和示例。
 
-只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -29,12 +29,12 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 请参阅我们的 PWA 指南，完成以下操作：
 
 * [将简单的 Web 应用生成为 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)
-* [使用 Windows 运行时增强 PWA](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features)
+* [使用 Windows 运行时增强 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 * [将你的 PWA 发布到 Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)
 
 ### <a name="notepad"></a>记事本
 
-Windows 10 Insider 预览版 17713 中可用，[记事本已更新许多新功能](https://aka.ms/ant-man)。 [Windows 预览体验成员](https://insider.windows.com/)现可使用缩放、全部查找/替换，以及对 Unix/Linux (LF) 和 Mac (CR) 行尾的支持。 
+Windows 10 Insider 预览版 17713 中可用，[记事本已更新许多新功能](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/)。 [Windows 预览体验成员](https://insider.windows.com/)现可使用缩放、全部查找/替换，以及对 Unix/Linux (LF) 和 Mac (CR) 行尾的支持。 
 
 ## <a name="developer-guidance"></a>开发人员指南
 
@@ -70,11 +70,11 @@ Adobe XD 和 Adobe Illustrator 工具包已更新，添加了新功能。 这些
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>开发人员入门：在 Windows 10 上创建和自定义窗体
 
-面向 Windows 开发人员的[入门文档](../get-started/index.md)现在提供基本应用开发任务的实践经验。 此视频将引导你了解其中一个主题，并介绍在应用中创建窗体 UI 的基本知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)，查看实际操作中使用的代码，然后[自行查看主题。](https://aka.ms/CreateForms)
+面向 Windows 开发人员的[入门文档](../get-started/index.md)现在提供基本应用开发任务的实践经验。 此视频将引导你了解其中一个主题，并介绍在应用中创建窗体 UI 的基本知识。 [观看视频](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)，查看实际操作中使用的代码，然后[自行查看主题。](https://docs.microsoft.com/windows/uwp/get-started/construct-form-learning-track)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>使用“项目个性化聊天”增强机器人
 
-使用“项目个性化聊天”可将可自定义的角色添加到聊天机器人。 通过与 Microsoft Bot Framework SDK 集成，可以添加闲聊功能，从而以更随意的交谈方式与客户进行交互。 [观看视频](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)了解相关实现方法，然后[尝试互动演示](https://aka.ms/PersonalityChat)进行实践体验。
+使用“项目个性化聊天”可将可自定义的角色添加到聊天机器人。 通过与 Microsoft Bot Framework SDK 集成，可以添加闲聊功能，从而以更随意的交谈方式与客户进行交互。 [观看视频](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)了解相关实现方法，然后[尝试互动演示](https://www.microsoft.com/research/project/personality-chat/)进行实践体验。
 
 ### <a name="one-dev-question"></a>一个开发问题
 

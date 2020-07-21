@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 65436d7efd1de6e9c3649ad27b29b925bc632d95
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 4c388b9b81744c0d27d96c1f97b4e405af63eaef
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820664"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80524086"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 创建“Hello world”应用
 
@@ -25,7 +25,7 @@ ms.locfileid: "67820664"
 
 ## <a name="before-you-start"></a>开始之前
 
--   若要完成本教程，在运行 Windows 10 的计算机上，必须使用 Visual Studio Community 或任一非社区版 Visual Studio。 若要进行下载，请参阅[获取工具](https://go.microsoft.com/fwlink/p/?LinkId=532666)。
+-   若要完成本教程，在运行 Windows 10 的计算机上，必须使用 Visual Studio Community 或任一非社区版 Visual Studio。 若要进行下载，请参阅[获取工具](https://visualstudio.microsoft.com/downloads/)。
 -   我们假设你已基本了解 [XAML 概述](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)中的标准 C++/CX、XAML 和概念。
 -   我们假定你正在使用 Visual Studio 中的默认窗口布局。 若要重置为默认布局，请在菜单栏上，选择“窗口” > “重置窗口布局”   。
 
@@ -231,7 +231,7 @@ MainPage::MainPage()
 
 要停止调试并关闭应用，请返回到 Visual Studio 并按 Shift+F5。
 
-有关详细信息，请参阅[从 Visual Studio 运行应用商店应用](https://go.microsoft.com/fwlink/p/?LinkId=619619)。
+有关详细信息，请参阅[从 Visual Studio 运行应用商店应用](https://msdn.microsoft.com/library/windows/apps/xaml/Hh441477(v=VS.140).aspx)。
 
 在应用中，你可以在 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 中键入，但是单击 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 不执行任何操作。 在以后的步骤中，为按钮的 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件创建事件处理程序，该事件会显示个性化问候。
 
@@ -397,6 +397,6 @@ MainPage::MainPage()
 
 ## <a name="next-steps"></a>后续步骤
 
-如果你具有一个面向 Windows 8.1 和/或 Windows Phone 8.1 的通用 Windows 应用项目，可以将它移植到 Windows 10 中。 虽然没有针对移植的自动操作过程，但你可以手动完成移植。 根据本主题中的指南，从新的 Windows 通用项目开始，获取最新的项目系统结构和清单文件、将你的代码文件复制到项目的目录结构中、将这些项添加到你的项目中，然后使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 重写你的 XAML。 有关详细信息，请参阅[将 Windows 运行时 8 项目移植到通用 Windows 平台 (UWP) 项目](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project)和[移植到通用 Windows 平台 (C++)](https://go.microsoft.com/fwlink/p/?LinkId=619525)。
+如果你具有一个面向 Windows 8.1 和/或 Windows Phone 8.1 的通用 Windows 应用项目，可以将它移植到 Windows 10 中。 虽然没有针对移植的自动操作过程，但你可以手动完成移植。 根据本主题中的指南，从新的 Windows 通用项目开始，获取最新的项目系统结构和清单文件、将你的代码文件复制到项目的目录结构中、将这些项添加到你的项目中，然后使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 重写你的 XAML。 有关详细信息，请参阅[将 Windows 运行时 8 项目移植到通用 Windows 平台 (UWP) 项目](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project)和[移植到通用 Windows 平台 (C++)](https://msdn.microsoft.com/library/mt186164.aspx)。
 
-如果你有要与 UWP 应用集成的现有 C++ 代码，例如用于为现有应用程序创建新的 UWP UI，请参阅[操作方法：在通用 Windows 项目中使用现有 C++ 代码](https://go.microsoft.com/fwlink/p/?LinkId=619623)。
+如果你有要与 UWP 应用集成的现有 C++ 代码，例如用于为现有应用程序创建新的 UWP UI，请参阅[操作方法：在通用 Windows 项目中使用现有 C++ 代码](https://msdn.microsoft.com/library/mt186162.aspx)。

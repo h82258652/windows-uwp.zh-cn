@@ -1,23 +1,26 @@
 ---
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: 了解支持的横幅广告大小。
-title: 受支持的横幅广告大小
-ms.date: 08/23/2017
+title: 支持的横幅广告大小
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 大小, 横幅
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd21be7f0e1f05e1fe4de07053cb18ee5048c6a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ec96d744f7a9d2e91b27feae1fe5f3b0c322a450
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613842"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506851"
 ---
-# <a name="supported-banner-ad-sizes"></a>受支持的横幅广告大小
+# <a name="supported-banner-ad-sizes"></a>支持的横幅广告大小
 
-通用 Windows 平台 (UWP) 应用支持以下横幅广告大小。 当您实例化您**AdControl**对象应用程序中，请确保设置 width 和 height 属性，以匹配其中一种受支持的大小。
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-大小为宽 x 高。
+通用 Windows 平台 (UWP) 应用支持以下横幅广告大小。 在应用程序中实例化**adunitid**对象时，请确保将 "宽度" 和 "高度" 属性设置为与其中一个受支持的大小匹配。
+
+大小为宽度 x 高度。
 
 * 160x600
 * 300x50
@@ -28,7 +31,7 @@ ms.locfileid: "57613842"
 * 728x90
 
 > [!NOTE]
-> 为获得最佳体验，我们建议在 Windows 10 移动版设备上使用以下大小：300 x 50、 320 x 50 和 640 x 100。
+> 为了获得最佳体验，我们建议在 Windows 10 移动版设备上使用以下尺寸：300x50、320x50 和 640x100。
 
 下表提供的示例演示了每一种横幅广告大小。
 

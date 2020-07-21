@@ -1,84 +1,84 @@
 ---
-Description: 使用 AppWindow 类在单独的窗口中查看应用程序的不同部分。
+Description: 使用 AppWindow 类在单独的窗口中查看应用的不同组成部分。
 title: 使用 AppWindow 类显示应用的辅助窗口
 ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b89d9100157cf40266bb983e258aa187f65dc93
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
-ms.translationtype: MT
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68867466"
 ---
-# <a name="show-multiple-views-with-appwindow"></a>显示具有 AppWindow 的多个视图
+# <a name="show-multiple-views-with-appwindow"></a>使用 AppWindow 显示多个视图
 
-[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)及其相关 api 通过让你在辅助窗口中显示应用内容, 并在每个窗口中同时处理同一 UI 线程, 简化了多窗口应用的创建。
+[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 及其相关 API 简化了多窗口应用的创建，因为它可以让你在辅助窗口中显示应用内容，同时仍在每个窗口中处理同一 UI 线程。
 
 > [!NOTE]
-> AppWindow 目前处于预览阶段。 这意味着你可以将使用 AppWindow 的应用提交到应用商店, 但知道某些平台和框架组件不能使用 AppWindow (请参阅[限制](/uwp/api/windows.ui.windowmanagement.appwindow#limitations))。
+> AppWindow 目前以预览版提供。 这意味着，可将使用 AppWindow 的应用提交到 Store，但某些平台和框架组件已知不能与 AppWindow 配合工作（请参阅[限制](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)）。
 
-在这里, 我们将显示多个窗口的一些方案, 其中`HelloAppWindow`包含一个名为的示例应用。 示例应用演示了以下功能:
+本文将使用一个名为 `HelloAppWindow` 的示例应用来演示一些多窗口方案。 该示例应用演示以下功能：
 
-- 从主页取消停靠控件并在新窗口中打开它。
-- 在新窗口中打开页面的新实例。
-- 在应用程序中以编程方式调整新窗口的大小和位置。
-- 将 ContentDialog 与应用程序中的相应窗口关联。
+- 从主页取消停靠某个控件，并在新窗口中打开它。
+- 在新窗口中打开某个页面的新实例。
+- 在应用中以编程方式调整新窗口的大小和位置。
+- 将 ContentDialog 关联到应用中的相应窗口。
 
-![使用单个窗口的示例应用程序](images/hello-app-window-single.png)
+![具有单个窗口的示例应用](images/hello-app-window-single.png)
   
-> _使用单个窗口的示例应用程序_
+> 具有单个窗口的示例应用 
 
-![具有未停靠颜色选取器和辅助窗口的示例应用](images/hello-app-window-multi.png)
+![具有取消停靠颜色选取器和辅助窗口的示例](images/hello-app-window-multi.png)
 
-> _具有未停靠颜色选取器和辅助窗口的示例应用_
+> 具有取消停靠颜色选取器和辅助窗口的示例 
 
-> **重要的 API**：[WindowManagement 命名空间](/uwp/api/windows.ui.windowmanagement), [AppWindow 类](/uwp/api/windows.ui.windowmanagement.appwindow)
+> **重要的 API**：[Windows.UI.WindowManagement 命名空间](/uwp/api/windows.ui.windowmanagement)、[AppWindow 类](/uwp/api/windows.ui.windowmanagement.appwindow)
 
 ## <a name="api-overview"></a>API 概述
 
-从 Windows 10 版本 1903 (SDK 18362) 开始, [WindowManagement](/uwp/api/windows.ui.windowmanagement)命名空间中的[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)类和其他 api 可用。 如果你的应用面向 Windows 10 的早期版本, 则必须[使用 w 创建辅助窗口](application-view.md)。 WindowManagement Api 仍处于开发阶段, 并且具有 API 参考文档中所述的[限制](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)。
+从 Windows 10 版本 1903 (SDK 18362) 开始提供 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 类，以及 [WindowManagement](/uwp/api/windows.ui.windowmanagement) 命名空间中的其他 API。 如果应用面向早期版本的 Windows 10，则必须[使用 ApplicationView 创建辅助窗口](application-view.md)。 WindowManagement API 仍在开发中，存在 API 参考文档中所述的[限制](/uwp/api/windows.ui.windowmanagement.appwindow#limitations)。
 
-下面是一些重要的 Api, 可用于在 AppWindow 中显示内容。
+下面是用于在 AppWindow 中显示内容的一些重要 API。
 
 ### <a name="appwindow"></a>AppWindow
 
-[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)类可用于在辅助窗口中显示部分 Windows 运行时应用。 它在概念上类似于[w](/uwp/api/windows.ui.viewmanagement.applicationview), 但行为和生存期不相同。 AppWindow 的一项主要功能是, 每个实例共享从中创建它们的同一 UI 处理线程 (包括事件调度程序), 从而简化了多窗口应用。
+[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 类可用于在辅助窗口中显示 Windows 运行时应用的一部分。 它在概念上类似于 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)，但行为和生存期不同。 AppWindow 的一项主要功能是，每个实例共享它们在创建时所在的同一 UI 处理线程（包括事件调度程序），从而简化了多窗口应用。
 
-只能将 XAML 内容连接到 AppWindow, 不支持本机 DirectX 或全息内容。 但是, 您可以显示一个承载 DirectX 内容的 XAML [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) 。
+只能将 XAML 内容连接到 AppWindow，不支持本机 DirectX 或全息内容。 但是，可以显示承载 DirectX 内容的 XAML [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel)。
 
 ### <a name="windowingenvironment"></a>WindowingEnvironment
 
-利用[WindowingEnvironment](/uwp/api/windows.ui.windowmanagement.windowingenvironment) API, 你可以了解应用程序的提供环境, 以便可以根据需要调整应用。 它介绍了环境支持的窗口类型;例如, `Overlapped`如果应用在计算机上运行, 或者`Tiled`如果应用在 Xbox 上运行, 则为。 它还提供了一组 DisplayRegion 对象, 这些对象描述可在逻辑显示器上显示应用的区域。
+使用 [WindowingEnvironment](/uwp/api/windows.ui.windowmanagement.windowingenvironment) API 可以了解正在呈现应用的环境，因此可以根据需要改编应用。 此 API 描述环境支持的窗口类型。例如，如果应用在电脑上运行，则窗口类型为 `Overlapped`；如果应用在 Xbox 上运行，则窗口类型为 `Tiled`。 它还提供一组 DisplayRegion 对象，用于描述应用可在逻辑显示器上的哪些区域中显示。
 
 ### <a name="displayregion"></a>DisplayRegion
 
-[DisplayRegion](/uwp/api/windows.ui.windowmanagement.displayregion) API 描述可在逻辑显示器上向用户显示视图的区域;例如, 在台式计算机上, 这是完全显示, 而不是任务栏的面积。 它不一定是使用后备监视器的物理显示区域的1:1 映射。 同一监视器中可以有多个显示区域, 如果这些监视器在所有方面都是相同的, 则可以将 DisplayRegion 配置为跨多个监视器。
+[DisplayRegion](/uwp/api/windows.ui.windowmanagement.displayregion) API 描述视图可在逻辑显示器上的哪个区域中向用户显示。例如，在台式机上，此显示区域是整个显示屏幕减去任务栏区域后的范围。 此显示区域不一定与后备监视器的物理显示区域之间存在 1:1 的映射。 同一监视器中可以有多个显示区域，或者，可将 DisplayRegion 配置为跨多个监视器，前提是这些监视器在所有方面都是相同的。
 
 ### <a name="appwindowpresenter"></a>AppWindowPresenter
 
-借助[AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter) API, 可以轻松地将 windows 切换到预定义的`FullScreen`配置`CompactOverlay`(如或)。 这些配置可让用户在任何支持配置的设备上保持一致的体验。
+使用 [AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter) API 可以轻松将窗口切换为预定义的配置，例如 `FullScreen` 或 `CompactOverlay`。 这些配置在任何支持此类配置的设备上为用户提供一致的体验。
 
 ### <a name="uicontext"></a>UIContext
 
-[UIContext](/uwp/api/windows.ui.uicontext)是应用程序窗口或视图的唯一标识符。 它是自动创建的, 您可以使用[UIContext](/uwp/api/windows.ui.xaml.uielement.uicontext)属性来检索 UIContext。 XAML 树中的每个 UIElement 都具有相同的 UIContext。
+[UIContext](/uwp/api/windows.ui.uicontext) 是应用窗口或视图的唯一标识符。 它是自动创建的。可以使用 [UIElement.UIContext](/uwp/api/windows.ui.xaml.uielement.uicontext) 属性来检索 UIContext。 XAML 树中的每个 UIElement 具有相同的 UIContext。
 
- UIContext 非常重要, 因为类似于[Window](/uwp/api/Windows.UI.Xaml.Window.Current)的`GetForCurrentView` api 和模式依赖于具有单个 w/CoreWindow, 每个线程都需要一个 XAML 树来处理。 当你使用 AppWindow 时, 不会出现这种情况, 因此你可以使用 UIContext 来识别特定的窗口。
+ UIContext 非常重要，因为 [Window.Current](/uwp/api/Windows.UI.Xaml.Window.Current) 等 API 以及 `GetForCurrentView` 模式都依赖于在每个要处理的线程中使用单个 ApplicationView/CoreWindow 和单个 XAML 树。 但是，在使用 AppWindow 时情况并非如此，因此可以使用 UIContext 来识别特定的窗口。
 
 ### <a name="xamlroot"></a>XamlRoot
 
-[XamlRoot](/uwp/api/windows.ui.xaml.xamlroot)类包含 XAML 元素树, 并将其连接到窗口宿主对象 (例如, [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)或[w](/uwp/api/windows.ui.viewmanagement.applicationview)), 并提供大小和可见性等信息。 不会直接创建 XamlRoot 对象。 而是在将 XAML 元素附加到 AppWindow 时创建一个。 然后, 可以使用[XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot)属性来检索 XamlRoot。
+[XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) 类包含 XAML 元素树，将该树连接到窗口宿主对象（例如 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 或 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview)），并提供大小和可见性等信息。 不要直接创建 XamlRoot 对象。 将 XAML 元素附加到 AppWindow 时，系统会创建一个 XamlRoot 对象。 然后，可以使用 [UIElement.XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 属性来检索 XamlRoot。
 
-有关 UIContext 和 XamlRoot 的详细信息, 请参阅[使代码可在窗口化主机之间移植](show-multiple-views.md#make-code-portable-across-windowing-hosts)。
+有关 UIContext 和 XamlRoot 的详细信息，请参阅[使代码可跨窗口宿主移植](show-multiple-views.md#make-code-portable-across-windowing-hosts)。
 
 ## <a name="show-a-new-window"></a>显示新窗口
 
-让我们看看在新的 AppWindow 中显示内容的步骤。
+让我们了解在新的 AppWindow 中显示内容的步骤。
 
 **显示新窗口**
 
-1. 调用静态[AppWindow TryCreateAsync](/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync)方法来创建新的[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)。
+1. 调用静态 [AppWindow.TryCreateAsync](/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync) 方法以创建新的 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)。
 
     ```csharp
     AppWindow appWindow = await AppWindow.TryCreateAsync();
@@ -86,26 +86,26 @@ ms.locfileid: "68867466"
 
 1. 创建窗口内容。
 
-    通常, 你创建 XAML[帧](/uwp/api/Windows.UI.Xaml.Controls.Frame), 然后将该框架导航到 xaml[页面](/uwp/api/Windows.UI.Xaml.Controls.Page), 你已在其中定义应用内容。 有关框架和页面的详细信息, 请参阅[两个页面之间的对等导航](../basics/navigate-between-two-pages.md)。
+    通常，你会创建一个 XAML [框架](/uwp/api/Windows.UI.Xaml.Controls.Frame)，然后将该框架导航到在其中定义了应用内容的 XAML [页面](/uwp/api/Windows.UI.Xaml.Controls.Page)。 有关框架和页面的详细信息，请参阅[两个页面之间的对等导航](../basics/navigate-between-two-pages.md)。
 
     ```csharp
     Frame appWindowContentFrame = new Frame();
     appWindowContentFrame.Navigate(typeof(AppWindowMainPage));
     ```
 
-    但是, 可以在 AppWindow 中显示任何 XAML 内容, 而不仅仅是框架和页面。 例如, 可以只显示单个控件 (如[ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker)), 也可以显示承载 DirectX 内容的[SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel) 。
+    但是，在 AppWindow 中可以显示任何 XAML 内容，而不仅仅是显示框架和页面。 例如，可以仅显示单个控件（如 [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker)），或者显示承载 DirectX 内容的 [SwapChainPanel](/uwp/api/windows.ui.xaml.controls.swapchainpanel)。
 
-1. 调用[ElementCompositionPreview. SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent)方法将 XAML 内容附加到 AppWindow。
+1. 调用 [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent) 方法以将 XAML 内容附加到 AppWindow。
 
     ```csharp
     ElementCompositionPreview.SetAppWindowContent(appWindow, appWindowContentFrame);
     ```
 
-    对此方法的调用会创建一个[XamlRoot](/uwp/api/windows.ui.xaml.xamlroot)对象, 并将其设置为指定 UIElement 的[XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot)属性。
+    调用此方法会创建一个 [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) 对象，并将其设置为指定的 UIElement 的 [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 属性。
 
-    每个 AppWindow 实例只能调用一次此方法。 设置内容后, 对此 AppWindow 实例的 SetAppWindowContent 的进一步调用将失败。 此外, 如果尝试通过传入 null UIElement 对象断开 AppWindow 内容的连接, 则调用将失败。
+    对于每个 AppWindow 实例，只能调用此方法一次。 设置内容后，对此 AppWindow 实例进一步调用 SetAppWindowContent 将会失败。 此外，如果尝试通过传入 null UIElement 对象来断开 AppWindow 内容的连接，该调用将会失败。
 
-1. 调用[AppWindow TryShowAsync](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync)方法以显示新窗口。
+1. 调用 [AppWindow.TryShowAsync](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync) 方法以显示新窗口。
 
     ```csharp
     await appWindow.TryShowAsync();
@@ -113,7 +113,7 @@ ms.locfileid: "68867466"
 
 ## <a name="release-resources-when-a-window-is-closed"></a>关闭窗口时释放资源
 
-应始终处理[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow.closed)事件, 以释放 XAML 资源 (AppWindow 内容) 和对 AppWindow 的引用。
+始终应该处理 [AppWindow.Closed](/uwp/api/windows.ui.windowmanagement.appwindow.closed) 事件，以释放 XAML 资源（AppWindow 内容）以及对 AppWindow 的引用。
 
 ```csharp
 appWindow.Closed += delegate
@@ -125,11 +125,11 @@ appWindow.Closed += delegate
 
 ## <a name="track-instances-of-appwindow"></a>跟踪 AppWindow 的实例
 
-根据你在应用程序中使用多个窗口的方式, 你可能需要也可能不需要跟踪创建的 AppWindow 实例。 该`HelloAppWindow`示例演示了一些通常使用[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)的不同方法。 在这里, 我们将探讨应跟踪这些窗口的原因, 以及如何执行此操作。
+根据在应用中使用多个窗口的方式，可能需要或者不需要跟踪创建的 AppWindow 实例。 `HelloAppWindow` 示例演示了 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 的多种不同的典型用法。 在此处，我们将了解为何要跟踪这些窗口，以及如何跟踪。
 
 ### <a name="simple-tracking"></a>简单跟踪
 
-颜色选取器窗口承载单个 XAML 控件, 而与颜色选取器进行交互的代码全部驻留在`MainPage.xaml.cs`文件中。 颜色选取器窗口仅允许单个实例, 本质上是的`MainWindow`扩展。 若要确保只创建一个实例, 则使用页面级别变量跟踪颜色选取器窗口。 在创建新的颜色选取器窗口之前, 请先检查实例是否存在, 如果存在, 则跳过创建新窗口的步骤, 只需在现有窗口上调用[TryShowAsync](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync) 。
+颜色选取器窗口承载单个 XAML 控件，用来与颜色选取器交互的代码全部驻留在 `MainPage.xaml.cs` 文件中。 颜色选取器窗口仅允许单个实例，它实质上是 `MainWindow` 的扩展。 为了确保只创建一个实例，可以使用页面级变量来跟踪颜色选取器窗口。 在创建新的颜色选取器窗口之前，请先检查是否存在一个实例，如果存在，则跳过创建新窗口的步骤，并只对现有窗口调用 [TryShowAsync](/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync)。
 
 ```csharp
 AppWindow colorPickerAppWindow;
@@ -151,17 +151,17 @@ private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs 
 }
 ```
 
-### <a name="track-an-appwindow-instance-in-its-hosted-content"></a>跟踪其托管内容中的 AppWindow 实例
+### <a name="track-an-appwindow-instance-in-its-hosted-content"></a>跟踪窗口承载内容中的 AppWindow 实例
 
-窗口承载完整的 XAML 页, 与页交互的代码位于中`AppWindowPage.xaml.cs`。 `AppWindowPage` 它允许多个实例, 每个实例单独运行。
+`AppWindowPage` 窗口承载完整的 XAML 页面，用来与该页面交互的代码驻留在 `AppWindowPage.xaml.cs` 中。 该窗口允许多个实例，其中每个实例独立运行。
 
-页面功能使你可以操作窗口、将其设置为`FullScreen`或`CompactOverlay`, 还可以侦听[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow.changed)事件以显示有关窗口的信息。 若要调用这些 api, `AppWindowPage`需要引用托管它的 AppWindow 实例。
+使用页面的功能可以操控窗口、将其设置为 `FullScreen` 或 `CompactOverlay`，此外还可以侦听 [AppWindow.Changed](/uwp/api/windows.ui.windowmanagement.appwindow.changed) 事件以显示有关窗口的信息。 若要调用这些 API，`AppWindowPage` 需要引用承载它的 AppWindow 实例。
 
-如果需要, 可以在中`AppWindowPage`创建一个属性, 并在创建时将[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)实例分配给它。
+如果这就是所需的全部内容，可以在 `AppWindowPage` 中创建一个属性，并在创建时将 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 实例分配给该属性。
 
 **AppWindowPage.xaml.cs**
 
-在`AppWindowPage`中, 创建用于保存 AppWindow 引用的属性。
+在 `AppWindowPage` 中，创建一个用于保存 AppWindow 引用的属性。
 
 ```csharp
 public sealed partial class AppWindowPage : Page
@@ -174,7 +174,7 @@ public sealed partial class AppWindowPage : Page
 
 **MainPage.xaml.cs**
 
-在`MainPage`中, 获取对页面实例的引用, 并将新创建的 AppWindow 分配到中`AppWindowPage`的属性。
+在 `MainPage` 中，获取对页面实例的引用，并将新建的 AppWindow 分配给 `AppWindowPage` 中的属性。
 
 ```csharp
 private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
@@ -195,15 +195,15 @@ private async void ShowNewWindowButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### <a name="tracking-app-windows-using-uicontext"></a>使用 UIContext 跟踪应用程序窗口
+### <a name="tracking-app-windows-using-uicontext"></a>使用 UIContext 跟踪应用窗口
 
-你可能还想要从应用的其他部分访问[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)实例。 例如, `MainPage`可以有一个 "全部关闭" 按钮, 用于关闭所有跟踪的 AppWindow 实例。
+你可能还希望能够访问应用的其他组成部分中的 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 实例。 例如，`MainPage` 可以包含一个“全部关闭”按钮，用于关闭所有受跟踪的 AppWindow 实例。
 
-在这种情况下, 应使用[UIContext](/uwp/api/windows.ui.uicontext)唯一标识符来跟踪[字典](/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0)中的窗口实例。
+在这种情况下，应使用 [UIContext](/uwp/api/windows.ui.uicontext) 唯一标识符来跟踪 [Dictionary](/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0) 中的窗口实例。
 
 **MainPage.xaml.cs**
 
-在`MainPage`中, 将字典创建为静态属性。 然后, 在创建该页面时将其添加到字典中, 并在页面关闭时将其删除。 调用[ElementCompositionPreview](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent)后, 可以从内容[框架](/uwp/api/Windows.UI.Xaml.Controls.Frame)(`appWindowContentFrame.UIContext`) 获取 UIContext。
+在 `MainPage` 中，创建 Dictionary 作为静态属性。 然后，在创建 Dictionary 时将页面添加到其中，并在页面关闭时删除 Dictionary。 调用 [ElementCompositionPreview.SetAppWindowContent](/api/windows.ui.xaml.hosting.elementcompositionpreview.setappwindowcontent) 后，可以从内容[框架](/uwp/api/Windows.UI.Xaml.Controls.Frame) (`appWindowContentFrame.UIContext`) 获取 UIContext。
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -256,7 +256,7 @@ public sealed partial class MainPage : Page
 
 **AppWindowPage.xaml.cs**
 
-若要在 `AppWindowPage`代码中使用 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 实例, 请使用页的[UIContext](/uwp/api/windows.ui.uicontext)在中`MainPage`从静态字典检索它。 应在页面的[加载](/uwp/api/windows.ui.xaml.frameworkelement.loaded)事件处理程序而不是构造函数中执行此操作, 以使 UIContext 不为 null。 可以从页面获取 UIContext: `this.UIContext`。
+若要在 `AppWindowPage` 代码中使用 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 实例，请使用页面的 [UIContext](/uwp/api/windows.ui.uicontext) 从 `MainPage` 中的静态 Dictionary 检索该实例。 应在页面的 [Loaded](/uwp/api/windows.ui.xaml.frameworkelement.loaded) 事件处理程序而不是构造函数中执行此操作，使 UIContext 不为 null。 可以从页面获取 UIContext：`this.UIContext`。
 
 ```csharp
 public sealed partial class AppWindowPage : Page
@@ -284,29 +284,29 @@ public sealed partial class AppWindowPage : Page
 ```
 
 > [!NOTE]
-> 该`HelloAppWindow`示例演示了在中`AppWindowPage`跟踪窗口的两种方法, 但通常使用其中一种方法, 而不是同时使用这两种方法。
+> `HelloAppWindow` 示例演示了在 `AppWindowPage` 中跟踪窗口的上述两种方式，但你通常只使用其中的一种方式，而不是同时使用。
 
-## <a name="request-window-size-and-placement"></a>请求窗口的大小和位置
+## <a name="request-window-size-and-placement"></a>请求窗口大小和位置
 
-[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)类有几种方法可用于控制窗口的大小和位置。 如方法名称所隐含, 系统根据环境因素可能会或不遵循所请求的更改。
+[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 类提供多个可用于控制窗口大小和位置的方法。 从方法名称的含义来看，根据环境因素，系统不一定会遵循所请求的更改。
 
-调用[RequestSize](/uwp/api/windows.ui.windowmanagement.appwindow.requestsize)以指定所需的窗口大小, 如下所示。
+调用 [RequestSize](/uwp/api/windows.ui.windowmanagement.appwindow.requestsize) 来指定所需窗口大小，如下所示。
 
 ```csharp
 colorPickerAppWindow.RequestSize(new Size(300, 428));
 ```
 
-用于管理窗口位置的方法名为_RequestMove *_ :[RequestMoveAdjacentToCurrentView](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview)、 [RequestMoveAdjacentToWindow](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow)、 [RequestMoveRelativeToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion)、 [RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion)。
+用于管理窗口位置的方法名为 RequestMove*：  [RequestMoveAdjacentToCurrentView](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview)、[RequestMoveAdjacentToWindow](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow)、[RequestMoveRelativeToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion)、[RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion)。
 
-在此示例中, 此代码将窗口移到从中产生窗口的主视图旁边。
+在此示例中，此代码将窗口移到从中生成了该窗口的主视图旁边。
 
 ```csharp
 colorPickerAppWindow.RequestMoveAdjacentToCurrentView();
 ```
 
-若要获取有关窗口的当前大小和位置的信息, 请调用[GetPlacement](/uwp/api/windows.ui.windowmanagement.appwindow.getplacement)。 这会返回一个[AppWindowPlacement](/uwp/api/windows.ui.windowmanagement.appwindowplacement)对象, 该对象提供窗口的当前[DisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindowplacement.displayregion)、[偏移量](/uwp/api/windows.ui.windowmanagement.appwindowplacement.offset)和[大小](/uwp/api/windows.ui.windowmanagement.appwindowplacement.size)。
+若要获取有关窗口当前大小和位置的信息，请调用 [GetPlacement](/uwp/api/windows.ui.windowmanagement.appwindow.getplacement)。 这会返回一个 [AppWindowPlacement](/uwp/api/windows.ui.windowmanagement.appwindowplacement) 对象，该对象提供窗口的当前 [DisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindowplacement.displayregion)、[Offset](/uwp/api/windows.ui.windowmanagement.appwindowplacement.offset) 和 [Size](/uwp/api/windows.ui.windowmanagement.appwindowplacement.size)。
 
-例如, 可以调用此代码将窗口移到显示的右上角。 此代码必须在窗口显示后调用;否则, 由对 GetPlacement 的调用返回的窗口大小将是 0, 0, 偏移量将不正确。
+例如，可以调用此代码将窗口移到显示器的右上角。 必须在窗口已显示后调用此代码；否则，调用 GetPlacement 后返回的窗口大小将是 0,0，且偏移量不正确。
 
 ```csharp
 DisplayRegion displayRegion = window.GetPlacement().DisplayRegion;
@@ -316,17 +316,17 @@ int horizontalOffset = (int)(displayRegionWidth - windowWidth);
 window.RequestMoveRelativeToDisplayRegion(displayRegion, new Point(horizontalOffset, 0));
 ```
 
-## <a name="request-a-presentation-configuration"></a>请求演示配置
+## <a name="request-a-presentation-configuration"></a>请求呈现配置
 
-使用[AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter)类, 你可以使用适用于所显示设备的预定义配置来显示[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 。 可以使用[AppWindowPresentationConfiguration](/uwp/api/windows.ui.windowmanagement.appwindowpresentationconfiguration)值将窗口`FullScreen`置于或`CompactOverlay`模式。
+[AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter) 类可让你使用能够显示某个 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 的设备的适当预定义配置来显示该 AppWindow。 可以使用 [AppWindowPresentationConfiguration](/uwp/api/windows.ui.windowmanagement.appwindowpresentationconfiguration) 值将窗口置于 `FullScreen` 或 `CompactOverlay` 模式。
 
-此示例演示如何执行以下操作:
+此示例演示如何执行以下操作：
 
-- 使用[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow.changed)事件可在可用窗口呈现发生变化时得到通知。
-- 使用[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow.presenter)属性获取当前[AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter)。
-- 调用[IsPresentationSupported](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.ispresentationsupported)可查看是否支持特定的[AppWindowPresentationKind](/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind) 。
-- 调用[GetConfiguration](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.getconfiguration)来检查当前使用的配置类型。
-- 调用[RequestPresentation](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation)以更改当前配置。
+- 在可用的窗口呈现状态发生更改时，使用 [AppWindow.Changed](/uwp/api/windows.ui.windowmanagement.appwindow.changed) 事件发出通知。
+- 使用 [AppWindow.Presenter](/uwp/api/windows.ui.windowmanagement.appwindow.presenter) 属性获取当前的 [AppWindowPresenter](/uwp/api/windows.ui.windowmanagement.appwindowpresenter)。
+- 调用 [IsPresentationSupported](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.ispresentationsupported) 来确定是否支持特定的 [AppWindowPresentationKind](/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind)。
+- 调用 [GetConfiguration](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.getconfiguration) 来检查当前使用的配置类型。
+- 调用 [RequestPresentation](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation) 来更改当前配置。
 
 ```csharp
 private void Window_Changed(AppWindow sender, AppWindowChangedEventArgs args)
@@ -403,11 +403,11 @@ private void FullScreenButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="reuse-xaml-elements"></a>重用 XAML 元素
 
-[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)使你可以有多个具有同一 UI 线程的 XAML 树。 但是, XAML 元素只能添加到一次 XAML 树中。 如果要将部分 UI 从一个窗口移到另一个窗口, 则必须管理它在 XAML 树中的位置。
+[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 允许对同一 UI 线程使用多个 XAML 树。 但是，一个 XAML 元素只能添加到 XAML 树中一次。 若要将 UI 的某个组成部分从一个窗口移到另一个窗口，必须在 XAML 树中管理该组成部分的位置。
 
-此示例演示如何在主窗口和辅助窗口之间移动[ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker)控件时重用它。
+此示例演示如何重用 [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) 控件，同时在主窗口与辅助窗口之间移动它。
 
-在的 xaml `MainPage`中声明了颜色选取器, 后者将其置于`MainPage` xaml 树中。
+颜色选取器在 `MainPage` 的 XAML 中声明，这会将它放到 `MainPage` XAML 树中。
 
 ```xaml
 <StackPanel x:Name="colorPickerContainer" Grid.Column="1" Background="WhiteSmoke">
@@ -420,14 +420,14 @@ private void FullScreenButton_Click(object sender, RoutedEventArgs e)
 </StackPanel>
 ```
 
-当颜色选取器分离以放置在新的 AppWindow 中时, 您首先必须从`MainPage` XAML 树中删除该颜色选取器, 方法是将其从其父容器中删除。 尽管这不是必需的, 但本示例还隐藏了父容器。
+分离颜色选取器以将其放入新的 AppWindow 后，首先必须从 `MainPage` XAML 树中将其删除，方法是从其父容器中将其删除。 此示例也隐藏了父容器，不过不一定要这样。
 
 ```csharp
 colorPickerContainer.Children.Remove(colorPicker);
 colorPickerContainer.Visibility = Visibility.Collapsed;
 ```
 
-然后, 可以将其添加到新的 XAML 树中。 在这里, 您首先创建一个将作为 ColorPicker 的父容器的[网格](/uwp/api/windows.ui.xaml.controls.grid), 并将 ColorPicker 添加为网格的子元素。 (这样, 以后便可以轻松地从此 XAML 树中删除 ColorPicker。)然后, 在新窗口中将网格设置为 XAML 树的根。
+然后，可将颜色选取器添加到新的 XAML 树中。 在此处，先创建充当 ColorPicker 的父容器的 [Grid](/uwp/api/windows.ui.xaml.controls.grid)，并将 ColorPicker 添加为 Grid 的子级。 （这样，以后就可以轻松从此 XAML 树中删除 ColorPicker。）然后，在新窗口中将 Grid 设置为 XAML 树的根。
 
 ```csharp
 Grid appWindowRootGrid = new Grid();
@@ -440,7 +440,7 @@ colorPickerAppWindow = await AppWindow.TryCreateAsync();
 ElementCompositionPreview.SetAppWindowContent(colorPickerAppWindow, appWindowRootGrid);
 ```
 
-关闭[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)时, 将撤消此过程。 首先, 从[网格](/uwp/api/windows.ui.xaml.controls.grid)中删除[ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) , 然后将其作为[system.windows.controls.stackpanel>](/uwp/api/windows.ui.xaml.controls.stackpanel)的子元素添加到中`MainPage`。
+当 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 关闭时，将过程反转。 首先，从 [Grid](/uwp/api/windows.ui.xaml.controls.grid) 中删除 [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker)，然后在 `MainPage` 中将 ColorPicker 添加为 [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel) 的子级。
 
 ```csharp
 // When the window is closed, be sure to release XAML resources
@@ -497,9 +497,9 @@ private async void DetachColorPickerButton_Click(object sender, RoutedEventArgs 
 
 ## <a name="show-a-dialog-box"></a>显示对话框
 
-默认情况下，内容对话框相对于根 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) 按模式显示。 在[AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow)中使用[ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog)时, 需要将对话框上的 XAMLROOT 手动设置为 XAML 主机的根。
+默认情况下，内容对话框相对于根 [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview) 按模式显示。 在 [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) 中使用 [ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog) 时，需要手动将对话框中的 XamlRoot 设置为 XAML 宿主的根。
 
-为此, 请将 ContentDialog 的[XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot)属性设置为与 AppWindow 中的元素相同的[XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) 。 此处, 此代码位于按钮的[单击](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)事件处理程序内, 因此可以使用_发送方_(单击的按钮) 获取 XamlRoot。
+为此，请将 ContentDialog 的 [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) 属性设置为与 AppWindow 中已包含的某个元素相同的 [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot)。 此处，此代码位于按钮的 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件处理程序中，因此你可以使用 sender（单击的按钮）来获取 XamlRoot。 
 
 ```csharp
 if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 8))
@@ -508,9 +508,9 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-如果除了主窗口 (w) 外, 还存在一个或多个 AppWindows, 则每个窗口都可以尝试打开一个对话框, 因为模式对话框仅会阻止它所根的窗口。 但是, 每个线程一次只能打开一个[ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog) 。 尝试打开两个 ContentDialog 会引发异常，即使尝试在独立的 AppWindow 中打开。
+如果除了打开主窗口 (ApplicationView) 以外还打开了一个或多个 AppWindow，每个窗口都可以尝试打开一个对话框，因为模式对话框只会阻止它所根植到的窗口。 但是，在每个线程中每次只能打开一个 [ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog)。 尝试打开两个 ContentDialog 会引发异常，即使尝试在独立的 AppWindow 中打开。
 
-若要管理此项, 应该至少在`try/catch`块中打开对话框以捕获异常, 以防已经打开了另一个对话框。
+若要处理此问题，至少应打开 `try/catch` 块中的对话框，以便在另一个对话框已打开的情况下捕获异常。
 
 ```csharp
 try
@@ -523,7 +523,7 @@ catch (Exception)
 }
 ```
 
-管理对话的另一种方法是跟踪当前打开的对话框, 并在尝试打开新对话框之前将其关闭。 此处, 将创建一个为此目的`MainPage`而`CurrentDialog`调用的静态属性。
+管理对话框的另一种方式是跟踪当前打开的对话框，并在尝试打开新对话框之前关闭当前打开的对话框。 为此，可在 `MainPage` 中创建一个名为 `CurrentDialog` 的静态属性。
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -535,7 +535,7 @@ public sealed partial class MainPage : Page
 }
 ```
 
-然后, 检查是否有当前打开的对话框, 如果有, 请调用[Hide](/uwp/api/windows.ui.xaml.controls.contentdialog.hide)方法将其关闭。 最后, 将新对话框分配给`CurrentDialog`, 并尝试显示它。
+然后，检查是否存在当前已打开的对话框，如果存在，则调用 [Hide](/uwp/api/windows.ui.xaml.controls.contentdialog.hide) 方法将其关闭。 最后，将新对话框分配到 `CurrentDialog`，并尝试显示它。
 
 ```csharp
 private async void DialogButton_Click(object sender, RoutedEventArgs e)
@@ -572,7 +572,7 @@ private async void DialogButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-如果不希望以编程方式关闭对话框, 请不要将其分配为`CurrentDialog`。 此处显示了一个只应在使用单击`Ok`时消除的重要对话框。 `MainPage` 由于未将其指定为`CurrentDialog`, 因此将不会尝试以编程方式关闭它。
+如果以编程方式关闭某个对话框的做法不可取，请不要将此对话框分配为 `CurrentDialog`。 此处，`MainPage` 显示了一个重要对话框，只有在用户单击 `Ok` 时才应将其关闭。 由于此对话框未分配为 `CurrentDialog`，因此，不会尝试以编程方式关闭它。
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -805,7 +805,7 @@ namespace HelloAppWindow
 
 ```
 
-### <a name="appwindowpagexaml"></a>AppWindowPage
+### <a name="appwindowpagexaml"></a>AppWindowPage.xaml
 
 ```xaml
 <Page
@@ -1007,4 +1007,4 @@ namespace HelloAppWindow
 ## <a name="related-topics"></a>相关主题
 
 - [显示多个视图](show-multiple-views.md)
-- [显示具有 w 的多个视图](application-view.md)
+- [使用 ApplicationView 显示多个视图](application-view.md)

@@ -2,23 +2,26 @@
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: 了解如何安装 Microsoft 广告 SDK。
 title: 安装 Microsoft 广告 SDK
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 安装, SDK, 广告库
 ms.localizationpriority: medium
-ms.openlocfilehash: d348b1b7a7b057388b437fab9952bb8eaffe9957
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 109ddbd3551dbd4304b86e56ace40f39e1b71211
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320233"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79209633"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安装 Microsoft 广告 SDK
 
-若要在面向 Windows 10 的 UWP 应用中显示广告，请安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 此 SDK 是 Visual Studio 2015 和更高版本的扩展。
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
+
+若要在面向 Windows 10 的 UWP 应用中显示广告，请安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 此 SDK 是 Visual Studio 2015 和更高版本的扩展。
 
 > [!NOTE]
-> 如果你正在开发 JavaScript/HTML UWP 应用和已安装 Windows 10 SDK 版本号为 10.0.14393 （周年更新） 或更高版本，还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK 中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。
+> 如果要开发 JavaScript/HTML UWP 应用并安装了 Windows 10 SDK 版本10.0.14393 （周年更新）或更高版本，则还必须安装[WinJS](https://github.com/winjs/winjs)库。 此库过去包含在以前版本的 Windows SDK 中，但从 Windows 10 SDK 版本 10.0.14393（周年更新）开始，此库必须单独安装。
 
 <span id="install-msi" />
 
@@ -35,7 +38,7 @@ ms.locfileid: "67320233"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  下载并安装 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp)。 安装它可能需要几分钟。 请确信并等待，直到进程结束。
+3.  下载并安装 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 安装它可能需要几分钟。 请确信并等待，直到进程结束。
 
 4.  重新启动 Visual Studio。
 
@@ -62,7 +65,7 @@ ms.locfileid: "67320233"
     > [!NOTE]
     > 如果项目已经包含来自 SDK 的较早 MSI 安装的库引用，请从项目中删除这些引用。 这些引用的旁边将出现警告图标，因为它们引用的库已在之前的步骤中删除。
 
-4. 在 Visual Studio 中，依次单击“项目”  和“管理 NuGet 包”  。
+4. 在 Visual Studio 中，依次单击“项目”和“管理 NuGet 包”。
 
 5. 在搜索框中，键入 **Microsoft.Advertising.XAML**（对于 XAML 项目）或 **Microsoft.Advertising.JS**（对于 JavaScript/HTML 项目）并安装相应程序包。 程序包安装完成后，保存你的解决方案。
     > [!NOTE]
@@ -80,28 +83,28 @@ ms.locfileid: "67320233"
 
 安装 Microsoft 广告 SDK 后，请按照以下说明在你的项目中引用此 SDK，以使用广告 API。
 
-1. 在 Visual Studio 中打开你的项目。
+1. 在 Visual Studio 中打开项目。
     > [!NOTE]
     > 如果你的项目面向**任何 CPU**，请更新你的项目以使用特定于体系结构的生成输出（例如，**x86**）。 如果你的项目面向**任何 CPU**，你将无法在以下步骤中成功添加对 Microsoft 广告 SDK 的引用。 有关详细信息，请参阅[项目中由面向任何 CPU 引起的引用错误](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
-2. 在**解决方案资源管理器**中，右键单击**引用**，然后选择**添加引用…** 。
+2. 在**解决方案资源管理器**中，右键单击**引用**，然后选择**添加引用…**
 
 3. 在**引用管理器R**中，展开**通用 Windows**，单击**扩展**，然后选择**适用于 XAML 的 Microsoft 广告 SDK**（适用于 XAML 应用）或**适用于 JavaScript 的 Microsoft 广告 SDK**（适用于使用 JavaScript 和 HTML 构建的应用）。
 
-4.  在“引用管理器”  中，单击“确定”。
+4.  在“引用管理器”中，单击“确定”。
 
 有关显示如何开始使用广告 API 的操作实例，请参阅以下文章：
 
 * [间隙广告](interstitial-ads.md)
 * [本机广告](native-ads.md)
-* [XAML 和.NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
-* [HTML 5 中的 AdControl 和 Javascript](adcontrol-in-html-5-and-javascript.md)
+* [XAML 和 .NET 中的 Adunitid](adcontrol-in-xaml-and--net.md)
+* [HTML 5 和 Javascript 中的 Adunitid](adcontrol-in-html-5-and-javascript.md)
 
 <span id="framework" />
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>了解 Microsoft 广告 SDK 中的框架包
 
-适用于 UWP 应用的 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 库已配置为*框架包*。 此库包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空间中的广告 API。
+适用于 UWP 应用的 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 中的 Microsoft.Advertising.dll 库已配置为*框架包*。 此库包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空间中的广告 API。
 
 此库是一个框架包，因此，这意味着在用户安装使用此库的应用版本之后，无论我们何时发布新版本的库及修复和性能增强，Windows 更新均会在其设备上自动更新此库。 这有助于确保客户始终在其设备上安装最新可用版本的库。
 

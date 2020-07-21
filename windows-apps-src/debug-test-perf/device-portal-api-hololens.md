@@ -4,14 +4,14 @@ title: 适用于 HoloLens 的 Device Portal API 参考
 description: 了解适用于 HoloLens 的 Windows Device Portal REST API，该 API 可用于访问数据和以编程方式控制设备。
 ms.date: 03/22/2018
 ms.topic: article
-keywords: windows 10，uwp，设备门户
+keywords: windows 10, uwp, 设备门户
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aeb068908adf6d6c40a50cee3aececba1861ee8
-ms.sourcegitcommit: 81511fddf1393dffcfc069c769bb149da99529b1
-ms.translationtype: MT
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "59013334"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "63801391"
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>适用于 HoloLens 的 Device Portal API 参考
 
@@ -153,14 +153,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/management/settings/https |
+| POST | /api/holographic/management/settings/https |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 必需的   | （**必需**）确定 Device Portal 是否需要 HTTPS。 可能的值包括 **yes**、**no** 和 **default**。 |
 
@@ -189,14 +189,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/os/settings/ipd |
+| POST | /api/holographic/os/settings/ipd |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | ipd   | （**必需**）要存储的新 IPD 值。 此值应以毫米为单位。 |
 
@@ -234,7 +234,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | clientmode   | （**必需**）确定跟踪模式。 视觉跟踪模式无法被动建立时，值为 **active** 会强制执行该模式。 |
 
@@ -283,11 +283,11 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
 
 可能的值如下表中所示。
 
-| ReplTest1 | 描述 |
+| 值 | 说明 |
 | --- | --- |
 | 1 | 正常 |
 | 2 | 暧 |
-| 3 | 严重 |
+| 3 | 关键 |
 
 **状态代码**
 
@@ -302,14 +302,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simulation/control/stream |
+| POST | /api/holographic/simulation/control/stream |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | priority   | （**必需，如果要创建控制流**）指示该流的优先级。 |
 | streamid   | （**必需，如果要发布到已创建的流**）要发布到的流的标识符。 |
@@ -392,7 +392,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
 
 - 标准状态代码。
 
-### <a name="get-the-simulation-mode"></a>获取的模拟模式
+### <a name="get-the-simulation-mode"></a>获取模拟模式
 
 **请求**
 
@@ -431,14 +431,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simluation/control/mode |
+| POST | /api/holographic/simluation/control/mode |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | mode   | （**必需**）指示模拟模式。 可能的值包括 **default**、**simulation**、**remote** 和 **legacy**。 |
 
@@ -475,7 +475,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 记录   | （**必需**）要删除的录制的名称。 |
 
@@ -541,7 +541,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 记录   | （**必需**）感兴趣的录制的名称。 |
 
@@ -607,7 +607,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 记录   | （**必需**）感兴趣的录制的名称。 |
 
@@ -635,14 +635,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simulation/playback/session/file |
+| POST | /api/holographic/simulation/playback/session/file |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 记录   | （**必需**）要加载的录制的名称。 |
 
@@ -670,14 +670,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simulation/playback/session/pause |
+| POST | /api/holographic/simulation/playback/session/pause |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 记录   | （**必需**）要暂停的录制的名称。 |
 
@@ -705,14 +705,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simulation/playback/session/play |
+| POST | /api/holographic/simulation/playback/session/play |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 记录   | （**必需**）要播放的录制的名称。 |
 
@@ -740,14 +740,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simulation/playback/session/stop |
+| POST | /api/holographic/simulation/playback/session/stop |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 记录   | （**必需**）要停止的录制的名称。 |
 
@@ -782,7 +782,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | 记录   | （**必需**）要卸载的录制的名称。 |
 
@@ -810,7 +810,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simulation/playback/file |
+| POST | /api/holographic/simulation/playback/file |
 
 
 **URI 参数**
@@ -874,14 +874,14 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simulation/recording/start |
+| POST | /api/holographic/simulation/recording/start |
 
 
 **URI 参数**
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | head   | （**如下所示**）将此值设置为 1，以指示系统应记录头数据。 |
 | hands   | （**如下所示**）将此值设置为 1，以指示系统应记录手数据。 |
@@ -916,7 +916,7 @@ Windows Device Portal 中的所有内容都是基于 REST API 创建的，该 AP
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/simulation/recording/stop |
+| POST | /api/holographic/simulation/recording/stop |
 
 
 **URI 参数**
@@ -956,7 +956,7 @@ DELETE | /api/holographic/mrc/file |
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | filename   | （**必需**）要删除的视频文件名称。 该名称应采用 hex64 编码。 |
 
@@ -991,7 +991,7 @@ DELETE | /api/holographic/mrc/file |
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | filename   | （**必需**）要获取的视频文件名称。 该名称应采用 hex64 编码。 |
 | op   | （**可选**）如果要下载一个流，请将此值设置为 **stream**。 |
@@ -1113,7 +1113,7 @@ DELETE | /api/holographic/mrc/file |
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/mrc/settings |
+| POST | /api/holographic/mrc/settings |
 
 
 **URI 参数**
@@ -1144,7 +1144,7 @@ DELETE | /api/holographic/mrc/file |
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/mrc/video/control/start |
+| POST | /api/holographic/mrc/video/control/start |
 
 
 **URI 参数**
@@ -1175,7 +1175,7 @@ DELETE | /api/holographic/mrc/file |
  
 | 方法      | 请求 URI |
 | :------     | :----- |
-| 发布 | /api/holographic/mrc/video/control/stop |
+| POST | /api/holographic/mrc/video/control/stop |
 
 
 **URI 参数**
@@ -1246,7 +1246,7 @@ DELETE | /api/holographic/mrc/file |
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | pv   | （**可选**）指示是否捕获 PV 相机。 应为 **true** 或 **false**。 |
 | holo   | （**可选**）指示是否捕获全息图。 应为 **true** 或 **false**。 |
@@ -1284,7 +1284,7 @@ DELETE | /api/holographic/mrc/file |
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | pv   | （**可选**）指示是否捕获 PV 相机。 应为 **true** 或 **false**。 |
 | holo   | （**可选**）指示是否捕获全息图。 应为 **true** 或 **false**。 |
@@ -1322,7 +1322,7 @@ DELETE | /api/holographic/mrc/file |
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | pv   | （**可选**）指示是否捕获 PV 相机。 应为 **true** 或 **false**。 |
 | holo   | （**可选**）指示是否捕获全息图。 应为 **true** 或 **false**。 |
@@ -1360,7 +1360,7 @@ DELETE | /api/holographic/mrc/file |
 
 可以在请求 URI 上指定以下附加参数：
 
-| URI 参数 | 描述 |
+| URI 参数 | 说明 |
 | :---          | :--- |
 | pv   | （**可选**）指示是否捕获 PV 相机。 应为 **true** 或 **false**。 |
 | holo   | （**可选**）指示是否捕获全息图。 应为 **true** 或 **false**。 |

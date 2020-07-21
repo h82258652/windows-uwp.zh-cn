@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 757de9201d1cb7f753419024271f2be5c1aa67f4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582310"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "63787103"
 ---
 # <a name="debugging-testing-and-performance"></a>调试、测试和性能
 
 
 本部分展示了如何使用 Microsoft Visual Studio 来调试、测试和优化你的应用。 它还包括 Windows 设备门户（用于设备监视和配置）和 Windows 应用认证工具包（用于针对 Microsoft Store 准备你的应用）之类的工具。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|-------------|
 | [部署和调试 UWP 应用](deploying-and-debugging-uwp-apps.md) | 本文指导你完成针对各种部署和调试目标的步骤。 |
 | [进程周期管理 (PLM) 的测试和调试工具](testing-debugging-plm.md) | 用于调试和测试应用如何与进程周期管理配合使用的工具和技术。 |

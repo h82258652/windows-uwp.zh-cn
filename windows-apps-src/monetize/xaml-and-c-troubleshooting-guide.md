@@ -2,30 +2,33 @@
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: 了解 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
 title: XAML 和 C# 疑难解答指南
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, AdControl, 疑难解答, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 94af97e1e678c6ee92aaa731057c5f67185e25c5
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: ab8ba3930c13ffcb00d2cb9701a89cafe581b4ff
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334655"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506881"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 疑难解答指南
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 本主题包含 XAML 应用中有关 Microsoft Advertising 库的常见开发问题的解决方案。
 
 * [XAML](#xaml)
-  * [AdControl 中未显示](#xaml-notappearing)
-  * [黑色框会使闪烁并消失](#xaml-blackboxblinksdisappears)
-  * [不刷新广告](#xaml-adsnotrefreshing)
+  * [Adunitid 未显示](#xaml-notappearing)
+  * [黑色框闪烁并消失](#xaml-blackboxblinksdisappears)
+  * [广告未刷新](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [AdControl 中未显示](#csharp-adcontrolnotappearing)
-  * [黑色框会使闪烁并消失](#csharp-blackboxblinksdisappears)
-  * [不刷新广告](#csharp-adsnotrefreshing)
+  * [Adunitid 未显示](#csharp-adcontrolnotappearing)
+  * [黑色框闪烁并消失](#csharp-blackboxblinksdisappears)
+  * [广告未刷新](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -37,7 +40,7 @@ ms.locfileid: "58334655"
 
 1.  确保在 Package.appxmanifest 中选择“Internet（客户端）”功能。
 
-2.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和广告单元 ID 在合作伙伴中心中获取。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+2.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须与在合作伙伴中心获取的应用程序 ID 和 ad 单元 ID 匹配。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -79,7 +82,7 @@ ms.locfileid: "58334655"
 
 7.  确保 **AdControl** 在视口中可见。 **AdControl** 必须可见才能正确显示广告。
 
-8.  **ApplicationId** 和 **AdUnitId** 的动态值不应在仿真器中测试。 若要确保 **AdControl** 正常运行，请使用 **ApplicationId** 和 **AdUnitId** 的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
+8.  **ApplicationId** 和 **AdUnitId** 的动态值不应在仿真器中测试。 若要确保 **AdControl** 正常运行，请使用 [ApplicationId](set-up-ad-units-in-your-app.md#test-ad-units) 和 **AdUnitId** 的**测试值**。
 
 <span id="xaml-blackboxblinksdisappears"/>
 
@@ -173,7 +176,7 @@ ms.locfileid: "58334655"
     > [!div class="tabbedCodeSnippets"]
     [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须匹配的应用程序 ID 和广告单元 ID 在合作伙伴中心中获取。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
+3.  检查应用程序 ID 和广告单元 ID。 这些 Id 必须与在合作伙伴中心获取的应用程序 ID 和 ad 单元 ID 匹配。 有关详细信息，请参阅[在应用中设置广告单元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -216,7 +219,7 @@ ms.locfileid: "58334655"
 
 8.  检查 **AdControl** 的父元素。 父元素必须处于活动状态并且可见。
 
-9. **ApplicationId** 和 **AdUnitId** 的动态值不应在仿真器中测试。 若要确保 **AdControl** 正常运行，请使用 **ApplicationId** 和 **AdUnitId** 的[测试值](set-up-ad-units-in-your-app.md#test-ad-units)。
+9. **ApplicationId** 和 **AdUnitId** 的动态值不应在仿真器中测试。 若要确保 **AdControl** 正常运行，请使用 [ApplicationId](set-up-ad-units-in-your-app.md#test-ad-units) 和 **AdUnitId** 的**测试值**。
 
 <span id="csharp-blackboxblinksdisappears"/>
 
@@ -246,7 +249,7 @@ ms.locfileid: "58334655"
 
 ### <a name="ads-not-refreshing"></a>广告不刷新
 
-1.  检查 **AdControl** 的 [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 属性是否设置为 false。 默认情况下，此可选属性设置为 **true**。 在设置为 **false** 时，必须使用 **Refresh** 方法检索其他广告。
+1.  检查 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 的 **IsAutoRefreshEnabled** 属性是否设置为 false。 默认情况下，此可选属性设置为 **true**。 在设置为 **false** 时，必须使用 **Refresh** 方法检索其他广告。
 
 2.  检查 [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法的调用。 使用自动刷新（**IsAutoRefreshEnabled** 为 **true**）时，不能将 **Refresh** 用于检索其他广告。 使用手动刷新（**IsAutoRefreshEnabled** 为 **false**）时，根据设备的当前数据连接，只应至少在 30 到 60 秒后调用**Refresh**。
 

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 简介
 ms.localizationpriority: medium
-ms.openlocfilehash: 197f53df200026541a15120dfc97c187e5aa2e5b
-ms.sourcegitcommit: b186f70f0b1601b6b6a5db91d87d034f6b155e3b
+ms.openlocfilehash: ddf2cd876ac629f4cb3c49e349e43dee8fdb0c7a
+ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70063787"
+ms.lasthandoff: 05/02/2020
+ms.locfileid: "82730299"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 简介
 &nbsp;
@@ -29,22 +29,22 @@ C++/WinRT 是 Microsoft 推荐的用于替代 [C++/CX](/cpp/cppcx/visual-c-langu
 ## <a name="language-projections"></a>语言投影
 Windows 运行时基于组件对象模型 (COM) API，根据设计，可通过语言投影  访问它。 投影将隐藏 COM 详细信息，并为给定语言提供更自然的编程体验。
 
-### <a name="the-cwinrt-language-projection-in-the-windows-uwp-api-reference-content"></a>Windows UWP API 引用内容中的 C++/WinRT 语言投影
-浏览 [Windows UWP API](https://docs.microsoft.com/uwp/api/) 时，请单击右上角的“语言”  组合框，然后选择“C++/WinRT”  以查看 API 语法块（当它们在 C++/WinRT 语言投影中出现时）。
+### <a name="the-cwinrt-language-projection-in-the-windows-runtime-api-reference-content"></a>Windows 运行时 API 引用内容中的 C++/WinRT 语言投影
+浏览 [Windows 运行时 API](https://docs.microsoft.com/uwp/api/) 时，请单击右上角的“语言”  组合框，然后选择“C++/WinRT”  以查看 API 语法块（当它们在 C++/WinRT 语言投影中出现时）。
 
 ## <a name="visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package"></a>针对 C++/WinRT、XAML、VSIX 扩展和 NuGet 包的 Visual Studio 支持
-若要获取 Visual Studio 支持，需要 Visual Studio 2019 或 Visual Studio 2017（至少需要版本 15.6；建议至少使用 15.7）。 从 Visual Studio 安装程序中，安装“通用 Windows 平台开发”  工作负荷。 在“安装详细信息”   >   “通用 Windows 平台开发”中，选中“C++ (v14x) 通用 Windows 平台工具”  选项（如果尚未这样做）。 另外，请在 Windows 的“设置”   > “更新和安全”   >   “面向开发人员”中选择“开发人员模式”选项而非“旁加载应用”选项。  
+若要获取 Visual Studio 支持，需要 Visual Studio 2019 或 Visual Studio 2017（至少需要版本 15.6；建议至少使用 15.7）。 从 Visual Studio 安装程序中，安装“通用 Windows 平台开发”  工作负荷。 在“安装详细信息”   >   “通用 Windows 平台开发”中，选中“C++ (v14x) 通用 Windows 平台工具”  选项（如果尚未这样做）。 另外，请在 Windows 的“设置”   > “更新和安全”\&   >   “面向开发人员”中选择“开发人员模式”选项而非“旁加载应用”选项。  
 
 虽然我们建议使用最新版 Visual Studio 和 Windows SDK 进行开发，但如果你使用的 C++/WinRT 版本是 10.0.17763.0（Windows 10 版本 1809）之前的 Windows SDK 随附的，则至少需要在项目中使用 Windows SDK 目标版本 10.0.17134.0（Windows 10 版本 1803）才能使用上述 Windows 命名空间标头。
 
-需要从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 下载并安装最新版 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)。
+需要从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 下载并安装最新版 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。
 
 - VSIX 扩展为你提供 Visual Studio 中的 C++/WinRT 项目和项模板，让你可以开始进行 C++/WinRT 开发。
 - 另外，它还为你提供 C++/WinRT 投影类型的 Visual Studio 本机调试可视化效果 (natvis)；提供与 C# 调试类似的体验。 Natvis 对于调试版本是自动的。 可以通过定义 WINRT_NATVIS 符号选择加入其发布版本。
 
 用于 C++/WinRT 的 Visual Studio 项目模板在下面的部分介绍。 使用已安装的最新版 VSIX 扩展创建新的 C++/WinRT 项目时，新的 C++/WinRT 项目会自动安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 **Microsoft.Windows.CppWinRT** NuGet 包提供 C++/WinRT 生成支持（MSBuild 属性和目标），使项目可以在开发计算机和生成代理（在其上仅安装了 NuGet 包，未安装 VSIX 扩展）之间移植。
 
-也可通过手动安装 **Microsoft.Windows.CppWinRT** NuGet 包来转换现有项目。 在安装（或更新到）最新版 VSIX 扩展以后，请在 Visual Studio 中打开现有项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 **Microsoft.Windows.CppWinRT**，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   添加该包后，你将获得对该项目的 C++/WinRT MSBuild 支持，包括调用 `cppwinrt.exe` 工具。
+也可通过手动安装 **Microsoft.Windows.CppWinRT** NuGet 包来转换现有项目。 在安装（或更新到）最新版 VSIX 扩展以后，请在 Visual Studio 中打开现有项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT  ，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。   添加该包后，你将获得对该项目的 C++/WinRT MSBuild 支持，包括调用 `cppwinrt.exe` 工具。
 
 > [!IMPORTANT]
 > 如果项目是使用 1.0.190128.4 之前的 VSIX 扩展版本创建的（或者这些项目在升级后兼容该扩展版本），请参阅[早期版本的 VSIX 扩展](#earlier-versions-of-the-vsix-extension)。 该部分包含有关项目配置的重要信息。在升级项目以使用最新版 VSIX 扩展之前，需了解该信息。
@@ -62,7 +62,7 @@ Windows 运行时基于组件对象模型 (COM) API，根据设计，可通过�
 
 通过 C++/WinRT，你还可以使用标准 C++ 实现自己的运行时类，而不必求助于 COM 样式的编程。 对于运行时类，你只需在 IDL 文件中描述类型，`midl.exe` 和 `cppwinrt.exe` 将为你生成实现样板源代码文件。 也可以从 C++/WinRT 基类派生，这样就可以只实现接口。 有关详细信息，请参阅[使用 C++/WinRT 创作 API](author-apis.md)。
 
-如需 `cppwinrt.exe` 工具的自定义选项的列表，请通过项目属性进行设置，详见 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
+如需 `cppwinrt.exe` 工具的自定义选项的列表，请通过项目属性进行设置，详见 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
 
 可以通过项目中安装的 **Microsoft.Windows.CppWinRT** NuGet 包来标识使用 C++/WinRT MSBuild 支持的项目。
 
@@ -96,7 +96,7 @@ Visual Studio 提供了 XAML 编译器支持，用于从每个 XAML 标记文件
 将生成的 Windows 运行时组件二进制文件及其 `.winmd` 与使用它们的 UWP 应用绑定。
 
 ## <a name="earlier-versions-of-the-vsix-extension"></a>早期版本的 VSIX 扩展
-建议安装（或更新到）最新版 [VSIX 扩展](https://aka.ms/cppwinrt/vsix)。 默认情况下，它已配置为自行更新。 如果你这样做，并且项目是使用 1.0.190128.4 之前的 VSIX 扩展版本创建的，则请参阅此部分，因为其中包含重要信息，介绍了如何升级这些项目，使之兼容新版本。 当然，如果你不进行更新，此部分的内容仍然对你有用。
+建议安装（或更新到）最新版 [VSIX 扩展](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。 默认情况下，它已配置为自行更新。 如果你这样做，并且项目是使用 1.0.190128.4 之前的 VSIX 扩展版本创建的，则请参阅此部分，因为其中包含重要信息，介绍了如何升级这些项目，使之兼容新版本。 当然，如果你不进行更新，此部分的内容仍然对你有用。
 
 就支持的 Windows SDK 和 Visual Studio 版本以及 Visual Studio 配置来说，上面的[针对 C++/WinRT、XAML、VSIX 扩展和 NuGet 包的 Visual Studio 支持](#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)部分的信息适用于早期版本的 VSIX 扩展。 下面的内容介绍了在使用早期版本创建项目（或将项目升级，使之兼容早期版本）的情况下，在行为和配置方面存在的重要差异。
 
@@ -147,8 +147,8 @@ Windows SDK 也附带 `cppwinrt.exe` 工具，这同样是出于兼容性原因�
 
 ## <a name="related-topics"></a>相关主题
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)
+* [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 * [C++/WinRT 入门](get-started.md)
 * [标准 C++ 数据类型和 C++/WinRT](std-cpp-data-types.md)
 * [C++/WinRT 中的字符串处理](strings.md)
-* [Windows UWP API](https://docs.microsoft.com/uwp/api/)
+* [Windows 运行时 API](https://docs.microsoft.com/uwp/api/)

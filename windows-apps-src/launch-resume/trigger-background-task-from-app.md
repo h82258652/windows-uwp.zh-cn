@@ -5,18 +5,18 @@ ms.date: 07/06/2018
 ms.topic: article
 keywords: 后台任务触发器，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: d5d163d36b51e414a403986d1fdd73db7925cc0b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 3d8917c6ed181607459d6126aa295d270cfea838
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371896"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259408"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>从应用中触发后台任务
 
 了解如何使用 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 从应用中激活后台任务。
 
-有关如何创建应用程序的一个触发器的示例，请参阅此[示例](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)。
+有关如何创建应用程序触发器的示例，请参阅此[示例](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)。
 
 本主题假定你有一个你想要从应用程序激活的后台任务。 如果你还没有后台任务，[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs) 中有一个示例后台任务。 或者，请按照[创建和注册进程外后台任务](create-and-register-a-background-task.md)中的步骤创建一个任务。
 
@@ -56,7 +56,7 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 你可以创建一个后台任务条件以控制任务何时运行。 条件会阻止后台任务运行，直到条件满足为止。 有关详细信息，请参阅[设置后台任务的运行条件](set-conditions-for-running-a-background-task.md)。
 
-在此示例中的条件设置为**InternetAvailable**以便一次触发，该任务仅运行一次都可以访问 internet。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
+在此示例中，将条件设置为**InternetAvailable** ，以便在触发后，任务仅在 internet 访问可用时才会运行。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -134,28 +134,28 @@ var result = await _AppTrigger.RequestAsync();
 
 使用 [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) 确定用户是否已决定应限制你应用的后台活动。 注意电池使用情况，并且仅当有必要完成用户想要执行的操作时再在后台运行应用。 有关用户可用来控制后台活动设置的方法的详细信息，请参阅[优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。  
 
-- 内存：优化应用的内存和能源使用是确保操作系统将允许你运行的后台任务的关键。 使用[内存管理 API](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 查看你的后台任务所使用的内存大小。 当有其他应用在前台运行时，你的后台任务所使用的内存越多，操作系统就越难保持其运行。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。  
-- CPU 时间：后台任务都受其获取基于触发器类型的时钟使用时间量。 应用程序触发器触发的后台任务限制为只能运行约 10 分钟。
+- 内存：调整应用内存和能耗使用情况是确保操作系统允许后台任务运行的关键。 使用[内存管理 API](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 查看你的后台任务所使用的内存大小。 当有其他应用在前台运行时，你的后台任务所使用的内存越多，操作系统就越难保持其运行。 用户最终控制你的应用可以执行的所有后台活动，并且可以看到你的应用对电池使用情况的影响。  
+- CPU 时间：后台任务受其基于触发器类型获取的时钟时间使用的限制。 应用程序触发器触发的后台任务限制为只能运行约 10 分钟。
 
 有关适用于后台任务的资源限制，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
 ## <a name="remarks"></a>备注
 
-从 Windows 10 开始，它不再需要将您的应用程序添加到锁定屏幕，以利用后台任务的用户。
+从 Windows 10 开始，用户不再需要将你的应用程序添加到锁定屏幕，就可以使用后台任务。
 
-如果你已先调用 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync)，后台任务将仅使用 **ApplicationTrigger** 运行。
+如果你已先调用RequestAccessAsync[ **，后台任务将仅使用** ApplicationTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 运行。
 
 ## <a name="related-topics"></a>相关主题
 
 * [后台任务指南](guidelines-for-background-tasks.md)
-* [后台任务的代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
+* [后台任务代码示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 * [创建和注册进程外后台任务](create-and-register-a-background-task.md)
 * [调试后台任务](debug-a-background-task.md)
 * [在应用程序清单中声明后台任务](declare-background-tasks-in-the-application-manifest.md)
 * [在将应用移动到后台时释放内存](reduce-memory-usage.md)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
-* [如何在触发挂起、 继续和后台 UWP 应用中的事件 （在调试）](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 应用中触发挂起、继续和后台事件（调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [使用扩展执行来推迟应用挂起](run-minimized-with-extended-execution.md)
 * [注册后台任务](register-a-background-task.md)

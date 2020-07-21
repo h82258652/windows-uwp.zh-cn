@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1480c17d97cb8b5e227cc44b384f13095bfd469
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2293907b3088890ac01d9037609054961aa95992
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66369256"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74259580"
 ---
 # <a name="save-a-file-with-a-picker"></a>使用选取器保存文件
 
@@ -23,11 +23,11 @@ ms.locfileid: "66369256"
 使用 [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 让用户指定名称和他们想让应用保存文件的位置。
 
 > [!NOTE]
-> 有关完整示例，请参阅[文件选取器示例](https://go.microsoft.com/fwlink/p/?linkid=619994)。
+> 有关完整示例，请参阅[文件选取器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker)。
 
  
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 
 -   **了解通用 Windows 平台 (UWP) 应用的异步编程**
@@ -54,7 +54,7 @@ ms.locfileid: "66369256"
     savePicker.SuggestedFileName = "New Document";
     ```
 
-在文件选取器对象上设置与你的用户和你的应用相关的属性。 此示例设置三个属性：[**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation)、[**FileTypeChoices**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.filetypechoices) 和 [**SuggestedFileName**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedfilename)。
+在文件选取器对象上设置与你的用户和你的应用相关的属性。 此示例设置了三个属性：[**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation)[**FileTypeChoices**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.filetypechoices) 和 [**SuggestedFileName**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedfilename)。
      
 - 由于我们的用户正在保存文档或文本文件，因此该示例通过使用 [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) 将 [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker.suggestedstartlocation) 设置为应用的本地文件夹。 将 [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) 设置为适用于被保存的文件类型（例如音乐、图片、视频或文档）的位置。 用户可以从开始位置导航到其他位置。
 

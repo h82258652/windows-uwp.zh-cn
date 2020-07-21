@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f94fcdf33267ab352f5cdc274e07373952b0939b
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
-ms.translationtype: MT
+ms.openlocfilehash: 610b6237071c9d7435ca167c1a89b4ef7c40b333
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362155"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "71339572"
 ---
 # <a name="optimize-suspendresume"></a>优化暂停/恢复
 
@@ -60,11 +60,11 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 ### <a name="serializing-data-in-c-and-visual-basic"></a>使用 C# 和 Visual Basic 序列化数据
 
-对于 .NET 应用，可供选择的序列化技术有 [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN)、[**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN) 和 [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer?redirectedfrom=MSDN) 类。
+对于 .NET 应用，可供选择的序列化技术有 [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer)、[**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) 和 [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer) 类。
 
-从性能角度看，我们建议使用 [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer?redirectedfrom=MSDN) 类。 **XmlSerializer** 的序列化和反序列化时间最短，并保持很低的内存占用。 **XmlSerializer** 对 .NET 框架的依赖很少；这意味着与其他序列化技术相比较，使用 **XmlSerializer** 时需要加载到你的应用中的模块会更少。
+从性能角度看，我们建议使用 [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer) 类。 **XmlSerializer** 的序列化和反序列化时间最短，并保持很低的内存占用。 **XmlSerializer** 对 .NET 框架的依赖很少；这意味着与其他序列化技术相比较，使用 **XmlSerializer** 时需要加载到你的应用中的模块会更少。
 
-[**DataContractSerializer** ](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer?redirectedfrom=MSDN)可以更轻松地序列化自定义类，尽管它具有更大的性能影响比**XmlSerializer**。 如果需要更好的性能，请考虑切换。 一般情况下，不应加载多个序列化程序，并且应首选 **XmlSerializer**，除非需要使用其他序列化程序的功能。
+[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) 使自定义类序列化更加容易，尽管它具有比 **XmlSerializer** 更高的性能影响。 如果需要更好的性能，请考虑切换。 一般情况下，不应加载多个序列化程序，并且应首选 **XmlSerializer**，除非需要使用其他序列化程序的功能。
 
 ### <a name="reduce-memory-footprint"></a>减少内存占用
 
@@ -85,7 +85,7 @@ UWP 进程生存期系统可以出于各种原因暂停或终止应用。 此进
 
 ## <a name="related-topics"></a>相关主题
 
-* [应用程序的指导原则挂起和继续](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [应用暂停和恢复指南](https://docs.microsoft.com/windows/uwp/launch-resume/index)
  
 
  

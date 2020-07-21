@@ -1,52 +1,54 @@
 ---
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: 创建“Hello, world”应用 (JS)
-description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。
-ms.date: 03/06/2017
+description: 本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的&\#0034;Hello, world&\#0034;应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。
+ms.date: 09/12/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5423c9aae607d4f6ffe14b755c8f73e013d8b6
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: a161a5e26bd647a37b06a270ef6714d54bc16d80
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820970"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74467417"
 ---
 # <a name="create-a-hello-world-app-js"></a>创建“Hello, world”应用 (JS)
 
 本教程指导你如何使用 JavaScript 和 HTML 创建一个简单的“Hello, world”应用，该应用面向 Windows 10 上的通用 Windows 平台 (UWP)。 通过 Microsoft Visual Studio 中的单个项目，可以生成可在任何 Windows 10 设备上运行的应用。
 
 > [!NOTE]
-> 本教程使用 Visual Studio Community 2019。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
+> 本教程使用 Visual Studio Community 2017。 如果使用的是不同版本的 Visual Studio，则其外观可能稍有不同。
 
+> [!WARNING]
+> Visual Studio 2019 不支持 Javascript UWP 应用开发。 必须使用 Visual Studio 2017 开发 Javascript UWP 应用。
 
-在此处，你将了解如何：
+在本文中，你将了解如何：
 
--   创建面向 **Windows 10** 和 **UWP** 的新 **Visual Studio 2019** 项目。
--   添加 HTML 和 JavaScript 内容
--   在 Visual Studio 中，在本地桌面中运行该项目
+-   创建面向 **Windows 10** 和 **UWP** 的新 **Visual Studio 2017** 项目。
+-   添加 HTML 和 JavaScript 内容。
+-   在 Visual Studio 中，在本地桌面中运行该项目。
 
-## <a name="before-you-start"></a>开始之前...
+## <a name="before-you-start"></a>开始之前
 
 -   [UWP 应用是什么？](universal-application-platform-guide.md)
 -   若要完成本教程，需要 Windows 10 和 Visual Studio。 [准备工作](get-set-up.md)。
 -   我们还假设你使用的是 Visual Studio 中的默认窗口布局。 若要更改默认布局，可以在“窗口”菜单中，使用“重置窗口布局”命令来重置它   。
 
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>第 1 步：在 Visual Studio 中创建新项目
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>步骤 1：在 Visual Studio 中创建新项目
 
-1.  启动 Visual Studio 2019。
+1.  启动 Visual Studio 2017。
 
-2.  在“文件”菜单中选择“新建”>“项目...”，打开“创建新项目”对话框    。
+2.  在“文件”菜单中选择“新建”>“项目”以打开“创建新项目”对话框    。
 
 3.  选择“空白应用(通用 Windows) JavaScript”，然后选择“下一步”。  
 
-    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 在“创建新项目”对话框中单击“打开 Visual Studio 安装程序”即可重复安装流程并添加 UWP 支持   。 请参阅[准备工作](get-set-up.md)
+    （如果未看到任何通用模板，可能是缺少用于创建 UWP 应用的组件。 可以在“创建新项目”对话框中单击“打开 Visual Studio 安装程序”来重复安装流程并添加 UWP 支持   。 请参阅[准备工作](get-set-up.md)。
 
-4.  在“配置新项目”对话框中，输入“HelloWorld”作为“项目名称”，然后选择“创建”    。
+4.  在“配置新项目”对话框中，输入“HelloWorld”作为“项目名称”，然后选择“创建”     。
 
 > [!NOTE]
-> 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框  。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框   。
+> 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框  。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请依次选择“开发人员模式”、“是”，然后关闭对话框   。
 
  ![激活“开发人员模式”对话框](images/win10-cs-00.png)
 
@@ -78,13 +80,13 @@ ms.locfileid: "67820970"
 - 启动应用时加载和显示的应用网页。
 
 *一组徽标图像*
--   Assets/Square150x150Logo.scale-200.png 表示“开始”菜单中的应用。
+-   Assets/Square150x150Logo.scale-200.png 表示“开始”菜单中的应用  。
 -   Assets/StoreLogo.png 表示 Microsoft Store 中的应用。
 -   Assets/SplashScreen.scale-200.png 是应用启动时显示的初始屏幕。
 
 ## <a name="step-2-adding-a-button"></a>步骤 2：添加按钮
 
-单击“index.html”以在编辑器中将其选中，然后更改所含的 HTML，使其显示为  ：
+选择 **index.html** 以在编辑器中将其选中，然后更改所包含的 HTML，使其如下所示。
 
 ```html
 <!DOCTYPE html>
@@ -105,7 +107,7 @@ ms.locfileid: "67820970"
 </html>
 ```
 
-应如下所示：
+它应如下所示。
 
  ![项目的 HTML](images/win10-js-03.png)
 
@@ -114,7 +116,7 @@ ms.locfileid: "67820970"
 
 ## <a name="step-3-adding-some-javascript"></a>步骤 3:添加一些 JavaScript
 
-现在，我们将添加 JavaScript。 单击 *main.js* 将其选中，然后添加以下内容：
+现在，我们将添加 JavaScript。 选择 **main.js** 以将其选中，然后添加以下内容。
 
 ```javascript
 // Your code here!
@@ -133,7 +135,7 @@ function sayHello() {
 
 ```
 
-应如下所示：
+它应如下所示。
 
  ![项目的 JavaScript](images/win10-js-04.png)
 
@@ -144,7 +146,7 @@ function sayHello() {
 
 ## <a name="step-4-run-the-app"></a>步骤 4：运行应用！
 
-现在，可以按 F5 运行该应用。 此时将会加载该应用，并显示网页。 单击按钮后将会弹出消息对话框。
+现在，可以按 F5 运行该应用。 此时将会加载该应用，并显示网页。 选中该按钮，此时会弹出消息对话框。
 
  ![运行项目](images/win10-js-05.png)
 

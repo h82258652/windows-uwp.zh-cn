@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 移动, 转发, 值类别, 移动语义, 完美转发, 左值, 右值, 泛左值, 纯右值, 将亡值
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a11d7763c33df6733a8dbf78392d27417e7cf18d
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 1312b84ded26859cd4b83ffbe3e8a75bfdef6950
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270208"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "77037877"
 ---
 # <a name="value-categories-and-references-to-them"></a>值类别以及对它们的引用
 本主题介绍了 C++ 中存在的各种值类别（以及对值的引用）。 你肯定听说过左值  和右值  ，但可能未使用本主题提供的术语思考过它们。 此外还有其他类型的值。
@@ -58,7 +58,7 @@ int main()
 不能移动左值。 但是，有一种  泛左值（带标识的值集）是可以移动的&mdash;前提是你知道如何操作（例如，注意不要在移动后访问它）&mdash;这就是将亡值。 我们会在下面再次遇到此概念，并会对值类别进行汇总。
 
 ## <a name="rvalue-references-and-reference-binding-rules"></a>右值引用以及引用绑定规则
-此部分介绍右值引用的语法。 我们需要等到另一个主题来讨论如何对移动和转发进行实质性处理，但这些是可以通过右值引用解决的问题。 但是，在讨论右值引用之前，我们首先需要更清楚地了解 `T&`&mdash;我们以前直接称之为“引用”。 它实际上是“左值（非常量）引用”，引用的是允许引用用户写入的值。
+此部分介绍右值引用的语法。 我们需要等到另一个主题来讨论如何对移动和转发进行实质性处理，不过，在这里只需知道右值引用是那些问题的解决方案的必要部分。 但是，在讨论右值引用之前，我们首先需要更清楚地了解 `T&`&mdash;我们以前直接称之为“引用”。 它实际上是“左值（非常量）引用”，引用的是允许引用用户写入的值。
 
 ```cppwinrt
 template<typename T> T& get_by_lvalue_ref() { ... } // Get by lvalue (non-const) reference.

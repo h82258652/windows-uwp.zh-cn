@@ -2,28 +2,28 @@
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: 查看 Microsoft Advertising 库的发行说明。
 title: Advertising 库的发行说明
-ms.date: 08/23/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, 广告, 发行说明
 ms.localizationpriority: medium
-ms.openlocfilehash: d7a250880d148dd4ca3ced522312904f2786715e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 377069522c6b31a55028bf35bf9c71ac50c90608
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601222"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506841"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 库的发行说明
 
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-
-
-本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持 Windows 10、 Windows 8.1、 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 应用程序。
+本部分提供当前版本的 Microsoft Advertising 库的发行说明。 这些库支持适用于 Windows 10、Windows 8.1 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 应用。
 
 ## <a name="installation"></a>安装
 
 
-Microsoft 广告库作为 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 的一部分提供。 有关安装 SDK 的更多信息，请参阅[安装 Microsoft 广告 SDK](install-the-microsoft-advertising-libraries.md)。
+Microsoft 广告库作为 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 的一部分提供。 有关安装 SDK 的更多信息，请参阅[安装 Microsoft 广告 SDK](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="uninstall-previous-versions"></a>卸载以前版本
 
@@ -39,7 +39,7 @@ Microsoft Advertising 库（其中包括 **AdControl** 和 **InterstitialAd** �
 
 ## <a name="no-toolbox-control"></a>没有工具箱控件
 
-在 [Microsoft 广告 SDK](https://aka.ms/ads-sdk-uwp) 中的当前版本的 Microsoft 广告库中，没有任何工具箱控件可用于将 **AdControl** 或 **InterstitialAd** 拖动到应用中的设计图面。 有关在标记和代码中添加这些控件的说明，请参阅[开发人员演练](developer-walkthroughs.md)。
+在 [Microsoft 广告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK) 中的当前版本的 Microsoft 广告库中，没有任何工具箱控件可用于将 **AdControl** 或 **InterstitialAd** 拖动到应用中的设计图面。 有关在标记和代码中添加这些控件的说明，请参阅[开发人员演练](developer-walkthroughs.md)。
 
 ## <a name="latitude-and-longitude-properties-no-longer-available"></a>不再可用的纬度和经度属性
 

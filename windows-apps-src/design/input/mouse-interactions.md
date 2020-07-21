@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a02d562b73f61094f820e74a213614d80c4fb5e1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2d6ddf03541e94f89d0950a4f4c03eebaa0e396e
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365848"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234470"
 ---
 # <a name="mouse-interactions"></a>鼠标交互
 
-针对触摸输入优化通用 Windows 平台 (UWP) 应用设计，并在默认情况下获得基本的鼠标支持。 
+为触摸输入优化 Windows 应用设计，并默认获取基本的鼠标支持。 
 
 ![鼠标](images/input-patterns/input-mouse.jpg)
 
@@ -39,7 +39,7 @@ ms.locfileid: "66365848"
 <thead>
 <tr class="header">
 <th align="left">术语</th>
-<th align="left">描述</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
@@ -59,7 +59,7 @@ ms.locfileid: "66365848"
 <td align="left"><p>右键单击以选定和进行命令操作</p></td>
 <td align="left"><p>右键单击以使用全局命令显示导航栏（如果有的话）与应用栏。 右键单击某个元素可将其选定并显示带有所选元素的上下文命令的应用栏。</p>
 <div class="alert">
-<strong>请注意</strong>  右键单击以显示上下文菜单，如果所选内容或应用程序栏的命令不是相应 UI 行为。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
+<strong>注意</strong>   右键单击以显示 "选择" 或 "应用栏" 命令不适合的 UI 行为，以显示上下文菜单。 但是，我们强烈建议你针对所有的命令行为使用应用栏。
 </div>
 <div>
  
@@ -84,9 +84,9 @@ ms.locfileid: "66365848"
 </tbody>
 </table>
 
-## <a name="mouse-input-events"></a>鼠标输入的事件
+## <a name="mouse-input-events"></a>鼠标输入事件
 
-大多数鼠标输入可以通过支持的所有常见路由的输入事件处理[ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)对象。 这些问题包括：
+大多数鼠标输入都可以通过所有[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)对象支持的常见路由输入事件进行处理。 其中包括：
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -97,11 +97,11 @@ ms.locfileid: "66365848"
 - [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 - [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**击落**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**保存**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
@@ -120,15 +120,14 @@ ms.locfileid: "66365848"
 - [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
 - [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
+- [**System.windows.forms.control.previewkeydown>**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown)
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup)
-- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
 - [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-但是，您可以充分利用特定功能 （例如鼠标滚轮事件） 的每个设备的使用中的指针、 手势，以及处理事件[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)。
+不过，你可以使用[Windows](https://docs.microsoft.com/uwp/api/windows.ui.input)中的指针、笔势和操作事件来利用每个设备（如鼠标滚轮事件）的特定功能。
 
-**示例：** 请参阅我们[BasicInput 示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)，有关。
+**示例：** 请参阅[BasicInput 示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)。
 
 ## <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
@@ -141,7 +140,7 @@ ms.locfileid: "66365848"
 
 有关视觉反馈的更一般指南，请参阅[视觉反馈指南](guidelines-for-visualfeedback.md)。
 
-## <a name="cursors"></a>光标
+## <a name="cursors"></a>游标
 
 为鼠标指针提供了一组标准光标。 它们用来表示元素的主要操作。
 
@@ -152,8 +151,8 @@ ms.locfileid: "66365848"
 - 对于可单击元素，始终使用箭头光标（![箭头光标](images/cursor-arrow.png)）。 对于链接或其他交互元素，不使用指向手光标（![指向手光标](images/cursor-pointinghand.png)）。 而应使用悬停效果（上文中有介绍）。
 - 对于可选择文本，使用文本光标（![文本光标](images/cursor-text.png)）。
 - 当主要操作是移动（如拖动或裁剪）时，使用移动光标（![移动光标](images/cursor-move.png)）。 对于主要操作是导航的元素（如“开始”菜单磁贴），不使用移动光标。
-- 当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png)， ![水平调整光标](images/cursor-horizontal.png)， ![对角调整光标（左下和右上）](images/cursor-diagonal2.png)， ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
-- 当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png)， ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
+- 当对象的大小可调整时，使用水平、垂直和对角调整大小光标（![垂直调整光标](images/cursor-vertical.png), ![水平调整光标](images/cursor-horizontal.png), ![对角调整光标（左下和右上）](images/cursor-diagonal2.png), ![对角调整光标（左上和右下）](images/cursor-diagonal1.png)）。
+- 当在固定画布（如地图）内平移内容时，使用手掌型光标（![手掌型光标（张开）](images/cursor-pan1.png), ![手掌型光标（闭合）](images/cursor-pan2.png)当在固定画布（例如地图）中平移内容时。
 
 ## <a name="related-articles"></a>相关文章
 
@@ -163,7 +162,7 @@ ms.locfileid: "66365848"
 
 ### <a name="samples"></a>示例
 
-- [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-- [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-- [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, C#, Visual Basic, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: db0e3064cc64e6ffbafa50d045ced020ad30b460
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 92cded952f1d4d80290a121d038c57c356e5e206
+ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371546"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71340542"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>使用 C# 或 Visual Basic 调用异步 API
 
@@ -36,9 +36,9 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 [!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
 [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
-有关该示例，有几个重要事项。 首先，对异步方法 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 的调用，行 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 使用 **await** 运算符。 你可以将 **await** 运算符视为告知编译器你正在调用某个异步方法，该方法会导致编译器执行某些额外的工作，以便你无需进行这些工作。 接下来，事件处理程序的声明包含关键字 **async**。 必须将该关键字包含在其中使用 **await** 运算符的任何方法的方法声明中。
+有关该示例，有几个重要事项。 首先，对异步方法 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`**RetrieveFeedAsync**[ 的调用，行 **使用**await](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 运算符。 你可以将 **await** 运算符视为告知编译器你正在调用某个异步方法，该方法会导致编译器执行某些额外的工作，以便你无需进行这些工作。 接下来，事件处理程序的声明包含关键字 **async**。 必须将该关键字包含在其中使用 **await** 运算符的任何方法的方法声明中。
 
-在本主题中，我们将不对编译器使用 **await** 运算符所执行的操作进行详细介绍，而是检查你的应用所执行的操作以便该操作是异步操作并且能够响应。 考虑使用同步代码时发生的情况。 例如，假设有一个名为 `SyndicationClient.RetrieveFeed` 的异步方法。 （没有此类方法，但想象真的有）。如果您的应用程序包含在行`SyndicationFeed feed = client.RetrieveFeed(feedUri)`，而不是`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`，应用执行的返回值才会停止`RetrieveFeed`可用。 当你的应用等待方法完成时，它无法响应任何其他事件，如另一个 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 即，你的应用将被阻止，直到 `RetrieveFeed` 返回为止。
+在本主题中，我们将不对编译器使用 **await** 运算符所执行的操作进行详细介绍，而是检查你的应用所执行的操作以便该操作是异步操作并且能够响应。 考虑使用同步代码时发生的情况。 例如，假设有一个名为 `SyndicationClient.RetrieveFeed` 的异步方法。 （这类方法不存在，但想象它存在。）如果你的应用包含行 `SyndicationFeed feed = client.RetrieveFeed(feedUri)`（而不是 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`），应用将停止执行，直到 `RetrieveFeed` 的返回值可用。 当你的应用等待方法完成时，它无法响应任何其他事件，如另一个 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 即，你的应用将被阻止，直到 `RetrieveFeed` 返回为止。
 
 但如果你调用 `client.RetrieveFeedAsync`，则方法将启动检索并立即返回。 当你将 **await** 与 [**RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 结合使用时，应用将临时退出事件处理程序。 然后，它便可以在 **RetrieveFeedAsync** 异步执行时处理其他事件。 这样便可以保持应用对用户进行响应。 当 **RetrieveFeedAsync** 完成并且 [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) 可用时，应用一定会在 `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 之后重新进入它停止的事件处理程序，并完成方法的剩余部分。
 
@@ -51,10 +51,10 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 当你使用异步方法时，可检查签名以查看你将在等待由该方法返回的值后得到的内容。 UWP 中的所有异步 API 均可返回以下类型之一：
 
--   [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)
--   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)
+-   [**Iasyncoperation<tresult>&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)
+-   [**IAsyncOperationWithProgress&lt;TResult，TProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)
 -   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)
--   [**IAsyncActionWithProgress&lt;TProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)
+-   [**Iasyncactionwithprogress<tprogress>&lt;TProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)
 
 异步方法的结果类型与 `      TResult` 类型参数相同。 没有 `TResult` 的类型没有结果。 你可以将结果视为 **void**。 在 Visual Basic 中，[Sub](https://docs.microsoft.com/dotnet/articles/visual-basic/programming-guide/language-features/procedures/sub-procedures) 过程等同于返回类型为 **void** 的方法。
 
@@ -62,15 +62,15 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 | 异步方法                                                                           | 返回类型                                                                                                                                        | 结果类型                                       |
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| [**SyndicationClient.RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)                                 | [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) |
-| [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) | [**IAsyncOperation&lt;StorageFile&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                                                                                | [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)          |
-| [**XmlDocument.SaveToFileAsync**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument.savetofileasync)                 | [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)                                                                                                           | **void**                                          |
-| [**InkStrokeContainer.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.loadasync)               | [**IAsyncActionWithProgress&lt;UInt64&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync)                            | [**DataReaderLoadOperation**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReaderLoadOperation)，自定义生成类，该类实现**IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                     |
+| [**SyndicationClient. Syndicationclient.retrievefeedasync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed，RetrievalProgress&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperationWithProgress_TResult_TProgress_)                                 | [**SyndicationFeed**](https://docs.microsoft.com/uwp/api/Windows.Web.Syndication.SyndicationFeed) |
+| [**FileOpenPicker. PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) | [**Iasyncoperation<tresult>&lt;StorageFile&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                                                                                | [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)          |
+| [**SaveToFileAsync**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument.savetofileasync)                 | [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction)                                                                                                           | **导致**                                          |
+| [**InkStrokeContainer. LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.loadasync)               | [**Iasyncactionwithprogress<tprogress>&lt;UInt64&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncActionWithProgress_TProgress_)                                                                   | **导致**                                          |
+| [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.loadasync)                            | [**DataReaderLoadOperation**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReaderLoadOperation)，一种实现 iasyncoperation<tresult> 的自定义结果类 **&lt;UInt32&gt;** | [**UInt32**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)                     |
 
  
 
-[  **适用于 UWP 应用的 .NET**](https://dotnet.microsoft.com/apps/desktop) 中定义的异步方法的返回类型为 [**Task**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task?redirectedfrom=MSDN) 或 [**Task&lt;TResult&gt;** ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1?redirectedfrom=MSDN)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task&lt;TResult&gt;** 类似于 [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))。
+[  **适用于 UWP 应用的 .NET**](https://dotnet.microsoft.com/apps/desktop) 中定义的异步方法的返回类型为 [**Task**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task) 或 [**Task&lt;TResult&gt;** ](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1)。 返回 **Task** 的方法与 UWP 中返回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction) 的异步方法类似。 在任何情况下，异步方法的结果均为 **void**。 返回类型 **Task&lt;TResult&gt;** 类似于 [**IAsyncOperation&lt;TResult&gt;** ](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncOperation_TResult_)，因为在运行任务时，异步方法的结果与 `TResult` 类型参数的类型相同。 有关使用**适用于 UWP 应用的 .NET** 和任务的详细信息，请参阅[用于 Windows 运行时应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))。
 
 ## <a name="handling-errors"></a>处理错误
 
@@ -79,7 +79,7 @@ UWP 中的大多数异步 API 都没有对应的同步 API，因此需要确保�
 
 当异步方法调用其他异步方法时，所有引发异常的异步方法都将被传播到外部方法。 这意味着你可以将一个 **try/catch** 块放在最外层的方法中，以便为嵌套异步方法捕获错误。 这同样与你为同步方法捕获异常的方式类似。 但不能在 **catch** 块中使用 **await**。
 
-**提示**  开始C#在 Microsoft Visual Studio 2005，您可以使用**await**中**捕获**块。
+**提示**  从 Microsoft Visual Studio C# 2005 开始，可以在**catch**块中使用**await** 。
 
 ## <a name="summary-and-next-steps"></a>摘要和后续步骤
 

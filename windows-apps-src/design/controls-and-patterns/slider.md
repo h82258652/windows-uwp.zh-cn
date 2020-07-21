@@ -12,23 +12,26 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 841903f9bc998af5ead2a3486c500487cb070855
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: ed202bca80518333201595987c4af631f82f0853
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364296"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970782"
 ---
 # <a name="sliders"></a>滑块
 
- 
-
 滑块是一种可让用户通过沿轨迹移动 thumb 控件从一个值范围中进行选择的控件。
-
-> **重要的 API**：[Slider 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)、[Value 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ![滑块控件](images/controls/slider.png)
 
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[Slider 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)、[Value 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -40,27 +43,27 @@ ms.locfileid: "66364296"
 
 下面是决定是否使用滑块时要考虑的一些其他因素：
 
--   **该设置是否是相对数量？** 如果不是，使用[单选按钮](radio-button.md)或[列表框](lists.md)。
--   **该设置是否为确切的已知数值？** 如果是，请使用数值[文本框](text-box.md)。
--   **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
--   **该设置是否包含四个或更多值？** 如果不是，请使用[单选按钮](radio-button.md)。
--   **用户是否可以更改该值？** 滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
+- **该设置是否是相对数量？** 如果不是，使用[单选按钮](radio-button.md)或[列表框](lists.md)。
+- **该设置是否为确切的已知数值？** 如果是，请使用数值[文本框](text-box.md)。
+- **用户是否会从设置更改效果的即时反馈中获益？** 如果是，请使用滑块。 例如，用户可以通过立即查看色调、饱和度或亮度值更改的效果，从而更加轻松地选择颜色。
+- **该设置是否包含四个或更多值？** 如果不是，请使用[单选按钮](radio-button.md)。
+- **用户是否可以更改该值？** 滑块用于用户交互。 如果用户无法更改该值，请改为使用只读文本。
 
 如果你在滑块和数值文本框之间进行选择，请在以下情况下使用数值文本框：
 
--   屏幕空间紧凑。
--   用户可能首选使用键盘。
+- 屏幕空间紧凑。
+- 用户可能首选使用键盘。
 
 在以下情况下使用滑块：
 
--   用户将获得即时反馈所带来的好处。
+- 用户将获得即时反馈所带来的好处。
 
 ## <a name="examples"></a>示例
 
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/Slider">打开此应用，了解 Slider 的实际应用</a>。</p>
     <ul>
@@ -184,7 +187,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 滑块具有较大的触摸目标。 要维护触摸辅助功能，滑块应该与显示器边缘保持足够远的距离。
 
-当你设计自定义滑块时，请考虑尽可能清楚地向用户提供所有需要的信息的方法。 如果用户需要通过了解单位来了解设置，请使用值标签；寻找使用图形创意地代表这些值的方法。 例如，控制音量的滑块可以在滑块最小值一端显示不带有音波的扬声器图形，并在最大值一端显示带有音波的扬声器图形。
+设计自定义滑块时，请考虑尽可能清楚地向用户提供所有需要的信息的方法。 如果用户需要通过了解单位来了解设置，请使用值标签；寻找使用图形创意地代表这些值的方法。 例如，控制音量的滑块可以在滑块最小值一端显示不带有音波的扬声器图形，并在最大值一端显示带有音波的扬声器图形。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 

@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5fa06cfa0a6a7e393f3e2d513af0898d1f822
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 241d59d096775646a5da1301bdd4b44f67c6abf1
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360942"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493412"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概述
  
@@ -25,7 +25,7 @@ ms.locfileid: "66360942"
 
 定期通知让你的应用只需极少的云服务和客户端投资即可提供动态磁贴更新。 定期通知是向广泛受众分配相同内容的出色传递方法。
 
-**请注意**  您可以了解详细信息，请下载[推送和定期通知示例](https://go.microsoft.com/fwlink/p/?linkid=231476)为 Windows 8.1 和 Windows 10 应用程序中重用它的源代码。
+**注意**   要了解详细信息，可以下载 Windows 8.1 的[推送和定期通知示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208))，然后在 Windows 10 应用中重复使用其源代码。
 
  
 
@@ -48,9 +48,9 @@ ms.locfileid: "66360942"
 
 可调用以下方法之一开始轮询：
 
--   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （磁贴）
--   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （徽章）
--   [**StartPeriodicUpdateBatch** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) （磁贴）
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_)（磁贴）
+-   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_)（锁屏提醒）
+-   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)（磁贴）
 
 调用一个方法时，URI 将立即进行轮询，且磁贴或锁屏提醒将根据所接收的内容进行更新。 初次轮询后，Windows 继续按照所要求的间隔提供更新。 轮询不断进行，直到（使用 [**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate)）将其显式阻止、卸载应用或删除磁贴（适用于辅助磁贴的情况）。 否则，即使应用从此再不启动，Windows 也将继续轮询磁贴或锁屏提醒更新。
 
@@ -72,12 +72,12 @@ ms.locfileid: "66360942"
 
 如果发布更改轮询 URI 的应用更新，你应该添加使用新 URI 调用 StartPeriodicUpdate 的每日[时间触发器后台任务](../../../launch-resume/run-a-background-task-on-a-timer-.md)，以确保磁贴使用新的 URI。 否则，如果用户收到应用更新但未启动应用，他们的磁贴仍将使用旧 URI，如果 URI 已无效或者返回负载引用了本地不再存在的图像，磁贴可能会无法显示。
 
-## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知到期时间
+## <a name="expiration-of-tile-and-badge-notifications"></a>磁贴和锁屏提醒通知过期时间
 
 
 默认情况下，定期磁贴和锁屏提醒通知在从下载时刻算起的三天后过期。 通知到期时，此内容将从锁屏提醒、磁贴或队列中删除，且不再向用户显示。 最佳做法是，使用一个对于你的应用或通知合理的时间，在所有定期磁贴和锁屏提醒通知上设置显式过期时间，以确保该内容不会在它不相关时仍存在。 对于具有已定义的使用寿命的内容来说，一个显式过期时间是必需的。 它还可确保在无法连接云服务或用户长时间断开网络时删除过时的内容。
 
-你的云服务通过在响应负载中包括 X-WNS-Expires HTTP 标头来为通知设置过期日期和时间。 X-WNS-Expires HTTP 标头符合 [HTTP-date 格式](https://go.microsoft.com/fwlink/p/?linkid=253706)。 有关详细信息，请参阅 [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) 或 [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)。
+你的云服务通过在响应负载中包括 X-WNS-Expires HTTP 标头来为通知设置过期日期和时间。 X-WNS-Expires HTTP 标头符合 [HTTP-date 格式](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1)。 有关详细信息，请参阅 [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) 或 [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)。
 
 例如，股票市场活跃交易日期间，你可将股票价格更新到期时间设置为轮询间隔的两倍（例如，如果是每半小时轮询一次，则将股票价格更新到期时间设置为一小时）。 另一个示例是，新闻应用可确定每日新闻磁贴更新的适当到期时间为一天。
 
@@ -103,7 +103,7 @@ ms.locfileid: "66360942"
 ## <a name="related-topics"></a>相关主题
 
 
-* [定期通知的准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
-* [如何设置徽章的定期通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
-* [如何设置用于磁贴的定期通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [定期通知指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-periodic-notification-overview)
+* [如何为锁屏提醒设置定期通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
+* [如何为磁贴设置定期通知](https://docs.microsoft.com/previous-versions/windows/apps/hh761476(v=win.10))
  

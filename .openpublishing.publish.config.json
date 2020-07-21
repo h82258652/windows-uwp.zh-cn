@@ -8,6 +8,9 @@
       "locale": "zh-cn",
       "monikers": [],
       "moniker_ranges": [],
+      "xref_query_tags": [
+        "/uwp/api"
+      ],
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -15,14 +18,16 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes",
-      "xref_query_tags": [ "/uwp/api" ]
+      "template_folder": "_themes"
     },
     {
       "docset_name": "windows-uwp-hub",
       "build_source_folder": "hub",
       "build_output_subfolder": "hub",
       "locale": "zh-cn",
+      "xref_query_tags": [
+        "/uwp/api"
+      ],
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -32,14 +37,16 @@
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
-      "version": 0,
-      "xref_query_tags": [ "/uwp/api" ]
+      "version": 0
     },
     {
       "docset_name": "windows-uwp",
       "build_source_folder": "windows-apps-src",
       "build_output_subfolder": "windows-apps-src",
       "locale": "zh-cn",
+      "xref_query_tags": [
+        "/uwp/api"
+      ],
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -49,8 +56,7 @@
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
-      "version": 0,
-      "xref_query_tags": [ "/uwp/api" ]
+      "version": 0
     }
   ],
   "notification_subscribers": [],
@@ -103,13 +109,25 @@
       }
     }
   ],
-  "branch_target_mapping": {},
-  "need_generate_pdf_url_template": false,
+  "branch_target_mapping": {
+    "live-sxs": [
+      "Publish",
+      "Pdf"
+    ],
+    "live": [
+      "Publish",
+      "Pdf"
+    ]
+  },
+  "need_generate_pdf_url_template": true,
   "targets": {
     "Pdf": {
       "template_folder": "_themes.pdf"
     }
   },
   "need_generate_pdf": false,
-  "need_generate_intellisense": false
+  "need_generate_intellisense": false,
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  }
 }

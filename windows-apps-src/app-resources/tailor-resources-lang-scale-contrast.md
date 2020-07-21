@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: db5ba7fb6e13d2a5aab4b74014458073aa88e7f4
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 0d6af9d532ecabe517983e8b56cdf8e1b2a2d812
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820216"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74254525"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>定制语言、比例、高对比度和其他限定符的资源
 
@@ -29,7 +29,7 @@ ms.locfileid: "67820216"
 | :--------------- | :--------------- | :--------------- |
 | 高对比度设置 | contrast | standard、high、black、white |
 
-你可以将限定符名称和限定符值结合起来形成限定符。 `<qualifier name>-<qualifier value>` 是一个限定符的格式。 `contrast-standard` 是一个限定符的示例。
+你可以将限定符名称和限定符值结合起来形成限定符。 `<qualifier name>-<qualifier value>` 是限定符的格式。 `contrast-standard` 是限定符的示例。
 
 因此，对于高对比度，限定符集是 `contrast-standard`、`contrast-high`、`contrast-black` 和 `contrast-white`。 限定符名称和限定符值不区分大小写。 例如，`contrast-standard`和`Contrast-Standard` 是相同的限定符。
 
@@ -71,7 +71,7 @@ ms.locfileid: "67820216"
 \Assets\Images\logo.png
 ```
 
-第一个文件名包含 `contrast-high` 限定符。 当高对比度处于*打开*状态时，该限定符是任何高对比度设置的*实际*匹配项。 换言之，它是一个接近的匹配项，因此是首选。 仅当限定符包含*实际*值时，才存在*实际*匹配项，就像上述示例中一样。 在该示例中，`high` 是 `contrast` 的*实际*值。
+第一个文件名包含 `contrast-high` 限定符。 当高对比度处于*打开*状态时，该限定符是任何高对比度设置的*实际*匹配项。 换言之，它是一个接近的匹配项，因此是首选。 仅当限定符包含*实际*值时，才存在*实际*匹配项，就像上述示例中一样。 在该示例中，`high` 是  *的*实际`contrast`值。
 
 名为 `logo.png` 的文件自身根本没有对比度限定符。 限定符缺少一个*中性*值。 如果找不到首选匹配项，则中性值可用作回退匹配项。 在此示例中，如果高对比度处于*关闭*状态，则没有实际匹配项。 *中性*匹配项是可以找到的最佳匹配项，因此会加载资产 `logo.png`。
 
@@ -102,7 +102,7 @@ ms.locfileid: "67820216"
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
-在文件夹名称中，你可以合并用下划线分隔的多个限定符。 `<qualifier1>[_<qualifier2>...]` 是的格式。
+在文件夹名称中，你可以合并用下划线分隔的多个限定符。 `<qualifier1>[_<qualifier2>...]` 是格式。
 
 你可以用相同格式在文件名中合并多个限定符。
 
@@ -124,7 +124,7 @@ ms.locfileid: "67820216"
 
 `configuration` 限定符用于加载与 `MS_CONFIGURATION_ATTRIBUTE_VALUE` 环境变量的值最佳匹配的资源。 因此，你可以将变量设置为已分配给相关资源的字符串值，例如 `designer` 或 `test`。
 
-## <a name="contrast"></a>与此示例
+## <a name="contrast"></a>对比度
 
 `contrast` 限定符用于提供与高对比度设置最佳匹配的资源。
 
@@ -191,11 +191,11 @@ public void SetLicenseLevel(BrandID brand)
 
 ## <a name="homeregion"></a>HomeRegion
 
-`homeregion` 限定符对应于用户的国家或地区设置。 它表示用户的主位置。 值包括任何有效的 [BCP-47 区域标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 即，任何 **ISO 3166 1 alpha-2** 双字母区域代码，以及所构成区域的一组 **ISO 3166-1 数字**三位数地理代码（请参阅[联合国统计部门 M49 区域代码构成](https://go.microsoft.com/fwlink/p/?linkid=247929)）。 “选定的经济组织和其他组织”的代码无效。
+`homeregion` 限定符对应于用户的国家或地区设置。 它表示用户的主位置。 值包括任何有效的 [BCP-47 区域标记](https://tools.ietf.org/html/bcp47)。 即，任何 **ISO 3166 1 alpha-2** 双字母区域代码，以及所构成区域的一组 **ISO 3166-1 数字**三位数地理代码（请参阅[联合国统计部门 M49 区域代码构成](https://unstats.un.org/unsd/methods/m49/m49regin.htm)）。 “选定的经济组织和其他组织”的代码无效。
 
 ## <a name="language"></a>语言
 
-`language` 限定符对应于显示语言设置。 值包括任何有效的 [BCP-47 语言标记](https://go.microsoft.com/fwlink/p/?linkid=227302)。 有关语言的列表，请参阅 [IANA 语言子标记注册表](https://go.microsoft.com/fwlink/p/?linkid=227303)。
+`language` 限定符对应于显示语言设置。 值包括任何有效的 [BCP-47 语言标记](https://tools.ietf.org/html/bcp47)。 有关语言的列表，请参阅 [IANA 语言子标记注册表](https://www.iana.org/assignments/language-subtag-registry)。
 
 如果你希望应用支持其他显示语言，并且你的代码或 XAML 标记中有字符串文本，则从代码/标记内将这些字符串移到资源文件 (`.resw`) 中。 然后，你可以针对应用支持的每种语言制作该资源文件的翻译副本。
 
@@ -206,7 +206,7 @@ public void SetLicenseLevel(BrandID brand)
 \Strings\language-ja\Resources.resw
 ```
 
-你可以忽略 `language` 限定符的 `language-` 部分（即，限定符名称）。 你不能对其他类型的限定符执行此操作；只能在文件夹名称中进行此操作。
+你可以忽略 `language-` 限定符的 `language` 部分（即，限定符名称）。 你不能对其他类型的限定符执行此操作；只能在文件夹名称中进行此操作。
 
 ```console
 \Strings\en\Resources.resw
@@ -226,7 +226,7 @@ public void SetLicenseLevel(BrandID brand)
 
 `layoutdirection` 限定符对应于显示语言设置的布局方向。 例如，像阿拉伯语或希伯来语这样从右到左阅读的语言，可能需要镜像图像。 如果设置了 [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 属性，则 UI 中的布局面板和图像将相应地响应布局方向（请参阅[调整布局和字体并支持 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)）。 但是，`layoutdirection` 限定符适用于简单翻转无法满足要求的情况，可以采用更常规的方式响应特定阅读顺序和文本对齐的方向性。
 
-## <a name="scale"></a>比例
+## <a name="scale"></a>缩放
 
 Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为每个显示器选择一个缩放比例。 请参阅[有效像素和缩放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)。 你应该创建多个建议大小（至少包括 100、200 和 400）的图像，使 Windows 可以选择理想的大小或使用最近大小并进行缩放。 这样一来，Windows 可以识别哪个物理文件包含适合显示比例系数的正确大小的图像，你使用 `scale` 限定符。 资源的比例与 [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale) 或下一个最大比例资源的值匹配。
 
@@ -252,7 +252,7 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 
 `targetsize` 限定符主要用于指定要在文件资源管理器中显示的[文件类型关联图标](https://docs.microsoft.com/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type)或[协议图标](https://docs.microsoft.com/windows/desktop/search/-search-3x-wds-ph-ui-extensions)。 限定符值表示以原始（物理）像素为单位的正方形图像的边长。 系统会加载其值与文件资源管理器中的“视图”设置匹配的资源；或者在缺少完全匹配的情况下加载具有下一个最大值的资源。
 
-你可以在应用程序包清单设计器的“可见资产”选项卡中定义资产，以表示应用图标 (`/Assets/Square44x44Logo.png`) 的 `targetsize` 限定符值的一些大小。
+你可以在应用程序包清单设计器的“可见资产”选项卡中定义资产，以表示应用图标 (`targetsize`) 的 `/Assets/Square44x44Logo.png` 限定符值的一些大小。
 
 有关限定资源的 `scale` 和 `targetsize` 的信息，请参阅[限定图像资源的目标大小](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize)。
 
@@ -261,34 +261,34 @@ Windows 会根据其 DPI（每英寸点数）和设备的观看距离自动为�
 `theme` 限定符用于提供与默认应用模式设置最匹配的资源，或使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme) 的应用替代。
 
 
-## <a name="shell-light-theme-and-unplated-resources"></a>Shell 浅色主题和未着色的资源
-*Windows 10 可能 2019年更新*适用于 Windows 外壳程序引入新的"light"主题。 因此，现在将浅色背景上显示以前在深色背景显示一些应用程序资产。 对于应用该应用程序，提供 altform 未着色资产对于任务栏和窗口切换器 （Alt + Tab、 任务视图等），您应验证它们具有可接受的对比度浅色背景上。
+## <a name="shell-light-theme-and-unplated-resources"></a>Shell light 主题和未着色资源
+*Windows 10 5 月2019版更新*为 windows Shell 引入了新的 "轻型" 主题。 因此，以前在深色背景上显示的某些应用程序资产现在会显示在浅色背景上。 对于为任务栏和窗口切换器提供 altform-未着色资产的应用（Alt + Tab、任务视图等），你应验证它们在浅色背景上是否具有可接受的对比度。
 
-### <a name="providing-light-theme-specific-assets"></a>提供浅色主题特定资产
-想要提供量身定制的资源，shell 浅色主题就可以使用新的替代形式的资源限定符的应用： `altform-lightunplated`。 此限定符镜像现有 altform 未着色限定符。 
+### <a name="providing-light-theme-specific-assets"></a>提供轻度主题特定资产
+需要为 shell light 主题提供定制资源的应用可以使用新的替代形式资源限定符： `altform-lightunplated`。 此限定符镜像现有的 altform-未着色限定符。 
 
 ### <a name="downlevel-considerations"></a>下层注意事项
-应用程序不应使用`theme-light`限定符`altform-unplated`限定符。 这将导致不可预知的行为上 RS5 和为任务栏加载早期版本的 Windows 由于方式资源。 在早期版本的 windows 中，可能会错误地使用的主题 light 版本。 `altform-lightunplated`限定符可避免此问题。 
+应用不应将 `theme-light` 限定符与 `altform-unplated` 限定符一起使用。 这将导致 RS5 和早期版本的 Windows 上出现不可预测的行为，原因是为任务栏加载资源的方式。 在较早版本的 windows 上，可能会错误地使用主题浅版本。 `altform-lightunplated` 限定符可避免此问题。 
 
-### <a name="compatibility-behavior"></a>兼容性的行为
-有关向后兼容性，Windows 包括逻辑来检测单色图标，并检查它是否与预期背景对比。 如果图标不能满足对比度要求，Windows 将查找对比度-白色版的资产。 如果不可用，Windows 将回退到使用镍的版的资产。
+### <a name="compatibility-behavior"></a>兼容性行为
+为了向后兼容，Windows 包含了用于检测单色图标的逻辑，并检查它是否与预期的背景进行了对比。 如果图标无法满足对比度要求，则 Windows 将查找资产的 "对比度-白色" 版本。 如果不可用，则 Windows 将回退到使用 plated 版本的资产。
 
 
 
 ## <a name="important-apis"></a>重要的 API
 
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
+* [ResourceContext. QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
 ## <a name="related-topics"></a>相关主题
 
-* [有效像素和缩放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [有效像素和比例因子](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [资源管理系统](resource-management-system.md)
-* [用于本地化的准备工作](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
-* [检测到平台上运行你的应用](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [如何为本地化做准备](https://docs.microsoft.com/previous-versions/windows/apps/hh967762(v=win.10))
+* [检测正在运行的应用的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [设备系列概述](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [本地化 UI 字符串](localize-strings-ui-manifest.md)
-* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [联合国统计信息除法 M49 组成的区域代码](https://go.microsoft.com/fwlink/p/?linkid=247929)
-* [IANA 语言子标记注册表](https://go.microsoft.com/fwlink/p/?linkid=227303)
+* [BCP-47](https://tools.ietf.org/html/bcp47)
+* [国家/地区代码的 M49 组合](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
+* [IANA 语言子标记注册表](https://www.iana.org/assignments/language-subtag-registry)
 * [调整布局和字体并支持 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

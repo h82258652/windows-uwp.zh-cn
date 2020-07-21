@@ -2,16 +2,16 @@
 title: 在后台无限期运行
 description: 使用 extendedExecutionUnconstrained 功能可在后台无限期运行后台任务或扩展执行会话。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: 扩展执行、 资源、 限制、 后台任务的后台任务
+keywords: 后台任务，扩展执行，资源，限制，后台任务
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 55025d0348abdf311ebf020c70ccf9029bf7ec5a
+ms.sourcegitcommit: ebd35887b00d94f1e76f7d26fa0d138ec4abe567
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630242"
+ms.lasthandoff: 11/09/2019
+ms.locfileid: "73888667"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在后台无限期运行
 
@@ -27,34 +27,39 @@ UWP 应用未在前台运行时将变为暂停状态。 在桌面上，用户最
 
 `extendedExecutionUnconstrained` 功能已作为受限功能添加到应用清单中。 有关受限功能的详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
+> **注意：** 添加*xmlns： rescap* XML 命名空间声明，并使用*rescap*前缀来声明该功能。
+
 _Package.appxmanifest_
 ```xml
-<Package ...>
-...
-  <Capabilities>  
-    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
-  </Capabilities>  
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+  ...
+  <Capabilities>
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>
+  </Capabilities>
 </Package>
 ```
 
-当你使用 `extendedExecutionUnconstrained` 功能时，会使用 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)，而不是使用 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 和 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason)。 用于创建会话、设置成员以及异步请求扩展的相同模式仍然适用： 
+当你使用 `extendedExecutionUnconstrained` 功能时，会使用 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)，而不是使用 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 和 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason)。 用于创建会话、设置成员以及异步请求扩展的相同模式仍然适用： 
 
 ```cs
-var newSession = new ExtendedExecutionForegroundSession();  
-newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
-newSession.Description = "Long Running Processing";  
-newSession.Revoked += SessionRevoked;  
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
-switch (result)  
-{  
-    case ExtendedExecutionResult.Allowed:  
-        DoLongRunningWork();  
-        break;  
+var newSession = new ExtendedExecutionForegroundSession();
+newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;
+newSession.Description = "Long Running Processing";
+newSession.Revoked += SessionRevoked;
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+switch (result)
+{
+    case ExtendedExecutionResult.Allowed:
+        DoLongRunningWork();
+        break;
 
-    default:  
-    case ExtendedExecutionResult.Denied:  
-        DoShortRunningWork();  
-        break;  
+    default:
+    case ExtendedExecutionResult.Denied:
+        DoShortRunningWork();
+        break;
 }
 ```
 
@@ -66,16 +71,22 @@ switch (result)  
 
 在通用 Windows 平台上，后台任务是在没有任何形式用户界面的后台运行的进程。 在取消之前，后台任务一般最多可以运行二十五秒。 一些长时间运行的任务也会进行检查，以确保后台任务未处于空闲状态或未使用内存。 Windows 创意者更新（版本 1703）中引入了 [extendedBackgroundTaskTime](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) 受限功能，以删除这些限制。 **extendedBackgroundTaskTime** 功能已作为受限功能添加到应用清单文件中：
 
+> **注意：** 添加*xmlns： rescap* XML 命名空间声明，并使用*rescap*前缀来声明该功能。
+
 _Package.appxmanifest_
 ```xml
-<Package ...>
-   <Capabilities>  
-       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
-   </Capabilities>  
+<Package
+    ... 
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp rescap">
+...
+  <Capabilities>
+    <rescap:Capability Name="extendedBackgroundTaskTime"/>
+  </Capabilities>
 </Package>
 ```
 
-此功能将删除执行时间限制和空闲任务监视程序。 启动后台任务后，无论是通过触发器启动还是通过应用服务调用启动，一旦该任务对 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 执行了延迟，就可以无限期运行。 如果将应用设置为**由 Windows 管理**，那么仍然可能会对它应用能耗配额，并且其后台任务在“节电模式”处于活动状态时将不会被激活。 这可以与 OS 设置更改。 [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中提供了详细信息。
+此功能将删除执行时间限制和空闲任务监视程序。 启动后台任务后，无论是通过触发器启动还是通过应用服务调用启动，一旦该任务对 **Run** 方法提供的 [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 执行了延迟，就可以无限期运行。 如果将应用设置为**由 Windows 管理**，那么仍然可能会对它应用能耗配额，并且其后台任务在“节电模式”处于活动状态时将不会被激活。 可以通过 OS 设置更改此设置。 [优化后台活动](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)中提供了详细信息。
 
 通用 Windows 平台会监视后台任务执行情况，以确保电池使用时间长久并且拥有顺畅的前台应用体验。 但是，个人应用和企业业务线应用可以使用扩展执行和 **extendedBackgroundTaskTime** 功能，以创建只要需要就会运行而不考虑设备资源可用性的应用。
 
@@ -83,4 +94,4 @@ _Package.appxmanifest_
 
 ## <a name="see-also"></a>另请参阅
 
-[删除后台任务的资源限制](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
+[删除后台任务资源限制](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)

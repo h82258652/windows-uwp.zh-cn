@@ -1,16 +1,16 @@
 ---
-title: 2017 年 9 月 Windows 文档中的新增功能 - 开发 UWP 应用
+title: 2017 年 9 月 Windows 文档中的新增功能
 description: 新的功能、视频和开发人员指南已添加到 2017 年 9 月 Windows 10 开发人员文档
 keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10, 1709
 ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1312c55d98d3e1df2c9e583422df7938c994c2b5
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fb63a5f7cefbccbedc09b0c74d9daea9d26b63a8
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320381"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74734952"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 开发人员文档中的新增功能
 
@@ -18,7 +18,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 当然，Fall Creators Update 即将推出，敬请继续关注即将在下个月发布的大量文档！
 
-只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -36,10 +36,10 @@ Xbox Live 创意者计划现已推出，可以通过该计划轻松构建和发�
 
 以下是新文章的快速概览：
 
-+ [创建用户界面](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)介绍如何创建基本照片库界面  。
-+ [创建数据绑定](https://docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding)介绍如何将数据绑定添加到照片库中并为其填充实际图像数据  。
-+ [创建自定义样式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style)介绍如何向照片编辑菜单添加奇特的自定义样式  。
-+ [创建自适应布局](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout)介绍如何让照片库实现自适应，以便适用于每台设备和尺寸各异的屏幕  。
++ [创建用户界面**介绍如何创建基本照片库界面**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)。
++ [创建数据绑定**介绍如何将数据绑定添加到照片库中并为其填充实际图像数据**](https://docs.microsoft.com/windows/uwp/data-binding/xaml-basics-data-binding)。
++ [创建自定义样式**介绍如何向照片编辑菜单添加奇特的自定义样式**](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-basics-style)。
++ [创建自适应布局**介绍如何让照片库实现自适应，以便适用于每台设备和尺寸各异的屏幕**](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-adaptive-layout)。
 
 ### <a name="get-started-tutorials"></a>入门教程
 

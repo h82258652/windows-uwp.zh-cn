@@ -3,14 +3,14 @@ title: 在 UWP 应用更新时运行后台任务
 description: 了解如何创建在通用 Windows 平台 (UWP) 应用商店应用更新时运行的后台任务。
 ms.date: 04/21/2017
 ms.topic: article
-keywords: windows 10、 uwp、 更新、 后台任务、 updatetask、 后台任务
+keywords: windows 10，uwp，更新，后台任务，updatetask，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: fa5420b14d3d73f370031eed917e0e7c367c41c7
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 15406e52eeceb579f2add783c74a1011074c69b7
+ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820954"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70393549"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在 UWP 应用更新时运行后台任务
 
@@ -24,7 +24,7 @@ Update Task 与使用 [ServicingComplete](https://docs.microsoft.com/uwp/api/Win
 
 与其他类型的后台任务相同，你以 Windows 运行时组件的形式实现 Update Task 后台任务。 要创建此组件，请按照[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)的**创建后台任务类**部分中的步骤进行操作。 这些步骤包括：
 
-- 向你的解决方案添加一个 Windows 运行时组件项目。
+- 将 Windows 运行时组件项目添加到解决方案中。
 - 创建从你的应用到该组件的引用。
 - 在实现 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 的组件中创建一个公共的密封类。
 - 实现 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法，该方法是 Update Task 运行时调用的必需的入口点。 如果你要从后台任务进行异步调用，[创建和注册进程外后台任务](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)介绍了如何通过 **Run** 方法使用延迟。
@@ -48,7 +48,7 @@ namespace BackgroundTasks
 }
 ```
 
-## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>步骤 2：声明包清单中的在后台任务
+## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>步骤 2：在包清单中声明后台任务
 
 在 Visual Studio 解决方案资源管理器中，右键单击 **Package.appxmanifest** 并单击**查看代码**查看程序包清单。 添加以下 `<Extensions>` XML 声明你的更新任务：
 
@@ -86,12 +86,12 @@ namespace BackgroundTasks
 
 ![更新版本](images/bump-version.png)
 
-现在，在 Visual Studio 2019 中按 F5 时，将更新您的应用程序，系统会激活 UpdateTask 组件在后台。 调试此程序将自动连接到后台进程。 将命中你的断点，你可以单步执行更新代码逻辑。
+现在，在 Visual Studio 2019 中按 F5 时，将更新应用程序，系统将在后台激活你的 UpdateTask 组件。 调试此程序将自动连接到后台进程。 将命中你的断点，你可以单步执行更新代码逻辑。
 
 后台任务完成时，你可以在同一调试会话中从 Windows“开始”菜单启动前台应用。 调试程序将再次自动连接，这此连接到你的前台进程，你可以单步执行应用的逻辑。
 
 > [!NOTE]
-> Visual Studio 2015 用户：上面的步骤适用于 Visual Studio 2017 或 Visual Studio 2019。 如果你使用 Visual Studio 2015，则可以使用相同的技术触发和测试 UpdateTask，除非 Visual Studio 无法连接到它。 VS 2015 中的替代过程是设置 [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)，它将 UpdateTask 设置为其入口点，并从前台应用直接触发执行。
+> Visual Studio 2015 用户：以上步骤适用于 Visual Studio 2017 或 Visual Studio 2019。 如果你使用 Visual Studio 2015，则可以使用相同的技术触发和测试 UpdateTask，除非 Visual Studio 无法连接到它。 VS 2015 中的替代过程是设置 [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)，它将 UpdateTask 设置为其入口点，并从前台应用直接触发执行。
 
 ## <a name="see-also"></a>请参阅
 

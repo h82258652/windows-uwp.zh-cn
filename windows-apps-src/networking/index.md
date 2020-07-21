@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 673f774c4d686726b59ff4e52e356ec0bc319379
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66370767"
 ---
 # <a name="networking-and-web-services"></a>网络和 Web 服务
 
 以下网络和 Web 服务技术可供通用 Windows 平台 (UWP) 开发人员使用。
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | - | - |
 | [网络基础知识](networking-basics.md) | 针对任何支持网络的应用的必做事项。 |
 | [选择哪一种网络技术？](which-networking-technology.md) | 适用于 UWP 开发人员的网络技术概述，附带关于如何选择适合应用的技术的建议。 |

@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c607dca678a8be9ebb8d0128a84293910cf73fdc
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 825f2cec4723139f187da6e9ea0d4b2dbb14457c
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319295"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970672"
 ---
 # <a name="text-box"></a>文本框
 
@@ -24,11 +24,17 @@ TextBox 控件可使用户在应用中键入文本。 它通常用于捕获单�
 
 TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置上下文菜单，并提供对复制和粘贴文本的支持。 “清除所有”按钮使用户可以快速删除所输入的所有文本。 它还内置了拼写检查功能，并且在默认情况下处于启用状态。
 
-> **重要的 API**：[TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-使用 **TextBox** 控件允许用户输入和编辑无格式文本（例如在表单中）。 你可以使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 属性在 TextBox 中获取和设置文本。
+使用 TextBox 控件允许用户输入和编辑无格式文本（例如在表单中）  。 你可以使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 属性在 TextBox 中获取和设置文本。
 
 你可以使 TextBox 只读，但只应是临时的、有条件的状态。 如果文本永远不可编辑，请考虑改用 [TextBlock](text-block.md)。
 
@@ -45,7 +51,7 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/TextBox">打开应用，了解 TextBox 的实际操作</a>。</p>
     <ul>
@@ -58,7 +64,7 @@ TextBox 具有大量可简化文本输入的功能。 它附带熟悉的内置�
 
 ![文本框](images/text-box.png)
 
-## <a name="create-a-text-box"></a>创建文本块
+## <a name="create-a-text-box"></a>创建文本框
 
 下面是具有标题和占位符文本的简单文本框的 XAML。
 
@@ -95,7 +101,7 @@ string sampleText = SampleTextBox.Text;
 SampleTextBox.Text = "Sample text retrieved";
 ```
 
-你可以将 [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)（或标签）和 [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext)（或水位线）添加到文本框，以向用户指示文本框的用途。 若要自定义标题外观，可设置 [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) 属性而非 Header。 *有关设计信息，请参阅标签指南*。
+你可以将 [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)（或标签）和 [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext)（或水位线）添加到文本框，以向用户指示文本框的用途。 若要自定义标题外观，可设置 [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) 属性而非 Header。 有关设计信息，请参阅标签指南  。
 
 可以通过设置 [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.maxlength) 属性来限制用户可键入的字符数。 但是，MaxLength 不会限制粘贴文本的长度。 使用 [Paste](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件修改粘贴文本（如果这对你的应用很重要）。
 
@@ -107,9 +113,9 @@ SampleTextBox.Text = "Sample text retrieved";
 
 在以下任意情况下，不会显示“清除所有”按钮：
 
-- **IsReadOnly** 为 **true**
-- **AcceptsReturn** 为 **true**
-- **TextWrap** 具有非 **NoWrap** 的值
+- IsReadOnly 为 true  
+- AcceptsReturn 为 true  
+- TextWrap 具有非 NoWrap 的值  
 
 此示例显示如何获取和设置文本框的当前内容。
 
@@ -126,7 +132,7 @@ SampleTextBox.Text = "Sample text retrieved";
 
 ### <a name="make-a-text-box-read-only"></a>使文本框变为只读
 
-可以通过将 [IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isreadonly) 属性设置为 **true** 使文本框变为只读。 通常根据应用中的条件在应用代码中切换此属性。 如果需要始终为只读的文本，请考虑改用 TextBlock。
+可以通过将 [IsReadOnly](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.isreadonly) 属性设置为 true 使文本框变为只读  。 通常根据应用中的条件在应用代码中切换此属性。 如果需要始终为只读的文本，请考虑改用 TextBlock。
 
 可以通过将 IsReadOnly 属性设置为 true 使 TextBox 变为只读。 例如，你可以提供一个供用户输入评论的 TextBox，该文本框仅在特定条件下启用。 你可以使 TextBox 在不满足特定条件时变为只读。 如果你只需要显示文本，仅考虑改用 TextBlock 或 RichTextBlock。
 
@@ -143,9 +149,9 @@ IsEnabled
 
 > **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 不支持其 TextWrapping 属性的“WrapWholeWords”值  。 如果你尝试使用 WrapWholeWords 作为 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，将引发无效参数异常。
 
-在输入文本时多行文本框将持续在垂直方向上增长，除非它受到其 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 属性或父容器的约束。 你应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。
+在输入文本时多行文本框将持续在垂直方向上增长，除非它受到其 [Height](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 属性或父容器的约束。 应测试多行文本框是否会增长到其可见区域之外，如果确实如此，则约束其增长。 我们建议你始终为多行文本框指定相应的高度，使其在用户键入时高度不会增长。
 
-在需要时自动启用使用滚轮或触摸的滚动。 但是，垂直滚动条默认不可见。 你可以通过在嵌入的 ScrollViewer 上将 [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 设置为 **Auto** 来显示垂直滚动条，如下所示。
+在需要时自动启用使用滚轮或触摸的滚动。 但是，垂直滚动条默认不可见。 你可以通过在嵌入的 ScrollViewer 上将 [ScrollViewer.VerticalScrollBarVisibility](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 设置为 Auto 来显示垂直滚动条，如下所示  。
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap"
@@ -201,7 +207,7 @@ rootGrid.Children.Add(textBox);
 
 生成的文本框如下所示。
 
-![格式化的文本](images/text-box-formatted.png)
+![格式化的文本框](images/text-box-formatted.png)
 
 ### <a name="modify-the-context-menu"></a>修改上下文菜单
 
@@ -213,9 +219,9 @@ rootGrid.Children.Add(textBox);
 剪切 | 文本处于选中状态。
 粘贴 | 剪贴板包含文本。
 全选 | TextBox 包含文本。
-撤销 | 文本已更改。
+撤消 | 文本已更改。
 
-若要修改上下文菜单中显示的命令，请处理 [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) 事件。 有关此内容的示例，请参阅 [ContextMenu 示例](https://go.microsoft.com/fwlink/p/?linkid=234891)的方案 2。 有关设计信息，请参阅上下文菜单指南。
+若要修改上下文菜单中显示的命令，请处理 [ContextMenuOpening](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) 事件。 有关这种情况的示例，请参阅 <a href="xamlcontrolsgallery:/item/RichEditBox">XAML 控件库</a>中的“自定义 RichEditBox 的 CommandBarFlyout - 添加‘共享’”示例  。 有关设计信息，请参阅[上下文菜单](menus.md)指南。
 
 ### <a name="select-copy-and-paste"></a>选择、复制和粘贴
 
@@ -255,9 +261,9 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 若要帮助用户使用触摸键盘或软输入面板 (SIP) 输入数据，你可以将文本控件的输入范围设置为与期望用户输入的数据类型匹配。
 
-当你的应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
+当应用在具有触摸屏的设备上运行时，触摸键盘可用于文本输入。 当用户点击可编辑的输入字段（如 TextBox 或 RichEditBox）时，系统会调用触摸键盘。 通过将文本控件的输入范围设置为匹配你期望用户输入的数据类型，可以让用户在应用中更快捷地输入数据。 输入范围会针对控件所预期的文本输入类型向系统提供提示，以便系统可以为该输入类型提供专用的触摸键盘布局。
 
-例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 **Number**。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
+例如，如果文本框中仅用于输入一个 4 位数的 PIN，请将 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 属性设置为 Number  。 这将通知系统显示数字键盘布局，以便于用户输入 PIN。
 
 > **重要提示**&nbsp;&nbsp;输入范围不会导致任何输入验证的执行，并且不会阻止用户通过硬件键盘或其他输入设备提供任何输入。 你仍然负责按需在代码中验证输入。
 
@@ -288,11 +294,11 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 - 使用一组简短的、大小固定的单行输入文本控件可输入具有特定格式的数据。
 
-    ![格式化数据输出](images/textinput_example_productkey.png)
+    ![格式化数据输入](images/textinput-example-productkey.png)
 
-- 将不受限制的单行文本输入控件与一个命令按钮结合使用可输入或编辑字符串。
+- 将不受限制的单行文本输入控件与一个帮助用户选择有效值的命令按钮结合使用，输入或编辑字符串。
 
-    ![辅助数据输入](images/textinput_example_assisted.png)
+    ![辅助数据输入](images/textinput-example-assisted.png)
 
 ### <a name="multi-line-text-input-controls"></a>多行文本输入控件
 
@@ -305,7 +311,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 - 不要让文本输入控件在用户键入时增加高度。
 - 当用户仅需要一行时，不要使用多行文本框。
-- 如果纯文本控件足够使用，不要使用 RTF 控件。
+- 如果纯文本控件足够使用，不要使用富文本控件。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 
@@ -319,4 +325,4 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [文本输入指南](text-controls.md)
 - [TextBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
 - [PasswordBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length?redirectedfrom=MSDN#System_String_Length)
+- [String.Length 属性](https://docs.microsoft.com/dotnet/api/system.string.length)

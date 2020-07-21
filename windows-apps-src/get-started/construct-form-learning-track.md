@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 入门, uwp, windows 10, 学习轨迹, 布局, 表单
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2e64392e1de5f6061b802acc0a2eed81c3e750fb
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 02cb15d948bf35b1c449bb430c9c31dd33d9eec6
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318809"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "79543970"
 ---
 # <a name="create-and-customize-a-form"></a>创建和自定义表单
 
@@ -51,7 +51,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 让用户从两个选项中做出选择。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) 让用户选择一个日期值。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) 让用户选择一个时间值。
-* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 展开以显示可选项目的列表。 可在[此处](../design/controls-and-patterns/lists.md#drop-down-lists)了解相关详细信息。
+* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 展开以显示可选项目的列表。 可在[此处](../design/controls-and-patterns/combo-box.md)了解相关详细信息。
 
 可能还需要添加[按钮](../design/controls-and-patterns/buttons.md)，以便用户可以保存或取消。
 
@@ -152,7 +152,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ### <a name="useful-apis"></a>有用的 API
 
-| API | 描述 |
+| API | 说明 |
 |------|---------------|
 | [对表单有用的控件](../design/controls-and-patterns/forms.md#input-controls) | 用于创建表单的有用输入控件的列表，以及在何处使用它们的基本指南。 |
 | [网格](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | 用于以多行或多列布局安排元素的面板。 |
@@ -162,7 +162,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ### <a name="useful-docs"></a>有用的文档
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|----------------|
 | [辅助功能概述](../design/accessibility/accessibility-overview.md) | 对应用中辅助功能选项的宽泛介绍。 |
 | [辅助功能清单](../design/accessibility/accessibility-checklist.md) | 确保应用符合辅助功能标准的实用清单。 |
@@ -177,7 +177,7 @@ UWP 没有可添加到应用并进行配置的专门表单控件。 因此，需
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 
-| 代码示例 | 描述 |
+| 代码示例 | 说明 |
 |-----------------|---------------|
 | [自适应布局教程](../design/basics/xaml-basics-adaptive-layout.md) | 对于自适应布局和响应式设计的分步指导体验。 |
 | [客户订单数据库](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | 了解布局和表单在多页企业示例中的应用。 |

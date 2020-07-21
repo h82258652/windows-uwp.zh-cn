@@ -1,24 +1,24 @@
 ---
 description: Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。
-title: 移植到 UWP 的 Windows Phone Silverlight 的外形规格和用户体验
+title: 将 Windows Phone Silverlight 移植到 UWP 以获得外形规格和 UX
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 03a994930e956cb3c2e775c32e77c6e62b526a17
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 3c15621ed34fb358f318549d7987d7c445247aae
+ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322315"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75684637"
 ---
-#  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>移植到 UWP 的 Windows Phone Silverlight 的外形规格和用户体验
+#  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>将 Windows Phone Silverlight 移植到 UWP 以获得外形规格和 UX
 
 
 上一主题是[移植业务和数据层](wpsl-to-uwp-business-and-data.md)。
 
-Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。 物理大小、 默认方向，以及有效像素的通用 Windows 平台 (UWP) 应用呈现的 Windows 10 的方式的解析系数等设备之间的差异。 好消息是，系统使用智能概念（例如有效像素）为你处理了大量繁琐的工作。
+Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常见的外观。 用户界面、输入和交互模式都非常相似，并且用户在设备之间移动的操作也将是熟悉的体验。 诸如物理大小、默认方向和有效像素分辨率因素这样的设备之间的差异由 Windows 10 渲染通用 Windows 平台（UWP）应用。 好消息是，系统使用智能概念（例如有效像素）为你处理了大量繁琐的工作。
 
 ## <a name="different-form-factors-and-user-experience"></a>不同的外形规格和用户体验
 
@@ -30,7 +30,7 @@ Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常
 
 客观来讲，屏幕应以英寸为测量单位，并且应采用物理（原始）像素。 知道这两个指标后，你便可以知道一英寸可以容纳的像素数。 这是像素密度，既可称为 DPI（每英寸点数），又可称为 PPI（每英寸像素）。 DPI 的倒数近似于像素的物理大小。 像素密度也称为*分辨率*，尽管该术语通常用于表示像素计数。
 
-由于观看距离增加，所有这些目标指标*看起来*都会更小，而且它们将解析为屏幕的*有效大小*及其*有效分辨率*。 以下设备与眼睛的距离按从近到远的顺序依次为：手机、平板电脑和 PC 显示器、[Surface Hub](https://www.microsoft.com/surface/devices/surface-hub) 设备和电视。 若要进行补偿，在客观上设备距离通常应大于观看距离。 当设置 UI 元素的大小时，应采用称为有效像素 (epx) 的单位来设置这些大小。 和 Windows 10 将考虑到帐户 DPI 和从一台设备，典型的观看距离来计算最佳物理像素提供最佳的视觉体验中的 UI 元素的大小。 请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)。
+由于观看距离增加，所有这些目标指标*看起来*都会更小，而且它们将解析为屏幕的*有效大小*及其*有效分辨率*。 以下设备与眼睛的距离按从近到远的顺序依次为：手机、平板电脑和 PC 显示器、[Surface Hub](https://www.microsoft.com/surface/devices/surface-hub) 设备和电视。 若要进行补偿，在客观上设备距离通常应大于观看距离。 当设置 UI 元素的大小时，应采用称为有效像素 (epx) 的单位来设置这些大小。 和 Windows 10 将考虑 DPI 和设备的典型观看距离，以便以物理像素来计算 UI 元素的最佳大小，以获得最佳的观看体验。 请参阅[视图/有效像素、观看距离和比例系数](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 即便如此，我们仍建议你用多种不同的设备来测试你的应用，以便你可以自行确认每种体验。
 
@@ -50,13 +50,13 @@ Windows 应用跨电脑、移动设备以及许多其他类型的设备共享常
 
 以光学方式缩放此应用来使其看起来像移动版本，只会使其变得更大，而不能充分利用设备及其额外空间，从而不能很好地为用户提供服务。 我们应该考虑显示更多内容，而不是使相同内容显示得更大。 即使在平板手机上，我们也可以多显示几行内容。 我们可以使用额外空间来显示不同的内容（如广告），也可以将该列表框更改为列表视图，并让其将项目包装到多个列中，如果可以这样做，则采用此方式利用空间。 请参阅[列表和网格视图控件指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists)。
 
-除了如列表视图和网格视图的新控件，大部分已建立的布局类型从 Windows Phone Silverlight 通用 Windows 平台 (UWP) 中具有等效项。 例如，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)、[**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 和 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)。 移植使用这些类型的大部分 UI 应该比较简单，但应始终寻找利用这些布局面板的动态布局功能以自动调整大小并在不同大小的设备上重新布局的方法。
+除了 "列表视图" 和 "网格" 视图等新控件外，Windows Phone Silverlight 中的大多数已建立布局类型在通用 Windows 平台（UWP）中具有等效项。 例如，[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)、[**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 和 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)。 移植使用这些类型的大部分 UI 应该比较简单，但应始终寻找利用这些布局面板的动态布局功能以自动调整大小并在不同大小的设备上重新布局的方法。
 
-超越系统控件和布局面板中内置的动态布局，我们可以使用名为的新 Windows 10 功能[自适应视觉状态管理器](wpsl-to-uwp-porting-xaml-and-ui.md)。
+除了内置于系统控件和布局面板中的动态布局外，我们还可以使用称为[自适应视觉对象状态管理器](wpsl-to-uwp-porting-xaml-and-ui.md)的一项新的 Windows 10 功能。
 
 ## <a name="input-modalities"></a>输入形式
 
-Windows Phone Silverlight 界面是特定于触控的。 当然，已移植应用的界面还应该支持触摸，但是你可以选择支持除此之外的其他输入形式，例如鼠标和键盘。 在 UWP 中，将鼠标、笔和触控输入统一称为*指针输入*。 有关详细信息，请参阅[处理指针输入](https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input)和[键盘交互](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)。
+Windows Phone Silverlight 接口是接触特定的。 当然，已移植应用的界面还应该支持触摸，但是你可以选择支持除此之外的其他输入形式，例如鼠标和键盘。 在 UWP 中，将鼠标、笔和触控输入统一称为*指针输入*。 有关详细信息，请参阅[处理指针输入](https://docs.microsoft.com/windows/uwp/input-and-devices/handle-pointer-input)和[键盘交互](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)。
 
 ## <a name="maximizing-markup-and-code-re-use"></a>最大程度地重复使用标记和代码
 
@@ -64,11 +64,11 @@ Windows Phone Silverlight 界面是特定于触控的。 当然，已移植应�
 
 ## <a name="more-info-and-design-guidelines"></a>详细信息和设计指南
 
--   [设计 UWP 应用](https://developer.microsoft.com/en-us/windows/apps/design)
--   [字体准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)
--   [针对不同外形因素的计划](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)
+-   [设计 UWP 应用](https://developer.microsoft.com/windows/apps/design)
+-   [字体指导原则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/fonts)
+-   [规划不同的外形规格](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)
 
 ## <a name="related-topics"></a>相关主题
 
-* [Namespace 和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)
+* [命名空间和类映射](wpsl-to-uwp-namespace-and-class-mappings.md)
 

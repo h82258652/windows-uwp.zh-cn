@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5660e2e75bbad7d5c2ee1f9c31ed4538ac55fe75
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bce484921a987f06ed79ad65007eb38d646c3227
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370442"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259504"
 ---
 # <a name="compute-shader-cs-stage"></a>计算着色器 (CS) 阶段
 
@@ -21,7 +21,7 @@ ms.locfileid: "66370442"
 
 计算着色器可以在多个线程上并行运行。
 
-计算着色器是一个 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) 可编程着色器阶段，其使用 [DirectCompute](https://go.microsoft.com/fwlink/p/?linkid=209544) 技术扩展了 Direct3D，使其拥有了除图形编程外的其他功能。
+计算着色器是一个 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) 可编程着色器阶段，其使用 [DirectCompute](https://blogs.msdn.com/b/chuckw/archive/2010/07/14/directcompute.aspx) 技术扩展了 Direct3D，使其拥有了除图形编程外的其他功能。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相关主题
 

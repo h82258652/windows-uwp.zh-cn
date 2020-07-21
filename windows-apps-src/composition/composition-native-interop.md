@@ -6,12 +6,12 @@ ms.date: 06/22/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21477938b584e4fa66c815224f25af1f6e2a160c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 51fc077342694b9ddbdbc03863c0db3b8cd9e1c5
+ms.sourcegitcommit: 3f7432afaa73083cb9b8331e30c885068c6f6dbf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360519"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72023263"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>与 DirectX 和 Direct2D 的合成本机互操作性
 
@@ -31,7 +31,7 @@ Windows.UI.Composition API 提供了 [**ICompositorInterop**](https://docs.micro
 
 对于任何给定的 [**CompositionGraphicsDevice**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionGraphicsDevice) 而言，应用程序一次只能在一个图面上调用 BeginDraw。 在调用 [**BeginDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw) 之后，应用程序必须先在该图面上调用 [**EndDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw)，然后才能在另一图面上调用 **BeginDraw**。 因为该 API 为敏捷型，所以应用程序应在要从多个 worker 线程执行呈现时负责同步这些调用。 如果应用程序想要中断呈现某一图面而临时切换到另一图面，则应用程序可以使用 [**SuspendDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-suspenddraw) 方法。 这将使另一个 **BeginDraw** 成功调用，但无法针对屏幕上合成提供第一个图面更新。 这将允许应用程序以事务性方式执行多个更新。 图面暂停后，应用程序可以通过调用 [**ResumeDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-resumedraw) 方法继续更新，也可以通过调用 **EndDraw** 声明该更新已完成。 这意味着对于任何给定的 **CompositionGraphicsDevice** 而言，一次只能主动更新一个图面。 由于每个图形设备均独立地保持此状态，因此应用程序可以在两个图面从属于不同的图形设备时同时呈现它们。 但是，这将排除汇聚在一起的两个图面的视频内存，使得内存利用率较低。
 
-如果应用程序执行一个不正确的操作（例如传递无效的参数，或者先在某一图面上调用 **BeginDraw** 然后在另一图面上调用 **EndDraw**），[**BeginDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw)、[**SuspendDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-suspenddraw)、[**ResumeDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-resumedraw) 和 [**EndDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) 方法将返回失败。 这些类型的故障表示应用程序 Bug，因此预期结果是它们将快速进行处理，而结果为失败。 如果基础 DirectX 设备丢失，**BeginDraw** 还可能会返回一项失败。 此故障并非严重性故障，因为应用程序可以重新创建其 DirectX 设备，然后重试。 因此，应用程序应仅通过跳过呈现就可以处理设备丢失。 如果出于任何原因而使得 **BeginDraw** 无法调用，应用程序同样也不能调用 **EndDraw**，因为必须先调用前者然后才能调用后者。
+如果应用程序执行一个不正确的操作（例如传递无效的参数，或者先在某一图面上调用 [BeginDraw**然后在另一图面上调用**EndDraw](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw)），[**BeginDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-suspenddraw)、[**SuspendDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-resumedraw)、[**ResumeDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) 和EndDraw 方法将返回失败。 这些类型的故障表示应用程序 Bug，因此预期结果是它们将快速进行处理，而结果为失败。 如果基础 DirectX 设备丢失，**BeginDraw** 还可能会返回一项失败。 此故障并非严重性故障，因为应用程序可以重新创建其 DirectX 设备，然后重试。 因此，应用程序应仅通过跳过呈现就可以处理设备丢失。 如果出于任何原因而使得 **BeginDraw** 无法调用，应用程序同样也不能调用 **EndDraw**，因为必须先调用前者然后才能调用后者。
 
 ## <a name="scrolling"></a>滚动
 
@@ -39,11 +39,11 @@ Windows.UI.Composition API 提供了 [**ICompositorInterop**](https://docs.micro
 
 ## <a name="usage-example"></a>使用示例
 
-下面的代码示例说明了互操作方案。 该示例将合并类型从基于 Windows 运行时的图面区域的 Windows 组合，以及从互操作标头和呈现文本使用基于 COM 的 DirectWrite 和 Direct2D Api 的代码的类型。 该示例使用[ **BeginDraw** ](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw)并[ **EndDraw** ](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw)进行无缝这些技术之间进行互操作。 该示例使用 DirectWrite 进行布局文本、，然后它使用 Direct2D 呈现它。 合成图形设备直接在初始化时接受 Direct2D 设备。 这允许**BeginDraw**返回**ID2D1DeviceContext**接口指针，这显著让应用程序创建 Direct2D 的上下文来包装返回比效率更高在每次绘制操作 ID3D11Texture2D 接口。
+下面的代码示例演示了一个互操作方案。 该示例将来自 Windows 组合的基于 Windows 运行时的外围应用的类型与互操作标头中的类型组合在一起，以及使用基于 COM 的 DirectWrite 和 Direct2D Api 呈现文本的代码。 该示例使用[**BeginDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw)和[**EndDraw**](https://docs.microsoft.com/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) ，使其在这些技术之间无缝互操作。 该示例使用 DirectWrite 来布局文本，然后使用 Direct2D 来呈现文本。 合成图形设备直接在初始化时接受 Direct2D 设备。 这允许**BeginDraw**返回**ID2D1DeviceContext**接口指针，该指针比应用程序创建 Direct2D 上下文以在每次绘制操作时包装返回的 ID3D11Texture2D 接口更有效。
 
-有以下两个代码示例。 首先， [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)示例中 （这是完整），然后C++/CX 代码示例 （其中省略了该示例的 DirectWrite 和 Direct2D 部分）。
+下面是两个代码示例。 首先，是[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)示例（已完成），然后是C++/cx 代码示例（省略了示例的 DirectWrite 和 Direct2D 部分）。
 
-若要使用C++/WinRT 代码示例中，首先创建一个新**核心应用程序 (C++/WinRT)** Visual Studio 项目中的 (要求，请参阅[适用于 Visual Studio 支持C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 在创建项目时，选择你的目标版本为**Windows 10，版本 1803 (10.0;内部版本 17134）** 。 这是生成和测试此代码时对其的版本。 内容替换为你`App.cpp`源代码文件与以下代码清单，然后生成并运行。 应用程序显示字符串"Hello，World ！" 以透明的背景上的黑色文本。
+若要使用C++下面的/WinRT 代码示例，请先在 Visual studio 中创建新的**Core App （C++/WinRT）** 项目（有关要求，请参阅[visual studio 对/WinRT 的C++支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)）。 创建项目时，选择作为目标版本**Windows 10，版本1803（10.0;生成17134）** 。 这就是此代码的生成和测试版本。 将 `App.cpp` 源代码文件的内容替换为下面的代码列表，然后生成并运行。 应用程序将字符串 "Hello，World！" 透明背景上的黑色文本。
 
 ```cppwinrt
 // App.cpp
@@ -248,7 +248,7 @@ struct DeviceLostHelper
         m_onDeviceLostHandler = ::CreateThreadpoolWait(DeviceLostHelper::OnDeviceLost, (PVOID)this, nullptr);
 
         // Create a handle and a cookie.
-        m_eventHandle = ::CreateEvent(nullptr, false, false, nullptr);
+        m_eventHandle.attach(::CreateEvent(nullptr, false, false, nullptr));
         winrt::check_bool(bool{ m_eventHandle });
         m_cookie = 0;
 
@@ -523,7 +523,7 @@ private:
 
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
-    CoreApplication::Run(SampleApp());
+    CoreApplication::Run(winrt::make<SampleApp>());
 }
 ```
 

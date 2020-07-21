@@ -1,5 +1,5 @@
 ---
-Description: 使用可视反馈以向用户显示时检测到、 解释和处理与 UWP 应用的交互。
+Description: 当用户与 Windows 应用交互时，可以使用可视反馈来显示用户。
 title: 视觉反馈
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
@@ -8,18 +8,18 @@ keywords: 视觉反馈, 焦点反馈, 触摸反馈, 接触可视化, 输入, 交
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab5d8b12539b7669f3459e62159177bfd95269d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: fcb6945c488bc1b715c339fa39949ea62bdb2a12
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317158"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970072"
 ---
 # <a name="guidelines-for-visual-feedback"></a>视觉反馈指南
 
 当检测、解释和处理用户的交互时，可使用视觉反馈显示给用户。 视觉反馈可通过鼓励交互来帮助用户。 它将指示交互是否成功，以加强用户的控制感觉。 它还可以传送系统状态并减少错误。
 
-> **重要的 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)， [ **Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)， [ **Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+> **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>建议
 
@@ -40,7 +40,7 @@ ms.locfileid: "67317158"
 > [!Important]
 > 我们不建议更改内置手势的交互行为。
 
-**跨设备的反馈**
+**跨设备反馈**
 
 视觉反馈通常依赖输入设备（触摸、触摸板、鼠标、笔/触笔、键盘等）。 例如，鼠标的内置反馈通常涉及到移动和更改光标，而触摸和笔需要接触可视化，键盘输入和导航使用焦点矩形和突出显示。
 
@@ -62,10 +62,10 @@ ms.locfileid: "67317158"
 
 ## <a name="color-branding--customizing"></a>颜色外观方案和自定义
 
-**边框属性**
+### <a name="border-properties"></a>边框属性
 
-高可见性焦点视觉分为两部分：主边框和辅助边框。 主边框为 **2px** 粗，在辅助边框的*外部*周围运行。 辅助边框为 **1px** 粗，在主边框的*内部*周围运行。
-![高可见性焦点视觉对象红线](images/FocusRectRedlines.png)
+高可见性焦点视觉分为两部分：主边框和辅助边框。 主边框为 2px 粗，在辅助边框的“外部”周围运行******。 辅助边框为 1px 粗，在主边框的“内部”周围运行******。
+![高可见性焦点视觉去除](images/FocusRectRedlines.png)
 
 若要更改任一边框类型（主或辅助）的粗细，请分别使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**。
 ```XAML
@@ -73,15 +73,15 @@ ms.locfileid: "67317158"
 ```
 ![高可见性焦点视觉边距厚度](images/FocusMargin.png)
 
-边距是类型 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness?redirectedfrom=MSDN) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 见下方：![高可见性焦点 visual 边距粗细仅底部](images/FocusThicknessSide.png)
+边距是类型 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 的属性，因此可以自定义边距以仅显示在控件的特定侧。 请参阅下面![的内容：高可见性焦点视觉对象边距粗细](images/FocusThicknessSide.png)
 
-边距是控件的视觉边界与焦点视觉*辅助边框*的开始部分之间的间距。 默认边距与控件边界的距离为 **1px**。 可以通过更改 **FocusVisualMargin** 属性来基于每个控件编辑此边距：
+边距是控件的可视边界与焦点视觉对象*辅助边框*开头之间的空间。 默认边距**1px**远离控件边界。 可以通过更改**FocusVisualMargin**属性，按控件编辑此边距：
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
 ![高可见性焦点视觉边距差异](images/FocusPlusMinusMargin.png)
 
-*负的边距将该控件，对中心推送边框并正边距将边框更接近于控件的中心。*
+*负边距会将边框推离控件的中心，而正边距会将边框移向控件的中心。*
 
 若要完全关闭基于控件的焦点视觉，只需禁用 **UseSystemFocusVisuals**：
 ```XAML
@@ -90,7 +90,7 @@ ms.locfileid: "67317158"
 
 粗细、边距或者是否呈现应用开发人员所希望的焦点视觉，完全取决于每个控件。
 
-**颜色属性**
+### <a name="color-properties"></a>颜色属性
 
 焦点视觉仅有两种颜色属性：主边框颜色和辅助边框颜色。 这些焦点视觉边框颜色可以在页面级别对每一控件进行更改，而在应用级别则为全局更改：
 
@@ -108,27 +108,31 @@ ms.locfileid: "67317158"
 
 ## <a name="related-articles"></a>相关文章
 
-**面向设计人员**
-* [平移的准则](guidelines-for-panning.md)
+### <a name="for-designers"></a>对于设计人员
 
-**面向开发人员**
-* [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
+- [平移指南](guidelines-for-panning.md)
 
-**示例**
-* [基本的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延迟的输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [用户交互模式示例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦点视觉对象示例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+### <a name="for-developers"></a>面向开发人员
 
-**存档示例**
-* [输入：XAML 用户输入的事件示例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [输入：设备功能示例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [输入：触控命中测试示例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 滚动、 平移和缩放示例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [输入：简化的墨迹示例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [输入：Windows 8 手势示例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [输入：操作和手势 (C++) 示例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 触摸输入的示例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+- [自定义用户交互](https://docs.microsoft.com/windows/uwp/design/layout/index)
+
+### <a name="samples"></a>示例
+
+- [基本输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
+- [低延迟输入示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
+- [用户交互模式示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
+- [焦点视觉对象示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+
+### <a name="archive-samples"></a>存档示例
+
+- [输入：XAML 用户输入事件示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
+- [输入：设备功能示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
+- [输入：触摸点击测试示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
+- [XAML 滚动、平移和缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [输入：简化的墨迹示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
+- [输入：Windows 8 手势示例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [输入：操作和笔势示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
+- [DirectX 触控输入示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
  
 
  

@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 位置, 地图, 地理位置
 ms.localizationpriority: medium
-ms.openlocfilehash: b92d74332bb13a11adc25cb33c0d026e14a5b9e9
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 575974db003048c6a248feab32ddb6c2c8f4f7f7
+ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371664"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606316"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置感知应用指南
 
 
 
 
-**重要的 Api**
+**重要的 API**
 
--   [**Geolocation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)
+-   [**地理位置**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation)
 -   [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
 本主题描述需要访问用户位置信息的应用的性能指南。
@@ -34,7 +34,7 @@ ms.locfileid: "66371664"
 
 -   如果位置信息对于你的应用来说并非必要，则在用户尝试完成需要该信息的任务之前不要访问它。 例如，如果社交网络应用有一个“使用位置信息登记”按钮，在用户单击该按钮之前，该应用不应该访问位置信息。 如果你的应用主要功能要求立即访问位置信息，你可以这样做。
 
--   [  **Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象必须首先在前台应用的主 UI 线程上使用，以便向用户触发同意提示。 首次使用 **Geolocator** 可能会首次调用 [**getGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)，或首次向处理程序注册 [**positionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件。
+-   [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象必须首先在前台应用的主 UI 线程上使用，以便向用户触发同意提示。 首次使用 **Geolocator** 可能会首次调用 [**getGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)，或首次向处理程序注册 [**positionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件。
 
 -   告诉用户使用位置数据的方式。
 -   提供 UI，使用户可以手动刷新他们的位置信息。
@@ -45,13 +45,13 @@ ms.locfileid: "66371664"
 
 -   当用户禁用对位置数据的访问时，清除缓存的位置信息并释放 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)。
 
-    如果用户通过“设置”关闭对位置信息的访问，则释放 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象。 应用随后会收到**访问\_DENIED**的任何位置 API 调用的结果。 如果你的应用保存或缓存了位置数据，则在用户吊销对位置信息的访问时需清除缓存的所有数据。 提供另一种在位置数据无法通过定位服务提供时手动输入位置信息的方法。
+    如果用户通过“设置”关闭对位置信息的访问，则释放 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象。 然后，该应用将接收任何位置 API 调用的**拒绝访问\_** 结果。 如果你的应用保存或缓存了位置数据，则在用户吊销对位置信息的访问时需清除缓存的所有数据。 提供另一种在位置数据无法通过定位服务提供时手动输入位置信息的方法。
 
--   提供用于重新启用定位服务的 UI。 例如，提供重新实例化的刷新按钮[**定位**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)对象，并尝试再次获取位置信息。
+-   提供用于重新启用定位服务的 UI。 例如，提供一个重新实例化[**定位**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator)对象的刷新按钮，并再次尝试获取位置信息。
 
     使应用提供用于重新启用定位服务的 UI：
 
-    -   如果用户在禁用位置访问之后重新启用位置访问，则不会通知应用。 [  **status**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) 属性不会更改，并且没有 [**statusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件。 你的应用应该创建新的 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象并调用 [**getGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)，以尝试获取更新后的位置数据或重新订阅 [**positionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件。 如果之后状态指示已重新启用位置，请清除之前应用显示的所有用于通知用户定位服务已被禁用的 UI，并对新状态执行相应的响应。
+    -   如果用户在禁用位置访问之后重新启用位置访问，则不会通知应用。 [**status**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) 属性不会更改，并且没有 [**statusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件。 你的应用应该创建新的 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象并调用 [**getGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync)，以尝试获取更新后的位置数据或重新订阅 [**positionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件。 如果之后状态指示已重新启用位置，请清除之前应用显示的所有用于通知用户定位服务已被禁用的 UI，并对新状态执行相应的响应。
     -   当用户明确地尝试使用需要位置信息的功能时，或者在其他任何适当情况下，你的应用也应该在激活后重新尝试获取位置数据。
 
 **性能**
@@ -75,7 +75,7 @@ ms.locfileid: "66371664"
 
         提供位置数据的设备可跟踪不同应用所请求的报告间隔，并以请求的最小间隔提供数据报告。 这样，对准确性要求最高的应用就会接收到其所需的数据。 因此，如果其他应用请求的更新频率更高，则定位程序可能以高于你的应用所请求的频率生成更新。
 
-        **请注意**  它并不保证定位源将为给定的报表时间间隔内接受此请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
+        **请注意**  ，不能保证位置源会服从给定报表间隔的请求。 并非所有定位程序设备都跟踪报告间隔，但你仍然应该为那些进行跟踪的设备提供报告间隔。
 
     -   为了帮助节省电耗，请设置 [**desiredAccuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) 属性，以向位置平台指示你的应用是否需要高精度的数据。 如果应用都不需要高精度的数据，则系统可以不打开 GPS 提供程序以节省电耗。
 
@@ -87,7 +87,7 @@ ms.locfileid: "66371664"
         例如：
 
         -   如果应用要获取位置用于广告调整、天气、新闻，5000 米的精度一般足够。
-        -   如果您的应用程序显示附近的邻域中的交易，精确到 300 计量是通常很有必要提供结果。
+        -   如果你的应用程序在邻居中显示附近的交易，则300指标的准确性通常非常适合提供结果。
         -   如果用户查找附件餐厅的推荐，我们可能要获取一个街区内的位置，因此 100 米的精度足够了。
         -   如果用户试图共享他的位置，应用应该请求大约 10 米的精度。
     -   如果应用有特定的精度要求，请使用 [**Geocoordinate.accuracy**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geocoordinate.accuracy) 属性。 例如，导航应用应该使用 **Geocoordinate.accuracy** 属性来确定可用的位置数据是否符合应用的要求。
@@ -101,7 +101,7 @@ ms.locfileid: "66371664"
     -   原始传感器包括加速计、陀螺仪和磁力计。
     -   融合传感器包括方向、测斜仪和指南针。 融合传感器从原始传感器的组合中获取数据。
 
-    Windows 运行时 Api 可以访问所有这些传感器磁力仪除外。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://docs.microsoft.com/windows/uwp/devices-sensors/sensors)。
+    Windows 运行时 API 可以访问除磁力计之外的所有传感器。 融合传感器比原始传感器更准确和稳定，但能耗也较多。 应针对相应目的使用正确的传感器。 有关详细信息，请参阅[传感器](https://docs.microsoft.com/windows/uwp/devices-sensors/sensors)。
 
 **连接待机**
 - 当电脑处于连接待机状态时，始终可以实例化 [**Geolocator**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator) 对象。 但是，**Geolocator** 对象将找不到任何可聚合的传感器，因此对 [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 的调用将在 7 秒后超时，[**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件侦听器将永远不会被调用，而 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件侦听器将在 **NoData** 状态下被调用一次。
@@ -111,11 +111,11 @@ ms.locfileid: "66371664"
 
 ### <a name="detecting-changes-in-location-settings"></a>检测定位设置中的更改
 
-用户可以使用“设置”  应用中的“位置隐私设置”  来关闭位置功能。
+用户可以使用“设置”**** 应用中的“位置隐私设置”**** 来关闭位置功能。
 
 -   若要检测用户何时禁用或重新启用定位服务：
     -   处理 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件。 如果用户关闭定位服务，则 **StatusChanged** 事件参数的 [**Status**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) 属性将拥有值 **Disabled**。
-    -   检查从 [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 返回的错误代码。 如果用户已禁用位置服务，则调用**GetGeopositionAsync**因**访问\_DENIED**错误并[ **LocationStatus**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.locationstatus)属性具有值**禁用**。
+    -   检查从 [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 返回的错误代码。 如果用户禁用了定位服务，对**GetGeopositionAsync**的调用将失败，并出现 "**拒绝\_访问**" 错误，并且[**LocationStatus**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.locationstatus)属性的值为 "已**禁用**"。
 -   如果位置数据对于你的应用至关重要（例如，地图应用），请务必执行以下操作：
     -   如果用户位置发生更改，则处理 [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件以获取更新。
     -   按照上述步骤处理 [**StatusChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.statuschanged) 事件，以检测定位设置中的更改。
@@ -155,17 +155,17 @@ ms.locfileid: "66371664"
 
 用户的地理位置属于个人身份信息 (PII)。 下列网站提供保护用户隐私的指南。
 
--   [Microsoft Privacy]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Microsoft 隐私]( https://www.microsoft.com/privacy/dpd/default.aspx)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
 ## <a name="related-topics"></a>相关主题
 
-* [设置地理围栏](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
+* [设置地域隔离区内](https://docs.microsoft.com/windows/uwp/maps-and-location/set-up-a-geofence)
 * [获取当前位置](https://docs.microsoft.com/windows/uwp/maps-and-location/get-location)
 * [使用 2D、3D 和街景视图显示地图](https://docs.microsoft.com/windows/uwp/maps-and-location/display-maps)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP 位置示例 （地理位置）](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 位置示例（地理位置）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 
  

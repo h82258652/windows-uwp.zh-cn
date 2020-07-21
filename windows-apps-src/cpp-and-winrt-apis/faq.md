@@ -5,15 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 提问, 问题, 常见问题解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bac3fec34467f29d9cf2cc3f1ce4e3754187745
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: 95f5ad82831b6b07e0bbc2127947f777f0cd50e5
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485152"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81759924"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有关 C++/WinRT 的常见问题解答
 对你可能存疑的关于通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作和使用 Windows 运行时 API 的问题的解答。
+
+> [!IMPORTANT]
+> 有关 C++/WinRT 的发行说明，请参阅 [C++/WinRT 2.0 中的新增功能和更改](news.md#news-and-changes-in-cwinrt-20)。
 
 > [!NOTE]
 > 如果问题与你看到的错误消息有关，另请参阅 [C++/WinRT 问题疑难解答](troubleshooting.md)主题。
@@ -30,6 +33,10 @@ ms.locfileid: "68485152"
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解决生成错误“C++/WinRT VSIX 不再提供项目生成支持。  请将项目引用添加到 Microsoft.Windows.CppWinRT Nuget 包”？
 请在项目中安装 **Microsoft.Windows.CppWinRT** NuGet 包。 有关详细信息，请参阅[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
+## <a name="how-do-i-customize-the-build-support-in-the-nuget-package"></a>如何自定义 NuGet 包中的生成支持？
+
+C++/WinRT 生成支持（属性/目标）记录在 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)中。
+
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>C++/WinRT Visual Studio 扩展 (VSIX) 的要求是什么？
 对于 VSIX 扩展版本 1.0.190128.4 和更高版本，请参阅 [C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。 对于其他版本，请参阅[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
@@ -45,9 +52,9 @@ ms.locfileid: "68485152"
 仅当运行时类设计为从其实现编译单元外部进行使用时（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件）。 有关在 IDL 中声明构造函数的目的和结果的完整详细信息，请参阅[运行时类构造函数](author-apis.md#runtime-class-constructors)。
 
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>链接器为何显示“LNK2019:未解析的外部符号”错误？
-如果无法解析的符号是 C++/WinRT 投影的 Windows 命名空间标头文件中的 API（位于 **winrt** 命名空间），则是因为该 API 在已包含的标头文件中做了前置声明，但其定义位于尚未包含的标头文件中。 请包括以 API 的命名空间命名的标头文件，并重新生成。 有关详细信息，请参阅 [C++/WinRT 投影标头文件](consume-apis.md#cwinrt-projection-headers)。
+如果无法解析的符号是 C++/WinRT 投影的 Windows 命名空间头文件中的 API（位于 **winrt** 命名空间），则是因为该 API 在已包含的头文件中做了前置声明，但其定义位于尚未包含的头文件中。 请包括以 API 的命名空间命名的头文件，并重新生成。 有关详细信息，请参阅 [C++/WinRT 投影头文件](consume-apis.md#cwinrt-projection-headers)。
 
-如果无法解析的符号是 Windows 运行时自由函数，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，则需要在项目中显式链接 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 项目模板，则会自动链接 `WindowsApp.lib`。 否则，你可以使用项目链接设置包含它，或在源代码中包含它。
+如果无法解析的符号是 Windows 运行时自由函数，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，则需要在项目中显式链接 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 项目模板，则会自动链接 `WindowsApp.lib`。 否则，你可以使用项目链接设置包含它，或在源代码中包含它。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
@@ -67,11 +74,16 @@ ms.locfileid: "68485152"
 
 有关实例化不  需要统一构造的本地实现运行时类的方法，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。
 
-## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否应实现 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，该怎么实现？
+## <a name="should-i-implement-windowsfoundationiclosable-and-if-so-how"></a>我是否应实现 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，该怎么实现？
 如果你有在其构造函数中释放资源的运行时类，而且有旨在从其实现编译单元外部所使用的运行时类（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件），则我们建议你还要实现 **IClosable**，以支持缺乏确定性终止化的语言对运行时类的使用。 确保资源得到释放，无论调用的是析构函数 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) 还是两者。 可调用 **IClosable::Close** 任意次数。
 
-## <a name="do-i-need-to-call-iclosablecloseuwpapiwindowsfoundationiclosableclose-on-runtime-classes-that-i-consume"></a>我是否需要对所使用的运行时类调用 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)？
-**IClosable** 存在以支持缺乏确定性终止化的语言。 所以，不应通过 C++/WinRT 调用 **IClosable::Close**，涉及关闭竞争或半死锁的极少数情况除外。 例如，如果使用的是 **Windows.UI.Composition** 类型，则可能会遇到按照设定的顺序释放对象的情况，作为允许 C++/WinRT 包装器的析构为你执行该工作的替代方式。
+## <a name="do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume"></a>我是否需要对所使用的运行时类调用 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)？
+**IClosable** 存在以支持缺乏确定性终止化的语言。 因此，通常不需从 C++/WinRT 调用 **IClosable::Close**。 但是，对于该通用规则，需考虑以下例外。
+- 在涉及关闭竞争或半死锁的极罕见情况下，需调用 **IClosable::Close**。 例如，如果使用的是 **Windows.UI.Composition** 类型，则可能会遇到按照设定的顺序释放对象的情况，作为允许 C++/WinRT 包装器的析构为你执行该工作的替代方式。
+- 如果无法保证你具有对某个对象的最后一个引用（因为你将它传递给其他 API，后者可能会保留某个引用），则最好调用 **IClosable::Close**。
+- 如果不能肯定，则为了安全起见，可以手动调用 **IClosable::Close**，而不是等待包装器在析构时调用它。
+
+因此，如果你知道你有最后一个引用，则可以让包装器析构函数执行该工作。 如果需要在最后一个引用消失之前关闭，则需要调用 **Close**。 为了具有异常安全性，应采用“资源获取即初始化”(RAII) 类型的 **Close**（以使关闭在释放时发生）。 C++/WinRT 没有 **unique_close** 包装器，但你可以自行创建。
 
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>C++/WinRT 可以使用 LLVM/Clang 编译吗？
 C++/WinRT 不支持 LLVM 和 Clang 工具链，但我们在内部使用 LLVM 和 Clang 验证 C++/WinRT 的合规性。 例如，如果想模拟内部执行的操作，可以尝试进行如下所述的试验。

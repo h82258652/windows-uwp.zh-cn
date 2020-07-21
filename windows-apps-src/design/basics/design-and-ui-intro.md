@@ -1,24 +1,24 @@
 ---
 Description: 每个 UWP 应用中所包含的通用设计功能都有助于生成跨各种设备完美缩放的应用。
-title: 通用 Windows 平台 (UWP) 应用设计（Windows 应用）简介
+title: Windows 应用设计简介（Windows 应用）
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2b0f5918b240bf5c28e49f2ede6f10dbeefcbbfc
-ms.sourcegitcommit: e13f06042a28a8455a211b8693a009098e150cd1
+ms.openlocfilehash: add292dd5b58c3e8da1a0ce2c2371bf211b2a617
+ms.sourcegitcommit: 7704c888a28edc7ab0515a75afac93d1dda4d693
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68522093"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84151946"
 ---
-# <a name="introduction-to-uwp-app-design"></a>UWP 应用设计简介
+# <a name="introduction-to-windows-app-design"></a>Windows 应用设计简介
 
 ![示例照明应用](images/introUWP-header.jpg)
 
-通用 Windows 平台 (UWP) 设计指南可帮助你设计和构建美观、优化的应用。
+Windows 应用设计指南可以帮助你设计和构建美观、精良的应用。
 
 它不是一份说明性规则的清单 - 它是一个动态文档，旨在适应我们不断演变的 [Fluent Design System](/windows/apps/fluent-design-system) 以及应用构建社区的需求。
 
@@ -112,7 +112,7 @@ UWP 的设计平台提供了一系列保证在所有支持 Windows 的设备上�
 
 ![主题色 gif](images/intro-style.gif)
 
-## <a name="shell"></a>壳体
+## <a name="shell"></a>Shell
 
 :::row:::
     :::column:::
@@ -120,7 +120,7 @@ UWP 应用将与 Windows [Shell](../shell/tiles-and-notifications/creating-tiles
 
 应用启动时，磁贴显示在“开始”菜单上，可以通过它们大致了解应用中的情况。 其功能来自背后的内容及其体现的智能和工艺。
 
-UWP 应用具有四种磁贴大小（小、中、宽和大），可使用应用的图标和标识来自定义这几种大小。 有关为 UWP 应用设计磁贴的指南，请参阅[磁贴和图标资产指南](../shell/tiles-and-notifications/app-assets.md)。
+UWP 应用具有四种磁贴大小（小、中、宽和大），可使用应用的图标和标识来自定义这几种大小。 有关为 UWP 应用设计磁贴的指南，请参阅[磁贴和图标资产指南](../style/app-icons-and-logos.md)。
     :::column-end:::
     :::column:::
 ![“开始”菜单上的磁贴](images/shell.svg)
@@ -170,7 +170,7 @@ UWP 应用依赖于智能交互。 你可以围绕单击交互进行设计，而
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-## <a name="next-fluent-design-system"></a>下一步：Fluent Design 系统
+## <a name="next-fluent-design-system"></a>下一步：Fluent Design System
 
 如果要了解 Fluent Design（Microsoft 提供的设计系统）背后的原则，并查看可融入 UWP 应用中的更多功能，请继续参阅 [Fluent Design 系统](/windows/apps/fluent-design-system)。
 

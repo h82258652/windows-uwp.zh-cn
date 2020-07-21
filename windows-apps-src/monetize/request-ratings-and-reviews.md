@@ -1,16 +1,16 @@
 ---
-Description: 了解有关几种方法，可以以编程方式使客户进行评分并查看您的应用程序。
+Description: 了解可通过编程方式让客户对应用进行评级和查看的多种方式。
 title: 请求应用的评分和评价
 ms.date: 01/22/2019
 ms.topic: article
 keywords: windows 10, uwp, 评分, 评价
 ms.localizationpriority: medium
 ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601302"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210713"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>请求应用的评分和评价
 
@@ -18,14 +18,14 @@ ms.locfileid: "57601302"
 * 您可以直接在应用上下文中显示评分和评价对话框。
 * 你可以在 Microsoft Store 中以编程方式打开你的应用的评级和评论页面。
 
-当准备好分析您的评分和评论数据，可以在合作伙伴中心中查看数据或使用 Microsoft Store 分析 API 以编程方式检索此数据。
+准备好分析分级和查看数据时，可以在 "合作伙伴中心" 查看数据，也可以使用 Microsoft Store analytics API 以编程方式检索此数据。
 
 > [!IMPORTANT]
-> 在添加您的应用程序内的某个级别函数时，所有审阅必须都发送到应用商店的分级机制，而不考虑星评级所选的用户。 如果从用户收集反馈或注释，它必须清除它的应用评级或存储区中的评审不相关，但将直接发送到应用程序开发人员。 有关相关的详细信息，请参阅开发人员行为准则[Fraudulent 或诚实活动](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)。
+> 在应用程序中添加分级函数时，无论选择哪种评价，所有检查都必须将用户发送到商店的分级机制。 如果你从用户那里收集反馈或评论，则必须清楚地表明它与应用分级或在商店中的评论无关，但会直接发送到应用开发人员。 有关[虚假活动或不诚实活动](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)的详细信息，请参阅开发人员行为准则。
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>在应用中显示评分和评价对话框
 
-若要以编程方式显示一个对话框，从应用程序，询问您的客户可以对应用评级并提交评审，请调用[RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync)中的方法[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store)命名空间。 
+若要以编程方式在应用程序中显示一个对话框，该对话框要求客户对应用进行评级并提交评审，请调用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中的 [RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync) 方法。 
 
 > [!IMPORTANT]
 > 显示评分和评价对话框的请求必须在应用中的 UI 线程上调用。
@@ -101,11 +101,11 @@ private async Task PromptUserToRateApp()
 }
 ```
 
-**RequestRateAndReviewAppAsync**方法引入 Windows 10，版本 1809，且不能仅用在面向项目**Windows 10 2018 年 10 月更新 (10.0;生成 17763）** 或更高版本在 Visual Studio 中的。
+**RequestRateAndReviewAppAsync**方法是在 windows 10 1809 版中引入的，并且只能在面向**Windows 10 10 月2018更新的项目中使用（10.0;版本17763）** 或更高版本的 Visual Studio。
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>评分和评价请求的响应数据
 
-提交请求以显示分级并查看对话框中后, [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata)的属性[StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult)类包含 JSON 格式的字符串，该值指示是否请求已成功。
+提交请求以显示 "分级和审阅" 对话框后， [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult)类的[ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata)属性包含一个 JSON 格式的字符串，该字符串指示请求是否成功。
 
 下面的示例演示在客户成功提交评分或评价之后此请求的返回值。
 
@@ -130,11 +130,11 @@ private async Task PromptUserToRateApp()
 
 下表以 JSON 格式的数据字符串描述这些字段。
 
-| 字段          | 描述                                                                                                                                   |
+| 字段          | 说明                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *状态*       | 一个字符串，指示客户是否成功提交评分或评价。 受支持的值为 **success** 和 **aborted**。 |
-| *数据*         | 一个包含一个名为*已更新*的布尔值的对象。 此值指示客户是否已更新现有评分或评价。 *数据*对象仅包含在成功的响应。 |
-| *ErrorDetails* | 一个包含请求的错误详细信息的字符串。                                                                                     |
+| *status*       | 一个字符串，指示客户是否成功提交评分或评价。 受支持的值为 **success** 和 **aborted**。 |
+| *data*         | 一个包含一个名为*已更新*的布尔值的对象。 此值指示客户是否已更新现有评分或评价。 *数据*对象仅包含在成功的响应。 |
+| *errorDetails* | 一个包含请求的错误详细信息的字符串。                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>在 Microsoft Store 中对你的应用启动评分和评价页面。
 
@@ -149,11 +149,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="analyze-your-ratings-and-reviews-data"></a>分析你的评分和评价数据
 
 要分析你的客户对应用的评分和评价数据，你有多个选择：
-* 可以使用[评审](../publish/reviews-report.md)合作伙伴中心，请参阅评级和从你的客户的评论中的报表。 还可以下载该报告以便脱机查看。
+* 你可以使用合作伙伴中心的 "[评论](../publish/reviews-report.md)" 报告来查看你的客户的评级和评论。 还可以下载该报告以便脱机查看。
 * 你可以使用 Microsoft Store 分析 API 中的 [Get app ratings](get-app-ratings.md) 和 [Get app reviews](get-app-reviews.md) 方法以编程方式获取 JSON 格式的客户评分和评价。
 
 ## <a name="related-topics"></a>相关主题
 
-* [将请求发送到应用商店](send-requests-to-the-store.md)
+* [向存储发送请求](send-requests-to-the-store.md)
 * [启动 Microsoft Store 应用](../launch-resume/launch-store-app.md)
 * [评论报告](../publish/reviews-report.md)

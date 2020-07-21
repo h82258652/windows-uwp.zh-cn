@@ -1,27 +1,27 @@
 ---
-title: 面向开发人员的 Windows 10 的新增功能、工具和功能
+title: Windows 10 内部版本 15063 中的新增功能
 description: Windows 10 内部版本 15063 和新的开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
-keywords: 新增功能, 更新, 功能, 新增, Windows 10, 1703, 3 月, 最新, 15063
+keywords: Windows 10, 1703, 15063
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 5faa3beb0837553f50d73f7af454ee6bd0502aa3
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: ba6eb59cb6b5808f8298e3e0ab3b6c2f889e57ec
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682464"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234635"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a>面向开发人员的 Windows 10 内部版本 15063 中的新增功能
 
-Windows 10 内部版本 15063（又称 Creators Update 或版本 1703）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 15063（又称 Creators Update 或版本 1703）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-这是一系列开发人员感兴趣的新增和改进功能。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 15063 API 更改](windows-10-build-15063-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的高级概述。
+这是一系列开发人员感兴趣的新增和改进功能。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 15063 API 更改](windows-10-build-15063-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的高级概述。
 
 ## <a name="windows-10-build-15063---march-2017"></a>Windows 10 内部版本 15063 - 2017 年 3 月
 
-功能 | 描述
+功能 | 说明
  :---- | :----
 后台任务 | 现在可在[组](../launch-resume/group-background-tasks.md)中注册后台任务，组为后台任务提供命名空间的大致等效项。 可将后台任务注册/取消注册为组的一部分，以便隔离这些注册。 这种隔离很有用，可确保应用的不同组件或不同的库之间不会相互干扰对方的后台任务注册。 </br></br> 企业可基于包的易记名称[启用或禁用 UWP 应用的后台活动](https://docs.microsoft.com/windows/client-management/mdm/policy-configuration-service-provider)。 </br></br> 后台任务现可为[多实例](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)任务。 可指定每个实例在一个具有自己的 CPU 和内存限制的新进程中运行。
 低耗电蓝牙 | 前台 [GattServiceProvider 类](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceprovider)和后台 [GattServiceProviderTrigger 类](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.gattserviceprovidertrigger)现支持发布通用特性 (GATT) 服务。 </br></br>现可在支持的收音机上使用蓝牙外设角色。 使用 [IsPeripheralRoleSupported](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothadapter) 检查支持信息。 </br></br> 无需配对设备即可与蓝牙低功耗设备通信。 请参阅 [Windows.Devices.Bluetooth.BluetoothLEDevice](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice) 及 [GenericAttributeProfile 命名空间](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceprovider)中为未配对连接启用的 API。

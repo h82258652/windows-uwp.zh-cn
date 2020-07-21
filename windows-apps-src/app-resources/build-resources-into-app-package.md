@@ -1,21 +1,21 @@
 ---
-Description: 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包，而不是单独的资源程序包。 本主题介绍如何实现该操作。
-title: 将资源构建到你的应用包而非资源包
+Description: 某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包中，而不是构建到单独的资源包中。 本主题介绍了如何执行该操作。
+title: 在应用包中构建资源
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp, 资源, 图像, 资产, MRT, 限定符
 ms.localizationpriority: medium
-ms.openlocfilehash: f7acabc9858f5a2fa0b6b76d752d2a342959f41f
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
+ms.openlocfilehash: d7a63c44ac8cb6f6b17951cf6515fad33fb83ee9
+ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68682513"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74734942"
 ---
-# <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>将资源构建到你的应用包而非资源包
+# <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>将资源构建到应用包而非资源包中
 
-某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包，而不是单独的资源程序包（或资源包）。 本主题介绍如何实现该操作。
+某些类型的应用（多语言字典、翻译工具等）需要覆盖应用程序包的默认行为，并将资源构建到应用包，而不是单独的资源程序包（或资源包）。 本主题介绍了如何执行该操作。
 
 默认情况下，构建[应用程序包 (.appxbundle)](/windows/msix/package/packaging-uwp-apps) 时，只会将语言、缩放和 DirectX 功能级别的默认资源构建到应用包。 翻译的资源以及为非默认缩放和/或 DirectX 功能级别定制的资源都构建到资源包中，仅供需要的设备下载。 如果客户使用语言首选项设置为西班牙语的设备从 Microsoft Store 购买应用，则只下载并安装应用和西班牙语资源包。 如果同一用户稍后在**设置**中将他们的语言首选项更改为法语，则将下载并安装应用的法语资源包。 符合缩放和 DirectX 功能级别的资源的情况也类似。 对于大多数应用，此行为会提高效率，而这正是你和客户*想要*实现的。
 
@@ -57,7 +57,7 @@ ms.locfileid: "68682513"
    </default>
 ```
 
-### <a name="how-does-this-work"></a>这是如何实现的？
+### <a name="how-does-this-work"></a>WSL 的工作原理是怎样的？
 
 在后台，Visual Studio 启动一个名为 `MakePri.exe` 的工具来生成一个称为包资源索引的文件，用于描述所有应用的资源，包括指示要自动拆分的资源限定符名称。 有关此工具的详细信息，请参阅[使用 MakePri.exe 手动编译资源](compile-resources-manually-with-makepri.md)。 Visual Studio 将配置文件传递给 `MakePri.exe`。 `priconfig.packaging.xml` 文件的内容用作该配置文件的 `<packaging>` 元素，即确定自动拆分的部分。 因此，添加和编辑 `priconfig.packaging.xml` 最终会影响 Visual Studio 为应用生成的包资源索引文件的内容，以及应用程序包中包的内容。
 

@@ -6,12 +6,12 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 877901deeec4da7674c6c8431e5b11f5eae075ed
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 57927ff77f060a1ea1bd7720d8831f31c5355264
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714126"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "74259211"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -39,7 +39,7 @@ ms.locfileid: "67714126"
 
 -   异步方法上提供的 HTTP 请求进度信息。
 
-[  **Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage) 类用于声明由 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 发送的 HTTP 请求消息。 [  **Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 类用于声明从 HTTP 请求接收到的 HTTP 响应消息。 HTTP 消息由 IETF 在 [RFC 2616](https://go.microsoft.com/fwlink/p/?linkid=241642) 中进行定义。
+[  **Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpRequestMessage) 类用于声明由 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 发送的 HTTP 请求消息。 [  **Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 类用于声明从 HTTP 请求接收到的 HTTP 响应消息。 HTTP 消息由 IETF 在 [RFC 2616](https://tools.ietf.org/html/rfc2616) 中进行定义。
 
 [  **Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空间用于声明 HTTP 内容作为 HTTP 实体正文和包含 Cookie 的标头。 HTTP 内容可以与 HTTP 请求或 HTTP 响应相关联。 **Windows.Web.Http** 命名空间提供很多不同的类来声明 HTTP 内容。
 
@@ -57,7 +57,7 @@ ms.locfileid: "67714126"
 
 ## <a name="send-a-simple-get-request-over-http"></a>通过 HTTP 发送简单的 GET 请求
 
-正如本文前面提到的，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空间允许 UWP 应用发送 GET 请求。 以下代码片段演示了如何使用 [**Windows.Web.Http.HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 和 [**Windows.Web.Http.HttpResponseMessage**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage) 类读取来自 GET 请求的响应，以便将 GET 请求发送到 http:\//www.contoso.com。
+正如本文前面提到的，[**Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 命名空间允许 UWP 应用发送 GET 请求。 以下代码片段演示了如何使用 \/[Windows.Web.Http.HttpClient  和 ](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient)[Windows.Web.Http.HttpResponseMessage  类读取来自 GET 请求的响应，以便将 GET 请求发送到 http:](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpResponseMessage)/www.contoso.com。
 
 ```csharp
 //Create an HTTP client object
@@ -277,15 +277,15 @@ private async Task TryPostJsonAsync()
 
 将统一资源标识符 (URI) 的无效字符串传递给 [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 对象的构造函数时，将引发异常。
 
-**.NET：**   [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN)。
+**.NET：**   [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 类型在 C# 和 VB 中显示为 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri)。
 
-在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri?redirectedfrom=MSDN) 类和 [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate?redirectedfrom=MSDN#overloads) 方法之一在构造 URI 之前测试从用户收到的字符串，可以避免该错误。
+在 C# 和 Visual Basic 中，通过使用 .NET 4.5 中的 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) 类和 [**System.Uri.TryCreate**](https://docs.microsoft.com/dotnet/api/system.uri.trycreate#overloads) 方法之一在构造 URI 之前测试从用户收到的字符串，可以避免该错误。
 
 在 C++ 中，没有可用于试用字符串和将其解析到 URI 的方法。 如果应用获取 [**Windows.Foundation.Uri**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Uri) 用户输入，则构造函数应位于 try/catch 块中。 如果引发了异常，该应用可以通知用户并请求新的主机名。
 
 [  **Windows.Web.Http**](https://docs.microsoft.com/uwp/api/Windows.Web.Http) 缺少方便函数。 所以，使用 [**HttpClient**](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpClient) 和该命名空间中其他类的应用需要使用 **HRESULT** 值。
 
-在采用 C#、VB.NET 编写的使用 .NET Framework 4.5 的应用中发生异常时，[System.Exception](https://docs.microsoft.com/dotnet/api/system.exception?redirectedfrom=MSDN) 表示应用执行期间的错误。 [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult?redirectedfrom=MSDN#System_Exception_HResult) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message?redirectedfrom=MSDN#System_Exception_Message) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
+在采用 C#、VB.NET 编写的使用 .NET Framework 4.5 的应用中发生异常时，[System.Exception](https://docs.microsoft.com/dotnet/api/system.exception) 表示应用执行期间的错误。 [System.Exception.HResult](https://docs.microsoft.com/dotnet/api/system.exception.hresult#System_Exception_HResult) 属性将返回分配到特定异常的 **HRESULT**。 [System.Exception.Message](https://docs.microsoft.com/dotnet/api/system.exception.message#System_Exception_Message) 属性将返回用于描述异常的消息。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 
 在使用托管的 C++ 的应用中发生异常时，[Platform::Exception](https://docs.microsoft.com/cpp/cppcx/platform-exception-class) 表示应用执行期间的错误。 [Platform::Exception::HResult](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#hresult) 属性将返回分配到特定异常的 **HRESULT**。 [Platform::Exception::Message](https://docs.microsoft.com/cpp/cppcx/platform-exception-class#message) 属性将返回系统提供的与 **HRESULT** 值关联的字符串。 可能的 **HRESULT** 值将在 *Winerror.h* 头文件中列出。 应用可以筛选特定 **HRESULT** 值来根据异常原因修改应用行为。
 

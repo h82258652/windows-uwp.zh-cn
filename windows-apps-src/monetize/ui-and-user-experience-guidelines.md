@@ -2,25 +2,28 @@
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: 了解应用中广告的 UI 和用户体验指南。
 title: 广告的 UI 和用户体验指南
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, 广告, 指南, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: cf7f61f427ef0b1a0ff5b6f3b66d02d13d02e4ab
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: d64d5c544f6ec9e1356cc024e634286336dc9f91
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320675"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210243"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>广告的 UI 和用户体验指南
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 本文将简要介绍如何使用应用中的横幅广告、间隙广告和本机广告提供出色的体验。 有关如何设计应用外观的通用指南，请参阅 [设计和 UI](https://developer.microsoft.com/windows/apps/design)。
 
 > [!IMPORTANT]
 > 对应用内广告的任何使用均必须符合 Microsoft Store 策略，包括但不限于策略 [10.10](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)（广告行为和内容）。 特别是，应用的横幅广告或间隙广告实现必须满足 Microsoft Store 策略 [策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 中的要求。 本文将举例说明违反此策略的一些实现。 这些示例仅供参考，以此方式帮助你更好地理解策略。 这些示例并不全面，可能有许多其他违反 Microsoft Store 策略的方式未在本文列出。
 
-## <a name="general-best-practices"></a>一般最佳做法
+## <a name="general-best-practices"></a>常规最佳实践
 
 在查看本文中针对不同类型广告的指南之前，我们先看一下有助于增加广告收入的一般性最佳做法。
 
@@ -33,9 +36,9 @@ ms.locfileid: "67320675"
 
 ## <a name="guidelines-for-banner-ads"></a>横幅广告指南
 
-以下部分针对如何使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 在应用中实施[横幅广告](banner-ads.md)提供了一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。
+以下部分针对如何使用 [AdControl](banner-ads.md) 在应用中实施[横幅广告](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)提供了一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 建议在应用中实施横幅广告时遵循下列最佳做法：
 
@@ -71,13 +74,13 @@ ms.locfileid: "67320675"
 
 * 以任何方式绕过横幅广告的内置最小刷新计时器，包括（但不限于）交换 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 对象，或不进行用户交互就强制刷新页面。
 
-* 在开发和测试期间使用实时广告单元 （即从合作伙伴中心获取的广告单元） 或在模拟器中。
+* 在开发和测试过程中，或者在模拟器中使用 live ad 单位（即从合作伙伴中心获取的 ad 单位）。
 
 * 通过在应用程序上下文中运行的 Microsoft Advertising 库之外的方式编写或分发调用广告服务的代码。
 
 * 与未记录的界面或 Microsoft Advertising 库创建的子对象（例如，**WebView** 或 **MediaElement**）交互。
 
-* 将广告放在 viewbox 以缩减以比正常页上允许多个广告的广告。
+* 在 viewbox 中放置广告，以减小广告的大小，以便在页面上允许比普通广告更多的广告。
 
 <span id="interstitialbestpractices10" />
 
@@ -87,7 +90,7 @@ ms.locfileid: "67320675"
 
 以下部分针对如何使用 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 在应用中实施间隙视频广告和间隙横幅广告提供一些建议，以及违反 Microsoft Store 策略的[策略 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的实现示例。 由于你比其他任何人都更了解你的应用（涉及到策略除外），因此我们将其留给你来做最佳的最后决定。 最重要的是，请务必记住你的应用评分与收益密切相关。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳实践
 
 建议你在应用中实施间隙广告时遵循下列最佳做法：
 
@@ -157,7 +160,7 @@ ms.locfileid: "67320675"
 
 * 只是为了具有瀑布序列广告的备份广告而请求间隙广告。 如果请求间隙广告后收到 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，则应用中所示的下一个间隙广告必须是已准备好通过 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法显示的广告。
 
-* 在开发和测试期间使用实时广告单元 （即从合作伙伴中心获取的广告单元） 或在模拟器中。
+* 在开发和测试过程中，或者在模拟器中使用 live ad 单位（即从合作伙伴中心获取的 ad 单位）。
 
 * 通过在应用程序上下文中运行的 Microsoft Advertising 库之外的方式编写或分发调用广告服务的代码。
 
@@ -169,7 +172,7 @@ ms.locfileid: "67320675"
 
 ### <a name="register-the-container-for-your-native-ad"></a>为本机广告注册容器
 
-你必须在代码中调用 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 对象的 [RegisterAdContainer](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2.registeradcontainer) 方法注册用作本机广告容器的 UI 元素，并有选择地注册你希望注册为广告的可点击目标的任何特定控件。 要正确跟踪广告曝光数和点击数，就必须执行此操作。
+你必须在代码中调用 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2.registeradcontainer) 对象的 [RegisterAdContainer](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 方法注册用作本机广告容器的 UI 元素，并有选择地注册你希望注册为广告的可点击目标的任何特定控件。 要正确跟踪广告曝光数和点击数，就必须执行此操作。
 
 **RegisterAdContainer** 方法有两个重载：
 
@@ -191,7 +194,7 @@ ms.locfileid: "67320675"
 
 本机广告应与你的应用的其余部分清晰分隔，并且周围有防止意外点击的空间。 使用边框、不同背景或其他 UI 将广告内容与应用的其余部分隔开。 请记住，从长远来看，意外点击广告不会给你的广告收益或最终用户体验带来任何好处。
 
-### <a name="description"></a>描述
+### <a name="description"></a>说明
 
 如果选择显示广告说明（由 **NativeAdV2** 对象的 **Description** 属性提供），请提供足以显示至少 75 个字符的空间。 我们建议你使用动画显示广告描述的完整内容。
 

@@ -5,18 +5,18 @@ keywords: 新增功能, 更新, 功能, 开发人员指南, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 03bc41ca76f6c6b20f06c98b0e71e2bc5a361992
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 65c3c2fb4b7a5a7f0b5f4b3c89773f3e21bd654d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65984203"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "75684743"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 开发人员文档中的新增功能
 
 Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提供的新功能的信息。 最近提供了以下功能概述、开发人员指南和代码示例，包含面向 Windows 开发人员的新的和更新的信息。
 
-只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/your-first-app.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -106,7 +106,7 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="scoped-search"></a>范围搜索
 
-“UWP”范围已添加到 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 参考](https://docs.microsoft.com/en-us/uwp/api/)文档。 除非已停用此范围，否则从这些区域中执行的搜索将仅返回 UWP 文档。
+“UWP”范围已添加到 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 参考](https://docs.microsoft.com/uwp/api/)文档。 除非已停用此范围，否则从这些区域中执行的搜索将仅返回 UWP 文档。
 
 ![范围搜索](images/scoped-search.png)
 
@@ -132,12 +132,12 @@ Windows 开发人员文档持续更新对整个 Windows 平台的开发人员提
 
 ### <a name="accessibility"></a>辅助功能
 
-将辅助功能内置到应用中会让应用获得更广泛的受众。 [观看视频](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility)，然后详细了解[开发应用的辅助功能](https://developer.microsoft.com/en-us/windows/accessible-apps)。
+将辅助功能内置到应用中会让应用获得更广泛的受众。 [观看视频](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility)，然后详细了解[开发应用的辅助功能](https://developer.microsoft.com/windows/accessible-apps)。
 
 ### <a name="payments-request-api"></a>付款请求 API
 
 付款请求 API 帮助客户和卖家无缝地完成在线结帐过程。 [观看视频](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API)，然后探索[付款请求文档](https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-the-Payments-Request-API)。
 
-### <a name="windows-10-iot-core"></a>Windows 10 IoT 核心版
+### <a name="windows-10-iot-core"></a>Windows 10 IoT 核心板
 
-通过 Windows 10 IoT 核心版和通用 Windows 平台，可以快速使用影像和组件连接建立项目原型和生成项目，如 Pet Recognition Door。 [观看视频](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core)，然后详细了解如何[开始使用 Windows 10 IoT 核心版](https://developer.microsoft.com/en-us/windows/iot)。
+通过 Windows 10 IoT 核心版和通用 Windows 平台，可以快速使用影像和组件连接建立项目原型和生成项目，如 Pet Recognition Door。 [观看视频](https://channel9.msdn.com/Blogs/One-Dev-Minute/Building-a-Pet-Recognition-Door-Using-Windows-10-IoT-Core)，然后详细了解如何[开始使用 Windows 10 IoT 核心版](https://developer.microsoft.com/windows/iot)。

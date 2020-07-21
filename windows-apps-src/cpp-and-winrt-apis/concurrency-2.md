@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a275d5c91e03f9eb5b6348cda673d93e7132d7a
-ms.sourcegitcommit: 7ece8a9a9fa75e2e92aac4ac31602237e8b7fde5
+ms.openlocfilehash: 26a0ea1ec70f4ae4255030541a6513541db1fb99
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485141"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82267498"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -118,7 +118,7 @@ IAsyncOperation<int> return_123_after_5s()
 }
 ```
 
-如果对其他某个类型运行 `co_await` &mdash; 即使是在 C++/WinRT 协同例程实现中 &mdash; 则另一个库会提供适配器，你需要了解这些适配器在恢复和上下文方面的作用。
+如果对其他某个类型运行 `co_await`&mdash; 即使是在 C++/WinRT 协同例程实现中 &mdash; 则另一个库会提供适配器，你需要了解这些适配器在恢复和上下文方面的作用。
 
 为了尽量减少上下文切换次数，可以使用本主题所述的某些方法。 让我们看看该操作的几个图示。 以下伪代码示例演示了一个事件处理程序的大纲。该处理程序调用 Windows 运行时 API 来加载图像，切换到后台线程来处理该图像，然后返回到 UI 线程以在 UI 中显示该图像。
 
@@ -219,7 +219,7 @@ co_await static_cast<no_switch>(async);
 
 然后，C++ 编译器不会查找与 **IAsyncXxx** 匹配的三个 **await_xxx** 函数，而是查找与 **no_switch** 匹配的函数。
 
-## <a name="a-deeper-dive-into-winrtresumeforeground"></a>深入了解 **winrt::resume_foreground**
+## <a name="a-deeper-dive-into-winrtresume_foreground"></a>深入了解 **winrt::resume_foreground**
 
 从 [C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/newsnews#news-and-changes-in-cwinrt-20) 开始，[**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 函数会暂停，即使是从调度程序线程来调用它（在以前的版本中，它可能会在某些情况下引入死锁，因为它暂停的前提是尚未位于调度程序线程上）。
 
@@ -359,7 +359,7 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 
 因此，在将 C++/WinRT 与协同程序配合使用的情况下，尤其是在进行一些传统的 Petzold 样式桌面应用程序开发的情况下，你拥有很大的控制权限。
 
-## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>取消异步操作和取消回调
+## <a name="canceling-an-asynchronous-operation-and-cancellation-callbacks"></a>取消异步操作和取消回调
 
 使用 Windows 运行时的异步编程功能可以取消正在进行的异步操作或运算。 以下示例调用 [**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) 来检索可能较大的文件集合，并将生成的异步操作对象存储在数据成员中。 用户可以选择取消该操作。
 
@@ -538,7 +538,7 @@ int main()
 
 ## <a name="reporting-progress"></a>报告进度
 
-如果协同例程返回 [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_) 或 [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)，则你可以检索 [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) 函数返回的对象，并使用该对象将进度报告给进度处理程序。 下面是代码示例。
+如果协同例程返回 [**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress-1) 或 [**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)，则你可以检索 [**winrt::get_progress_token**](/uwp/cpp-ref-for-winrt/get-progress-token) 函数返回的对象，并使用该对象将进度报告给进度处理程序。 下面是代码示例。
 
 ```cppwinrt
 // main.cpp
@@ -673,7 +673,7 @@ IAsyncAction Async(HANDLE event)
 IAsyncAction Async(winrt::handle event)
 {
     co_await DoWorkAsync();
-    co_await resume_on_signal(event); // The incoming handle *is* not valid here.
+    co_await resume_on_signal(event); // The incoming handle *is* valid here.
 }
 ```
 
@@ -717,7 +717,7 @@ IAsyncAction SampleCaller()
 
 ## <a name="asynchronous-timeouts-made-easy"></a>异步超时变得很简单
 
-我们对 C++/WinRT 的 C++ 协同程序的投入很大。 协同程序对编写并发代码的影响是变革性的。 就此部分讨论的示例来说，异步的详情并不重要，重要的是当场获得的结果。 因此，C++/WinRT 在实现 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows 运行时异步操作接口时会使用一个 **get** 函数，这与 **std::function** 提供的类似。
+我们对 C++/WinRT 的 C++ 协同程序的投入很大。 协同程序对编写并发代码的影响是变革性的。 就此部分讨论的示例来说，异步的详情并不重要，重要的是当场获得的结果。 因此，C++/WinRT 在实现 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) Windows 运行时异步操作接口时会提供一个 **get** 函数（与 **std::future** 提供的 get 函数类似）。
 
 ```cppwinrt
 using namespace winrt::Windows::Foundation;
@@ -731,7 +731,7 @@ int main()
 
 当异步对象正在完成其操作时，**get** 函数会实施无限期的阻止。 异步对象的生存期往往很短，因此通常情况下这正是你所需要的。
 
-但有时候，你还有其他要求：在超过一定的时间后，你不能再等待。 由于 Windows 运行时提供了构建基块，因此始终可以编写那样功能的代码。 不过，现在 C++/WinRT 提供的 **wait_for** 函数使之变得容易得多。 它还在 **IAsyncAction** 上实现。同样，它与 **std::function** 提供的类似。
+但有时候，你还有其他要求：在超过一定的时间后，你不能再等待。 由于 Windows 运行时提供了构建基块，因此始终可以编写那样功能的代码。 不过，现在 C++/WinRT 提供的 **wait_for** 函数使之变得容易得多。 它也在 **IAsyncAction** 上进行了实现。同样，它与 **std::future** 提供的 wait_for 函数类似。
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -745,6 +745,9 @@ int main()
     }
 }
 ```
+
+> [!NOTE]
+> **wait_for** 在接口上使用 **std::chrono::duration**，但它有一个受限范围，该范围小于 **std::chrono::duration** 提供的值（大约为 49.7 天）。
 
 下面这个示例中的 **wait_for** 会先等待约五秒钟，然后检查完成情况。 如果比较后得出的结果良好，则表明异步对象已成功完成，你的任务完成。 如果你在等待某个结果，则可随后调用 **get** 函数来检索结果。
 
@@ -785,11 +788,56 @@ case AsyncStatus::Started:
 - **AsyncStatus::Error** 意味着，从某些方面来看，异步对象已失败。 可以根据需要通过 **get** 重新引发异常。
 - **AsyncStatus::Started** 意味着异步对象仍在运行。 Windows 运行时异步模式不允许多个等待，也不允许多个等待程序。 这意味着不能以循环方式调用 **wait_for**。 如果等待实际上已超时，你可以有多个选择。 可以放弃该对象，也可以轮询其状态，然后调用 **get** 来检索任何结果。 不过，此时最佳选择是直接丢弃该对象。
 
+## <a name="returning-an-array-asynchronously"></a>异步返回数组
+
+以下是 [MIDL 3.0](/uwp/midl-3/) 示例，它生成*错误 MIDL2025: [msg]syntax error [context]: expecting > or, near "["* 。
+
+```idl
+Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();
+```
+
+原因在于将数组用作参数化接口的形参类型实参无效。 因此，我们需要一种不太明显的方式来实现通过运行时类方法以异步方式传递回数组的目标。 
+
+可以将装箱的数组返回到 [PropertyValue](/uwp/api/windows.foundation.propertyvalue) 对象。 然后，调用代码会取消装箱。 以下是一个代码示例，在此示例中，可以将 SampleComponent 运行时类添加到 Windows Runtime Component (C++/WinRT) 项目，然后从（例如） Core App (C++/WinRT) 项目使用它    。
+
+```cppwinrt
+// SampleComponent.idl
+namespace MyComponentProject
+{
+    runtimeclass SampleComponent
+    {
+        Windows.Foundation.IAsyncOperation<IInspectable> RetrieveCollectionAsync();
+    };
+}
+
+// SampleComponent.h
+...
+struct SampleComponent : SampleComponentT<SampleComponent>
+{
+    ...
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> RetrieveCollectionAsync()
+    {
+        co_return Windows::Foundation::PropertyValue::CreateInt32Array({ 99, 101 }); // Box an array into a PropertyValue.
+    }
+}
+...
+
+// SampleCoreApp.cpp
+...
+MyComponentProject::SampleComponent m_sample_component;
+...
+auto boxed_array{ co_await m_sample_component.RetrieveCollectionAsync() };
+auto property_value{ boxed_array.as<winrt::Windows::Foundation::IPropertyValue>() };
+winrt::com_array<int32_t> my_array;
+property_value.GetInt32Array(my_array); // Unbox back into an array.
+...
+```
+
 ## <a name="important-apis"></a>重要的 API
 * [IAsyncAction 接口](/uwp/api/windows.foundation.iasyncaction)
-* [IAsyncActionWithProgress&lt;TProgress&gt; 接口](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
-* [IAsyncOperation&lt;TResult&gt; 接口](/uwp/api/windows.foundation.iasyncoperation_tresult_)
-* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; 接口](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
+* [IAsyncActionWithProgress&lt;TProgress&gt; 接口](/uwp/api/windows.foundation.iasyncactionwithprogress-1)
+* [IAsyncOperation&lt;TResult&gt; 接口](/uwp/api/windows.foundation.iasyncoperation-1)
+* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt; 接口](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [winrt::fire_and_forget](/uwp/cpp-ref-for-winrt/fire-and-forget)
 * [winrt::get_cancellation_token](/uwp/cpp-ref-for-winrt/get-cancellation-token)

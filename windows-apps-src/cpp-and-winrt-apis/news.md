@@ -1,25 +1,84 @@
 ---
 description: C++/WinRT 的新增功能和更改。
 title: C++/WinRT 中的新增功能
-ms.date: 04/23/2019
+ms.date: 03/16/2020
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 新增功能, 功能, 新增
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e1fd738435b8622a2db2e849abf1c4984bb7ae64
-ms.sourcegitcommit: fccefde61a155a4a5a866acd1c4c9de42a14ddfd
+ms.openlocfilehash: 3057a3d13ba1e7d368dd6bf8820710030687a04d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68507728"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80662400"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 中的新增功能
 
 C++/WinRT 的后续版本发布后，本主题会介绍新增功能和变更的内容。
 
+## <a name="rollup-of-recent-improvementsadditions-as-of-march-2020"></a>2020 年 3 月为止的最新改进/添加汇总
+
+### <a name="up-to-23-shorter-build-times"></a>生成时间缩短了 23%
+
+C++/WinRT 和 C++ 编译器团队共同合作，尽可能缩短生成时间。 我们全力钻研了编译器分析，以便发现如何重构 C++/WinRT 的内部机制来帮助 C++ 编译器消除编译时开销，以及如何改进 C++ 编译器本身来处理 C++/WinRT 库。 C++/WinRT 已针对编译器进行了优化；并且编译器已针对 C++/WinRT 进行了优化。
+
+下面以一个有关生成预编译标头 (PCH) 的最糟糕情况为例，该标头包含每一单个 C++/WinRT 投影命名空间标头。
+
+| 版本 | PCH 大小（字节） | 时间（秒） |
+| - | - | - |
+| 7 月版的 C++/WinRT，与 Visual C++ 16.3 配合使用 | 3,004,104,632 | 31 |
+| 2\.0.200316.3 版的 C++/WinRT，与 Visual C++ 16.5 配合使用 | 2,393,515,336 | 24 |
+
+大小减少 20%，生成时间减少 23%。
+
+### <a name="improved-msbuild-support"></a>改进的 MSBuild 支持
+
+我们投入了大量工作来改进 [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019) 支持，使其适合广泛选择的不同方案。
+
+### <a name="even-faster-factory-caching"></a>更快的工厂缓存
+
+我们改进了工厂缓存的内联，使其能够更好地内联热路径，从而提高执行速度。
+
+此改进不会影响代码大小&mdash;如下面的[优化的 EH 代码生成](#optimized-exception-handling-eh-code-generation)中所述，如果应用程序频繁使用 C++ 异常处理，则可以使用 `/d2FH4` 选项收缩二进制文件，此选项在使用 Visual Studio 2019 16.3 和更高版本创建的新项目中默认启用。
+
+### <a name="more-efficient-boxing"></a>更高效的装箱
+
+在 XAML 应用程序中使用时，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 现在会更高效（请参阅[装箱和取消装箱](/windows/uwp/cpp-and-winrt-apis/boxing)）。 执行大量装箱操作的应用程序的代码大小也会降低。
+
+### <a name="support-for-implementing-com-interfaces-that-implement-iinspectable"></a>支持实现用于实现 IInspectable 的 COM 接口
+
+如果需要实现一个只实现 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 的（非 Windows 运行时）COM 接口，现在可以使用 C++/WinRT 来完成此任务。 请参阅[实现 IInspectable 的 COM 接口](https://github.com/microsoft/xlang/pull/603)。
+
+### <a name="module-locking-improvements"></a>模块锁定改进
+
+通过对模块锁定进行控制，现在可以实现自定义宿主方案以及消除模块级锁定。 请参阅[模块锁定改进](https://github.com/microsoft/xlang/pull/583)。
+
+### <a name="support-for-non-windows-runtime-error-information"></a>对非 Windows 运行时错误消息的支持
+
+某些 API（甚至某些 Windows 运行时 API）在未使用 Windows 运行时错误源 API 的情况下报告错误。 在这种情况下，C++/WinRT 现在将回退到使用 COM 错误信息。 请参阅[对非 WinRT 错误信息的 C++/WinRT 支持](https://github.com/microsoft/xlang/pull/582)。
+
+### <a name="enable-c-module-support"></a>启用 C++ 模块支持 
+
+C++ 模块支持已恢复，但仅处于实验形式。 此功能尚未在 C++ 编译器中完成。
+
+### <a name="more-efficient-coroutine-resumption"></a>更高效的协同例程恢复
+
+C++/WinRT 协同例程的性能良好，但我们继续寻找对其进行改进的方法。 请参阅[提高协同例程恢复的可伸缩性](https://github.com/microsoft/xlang/pull/546)。
+
+### <a name="new-when_all-and-when_any-async-helpers"></a>全新 **when_all** 和 **when_any** 异步帮助程序
+
+**when_all** 帮助程序函数会创建一个 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) 对象，该对象在所有提供的 Awaitable 都已完成时完成。 当任何提供的 Awaitable 完成时，**when_any** 帮助程序将创建一个 **IAsyncAction**。 
+
+请参阅[添加 when_any async 帮助程序](https://github.com/microsoft/xlang/pull/520)和[添加 when_all 异步帮助程序](https://github.com/microsoft/xlang/pull/516)。
+
+### <a name="other-optimizations-and-additions"></a>其他优化和添加
+
+此外，还引入了许多 bug 修复以及次要优化和添加，其中包括用于简化调试和优化内部机制及默认实现的各种改进。 单击下面的链接可获得详尽的列表：[https://github.com/microsoft/xlang/pulls?q=is%3Apr+is%3Aclosed](https://github.com/microsoft/xlang/pulls?q=is%3Apr+is%3Aclosed)。
+
 ## <a name="news-and-changes-in-cwinrt-20"></a>C++/WinRT 2.0 中的新增功能和更改
 
-有关 [C++WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix)、[Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) 和 `cppwinrt.exe` 工具的详细信息（包括如何获取和安装它们），请参阅[针对 C++/WinRT、XAML、VSIX 扩展和 NuGet 包的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+有关 [C++WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)、[Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) 和 `cppwinrt.exe` 工具的详细信息（包括如何获取和安装它们），请参阅[针对 C++/WinRT、XAML、VSIX 扩展和 NuGet 包的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ### <a name="changes-to-the-cwinrt-visual-studio-extension-vsix-for-version-20"></a>版本 2.0 的 C++WinRT Visual Studio 扩展 (VSIX) 更改
 
@@ -30,7 +89,7 @@ C++/WinRT 的后续版本发布后，本主题会介绍新增功能和变更的�
 
 - `cppwinrt.exe` 工具现在包含在 Microsoft.Windows.CppWinRT NuGet 包中，并且该工具会按需为每个项目生成平台投影标头。 因此，`cppwinrt.exe` 工具不再依赖于 Windows SDK（不过由于兼容性原因，该工具仍附带 SDK）。
 - `cppwinrt.exe` 现在会在每个特定于平台/配置的中间文件夹 ($IntDir) 下生成投影标头以实现并行生成。
-- C++/WinRT 生成支持（属性/目标）现在可完整记录，以防要手动自定义项目文件。 请参阅 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/xlang/tree/master/src/package/cppwinrt/nuget/readme.md#customizing)。
+- C++/WinRT 生成支持（属性/目标）现在可完整记录，以防要手动自定义项目文件。 请参阅 Microsoft.Windows.CppWinRT NuGet 包[自述文件](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing)。
 - 进行了大量 bug 修复。
 
 ### <a name="changes-to-cwinrt-for-version-20"></a>版本 2.0 的 C++/WinRT 更改
@@ -39,7 +98,7 @@ C++/WinRT 的后续版本发布后，本主题会介绍新增功能和变更的�
 
 `cppwinrt.exe` 工具采用 Windows 运行时元数据 (`.winmd`) 文件，通过它生成基于头文件的标准 C++ 库，该库可投影  元数据中所述的 API。 这样便可以从 C++/WinRT 代码使用这些 API。
 
-此工具现在是完全开放源代码的项目，可在 GitHub 上获取。 访问 [Microsoft\/xlang](https://github.com/Microsoft/xlang)，然后单击进入“src”   > “工具”   > “cppwinrt”  。
+此工具现在是完全开放源代码的项目，可在 GitHub 上获取。 访问 [Microsoft\/cppwinrt](https://github.com/microsoft/cppwinrt)。
 
 #### <a name="xlang-libraries"></a>xlang 库
 
@@ -255,7 +314,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-有关详细信息，请参阅[有关析构函数的详细信息](/windows/uwp/cpp-and-winrt-apis/details-about-destructors)。
+有关详细信息，请参阅[延迟析构](/windows/uwp/cpp-and-winrt-apis/details-about-destructors#deferred-destruction)。
 
 #### <a name="improved-support-for-com-style-single-interface-inheritance"></a>改进了对 COM 样式单接口继承的支持
 
@@ -269,7 +328,7 @@ struct MainPage : PageT<MainPage>
 
 [winrt::event  ](/uwp/cpp-ref-for-winrt/event) 实现现在可适当地处理使用无效标记值（数组中不存在的值）调用其 remove  方法的情况。
 
-#### <a name="coroutine-locals-are-now-destroyed-before-the-coroutine-returns"></a>现在会在协同例程返回之前销毁协同例程局部变量
+#### <a name="coroutine-local-variables-are-now-destroyed-before-the-coroutine-returns"></a>现在会在协同例程返回之前销毁协同例程局部变量
 
 实现协同例程类型的传统方法可能会允许在协同例程返回/完成之后  （而不是在最终挂起之前）销毁协同例程中的局部变量。 任何等待程序的恢复现在会延迟到最终挂起，以便避免此问题并形成其他好处。
 
@@ -283,7 +342,7 @@ struct MainPage : PageT<MainPage>
 | Visual Studio 项目系统格式已更改。 | 请参阅下面的[如何将 C++/WinRT 项目重新定位到更高版本的 Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | 有新的函数和基类可帮助将集合对象传递到 Windows 运行时函数，或是实现自己的集合属性和集合类型。 | 请参阅[使用 C++/WinRT 的集合](collections.md)。 |
 | 可以将 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) 标记扩展与 C++/WinRT 运行时类一起使用。 | 有关详细信息和代码示例，请参阅[数据绑定概述](/windows/uwp/data-binding/data-binding-quickstart)。 |
-| 对取消协同例程的支持使你可注册取消回调。 | 有关详细信息和代码示例，请参阅[取消异步操作和取消回调](concurrency-2.md#canceling-an-asychronous-operation-and-cancellation-callbacks)。 |
+| 对取消协同例程的支持使你可注册取消回调。 | 有关更多信息和代码示例，请参阅[取消异步操作和取消回调](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks)。 |
 | 创建指向成员函数的委托时，可以在注册处理程序的位置处建立对当前对象的强引用或弱引用（而不是原始 this  指针）。 | 有关详细信息和代码示例，请参阅[使用事件处理委托安全访问 this  指针](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)一节中的“如果将成员函数用作委托”  子节。 |
 | 修复了 Visual Studio 为更加符合 C++ 标准而发现的 bug。 更好地利用 LLVM 和 Clang 工具链来验证 C++/WinRT 的标准符合性。 | 不会再遇到[为何我的新项目不能编译？我使用的是 Visual Studio 2017（15.8.0 或更高版本）和 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) 中所述的问题 |
 
@@ -296,13 +355,13 @@ struct MainPage : PageT<MainPage>
 - 重大更改  。 [winrt::handle_type 构造函数  ](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor)已通过使其显式进行了强化（现在更难使用它编写不正确的代码）。 如果需要分配原始句柄值，则改为调用 [handle_type::attach 函数  ](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)。
 - 重大更改  。 WINRT_CanUnloadNow  和 WINRT_GetActivationFactory  的签名已更改。 完全不能声明这些函数。 而是包含 `winrt/base.h`（在包含任何 C++/WinRT Windows 命名空间头文件时自动包含）以包含这些函数的声明。
 - 对于 [winrt::clock struct  ](/uwp/cpp-ref-for-winrt/clock)，from_FILETIME/to_FILETIME  已弃用，以支持 from_file_time/to_file_time  。
-- 需要 IBuffer  参数的 API 进行了简化。 虽然大多数 API 首选集合或数组，但是有足够的 API 依赖于 IBuffer  ，需要它以便更易于从 C++ 使用这类 API。 通过此更新可以直接访问 IBuffer  实现背后的数据（使用 C++ 标准库容器所使用的相同数据命名约定）。 这样还可避免与通常以大写字母开头的元数据名称冲突。
+- 简化了需要 **IBuffer** 参数的 API。 大多数 API 更喜欢集合或数组。 但我们认为，我们应该使调用依赖于 **IBuffer** 的 API 更轻松。 此更新提供对 **IBuffer** 实现后的数据的直接访问。 它使用的数据命名约定与 C++ 标准库容器使用的数据命名约定相同。 该约定还可避免与通常以大写字母开头的元数据名称冲突。
 - 改进了代码生成：进行了各种改进，以减小代码大小、提高内联并优化工厂缓存。
 - 删除了不必要的递归。 当命令行引用文件夹，而不是特定 `.winmd` 时，`cppwinrt.exe` 工具不再以递归方式搜索 `.winmd` 文件。 `cppwinrt.exe` 工具现在还可更智能地处理重复项，从而对用户错误和格式不正确的 `.winmd` 文件更具弹性。
 - 强化了智能指针。 以前在移动分配新值时，事件撤销程序会无法撤销。 这有助于揭示智能指针类未可靠地处理自我赋值的问题；来源于 [winrt::com_ptr 结构模板  ](/uwp/cpp-ref-for-winrt/com-ptr)。 winrt::com_ptr  进行了修复，并且事件撤销程序进行了修复，可正确处理移动语义正确，以便可在分配时撤销。
 
 > [!IMPORTANT]
-> 对 [C++/WinRT Visual Studio 扩展 (VSIX)](https://aka.ms/cppwinrt/vsix) 进行了重要更改（在版本 1.0.181002.2 中，随后在版本 1.0.190128.4 中）。 有关这些更改以及它们如何影响现有项目的详细信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)和[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
+> 对 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 进行了重要更改（在版本 1.0.181002.2 中，随后在版本 1.0.190128.4 中）。 有关这些更改以及它们如何影响现有项目的详细信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)和[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
 ### <a name="isolation-from-windows-sdk-header-files"></a>与 Windows SDK 头文件隔离
 

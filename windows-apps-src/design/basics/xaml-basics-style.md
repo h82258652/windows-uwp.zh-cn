@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 804f1994e187d3b09ed4dcb2186105cf615f5de0
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 279a02962693d74c8c9ac037c0e3ee08f44a560b
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820504"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969093"
 ---
 # <a name="tutorial-create-custom-styles"></a>教程：创建自定义样式
 
@@ -32,14 +32,11 @@ PhotoLab 应用有两个主要页面：
 
 ## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部分：创建精致的滑块控件  
 
-通用 Windows 平台 (UWP) 提供了多种用于自定义应用外观的方法。 从字体和版式设置到颜色和渐变再到模糊效果，你有很多选择。 
+Windows 应用提供了多种自定义应用外观的方法。 从字体和版式设置到颜色和渐变再到模糊效果，你有很多选择。 
 
 在本教程的第一部分，我们会将一些照片编辑控件变得生动有趣。 
 
-<figure>
-    <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>采用默认样式的小滑块。 </figure>
-</figure>
+![采用默认样式的小滑块。](../basics/images/xaml-basics/slider-start.png)
 
 这些滑块很棒，它们能够执行滑块应该执行的所有操作，但不是很精致。 让我们来解决这个问题。 
 
@@ -58,7 +55,7 @@ PhotoLab 应用有两个主要页面：
 
 3. 使用多边形元素为曝光滑块创建背景形状。
 
-    [Windows.XAML.Ui.Shapes 命名空间](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！ 
+    [Windows.XAML.Ui.Shapes 命名空间](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes)可提供七种形状以供选择。 有椭圆、矩形和一个叫“路径”的东西，这个东西可以制作任何类型的形状 - 是的，甚至是独角兽！ 
     
     <!-- TODO reduce size -->
     ![独角兽](../basics/images/xaml-basics/unicorn.png)
@@ -180,7 +177,7 @@ PhotoLab 应用有两个主要页面：
 
 XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量，并且可以更加非常轻松地更新应用的外观。
 
-若要定义样式，可以将 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素添加到包含要设置样式的控件的元素的 [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性。  如果你将样式添加到 Page.Resources 属性中，则整个页面将可以使用你的样式  。 如果你在 App.xaml 文件内将你的样式添加到 Application.Resources 中，则整个应用将可以使用该样式  。
+若要定义样式，可以将 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素添加到包含要设置样式的控件的元素的 [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) 属性。  如果你将样式添加到 Page.Resources 属性中，则整个页面将可以使用你的样式  。 如果你在 App.xaml 文件内将你的样式添加到 Application.Resources 中，则整个应用将可以使用该样式  。
 
 可以创建命名样式和常规样式。 命名样式必须显式应用于特定控件；常规样式会应用于任何与指定的 TargetType 匹配的控件  。 
 
@@ -748,8 +745,7 @@ XAML 样式的其中一项优势是它可以大大缩减必须编写的代码量
             Grid.Row="2" Background="Transparent" Foreground="Transparent"
             Value="{x:Bind item.Exposure, Mode=TwoWay}"
             Minimum="-2"
-            Maximum="2"
-            Template="{StaticResource FancySliderControlTemplate}"/>    
+            Maximum="2" />    
     ```
     
     **之后**

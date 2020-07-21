@@ -12,30 +12,37 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9793679dcd036415ba6a1c238c1986392beb5761
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
+ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319146"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82989800"
 ---
 # <a name="command-bar-flyout"></a>命令栏浮出控件
 
 使用命令栏浮出控件时，可以在浮动工具栏中显示与 UI 画布上的某个元素相关的命令，方便用户访问常见任务。
 
-![扩展的文本命令栏浮出控件](images/command-bar-flyout-header.png)
-
-> CommandBarFlyout 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
-
-> - **平台 API**：[CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
->- **Windows UI 库 API**：[CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+![扩展的文本命令栏浮出控件](images/command-bar-flyout-text-full.png)
 
 与 [CommandBar](app-bars.md) 一样，CommandBarFlyout 的 **PrimaryCommands** 和 **SecondaryCommands** 属性可以用来添加命令。 可以将命令置于这两个集合中，或者置于其中的一个中。 主要命令和辅助命令何时显示以及以何种方式显示取决于显示模式。
 
 命令栏浮出控件有两个显示模式：折叠和展开。  
 
-- 在折叠模式下，仅显示主要命令。 如果命令栏浮出控件包含主要命令和辅助命令，则会显示由省略号 \[•••\] 表示的“查看更多”按钮。 这样用户就可以通过切换到展开模式来访问辅助命令。
+- 在折叠模式下，仅显示主要命令。 如果命令栏浮出控件包含主要命令和辅助命令，则会显示由省略号 \[***\] 表示的“查看更多”按钮。 这样用户就可以通过切换到展开模式来访问辅助命令。
 - 在展开模式下，主要命令和辅助命令都会显示。 （如果此控件只有辅助项，则这些辅助项的显示方式类似于 MenuFlyout 控件。）
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) |  CommandBarFlyout 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+>**Windows UI 库 API**：[CommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>
+>**平台 API**：[CommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 类](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 类](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>
+> CommandBarFlyout 需要 Windows 10 版本 1809（[SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)）或更高版本，或 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -56,7 +63,7 @@ TextCommandBarFlyout 在 TextBox、TextBlock、RichEditBox、RichTextBlock 和 P
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CommandBarFlyout">打开此应用，了解 CommandBarFlyout 的实际应用</a>。</p>
     <ul>
@@ -386,14 +393,14 @@ CommandBarFlyout 控件有 2 个可用于添加命令和内容的属性：[Prima
 
 | 命令 | 在以下情况下显示... |
 | ------- | -------- |
-| Bold | 当文本控件不是只读时（仅 RichEditBox）。 |
-| Italic | 当文本控件不是只读时（仅 RichEditBox）。 |
-| Underline | 当文本控件不是只读时（仅 RichEditBox）。 |
+| 粗体 | 当文本控件不是只读时（仅 RichEditBox）。 |
+| 斜体 | 当文本控件不是只读时（仅 RichEditBox）。 |
+| 下划线 | 当文本控件不是只读时（仅 RichEditBox）。 |
 | 校对 | 当 IsSpellCheckEnabled 为 **true** 且拼写错误的文本处于选中状态时。 |
 | 剪切 | 当文本控件不是只读且文本处于选中状态时。 |
 | 复制 | 当文本处于选中状态时。 |
 | 粘贴 | 当文本控件不是只读且剪贴板有内容时。 |
-| 撤销 | 当存在可以撤消的操作时。 |
+| 撤消 | 当存在可以撤消的操作时。 |
 | 全选 | 当文本可以选择时。 |
 
 ### <a name="custom-text-command-bar-flyouts"></a>自定义文本命令栏浮出控件
@@ -406,9 +413,9 @@ TextCommandBarFlyout 不能自定义，由每个文本控件自动管理。 不�
 ## <a name="get-the-sample-code"></a>获取示例代码
 
 - [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
-- [XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [XAML 命令示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
+- [Windows 应用的命令设计基础知识](../basics/commanding-basics.md)
 - [CommandBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

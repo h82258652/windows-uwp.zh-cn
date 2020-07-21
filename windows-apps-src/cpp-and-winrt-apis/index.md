@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: ba8576402165f2d36d048eb3d214cb1dad601d76
-ms.sourcegitcommit: 8179902299df0f124dd770a09a5a332397970043
+ms.openlocfilehash: 2b28c4271865c813aa8a0f327fba96f995370301
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68428622"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81759930"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -34,7 +34,7 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 
 ### <a name="topics-about-cwinrt"></a>有关 C++/WinRT 的主题
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | - | - |
 | [C++/WinRT 简介](intro-to-using-cpp-with-winrt.md) | 对 C++/WinRT（一种适用于 Windows 运行时 API 的标准 C++ 语言投影）的介绍。 |
 | [C++/WinRT 入门](get-started.md) | 为了帮助你更快地开始使用 C++/WinRT，本主题详细介绍了一个简单的代码示例。 |
@@ -59,20 +59,21 @@ C++ 编程语言适用于企业*和*独立软件供应商 (ISV) 行业中重视�
 | [将参数传递到 ABI 边界](pass-parms-to-abi.md) | C++/ WinRT 通过提供针对常见情况的自动转换，简化了将参数传递到 ABI 边界。 |
 | [通过 C++/WinRT 使用 COM 组件](consume-com.md) | 本主题通过一个完整的 Direct2D 代码示例展示了如何通过 C++/WinRT 来使用 COM 类和接口。 |
 | [通过 C++/WinRT 创作 COM 组件](author-coclasses.md) | C++/WinRT 可以帮助你创作经典 COM 组件，就像它可以帮助你创作 Windows 运行时类一样。 |
-| [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) | 本主题介绍了如何将 C++/CX 代码移植到 C++/WinRT 中的等效项。 |
-| [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 和 C++/WinRT 对象之间进行转换的两个帮助程序函数。 |
-| [从 WRL 移动到 C++/WinRT](move-to-winrt-from-wrl.md) | 本主题介绍了如何将 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 代码移植到 C++/WinRT 中的等效项。 |
-| [从 C# 移动到 C++/WinRT](move-to-winrt-from-csharp.md) | 本主题介绍了如何将 C# 代码移植到 C++/WinRT 中的等效项。 |
+| [从 C++/CX 移动到 C++/WinRT](move-to-winrt-from-cx.md) | 本主题介绍将 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 项目中的源代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 项目中的等效项时所涉及的技术细节。 |
+| [实现 C++/WinRT 与 C++/CX 之间的互操作](interop-winrt-cx.md) | 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 对象之间进行转换的两个帮助程序函数。 |
+| [从 WRL 移动到 C++/WinRT](move-to-winrt-from-wrl.md) | 本主题介绍了如何将 [Windows 运行时 C++ 模板库 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的等效项。 |
+| [将 Clipboard 示例从 C# 移植到C++&mdash;案例研究](clipboard-to-winrt-from-csharp.md) | 本主题提供了一个有关将[通用 Windows 平台 (UWP) 应用示例](https://github.com/microsoft/Windows-universal-samples)之一从 [C#](/visualstudio/get-started/csharp) 移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的案例研究。 可以通过按照本演练并自行移植示例，获取移植实践和体验。 |
+| [从 C# 移动到 C++/WinRT](move-to-winrt-from-csharp.md) | 本主题全面对 [C#](/visualstudio/get-started/csharp) 项目中的源代码移植到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 项目中的等效项时所涉及的技术细节进行了分类。 |
 | [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md) | 本主题介绍了如何在应用程序二进制接口 (ABI) 和 C++/WinRT 对象之间进行转换。 |
 | [C++/WinRT 中的弱引用](weak-references.md) | Windows 运行时是引用在其中占有重要地位的一个系统；在这样的系统中，了解强引用与弱引用的意义和区别非常重要。 |
 | [敏捷对象](agile-objects.md) | 敏捷对象是可从任何线程访问的对象。 C++/WinRT 类型默认情况下是敏捷对象，但你可以选择退出。 |
 | [诊断直接分配](diag-direct-alloc.md) | 本主题深入探讨了一种 C++/WinRT 2.0 功能，该功能可帮助你诊断在堆栈上创建实现类型对象的错误，而无需使用 [**WinRT:: make**](/uwp/cpp-ref-for-winrt/make) 系列的帮助程序。 |
-| [有关析构函数的详细信息](details-about-destructors.md) | 使用 C++/WinRT 2.0 可以延迟析构实现类型，并可在析构期间安全地进行查询。 本主题介绍了这些功能，并说明了何时应使用这些功能。 |
+| [用于实现类型的扩展点](details-about-destructors.md) | 使用 C++/WinRT 2.0 中的这些扩展点可以延迟实现类型的析构、在析构期间安全地查询，以及与投影方法的入口和出口挂钩。 |
 | [一个简单的 C++WinRT Windows UI 库示例](simple-winui-example.md) | 本主题将指导你完成在 C++/WinRT 项目内添加对 WinUI 的简单支持的过程。 |
 
 ### <a name="topics-about-the-c-language"></a>有关 C++ 语言的主题
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 | - | - |
 | [值类别，以及对它们的引用](cpp-value-categories.md) | 本主题介绍了 C++ 中存在的各种值类别。 你肯定听说过左值和右值，但还有其他类型。 |
 

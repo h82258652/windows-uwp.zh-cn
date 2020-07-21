@@ -1,18 +1,21 @@
 ---
 description: Windows 高级广告发布者计划由一系列合作伙伴广告网络可使用的、精选广告应用和优质、高收益广告组成。 就使用情况、参与度和体验而言，此计划中的应用是同类中最好的。
 title: Windows 高级广告发布者计划
-ms.date: 09/08/2017
+ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 广告, 广告
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d747d35148965480cb34714cde7859203a7424d
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 06421b92106baec5a846db5fc7adf8ef3b742bff
+ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57634372"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77507071"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows 高级广告发布者计划
+
+>[!WARNING]
+> 从2020年6月1日起，将关闭适用于 Windows UWP 应用的 Microsoft Ad 盈利平台。 [了解详细信息](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 为了继续尽力帮助 Windows 开发人员通过广告实现应用盈利，我们提供 [Windows 高级广告发布者计划](https://www.windowspremiumapps.com)。 它是一系列精选广告应用和游戏，就使用情况、参与度和体验而言，它们是同类中最好的。 这些应用和游戏经过可见性认证，在全球范围内分布有具有高参与度的可识别用户。
 
@@ -22,7 +25,7 @@ ms.locfileid: "57634372"
 
 我们会根据[资格条件](#what-are-the-criteria-for-apps-in-the-program)不断审核 Microsoft Store 中的应用。 符合资格条件的应用将会通过严格的人工审核流程，以检查是否可以提供流畅、良好的用户体验，确保正确投放广告，避免出现意外的点击率。 通过自动和人工筛选流程的应用随后将被添加到此计划中。
 
-该计划目前是“仅邀请”计划，只有符合资格条件并不会自动授权应用成为高级计划的一部分。 如果你想要了解与提高应用体验以符合此计划资格相关的更多信息，请通过 aiacare@microsoft.com 联系我们。
+该计划目前是“仅邀请”计划，只有符合资格条件并不会自动授权应用成为高级计划的一部分。 如果想要了解有关改善应用程序体验的详细信息，请访问 aiacare@microsoft.com。
 
 ## <a name="what-are-the-criteria-for-apps-in-the-program"></a>此计划中的应用条件是什么？
 
@@ -41,7 +44,7 @@ ms.locfileid: "57634372"
 
 ## <a name="can-apps-get-removed-from-the-program"></a>此计划中的应用是否可能被删除？
 
-此计划中的应用受到经常性监控，以确保它们始终符合资格条件。 为了保持最低每日广告请求量，请确保你的应用使用率不会随着时间的推移严重下降。 一种好的做法是[定期举办促销活动](https://developer.microsoft.com/en-us/store/promote-your-apps)。
+此计划中的应用受到经常性监控，以确保它们始终符合资格条件。 为了保持最低每日广告请求量，请确保你的应用使用率不会随着时间的推移严重下降。 一种好的做法是[定期举办促销活动](https://developer.microsoft.com/store/promote-your-apps)。
 
 ## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>能够提供其他营销材料来在计划中展示我的应用？ 
 

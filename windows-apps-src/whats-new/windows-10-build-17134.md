@@ -1,26 +1,26 @@
 ---
-title: 面向开发人员的 Windows 10 的新增功能、工具和功能
+title: Windows 10 内部版本 17134 中的新增功能
 description: Windows 10 内部版本 17134 和新的开发人员工具提供由通用 Windows 平台支持的工具、功能和体验。
-keywords: 新增功能, 新功能, 更新, 刷新, 功能, 新, Windows 10, 最新, 开发人员, 17134
+keywords: Windows 10, 17134, 1803
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dc35dc50b8dc523aff5478b3ec19c3daeed9dafb
-ms.sourcegitcommit: 51d884c3646ba3595c016e95bbfedb7ecd668a88
+ms.openlocfilehash: 12c788cae02cdc5a0cf8e26f02ea03264960ce49
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67820451"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83234373"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>面向开发人员的 Windows 10 内部版本 17134 中的新增功能
 
-Windows 10 内部版本 17134（又称 4 月更新或版本 1803）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
+Windows 10 内部版本 17134（又称 4 月更新或版本 1803）与 Visual Studio 2019 和更新的 SDK 相结合，为打造出色的通用 Windows 平台应用提供了相关工具、功能和体验。 只需在 Windows 10 上[安装工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank)，你便可以随时[创建新的通用 Windows 应用](../get-started/create-uwp-apps.md)，或了解如何使用 [Windows 上的现有应用代码](../porting/index.md)。
 
-该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17134 API 更改](windows-10-build-17134-api-diff.md)。 有关 Windows 10 亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
+该版本集合了 Windows 开发人员感兴趣的新增和改进功能及指南。 有关已添加到 Windows SDK 的新命名空间的完整列表，请参阅 [Windows 10 内部版本 17134 API 更改](windows-10-build-17134-api-diff.md)。 有关 Windows 10 中亮点功能的详细信息，请参阅 [Windows 10 中的酷炫功能](https://developer.microsoft.com/windows/windows-10-for-developers)。 另请参阅 [Windows 开发人员平台功能](https://developer.microsoft.com/windows/platform/features)，了解有关 Windows 平台过去已添加的及将来要添加的功能的详尽概述。
 
 ## <a name="design--ui"></a>设计和 UI
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 自适应和交互式 Toast 通知 | 使用自适应和交互式通知增强你的应用。 使用我们的[更新的 Toast 通知指南](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)开始，并了解有关图像大小限制、进度栏和添加输入选项的新信息。<br><br>计划的 Toast 通知现在支持 [ExpirationTime](https://docs.microsoft.com/uwp/api/windows.ui.notifications.scheduledtoastnotification.expirationtime#Windows_UI_Notifications_ScheduledToastNotification_ExpirationTime)。
 内容链接 | 新[内容链接](../design/controls-and-patterns/content-links.md)控件提供了访问文本控件中的丰富的嵌入数据的方法，让用户无需离开应用上下文即可查找和使用有关人员或位置的更多信息。
@@ -39,14 +39,14 @@ Fluent Design 更新 | 我们已经更新了许多 Fluent Design 页面，增加
 写入样式 | 我们已升级并扩充了有关语音和声调的文章内容，现在变为[编写样式指南](../design/style/writing-style.md)。 这些新信息提供在应用中创建有效文本的准则，并为控件编写（如错误消息或对话）推荐最佳做法。
 
 ## <a name="gaming"></a>游戏
-功能 | 描述
+功能 | 说明
  :------ | :------
 游戏开发入门 | 对开发适用于 Windows 10 的游戏感兴趣？ 新的[游戏开发入门](../gaming/getting-started.md)页面为你提供了自行完成设置、注册并准备好提交应用和游戏所需完成事项的完整概述。
 图形适配器 | 已添加以下 DXGI API，它们是关于图形适配器的首选项和删除： </br> * [IDXGIFactory6](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 接口支持根据给定的 GPU 首选项枚举图形适配器的单一方法。 </br> * [DXGIDeclareAdapterRemovalSupport](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-dxgideclareadapterremovalsupport) 函数允许执行指示恢复任何正在删除的图形设备的进程。 </br> * [DXGI_GPU_PREFERENCE](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_gpu_preference) 枚举描述应用在其上运行的 GPU 的首选项。
 
 ## <a name="develop-windows-apps"></a>开发 Windows 应用
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 自适应卡片 | [自适应卡](https://docs.microsoft.com/adaptive-cards/)是一种开放的卡交换格式，让开发人员可以通过常见且一致的方式交换 UI 内容。 它们将内容描述为可以自动呈现以适应主机应用程序的外观和感觉的 JSON 对象。
 应用资源组 | [AppResourceGroupInfo](https://docs.microsoft.com/uwp/api/windows.system.appresourcegroupinfo) 类有新的方法，你可以用来启动向已暂停、活动（已恢复）和已终止状态应用的转换。
@@ -73,7 +73,7 @@ Windows Mixed Reality 文档 | Windows Mixed Reality 开发人员指南[现在�
 
 ## <a name="publish--monetize-windows-apps"></a>发布 Windows 应用并实现盈利
 
-功能 | 描述
+功能 | 说明
  :------ | :------
 从 Microsoft Store 下载并安装程序包更新 | 我们已更新[下载和安装来自 Microsoft Store 的程序包更新](../packaging/self-install-package-updates.md)，并提供关于如何下载和安装程序包更新而不向用户显示通知 UI 的新指南和示例，卸载可选程序包，以及获取关于应用的下载和安装队列中的程序包的信息。
 使用特定市场的当地货币输入自由格式价格 | 在覆盖特定市场的应用基价后，将不再受限于选择其中一个标准价格段；现在可以选择使用市场的当地货币输入自由格式价格。 有关详细信息，请参阅[设置和计划应用定价](../publish/set-and-schedule-app-pricing.md)。 **此功能适用于所有的 Windows 开发人员，并且不需要更新的 SDK。**

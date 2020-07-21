@@ -1,16 +1,16 @@
 ---
-description: 本主题介绍了可用于在 C++/CX 和 C++/WinRT 对象之间进行转换的两个帮助程序函数。
+description: 本主题介绍了可用于在 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 和 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 对象之间进行转换的两个帮助程序函数。
 title: 实现 C++/WinRT 与 C++/CX 之间的互操作
 ms.date: 10/09/2018
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, 互操作, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b0c676276fa0974144f03b12c3037a42069641
-ms.sourcegitcommit: d37a543cfd7b449116320ccfee46a95ece4c1887
+ms.openlocfilehash: 0e54937391d3317f1b37415036aabc88a6cfaa41
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68270063"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80290019"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>实现 C++/WinRT 与 C++/CX 之间的互操作
 
@@ -18,7 +18,7 @@ ms.locfileid: "68270063"
 
 本主题介绍了可用于在项目项目中的 C++/CX 和 C++/WinRT 对象之间进行转换的两个帮助程序函数。 你可以借助这些技术，为使用两个语言投影的代码实现互操作，也可以在将代码从 C++/CX 移植到 C++/WinRT 时使用这些技术。
 
-## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函数
+## <a name="from_cx-and-to_cx-functions"></a>from_cx 和 to_cx 函数
 下面的帮助程序函数将 C++/CX 对象转换为等效的 C++/WinRT 对象。 该函数将 C++/CX 对象强制转换为其基础 [IUnknown  ](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown) 接口指针。 然后，它对该指针调用 [QueryInterface  ](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 来查询 C++/WinRT 对象的默认接口。 QueryInterface  是 C++/CX safe_cast 扩展的 Windows 运行时应用程序二进制接口 (ABI) 等效项。 此外，[winrt::put_abi  ](/uwp/cpp-ref-for-winrt/put-abi) 函数将检索 C++/WinRT 对象的基础 IUnknown  接口指针的地址，使该地址能够设置为其他值。
 
 ```cppwinrt
@@ -55,7 +55,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 - 在项目属性中，“C/C++”  \>“常规”  \>“使用 Windows 运行时扩展”  \>“是(/ZW)”  。 这会打开对 C++/CX 的项目支持。
 - 将 `App.cpp` 中的内容替换为下面列出的代码。
 
-`WINRT_ASSERT` 是宏定义，并且扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
+`WINRT_ASSERT` 是宏定义，并且它扩展到 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
 ```cppwinrt
 // App.cpp

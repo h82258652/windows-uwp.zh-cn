@@ -7,10 +7,10 @@ keywords: 入门, uwp, windows 10, 学习轨迹, 设置, 保存设置, 加载设
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66370488"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 应用中保存和加载设置
@@ -51,9 +51,9 @@ composite["FontSize"] = 11;
 roamingSettings.Values["RoamingFontInfo"] = composite;
  ```
 
-将设置保存到本地设备：通过使用 `Windows.Storage.ApplicationData.Current.LocalSettings` 首先为本地设置数据存储获取 **ApplicationDataContainer**。 分配到此实例的键/值字典对在本地设备设置数据存储中保存。
+将设置保存到本地设备：通过使用 **首先为本地设置数据存储获取**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.LocalSettings`。 分配到此实例的键/值字典对在本地设备设置数据存储中保存。
 
-使用类似的模式保存漫游设置。 首先通过 `Windows.Storage.ApplicationData.Current.RoamingSettings` 为漫游设置数据存储获取 **ApplicationDataContainer**。 然后将键/值对分配到此实例。  这些键/值对将在设备之间自动漫游。
+使用类似的模式保存漫游设置。 首先通过 **为漫游设置数据存储获取**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.RoamingSettings`。 然后将键/值对分配到此实例。  这些键/值对将在设备之间自动漫游。
 
 在上述代码片段中，**ApplicationDataCompositeValue** 存储多个键/值对。 如果你有多个不应彼此脱离同步的设置，复合值非常有用。 保存 **ApplicationDataCompositeValue** 时，值作为一个单元保存和加载或自动完成。 通过这种方式，相关的设置不会脱离同步，因为它们作为一个单元而不是单独漫游。
 
@@ -74,9 +74,9 @@ if (composite != null)
 }
 ```
 
-从本地设备加载设置：通过使用 `Windows.Storage.ApplicationData.Current.LocalSettings` 首先为本地设置数据存储获取 **ApplicationDataContainer** 实例。 然后使用它来检索键/值对。
+从本地设备加载设置：通过使用 **首先为本地设置数据存储获取**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.LocalSettings` 实例。 然后使用它来检索键/值对。
 
-按照类似的模式加载漫游设置。 首先通过 `Windows.Storage.ApplicationData.Current.RoamingSettings` 从漫游设置数据存储获取 **ApplicationDataContainer** 实例。 从该实例访问键/值对。 如果数据尚未漫游到你从其访问设置的设备，你将获得一个空 **ApplicationDataContainer**。 这就是上面的示例代码中有一个 `if (composite != null)` 检查的原因。
+按照类似的模式加载漫游设置。 首先通过 **从漫游设置数据存储获取**ApplicationDataContainer`Windows.Storage.ApplicationData.Current.RoamingSettings` 实例。 从该实例访问键/值对。 如果数据尚未漫游到你从其访问设置的设备，你将获得一个空 **ApplicationDataContainer**。 这就是上面的示例代码中有一个 `if (composite != null)` 检查的原因。
 
 ## <a name="useful-apis-and-docs"></a>有用的 API 和文档
 
@@ -84,7 +84,7 @@ if (composite != null)
 
 ### <a name="useful-apis"></a>有用的 API
 
-| API | 描述 |
+| API | 说明 |
 |------|---------------|
 | [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | 从本地应用数据存储获取应用程序设置容器。 |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | 从漫游应用数据存储获取应用程序设置容器。 |
@@ -93,13 +93,13 @@ if (composite != null)
 
 ### <a name="useful-docs"></a>有用的文档
 
-| 主题 | 描述 |
+| 主题 | 说明 |
 |-------|----------------|
 | [应用设置指南](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | 介绍有关创建和显示应用设置的最佳做法。 |
 | [存储和检索设置以及其他应用数据](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | 保存和检索设置（包括漫游设置）演练。 |
 
 ## <a name="useful-code-samples"></a>有用的代码示例
 
-| 代码示例 | 描述 |
+| 代码示例 | 说明 |
 |-----------------|---------------|
 | [应用程序数据示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | 场景 2-4 重点介绍设置 |

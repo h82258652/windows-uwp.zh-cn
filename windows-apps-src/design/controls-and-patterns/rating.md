@@ -10,27 +10,35 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: d242107789f7c7575b5796c30d371dbe8bb0a412
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63787456"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970792"
 ---
 # <a name="rating-control"></a>评分控件
 
 评分控件使用户能够查看和设置反映内容和服务满意度的评分。 用户可以使用触摸、笔、鼠标、游戏板或键盘操作评分控件。 下列指南介绍了如何使用分级控件的功能提供灵活性和自定义功能。
 
-> **重要的 API**：[RatingControl 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
-
 ![评分控件示例](images/rating_rs2_doc_ratings_intro.png)
+
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | RatingControl 控件作为 Windows UI 库的一部分提供，该库是一个 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能  。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **Windows UI 库 API：** [RatingControl 类](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol)
+>
+> **平台 API：** [RatingControl 类](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ## <a name="examples"></a>示例
 
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RatingControl">打开此应用，了解 RatingControl 的实际应用</a>。</p>
     <ul>
@@ -73,7 +81,7 @@ private void RatingChanged(RatingControl sender, object args)
 
 ### <a name="read-only-rating-mode"></a>只读评分模式
 
-有时，你需要显示辅助内容评分，如在推荐内容中显示或在显示评论及其相应评分的列表时显示的内容。 在这种情况下，用户不应编辑评分，所以可以将此控件设置为只读。
+有时，你需要显示辅助内容评分，如在推荐内容中显示或在显示评论及其相应评分的列表时显示的内容。 在这种情况下，用户应该不能编辑评分，所以你可以将此控件设置为只读。
 出于 UI 设计和性能原因，在非常大的虚拟化内容列表中使用评分控件时，也建议使用只读模式。
 
 ![只读长列表](images/rating_rs2_doc_reviews.png)
@@ -86,7 +94,7 @@ private void RatingChanged(RatingControl sender, object args)
 
 ## <a name="additional-functionality"></a>附加功能
 
-评分控件有很多可用的附加功能。 在我们的 MSDN 参考文档中可以找到有关如何使用这些功能的详细信息。
+评分控件有很多可用的附加功能。 有关如何使用这些功能的详细信息，请参阅参考文档。
 下面是附加功能的不完整列表：
 -   出色的长列表性能
 -   压缩大小以适合紧凑的 UI 方案

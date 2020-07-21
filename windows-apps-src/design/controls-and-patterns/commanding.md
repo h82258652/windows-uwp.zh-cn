@@ -1,24 +1,23 @@
 ---
-title: 通用 Windows 平台 (UWP) 应用中的命令控制
+title: 在 Windows 应用中进行命令控制
 description: 如何使用 XamlUICommand 和 StandardUICommand 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
-author: Karl-Bridge-Microsoft
 ms.service: ''
 ms.topic: overview
-ms.date: 07/23/2019
-ms.openlocfilehash: 338cae7b6238c3c773f409322600c8bee8c193f5
-ms.sourcegitcommit: 401c8ecaf74eee247f1ed0093028cc6558b4a605
+ms.date: 09/13/2019
+ms.openlocfilehash: 5ab46a479e882b9975f24731dfcbb6e433126f80
+ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68446370"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83233767"
 ---
-# <a name="commanding-in-universal-windows-platform-uwp-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 在通用 Windows 平台 (UWP) 应用中进行命令控制
+# <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>使用 StandardUICommand、XamlUICommand 和 ICommand 在 Windows 应用中进行命令控制
 
-本主题介绍通用 Windows 平台 (UWP) 应用程序中的命令控制。 具体说来，我们讨论如何使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
+本主题介绍 Windows 应用程序中的命令控制。 具体说来，我们讨论如何使用 [XamlUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xamluicommand) 和 [StandardUICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.standarduicommand) 类（以及 ICommand 接口）在不同的控件类型之间共享和管理命令，不管所用的设备和输入类型是什么。
 
 ![表示共享命令常见使用情况的图：多个包含“收藏夹”命令的 UI 设计面](images/commanding/generic-commanding.png)
 
-在不同的控件之间共享命令，不管设备和输入类型是什么 
+在不同的控件之间共享命令，不管设备和输入类型是什么
 
 ## <a name="important-apis"></a>重要的 API
 
@@ -38,7 +37,7 @@ ms.locfileid: "68446370"
 
 下图显示两个共享某些相同命令的命令界面（一个 [CommandBar](app-bars.md) 和一个浮出式上下文 [CommandBarFlyout](command-bar-flyout.md)）。
 
-![Microsoft 照片中的命令栏](images/control-examples/command-bar-photos.png)<br>*Microsoft 照片中的命令栏*
+![展开的命令栏](images/control-examples/command-bar-photos.png)<br>*命令栏*
 
 ![Microsoft 照片库中的上下文菜单](images/ContextMenu_example.png)<br>*Microsoft 照片库中的上下文菜单*
 
@@ -68,9 +67,9 @@ ms.locfileid: "68446370"
 
 **始终提供上下文菜单**：建议在传统上下文菜单或 CommandBarFlyout 中包括所有相关的上下文命令，因为所有输入类型都支持这二者。 例如，如果某个命令仅在出现指针悬停事件时公开，则该命令不能用在仅支持触控的设备上。
 
-## <a name="commands-in-uwp-applications"></a>UWP 应用程序中的命令
+## <a name="commands-in-windows-applications"></a>Windows 应用程序中的命令
 
-可以通过多种方式在 UWP 应用程序中共享和管理命令控制体验。 可以在代码隐藏中为标准交互（例如 Click）定义事件处理程序（这可能相当低效，具体取决于 UI 的复杂程度），可以将标准交互的事件侦听器绑定到共享处理程序，还可以将控件的 Command 属性绑定到某个用于描述命令逻辑的 ICommand 实现。
+可以通过多种方式在 Windows 应用程序中共享和管理命令控制体验。 可以在代码隐藏中为标准交互（例如 Click）定义事件处理程序（这可能相当低效，具体取决于 UI 的复杂程度），可以将标准交互的事件侦听器绑定到共享处理程序，还可以将控件的 Command 属性绑定到某个用于描述命令逻辑的 ICommand 实现。
 
 为了跨命令图面高效地提供丰富且广泛的用户体验并尽量减少重复代码，建议使用本主题中介绍的命令绑定功能（若要进行标准事件处理，请参阅各个事件主题）。
 
@@ -406,7 +405,10 @@ private void ListViewSwipeContainer_PointerExited(
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <XamlUICommand x:Name="CustomXamlUICommand" ExecuteRequested="DeleteCommand_ExecuteRequested" Description="Custom XamlUICommand" Label="Custom XamlUICommand">
+        <XamlUICommand x:Name="CustomXamlUICommand" 
+                       ExecuteRequested="DeleteCommand_ExecuteRequested"
+                       Description="Custom XamlUICommand" 
+                       Label="Custom XamlUICommand">
             <XamlUICommand.IconSource>
                 <FontIconSource FontFamily="Wingdings" Glyph="&#x4D;"/>
             </XamlUICommand.IconSource>
@@ -458,7 +460,8 @@ private void ListViewSwipeContainer_PointerExited(
             <muxcontrols:MenuBarItem Title="File">
             </muxcontrols:MenuBarItem>
             <muxcontrols:MenuBarItem Title="Edit">
-                <MenuFlyoutItem x:Name="DeleteFlyoutItem" Command="{StaticResource CustomXamlUICommand}"/>
+                <MenuFlyoutItem x:Name="DeleteFlyoutItem" 
+                                Command="{StaticResource CustomXamlUICommand}"/>
             </muxcontrols:MenuBarItem>
             <muxcontrols:MenuBarItem Title="Help">
             </muxcontrols:MenuBarItem>
@@ -546,7 +549,8 @@ private void ControlExample_Loaded(object sender, RoutedEventArgs e)
 {
     for (var i = 0; i < 5; i++)
     {
-        collection.Add(new ListItemData { Text = "List item " + i.ToString(), Command = CustomXamlUICommand });
+        collection.Add(
+           new ListItemData { Text = "List item " + i.ToString(), Command = CustomXamlUICommand });
     }
 }
 
@@ -560,7 +564,8 @@ private void ListView_Loaded(object sender, RoutedEventArgs e)
 3. 接下来，我们定义 ICommand ExecuteRequested 处理程序，在其中实现项删除命令。
 
 ``` csharp
-private void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
+private void DeleteCommand_ExecuteRequested(
+   XamlUICommand sender, ExecuteRequestedEventArgs args)
 {
     if (args.Parameter != null)
     {
@@ -593,7 +598,9 @@ private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs 
 
 private void ListViewSwipeContainer_PointerEntered(object sender, PointerRoutedEventArgs e)
 {
-    if (e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Mouse || e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
+    if (e.Pointer.PointerDeviceType == 
+        Windows.Devices.Input.PointerDeviceType.Mouse || 
+        e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
     {
         VisualStateManager.GoToState(sender as Control, "HoverButtonsShown", true);
     }
@@ -607,7 +614,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 ## <a name="command-experiences-using-the-icommand-interface"></a>使用 ICommand 接口的命令体验
 
-标准 UWP 控件（按钮、列表、选择、日历、预测性文本）是许多常见命令体验的基础。 如需控件类型的完整列表，请参阅 [UWP 应用的控件和模式](index.md)。
+标准 UWP 控件（按钮、列表、选择、日历、预测性文本）是许多常见命令体验的基础。 如需控件类型的完整列表，请参阅 [Windows 应用的控件和模式](index.md)。
 
 若要为结构化命令控制体验提供支持，最基本的方法是定义 ICommand 接口（适用于 C++ 的 [Windows.UI.Xaml.Input.ICommand](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.icommand) 或适用于 C# 的 [System.Windows.Input.ICommand](https://docs.microsoft.com/dotnet/api/system.windows.input.icommand)）的实现。  此 ICommand 实例随后可以绑定到控件（例如按钮）。
 
@@ -618,7 +625,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 ![命令界面示例](images/commanding/icommand.gif)
 
-ICommand 示例 
+ICommand 示例
 
 | 下载此示例的代码 |
 | -------------------- |
@@ -845,8 +852,10 @@ namespace UICommand1.ViewModel
         public RelayCommand MoveRightCommand { get; private set; }
 
         // Item collections
-        public ObservableCollection<ListItemData> ListItemLeft { get; } = new ObservableCollection<ListItemData>();
-        public ObservableCollection<ListItemData> ListItemRight { get; } = new ObservableCollection<ListItemData>();
+        public ObservableCollection<ListItemData> ListItemLeft { get; } = 
+           new ObservableCollection<ListItemData>();
+        public ObservableCollection<ListItemData> ListItemRight { get; } = 
+           new ObservableCollection<ListItemData>();
 
         public ListItemData listItem;
 
@@ -855,8 +864,10 @@ namespace UICommand1.ViewModel
         /// </summary>
         public UICommand1ViewModel()
         {
-            MoveLeftCommand = new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
-            MoveRightCommand = new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
+            MoveLeftCommand = 
+               new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
+            MoveRightCommand = 
+               new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
 
             LoadItems();
         }
@@ -1034,7 +1045,8 @@ namespace UICommand1
         /// Determines whether this <see cref="RelayCommand"/> can execute in its current state.
         /// </summary>
         /// <param name="parameter">
-        /// Data used by the command. If the command does not require data to be passed, this object can be set to null.
+        /// Data used by the command. If the command does not require 
+        /// data to be passed, this object can be set to null.
         /// </param>
         /// <returns>true if this command can be executed; otherwise, false.</returns>
         public bool CanExecute(object parameter)
@@ -1046,7 +1058,8 @@ namespace UICommand1
         /// Executes the <see cref="RelayCommand"/> on the current command target.
         /// </summary>
         /// <param name="parameter">
-        /// Data used by the command. If the command does not require data to be passed, this object can be set to null.
+        /// Data used by the command. If the command does not require 
+        /// data to be passed, this object can be set to null.
         /// </param>
         public void Execute(object parameter)
         {
@@ -1074,7 +1087,7 @@ namespace UICommand1
 
 通用 Windows 平台提供了一个强大且灵活的命令控制系统，用于构建可以跨控件类型、设备和输入类型共享和管理命令的应用。
 
-在为 UWP 应用构建命令时，请使用以下方法：
+在为 Windows 应用构建命令时，请使用以下方法：
 
 - 在 XAML/代码隐藏中侦听和处理事件
 - 绑定到事件处理方法（例如 Click）
@@ -1088,7 +1101,7 @@ namespace UICommand1
 
 ## <a name="see-also"></a>另请参阅
 
-[UWP 应用的控件和模式](index.md)
+[Windows 应用的控件和模式](index.md)
 
 ### <a name="samples"></a>示例
 
@@ -1100,15 +1113,5 @@ namespace UICommand1
 
 #### <a name="other-samples"></a>其他示例
 
-- [通用 Windows 平台示例（C# 和 C++）](https://go.microsoft.com/fwlink/?linkid=832713)
+- [通用 Windows 平台示例（C# 和 C++）](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
 - [XAML 控件库](https://github.com/Microsoft/Xaml-Controls-Gallery)
-
-<!---Some context for the following links goes here
-- [link to next logical step for the customer](global-quickstart-template.md)--->
-
-<!--- Required:
-In Overview articles, provide at least one next step and no more than three.
-Next steps in overview articles will often link to a quickstart.
-Use regular links; do not use a blue box link. What you link to will depend on what is really a next step for the customer.
-Do not use a "More info section" or a "Resources section" or a "See also section".
---->

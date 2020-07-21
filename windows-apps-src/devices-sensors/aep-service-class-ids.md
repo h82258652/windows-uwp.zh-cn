@@ -6,31 +6,29 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e4b4c89fff2854c36bd76cc680197fad1aa8dff
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0af0e8b17578c2ef3cd3fb0a466446b06f8e4a00
+ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370407"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83854733"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服务类 ID
-
-
-
-**重要的 Api**
-
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 关联终结点 (AEP) 服务为设备通过给定协议支持的服务提供编程合约。 其中多个服务具有现成的标识符，应在引用它们时使用。 这些合约通过 **System.Devices.AepService.ServiceClassId** 属性标识。 本主题列出了几个众所周知的 AEP 服务类 ID。 AEP 服务类 ID 也可应用于具有客户类 ID 的协议。
 
 应用开发人员应使用基于这些类 ID 的高级查询语法 (AQS) 筛选器来将其查询限制于其打算使用的 AEP 服务。 这既会将查询限制于相关服务，又会显著提高设备的性能、电池寿命和服务质量。 例如，应用程序可以通过这些服务类 ID 将设备用作 Miracast 同步或 DLNA 苏自媒体呈现器 (DMR)。 有关其他设备和服务彼此如何交互的详细信息，请参阅[**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind)。
 
+> **重要的 API**
+>
+> - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration)
+
 ## <a name="bluetooth-and-bluetooth-le-services"></a>蓝牙和蓝牙 LE 服务
 
 蓝牙服务属于蓝牙协议或蓝牙 LE 协议这两种协议之一。 这些协议的标识符是：
 
--   蓝牙协议 ID：{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
--   蓝牙 LE 协议 ID：{bb7bb05e-5972-42b5-94fc-76eaa7084d49}
+- 蓝牙协议 ID：{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
+- 蓝牙 LE 协议 ID：{bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
 蓝牙协议支持多个服务，它们全都遵循相同的基本格式。 GUID 的前四个数字因服务而异，但所有蓝牙 GUID 都以 **0000-0000-1000-8000-00805F9B34FB** 结尾。 例如，RFCOMM 服务开头含有 0x0003，因此完整的 ID 会是 **00030000-0000-1000-8000-00805F9B34FB**。 下表列出了一些常见的蓝牙服务。
 
@@ -70,9 +68,7 @@ ms.locfileid: "66370407"
 | GATT - 用户数据                     | **181C0000-0000-1000-8000-00805F9B34FB** |
 | GATT - 体重秤                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
- 
-
-有关可用蓝牙服务的更完整列表，请参阅[此处](https://go.microsoft.com/fwlink/p/?LinkID=619586)和[此处](https://go.microsoft.com/fwlink/p/?LinkID=619587)的蓝牙协议和服务页面。 你还可以使用 [**GattServiceUuids**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API 获取一些常见的 GATT 服务。
+有关可用蓝牙服务的更完整列表，请参阅[GATT services 规范](https://www.bluetooth.com/specifications/gatt/services/)。 你还可以使用 [**GattServiceUuids**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API 获取一些常见的 GATT 服务。
 
 ## <a name="custom-bluetooth-le-services"></a>自定义蓝牙 LE 服务
 
@@ -88,7 +84,7 @@ UPnP 服务使用以下协议标识符：{0e261de4-12f0-46e6-91ba-428607ccef64}
 
 | 服务名称                       | GUID                                      |
 |------------------------------------|-------------------------------------------|
-| 连接管理器                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| “ODBC 源编辑器”                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
 | AV 传输                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
 | 呈现控件                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
 | 第 3 层转发                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
@@ -101,8 +97,6 @@ UPnP 服务使用以下协议标识符：{0e261de4-12f0-46e6-91ba-428607ccef64}
 | 内容目录                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | DIAL                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
- 
-
 ## <a name="wsd-services"></a>WSD 服务
 
 WSD 服务使用以下协议标识符：{782232aa-a2f9-4993-971b-aedc551346b0}
@@ -114,8 +108,6 @@ WSD 服务使用以下协议标识符：{782232aa-a2f9-4993-971b-aedc551346b0}
 | 打印机      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
 | 扫描仪      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
 
- 
-
 ## <a name="aqs-sample"></a>AQS 示例
 
 此 AQS 将对支持 DIAL 的所有 UPnP **AssociationEndpointService** 对象进行筛选。 在此情况下，[**DeviceInformationKind**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) 设置为 **AsssociationEndpointService**。
@@ -124,7 +116,3 @@ WSD 服务使用以下协议标识符：{782232aa-a2f9-4993-971b-aedc551346b0}
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D7-16D8EC26B29B}"
 ```
-
- 
-
- 

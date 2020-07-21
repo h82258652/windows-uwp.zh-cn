@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e93a1806d1d2add4b3b1c3ee02417a43d574d3c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: bc12d76cf34b5a631435a7535567aab0cafb0f44
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67319394"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970372"
 ---
 # <a name="media-player"></a>媒体播放器
 
@@ -39,7 +39,7 @@ ms.locfileid: "67319394"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> 或 <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> 的实际应用。</p>
     <ul>
@@ -181,7 +181,7 @@ private void LoadEmbeddedAppFile()
 
 2.  使用 [SetSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) 将所选媒体文件设置为 [MediaPlayerElement.Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source)。
 
-    若要使用从 [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 返回的 [StorageFile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)，你需要在 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) 上调用 [CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile) 方法，并将其设置为[MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source)。 然后对 [MediaPlayerElement.MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 调用 [Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.play) 以启动媒体。
+    若要使用从 [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 返回的 [StorageFile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)，你需要在 [MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) 上调用 [CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile) 方法，并将其设置为 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source)。 然后对 [MediaPlayerElement.MediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 调用 [Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.play) 以启动媒体。
 
 
 此示例演示如何使用 [FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 选择文件并将该文件设置为 [MediaPlayerElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source)。
@@ -396,5 +396,5 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 ## <a name="related-articles"></a>相关文章
 
-- [UWP 应用的命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-- [UWP 应用的内容设计基础知识](https://docs.microsoft.com/windows/uwp/layout/content-basics)
+- [Windows 应用的命令设计基础知识](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
+- [Windows 应用的内容设计基础知识](https://docs.microsoft.com/windows/uwp/layout/content-basics)

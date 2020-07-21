@@ -6,23 +6,25 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地图身份验证密钥, 地图控件
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6cf66a6725e8231fac693a81a39bc2f0b15fd2
-ms.sourcegitcommit: 68051d2adcf3facc036c9f4c76d82bb4d342a75f
+ms.openlocfilehash: 2f4a76edfe5772665564cb8890ffcdf56205a2f7
+ms.sourcegitcommit: d1eba7cf79cd2885b5bf8f5501bc44a569ab9864
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67498903"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84172589"
 ---
 # <a name="request-a-maps-authentication-key"></a>请求地图身份验证密钥
 
+> [!WARNING]
+> 在较早版本的 Windows 10 上，联机地图服务可能不可用。 在以下版本中，MapControl 可能不再显示 Windows 中的映射和 Api。 Maps 命名空间可能不返回结果：
+> - Windows 10 版本1607及更早版本：从年 10 2020 月起，地图服务将不可用
+> - Windows 10 版本1703及更早版本：在[中国销售的某些设备](https://docs.microsoft.com/windows-hardware/customize/desktop/unattend/microsoft-windows-mapcontrol-desktop-chinavariantwin10)上，映射服务不可用
 
+必须先对[通用 Windows 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)进行身份验证，然后才能使用 MapControl[**命名空间中的**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)和映射服务。 若要对应用进行身份验证，必须指定地图身份验证密钥。 本主题介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图验证密钥并将其添加到应用。
 
+**提示** 若要了解有关在你的应用中使用地图的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](https://github.com/Microsoft/Windows-universal-samples)中下载以下示例：
 
-[通用 Windows 应用](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)必须先经过验证，然后才能在 [**Windows.Services.Maps**](https://docs.microsoft.com/uwp/api/Windows.Services.Maps) 命名空间中使用 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和地图服务。 若要对你的应用进行身份验证，你必须指定地图身份验证密钥。 本主题介绍如何从[必应地图开发人员中心](https://www.bingmapsportal.com/)请求地图验证密钥并将其添加到应用。
-
-**提示** 若要了解有关在你的应用中使用地图的详细信息，请从 GitHub 上的 [Windows-universal-samples 存储库](https://go.microsoft.com/fwlink/p/?LinkId=619979)中下载以下示例：
-
--   [通用 Windows 平台 (UWP) 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 
 ## <a name="get-a-key"></a>获取密钥
 
@@ -31,24 +33,24 @@ ms.locfileid: "67498903"
 
 创建新密钥
 
-1.  在浏览器中，导航到必应地图开发人员中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
+1.  在浏览器中，导航到必应地图开发人员中心（ [https://www.bingmapsportal.com](https://www.bingmapsportal.com/) ）。
 
-2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击“登录”  。
+2.  如果系统提示你登录，请输入你的 Microsoft 帐户，然后单击**登录**。
 
-3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击 **“是”** 。 否则，请单击“使用其他帐户登录”  。
+3.  选择要与必应地图帐户关联的帐户。 如果你想要使用自己的 Microsoft 帐户，请单击 **“是”**。 否则，请单击**使用其他帐户登录**。
 
-4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入 **“帐户名称”** 、 **“联系人姓名”** 、 **“公司名称”** 、 **“电子邮件地址”** 和 **“电话号码”** 。 在接受使用条款后，单击“创建”  。
+4.  如果你还没有必应地图帐户，请创建一个新的必应地图帐户。 输入 **“帐户名称”**、**“联系人姓名”**、**“公司名称”**、**“电子邮件地址”** 和 **“电话号码”**。 在接受使用条款后，单击**创建**。
 
 5.  在**我的帐户**菜单上，单击**我的密钥**。
 
 6.  如果之前创建了密钥，请单击链接以创建新密钥。 否则继续前进到“创建密钥”窗体。
 
-7.  完成“创建密钥”  表格，然后单击“创建”  。
+7.  完成**创建密钥**窗体，然后单击**创建**。
 
     -   **应用程序名称：** 你的应用程序的名称。
-    -   **应用程序 URL （可选）：** 你的应用程序的 URL。
-    -   **密钥类型：** 选择**基本**或**企业**。
-    -   **应用程序类型：** 选择**Windows 应用程序**通用 Windows 应用中使用。
+    -   **应用程序 URL（可选）：** 你的应用程序的 URL。
+    -   **密钥类型：** 选择 **“基本”** 或 **“企业”**。
+    -   **应用程序类型：** 选择要在通用 Windows 应用中使用的**Windows 应用程序**。
 
     这是一个表格呈现内容的示例。
 
@@ -90,7 +92,7 @@ ms.locfileid: "67498903"
 ## <a name="related-topics"></a>相关主题
 
 * [必应地图开发人员中心](https://www.bingmapsportal.com/)
-* [UWP 地图示例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地图示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 * [地图设计指南](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [Build 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 路况应用示例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [版本 2015 视频：在 Windows 应用中跨手机、平板电脑和 PC 利用地图和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 路况应用示例](https://github.com/Microsoft/Windows-appsample-trafficapp)

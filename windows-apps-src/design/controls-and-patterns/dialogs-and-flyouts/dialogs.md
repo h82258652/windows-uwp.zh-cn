@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 67ba9f5c9bc4a5e723eb2696d88804df5300eda0
-ms.sourcegitcommit: 4aef8c01ba9321401d5729a1ec6d46452ee76faf
+ms.openlocfilehash: 9208bb85f34e1ad0fd28a89e780ebfca536a8bad
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67468988"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82969892"
 ---
 # <a name="dialog-controls"></a>对话框控件
 
@@ -25,21 +25,26 @@ ms.locfileid: "67468988"
 
 ![对话框示例](../images/dialogs/dialog_RS2_delete_file.png)
 
+**获取 Windows UI 库**
 
-> **重要的 API**：[ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+|  |  |
+| - | - |
+| ![WinUI 徽标](../images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
 使用对话框通知用户重要信息或在可以完成某个操作之前请求确认或其他信息。
 
-有关何时使用对话框以及何时使用浮出控件（类似控件）的建议，请参阅[对话框和浮出控件](index.md)。 
+有关何时使用对话框以及何时使用浮出控件（类似控件）的建议，请参阅[对话框和浮出控件](index.md)。
 
 ## <a name="examples"></a>示例
 
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="../images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装了 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处打开该应用，了解 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 的实际应用。</p>
     <ul>
@@ -66,7 +71,7 @@ ms.locfileid: "67468988"
     - 确保操作按钮的文本保持简明。 简短的字符串使用户能够快速、自信地做出选择。
     - 除了安全、无破坏性的操作外，你还可以选择为用户提供一个或两个与主要说明相关的操作按钮。 这些“执行”操作按钮用于确认对话框的重点。 使用 PrimaryButton 和 SecondaryButton API 可添加这些“执行”操作。
     - “执行”操作按钮应显示为最左侧按钮。 安全、无破坏性的操作应显示为最右侧的按钮。
-    - 可以选择三个按钮之一作为对话框的默认按钮。 使用 DefaultButton API 可区分其中一个按钮。  
+    - 可以选择三个按钮之一作为对话框的默认按钮。 使用 DefaultButton API 可区分其中一个按钮。
 -   不要为与页面上的特定位置具有上下文关系的错误（例如，密码字段等位置的验证错误）使用对话框，请使用应用的画布本身显示内联错误。
 - 使用 [ContentDialog 类](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)生成对话框体验。 不要使用已弃用的 MessageDialog API。
 
@@ -212,7 +217,7 @@ ContentDialog 有三种不同类型的按钮可用于构建对话框体验。
 - 该按钮将自动响应 ENTER 键
     - 当用户在键盘上按 ENTER 键时，与“默认”按钮关联的单击处理程序将激发，并且 ContentDialogResult 将返回与“默认”按钮关联的值
     - 如果用户已将键盘焦点放在处理 ENTER 的控件上，默认按钮将不响应 ENTER 按下操作
-- 打开对话框时，按钮将自动接收焦点，除非对话框内容包含可聚焦的 UI
+- 打开对话框时，按钮会自动接收焦点，除非对话框内容包含可聚焦的 UI
 
 使用 ContentDialog.DefaultButton 属性指示默认按钮。 默认情况下，不设置默认按钮。
 
@@ -236,8 +241,8 @@ private async void DisplaySubscribeDialog()
 ```
 
 ## <a name="confirmation-dialogs-okcancel"></a>确认对话框（确定/取消）
-通过确认对话框，用户可以确认他们是否要执行操作。 他们可以确认操作，也可以选择取消。  
-典型的确认对话框有两个按钮：一个确认（“确定”）按钮和一个取消按钮。  
+通过确认对话框，用户可以确认他们是否要执行操作。 他们可以确认操作，也可以选择取消。
+典型的确认对话框有两个按钮：一个确认（“确定”）按钮和一个取消按钮。
 
 <ul>
     <li>

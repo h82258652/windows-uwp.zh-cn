@@ -11,21 +11,24 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7942839b43739ca5fb15106abbfa1877ead81dc2
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: f4871b4a43284052a89d0fd37412528840e1ea5a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66362772"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968732"
 ---
 # <a name="flip-view"></a>翻转视图
 
- 
-
 使用翻转视图浏览集合中的图像或其他项目（例如相册中的照片或产品详细信息页中的项目），一次显示一个项目。 对于触摸设备，轻扫某个项将在整个集合中进行浏览。 对于鼠标，导航按钮显示在鼠标悬停位置上。 对于键盘，使用箭头键移动浏览该集合。
 
-> **重要的 API**：[FlipView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类），[ItemsSource 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)，[ItemTemplate 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
+**获取 Windows UI 库**
 
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API：** [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview)（FlipView 类），[ItemsSource 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)，[ItemTemplate 属性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -36,7 +39,7 @@ ms.locfileid: "66362772"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 XAML 控件库应用，请单击此处<a href="xamlcontrolsgallery:/item/FlipView">打开此应用，了解 FlipView 的实际应用</a><strong style="font-weight: semi-bold"></strong>。</p>
     <ul>
@@ -204,7 +207,7 @@ stackPanel1.Children.Add(flipView1);
 
 ![上下文指示器示例](images/controls_contextindicator.jpg)
 
-有关显示如何向 FlipView 添加上下文指示器的示例代码，请参阅 [XAML FlipView 示例](https://go.microsoft.com/fwlink/p/?LinkID=311760)。
+有关显示如何向 FlipView 添加上下文指示器的示例代码，请参阅 [XAML FlipView 示例](https://code.msdn.microsoft.com/windowsapps/XAML-FlipView-control-0ae45312)。
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
 

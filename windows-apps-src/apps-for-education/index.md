@@ -7,10 +7,10 @@ keywords: windows 10, uwp, 教育版
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d68fd78a7da3f1b98f61225f3aad8ca1590140e
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67317609"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>开发通用 Windows 应用教育版
@@ -40,5 +40,5 @@ Windows Ink 平台通过使教育应用适应学生惯于使用的输入模式�
 ### <a name="microsoft-store"></a>Microsoft Store
 教育应用通常在特定情况下发布给特定组织。 若要获取相关信息，请参阅[将业务线应用分配到企业](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)。
 
-## <a name="related-topics"></a>相关主题
+## <a name="related-topics"></a>“相关主题”
 - Windows IT 中心上的 [Windows 10 教育版](https://docs.microsoft.com/education/windows/index)

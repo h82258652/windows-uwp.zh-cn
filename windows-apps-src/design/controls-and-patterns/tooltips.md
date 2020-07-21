@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dabfee25df08d933fc892c3ed6e46f3cc6f4513
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 621b687e54cfba55bfd176d4fe0072e47cf79183
+ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364025"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84437142"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -25,7 +25,13 @@ ms.locfileid: "66364025"
 
 ![工具提示](images/controls/tool-tip.png)
 
-> **重要的 API**：[ToolTip 类](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[ToolTip 类](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -59,7 +65,7 @@ ms.locfileid: "66364025"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/ToolTip">打开此应用，了解 ToolTip 的实际应用</a>。</p>
     <ul>
@@ -70,9 +76,9 @@ ms.locfileid: "66364025"
 </tr>
 </table>
 
-“必应地图”应用中的工具提示。
+Windows 地图应用中的工具提示。
 
-![“必应地图”应用中的工具提示](images/control-examples/tool-tip-maps.png)
+![Windows 地图应用中的工具提示](images/control-examples/tool-tip-maps.png)
 
 ## <a name="create-a-tooltip"></a>创建工具提示
 

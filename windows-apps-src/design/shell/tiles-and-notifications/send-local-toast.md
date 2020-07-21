@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 发送 toast 通知, 通知, 发送通知, toast 通知, 操作方法, 快速入门, 开始使用, 代码示例, 演练
 ms.localizationpriority: medium
-ms.openlocfilehash: 654c063b7c377023fef4b2dab3ddf5d7a755cb2d
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 23a1739b8f5859d128c97ff28350a548b61286d2
+ms.sourcegitcommit: 63597f83f154ce41ebaf69c075093919c430297c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320799"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82034181"
 ---
 # <a name="send-a-local-toast-notification"></a>发送本地 toast 通知
 
@@ -21,7 +21,7 @@ ms.locfileid: "67320799"
 Toast 通知是用户当前未在应用内部时应用可构造并发送给用户的消息。 此快速入门指南将指导你借助新自适应模板和交互式操作完成创建、交付并显示 Windows 10 toast 通知的步骤。 通过本地通知对这些操作进行说明，本地通知是实现起来最简单的通知。
 
 > [!IMPORTANT]
-> 桌面应用程序（包括桌面桥和经典 Win32）发送通知和处理激活的步骤不同。 请参阅[桌面 app](toast-desktop-apps.md) 文档，了解如何实现 toast。
+> 桌面应用程序（包括打包的[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)应用、使用[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)获取包标识和经典非打包 Win32 应用的应用）的步骤不同，它们用于发送通知和处理激活。 请参阅[桌面 app](toast-desktop-apps.md) 文档，了解如何实现 toast。
 
 我们会演示以下内容：
 
@@ -39,14 +39,14 @@ Toast 通知是用户当前未在应用内部时应用可构造并发送给用�
 * 处理前台激活
 * 处理后台激活
 
-> **重要的 API**：[ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)， [ToastNotificationActivatedEventArgs 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **重要 API**：[ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)、[ToastNotificationActivatedEventArgs 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 若要完全理解此主题，事先掌握以下内容会很有用...
 
-* Toast 通知术语和概念的应用知识。 有关详细信息，请参阅 [toast 通知和操作中心概述](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/)。
+* Toast 通知术语和概念的应用知识。 有关详细信息，请参阅 [Toast 和操作中心概述](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/)。
 * 熟悉 Windows 10 toast 通知内容。 有关详细信息，请参阅 [toast 内容文档](adaptive-interactive-toasts.md)。
 * Windows 10 UWP 应用项目
 
@@ -54,20 +54,20 @@ Toast 通知是用户当前未在应用内部时应用可构造并发送给用�
 > 与 Windows 8/8.1 不同，无需在应用清单中声明应用能够显示 toast 通知。 所有应用都能发送和显示 toast 通知。
 
 > [!NOTE]
-> **Windows 8/8.1 应用**:请使用[存档文档](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10))。
+> **Windows 8/8.1 应用**：请使用[存档的文档](https://docs.microsoft.com/previous-versions/windows/apps/hh868254(v=win.10))。
 
 
-## <a name="install-nuget-packages"></a>安装 NuGet 程序包
+## <a name="install-nuget-packages"></a>安装 NuGet 包
 
 我们建议你对你的项目安装以下两个 NuGet 程序包。 代码示例将使用这些程序包。 文章结尾部分将提供不使用任何 NuGet 程序包的“Vanilla”代码片段。
 
-* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/):生成 toast 有效负载通过而不是原始 XML 的对象。
-* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/):生成和分析与查询字符串C#
+* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)：通过对象而不是原始 XML 生成 toast 有效负载。
+* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/)：使用 C# 生成和分析查询字符串
 
 
 ## <a name="add-namespace-declarations"></a>添加命名空间声明
 
-`Windows.UI.Notifications` 包括 toast Api。
+`Windows.UI.Notifications`包括 toast Api。
 
 ```csharp
 using Windows.UI.Notifications;
@@ -84,7 +84,7 @@ using Microsoft.QueryStringDotNET; // QueryString.NET
 
 现在先来构造内容的可视部分，其中包括希望用户看到的文本和图像。
 
-通知库中，由于生成的 XML 内容非常简单。 如果不从 NuGet 安装通知库，则需要手动构造 XML，这样就可能出错。
+感谢通知库，生成 XML 内容非常简单。 如果不从 NuGet 安装通知库，则需要手动构造 XML，这样就可能出错。
 
 > [!NOTE]
 > 图像可来自于应用包、应用的本地存储或来自 Web。 自 Fall Creators Update 起，正常连接上的 Web 图像的大小限制提升至 3 MB，按流量计费的连接上的限制提升至 1 MB。 在尚未运行 Fall Creators Update 的设备上，Web 图像的大小不得超过 200 KB。
@@ -193,7 +193,7 @@ ToastActionsCustom actions = new ToastActionsCustom()
 
 ### <a name="combining-the-above-to-construct-the-full-content"></a>结合上述内容构造完整内容
 
-内容构造现已完成，可以使用它来实例化 [**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) 对象。
+内容的构造现在已完成，可以使用它来实例化[**ToastNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)对象。
 
 **注意**：你还可以在根元素内提供激活类型，指定用户点击 toast 通知的正文时需要进行哪种类型的激活。 通常情况下，点击 toast 的正文应该会在前台启动你的应用，以提供一致的用户体验，但你也可以使用适合你的特定应用场景的其他激活类型，以便对用户更有意义。
 
@@ -238,9 +238,9 @@ toast.ExpirationTime = DateTime.Now.AddDays(2);
 
 如要以编程方式删除或替换发送的通知，需使用 Tag 属性（还可选择使用 Group 属性）来为通知提供主键。 然后，你可以在以后使用此主键来删除或替换该通知。
 
-若要查看更多详细信息替换/删除已发送 toast 通知，请参阅[快速入门：管理操作中心 (XAML) 中的 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
+要查看有关替换/删除已发送的 toast 通知的更多详细信息，请参阅[快速入门：在操作中心 (XAML) 中管理 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
 
-Tag 和 Group 组合充当复合主键。 组是更通用的标识符，您可以在其中分配组，例如"wallPosts"、"消息"、"friendRequests"，等等。然后标记应唯一标识通知本身从组中。 使用通用组时，可以使用 [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 删除该组中的所有通知。
+Tag 和 Group 组合充当复合主键。 Group 是两者中较为通用的标识符，你可以用它来分配如“wallPosts”、“messages”、“friendRequests”等组。而 Tag 应该唯一标识组中的通知本身。 使用通用组时，可以使用 [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 删除该组中的所有通知。
 
 ```csharp
 toast.Tag = "18365";
@@ -270,10 +270,10 @@ UWP 应用负责删除和清除它们自己的通知。 当你的应用启动时
 3. 应用打开该对话，然后清除该对话的所有 toast（方法是对该对话的应用提供的组使用 [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_)）
 4. 用户的操作中心现在能正确反映通知状态，因为操作中心未留有该对话的过期通知。
 
-若要了解有关清除所有通知或删除特定的通知，请参阅[快速入门：管理操作中心 (XAML) 中的 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
+若要了解有关清除所有通知或删除特定通知的信息，请参阅[快速入门：在操作中心 (XAML) 中管理 toast 通知](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
 
 
-## <a name="handling-activation"></a>处理激活
+## <a name="activation-handling"></a>激活处理
 
 在 Windows 10 中，当用户单击你的 toast 时，你可以用以下两种不同方式激活你的应用...
 
@@ -418,7 +418,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 ## <a name="plain-vanilla-code-snippets"></a>纯“Vanilla”代码段
 
-如果不从 NuGet 中使用通知库，可按如下所示的方法手动构造 XML，以创建 [ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)。
+如果使用的不是 NuGet 中的通知库，可以按如下所示手动构造 XML，以创建[ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)。
 
 ```csharp
 using Windows.UI.Notifications;
@@ -502,6 +502,6 @@ var toast = new ToastNotification(toastXml);
 ## <a name="resources"></a>资源
 
 * [GitHub 上的完整代码示例](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)
-* [Toast 通知内容文档](adaptive-interactive-toasts.md)
+* [toast 内容文档](adaptive-interactive-toasts.md)
 * [ToastNotification 类](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [ToastNotificationActivatedEventArgs 类](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

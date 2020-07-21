@@ -1,21 +1,21 @@
 ---
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: 从 Microsoft Store 下载并安装程序包更新
-description: 了解如何在合作伙伴中心将包标记为必需, 并在应用程序中编写代码, 以下载和安装包更新。
+description: 了解如何在合作伙伴中心中将程序包标记为必需，以及如何在应用中编写代码以下载并安装程序包更新。
 ms.date: 04/04/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cb1ac05bdc5dcaaf31074f1b89e5bbb35e4f850d
-ms.sourcegitcommit: 350d6e6ba36800df582f9715c8d21574a952aef1
-ms.translationtype: MT
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68682728"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>从 Microsoft Store 下载并安装程序包更新
 
-从 Windows 10 版本 1607 开始，你可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 类的方法，以编程方式从 Microsoft Store 检查当前应用的程序包更新，下载并安装更新的程序包。 你还可以在合作伙伴中心查询已标记为必需的包, 并在安装必需的更新之前禁用应用中的功能。
+从 Windows 10 版本 1607 开始，你可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空间中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 类的方法，以编程方式从 Microsoft Store 检查当前应用的程序包更新，下载并安装更新的程序包。 你还可以查询已在合作伙伴中心标记为必需的程序包，以及在安装完该必需更新前禁用应用中的功能。
 
 Windows 10 版本 1803 中引入的其他 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 方法让你能够无提示（不向用户显示通知 UI）下载和安装程序包更新，卸载[可选包](/windows/msix/package/optional-packages)和获取有关你的应用的下载和安装队列中的程序包相关信息。
 
@@ -83,17 +83,17 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 ```
 
 > [!NOTE]
-> 要只下载（但不安装）可用的程序包更新，请使用 [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) 方法。
+> 若要只下载（但不安装）可用的程序包更新，请使用 [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) 方法。
 
 ### <a name="display-download-and-install-progress-info"></a>显示下载和安装进度信息
 
-当你调用 [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) 或 [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) 方法时，你可以指定一个 [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) 处理程序，系统会为此请求中每个程序包的下载（或下载和安装）过程中的每个步骤调用一次该程序。 此处理程序接收 [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) 对象，该对象提供有关发出进度通知的更新程序包的信息。 前面的示例使用 **StorePackageUpdateStatus** 对象的 **PackageDownloadProgress** 字段显示下载和安装过程的进度。
+调用 [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) 或 [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) 方法时，可以指定一个 [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) 处理程序，系统会为此请求中每个程序包的下载（或下载和安装）过程中的每个步骤调用一次该程序。 此处理程序接收 [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) 对象，该对象提供有关发出进度通知的更新程序包的信息。 前面的示例使用 **StorePackageUpdateStatus** 对象的 **PackageDownloadProgress** 字段显示下载和安装过程的进度。
 
-请注意，当你调用 **RequestDownloadAndInstallStorePackageUpdatesAsync** 在单一操作中下载和安装程序包更新时，**PackageDownloadProgress** 字段会在程序包下载过程中从 0.0 增加到 0.8，然后在安装过程中从 0.8 增加到 1.0。 因此，如果你将自定义进度 UI 中所显示的百分比直接映射到 **PackageDownloadProgress** 字段的值，则当程序包完成下载并且操作系统显示安装对话框时，你的 UI 将显示 80%。 如果你希望在程序包已下载并且可以安装时自定义进度 UI 显示 100%，则可以修改代码，以在 **PackageDownloadProgress** 字段达到 0.8 时将 100% 分配给你的进度 UI。
+请注意，调用 **RequestDownloadAndInstallStorePackageUpdatesAsync** 在单一操作中下载和安装程序包更新时，**PackageDownloadProgress** 字段会在程序包下载过程中从 0.0 增加到 0.8，然后在安装过程中从 0.8 增加到 1.0。 因此，如果将自定义进度 UI 中所显示的百分比直接映射到 **PackageDownloadProgress** 字段的值，则当程序包完成下载并且操作系统显示安装对话框时，UI 会显示 80%。 如果希望在程序包已下载并且可以安装时自定义进度 UI 显示 100%，则可修改代码，在 **PackageDownloadProgress** 字段达到 0.8 时将 100% 分配给进度 UI。
 
 ## <a name="download-and-install-package-updates-silently"></a>无提示下载和安装程序包更新
 
-从 Windows 10 版本 1803 开始，你可以使用 [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) 和 [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) 方法以无提示方式下载和安装程序包更新 - 即不向用户显示通知 UI。 只有当用户在 Microsoft Store 中启用了**自动更新应用**设置并且用户使用的不是按流量计费的网络时，该操作才会成功。 在调用这些方法之前，你可以先检查一下 [CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates) 属性，确定当前是否满足上述条件。
+从 Windows 10 版本 1803 开始，可以使用 [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) 和 [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) 方法以无提示方式下载和安装程序包更新，不向用户显示通知 UI。 只有当用户在 Microsoft Store 中启用了“自动更新应用”  设置并且用户使用的不是按流量计费的网络时，该操作才会成功。 在调用这些方法之前，可以先检查一下 [CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates) 属性，确定当前是否满足上述条件。
 
 该代码示例演示如何使用 [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) 方法发现所有可用的程序包更新，然后调用 [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) 和 [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) 方法以无提示方式下载和安装更新。
 
@@ -193,21 +193,21 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>必需程序包更新
 
-在合作伙伴中心为面向 Windows 10 版本1607或更高版本的应用创建包提交时, 可以将[包标记为必需](../publish/upload-app-packages.md#mandatory-update), 并将其变为必需的日期和时间。 当设置此属性，并且你的应用发现有程序包更新可用时，你的应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如你的应用可以禁用功能）。
+在合作伙伴中心为面向 Windows 10 版本 1607 或更高版本的应用创建程序包提交时，可以[将程序包标记为必需](../publish/upload-app-packages.md#mandatory-update)并标记它变为必需的日期和时间。 当设置此属性，并且应用发现有程序包更新可用时，应用可以确定该更新包是否为必需，并在安装更新前更改其行为（例如应用可以禁用功能）。
 
 > [!NOTE]
 > Microsoft 不强制程序包更新处于必需状态，并且操作系统不提供向用户指示必须安装必需应用更新的 UI。 开发人员旨在使用必需设置通过其自己的代码强制执行必需的应用更新。  
 
 若要将软件包提交标记为必需：
 
-1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard), 导航到应用的 "概述" 页。
+1. 登录到[合作伙伴中心](https://partner.microsoft.com/dashboard)并导航到应用的概览页面。
 2. 单击包含要成为必需的程序包更新的提交名称。
-3. 导航到提交的**程序包**页面。 在此页面底部附近，选择**使此更新为必需**，然后选择该程序包更新变为必需的日期和时间。 此选项适用于提交中的所有 UWP 程序包。
+3. 导航到提交的“程序包”页面。  在此页面底部附近，选择“使此更新为必需”，然后选择该程序包更新变为必需的日期和时间。  此选项适用于提交中的所有 UWP 程序包。
 
 有关详细信息，请参阅[上传应用包](../publish/upload-app-packages.md)。
 
 > [!NOTE]
-> 如果创建[软件包外部测试版](../publish/package-flights.md)，可在外部测试版的**软件包**页面上使用类似 UI 将软件包标记为必需。 在此情况下，必需包更新仅适用于属于外部测试版组的客户。
+> 如果创建[软件包外部测试版](../publish/package-flights.md)，可在外部测试版的“软件包”  页面上使用类似 UI 将软件包标记为必需。 在此情况下，必需包更新仅适用于属于外部测试版组的客户。
 
 ### <a name="code-example-for-mandatory-packages"></a>必需程序包的代码示例
 
@@ -326,7 +326,7 @@ private void HandleMandatoryPackageError()
 
 ## <a name="uninstall-optional-packages"></a>卸载可选包
 
-从 Windows 10 版本 1803 开始，你可以使用 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) 或 [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) 方法卸载当前应用的[可选包](/windows/msix/package/optional-packages)（包括 DLC 包）。 例如，如果你的应用包含通过可选包安装的内容，则你可能需要提供 UI，以便用户可以卸载可选包来释放磁盘空间。
+从 Windows 10 版本 1803 开始，可以使用 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) 或 [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) 方法卸载当前应用的[可选包](/windows/msix/package/optional-packages)（包括 DLC 包）。 例如，如果应用包含通过可选包安装的内容，则可能需要提供 UI，以便用户卸载可选包来释放磁盘空间。
 
 以下代码示例演示如何调用 [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync)。 此示例假定：
 * 该代码文件需要使用 **using** 语句导入 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间。
@@ -369,7 +369,7 @@ public async Task UninstallPackage(Windows.ApplicationModel.Package package)
 
 ## <a name="get-download-queue-info"></a>获取下载队列信息
 
-从 Windows 10 版本 1803 开始，你可以使用 [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) 和 [GetStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstorequeueitemsasync) 方法从 Microsoft Store 获取当前下载和安装队列中的包的相关信息。 如果你的应用或游戏支持很大的可选包（包括 DLC），这些包可能需要几小时或几天的时间下载和安装，并且你希望适当地处理客户在下载和安装过程完成前关闭你的应用或游戏的情况，则这些方法非常有用。 当客户再次启动你的应用或游戏时，你的代码可以使用这些方法获取仍在下载和安装队列中的包的状态信息，以便向客户显示每个包的状态。
+从 Windows 10 版本 1803 开始，可以使用 [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) 和 [GetStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstorequeueitemsasync) 方法从 Microsoft Store 获取当前下载和安装队列中的包的相关信息。 如果应用或游戏支持很大的可选包（包括 DLC），这些包可能需要几小时或几天的时间下载和安装，并且你希望适当地处理客户在下载和安装过程完成前关闭你的应用或游戏的情况，则这些方法非常有用。 当客户再次启动你的应用或游戏时，你的代码可以使用这些方法获取仍在下载和安装队列中的包的状态信息，以便向客户显示每个包的状态。
 
 以下代码示例演示如何调用 [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) 来获取正在为当前应用处理的程序包更新并检索每个包的状态信息。 此示例假定：
 * 该代码文件需要使用 **using** 语句导入 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空间。

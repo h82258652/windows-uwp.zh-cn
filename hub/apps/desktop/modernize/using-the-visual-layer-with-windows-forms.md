@@ -1,92 +1,92 @@
 ---
-title: 可视化层中使用 Windows 窗体
-description: 了解使用 Visual 层 Api 与现有 Windows 窗体内容结合使用来创建高级的动画和效果的方法。
+title: 将视觉层与 Windows 窗体结合使用
+description: 了解将视觉层 API 与现有 Windows 窗体内容结合使用以创建高级动画和效果的技术。
 ms.date: 03/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 23515f8254b026b255491a90c1c8b3a2a8ab12ba
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
-ms.translationtype: MT
+ms.openlocfilehash: 9da9dee48beef6e3c1cd38ffbe9761ed89fd940d
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215164"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "69999642"
 ---
-# <a name="using-the-visual-layer-with-windows-forms"></a>可视化层中使用 Windows 窗体
+# <a name="using-the-visual-layer-with-windows-forms"></a>将视觉层与 Windows 窗体结合使用
 
-可以使用 Windows 运行时组合 Api (也称为[可视化层](/windows/uwp/composition/visual-layer)) 在 Windows 窗体应用程序以创建现代的轻型注册 Windows 10 用户体验。
+可以在 Windows 窗体应用中使用 Windows 运行时 Composition API（也称为[视觉层](/windows/uwp/composition/visual-layer)）来创建面向 Windows 10 用户的现代特色体验。
 
 GitHub 上提供了本教程的完整代码：[Windows 窗体 HelloComposition 示例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/HelloComposition)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
-托管 API UWP 具有这些系统必备组件。
+UWP 宿主 API 的先决条件如下。
 
-- 我们假定您具有一定熟悉使用 Windows 窗体和 UWP 应用开发。 有关详细信息，请参阅：
+- 假设你对使用 Windows 窗体和 UWP 进行应用开发有一定的了解。 有关详细信息，请参阅：
   - [Windows 窗体入门](/dotnet/framework/winforms/getting-started-with-windows-forms)
-  - [开始使用 Windows 10 应用](/windows/uwp/get-started/)
-  - [增强适用于 Windows 10 桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance)
-- .NET framework 4.7.2 或更高版本
-- Windows 10 版本 1803 版或更高版本
+  - [Windows 10 应用入门](/windows/uwp/get-started/)
+  - [增强适用于 Windows 10 的桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance)
+- .NET Framework 4.7.2 或更高版本
+- Windows 10 版本 1803 或更高版本
 - Windows 10 SDK 17134 或更高版本
 
-## <a name="how-to-use-composition-apis-in-windows-forms"></a>如何在 Windows 窗体中使用组合 Api
+## <a name="how-to-use-composition-apis-in-windows-forms"></a>如何在 Windows 窗体中使用 Composition API
 
-在本教程中，可以创建一个简单的 Windows 窗体 UI 和向其中添加动画的组合元素。 Windows 窗体和组合组件保持简单，但所示的互操作代码无论是相同的组件的复杂性。 已完成的应用外观如下所示。
+在本教程中，你将创建一个简单的 Windows 窗体 UI，并在其中添加动画合成元素。 Windows 窗体和合成组件都比较简单，但无论组件的复杂性如何，显示的互操作代码都是相同的。 完成的应用如下所示。
 
-![在正在运行的应用程序 UI](images/visual-layer-interop/wf-comp-interop-app-ui.png)
+![正在运行的应用 UI](images/visual-layer-interop/wf-comp-interop-app-ui.png)
 
 ## <a name="create-a-windows-forms-project"></a>创建 Windows 窗体项目
 
-第一步是创建 Windows 窗体应用程序项目，其中包括用于 UI 的应用程序定义和主窗体。
+第一步是创建 Windows 窗体应用项目，包括应用程序定义以及 UI 的主窗体。
 
-若要在视觉对象中创建新的 Windows 窗体应用程序项目C#名为_HelloComposition_:
+在 Visual C# 中创建名为 HelloComposition 的新 Windows 窗体应用程序项目： 
 
-1. 打开 Visual Studio 并选择**文件** > **新建** > **项目**。<br/>**新的项目**对话框随即打开。
-1. 下**已安装**类别中，展开**Visual C#** 节点，，然后选择**Windows Desktop**。
-1. 选择**Windows 窗体应用 (.NET Framework)** 模板。
-1. 输入的名称_HelloComposition，_ 选择框架 **.NET Framework 4.7.2**，然后单击**确定**。
+1. 打开 Visual Studio 并选择“文件” > “新建” > “项目”。   <br/>此时会打开“新建项目”对话框。 
+1. 在“安装”类别下展开“Visual C#”节点，然后选择“Windows 桌面”。   
+1. 选择“Windows 窗体应用(.NET Framework)”模板。 
+1. 输入名称 HelloComposition，选择框架“.NET Framework 4.7.2”，然后单击“确定”。   
 
-Visual Studio 创建项目并打开名为 Form1.cs 的默认应用程序窗口的设计器。
+Visual Studio 将创建该项目，并打开名为 Form1.cs 的默认应用程序窗口的设计器。
 
-## <a name="configure-the-project-to-use-windows-runtime-apis"></a>将项目配置为使用 Windows 运行时 Api
+## <a name="configure-the-project-to-use-windows-runtime-apis"></a>将项目配置为使用 Windows 运行时 API
 
-若要使用 Windows 运行时 (WinRT) Api 在 Windows 窗体应用中，您需要配置 Visual Studio 项目以访问 Windows 运行时。 此外，向量广泛用于由组合 Api，因此需要添加所需使用矢量的引用。
+若要在 Windows 窗体应用中使用 Windows 运行时 (WinRT) API，需将 Visual Studio 项目配置为访问 Windows 运行时。 此外，Composition API 广泛使用向量，因此你需要添加所需的引用来使用向量。
 
-NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用添加到你的项目的最新版本。  
+NuGet 包可用于满足这两项需求。 请安装这些包的最新版本，以添加对项目的必要引用。  
 
-- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) （需要默认包管理格式设置为 PackageReference。）
+- [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts)（需将默认包管理格式设置为 PackageReference。）
 - [System.Numerics.Vectors](https://www.nuget.org/packages/System.Numerics.Vectors/)
 
 > [!NOTE]
-> 尽管我们建议使用 NuGet 包配置项目，您可以手动添加所需的引用。 有关详细信息，请参阅[增强适用于 Windows 10 桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance)。 下表显示了您需要将引用添加到的文件。
+> 尽管我们建议使用 NuGet 包来配置项目，但你可以手动添加所需的引用。 有关详细信息，请参阅[增强适用于 Windows 10 的桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance)。 下表显示了需要对其添加引用的文件。
 
-|文件|Location|
+|文件|位置|
 |--|--|
 |System.Runtime.WindowsRuntime|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
-|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
+|Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<sdk version>\Windows.Foundation.UniversalApiContract\<version>  |
+|Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<sdk version>\Windows.Foundation.FoundationContract\<version>  |
 |System.Numerics.Vectors.dll|C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics.Vectors\v4.0_4.0.0.0__b03f5f7f11d50a3a|
 |System.Numerics.dll|C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2|
 
-## <a name="create-a-custom-control-to-manage-interop"></a>创建自定义控件以管理互操作
+## <a name="create-a-custom-control-to-manage-interop"></a>创建自定义控件用于管理互操作
 
-到内容使用可视化层创建的主机，您可以创建自定义控件派生自[控制](/dotnet/api/system.windows.forms.control)。 此控件可让你访问窗口[处理](/dotnet/api/system.windows.forms.control.handle)，若要创建你可视化层的内容的容器需要的。
+若要使用视觉层承载创建的内容，请创建派生自 [Control](/dotnet/api/system.windows.forms.control) 的自定义控件。 此控件可让你访问在为视觉层内容创建容器时所需的窗口 [Handle](/dotnet/api/system.windows.forms.control.handle)。
 
-这是配置的你在其中完成大部分托管组合 Api。 在控件中，您将使用[平台调用服务 (PInvoke)](/cpp/dotnet/calling-native-functions-from-managed-code)并[COM 互操作](/dotnet/api/system.runtime.interopservices.comimportattribute)组合 Api 引入您的 Windows 窗体应用程序。 PInvoke 和 COM 互操作的详细信息，请参阅[与非托管代码交互操作](/dotnet/framework/interop/index)。
+将在此类中完成用于承载 Composition API 的大部分配置。 在此控件中，使用[平台调用服务 (PInvoke)](/cpp/dotnet/calling-native-functions-from-managed-code) 和 [COM 互操作性](/dotnet/api/system.runtime.interopservices.comimportattribute)将 Composition API 引入 Windows 窗体应用中。 有关 PInvoke 和 COM 互操作性的详细信息，请参阅[互操作性与非托管代码](/dotnet/framework/interop/index)。
 
 > [!TIP]
-> 如果需要检查的教程，请确保所有代码都都在正确位置放置在演练本教程末尾的完整代码。
+> 如果需要，请检查本教程末尾的完整代码，确保在完成本教程的过程中，所有代码位于正确的位置。
 
-1. 将新的自定义控制文件添加到项目中，这些派生自[控制](/dotnet/api/system.windows.forms.control)。
-    - 在中**解决方案资源管理器**，右键单击_HelloComposition_项目。
-    - 在上下文菜单中，选择**外** > **新项...** .
-    - 在中**添加新项**对话框中，选择**自定义控件**。
-    - 将控件_CompositionHost.cs_，然后单击**添加**。 在设计视图中打开 CompositionHost.cs。
+1. 将派生自 [Control](/dotnet/api/system.windows.forms.control) 的新自定义控件文件添加到项目。
+    - 在“解决方案资源管理器”中右键单击“HelloComposition”项目。  
+    - 在上下文菜单中，选择“添加” > “新建项...”。  
+    - 在“添加新项”对话框中，选择“自定义控件”。  
+    - 将控件命名为 CompositionHost.cs，然后单击“添加”。   CompositionHost.cs 将在设计视图中打开。
 
-1. 切换到 CompositionHost.cs 的代码视图，并将以下代码添加到类。
+1. 切换到 CompositionHost.cs 的代码视图，并在类中添加以下代码。
 
     ```csharp
     // Add
@@ -114,7 +114,7 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
 
 1. 将代码添加到构造函数。
 
-    在构造函数中，可以调用_InitializeCoreDispatcher_并_InitComposition_方法。 在下一步骤中创建这些方法。
+    在构造函数中调用 InitializeCoreDispatcher 和 InitComposition 方法。   将在后续步骤中创建这些方法。
 
     ```csharp
     public CompositionHost()
@@ -130,9 +130,10 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
         // Build Composition tree of content.
         InitComposition(hwndHost);
     }
+    ```
 
-1. Initialize a thread with a [CoreDispatcher](/uwp/api/windows.ui.core.coredispatcher). The core dispatcher is responsible for processing window messages and dispatching events for WinRT APIs. New instances of **Compositor** must be created on a thread that has a CoreDispatcher.
-    - Create a method named _InitializeCoreDispatcher_ and add code to set up the dispatcher queue.
+1. 使用 [CoreDispatcher](/uwp/api/windows.ui.core.coredispatcher) 初始化某个线程。 核心调度程序负责处理窗口消息并调度 WinRT API 的事件。 必须在具有 CoreDispatcher 的线程中创建 Compositor 的新实例。 
+    - 创建名为 InitializeCoreDispatcher 的方法，并添加用于设置调度程序队列的代码。 
 
     ```csharp
     // Add
@@ -151,7 +152,7 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
     }
     ```
 
-    - 调度程序队列需要的 PInvoke 声明。 将此声明放置在类的代码末尾。 （我们将此代码以使类代码井然有序的区域内。）
+    - 调度程序队列需要 PInvoke 声明。 请将此声明置于类代码的末尾。 （我们将此代码放在某个区域，使类代码保持整洁。）
 
     ```csharp
     #region PInvoke declarations
@@ -210,9 +211,9 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
     #endregion PInvoke declarations
     ```
 
-    现在已准备就绪的调度程序队列，并可以开始初始化和创建内容的组合。
+    现已准备好调度程序队列，接下来可以开始初始化并创建合成内容。
 
-1. 初始化[复合器](/uwp/api/windows.ui.composition.compositor)。 复合器是一个用于创建各种类型中的工厂[Windows.UI.Composition](/uwp/api/windows.ui.composition)横跨可视化层、 效果系统和动画系统的命名空间。 排序器类还管理从工厂创建对象的生存期。
+1. 初始化 [Compositor](/uwp/api/windows.ui.composition.compositor)。 Compositor 是一个工厂，它在跨视觉层、效果系统和动画系统的 [Windows.UI.Composition](/uwp/api/windows.ui.composition) 命名空间中创建各种类型。 Compositor 类还用于管理从工厂创建的对象的生存期。
 
     ```csharp
     private void InitComposition(IntPtr hwndHost)
@@ -235,7 +236,7 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
     }
     ```
 
-    - **ICompositorDesktopInterop**并**ICompositionTarget**需要 COM 导入。 将此代码后的放_CompositionHost_类，但内部命名空间声明。
+    - ICompositorDesktopInterop 和 ICompositionTarget 需要 COM 导入。   请将此代码置于 CompositionHost 类的后面，但请确保它位于命名空间声明的内部。 
 
     ```csharp
     #region COM Interop
@@ -284,29 +285,29 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
     #endregion COM Interop
     ```
 
-## <a name="create-a-custom-control-to-host-composition-elements"></a>创建自定义控件与主机组合元素
+## <a name="create-a-custom-control-to-host-composition-elements"></a>创建自定义控件用于承载合成元素
 
-它是将代码生成和管理你从 CompositionHost 派生而来的单独控件中的组合元素放在一个好办法。 这会使您 CompositionHost 在类中创建可重用的互操作代码。
+最好是将生成和管理合成元素的代码放在派生自 CompositionHost 的单独控件中。 这使得在 CompositionHost 类中创建的互操作代码可重用。
 
-在这里，您创建自定义控件派生自 CompositionHost。 此控件添加到 Visual Studio 工具箱中，以便可以将其添加到你的窗体。
+此处，你将创建一个派生自 CompositionHost 的自定义控件。 此控件会添加到 Visual Studio 工具箱，因此可将其添加到窗体。
 
-1. 将新的自定义控制文件添加到你从 CompositionHost 派生而来的项目。
-    - 在中**解决方案资源管理器**，右键单击_HelloComposition_项目。
-    - 在上下文菜单中，选择**外** > **新项...** .
-    - 在中**添加新项**对话框中，选择**自定义控件**。
-    - 将控件_CompositionHostControl.cs_，然后单击**添加**。 在设计视图中打开 CompositionHostControl.cs。
+1. 将派生自 CompositionHost 的新自定义控件文件添加到项目。
+    - 在“解决方案资源管理器”中右键单击“HelloComposition”项目。  
+    - 在上下文菜单中，选择“添加” > “新建项...”。  
+    - 在“添加新项”对话框中，选择“自定义控件”。  
+    - 将控件命名为 CompositionHostControl.cs，然后单击“添加”。   CompositionHostControl.cs 将在设计视图中打开。
 
-1. 在 CompositionHostControl.cs 设计视图中的属性窗格中，将**BackColor**属性设置为**ControlLight**。
+1. 在 CompositionHostControl.cs 设计视图的“属性”窗格中，将 BackColor 属性设置为 ControlLight。  
 
-    设置背景色是可选的。 我们在以下位置执行以便您可以看到自定义控件与窗体背景。
+    设置背景色是可选操作。 此处我们将执行此操作，使你能够在窗体背景的衬托下查看自定义控件。
 
-1. 切换到 CompositionHostControl.cs 的代码视图，并更新从 CompositionHost 派生的类声明。
+1. 切换到 CompositionHostControl.cs 的代码视图，并将类声明更新为派生自 CompositionHost。
 
     ```csharp
     class CompositionHostControl : CompositionHost
     ```
 
-1. 更新构造函数来调用基构造函数。
+1. 更新构造函数以调用基构造函数。
 
     ```csharp
     public CompositionHostControl() : base()
@@ -315,15 +316,15 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
     }
     ```
 
-### <a name="add-composition-elements"></a>添加组合元素
+### <a name="add-composition-elements"></a>添加合成元素
 
-与基础结构，现在可以向应用程序 UI 中添加组合内容。
+准备好基础结构后，接下来可将合成内容添加到应用 UI。
 
-对于此示例中，您可以将代码添加到创建并进行动画处理一个简单的 CompositionHostControl 类[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)。
+对于本示例，请将用于创建并以动画显示一个简单 [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) 的代码添加到 CompositionHostControl 类。
 
-1. 添加组合元素。
+1. 添加合成元素。
 
-    在 CompositionHostControl.cs，将这些方法添加到 CompositionHostControl 类。
+    在 CompositionHostControl.cs 中，将这些方法添加到 CompositionHostControl 类。
 
     ```csharp
     // Add
@@ -361,28 +362,28 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
     }
     ```
 
-## <a name="add-the-control-to-your-form"></a>将控件添加到你的窗体
+## <a name="add-the-control-to-your-form"></a>将控件添加到窗体
 
-具有自定义控件来承载组合内容，可以将其添加到应用程序 UI 中。 在这里，您添加上一步中创建的 CompositionHostControl 的实例。 CompositionHostControl 自动添加到 Visual Studio 工具箱下 **_项目名称_组件**。
+添加用于承载合成内容的自定义控件后，接下来可将该控件添加到应用 UI。 此处，你将添加在上一步骤中创建的 CompositionHostControl 的实例。 CompositionHostControl 会自动添加到“<项目名称> 组件”下的 Visual Studio 工具箱中。 
 
-1. 在 Form1.CS 设计视图中，添加一个按钮的 ui。
+1. 在 Form1.CS 设计视图中，将一个按钮添加到 UI。
 
-    - 将一个按钮从工具箱拖到 Form1 上。 将其放在窗体的左上角。 （请参阅在本教程，若要检查的控件位置的启动映像。）
-    - 在属性窗格中更改**文本**属性从_button1_到_添加组合元素_。
-    - 调整按钮大小，以便所有文本都显示。
+    - 将工具箱中的一个按钮拖放到 Form1。 将该按钮置于窗体的左上角。 （请查看本教程开头的插图来检查控件位置。）
+    - 在“属性”窗格中，将“文本”属性从“button1”更改为“添加合成元素”。   
+    - 调整按钮大小以显示所有文本。
 
-    (有关详细信息，请参阅[如何：将控件添加到 Windows 窗体](/dotnet/framework/winforms/controls/how-to-add-controls-to-windows-forms)。)
+    （有关详细信息，请参阅[如何：将控件添加到 Windows 窗体](/dotnet/framework/winforms/controls/how-to-add-controls-to-windows-forms)。）
 
-1. 向 UI 添加 CompositionHostControl。
+1. 将 CompositionHostControl 添加到 UI。
 
-    - 从工具箱拖到 Form1 上拖动 CompositionHostControl。 将它放到按钮的右侧。
-    - 调整 CompositionHost 大小，以便它填充窗体的其余部分。
+    - 将工具箱中的 CompositionHostControl 拖放到 Form1。 将其置于按钮右侧。
+    - 调整 CompositionHost 的大小，使其填充窗体的剩余空间。
 
-1. 句柄按钮单击事件。
+1. 处理按钮单击事件。
 
-   - 在属性窗格中，单击闪电形，若要切换到事件视图。
-   - 在事件列表中，选择 **单击** 事件中，键入 *Button_Click* ，然后按 Enter。
-   - 在 Form1.cs 中添加此代码：
+   - 在“属性”窗格中，单击闪电图标切换到“事件”视图。
+   - 在事件列表中选择“Click”事件，键入 Button_Click，然后按 Enter。  
+   - 此代码将添加到 Form1.cs 中：
 
     ```csharp
     private void Button_Click(object sender, EventArgs e)
@@ -391,9 +392,9 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
     }
     ```
 
-1. 将代码添加到按钮单击处理程序来创建新元素。
+1. 将代码添加到按钮单击处理程序以创建新元素。
 
-    - 在 Form1.cs 中，将代码添加到*Button_Click*之前创建的事件处理程序。 此代码将调用_CompositionHostControl1.AddElement_使用随机生成的大小和偏移量创建新的元素。 (自动命名的实例 CompositionHostControl _compositionHostControl1_时您将其拖动到窗体。)
+    - 在 Form1.cs 中，将代码添加到前面创建的 Button_Click 事件处理程序。  此代码将调用 CompositionHostControl1.AddElement 来创建使用随机生成的大小和偏移量的新元素。  （将 CompositionHostControl 的实例拖放到窗体中时，该实例会自动命名为 compositionHostControl1。） 
 
     ```csharp
     // Add
@@ -409,19 +410,19 @@ NuGet 包是可用于处理这两种要求。 安装这些包，需要将引用�
     }
     ```
 
-你现在可以生成并运行您的 Windows 窗体应用程序。 当单击按钮时，应看到添加到 UI 中的动画的方块。
+现在，可以生成并运行你的 Windows 窗体应用。 单击按钮时，应会看到已添加到 UI 中的动画正方形。
 
 ## <a name="next-steps"></a>后续步骤
 
-在同一基础结构为基础的更完整示例，请参阅[Windows 窗体 Visual 层集成示例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/VisualLayerIntegration)GitHub 上。
+有关在同一基础结构上构建的更完整示例，请参阅 GitHub 上的 [Windows 窗体视觉层集成示例](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/VisualLayerIntegration)。
 
 ## <a name="additional-resources"></a>其他资源
 
-- [Windows 窗体入门](/dotnet/framework/winforms/getting-started-with-windows-forms)(.NET)
-- [与进行互操作非托管代码](/dotnet/framework/interop/)(.NET)
-- [开始使用 Windows 10 应用](/windows/uwp/get-started/)(UWP)
-- [增强适用于 Windows 10 桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance)(UWP)
-- [Windows.UI.Composition 命名空间](/uwp/api/windows.ui.composition)(UWP)
+- [Windows 窗体入门](/dotnet/framework/winforms/getting-started-with-windows-forms) (.NET)
+- [与非托管代码的互操作](/dotnet/framework/interop/) (.NET)
+- [Windows 10 应用入门](/windows/uwp/get-started/) (UWP)
+- [增强适用于 Windows 10 的桌面应用程序](/windows/uwp/porting/desktop-to-uwp-enhance) (UWP)
+- [Windows.UI.Composition 命名空间](/uwp/api/windows.ui.composition) (UWP)
 
 ## <a name="complete-code"></a>完成代码
 

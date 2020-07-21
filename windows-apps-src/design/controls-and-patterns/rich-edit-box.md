@@ -11,20 +11,24 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 00a65324b799b0cf974271da23fdbcb36aa6c8e2
-ms.sourcegitcommit: 4ca51472d0474be96fa3184e311b729f58998234
+ms.openlocfilehash: cf2eebdc97a1052dd3f4a3e00dd3a911cb80bace
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67399617"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970662"
 ---
 # <a name="rich-edit-box"></a>富编辑框
 
- 
-
 你可以使用 RichEditBox 控件来输入和编辑包含格式文本、超链接和图像的 RTF 文档。 你可以通过将 IsReadOnly 属性设置为 **true**，从而将 RichEditBox 设置为只读。
 
-> **重要的 API**：[RichEditBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[Document 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document)、[IsReadOnly 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly)、[IsSpellCheckEnabled 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
+**获取 Windows UI 库**
+
+|  |  |
+| - | - |
+| ![WinUI 徽标](images/winui-logo-64x64.png) | Windows UI 库 2.2 或更高版本包含此控件的使用圆角的新模板。 有关详细信息，请参阅[圆角半径](/windows/uwp/design/style/rounded-corner)。 WinUI 是一种 NuGet 包，其中包含用于 Windows 应用的新控件和 UI 功能。 有关详细信息（包括安装说明），请参阅 [Windows UI 库](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+> **平台 API**：[RichEditBox 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[Document 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document)、[IsReadOnly 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly)、[IsSpellCheckEnabled 属性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
@@ -40,7 +44,7 @@ ms.locfileid: "67399617"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/RichEditBox">打开此应用，了解 RichEditBox 的实际应用</a>。</p>
     <ul>
@@ -213,7 +217,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - 使文本控件的高度足够大，以便容纳典型输入。
 - 不要让文本输入控件在用户键入时增加高度。
 - 当用户仅需要一行时，不要使用多行文本框。
-- 如果纯文本控件足够使用，不要使用 RTF 控件。
+- 如果纯文本控件足够使用，不要使用富文本控件。
 
 ## <a name="get-the-sample-code"></a>获取示例代码
 

@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 317f373b64b1a15a9baa8310c06d6b8037ced745
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 2be937646374db3586b1b3bca2df2b99888c831a
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66364450"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82968132"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 和 XAML 资源引用
 
@@ -77,7 +77,7 @@ XAML 资源是多次从标记中引用的对象。 资源在 [ResourceDictionary
 </Page>
 ```
 
-所有资源都需要有一个键。 通常，键是通过 `x:Key=”myString”` 定义的字符串。 但是，还有几种其他方法可指定键：
+所有资源都需要有一个键。 通常，键是通过 `x:Key="myString"` 定义的字符串。 但是，还有几种其他方法可指定键：
 
 -   如果未指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，则 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 和 [ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 需要“TargetType”，并且将“TargetType”用作键   。 在这种情况下，键是实际的 Type 对象，而非字符串。 （请参阅下方示例）
 -   如果未指定 [x:Key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，具有“TargetType”的 [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) 资源会将“TargetType”用作键   。 在这种情况下，键是实际的 Type 对象，而非字符串。
@@ -401,7 +401,7 @@ sealed partial class App : Application
 
 最后，还有一种针对平台资源的资源查找。 平台资源包括为每个系统 UI 主题定义的控件模板，以及用于定义你在 Windows 运行时应用中为所有 UI 控件使用的默认外观的控件模板。 平台资源还包括与系统范围内的外观和主题相关的一组已命名资源。 从技术上来说，这些资源是 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 项，因此在加载应用之后可用于从 XAML 或代码中查找。 例如，系统主题资源包括一个名为 “SystemColorWindowTextColor”的资源，该资源提供一个 [Color](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 定义以使应用文本颜色与系统窗口的文本颜色（来自操作系统和用户首选项）相匹配。 应用的其他 XAML 样式可以引用该样式，或者你的代码可以获取资源查找值（并将该值转换为示例中的 **Color**）。
 
-有关特定于主题的资源和系统资源（可用于使用 XAML 的 UWP 应用）的详细信息和列表，请参阅 [XAML 主题资源](xaml-theme-resources.md)。
+有关特定于主题的资源和系统资源（可用于使用 XAML 的 Windows 应用）的详细信息和列表，请参阅 [XAML 主题资源](xaml-theme-resources.md)。
 
 如果请求的键仍未在这其中任何位置中找到，会发生 XAML 分析错误/异常。 某些情况下，XAML 分析异常可能是 XAML 标记编译操作或 XAML 设计环境未检测到的运行时异常。
 
@@ -447,11 +447,11 @@ sealed partial class App : Application
 
 ## <a name="using-a-resourcedictionary-from-code"></a>通过代码使用 ResourceDictionary
 
-大部分情况下，[ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 均在 XAML 中专门处理。 你要在 UI 定义文件中将内部的 **ResourceDictionary** 容器和资源声明为 XAML 文件或 XAML 节点集。 然后，使用 XAML 资源引用从 XAML 的其他部分请求这些资源。 不过，在某些特定情况下，你的应用可能需要使用在应用运行时执行的代码来调整 **ResourceDictionary** 的内容，或者至少需要查询 **ResourceDictionary** 的内容以查看是否已定义某个资源。 这些代码调用在“ResourceDictionary”实例上执行，所以必须首先通过获得 [FrameworkElement.Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 来检索对象树中的即时 ResourceDictionary，或者检索 `Application.Current.Resources`   。
+大部分情况下，[ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 均在 XAML 中专门处理。 你要在 UI 定义文件中将内部的 **ResourceDictionary** 容器和资源声明为 XAML 文件或 XAML 节点集。 然后，使用 XAML 资源引用从 XAML 的其他部分请求这些资源。 不过，在某些特定情况下，你的应用可能需要使用在应用运行时执行的代码来调整 **ResourceDictionary** 的内容，或者至少需要查询 **ResourceDictionary** 的内容以查看是否已定义某个资源。 这些代码调用在“ResourceDictionary”实例上执行，所以必须首先通过获得 [FrameworkElement.Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.resources) 来检索对象树中的即时 ResourceDictionary，或者检索 `Application.Current.Resources`  。
 
-在 C\# 或 Microsoft Visual Basic 代码中，你可以使用索引器 ([Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item?view=netframework-4.8)) 引用给定 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中的资源。 **ResourceDictionary** 是一个字符串键控字典，因此索引器使用字符串键，而不使用整数索引。 在 Visual C++ 组件扩展 (C++/CX) 代码中，请使用 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup)。
+在 C\# 或 Microsoft Visual Basic 代码中，你可以使用索引器 ([Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item)) 引用给定 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中的资源。 **ResourceDictionary** 是一个字符串键控字典，因此索引器使用字符串键，而不使用整数索引。 在 Visual C++ 组件扩展 (C++/CX) 代码中，请使用 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup)。
 
-当使用代码检查或更改 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 时，API 的行为（如 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) 或 [Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item?view=netframework-4.8)）不会从直接资源遍历到应用资源；这是仅在加载 XAML 页面时发生的 XAML 分析程序行为。 在运行时，键作用域将自包含到此时所使用的 **ResourceDictionary** 实例中。 但是，该作用域不会扩展到 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 中。
+当使用代码检查或更改 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 时，API 的行为（如 [Lookup](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.lookup) 或 [Item](https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item)）不会从直接资源遍历到应用资源；这是仅在加载 XAML 页面时发生的 XAML 分析程序行为。 在运行时，键作用域将自包含到此时所使用的 **ResourceDictionary** 实例中。 但是，该作用域不会扩展到 [MergedDictionaries](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries) 中。
 
 另外，如果你请求的键不在 [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中，可能不会出现错误；但返回值可能只会提供为“null”  。 但是，如果你尝试将返回的 **null** 用作值，仍然可能会出现错误。 错误可能来自于属性的设置器，而不是你的 **ResourceDictionary** 调用。 避免错误的唯一方法是属性接受 **null** 作为有效值。 请注意此行为与 XAML 解析期间的 XAML 查找行为有何区别；如果在解析期间无法解析从 XAML 提供的键，会导致 XAML 解析错误，甚至在属性可以接受 **null** 时也是如此。
 

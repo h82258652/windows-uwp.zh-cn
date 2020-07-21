@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，后台任务
 ms.localizationpriority: medium
-ms.openlocfilehash: f2e4c3868c2eb83947cf9341e4fbd49e2724af61
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 50316df323129e4e36335ab32d6af8cc92b8a201
+ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370848"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74259492"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>从后台任务访问传感器和设备
 
@@ -20,7 +20,7 @@ ms.locfileid: "66370848"
 
 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 允许你的通用 Windows 应用访问后台中的传感器和外围设备，即使在前台应用暂停时也是如此。 例如，根据应用运行所在的位置，它可以使用后台任务将数据与设备或监视器传感器同步。 为了帮助延长电池使用时间并确保相应的用户同意，使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 需遵循本主题中所述的策略。
 
-若要访问后台中的传感器或外围设备，请创建一个使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的后台任务。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
+若要访问后台中的传感器或外围设备，请创建一个使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的后台任务。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess)。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundSensors)。
 
 > [!Important]
 > **DeviceUseTrigger** 不能用于进程内的后台任务。 本主题中的信息仅适用于进程外运行的后台任务。
@@ -29,27 +29,27 @@ ms.locfileid: "66370848"
 
 当你的应用不再对用户可见时，Windows 会暂停或终止应用以回收内存和 CPU 资源。 这允许其他应用在前台运行并减少电池消耗。 出现这种情况时，如未获得后台任务的帮助，正在进行的数据事件将丢失。 Windows 提供了后台任务触发器 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)，让你的应用从后台安全地在设备和传感器上执行长时间运行的同步和监视操作，即使你的应用暂停也是如此。 有关应用生命周期的详细信息，请参阅[启动、恢复和后台任务](index.md)。 有关后台任务的详细信息，请参阅[使用后台任务支持应用](support-your-app-with-background-tasks.md)。
 
-**请注意**  中通用 Windows 应用程序中，同步在后台中的设备需要你的用户已批准后台同步你的应用。 设备还必须通过活动 I/O 连接到电脑或与电脑配对，最长允许执行 10 分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。
+**请注意**，在通用 Windows 应用中  ，在后台同步设备要求用户已批准应用的后台同步。 设备还必须通过活动 I/O 连接到电脑或与电脑配对，最长允许执行 10 分钟的后台活动。 本主题后面将介绍有关策略实施的更多详细信息。
 
 ### <a name="limitation-critical-device-operations"></a>限制：关键设备操作
 
-某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅 [Microsoft Store 设备应用的设备同步和更新](https://go.microsoft.com/fwlink/p/?LinkId=306619)。
+某些关键设备操作（如长时间运行的固件更新）无法通过 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 执行。 此类操作仅可以在电脑上通过使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 的特权应用执行。 *特权应用*是指由设备制造商授权执行这些操作的应用。 设备元数据用于指定已指派哪个应用（如果有）作为设备的特权应用。 有关详细信息，请参阅 [Microsoft Store 设备应用的设备同步和更新](https://msdn.microsoft.com/library/windows/hardware/dn265139(v=vs.85).aspx)。
 
 ## <a name="protocolsapis-supported-in-a-deviceusetrigger-background-task"></a>DeviceUseTrigger 后台任务中支持的协议/API
 
 使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的后台任务使你的应用可以跨许多协议/API 通信，其中大部分协议/API 不受系统触发的后台任务支持。 通用 Windows 应用支持以下内容。
 
-| Protocol         | 通用 Windows 应用中的 DeviceUseTrigger                                                                                                                                                    |
+| 协议         | 通用 Windows 应用中的 DeviceUseTrigger                                                                                                                                                    |
 |------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | USB              | ![支持此协议。](images/ap-tools.png)                                                                                                                                            |
 | HID              | ![支持此协议。](images/ap-tools.png)                                                                                                                                            |
-| 蓝牙 RFCOMM | ![支持此协议。](images/ap-tools.png)                                                                                                                                            |
+| Bluetooth RFCOMM | ![支持此协议。](images/ap-tools.png)                                                                                                                                            |
 | 蓝牙 GATT   | ![支持此协议。](images/ap-tools.png)                                                                                                                                            |
 | MTP              | ![支持此协议。](images/ap-tools.png)                                                                                                                                            |
 | 有线网络    | ![支持此协议。](images/ap-tools.png)                                                                                                                                            |
 | WLAN 网络    | ![支持此协议。](images/ap-tools.png)                                                                                                                                            |
 | IDeviceIOControl | ![DeviceServicingTrigger 支持 IDeviceIOControl](images/ap-tools.png)                                                                                                                       |
-| 传感器 API      | ![deviceservicingtrigger 支持通用传感器 api](images/ap-tools.png) (限制为中的传感器[通用设备系列](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)) |
+| 传感器 API      | ![deviceservicingtrigger 支持通用传感器 api](images/ap-tools.png) （限于[通用设备家族](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)中的传感器） |
 
 ## <a name="registering-background-tasks-in-the-app-package-manifest"></a>在应用包清单中注册后台任务
 
@@ -81,9 +81,9 @@ ms.locfileid: "66370848"
 8.  Windows 监控系统条件和任务运行情况，并在必要时（不再符合所需条件）取消该任务。
 9.  当后台任务报告进度或完成时，你的应用将通过该注册任务的进度事件和完成事件接收这些事件。
 
-**重要**  时使用，请考虑以下要点[ **DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger):
+**重要**   在使用[**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)时，请注意以下要点：
 
--   能够以编程方式触发后台任务，使用[ **DeviceUseTrigger** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)首次引入了 Windows 8.1 和 Windows Phone 8.1。
+-   以编程方式触发使用[**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger)的后台任务的功能是在 Windows 8.1 和 Windows Phone 8.1 中首次引入的。
 
 -   Windows 会强制执行某些策略，从而确保获得用户同意才能更新电脑上的外围设备。
 
@@ -91,7 +91,7 @@ ms.locfileid: "66370848"
 
 -   当不再符合某些策略要求（包括最长后台时间（时钟时间）量时，Windows 可能会取消使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 的后台任务。 使用这些后台任务与外围设备交互时考虑这些策略要求很重要。
 
-**提示**  若要查看这些后台任务的工作原理，请下载一个示例。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
+**提示**  若要查看这些后台任务的工作原理，请下载示例。 有关显示如何在电脑上实现此目的的示例，请参阅[自定义 USB 设备示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess)。 有关在手机上实现此目的的示例，请参阅[后台传感器示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundSensors)。
  
 ## <a name="frequency-and-foreground-restrictions"></a>频率和前台限制
 
@@ -118,7 +118,7 @@ ms.locfileid: "66370848"
 | 使用受支持的设备外围 API（适用于 USB、HID、蓝牙和传感器等的 Windows 运行时 API）的应用可以访问该设备。 如果你的应用无法访问设备或传感器，则拒绝其访问该后台任务。 | ![策略适用](images/ap-tools.png) |
 | 在应用包部件清单中注册该应用提供的后台任务入口点。 | ![策略适用](images/ap-tools.png) |
 | 每个应用只有一项 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 后台任务正在运行。 | ![策略适用](images/ap-tools.png) |
-| [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 后台任务的最大数量还未达到设备（在其上运行你的应用）上限。 | **桌面设备系列**:可以注册并以并行方式运行无限的数量的任务。 **移动设备系列**:512MB 设备; 上的 1 个任务否则为可以注册，以并行方式运行 2 个任务。 |
+| [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 后台任务的最大数量还未达到设备（在其上运行你的应用）上限。 | **桌面设备系列**：可以注册无限数量的任务，并且可以并行运行。 **移动设备系列**：在 512 MB 设备上只能注册 1 个任务；否则，可以注册 2 个任务，并且可以并行运行。 |
 | 当使用受支持的 API/协议时，你的应用可以从单个 [DeviceUseTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 后台任务中访问的最大数量的外围设备或传感器。 | 无限制 |
 | 当屏幕锁定时，你的后台任务每分钟消耗 400 毫秒的 CPU 时间（假设 1GHz CPU），或者当屏幕未锁定时，每五分钟消耗该时间。 未能满足此策略可能导致任务被取消。 | ![策略适用](images/ap-tools.png) |
 
@@ -133,7 +133,7 @@ ms.locfileid: "66370848"
 | 该设备已连接到系统（或在无线设备覆盖范围内）。 | ![策略检查适用](images/ap-tools.png) |
 | 任务不断对设备执行常规 I/O （每隔 5 秒执行 1 次 I/O）。 | ![策略检查适用](images/ap-tools.png) |
 | 应用未取消任务。 | ![策略检查适用](images/ap-tools.png) |
-| 时钟时间限制 - 你的应用任务可以在后台运行的时间总量。 | **桌面设备系列**:10 分钟。 **移动设备系列**:没有时间限制。 若要节省资源，不要一次执行多于 1 个或 2 个任务。 |
+| 时钟时间限制 - 你的应用任务可以在后台运行的时间总量。 | **桌面设备系列**：10 分钟。 **移动设备系列**：无时间限制。 若要节省资源，不要一次执行多于 1 个或 2 个任务。 |
 | 应用未退出。 | ![策略检查适用](images/ap-tools.png) |
 
 ## <a name="best-practices"></a>最佳做法
@@ -168,7 +168,7 @@ ms.locfileid: "66370848"
 
 ### <a name="cancelling-a-background-task"></a>取消后台任务
 
-若要从你的前台应用取消在后台运行的任务，请使用你的应用中所使用的 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 对象上的 Unregister 方法，注册 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 后台任务。 使用 **BackgroundTaskRegistration** 上的 [**Unregister**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister) 方法注销你的后台任务，将会导致后台任务基础结构取消你的后台任务。
+若要从你的前台应用取消在后台运行的任务，请使用你的应用中所使用的 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 对象上的 Unregister 方法，注册 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 后台任务。 使用 [BackgroundTaskRegistration**上的**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister)Unregister 方法注销你的后台任务，将会导致后台任务基础结构取消你的后台任务。
 
 此外，[**Unregister**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.unregister) 方法使用布尔值 true 或 false 指示是否应在任务未完成的情况下取消当前运行的后台任务实例。 有关详细信息，请参阅 **Unregister** 的 API 参考。
 

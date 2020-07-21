@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 异步, threads, 线程
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c151b90be30b39da7decd9a0ce3109e29b7fb7
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57582130"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "63813164"
 ---
 # <a name="threading-and-async-programming"></a>线程和异步编程
 线程和异步编程可让你的应用在并行线程中以异步方式完成工作。
@@ -28,7 +28,7 @@ ms.locfileid: "57582130"
 
 在管理线程方面，线程池更为有效，因为这样可以减少创建和销毁线程的开销。 这意味着它可以跨多个 CPU 核心优化线程，并且它可以在应用之间及在后台任务运行时平衡线程资源。 使用内置线程池是一种方便的方法，因为你只需将注意力集中到编写完成任务的代码上，而不是线程管理机制上。
 
-| 主题                                                                                                          | 描述                         |
+| 主题                                                                                                          | 说明                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | [异步编程（UWP 应用）](asynchronous-programming-universal-windows-platform-apps.md)              | 本主题介绍了通用 Windows 平台 (UWP) 中的异步编程及其在 C#、Microsoft Visual Basic .NET、Visual C++ 组件扩展 (C++/CX) 和 JavaScript 中的表示形式。 |
 | [使用 C++/CX 进行异步编程（UWP 应用）](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| 本文介绍在 C++/CX 中，通过使用在 ppltasks.h 中的 <code>concurrency</code> 命名空间中定义的 <code>task</code> 类来使用异步方法的推荐方法。 |

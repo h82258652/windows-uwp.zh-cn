@@ -1,6 +1,6 @@
 ---
 Description: 列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
-title: 添加和删除 UWP 应用中的动画
+title: 添加和删除动画
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d0dc449c0134799f3de675fff4bdbbda66046be8
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 4264a9a3a75c076fc033bb98dad45ff8dc99f2ef
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317098"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970282"
 ---
 # <a name="add-and-delete-animations"></a>添加和删除动画
 
@@ -21,7 +21,7 @@ ms.locfileid: "67317098"
 
 列表动画可使你向集合（如相册或搜索结果列表）中插入或从中删除单个或多个项。
 
-> **重要的 API**：[**AddDeleteThemeTransition 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+> **重要 API**：[**AddDeleteThemeTransition 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>应做事项和禁止事项
@@ -39,8 +39,8 @@ ms.locfileid: "67317098"
 ## <a name="related-articles"></a>相关文章
 
 * [动画概述](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [对列表添加和删除操作进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
-* [快速入门：对 UI 使用库动画进行动画处理](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
+* [创建添加和删除列表的动画](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
+* [快速入门：使用库动画创建 UI 动画](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
 * [**AddDeleteThemeTransition 类**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 加载项, 属性, 订阅期, 产品生命周期, 内容类型, iap, 应用内购买, 应用内产品
 ms.localizationpriority: medium
 ms.openlocfilehash: 59c7e5b2c9ceea534f530bc6880b32a808c91e70
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63787040"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79210393"
 ---
 # <a name="enter-add-on-properties"></a>输入加载项属性
 
@@ -29,7 +29,7 @@ ms.locfileid: "63787040"
 
 ## <a name="product-lifetime"></a>产品生命周期
 
-如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 持久型加载项的默认“产品生命周期”为“永久”，这意味着加载项永不过期。 如果您愿意，可以更改**产品生命周期内**，以便该外接程序将在 （与选项 1-365 天内） 设置的期限后过期。
+如果选择的产品类型为**耐用品**，此处将显示**产品生命周期**。 持久型加载项的默认“产品生命周期”为“永久”，这意味着加载项永不过期。 如果需要，你可以更改**产品生存期**，使外接程序在设置的持续时间（使用1-365 天的选项）之后过期。
 
 
 ## <a name="quantity"></a>数量
@@ -39,7 +39,7 @@ ms.locfileid: "63787040"
 
 ## <a name="subscription-period"></a>订阅期限
 
-如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项是**每月**，但也可以选择**3 个月**， **6 个月**，**每年一次**，或**24 个月**.
+如果选择的产品类型为**订阅**，此处将显示**订阅期限**。 选择一个选项以指定向客户收取订阅费用的频率。 默认选项为 "**每月**"，但你也可以选择**3 个月**、 **6 个月**、**每年**或**24 个月**。
 
 > [!IMPORTANT]
 > 加载项发布之后，将无法更改**订阅期限**选择。
@@ -81,10 +81,10 @@ ms.locfileid: "63787040"
 
 可以选择为每个提交的加载项提供最多十个关键字，每个关键字最多 30 个字符。 然后，你的应用便可查询匹配这些字词的加载项。 你可以使用此功能在应用中生成可加载加载项的屏幕，而无需直接在应用的代码中指定产品 ID。 然后，可以随时更改加载项关键字，而无需在应用中更改代码或重新提交应用。
 
-若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 属性。）
+若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 属性。）
 
 > [!NOTE]
-> 关键字不是可用于在包面向 Windows 8 和 Windows 8.1 中使用。
+> 关键字不能用于面向 Windows 8 和 Windows 8.1 的包。
 
 <span id="custom-developer-data" />
 
@@ -94,10 +94,10 @@ ms.locfileid: "63787040"
 
 例如，假设你有一款游戏，并且你正在出售一个可帮助客户访问其他级别的加载项。 通过使用**自定义开发人员数据**字段，当客户拥有该加载项时，应用可以进行查询以查看有哪些级别可用。 可更新加载项**自定义开发人员数据**字段中的信息并发布该加载项的已更新提交来随时调整值（在本例中，即为包含的级别），而无需在应用中更改代码或重新提交应用。
 
-若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 属性。）
+若要查询此字段，请使用 [Windows.Services.Store 命名空间](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 属性。 （或者，如果使用的是 [Windows.ApplicationModel.Store 命名空间](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，则使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 属性。）
 
 > [!NOTE]
-> **自定义开发人员数据**字段不是可用于在包面向 Windows 8 和 Windows 8.1 中使用。
+> **自定义开发人员数据**字段不可用于面向 Windows 8 和 Windows 8.1 的包。
 
  
 

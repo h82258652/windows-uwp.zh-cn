@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 创作, COM, 组件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8da62908d33c053cee4ba3f55645be9dbdcaada9
-ms.sourcegitcommit: b9268ca84af56ee1c4f4ac0314e2452193369f01
+ms.openlocfilehash: 5ff3677c3624974759d1f6ff21d6e53cf9d33144
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293365"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "71344518"
 ---
 # <a name="author-com-components-with-cwinrt"></a>通过 C++/WinRT 创作 COM 组件
 
@@ -59,11 +59,11 @@ sample.as<IInitializeWithWindow>()->Initialize(hwnd);
 
 好在要让 **winrt::implements** 支持经典 COM 接口，只需在包括任何 C++/WinRT 头文件之前包括 `unknwn.h` 即可。
 
-可以显式这样做，也可以间接这样做，只需包括一些其他的头文件（例如 `ole2.h`）即可。 一个建议的方法是包括 `wil\cppwinrt.h` 头文件，该文件是 [Windows 实现库 (WIL)](https://github.com/Microsoft/wil) 的一部分。 `wil\cppwinrt.h` 头文件不仅可确保在 `winrt/base.h` 之前包括 `unknwn.h`，而且可以让 C++/WinRT 和 WIL 了解彼此的异常和错误代码。
+可以显式这样做，也可以间接这样做，只需包括一些其他的头文件（例如 `ole2.h`）即可。 一个建议的方法是包括 `wil\cppwinrt.h` 头文件，该文件是 [Windows 实现库 (WIL)](https://github.com/Microsoft/wil) 的一部分。 `wil\cppwinrt.h` 头文件不仅可确保在 `unknwn.h` 之前包括 `winrt/base.h`，而且可以让 C++/WinRT 和 WIL 了解彼此的异常和错误代码。
 
 ## <a name="a-simple-example-of-a-com-component"></a>COM 组件的简单示例
 
-下面是使用 C++/WinRT 编写的 COM 组件的简单示例。 这是一个迷你应用程序的完整列表，因此如果将代码粘贴到新 **Windows 控制台应用程序 (C++/WinRT)** 项目的 `pch.h` 和 `main.cpp` 中，则可对其进行测试。
+下面是使用 C++/WinRT 编写的 COM 组件的简单示例。 这是一个微型应用程序的完整代码清单，因此如果将其粘贴到新 `pch.h`Windows 控制台应用程序 (C++/WinRT)`main.cpp` 项目的 **和** 中，则可对其进行试用。
 
 ```cppwinrt
 // pch.h
@@ -573,7 +573,7 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 
 另请参阅 [C++/WinRT 中的弱引用](weak-references.md#weak-references-in-cwinrt)。
 
-如果类型实现 [IInspectable  ](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)（或任何派生自 IInspectable  的接口），则 C++/WinRT（具体而言，[winrt::implements  ](/uwp/cpp-ref-for-winrt/implements) 基结构模板）会实现 [IWeakReferenceSource  ](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)。
+如果类型实现 [IInspectable  ](/uwp/cpp-ref-for-winrt/implements)（或任何派生自 IInspectable[ **的接口），则 C++/WinRT（具体而言，** winrt::implements](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource)[**基结构模板）会实现**IWeakReferenceSource](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)  。
 
 这是因为 IWeakReferenceSource  和 [IWeakReference  ](/windows/desktop/api/weakreference/nn-weakreference-iweakreference) 旨在用于 Windows 运行时类型。 因此，只需通过向实现添加 winrt::Windows::Foundation::IInspectable  （或派生自 IInspectable  的接口），即可为组件类启用弱引用支持。
 

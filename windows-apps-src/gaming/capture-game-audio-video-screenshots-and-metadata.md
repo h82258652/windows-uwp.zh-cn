@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, 游戏, 捕获, 音频, 视频, 元数据
 ms.localizationpriority: medium
-ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: HT
+ms.openlocfilehash: dfbc6d996555780a1c2d870e00e06c5cdadfb546
+ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601932"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74153684"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>捕获游戏音频、视频、屏幕截图和元数据
 本文介绍如何捕获游戏视频、音频和屏幕截图，以及如何提交元数据。系统将该元数据嵌入到捕获和广播的媒体中，使你的应用和其他人可以创建被同步到游戏事件的动态体验。 
 
-有两种不同方法可以在 UWP 应用中捕获游戏。 用户可以使用内置的系统 UI 启动捕获。 使用此方法捕获的媒体被引入到 Microsoft 游戏生态系统中，可以通过 Xbox 应用等第一方体验进行查看和共享，并且不直接提供给你的应用或用户。 本文的第一部分将向你演示如何启用和禁用由系统实现的应用捕获以及当应用捕获开始或停止时如何接收通知。
+有两种不同方法可以在 UWP 应用中捕获游戏。 用户可以使用内置的系统 UI 启动捕获。 使用此技术捕获的媒体可引入到 Microsoft 游戏生态系统中，可以通过 Xbox 应用等第一方体验来查看和共享，并且不能直接用于应用或用户。 本文的第一部分将向你演示如何启用和禁用由系统实现的应用捕获以及当应用捕获开始或停止时如何接收通知。
 
 捕获媒体的另外一个方法是使用 **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 命名空间的 API。 如果在设备上启用了捕获，你的应用可以开始捕获游戏，在经过一段时间后，你可以停止捕获，此时媒体被写入文件。 如果用户已启用历史捕获，你也可以通过指定过去的开始时间以及要录制的持续时间来录制已经发生的游戏。 这两种方法都可以生成一个可供你的应用访问的视频文件，并且根据你选择保存文件的位置，也可供用户访问。 本文的中间部分向你演示这些方案的实现。
 
@@ -27,7 +27,7 @@ ms.locfileid: "57601932"
 
 
 ## <a name="enable-and-disable-system-app-capture"></a>启用和禁用系统应用捕获
-系统应用捕获由用户使用内置系统 UI 启动。 文件由 Windows 游戏生态系统引入，不提供给你的应用或用户，除非通过 Xbox 应用等第一方体验。 你的应用可以禁用和启用由系统启动的应用捕获，这允许你阻止用户捕获某些内容或游戏。 
+系统应用捕获由用户使用内置系统 UI 启动。 这些文件由 Windows 游戏生态系统引入，不适用于你的应用或用户，只需使用 Xbox 应用等第一方体验即可。 你的应用可以禁用和启用由系统启动的应用捕获，这允许你阻止用户捕获某些内容或游戏。 
 
 若要启用或禁用系统应用捕获，只需调用静态方法 **[AppCapture.SetAllowedAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapture.setallowedasync)** 并传递 **false** 禁用捕获或传递 **true** 启用捕获。
 
@@ -49,7 +49,7 @@ ms.locfileid: "57601932"
 1. 在 Visual Studio 的**解决方案资源管理器**中，展开你的 UWP 项目并右键单击**引用**，然后选择**添加引用...** 。 
 2. 展开**通用 Windows** 节点并选择**扩展**。
 3. 在扩展列表中，选中与你的项目的目标版本匹配的**适用于 UWP 的 Windows 桌面扩展**条目旁边的复选框。 对于应用广播功能，版本必须为 1709 或更高版本。
-4. 单击“确定”  。
+4. 单击**确定**。
 
 ## <a name="get-an-instance-of-apprecordingmanager"></a>获取 AppRecordingManager 的一个实例
 **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** 类是用于管理应用录制的中央 API。 通过调用工厂方法 **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** 来获取此类的一个实例。 使用 **Windows.Media.AppRecording** 命名空间中的任何 API 之前，应检查该 API 在当前设备上是否存在。 在操作系统版本早于 Windows 10 版本 1709 的设备上，这些 API 不可用。 也可以不检查具体的操作系统版本，改用 **[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 方法查询 *Windows.Media.AppBroadcasting.AppRecordingContract* 版本 1.0。 如果此协定存在，则录制 API 在该设备上可用。 本文中的示例代码检查 API 一次，然后在执行后续操作前检查 **AppRecordingManager** 是否为空。
@@ -57,7 +57,7 @@ ms.locfileid: "57601932"
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>确定你的应用当前是否可以录制
-有几种原因导致你的应用当前可能无法捕获音频或视频，包括当前设备不满足录制所需的硬件要求，或另一个应用当前正在广播。 在开始录制前，你可以检查你的应用当前是否能够录制。 调用 **AppRecordingManager** 对象的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然后检查返回的 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 对象的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 属性。 如果 **CanRecord** 返回 **false**，这意味着您的应用程序不能当前记录，你可以检查 **[详细信息](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 属性来确定原因。 根据具体原因，你可能要向用户显示状态或显示启用应用录制的说明。
+有几种原因导致你的应用当前可能无法捕获音频或视频，包括当前设备不满足录制所需的硬件要求，或另一个应用当前正在广播。 在开始录制前，你可以检查你的应用当前是否能够录制。 调用 **AppRecordingManager** 对象的 **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** 方法，然后检查返回的 **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** 对象的 **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** 属性。 如果**CanRecord**返回**false**，表示你的应用当前无法录制，则可以查看 **[详细信息](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** 属性来确定原因。 根据具体原因，你可能要向用户显示状态或显示启用应用录制的说明。
 
 
 
@@ -143,7 +143,7 @@ ms.locfileid: "57601932"
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>管理元数据缓存存储限制
-你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将会删除元数据与写入 **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)**  删除元数据与之前的优先级值 **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)**  优先级。
+你使用 **AppCaptureMetadataWriter** 写入的元数据由系统进行缓存，直到该元数据被写入到关联的媒体流。 系统定义每个应用的元数据缓存的大小限制。 一旦达到缓存大小限制，系统将开始清除缓存的元数据。 系统将删除用 **[AppCaptureMetadataPriority](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级值编写的元数据，然后再删除具有 **[AppCaptureMetadataPriority](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 优先级的元数据。
 
 在任何时候，你都可以通过调用 **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** 的方式检查在你的应用的元数据缓存中可用的字节数。 你可以选择设置你自己的应用定义的阈值，之后可以选择减少你写入到缓存的元数据量。 下面的示例演示了此模式的简单实现。
 
@@ -152,7 +152,7 @@ ms.locfileid: "57601932"
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>当系统清除元数据时收到通知
-您可以注册时系统开始您的应用程序的元数据清除由注册的处理程序接收通知 **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件。
+通过注册 **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件的处理程序，你可以注册以便在系统开始清除应用程序的元数据时接收通知。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 
@@ -162,7 +162,7 @@ ms.locfileid: "57601932"
 
 ## <a name="related-topics"></a>相关主题
 
-* [游戏](index.md)
+* [完美](index.md)
  
 
  

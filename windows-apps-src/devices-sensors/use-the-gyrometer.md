@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7ee2cac1ae53ca59b8ec60d917e39a737a049ad
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8a6ad3b98c559dff8781c96a98a6428a4d1f95a4
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369633"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493122"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺测试仪
 
 
-**重要的 Api**
+**重要的 API**
 
 -   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**陀螺测试仪感应**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
+-   [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
 **示例**
 
@@ -31,7 +31,7 @@ ms.locfileid: "66369633"
 
 ## <a name="prerequisites"></a>先决条件
 
-您应了解与 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
+你应熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 和事件。
 
 你使用的设备或仿真器必须支持陀螺测试仪。
 
@@ -39,9 +39,9 @@ ms.locfileid: "66369633"
 
 此部分划分为两个子部分。 第一个子部分将指导你完成从头开始创建简单的陀螺测试仪应用程序所需的步骤。 以下子部分介绍你刚创建的应用。
 
-###  <a name="instructions"></a>说明
+###  <a name="instructions"></a>Instructions
 
--   创建新项目，从“Visual C#”  项目模板中选择“空白应用(通用 Windows)”  。
+-   创建新项目，从“Visual C#”**** 项目模板中选择“空白应用(通用 Windows)”****。
 
 -   打开项目的 MainPage.xaml.cs 文件，使用下列内容替换现有代码。
 
@@ -136,11 +136,11 @@ ms.locfileid: "66369633"
 
 你将需要用你的应用的命名空间替换上面的代码片段中类名称的第一部分。 例如，如果你创建了一个名为**GyrometerCS**的项目，则使用 `x:Class="GyrometerCS.MainPage"` 替换 `x:Class="App1.MainPage"`。 还应当将 `xmlns:local="using:App1"` 替换为 `xmlns:local="using:GyrometerCS"`。
 
--   按 F5 或依次选择“调试”   > “开始调试”  来生成、部署并运行应用。
+-   按 F5 或选择 "**调试**"  >  "**开始调试**" 以生成、部署和运行应用。
 
 应用运行后，你可以通过移动设备或使用仿真器工具更改陀螺测试仪的值。
 
--   通过返回到 Visual Studio 并按 Shift+F5 或依次选择“调试”   > “停止调试”  来停止应用。
+-   通过返回到 Visual Studio 并按 Shift + F5 或选择 "**调试**" "  >  **停止调试**" 来停止应用程序。
 
 ###  <a name="explanation"></a>说明
 
@@ -180,4 +180,4 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
  ## <a name="related-topics"></a>相关主题
 
-* [陀螺测试仪感应示例](https://go.microsoft.com/fwlink/p/?linkid=241379)
+* [陀螺测试仪示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Gyrometer%20sensor%20sample%20(Windows%208))

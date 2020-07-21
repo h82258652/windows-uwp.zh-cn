@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c655fbf5582ae5abbb3f415e6e0778b9c64ca7fd
-ms.sourcegitcommit: 04683376dbdbff987601f546f058748442170068
+ms.openlocfilehash: 35613366078531a9e342df0b4314d049fde844e9
+ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68340829"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80081565"
 ---
 # <a name="semantic-zoom"></a>语义式缩放
 
@@ -39,7 +39,7 @@ ms.locfileid: "68340829"
 
 ## <a name="is-this-the-right-control"></a>这是正确的控件吗？
 
-在你需要显示大到无法在一个或两个页面上全部显示的分组数据集时，请使用 **SemanticZoom** 控件。
+在需要显示大到无法在一个或两个页面上全部显示的分组数据集时，请使用 **SemanticZoom** 控件。
 
 不要将语义上的缩放与光学缩放混淆。 尽管它们的交互和基本行为（基于缩放比例显示更多或更少细节）一致，但是光学缩放是指调整内容区域或对象（如照片）的放大倍数。 有关执行光学缩放的控件的信息，请参阅 [ScrollViewer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) 控件。
 
@@ -48,7 +48,7 @@ ms.locfileid: "68340829"
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/SemanticZoom">打开此应用，了解 SemanticZoom 的实际应用</a>。</p>
     <ul>
@@ -73,7 +73,7 @@ ms.locfileid: "68340829"
 
 ## <a name="create-a-semantic-zoom"></a>创建语义式缩放
 
-**SemanticZoom** 控件没有任何其自己的可视表示形式。 它是一个主机控件，用于管理提供内容视图的另外 2 个控件，通常为 **ListView** 或 **GridView** 控件。  将视图控件设置为 SemanticZoom 的 [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) 和 [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) 属性。
+**SemanticZoom** 控件没有其自己的任何可视表示形式。 它是一个主机控件，用于管理提供内容视图的另外 2 个控件，通常为 **ListView** 或 **GridView** 控件。  将视图控件设置为 SemanticZoom 的 [ZoomedInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedinview) 和 [ZoomedOutView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.semanticzoom.zoomedoutview) 属性。
 
 语义式缩放所需的 3 个要素为：
 - 分组数据源。 （组在放大视图中通过 GroupStyle 定义来定义。）
@@ -98,7 +98,7 @@ ms.locfileid: "68340829"
 </SemanticZoom>
  ```
  
-下面的示例摘自 [XAML UI 基本示例](https://go.microsoft.com/fwlink/p/?LinkId=619992)的 SemanticZoom 页面。 可以下载该示例来查看完整代码，包括数据源。 此语义式缩放使用 GridView 提供放大视图，使用 ListView 提供缩小视图。
+下面的示例摘自 [XAML UI 基本示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)的 SemanticZoom 页面。 可以下载该示例来查看完整代码，包括数据源。 此语义式缩放使用 GridView 提供放大视图，使用 ListView 提供缩小视图。
   
 **定义放大视图**
 

@@ -1,18 +1,17 @@
 ---
 title: Microsoft Store 策略和行为准则
 description: 本部分包括适用于 Microsoft Store 应用和内容的 Microsoft Store 策略和应用质量条件，以及开发人员应该遵循的行为准则。
-layout: LandingPage
-ms.date: 10/26/2017
+ms.date: 02/25/2020
 ms.topic: article
 keywords: Microsoft Store 策略协议
 ms.localizationpriority: high
 ms.assetid: 9DA14ADF-B4FB-4EC8-8D63-4B9152476BE0
-ms.openlocfilehash: 624b40fd5980fe66bbdf538845d81082e91c5aec
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: a58ccb4ae9af163b84cc1f5b05a7b4784ac3749c
+ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66826434"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "77607272"
 ---
 # <a name="store-policies-and-code-of-conduct"></a>Microsoft Store 策略和行为准则
 

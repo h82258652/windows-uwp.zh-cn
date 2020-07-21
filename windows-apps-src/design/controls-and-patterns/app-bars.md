@@ -13,18 +13,18 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5559e4204dd50ff989d48ff4508862489f9d3180
-ms.sourcegitcommit: aaa4b898da5869c064097739cf3dc74c29474691
+ms.openlocfilehash: 97507e0d9a954bc102bd4d2bcd825369df4cced7
+ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66361243"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82970042"
 ---
 # <a name="command-bar"></a>命令栏
 
 命令栏使用户能够轻松地访问应用的最常见任务。 命令栏可以提供对应用级别或特定于页面的命令的访问，并且可以与任何导航模式一起使用。
 
-> **重要的 API**：[CommandBar 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar)、[AppBarButton 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
+> **平台 API：** [CommandBar 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.commandbar)、[AppBarButton 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 类](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarseparator)
 
 ![带有图标的命令栏示例](images/controls_appbar_icons.png)
 
@@ -40,7 +40,7 @@ CommandBar 控件是一款通用、灵活、轻型的控件，可显示复杂内
 <table>
 <th align="left">XAML 控件库<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="XAML controls gallery"></img></td>
 <td>
     <p>如果已安装 <strong style="font-weight: semi-bold">XAML 控件库</strong>应用，请单击此处<a href="xamlcontrolsgallery:/item/CommandBar">打开此应用，了解 CommandBar 的实际应用</a>。</p>
     <ul>
@@ -51,9 +51,9 @@ CommandBar 控件是一款通用、灵活、轻型的控件，可显示复杂内
 </tr>
 </table>
 
-Microsoft 照片应用中扩展的命令栏。
+展开的命令栏。
 
-![Microsoft 照片应用中的命令栏](images/control-examples/command-bar-photos.png)
+![展开的命令栏](images/control-examples/command-bar-photos.png)
 
 Windows Phone 的 Outlook 日历中的命令栏。
 
@@ -278,9 +278,9 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 ## <a name="get-the-sample-code"></a>获取示例代码
 
 - [XAML 控件库示例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以交互式格式查看所有 XAML 控件。
-- [XAML 命令示例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [XAML 命令示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCommanding)
 
 ## <a name="related-articles"></a>相关文章
 
-* [UWP 应用的命令设计基础知识](../basics/commanding-basics.md)
+* [Windows 应用的命令设计基础知识](../basics/commanding-basics.md)
 * [CommandBar 类](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)

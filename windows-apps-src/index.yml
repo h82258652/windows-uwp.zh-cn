@@ -1,0 +1,102 @@
+### YamlMime:Landing
+title: 通用 Windows 平台文档
+summary: 借助通用 Windows 平台 (UWP)，可以生成适用于任何 Windows 设备（电脑、Xbox One、HoloLens 等等）的应用，然后将这些应用发布到 Store。
+metadata:
+  title: UWP 文档 - UWP 应用开发人员 | Microsoft Docs
+  description: 借助通用 Windows 平台 (UWP)，可以生成适用于任何 Windows 设备（电脑、Xbox One、HoloLens 等等）的应用，然后将这些应用发布到 Store。
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.author: quradic
+  author: QuinnRadich
+  ms.date: 09/24/2019
+  ms.technology: uwp-conceptual-docs
+  keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp
+  ms.openlocfilehash: 688f34e3e2316133713e71c99763d86255914aee
+  ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/29/2020
+  ms.locfileid: "77544996"
+landingContent:
+- title: 不熟悉 UWP？
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 了解 UWP 开发的基础知识
+      url: get-started/index.md
+    - text: 开始编写 UWP 应用代码
+      url: get-started/create-uwp-apps.md
+  - linkListType: concept
+    links:
+    - text: UWP 与其他 Windows 应用平台
+      url: https://docs.microsoft.com/windows/apps/desktop/choose-your-platform
+  - linkListType: learn
+    links:
+    - text: 在 Microsoft Learn 上浏览 Windows 课程
+      url: https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module
+    - text: UWP 应用是什么？
+      url: get-started/universal-application-platform-guide.md
+- title: 最新功能
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 了解最新的 UWP 功能
+      url: https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest
+    - text: 探索 Windows 10 的特色功能
+      url: https://developer.microsoft.com/windows/windows-10-for-developers
+  - linkListType: concept
+    links:
+    - text: 查看 C# 语言的最新信息
+      url: https://docs.microsoft.com/dotnet/csharp/index
+    - text: 探索 Visual Studio 中的新功能
+      url: https://docs.microsoft.com/visualstudio/ide/
+- title: 开发
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 为 Windows 10 开发 UWP 应用
+      url: develop/index.md
+    - text: 为 Xbox 和 Windows 10 开发 UWP 游戏
+      url: gaming/getting-started.md
+  - linkListType: reference
+    links:
+    - text: 浏览 UWP 的 API 参考文档
+      url: https://docs.microsoft.com/uwp/
+    - text: 探索 Windows 代码示例
+      url: https://developer.microsoft.com/windows/samples
+  - linkListType: download
+    links:
+    - text: 获取 Windows 开发工具
+      url: https://developer.microsoft.com/windows/downloads
+- title: 设计
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 借助 Fluent Design 系统设计应用
+      url: design/index.md
+  - linkListType: reference
+    links:
+    - text: 通过 Windows UI 库添加 UI 控件
+      url: https://docs.microsoft.com/uwp/toolkits/winui/
+- title: 发布
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 将应用发布到 Microsoft Store
+      url: publish/index.md
+    - text: 使用 MSIX 打包并部署应用
+      url: /windows/msix
+  - linkListType: concept
+    links:
+    - text: 获取应用收益
+      url: monetize/index.md
+- title: 社区和支持
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Twitter 上的 @WindowsDocs
+      url: https://twitter.com/WindowsDocs
+    - text: YouTube 上的 OneDevMinute
+      url: https://aka.ms/OneDevMinute
+    - text: Windows 开发人员支持
+      url: https://developer.microsoft.com/windows/support

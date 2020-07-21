@@ -3,15 +3,15 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 启用设备进行开发
 description: 配置 Windows 10 设备进行开发和调试。
 keywords: 入门 开发人员许可证 Visual Studio，开发人员许可证 启用设备
-ms.date: 04/09/2019
+ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 705ff7fab00d13123211feb747ea9a9f95b0cc43
-ms.sourcegitcommit: 789bfe3756c5c47f7324b96f482af636d12c0ed3
+ms.openlocfilehash: 4402200726da93bb820946c9849d8c15bd1c5d8d
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68867615"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448387"
 ---
 # <a name="enable-your-device-for-development"></a>启用设备进行开发
 
@@ -19,71 +19,34 @@ ms.locfileid: "68867615"
 
 ![启用设备进行开发](images/developer-poster.png)
 
-如果你正在使用计算机进行一般的日常活动，如玩游戏、进行 Web 浏览、收发电子邮件或使用 Office 应用，则不需要激活开发人员模式，并且实际上不应该激活该模式  。 此页面上的其余信息对你来说并不重要，你可以放心地重新执行你正在执行的任何操作。 谢谢拜访！
+如果你正在使用计算机进行一般的日常活动，如玩游戏、进行 Web 浏览、收发电子邮件或使用 Office 应用，则不需要激活开发人员模式，并且实际上不应该激活该模式。 此页面上的其余信息对你来说并不重要，你可以放心地重新执行你正在执行的任何操作。 谢谢拜访！
 
-但是，如果你是首次在计算机上使用 Visual Studio 编写软件，则需要在开发电脑和用于测试代码的所有设备上启用开发人员模式  。 如果未启用开发人员模式，则打开 UWP 项目将会打开“面向开发人员”设置页，或导致在 Visual Studio 中出现以下对话框  ：
+但是，如果你是首次在计算机上使用 Visual Studio 编写软件，则需要在开发电脑和用于测试代码的所有设备上启用开发人员模式。 如果未启用开发人员模式，则打开 UWP 项目将会打开“面向开发人员”设置页，或导致在 Visual Studio 中出现以下对话框：
 
 ![启用在 Visual Studio 中显示的开发人员模式对话框](images/latestenabledialog.png)
 
-当看到此对话框时，请单击“开发人员设置”打开“面向开发人员”设置页   。
+当看到此对话框时，请单击“开发人员设置”打开“面向开发人员”设置页 。
 
 > [!NOTE]
-> 可以随时转到“面向开发人员”页启用或禁用开发人员模式：只需在任务栏中的 Cortana 搜索框中输入“面向开发人员”  。
+> 可以随时转到“面向开发人员”页启用或禁用开发人员模式：只需在任务栏中的 Cortana 搜索框中输入“面向开发人员”。
 
 ## <a name="accessing-settings-for-developers"></a>访问面向开发人员的设置
 
 若要启用开发人员模式或使用其他设置：
 
-1.  从“面向开发人员”设置对话框中，选择需要的访问级别  。
-2.  阅读所选设置的免责声明，然后单击“是”以接受更改  。
+1.  从“面向开发人员”设置对话框中，选择需要的访问级别。
+2.  阅读所选设置的免责声明，然后单击“是”以接受更改。
 
 > [!NOTE]
 > 启用开发人员模式需要管理员访问权限。 如果设备为组织所有，此选项可能已禁用。
-
-下面是桌面设备系列的设置页。
-
-![转到“设置”、选择“更新和安全”，然后选择“面向开发人员”来查看你的选项](images/devmode-pc-options.png)
-
-## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>应选择哪些设置：旁加载应用还是开发人员模式？
-
-> [!NOTE]
-> 从 Windows 预览体验成员版本 18956 开始，旁加载选项已经删除，而“开发人员模式”现在是一个切换。 有关旁加载的详细信息，请参阅下一部分。 
-
- 你可以启用设备以进行开发，或仅进行旁加载。
-
--   “Microsoft Store 应用”为默认设置  。 如果不是在开发应用或者未使用公司发布的特殊内部应用，则启用此设置。
--   “旁加载”是指安装未经 Microsoft Store 认证的应用，然后对其进行运行或测试的过程  。 例如，仅限公司内部使用的应用。
--   借助*开发人员模式*，你不仅可以旁加载应用，还可以在调试模式下从 Visual Studio 运行应用。
-
-默认情况下，只能从 Microsoft Store 安装通用 Windows 平台 (UWP) 应用。 将这些设置更改为使用开发人员功能时可能需更改设备的安全级别。 不应从未经验证的源安装应用。
-
-### <a name="sideload-apps"></a>旁加载应用
-
-> [!NOTE]
-> 从 Windows 预览体验成员版本 18956 开始，默认启用旁加载。 现在可以在不进行特殊配置的情况下将签名的 MSIX 包部署到设备上。 
-
-旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示  。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章[在 Windows 10 中旁加载应用](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 中的应用部署入门](https://docs.microsoft.com/intune/deploy-use/add-apps)。
-
-设备系列特定信息
-
--   对于桌面设备系列：对于桌面设备系列：你可以通过运行使用程序包（“Add-AppDevPackage.ps1”）创建的 Windows PowerShell 脚本，来安装应用包 (.appx) 和运行应用所需的任何证书。 有关详细信息，请参阅[打包 UWP 应用](/windows/msix/package/packaging-uwp-apps)。
-
--   对于移动设备系列：对于移动设备系列：如果已安装了必需的证书，则可以点击文件以安装任何通过电子邮件收到的或 SD 卡上的 .appx。
-
-
-**旁加载应用**是比开发人员模式更安全的选项，因为你无法在缺少可信任证书的设备上安装应用。
-
-> [!NOTE]
-> 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Microsoft Store 认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅此[隐私声明](https://go.microsoft.com/fwlink/?LinkId=521839)的“ Windows &gt; Microsoft Store”部分。
-
 
 ### <a name="developer-mode"></a>开发人员模式
 
 开发人员模式将替换 Windows 8.1 对于开发人员许可证的要求。  除了旁加载外，开发人员模式设置还支持调试和其他部署选项。 这包括启动 SSH 服务允许部署该设备。 为了停止运行此服务，必须禁用开发人员模式。
 
 在桌面上启用开发人员模式时，会安装功能包，其中包括：
-- Windows 设备门户。 仅当“启用设备门户”选项打开时，才会启用设备门户，并为它配置防火墙规则  。
-- 安装允许远程安装应用的 SSH 服务，并为其配置防火墙规则。 启用“设备发现”会打开 SSH 服务器  。
+- Windows 设备门户。 仅当“启用设备门户”选项打开时，才会启用设备门户，并为它配置防火墙规则。
+- 安装允许远程安装应用的 SSH 服务，并为其配置防火墙规则。 启用“设备发现”会打开 SSH 服务器。
 
 
 ## <a name="additional-developer-mode-features"></a>其他开发人员模式功能
@@ -100,12 +63,32 @@ ms.locfileid: "68867615"
 
 有关特定于设备的设置说明，请参阅：
 - [适用于台式机的设备门户](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [适用于 HoloLens 的设备门户](https://developer.microsoft.com/mixed-reality)
+- [适用于 HoloLens 的设备门户](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
 - [适用于 IoT 的设备门户](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [适用于移动设备的设备门户](../debug-test-perf/device-portal-mobile.md)
 - [适用于 Xbox 的设备门户](../xbox-apps/device-portal-xbox.md)
 
 如果在启用开发人员模式或设备门户时遇到问题，请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛以查找这些问题的解决方法，或者访问[无法安装开发人员模式程序包](#failure-to-install-developer-mode-package)以获取更多详细信息，并了解可以使用哪些 WSUS KB 来解除阻止开发人员模式程序包。
+
+### <a name="sideload-apps"></a>旁加载应用
+
+> [!NOTE]
+> 从最新版 Windows 10 更新开始，默认启用旁加载。 现在可以在不进行特殊配置的情况下将签名的 MSIX 包部署到设备上。 如果你使用的是以前版本的 Windows 10，则默认设置将仅允许你从 Microsoft Store 运行应用，并且必须启用旁加载才能安装非 Microsoft 源中的应用。
+
+旁加载应用设置通常由需要在未通过 Microsoft Store 认证的托管设备上安装自定义应用的公司或学校使用。 在此情况下，组织通常会强制执行禁用“UWP 应用”设置的策略，如之前的设置页图像中所示。 组织还会提供旁加载应用所需的证书和安装位置。 有关详细信息，请参阅 TechNet 文章：[Windows 10 中的旁加载](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和 [Microsoft Intune 基础知识](https://docs.microsoft.com/mem/intune/fundamentals/)。
+
+设备系列特定信息
+
+-   对于桌面设备系列：对于桌面设备系列：你可以通过运行使用程序包（“Add-AppDevPackage.ps1”）创建的 Windows PowerShell 脚本，来安装应用包 (.appx) 和运行应用所需的任何证书。 有关详细信息，请参阅[打包 UWP 应用](/windows/msix/package/packaging-uwp-apps)。
+
+-   对于移动设备系列：对于移动设备系列：如果已安装了必需的证书，则可以点击文件以安装任何通过电子邮件收到的或 SD 卡上的 .appx。
+
+
+**旁加载应用**是比开发人员模式更安全的选项，因为你无法在缺少可信任证书的设备上安装应用。
+
+> [!NOTE]
+> 如果旁加载应用，你仍然应该仅从受信任的源安装应用。 安装未经 Microsoft Store 认证的旁加载应用时，即表明你同意已获取旁加载应用所需的所有权限，并且你对任何由安装和运行应用引发的损害负全责。 请参阅此[隐私声明](https://privacy.microsoft.com/privacystatement)的“ Windows &gt; Microsoft Store”部分。
+
 
 ### <a name="ssh"></a>SSH
 
@@ -131,7 +114,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>适用于 Windows 资源管理器、远程桌面和 PowerShell 的优化（仅限桌面设备）
 
- 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击“应用”或单击“显示设置”链接打开该选项的设置页   。
+ 在桌面设备系列上，**面向开发人员**设置页提供可用于针对开发任务对电脑进行优化的设置的快捷方式。 对于每个设置，可以选中相应复选框，然后单击“应用”或单击“显示设置”链接打开该选项的设置页 。
 
 
 ## <a name="notes"></a>注释
@@ -148,7 +131,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 请参阅[已知问题](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)论坛，查找这些问题的解决方法以及其他内容。
 
 > [!NOTE]
-> 如果在开发人员模式下无法正常安装，我们建议提出反馈请求。 在“反馈中心”应用中选择“添加新的反馈”，然后选择“开发人员平台”类别和“开发人员模式”子类别     。 提交反馈有助于 Microsoft 解决你所遇到的问题。
+> 如果在开发人员模式下无法正常安装，我们建议提出反馈请求。 在“反馈中心”应用中选择“添加新的反馈”，然后选择“开发人员平台”类别和“开发人员模式”子类别   。 提交反馈有助于 Microsoft 解决你所遇到的问题。
 
 ### <a name="failed-to-locate-the-package"></a>无法找到该程序包
 
@@ -193,7 +176,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 
     -   **允许安装所有受信任的应用程序**
 
-    - 或 -
+    或者
 
     若要启用开发人员模式，请编辑策略以启用以下两项：
 
@@ -207,26 +190,30 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 1.  运行 **regedit**。
 2.  若要启用旁加载，请将此 DWORD 的值设置为 1：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowAllTrustedApps`
 
-    - 或 -
+    或者
 
     若要启用开发人员模式，请将此 DWORD 的值设置为 1：
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowDevelopmentWithoutDevLicense`
 
 **使用 PowerShell 启用设备**
 
 1.  使用管理员权限运行 PowerShell。
 2.  若要启用旁加载，请运行此命令：
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+    ```
 
-    - 或 -
+    或者
 
     若要启用开发人员模式，请运行此命令：
 
-    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+    ```
 
 ## <a name="upgrade-your-device-from-windows-81-to-windows-10"></a>将设备从 Windows 8.1 升级到 Windows 10
 
@@ -235,7 +222,7 @@ SSH 登录通过“DevToolsUser”帐户完成，其接受使用密码进行身�
 **注销开发人员许可证**
 
 1.  使用管理员权限运行 PowerShell。
-2.  运行此命令：**unregister-windowsdeveloperlicense**。
+2.  运行此命令：`unregister-windowsdeveloperlicense`。
 
 在这之后你需要启用设备用于开发（如本题中所述），以便可以继续在此设备上进行开发。 如果你不执行此操作，则可能在调试应用或为其创建程序包时遇到错误。 以下是此错误的示例：
 

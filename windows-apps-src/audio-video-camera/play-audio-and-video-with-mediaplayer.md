@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d2d95711196a9bf2ab113527e5fc8f44459dc3d
-ms.sourcegitcommit: d8ce1a25ac0373acafb394837eb5c0737f6efec8
+ms.openlocfilehash: f265f4051f8b300739a61f089a1bcdc3812f11cf
+ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486434"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448357"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>使用 MediaPlayer 播放音频和视频
 
-本文介绍了如何在通用 Windows 应用中使用 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 类播放媒体。 Windows 10 版本 1607 对媒体播放 API 进行了显著改进，包括简化了后台音频的单进程设计、自动与系统媒体传输控件 (SMTC) 集成、能够同步多个媒体播放器、支持 Windows.UI.Composition 表面，并且提供用于创建和计划内容的媒体中断的简单界面。 若要充分利用这些改进功能，推荐用于播放媒体的最佳做法是将 **MediaPlayer** 类（而非 **MediaElement**）用于媒体播放。 引入了轻型 XAML 控件 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)，该控件允许你在 XAML 页面中呈现媒体内容。 **MediaElement** 提供的许多播放控件和状态 API 现在都可通过新 [**MediaPlaybackSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackSession) 对象获取。 **MediaElement** 将继续运行以支持向后兼容，但不会向此类添加其他功能。
+本文介绍了如何在通用 Windows 应用中使用 [**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 类播放媒体。 使用 Windows 10，版本1607，对媒体播放 Api 进行了重大改进，包括适用于后台音频的简化单进程设计、与系统媒体传输控件（SMTC）的自动集成、同步多个媒体播放器的功能、将视频帧呈现给 Windows 用户界面的功能，以及用于在内容中创建和安排媒体中断的简单界面。 若要充分利用这些改进功能，推荐用于播放媒体的最佳做法是将 **MediaPlayer** 类（而非 **MediaElement**）用于媒体播放。 引入了轻型 XAML 控件 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)，该控件允许你在 XAML 页面中呈现媒体内容。 **MediaElement** 提供的许多播放控件和状态 API 现在都可通过新 [**MediaPlaybackSession**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackSession) 对象获取。 **MediaElement** 将继续运行以支持向后兼容，但不会向此类添加其他功能。
 
 本文将向你介绍典型的媒体播放应用所使用的 **MediaPlayer** 功能。 请注意，**MediaPlayer** 将 [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) 类用作所有媒体项目的容器。 此类允许你加载并播放来自许多不同源的媒体，这些来源包括本地文件、内存流和网络源等，但使用的都是同一界面。 此外，还有更高级的类能够与 **MediaSource** 一同使用，例如 [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) 和 [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList)，这些类提供更加高级的功能，例如播放列表，以及通过音频、视频和元数据多轨道管理媒体源的功能。 有关 **MediaSource** 和相关 API 的详细信息，请参阅[媒体项、播放列表和曲目](media-playback-with-mediasource.md)。
 
 > [!NOTE] 
-> Windows 10 N 和 Windows 10 KN 版本不包括使用 **MediaPlayer** 进行播放所需的媒体功能。 可以手动安装这些功能。 有关详细信息，请参阅 [Windows 10 N 和 Windows 10 KN 版本的媒体功能包](https://support.microsoft.com/en-us/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions)。
+> Windows 10 N 和 Windows 10 KN 版本不包括使用 **MediaPlayer** 进行播放所需的媒体功能。 可以手动安装这些功能。 有关详细信息，请参阅 [Windows 10 N 和 Windows 10 KN 版本的媒体功能包](https://support.microsoft.com/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions)。
 
 ## <a name="play-a-media-file-with-mediaplayer"></a>使用 MediaPlayer 播放媒体文件  
 通过 **MediaPlayer** 进行基本媒体播放非常易于实现。 首先，创建 **MediaPlayer** 类的新实例。 应用可以同时使用多个 **MediaPlayer** 实例。 接下来，将播放器的 [**Source**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.source) 属性设为实现 [**IMediaPlaybackSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.IMediaPlaybackSource) 的对象，例如 [**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource)、[**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem) 或 [**MediaPlaybackList**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackList)。 在本例中，**MediaSource** 创建于应用本地存储中的文件，**MediaPlaybackItem** 创建于源，随后分配到播放器的 **Source** 属性。
@@ -82,7 +82,7 @@ ms.locfileid: "67486434"
 [!code-cs[SetRotation](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetRotation)]
 
 ### <a name="detect-expected-and-unexpected-buffering"></a>检测预期和非预期缓冲
-上一节中所述的 **MediaPlaybackSession** 对象提供了两个事件（ **[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingStarted)** 和 **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingEnded)** ）用于检测当前播放的媒体文件何时开始和结束缓冲。 这允许更新 UI 以向用户显示正在发生缓冲。 当媒体文件首次打开或用户切换到播放列表中的新项时，需要进行初始缓冲。 当网络速度降低或提供内容的内容管理系统遇到技术问题时，可能会发生非预期缓冲。 从 RS3 开始，可以使用 **BufferingStarted** 事件来确定缓冲事件是预期的还是非预期的并会中断播放。 此信息可以用作应用或媒体传送服务的遥测数据。 
+上一节中所述的 **MediaPlaybackSession** 对象提供了两个事件（**[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingStarted)** 和 **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.BufferingEnded)**）用于检测当前播放的媒体文件何时开始和结束缓冲。 这允许更新 UI 以向用户显示正在发生缓冲。 当媒体文件首次打开或用户切换到播放列表中的新项时，需要进行初始缓冲。 当网络速度降低或提供内容的内容管理系统遇到技术问题时，可能会发生非预期缓冲。 从 RS3 开始，可以使用 **BufferingStarted** 事件来确定缓冲事件是预期的还是非预期的并会中断播放。 此信息可以用作应用或媒体传送服务的遥测数据。 
 
 为 **BufferingStarted** 和 **BufferingEnded** 事件注册处理程序以接收缓冲状态通知。
 
@@ -96,7 +96,7 @@ ms.locfileid: "67486434"
 ### <a name="pinch-and-zoom-video"></a>使用收缩手势缩放视频
 **MediaPlayer** 支持在视频内容中指定应该呈现的源矩形，这可有效地支持视频放大。 所指定的矩形与规范化矩形 (0,0,1,1) 成比例，其中 0,0 是帧的左上角，1,1 指定帧的全宽和全高。 因此，如果要设置缩放矩形以呈现视频的右上角象限，需指定矩形 (.5,0,.5,.5)。  请务必检查这些值，确保源矩形位于 (0,0,1,1) 规范化矩形内。 尝试设置超出此范围的值将引发异常。
 
-若要使用多点触控手势实现收缩以缩放，必须先指定要支持的手势。 在本例中，请求了缩放和平移手势。 发生一个订阅手势即会引发 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。 [  **DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped) 事件用于将缩放重置为完整的帧。 
+若要使用多点触控手势实现收缩以缩放，必须先指定要支持的手势。 在本例中，请求了缩放和平移手势。 发生一个订阅手势即会引发 [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件。 [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped) 事件用于将缩放重置为完整的帧。 
 
 [!code-cs[RegisterPinchZoomEvents](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetRegisterPinchZoomEvents)]
 
@@ -104,7 +104,7 @@ ms.locfileid: "67486434"
 
 [!code-cs[DeclareSourceRect](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDeclareSourceRect)]
 
-**ManipulationDelta** 处理程序调整缩放矩形的缩放或平移。 如果增量缩放值不为 1，则意味着用户执行了收缩手势。 如果值大于 1，源矩形应变小以放大内容。 如果值小于 1，源矩形应变大以缩小内容。在设置新缩放值前，请检查生成的矩形，确保它完全处于 (0,0,1,1) 限定范围内。
+**ManipulationDelta** 处理程序调整缩放矩形的缩放或平移。 如果增量缩放值不为 1，则意味着用户执行了收缩手势。 如果值大于 1，源矩形应变小以放大内容。 如果值小于 1，则应使源矩形变大以缩小。在设置新的缩放值之前，将检查生成的矩形以确保其完全位于 (0,0,1,1) 限制内。
 
 如果缩放值为 1，则处理平移手势。 矩形仅根据手势的像素数除以控件的宽度和高度所得结果平移。 同样，检查生成的矩形，确保它位于 (0,0,1,1) 边界内。
 
@@ -116,11 +116,13 @@ ms.locfileid: "67486434"
 
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
 
+**注意**本部分介绍触控输入。 触摸板发送指针事件，并且不会发送操作事件。
+
 ### <a name="handling-policy-based-playback-degradation"></a>处理基于策略的播放降级
 
 在某些情况下，系统可能会根据策略而不是性能问题对媒体项的播放进行降级，例如降低分辨率（压缩）。 例如，如果使用未签名的视频驱动程序播放视频，则系统可能会对视频进行降级。 可以调用 [**MediaPlaybackSession.GetOutputDegradationPolicyState**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession.getoutputdegradationpolicystate#Windows_Media_Playback_MediaPlaybackSession_GetOutputDegradationPolicyState) 来确定是否以及为什么会发生这种基于策略的降级，并提醒用户或记录原因用于遥测。
 
-下面的示例显示了 **MediaPlayer.MediaOpened** 事件的处理程序的实现，该事件是在播放机打开新媒体项时引发的。 在传递给处理程序的 **MediaPlayer** 上调用 **GetOutputDegradationPolicyState**。 [  **VideoConstrictionReason**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionoutputdegradationpolicystate.videoconstrictionreason#Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_VideoConstrictionReason) 的值指示视频被压缩的策略原因。 如果值不是 **None**，则此示例记录降级原因用于遥测。 此示例还显示将当前播放的 **AdaptiveMediaSource** 的比特率设置为最低带宽以节省数据使用量，因为视频被压缩，并且不会以高分辨率显示。 有关使用 **AdaptiveMediaSource** 的详细信息，请参阅[自适应流式处理](adaptive-streaming.md)。
+下面的示例显示了 **MediaPlayer.MediaOpened** 事件的处理程序的实现，该事件是在播放机打开新媒体项时引发的。 在传递给处理程序的 **MediaPlayer** 上调用 **GetOutputDegradationPolicyState**。 [**VideoConstrictionReason**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionoutputdegradationpolicystate.videoconstrictionreason#Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_VideoConstrictionReason) 的值指示视频被压缩的策略原因。 如果值不是 **None**，则此示例记录降级原因用于遥测。 此示例还显示将当前播放的 **AdaptiveMediaSource** 的比特率设置为最低带宽以节省数据使用量，因为视频被压缩，并且不会以高分辨率显示。 有关使用 **AdaptiveMediaSource** 的详细信息，请参阅[自适应流式处理](adaptive-streaming.md)。
 
 [!code-cs[PolicyDegradation](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetPolicyDegradation)]
         
@@ -143,7 +145,7 @@ ms.locfileid: "67486434"
 
 [!code-cs[SetTimelineController](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSetTimelineController)]
 
-**警告**[**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 在 **MediaPlayer** 和系统媒体传输控件 (SMTC) 之间提供自动集成，但是这种自动集成无法和使用 **MediaTimelineController** 控制的媒体播放器一起使用。 因此，必须先禁用媒体播放器的命令管理器才能设置播放器的时间线控制器。 如果不这样做将导致产生的异常并显示以下消息："附加媒体时间线控制器会阻止该对象的当前状态。" 有关媒体播放器与 SMTC 集成的详细信息，请参阅[与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)。 使用 **MediaTimelineController** 时仍然可以手动控制 SMTC。 有关详细信息，请参阅[手动控制系统媒体传输控件](system-media-transport-controls.md)。
+**警告**[**MediaPlaybackCommandManager**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) 在 **MediaPlayer** 和系统媒体传输控件 (SMTC) 之间提供自动集成，但是这种自动集成无法和使用 **MediaTimelineController** 控制的媒体播放器一起使用。 因此，必须先禁用媒体播放器的命令管理器才能设置播放器的时间线控制器。 否则将引发异常，并且显示以下消息：“由于对象的当前状态，附加媒体时间线控制器的操作被阻止”。 有关媒体播放器与 SMTC 集成的详细信息，请参阅[与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)。 使用 **MediaTimelineController** 时仍然可以手动控制 SMTC。 有关详细信息，请参阅[手动控制系统媒体传输控件](system-media-transport-controls.md)。
 
 将 **MediaTimelineController** 附加到一个或多个媒体播放器后，可以通过使用控制器公开的方法控制播放状态。 以下示例调用 [**Start**](https://docs.microsoft.com/uwp/api/windows.media.mediatimelinecontroller.start) 使所有关联的媒体播放器从媒体开头处开始播放。
 
@@ -189,7 +191,7 @@ ms.locfileid: "67486434"
 ## <a name="play-spherical-video-with-mediaplayer"></a>使用 MediaPlayer 播放球面视频
 从 Windows 10 版本 1703 开始，**MediaPlayer** 支持用于球面视频播放的 equirectangular 投影。 由于只要视频编码受支持，**MediaPlayer** 便会呈现视频，因此球面视频内容与常规的平面视频没什么不同。 对于包含的元数据标记指定视频使用 equirectangular 投影的球面视频，**MediaPlayer** 可以使用指定视野和视图方向呈现视频。 这样可实现使用头盔显示屏的虚拟现实视频播放或是仅仅允许用户使用鼠标或键盘输入在球面视频中四处平移这类方案。
 
-若要播放球面视频，请使用本文前面介绍的用于播放视频内容的步骤。 一个步骤是注册的处理程序[ **MediaPlayer.MediaOpened** ](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened)事件。 此事件使你可以启用并控制球面视频播放参数。
+若要播放球面视频，请使用本文前面介绍的用于播放视频内容的步骤。 另外一步是注册[**MediaPlayer**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened)事件的处理程序。 此事件使你可以启用并控制球面视频播放参数。
 
 [!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
 
@@ -228,17 +230,17 @@ ms.locfileid: "67486434"
 
 有关 Win2D 的详细信息，请参阅 [Win2D GitHub 存储库](https://github.com/Microsoft/Win2D)。 若要尝试上面显示的示例代码，需要按照以下说明将 Win2D NuGet 程序包添加到项目。
 
-**若要将 Win2D NuGet 包添加到你的效果的项目**
+**将 Win2D NuGet 程序包添加到你的效果项目**
 
-1.  在**解决方案资源管理器**中，右键单击项目，然后选择**管理 NuGet 程序包**。
-2.  在窗口顶部，选择**浏览**选项卡。
+1.  在“解决方案资源管理器”中，右键单击项目并选择“管理 NuGet 包”。 
+2.  在窗口顶部，选择 "**浏览**" 选项卡。
 3.  在搜索框中，输入 **Win2D**。
-4.  选择 **Win2D.uwp**，然后选择右侧窗格中的**安装**。
-5.  **查看更改**对话框将向你显示要安装的程序包。 单击 **“确定”** 。
+4.  选择 " **Win2D**"，然后在右窗格中选择 "**安装**"。
+5.  "**查看更改**" 对话框显示要安装的程序包。 单击" **确定**"。
 6.  接受程序包许可证。
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>检测系统的音频级别更改并做出响应
-从 Windows 10 版本 1803 开始，应用可检测到系统何时降低或静音当前播放的 **MediaPlayer** 的音频级别。 例如，当警报响起时，系统可能降低（或者“闪避”）音频播放级别。 如果应用没有在应用清单中声明 *backgroundMediaPlayback* 功能，系统将在应用进入后台时将其静音。 [  **AudioStateMonitor**](https://docs.microsoft.comuwp/api/windows.media.audio.audiostatemonitor) 类可用于注册以接收系统修改音频流的音量时出现的事件。 访问 **MediaPlayer** 的 **AudioStateMonitor** 属性并为 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged)事件注册处理程序，以在系统更改该 **MediaPlayer** 的音频级别时收到通知。
+从 Windows 10 版本 1803 开始，应用可检测到系统何时降低或静音当前播放的 **MediaPlayer** 的音频级别。 例如，当警报响起时，系统可能降低（或者“闪避”）音频播放级别。 如果应用没有在应用清单中声明 *backgroundMediaPlayback* 功能，系统将在应用进入后台时将其静音。 [**AudioStateMonitor**](https://docs.microsoft.comuwp/api/windows.media.audio.audiostatemonitor) 类可用于注册以接收系统修改音频流的音量时出现的事件。 访问 **MediaPlayer** 的 **AudioStateMonitor** 属性并为 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged)事件注册处理程序，以在系统更改该 **MediaPlayer** 的音频级别时收到通知。
 
 [!code-cs[RegisterAudioStateMonitor](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetRegisterAudioStateMonitor)]
 
@@ -258,10 +260,10 @@ ms.locfileid: "67486434"
 
 ## <a name="related-topics"></a>相关主题
 * [媒体播放](media-playback.md)
-* [媒体项，播放列表，其中跟踪](media-playback-with-mediasource.md)
-* [将与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)
-* [创建、 安排和管理媒体分页符](create-schedule-and-manage-media-breaks.md)
-* [在背景中播放媒体](background-audio.md)
+* [媒体项、播放列表和曲目](media-playback-with-mediasource.md)
+* [与系统媒体传输控件集成](integrate-with-systemmediatransportcontrols.md)
+* [创建、计划和管理媒体中断](create-schedule-and-manage-media-breaks.md)
+* [在后台播放媒体](background-audio.md)
 
 
 
