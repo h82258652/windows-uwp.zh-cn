@@ -5,12 +5,12 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: a98056190d035910a8ed83d2f37799a98b685ce6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 388e8ebb062dbbb33ffb269f2adcced34a7e577c
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "70304520"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493642"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 项目控件；绑定到 C++/WinRT 集合
 
@@ -22,6 +22,7 @@ ms.locfileid: "70304520"
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-collection"></a>对于集合来说，可观测意味着什么  ？
+
 如果表示集合的运行时类选择每当在其中添加或删除元素时引发 [IObservableVector**T&lt;::VectorChanged&gt; 事件，则该运行时类是可观测集合**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)。 XAML 项目控件可检索更新的集合然后将自行更新以显示当前元素，从而绑定到这些事件并处理事件。
 
 > [!NOTE]
@@ -93,6 +94,7 @@ Windows::Foundation::Collections::IObservableVector<Bookstore::BookSku> Bookstor
 ```
 
 ## <a name="bind-a-listbox-to-the-bookskus-property"></a>将 ListBox 绑定到 BookSkus 属性 
+
 打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 在与 Button 相同的 StackPanel 内添加以下标记   。
 
 ```xaml
@@ -121,9 +123,11 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 立即生成并运行该项目。 单击该按钮以执行 Click 事件处理程序  。 我们看到了追加的实现引发了让 UI 知道该集合已发生更改的事件；而且 ListBox 重新查询了集合以更新其自己的“项目”值    。 和以前一样，其中一本书籍的标题发生了更改；而且该标题更改反映在按钮上和列表框中。
 
 ## <a name="important-apis"></a>重要的 API
+
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [winrt::make 函数模板](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>相关主题
+
 * [通过 C++/WinRT 使用 API](consume-apis.md)
 * [使用 C++/WinRT 创作 API](author-apis.md)
