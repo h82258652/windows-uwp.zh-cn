@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e0991a8a06054b6136dfc1fd65c15dbeb66e6fd
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 8f07e7901bf89ed73087833c92b7a3ba29165fec
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684259"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493442"
 ---
 # <a name="make-your-app-localizable"></a>使应用可本地化
 
@@ -50,9 +50,9 @@ ms.locfileid: "75684259"
 
 简而言之，将字符串分解为在所有上下文中均起作用的几个部分。 将出现需要将某一字符串作为整个句子的情况。
 
-请考虑以下字符串： "{0} 无法同步。"
+请考虑以下字符串： " {0} 无法同步。"
 
-各种单词可以替换 {0}，如 "约会"、"任务" 或 "文档"。 虽然此示例适用于英语，但它绝不适用于德语等的相应语句。 请注意以下德语语句，模板字符串中的某些字词（“Der”、“Die”、“Das”）需要与参数化的字词匹配：
+可以替换各种单词 {0} ，如 "约会"、"任务" 或 "文档"。 虽然此示例适用于英语，但它绝不适用于德语等的相应语句。 请注意以下德语语句，模板字符串中的某些字词（“Der”、“Die”、“Das”）需要与参数化的字词匹配：
 
 | 英语                                    | 德语                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -60,7 +60,7 @@ ms.locfileid: "75684259"
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-作为另一个示例，请考虑说 "{0} 分钟提醒我"。 “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
+作为另一个示例，请考虑 "在分钟内提醒我" 一句 {0} 。 “minute(s)”适用于英语，但其他语言可能会使用不同的术语。 例如，波兰语使用“minuta”、“minuty”或“minut”，具体取决于上下文。
 
 若要解决此问题，应本地化整个语句，而不应只本地化单个字词。 这么做看似增加了额外工作量且是个不明智的解决方案，但其实是最佳解决方案，原因如下：
 
@@ -94,7 +94,7 @@ ms.locfileid: "75684259"
 通过将 "生成应用程序包" 特性设置为 "从不"，禁止自动生成 .appxbundle：
 
 1. 在 Visual Studio 中，右键单击项目名称
-2. 选择 "**应用商店** -> **创建应用包 ...** "
+2. 选择 "应用**商店**  ->  **创建应用包 ...** "
 3. 在 "**创建包**" 对话框中，选择 "**我想要使用新应用名称创建要上传到 Microsoft Store 的包**"，然后单击 "**下一步**"。
 4. 在 "**选择应用程序名称**" 对话框中，选择/创建包的应用名称。
 5. 在 "**选择和配置包**" 对话框中，将 "**生成应用捆绑包**" 设置为 "**从不**"。
@@ -115,7 +115,7 @@ ms.locfileid: "75684259"
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 请确保转换器了解每个参数的目的，以便它们可以根据目标语言的格式反转格式字符串中的格式项的顺序（例如，"{1} {0}"）。
+此示例中的格式字符串适用于英语(美国)。 但不适用于德语(德国)，例如，其中的日期和月份以相反顺序显示。 请确保转换器了解每个参数的目的，以便它们能够根据目标语言的格式（例如 ""）反转格式字符串中的格式项的顺序 {1} {0} 。
 
 ## <a name="dont-over-localize"></a>不要过度本地化
 
@@ -134,7 +134,7 @@ ms.locfileid: "75684259"
 
 不妨请考虑以下几个选项。
 
-- **可以通过直接在项目中打开资源文件来进行转换。** 对于需要翻译成两种或三种语言的字符串数量较少的项目，此方法比较适用。 在开发人员使用多种语言并且愿意处理翻译过程的情况下，可以使用这种方法。 这种方法的优势在于快速、无需工具并且误译的风险最小。 但这种方法不可扩展。 特别是，不同语言中的资源很容易不同步，这会导致不好的用户体验和维护困难。
+- **直接在项目中打开资源文件，即可对其进行翻译。** 对于需要翻译成两种或三种语言的字符串数量较少的项目，此方法比较适用。 在开发人员使用多种语言并且愿意处理翻译过程的情况下，可以使用这种方法。 这种方法的优势在于快速、无需工具并且误译的风险最小。 但这种方法不可扩展。 特别是，不同语言中的资源很容易不同步，这会导致不好的用户体验和维护困难。
 - **字符串资源文件采用 XML 格式或 ResJSON 文本格式，因此可以使用任何文本编辑器进行翻译。然后，将转换后的文件复制回项目。** 此方法存在翻译人员意外编辑 XML 标记的风险，但它允许在 Microsoft Visual Studio 项目外进行翻译工作。 对于需要翻译成少数几种语言的项目，此方法可能比较适用。 XLIFF 格式是专门用于本地化的 XML 格式，应该可以很好地受到一些本地化供应商或本地化工具的支持。 你可以使用[多语言应用工具包](https://docs.microsoft.com/previous-versions/windows/apps/jj572370(v=win.10))从其他资源文件中（如 .resw 或 .resjson）生成 XLIFF 文件。
 
 > [!NOTE]
@@ -147,13 +147,13 @@ ms.locfileid: "75684259"
 
 ## <a name="keep-access-keys-and-labels-consistent"></a>使访问键和标签保持一致
 
-将用于辅助功能的访问键与本地化的访问键的显示“同步”比较困难，因为这两个字符串资源被分类为两个单独的部分。 请确保为标签字符串提供注释，如： `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+将用于辅助功能的访问键与本地化的访问键的显示“同步”比较困难，因为这两个字符串资源被分类为两个单独的部分。 确保为标签字符串提供注释，如：`Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
 ## <a name="support-furigana-for-japanese-strings-that-can-be-sorted"></a>支持可进行排序的日语字符串的假名注音
 
 日语汉字字符具有根据字词和使用它们的上下文具有多个发音的属性。 这在尝试排序日语命名对象（例如，应用程序名称、文件、歌曲等）时会引发问题。 以前，日语日文汉字通常采用名为 XJIS 的计算机可理解的顺序进行排序。 但是，由于此排序顺序是非注音的，因此使用并不人性化。
 
-*汉字注音*允许用户或创建者指定所使用字符的注音，因而可解决此问题。 如果使用以下过程向应用名称添加假名注音，则可以确保该名称排序在应用列表的适当位置。 如果应用名称包含日文汉字字符并且没有提供假名注音，则当用户的 UI 语言或排序顺序设置为日语时，Windows 将尽量生成适当的发音。 然而，也可能会依据较常见的读音对包含少见或独特读音的应用名称进行排序。 因此，用于日语应用程序（尤其是名称中包含日文汉字字符的应用程序）的最佳做法是：在日语本地化过程中提供其应用名称的汉字注音版本。
+*拼音*通过允许用户或创建者为其所使用的字符指定拼音来解决此问题。 如果使用以下过程向应用名称添加假名注音，则可以确保该名称排序在应用列表的适当位置。 如果应用名称包含日文汉字字符并且没有提供假名注音，则当用户的 UI 语言或排序顺序设置为日语时，Windows 将尽量生成适当的发音。 然而，也可能会依据较常见的读音对包含少见或独特读音的应用名称进行排序。 因此，用于日语应用程序（尤其是名称中包含日文汉字字符的应用程序）的最佳做法是：在日语本地化过程中提供其应用名称的汉字注音版本。
 
 1. 添加“ms-resource:Appname”作为程序包显示名称和应用程序显示名称。
 2. 在字符串下创建 ja-JP 文件夹并添加两个资源文件，如下所示：
@@ -182,12 +182,12 @@ ms.locfileid: "75684259"
 
 ## <a name="related-topics"></a>相关主题
 
-- [全球化准则](guidelines-and-checklist-for-globalizing-your-app.md)
+- [全球化指南](guidelines-and-checklist-for-globalizing-your-app.md)
 - [对 UI 和应用包清单中的字符串进行本地化](../../app-resources/localize-strings-ui-manifest.md)
 - [定制语言、比例、高对比度和其他限定符的资源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 - [调整布局和字体并支持 RTL](adjust-layout-and-fonts--and-support-rtl.md)
-- [为响应限定符值更改事件而更新图像](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
+- [响应限定符值更改事件更新图像](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
 
 ## <a name="samples"></a>示例
 
-- [应用程序资源和本地化示例](https://code.msdn.microsoft.com/windowsapps/Application-resources-and-cd0c6eaa)
+- [应用程序资源和本地化示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Application%20resources%20and%20localization%20sample%20(Windows%208))

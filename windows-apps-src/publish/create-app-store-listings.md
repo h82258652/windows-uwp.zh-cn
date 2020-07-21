@@ -1,41 +1,41 @@
 ---
-Description: 应用提交过程的 "存储列表" 部分是提供客户在 Microsoft Store 中查看应用程序列表时将看到的文本和图像的位置。
-title: 创建应用应用商店一览
+Description: 应用提交过程的 Microsoft Store 一览部分是你提供文本和图像的地方，当客户在 Microsoft Store 中查看你的应用一览时将看到这些内容。
+title: 创建 Store 一览
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.date: 03/13/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一览, 描述, Microsoft Store 页面, 发行说明, 标题
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e9c7f56dd799b568e12a887355ec19561f207ea
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 6e8ba40129197f77b2bbbd3950a6bcf214bae787
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210373"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493012"
 ---
-# <a name="create-app-store-listings"></a>创建应用应用商店一览
+# <a name="create-app-store-listings"></a>创建 Store 一览
 
 [应用提交过程](app-submissions.md)的 **Microsoft Store 一览**部分是你提供文本和[图像](app-screenshots-and-images.md)的地方，当客户在 Microsoft Store 中查看你的应用一览时将看到这些内容。
 
-虽然“应用商店一览”中的许多字段可选，但我们建议提供多张图像以及尽可能详细的信息，以便你的应用一览能脱颖而出。一个文本描述和至少一张[屏幕截图](app-screenshots-and-images.md#screenshots)是完成“应用商店一览”步骤的最低要求。
+虽然 **Microsoft Store 一览**中的许多字段可选，但我们建议提供多张图像以及尽可能详细的信息，以便你的应用一览能脱颖而出。填写文本描述并提供至少一张[屏幕截图](app-screenshots-and-images.md#screenshots)是完成 **Microsoft Store 一览**步骤的最低要求。
 
 > [!TIP]
 > 如果希望在 .csv 文件中脱机输入列表信息，则可以选择性地[导入和导出商店列表](import-and-export-store-listings.md)，而不是在合作伙伴中心提供信息并直接上传文件。 如果你有多种语言的一览，使用导入和导出选项可能尤其方便，因为这样你可以一次执行多项更新。
 
 如果你以前发布的应用支持 Windows 2.x 和/或 Windows Phone 8mb 或更早版本，则可以[创建特定于平台的商店列表](create-platform-specific-store-listings.md)以向这些客户显示。
 
-## <a name="store-listing-languages"></a>应用商店一览语言
+## <a name="store-listing-languages"></a>Store 一览语言
 
-必须使用至少一种语言完成“应用商店一览”页面。 我们建议使用程序包支持的每一种语言提供应用商店一览，但你可以灵活删除不希望提供应用商店一览的语言。 你还可以使用程序包不支持的其他语言创建应用商店一览。
+必须使用至少一种语言完成** Store 一览**页面。 我们建议使用程序包支持的每一种语言提供应用商店一览，但你可以灵活删除不希望提供应用商店一览的语言。 你还可以使用软件包不支持的其他语言创建应用商店一览。
 
 > [!NOTE]
 > 如果你的提交已包括软件包，我们将在提交概述页上显示软件包支持的[语言](supported-languages.md)（除非你删除了任何一种语言）。
 
-若要添加或删除应用商店一览的语言，请在提交概述页中单击**添加/删除语言**。 如果你已经上传了程序包，则将看到它们的语言已列在“程序包支持的语言”部分中。 若要删除其中一种或多种语言，请单击“删除”。 如果你稍后决定包括之前从此部分中删除的语言，可以单击“添加”。
+若要添加或删除应用商店一览的语言，请在提交概述页中单击**添加/删除语言**。 如果已上传程序包，则将看到它们的语言已列在**程序包支持的语言**部分中。 若要删除其中一种或多种语言，请单击“删除”****。 如果你稍后决定包括之前从此部分中删除的语言，可以单击“添加”****。
 
-在“其他应用商店一览语言”部分中，可以单击“管理其他语言”添加或删除程序包*不*包括的语言。 查看你想要添加的语言的对话框，然后单击“更新”。 你已经选择的语言将显示在“其他应用商店一览语言”部分中。 若要删除其中一种或多种语言，请单击“删除”（或单击“管理其他语言”并取消选中你想要删除的语言的对话框）。
+在“其他应用商店一览语言”**** 部分中，可以单击“管理其他语言”**** 添加或删除程序包*不*包括的语言。 选中要添加的语言的框，然后单击**更新**。 你已经选择的语言将显示在“其他应用商店一览语言”**** 部分中。 若要删除其中一种或多种语言，请单击“删除”****（或单击“管理其他语言”**** 并取消选中你想要删除的语言的对话框）。
 
-在完成选择后，单击“保存”以返回到提交概述页。
+在完成选择后，单击**保存**以返回到提交概述页。
 
 ## <a name="add-and-edit-store-listing-info"></a>添加和编辑商店列表信息
 
@@ -43,7 +43,7 @@ ms.locfileid: "79210373"
 
 可用字段如下所述。
 
-## <a name="product-name"></a>제품 이름
+## <a name="product-name"></a>产品名称
 
 您可以使用此下拉框指定要在商店列表中使用的名称（如果为应用保留了多个名称）。
 
@@ -60,7 +60,7 @@ ms.locfileid: "79210373"
 
 有关使你的描述脱颖而出的一些技巧，请参阅[编写出色的应用描述](write-a-great-app-description.md)。
 
-<span id="release-notes" />
+<a name="release-notes"></a>
 
 ## <a name="whats-new-in-this-version"></a>此版本的最近更新
 
@@ -94,7 +94,7 @@ ms.locfileid: "79210373"
 
 有关详细信息，请参阅[尾端和其他资产](app-screenshots-and-images.md#trailers-and-additional-assets)。
 
-<a id="supplemental-information" />
+<a name="supplemental-information"></a>
 
 ## <a name="supplemental-fields"></a>补充字段
 
@@ -128,14 +128,14 @@ ms.locfileid: "79210373"
 
 ### <a name="additional-system-requirements"></a>其他系统要求
 
-如果需要，你可以描述应用正常工作所需的硬件配置（不在你在[应用属性](enter-app-properties.md#system-requirements)的“系统要求”部分中提供的信息范围内。 如果你的应用需要使用可能不会在每台计算机上都提供的硬件，则此信息尤其重要。 例如，如果你的应用只能与外部 USB 硬件（如 3D 打印机或微控制器）正常配合使用，我们建议你在此输入这些信息。 在此处输入的信息以及你在产品的属性页上指示的要求将显示给在 Windows 10 版本 1607 或更高版本（包括 Xbox）上查看应用的 Microsoft Store 一览的客户。
+如果需要，你可以描述应用正常工作所需的硬件配置（不在你在[应用属性](enter-app-properties.md#system-requirements)的“系统要求”**** 部分中提供的信息范围内。 如果你的应用需要使用可能不会在每台计算机上都提供的硬件，则此信息尤其重要。 例如，如果你的应用只能与外部 USB 硬件（如 3D 打印机或微控制器）正常配合使用，我们建议你在此输入这些信息。 在此处输入的信息以及你在产品的属性页上指示的要求将显示给在 Windows 10 版本 1607 或更高版本（包括 Xbox）上查看应用的 Microsoft Store 一览的客户。
 
-你可以为“最低硬件”和“推荐硬件”输入最多 11 个项。 在应用商店一览中，这些内容将以项目符号列表的形式向客户显示。 保持简洁，每个项目只用几句话（不要超过 200 个字符）描述。
+你可以为**最低硬件**和**推荐硬件**输入最多 11 个项。 在应用商店一览中，这些内容将以项目符号列表的形式向客户显示。 保持简洁，每个项目只用几句话（不要超过 200 个字符）描述。
 
 > [!NOTE]
 > 在 Microsoft Store 一览中，其他系统要求将以项目符号形式显示，因此不要添加自己的项目符号。
 
-<span id="shared-fields" />
+<a name="shared-fields"></a>
 
 ## <a name="additional-information"></a>其他信息
 
@@ -167,7 +167,7 @@ ms.locfileid: "79210373"
 
 此字段的长度限制是 255 个字符。
  
-<span id="privacy-policy" />
+<a name="privacy-policy"></a>
 
 > [!NOTE]
 > **隐私策略**、**网站**和**支持联系人信息**字段现在位于[属性](enter-app-properties.md)页面。

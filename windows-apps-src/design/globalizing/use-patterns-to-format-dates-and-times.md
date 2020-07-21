@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可本地化性, 本地化
 ms.localizationpriority: medium
-ms.openlocfilehash: 183fa684f81f1e3289e9e197020ce7c6cba5ebdf
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: da4d9b2c7380a085efdcb234ad210eafca40b1c3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258131"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493602"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用模板和模式设置日期和时间格式
 
@@ -21,11 +21,11 @@ ms.locfileid: "74258131"
 
 ## <a name="introduction"></a>简介
 
-[  **DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 类为全球的语言和区域提供了各种正确设置日期和时间格式的方法。 你可以为年、月、日等使用标准格式。 或者，可以将格式模板传递到 *DateTimeFormatter* 构造函数中的 **formatTemplate**参数，例如“longdate”或“month day”。
+[**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 类为全球的语言和区域提供了各种正确设置日期和时间格式的方法。 你可以为年、月、日等使用标准格式。 或者，可以将格式模板传递到 **DateTimeFormatter** 构造函数中的 *formatTemplate*参数，例如“longdate”或“month day”。
 
-但当你希望更好地控制要显示的 [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) 对象组件的顺序和格式时，可以将格式模式传递到该构造函数的 *formatTemplate* 参数。 格式模式使用特殊语法，该语法让你可以获得 **DateTime** 对象的个别组件&mdash;例如仅获取月份名称或年份值，以便在所选择的任何自定义格式中显示它们。 此外，模式也可以进行本地化以适应其他语言和区域。
+但当你希望更好地控制要显示的 [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) 对象组件的顺序和格式时，可以将格式模式传递到该构造函数的 *formatTemplate* 参数。 格式模式使用特殊语法，该语法让你可以获得 **** DateTime&mdash; 对象的个别组件&mdash;例如仅获取月份名称或年份值，以便在所选择的任何自定义格式中显示它们。 此外，模式也可以进行本地化以适应其他语言和区域。
 
-**请注意**  这只是格式模式的概述。 有关格式模板和格式模式的更完整讨论，请参阅 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 类的“备注”部分。
+**注意**   这只是格式模式的概述。 有关格式模板和格式模式的更完整讨论，请参阅 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 类的“备注”部分。
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>格式模板和格式模式之间的差异
 
@@ -59,7 +59,7 @@ Ja-JP: "{month.integer}月{day.integer}日"
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-上述格式化程序为 {}括号内的各个组件返回区域性特定的值。 但格式模式中的组件顺序是不变的。 你得到的内容完全符合你的要求，但可能适合或不适合相关区域性。 此格式化程序对于英语（美国）有效，但对于法语（法国）或日语无效。
+上述格式化程序为括号内的各个组件返回区域性特定的值 {} 。 但格式模式中的组件顺序是不变的。 你得到的内容完全符合你的要求，但可能适合或不适合相关区域性。 此格式化程序对于英语（美国）有效，但对于法语（法国）或日语无效。
 
 ``` syntax
 En-US: January 1
@@ -76,14 +76,14 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 
 下面综述格式模板和格式模式之间的区别。
 
-**格式模板，如 "month day"**
+**格式模板，例如“month day”**
 
 -   以任意顺序包含月、日等值的 [DateTime](/uwp/api/windows.foundation.datetime?branch=live) 格式的抽象表示形式。
 -   保证跨 Windows 支持的所有语言-区域值返回有效的标准格式。
 -   保证为给定的语言-区域提供符合区域性的格式化字符串。
 -   并非所有组件组合都有效。 例如，“dayofweek day”无效。
 
-**格式模式，如 "{month} {day}"**
+**格式模式，例如“{month.full} {day.integer}”**
 
 -   字符串具有明显顺序，以该顺序或指定的任何特定格式模式表达完整的月名称，后跟一个空格，然后跟整数日期。
 -   可能与任何语言-区域对的有效标准格式不对应。
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` 是一种资源标识符，引用资源文件中的可本地化资源（. .resw）。 对于默认的英语（美国）语言，此值将设置为值 "{0} |{1}"以及一个注释，指示"{0}"为日期，而"{1}"为时间。 这样，翻译人员可以按需调整格式项。 例如，如果在某个语言或区域中将时间放在日期前面显得更自然，则他们可以更改项的顺序。 或者，他们也可以将“|”替换为其他分隔符。
+`CustomDateTimeFormatString`是资源标识符，引用资源文件中的可本地化资源（. .resw）。 对于英语（美国）的默认语言，此值将设置为值 " {0} | {1} "，同时提供一个注释，指示 " {0} " 为日期，而 " {1} " 为时间。 这样，翻译人员可以按需调整格式项。 例如，如果在某个语言或区域中将时间放在日期前面显得更自然，则他们可以更改项的顺序。 或者，他们也可以将“|”替换为其他分隔符。
 
 实现此示例的另一种方法是查询这两个格式化程序的格式模式，将它们连接起来，然后从结果格式模式构建第三个格式化程序。
 
@@ -135,10 +135,10 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 ## <a name="important-apis"></a>重要的 API
 
-* [Windows.globalization.datetimeformatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [Windows.Globalization.DateTimeFormatting](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
-* [型](/uwp/api/windows.foundation.datetime?branch=live)
+* [DateTime](/uwp/api/windows.foundation.datetime?branch=live)
 
 ## <a name="related-topics"></a>相关主题
 
-* [日期和时间格式设置示例](https://code.msdn.microsoft.com/windowsapps/Date-and-time-formatting-2361f348)
+* [设置日期和时间格式示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208))

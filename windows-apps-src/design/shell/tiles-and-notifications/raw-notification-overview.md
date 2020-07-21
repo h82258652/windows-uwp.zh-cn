@@ -7,17 +7,17 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b04e48163af47b7e753bc3bc050e44a947b122fc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5eb90e47a1d821c489e06a9ce19c913eb6702767
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259700"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493232"
 ---
 # <a name="raw-notification-overview"></a>原始通知概述
 
 
-原始通知是简短的通用推送通知。 它们完全是说明性的，并且不包含 UI 组件。 与其他推送通知一样，Windows 推送通知服务 (WNS) 功能提供从云服务到应用的原始通知。
+原始通知是简短的通用推送通知。 原始通知有严格的指令，不包含 UI 组件。 与其他推送通知一样，Windows 推送通知服务 (WNS) 功能提供从云服务到应用的原始通知。
 
 你可以将原始通知用于各种用途，其中包括触发应用以运行后台任务（如果用户已给予如此操作的应用权限）。 通过使用 WNS 与应用通信，可以避免创建持久的套接字连接、发送 HTTP GET 消息以及其他服务到应用连接的处理开销。
 
@@ -36,7 +36,7 @@ ms.locfileid: "74259700"
 所有原始通知都是推送通知。 因此，发送和接收推送通知所需的设置也适用于原始通知：
 
 -   必须具有有效的 WNS 通道才能发送原始通知。 有关获取推送通知通道的详细信息，请参阅[如何请求、创建和保存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))。
--   必须在应用的清单中包含 **Internet** 功能。 在 Microsoft Visual Studio 清单编辑器中，你可以在**功能**选项卡下看到此选项，即 **Internet (客户端)** 。 有关详细信息，请参阅[**功能**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
+-   必须在应用的清单中包含 **Internet** 功能。 在 Microsoft Visual Studio 清单编辑器中，你可以在**功能**选项卡下看到此选项，即 **Internet (客户端)**。 有关详细信息，请参阅[**功能**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
 
 通知的正文采用应用定义的格式。 客户端收到只需应用理解的以 null 终止的字符串 (**HSTRING**) 形式的数据。
 
@@ -74,7 +74,7 @@ ms.locfileid: "74259700"
 
 你的应用可以使用通知传递事件 ([**PushNotificationReceived**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel.PushNotificationReceived)) 以在应用使用时接收原始通知。 当云服务发送原始通知时，正在运行的应用可以通过在通道 URI 上处理通知传递事件来接收该通知。
 
-如果应用未运行并且未使用[后台任务](#background-tasks-triggered-by-raw-notifications)，则 WNS 会在接收到发送给该应用的任何原始通知时将其丢弃。 若要避免浪费云服务的资源，则应考虑在服务上实现逻辑以跟踪应用是否处于活动状态。 存在此信息的两种源：应用可以显式告知服务它已准备好开始接收通知，并且 WNS 可以告知服务何时停止。
+如果你的应用程序未运行且不使用[后台任务](#background-tasks-triggered-by-raw-notifications)，则发送到该应用程序的所有原始通知都将在收到时由 WNS 丢弃。 若要避免浪费云服务的资源，则应考虑在服务上实现逻辑以跟踪应用是否处于活动状态。 存在此信息的两种源：应用可以显式告知服务它已准备好开始接收通知，并且 WNS 可以告知服务何时停止。
 
 -   **应用通知云服务**：应用可以联系其服务来告知服务应用正在前台运行。 这种方法的缺点是应用可以非常频繁地终止联系服务。 但优点是服务将始终知道应用何时准备好接收传入的原始通知。 另一个优点是，当应用联系其服务时，服务随即知道将原始通知发送到该应用的特定实例，而不进行广播。
 -   **云服务响应 WNS 响应消息**：应用服务可以使用 WNS 返回的 [X-WNS-NotificationStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 和 [X-WNS-DeviceConnectionStatus](https://docs.microsoft.com/previous-versions/windows/apps/hh465435(v=win.10)) 信息来确定何时停止向应用发送原始通知。 当服务向一个通道发送 HTTP POST 形式的通知时，它会在响应中收到以下消息之一：
@@ -113,13 +113,13 @@ ms.locfileid: "74259700"
 ## <a name="other-resources"></a>其他资源
 
 
-你可以通过下载 Windows 8.1 的[原始通知示例](https://code.msdn.microsoft.com/windowsapps/Raw-notifications-sample-3bc28c5d)、Windows 8.1 的[推送和定期通知示例](https://code.msdn.microsoft.com/windowsapps/push-and-periodic-de225603)，并在 Windows 10 应用中重复使用其源代码来了解详细信息。
+你可以通过下载适用于 Windows 8.1 的[原始通知示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Raw%20notifications%20sample%20(Windows%208))和适用于 Windows 8.1 的[推送和定期通知示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208))并在 Windows 10 应用中重复使用其源代码来了解详细信息。
 
 ## <a name="related-topics"></a>相关主题
 
-* [原始通知准则](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
+* [原始通知指南](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-raw-notification-overview)
 * [快速入门：创建并注册原始通知后台任务](https://docs.microsoft.com/previous-versions/windows/apps/jj676800(v=win.10))
-* [快速入门：截获正在运行的应用的推送通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
+* [快速入门：为正在运行的应用截获推送通知](https://docs.microsoft.com/previous-versions/windows/apps/jj709908(v=win.10))
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  
