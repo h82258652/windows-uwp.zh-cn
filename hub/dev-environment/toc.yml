@@ -12,7 +12,7 @@
         - name: 开始进行自动化
           href: ../python/scripting.md
         - name: 数据库入门
-          href: ../python/databases.md
+          href: 'https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
         - name: 常见问题解答
           href: ../python/faqs.md
         - name: 资源
@@ -30,7 +30,7 @@
         - name: Web 框架入门
           href: ../nodejs/web-frameworks.md
         - name: 数据库入门
-          href: ../nodejs/databases.md
+          href: '.https://docs.microsoft.com/windows/wsl/tutorials/wsl-database'
         - name: 容器入门
           href: ../nodejs/containers.md
     - name: 使用 Android 进行开发
@@ -92,10 +92,10 @@
         - name: 更改开发环境
           href: mac-to-windows.md
         - name: 键盘快捷方式
-          href: 'mac-to-windows.md#keyboard-shortcuts'
+          href: mac-to-windows.md#keyboard-shortcuts
         - name: 触控板快捷方式
-          href: 'mac-to-windows.md#trackpad-shortcuts'
+          href: mac-to-windows.md#trackpad-shortcuts
         - name: 终端和 Shell
-          href: 'mac-to-windows.md#terminal-and-shell'
+          href: mac-to-windows.md#terminal-and-shell
         - name: 应用和实用程序
-          href: 'mac-to-windows.md#apps-and-utilities'
+          href: mac-to-windows.md#apps-and-utilities
