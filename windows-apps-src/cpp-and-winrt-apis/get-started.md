@@ -5,24 +5,24 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 入门, 开始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: c058a727e09f00e01664c314d8c198f3f25e841e
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 968c347927edf0ad44476ec4bdca97aae19bb9a4
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74255132"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493032"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT 入门
 
 为帮助你快速掌握 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的用法，本主题将会根据新的 **Windows 控制台应用程序 (C++/WinRT)** 项目演练一个简单的代码示例。 此外，本主题将会介绍如何[将 C++/WinRT 支持添加到 Windows 桌面应用程序项目](#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
 > [!NOTE]
-> 我们建议使用最新版本的 Visual Studio 和 Windows SDK 进行开发。如果你使用的是 Visual Studio 2017（15.8.0 或更高版本）并且面向 Windows SDK 版本 10.0.17134.0（Windows 10 版本 1803），则新建的 C++/WinRT 项目可能无法编译并出现错误“错误 C3861: 'from_abi': 找不到标识符”，以及源自 *base.h* 的其他错误。  解决方法是要么面向 Windows SDK 的更高（更相符）版本，要么设置项目属性“C/C++” > “语言” > “一致性模式:    否”（此外，如果 **/permissive-** 显示在“其他选项”下的项目属性“C/C++” > “语言” > “命令行”中，请将其删除）。    
+> 我们建议使用最新版本的 Visual Studio 和 Windows SDK 进行开发。如果你使用的是 Visual Studio 2017（15.8.0 或更高版本）并且面向 Windows SDK 版本 10.0.17134.0（Windows 10 版本 1803），则新建的 C++/WinRT 项目可能无法编译并出现错误“错误 C3861: 'from_abi': 找不到标识符”，以及源自 *base.h* 的其他错误。 解决方法是要么面向 Windows SDK 的更高（更相符）版本，要么设置项目属性“C/C++” > “语言” > “一致性模式:  否”（此外，如果 **/permissive-** 显示在“其他选项”下的项目属性“C/C++” > “语言” > “命令行”中，请将其删除）。   
 
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT 快速入门
 
 > [!NOTE]
-> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 有关设置 Visual Studio 以进行 C++/WinRT 部署的信息 &mdash; 包括安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息 &mdash; 请参阅[适用于 C++/WinRT 的 Visual Studio 支持](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 创建一个新的 **Windows 控制台应用程序(C++/WinRT)** 项目。
 
@@ -68,10 +68,10 @@ int main()
 
 包含的标头采用默认项目设置，来自 Windows SDK 的 `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt` 文件夹。 Visual Studio 将该路径包含在其 *IncludePath* 宏中。 但这些标头并不严格依赖于 Windows SDK，因为项目会（通过 `cppwinrt.exe` 工具）在项目的 *$(GeneratedFilesDir)* 文件夹中生成与此相同的标头。 如果在其他位置找不到这些标头，或者你更改了项目设置，则会从该文件夹中加载这些标头。
 
-这些标头包含投影到 C++/WinRT 的 Windows API。 换言之，对于每个 Windows 类型，C++/WinRT 都会定义 C++ 友好等效项（称为“投影类型”）  。 投影类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 将这些内容放置在预编译标头中将减少增量生成时间。
+这些标头包含投影到 C++/WinRT 的 Windows API。 换言之，对于每个 Windows 类型，C++/WinRT 都会定义 C++ 友好等效项（称为“投影类型”）。 投影类型具有与 Windows 类型相同的完全限定名称，但放置于 C++ **winrt** 命名空间中。 将这些内容放置在预编译标头中将减少增量生成时间。
 
 > [!IMPORTANT]
-> 如果希望使用来自 Windows 命名空间的类型，请包括对应的 C++/WinRT Windows 命名空间头文件，如上所示。 对应的标头是与该类型的命名空间具有相同名称的标头  。 例如，若要为 [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) 运行时类使用 C++/WinRT 投影，则应包含 `#include <winrt/Windows.Foundation.Collections.h>`。 如果包含 `winrt/Windows.Foundation.Collections.h`，则不需要同时包含 `winrt/Windows.Foundation.h`。  每个 C++/WinRT 投影标头将自动包括其父命名空间头文件；因此你不需要显式包含它  。 不过，这样做也不会出现错误。
+> 如果希望使用来自 Windows 命名空间的类型，请包括对应的 C++/WinRT Windows 命名空间标头文件，如上所示。 对应的标头是与该类型的命名空间具有相同名称的标头。 例如，若要为 [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) 运行时类使用 C++/WinRT 投影，则应包含 `#include <winrt/Windows.Foundation.Collections.h>`。 如果包含 `winrt/Windows.Foundation.Collections.h`，则不需要同时包含 `winrt/Windows.Foundation.h`。 每个 C++/WinRT 投影标头将自动包括其父命名空间标头文件；因此你不需要显式包含它。 不过，这样做也不会出现错误。
 
 ```cppwinrt
 using namespace winrt;
@@ -119,21 +119,21 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 ## <a name="modify-a-windows-desktop-application-project-to-add-cwinrt-support"></a>修改 Windows 桌面应用程序项目以添加 C++/WinRT 支持
 
-本部分介绍如何将 C++/WinRT 支持添加到 Windows 桌面应用程序项目。 如果你没有 Windows 桌面应用程序项目，可以先遵循以下步骤创建一个。 例如，打开 Visual Studio 并选择“Visual C++”\>“Windows 桌面”\>“Windows 桌面应用程序”来创建一个项目。   
+本部分介绍如何将 C++/WinRT 支持添加到 Windows 桌面应用程序项目。 如果你没有 Windows 桌面应用程序项目，可以先遵循以下步骤创建一个。 例如，打开 Visual Studio 并选择“Visual C++”\>“Windows 桌面”\>“Windows 桌面应用程序”来创建一个项目。  
 
 可以选择性地安装 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 和 NuGet 包。 有关详细信息，请参阅 [C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ### <a name="set-project-properties"></a>设置项目属性
 
-转到项目属性“常规”\>“Windows SDK 版本”，然后选择“所有配置”和“所有平台”。     确保“Windows SDK 版本”设置为 10.0.17134.0（Windows 10 版本 1803）或更高。 
+转到项目属性“常规”\>“Windows SDK 版本”，然后选择“所有配置”和“所有平台”。    确保“Windows SDK 版本”设置为 10.0.17134.0（Windows 10 版本 1803）或更高。
 
 确认你没有遇到[为何我的新项目不能编译？](/windows/uwp/cpp-and-winrt-apis/faq)的问题。
 
-由于 C++/WinRT 使用 C++17 标准版中的功能，请将项目属性“C/C++” > “语言” > “C++ 语言标准版”设置为“ISO C++17 标准版(/std:c++17)”。    
+由于 C++/WinRT 使用 C++17 标准版中的功能，请将项目属性“C/C++” > “语言” > “C++ 语言标准版”设置为“ISO C++17 标准版(/std:c++17)”。  
 
 ### <a name="the-precompiled-header"></a>预编译的标头
 
-默认项目模板将为你创建名为 `framework.h` 或 `stdafx.h` 的预编译标头。 请将它重命名为 `pch.h`。 如果已有一个 `stdafx.cpp` 文件，请将它重命名为 `pch.cpp`。 将项目属性“C/C++” > “预编译标头” > “预编译标头”设置为“创建(/Yc)”，将“预编译头文件”设置为“pch.h”。      
+默认项目模板将为你创建名为 `framework.h` 或 `stdafx.h` 的预编译标头。 请将它重命名为 `pch.h`。 如果已有一个 `stdafx.cpp` 文件，请将它重命名为 `pch.cpp`。 将项目属性“C/C++” > “预编译标头” > “预编译标头”设置为“创建(/Yc)”，将“预编译标头文件”设置为“pch.h”。  
 
 查找所有 `#include "framework.h"`（或 `#include "stdafx.h"`）并将其替换为 `#include "pch.h"`。
 
@@ -149,7 +149,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 C++/WinRT 语言投影依赖于某些 Windows 运行时自由（非成员）函数和入口点，需要链接到 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) 伞型库。 本部分介绍满足链接器要求的三种方式。
 
-第一种做法是将所有 C++/WinRT MSBuild 属性和目标添加到 Visual Studio 项目。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...”   \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT  ，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。  
+第一种做法是将所有 C++/WinRT MSBuild 属性和目标添加到 Visual Studio 项目。 为此，请在项目中安装 [Microsoft.Windows.CppWinRT NuGet 包](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 在 Visual Studio 中打开项目，然后单击“项目”\>“管理 NuGet 包...” \>“浏览”，在搜索框中键入或粘贴 Microsoft.Windows.CppWinRT，在搜索结果中选择该项，然后单击“安装”以安装该项目的包。 
 
 也可以使用项目链接设置来显式链接 `WindowsApp.lib`。 或者，可以在源代码中（例如，在 `pch.h` 中）按如下所示执行此操作。
 
@@ -165,11 +165,11 @@ C++/WinRT 语言投影依赖于某些 Windows 运行时自由（非成员）函�
 
 ### <a name="consuming-windows-runtime-apis-and-types"></a>使用 Windows 运行时 API 和类型
 
-也就是说，使用或调用 API。   例如，通过 API 调用使用蓝牙进行通信、流式传输和提供视频、与 Windows shell 集成，等等。 C++/WinRT 完全支持此类方案。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+也就是说，使用或调用 API。  例如，通过 API 调用使用蓝牙进行通信、流式传输和提供视频、与 Windows shell 集成，等等。 C++/WinRT 完全支持此类方案。 有关详细信息，请参阅[通过 C++/WinRT 使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
 
 ### <a name="authoring-windows-runtime-apis-and-types"></a>创作 Windows 运行时 API 和类型
 
-也就是说，生成 API 和类型。  例如，生成上一部分介绍的 API 类型、图形 API、存储和文件系统 API、网络 API 等。 有关详细信息，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
+也就是说，生成 API 和类型。 例如，生成上一部分介绍的 API 类型、图形 API、存储和文件系统 API、网络 API 等。 有关详细信息，请参阅[使用 C++/WinRT 创作 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
 
 使用 C++/WinRT 创作 API 涉及的事项要稍多于使用 API 的情况，因为你必须使用 IDL 来定义 API 的形状，然后才能实现它。 [XAML 控件；绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)中详述了此方面的操作。
 

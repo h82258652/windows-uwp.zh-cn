@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c593ea76535bec6a9d8ab41f0bcd4f2299162615
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: fc695b483eefef4210432d5ce55a23ae201740bc
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437195"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493142"
 ---
 # <a name="controls-by-function"></a>按功能列出控件
 
@@ -324,7 +324,7 @@ ms.locfileid: "84437195"
 
 设计和操作方法：[Image 和 ImageBrush](images-imagebrushes.md) 
 
-示例代码：[XAML 图像示例](https://code.msdn.microsoft.com/windowsapps/0f5d56ae-5e57-48e1-9cd9-993115b027b9)
+示例代码：[XAML 控件库](https://docs.microsoft.com/samples/microsoft/xaml-controls-gallery/xaml-controls-gallery/)
 
 ## <a name="graphics-and-ink"></a>图形和墨迹
 
@@ -353,7 +353,7 @@ ms.locfileid: "84437195"
 
 如何执行此操作：[绘制形状](../../graphics/drawing-shapes.md) 
 
-示例代码：[基于 XAML 矢量的绘图示例](https://code.msdn.microsoft.com/windowsapps/Drawing-bfc39296)
+示例代码：[基于 XAML 矢量的绘图示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20vector-based%20drawing%20sample%20(Windows%208))
 
 ## <a name="layout-controls"></a>布局控件
 
@@ -453,7 +453,7 @@ ms.locfileid: "84437195"
 
 设计和操作方法：[滚动和平移控件指南](scroll-controls.md) 
 
-示例代码：[XAML 滚动、平移以及缩放示例](https://code.msdn.microsoft.com/windowsapps/xaml-scrollviewer-pan-and-949d29e9)
+示例代码：[XAML 滚动、平移以及缩放示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample%20(Windows%208))
 
 ### <a name="stack-panel"></a>堆栈面板
 可以将子元素按水平或垂直方向排列到单行中的布局面板。
@@ -591,7 +591,7 @@ ms.locfileid: "84437195"
 
 设计和操作方法：Web 视图指南 
 
-示例代码：[XAML WebView 控件示例](https://code.msdn.microsoft.com/windowsapps/XAML-WebView-control-sample-58ad63f7)
+示例代码：[XAML WebView 控件示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20WebView%20control%20sample%20(Windows%208))
 
 ### <a name="semantic-zoom"></a>语义式缩放
 
@@ -612,7 +612,7 @@ ms.locfileid: "84437195"
 
 设计和操作方法：[语义式缩放控件指南](semantic-zoom.md)
 
-示例代码：[XAML GridView 组和 SemanticZoom 示例](https://code.msdn.microsoft.com/windowsapps/groupedgridview-77c59e8e)
+示例代码：[XAML GridView 组和 SemanticZoom 示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20GridView%20grouping%20and%20SemanticZoom%20sample%20(Windows%208))
 
 ## <a name="progress-controls"></a>进度控件
 
@@ -682,7 +682,7 @@ ms.locfileid: "84437195"
 
 设计和操作方法：[文本控件](text-controls.md)、[密码框控件指南](password-box.md) 
 
-示例代码：[XAML 文本显示示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)、[XAML 文本编辑示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-editing-sample-fb0493ad)
+示例代码：[XAML 文本显示示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))、[XAML 文本编辑示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))
 
 ### <a name="rich-edit-box"></a>富编辑框
 使用户可以编辑带有格式化文本、超链接和图像等内容的富文本文档的控件。
@@ -695,7 +695,7 @@ ms.locfileid: "84437195"
 
 设计和操作方法：[文本控件](text-controls.md)、[可编辑对话框控件指南](rich-edit-box.md)
 
-示例代码：[XAML 文本示例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+示例代码：[XAML 文本示例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### <a name="search-box"></a>搜索框
 请参阅自动建议框
