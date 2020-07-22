@@ -7,12 +7,12 @@ keywords: windows win32, 桌面开发
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d052ad0f670bccd9b32d2e3643520dd6129ed22a
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 20399b9a6398b1f17f74d2de74cc4b5e4ba270ac
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262738"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492992"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>构建 Windows 电脑的桌面应用
 
@@ -20,9 +20,7 @@ ms.locfileid: "84262738"
 
 ## <a name="platforms-for-desktop-apps"></a>适合桌面应用的平台
 
-有 4 个主要平台可用于构建适合 Windows 电脑的桌面应用。 每个平台都提供定义应用生命周期的应用模型和一组完整的 UI 控件，你还可在平台上访问一组全面的托管或本机 API，它们可用来使用 Windows 功能。
-
-下表介绍了这些平台。 要对这些平台进行深入比较并了解适合每个平台的其他资源，请参阅[选择应用平台](choose-your-platform.md)。
+有 4 个主要平台可用于构建适合 Windows 电脑的桌面应用。 每个平台都提供用于定义应用生命周期的应用模型，用于创建 Word、Excel 和 Photoshop 等桌面应用的完整 UI 框架和一组 UI 控件以及用于使用 Windows 功能的一组全面的托管或本机 API。 要对这些平台进行深入比较并了解适合每个平台的其他资源，请参阅[选择应用平台](choose-your-platform.md)。
 
 <br/>
 
@@ -46,8 +44,8 @@ ms.locfileid: "84262738"
 <td><a href="/windows/uwp/get-started/">入门</a><br/><a href="/uwp/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples">示例</a></td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/windows/win32/">Win32</a></td>
-<td><p>适合需要直接访问 Windows 和硬件的本机 C/C++ Windows 应用的首选平台。</p></td>
+<td><a href="https://docs.microsoft.com/windows/win32/">C++/Win32</a></td>
+<td><p>适合需要直接访问 Windows 和硬件的本机 Windows 应用的首选平台。</p></td>
 <td><a href="/windows/win32/desktop-programming/">入门</a><br/><a href="/windows/win32/apiindex/windows-api-list/">API 参考</a><br/><a href="https://github.com/Microsoft/Windows-classic-samples">示例</a></td>
 </tr>
 <tr class="odd">
@@ -64,7 +62,7 @@ ms.locfileid: "84262738"
 </table>
 
 > [!NOTE]
-> 所有这些应用程序平台都提供了一个完整的 UI 框架和一组 UI 控件，你可以使用它们创建在经典 Windows 桌面上运行的 Word、Excel 和 Photoshop 等桌面应用，并充分利用该环境的特定功能。 在 Windows 10 上，这些平台还都支持使用 Windows UI (WinUI) 库来创建其用户界面。 若要详细了解适用于桌面应用的 WinUI，请参阅[此部分](choose-your-platform.md#windows-ui-library)。
+> 在 Windows 10 上，这些平台还都支持使用 Windows UI (WinUI) 库来创建用户界面。 若要详细了解适用于桌面应用的 WinUI，请参阅[此部分](choose-your-platform.md#windows-ui-library)。
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>针对 Windows 10 更新现有桌面应用
 
@@ -94,6 +92,7 @@ ms.locfileid: "84262738"
 | 文章 | 说明 |
 |---------|-------------|
 | [选择应用平台](choose-your-platform.md) | 提供对主要桌面应用的深入比较，并可帮助你选择适合你的需求的平台。 本文还提供了介绍每个平台的文档的有用链接。 |
+| [适用于 Windows 应用的 Visual Studio 项目模板](visual-studio-templates.md) | 介绍 Visual Studio 提供的项目和项模板，这些项目和项模板有助于你使用 C\# 或 C++ 创建适用于 Windows 10 设备的应用。 |
 | [实现桌面应用的现代化](/windows/apps/desktop/modernize) | 介绍可在 WPF、Windows 窗体和 C++ Win32 应用等任何桌面应用中使用的最新 Windows 10 和 UWP 开发功能。 |
 | [功能和技术](/windows/apps/features-and-technologies) | 概要介绍可通过每个主要桌面应用平台和相关文档的链接访问的 Windows 功能。 |
 

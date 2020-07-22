@@ -9,12 +9,12 @@ metadata:
   ms.date: 06/12/2020
   ms.prod: dev-environment
   ms.topic: landing-page
-  ms.openlocfilehash: 4d30b505c4ced08a906f443a65d0e7d0a34a5e01
-  ms.sourcegitcommit: a937963ce63a14c254420926661b9b68be28a8ee
+  ms.openlocfilehash: 68b448a5d7e6c9b56112ec0a0160a3681849d4ef
+  ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 06/12/2020
-  ms.locfileid: "84746728"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86493172"
 landingContent:
 - title: 开始使用 Python
   linkLists:
@@ -28,8 +28,8 @@ landingContent:
       url: ../python/web-frameworks.md
     - text: 为自动化脚本设置
       url: ../python/scripting.md
-    - text: 使用 WSL 设置数据库
-      url: ../python/databases.md
+    - text: 使用 WSL 连接数据库
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
   - linkListType: tutorial
     links:
     - text: 尝试了解一些 Python 基础知识
@@ -58,8 +58,8 @@ landingContent:
       url: ../nodejs/beginners.md
     - text: 开发 Web 应用
       url: ../nodejs/web-frameworks.md
-    - text: 连接数据库
-      url: ../nodejs/databases.md
+    - text: 使用 WSL 连接数据库
+      url: https://docs.microsoft.com/windows/wsl/tutorials/wsl-database
     - text: 使用 Docker 容器
       url: ../nodejs/containers.md
   - linkListType: tutorial

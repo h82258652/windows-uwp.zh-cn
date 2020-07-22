@@ -1,14 +1,14 @@
 ---
 title: WinUI 发行说明
 description: WinUI 发行说明的索引。
-ms.date: 05/08/2020
+ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: cf1cf75d7f92107c88f27008bff53c76d37715ec
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: 4161b8d8a74ffc493c44bba5104c54cb911861c6
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775816"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492872"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Windows UI 库 2.x 发行说明
 
@@ -52,6 +52,6 @@ API 参考文档位于此处：[Windows UI 库 API](/uwp/api/overview/winui/)。
 | [2.1](winui-2.1.md) | 稳定版 | 2019 年 4 月 | [发行说明](winui-2.1.md) | [GitHub](https://github.com/microsoft/microsoft-ui-xaml) 中的第一个开放源代码版本。 包括 [ItemsRepeater](winui-2.1.md#itemsrepeater)、[AnimatedVisualPlayer](winui-2.1.md#animatedvisualplayer)、[TeachingTip](winui-2.1.md#teachingtip)、[RadioMenuFlyoutItem](winui-2.1.md#radiomenuflyoutitem)、[CompactDensity](winui-2.1.md#compactdensity)、[Shadows](winui-2.1.md#shadows)。 |
 | [2.0](winui-2.0.md) | 稳定版 | 2018 年 10 月 | [发行说明](winui-2.0.md) | **初始版本**。 包括适用于 Windows UWP 应用的官方本机 Fluent 控件和功能。  |
 
-### <a name="winui-3-preview-1"></a>WinUI 3 预览版 1
+### <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 库 3 预览版 2（2020 年 7 月）
 
-要详细了解如何试用 WinUI 3 早期预览版，请参阅 [WinUI 3.0 预览版 1](../../winui3/index.md)。
+有关试用 WinUI 3 早期预览版的信息，请参阅 [Windows UI 库 3 预览版 2（2020 年 7 月）](../../winui3/index.md)。
