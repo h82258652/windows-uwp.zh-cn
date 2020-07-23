@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 桌面开发
-ms.openlocfilehash: c14b092b9cce9ce7e3b180eaedef657e2d3d03db
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 778c15bc511404fad9cf5713876f89c7fef56165
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580004"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493002"
 ---
 # <a name="choose-your-app-platform"></a>选择应用平台
 
@@ -39,6 +39,7 @@ UWP 不仅可以用于为 Windows 电脑创建桌面应用程序，同时，它�
 有关 UWP 的详细信息，请参阅以下文章：
 
 * [入门](/windows/uwp/get-started/)
+* [项目模板](visual-studio-templates.md#uwp-templates)
 * [设计和 UI](/windows/uwp/design/)
 * [技术和功能](/windows/uwp/develop/)
 * [API 参考](/uwp/)
@@ -50,7 +51,8 @@ WPF 是为托管型 Windows 应用程序而建立的平台，通过它可访问 
 
 有关 WPF 的详细信息，请参阅以下文章：
 
-* [入门 (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)。
+* [入门 (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [项目模板](visual-studio-templates.md#net-templates)
 * [创建首个应用 (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [创建首个应用 (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [将 WPF 应用迁移到 .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
@@ -64,6 +66,7 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 有关 Windows 窗体的详细信息，请参阅以下文章：
 
 * [Windows 窗体入门](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [项目模板](visual-studio-templates.md#net-templates)
 * [创建第一个 Windows 窗体应用](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [教程：创建图片查看器](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
 * [API 参考 (.NET)](https://docs.microsoft.com/dotnet/api/index)
@@ -84,6 +87,7 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 有关详细信息，请参阅以下文章：
 
 * [入门](/windows/win32/desktop-programming/)
+* [项目模板](visual-studio-templates.md#cwin32-templates)
 * [创建首个 Win32 和 C++ 应用](/windows/win32/learnwin32/learn-to-program-for-windows/)
 * [技术和功能](/windows/win32/desktop-app-technologies)
 * [API 参考](/windows/win32/apiindex/windows-api-list/)
@@ -97,7 +101,7 @@ Windows 窗体是用于托管型 Windows 应用程序的原始平台，具有一
 
 * UWP 应用可以使用 WinUI 控件来替代 Windows SDK 提供的 UWP 控件。
 * 你可以更新现有的 WPF、Windows 窗体和 C++/Win32 应用，以使用 [XAML 岛](modernize/xaml-islands.md)在应用中托管 WinUI 2.x 控件。
-* 从 [WinUi 3.0 预览版 1](../winui/winui3/index.md) 开始，可以创建[使用完全基于 WinUI 的 UI 的 .NET 和 C++/Win32 应用](../winui/winui3/get-started-winui3-for-desktop.md)。
+* 从 [WinUi 3.0](../winui/winui3/index.md) 开始，可以创建[使用完全基于 WinUI 的 UI 的 .NET 和 C++/Win32 应用](../winui/winui3/get-started-winui3-for-desktop.md)。
 
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>平台比较：UWP、WPF 和 Windows 窗体
 

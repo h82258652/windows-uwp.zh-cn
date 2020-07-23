@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 了解 python, windows 上的 python（初学者）, 使用 microsoft store 安装 python, python 与 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 688ae004dad8653e70d86b3b91652b6898c1e9d3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5dee553fedc81f0b482d4b79f4d7d8be3a7bb106
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74881285"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493492"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>开始在 Windows 上使用 Python（初学者）
 
@@ -23,19 +23,19 @@ ms.locfileid: "74881285"
 
 对于不熟悉 Python 的初学者，建议[从 Microsoft Store 安装 Python](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 通过 Microsoft Store 安装会使用基本 Python3 解释器，但会为当前用户设置 PATH 设置（避免需要管理员访问权限），以及提供自动更新。 如果处于教育环境中或所属组织限制计算机上的权限或管理访问权限，则这会特别有用。
 
-如果在 Windows 上将 Python 用于 Web 开发  ，则建议为开发环境设置其他设置。 建议通过适用于 Linux 的 Windows 子系统安装和使用 Python，而不是直接在 Windows 上安装。 有关帮助，请参阅：[开始在 Windows 上将 Python 用于 Web 开发](./web-frameworks.md)。 如果对在操作系统上自动执行常见任务感兴趣，请参阅我们的指南：[开始在 Windows 上将 Python 用于脚本和自动化](./scripting.md)。 对于某些高级方案（如需要访问/修改 Python 的已安装文件、创建二进制文件的副本或直接使用 Python DLL），可能需要考虑直接从 [python.org](https://www.python.org/downloads/) 下载特定 Python 版本或考虑安装[替代实现](https://www.python.org/download/alternatives)，如 Anaconda、Jython、PyPy、WinPython、IronPython 等。建议仅当你是更高级的 Python 程序员并且有特定原因需要选择替代实现时才使用此方法。
+如果在 Windows 上将 Python 用于 Web 开发，则建议为开发环境设置其他设置。 建议通过适用于 Linux 的 Windows 子系统安装和使用 Python，而不是直接在 Windows 上安装。 有关帮助，请参阅：[开始在 Windows 上将 Python 用于 Web 开发](./web-frameworks.md)。 如果对在操作系统上自动执行常见任务感兴趣，请参阅我们的指南：[开始在 Windows 上将 Python 用于脚本和自动化](./scripting.md)。 对于某些高级方案（如需要访问/修改 Python 的已安装文件、创建二进制文件的副本或直接使用 Python DLL），可能需要考虑直接从 [python.org](https://www.python.org/downloads/) 下载特定 Python 版本或考虑安装[替代实现](https://www.python.org/download/alternatives)，如 Anaconda、Jython、PyPy、WinPython、IronPython 等。建议仅当你是更高级的 Python 程序员并且有特定原因需要选择替代实现时才使用此方法。
 
 ## <a name="install-python"></a>安装 Python
 
 使用 Microsoft Store 安装 Python：
 
-1. 转到“开始”  菜单（左下方 Windows 图标），输入“Microsoft Store”，选择用于打开应用商店的链接。
+1. 转到“开始”菜单（左下方 Windows 图标），输入“Microsoft Store”，选择用于打开应用商店的链接。
 
-2. 应用商店打开后，从右上方菜单中选择“搜索”  ，然后输入“Python”。 从“应用”下的结果中打开“Python 3.7”。 选择“获取”  。
+2. 应用商店打开后，从右上方菜单中选择“搜索”，然后输入“Python”。 从“应用”下的结果中打开“Python 3.7”。 选择“获取”。
 
-3. Python 完成下载和安装过程后，使用“开始”  菜单（左下方 Windows 图标）打开 Windows PowerShell。 PowerShell 打开后，输入 `Python --version` 以确认已在计算机上安装了 Python3。
+3. Python 完成下载和安装过程后，使用“开始”菜单（左下方 Windows 图标）打开 Windows PowerShell。 PowerShell 打开后，输入 `Python --version` 以确认已在计算机上安装了 Python3。
 
-4. Python 的 Microsoft Store 安装包括 pip  （标准包管理器）。 通过 pip 可以安装和管理不属于 Python 标准库的其他包。 若要确认还可使用 pip 安装和管理包，请输入 `pip --version`。
+4. Python 的 Microsoft Store 安装包括 pip（标准包管理器）。 通过 pip 可以安装和管理不属于 Python 标准库的其他包。 若要确认还可使用 pip 安装和管理包，请输入 `pip --version`。
 
 ## <a name="install-visual-studio-code"></a>安装 Visual Studio Code
 
@@ -47,11 +47,11 @@ VS Code 还包含一个[内置终端](https://code.visualstudio.com/docs/editor/
 
 2. 安装 VS Code 以后，还需安装 Python 扩展。 若要安装 Python 扩展，可以选择 [VS Code 市场链接](https://marketplace.visualstudio.com/items?itemName=ms-python.python)，也可以打开 VS Code 并在扩展菜单中搜索 **Python** (Ctrl+Shift+X)。
 
-3. Python 是一种解释型语言，若要运行 Python 代码，必须向 VS Code 告知要使用的解释器。 建议坚持使用 Python 3.7，除非有特定原因需要选择其他解释器。 安装 Python 扩展以后，请选择 Python 3 解释器，具体方法是：打开“命令面板”  (Ctrl+Shift+P)，开始输入命令“Python:  选择解释器”进行搜索，然后选择命令。 在可用时，还可以使用底部状态栏上的“选择 Python 环境”  选项（它可能已显示所选解释器）。 该命令提供 VS Code 可以自动找到的可用解释器列表（包括虚拟环境）。 如果看不到所需解释器，请参阅[配置 Python 环境](https://code.visualstudio.com/docs/python/environments)。
+3. Python 是一种解释型语言，若要运行 Python 代码，必须向 VS Code 告知要使用的解释器。 建议坚持使用 Python 3.7，除非有特定原因需要选择其他解释器。 安装 Python 扩展以后，请选择 Python 3 解释器，具体方法是：打开“命令面板”(Ctrl+Shift+P)，开始输入命令“Python:选择解释器”进行搜索，然后选择命令。 在可用时，还可以使用底部状态栏上的“选择 Python 环境”选项（它可能已显示所选解释器）。 该命令提供 VS Code 可以自动找到的可用解释器列表（包括虚拟环境）。 如果看不到所需解释器，请参阅[配置 Python 环境](https://code.visualstudio.com/docs/python/environments)。
 
     ![在 VS Code 中选择 Python 解释器](../images/interpreterselection.gif)
 
-4. 若要在 VS Code 中打开终端，请选择“视图”   > “终端”  ，或者使用快捷方式 Ctrl+'  （使用反撇号字符）。 默认终端是 PowerShell。
+4. 若要在 VS Code 中打开终端，请选择“视图” > “终端”，或者使用快捷方式 Ctrl+'（使用反撇号字符）。 默认终端是 PowerShell。
 
 5. 在 VS Code 终端中，只需通过输入以下命令即可打开 Python：`python`
 
@@ -99,7 +99,7 @@ Python 是一种解释型语言。 与所编写的代码需要转换为机器码
 
 ## <a name="hello-world-tutorial-for-using-python-with-vs-code"></a>将 Python 与 VS Code 一起使用的 Hello World 教程
 
-VS Code 团队结合了一个出色的 [Python 入门教程](https://code.visualstudio.com/docs/python/python-tutorial#_start-vs-code-in-a-project-workspace-folder)，其中演练了如何使用 Python 创建 Hello World 程序、运行程序文件、配置和运行调试器以及安装 matplotlib  和 numpy  等包以在虚拟环境中创建图表。
+VS Code 团队结合了一个出色的 [Python 入门教程](https://code.visualstudio.com/docs/python/python-tutorial#_start-vs-code-in-a-project-workspace-folder)，其中演练了如何使用 Python 创建 Hello World 程序、运行程序文件、配置和运行调试器以及安装 matplotlib 和 numpy 等包以在虚拟环境中创建图表。
 
 1. 打开 PowerShell 并创建名为“hello”的空文件夹，导航到此文件夹，然后在 VS Code 中打开它：
 
@@ -109,7 +109,7 @@ VS Code 团队结合了一个出色的 [Python 入门教程](https://code.visual
     code .
     ```
 
-2. VS Code 打开后，在左侧“资源管理器”  窗口中会显示新的 hello  文件夹，在 VS Code 底部面板中打开命令行窗口，具体方法是按 Ctrl+'  （使用反撇号），或选择“视图”   > “终端”  。 在一个文件夹中启动 VS Code 会使该文件夹成为“工作区”。 VS Code 将特定于该工作区的设置存储在 .vscode/settings.json 中，这些设置与全局存储的用户设置分隔开来。
+2. VS Code 打开后，在左侧“资源管理器”窗口中会显示新的 hello 文件夹，在 VS Code 底部面板中打开命令行窗口，具体方法是按 Ctrl+'（使用反撇号），或选择“视图” > “终端”。 在一个文件夹中启动 VS Code 会使该文件夹成为“工作区”。 VS Code 将特定于该工作区的设置存储在 .vscode/settings.json 中，这些设置与全局存储的用户设置分隔开来。
 
 3. 继续 VS Code 文档中的教程：[创建 Python Hello World 源代码文件](https://code.visualstudio.com/docs/python/python-tutorial#_create-a-python-hello-world-source-code-file)。
 
