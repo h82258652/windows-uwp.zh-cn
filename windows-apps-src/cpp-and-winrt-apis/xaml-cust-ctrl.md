@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 自定义, 模板化, 控件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a6cde5a62367dccd83ca8dc6a46c203587850422
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2bd71e5ec78f3e0d1317c4e69ecd234985b2d8ab
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80760529"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492842"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>XAML 自定义（模板化）控件与 C++/WinRT
 
@@ -21,7 +21,8 @@ ms.locfileid: "80760529"
 通用 Windows 平台 (UWP) 最强大的功能之一是，用户界面 (UI) 堆栈所提供基于 XAML [控件](/uwp/api/windows.ui.xaml.controls.control)类型创建自定义控件的灵活性  。 XAML UI 框架提供[自定义依赖项属性](/windows/uwp/xaml-platform/custom-dependency-properties)[附加属性](/windows/uwp/xaml-platform/custom-attached-properties)以及[控件模板](/windows/uwp/design/controls-and-patterns/control-templates)等功能，使用这些功能可以更轻松地创建功能丰富且可自定义的控件。 本主题引导你完成使用 C++/WinRT 创建自定义（模板化）控件的步骤。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>创建空白应用 (BgLabelControlApp)
-首先在 Microsoft Visual Studio 中创建新项目。 创建“空白应用(C++/WinRT)”  项目，将其名称设置为 *BgLabelControlApp*，并确保取消选中“将解决方案和项目放在同一目录中”（使文件夹结构与此演练匹配）。 
+
+首先在 Microsoft Visual Studio 中创建新项目。 创建“空白应用(C++/WinRT)”  项目，将其名称设置为 *BgLabelControlApp*，并确保取消选中“将解决方案和项目放在同一目录中”（使文件夹结构与此演练匹配）。 面向 Windows SDK 的最新正式发布（非预览）版本。
 
 本主题的后续部分将指导你如何生成项目（但在那之前暂时不要生成）。
 
@@ -30,7 +31,7 @@ ms.locfileid: "80760529"
 
 我们将创作新类来表示自定义的（模板化）控件。 我们要在同一编译单元内创作和使用该类。 但我们希望能够从 XAML 标记实例化此类，因此，它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
 
-创作新的运行时类的第一步是将新的 Midl 文件(.idl) 项添加到项目  。 将其命名为 `BgLabelControl.idl`。 删除 `BgLabelControl.idl` 的默认内容，然后粘贴到此运行时类声明中。
+创作新的运行时类的第一步是将新的 Midl 文件(.idl) 项添加到项目。 将其命名为 `BgLabelControl.idl`。 删除 `BgLabelControl.idl` 的默认内容，然后粘贴到此运行时类声明中。
 
 ```idl
 // BgLabelControl.idl
@@ -45,19 +46,21 @@ namespace BgLabelControlApp
 }
 ```
 
-上表展示在声明依赖项属性 (DP) 时采用的模式。 每个 DP 有两个部分。 首先，声明类型 [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty) 的只读静态属性  。 它具有 DP 的名称和属性  。 你将在实现中使用此静态属性。 其次，使用 DP 的类型和名称声明读写实例属性。 如果想要创作附加属性（而不是 DP），请参阅[自定义附加属性](/windows/uwp/xaml-platform/custom-attached-properties)中的代码示例  。
+上表展示在声明依赖项属性 (DP) 时采用的模式。 每个 DP 有两个部分。 首先，声明类型 [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty) 的只读静态属性。 它具有 DP 的名称和属性。 你将在实现中使用此静态属性。 其次，使用 DP 的类型和名称声明读写实例属性。 如果想要创作附加属性（而不是 DP），请参阅[自定义附加属性](/windows/uwp/xaml-platform/custom-attached-properties)中的代码示例。
 
 > [!NOTE]
-> 如果想要创作具有浮点类型的 DP，则将其设置为 `double`（[MIDL 3.0](/uwp/midl-3/) 中的 `Double`）。 声明并实现类型 `float`（MIDL 中的 `Single`）的 DP，则在 XAML 标记中为该 DP 设置值将导致发生错误，即无法从文本“<NUMBER>”创建“Windows.Foundation.Single”  。
+> 如果想要创作具有浮点类型的 DP，则将其设置为 `double`（[MIDL 3.0](/uwp/midl-3/) 中的 `Double`）。 声明并实现类型 `float`（MIDL 中的 `Single`）的 DP，则在 XAML 标记中为该 DP 设置值将导致发生错误，即无法从文本“<NUMBER>”创建“Windows.Foundation.Single”。
 
-保存文件并生成项目。 在生成过程中，`midl.exe` 工具会运行以创建 Windows 运行时元数据文件 (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) 来描述该运行时类。 然后，`cppwinrt.exe` 工具运行以生成源代码文件，从而为你在创作和使用运行时类时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的 BgLabelControl 运行时类的存根  。 这些存根是 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` 和 `BgLabelControl.cpp`。
+保存该文件。 项目目前不会完全生成，但现在生成很有助益，因为它会生成源代码文件，而你将在该文件中实现 BgLabelControl 运行时类。 因此，请继续生成（此阶段可能发生的生成错误与“无法解析的外部符号”有关）。
 
-将这些存根文件 `BgLabelControl.h` 和 `BgLabelControl.cpp` 从 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` 复制到项目文件夹中，即 `\BgLabelControlApp\BgLabelControlApp\`。 在 **“解决方案资源管理器”** 中，请确保将 **“显示所有文件”** 切换为打开。 右键单击已复制的存根文件，然后单击“包括在项目中”  。
+在生成过程中，`midl.exe` 工具会运行以创建 Windows 运行时元数据文件 (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`) 来描述该运行时类。 然后，`cppwinrt.exe` 工具运行以生成源代码文件，从而为你在创作和使用运行时类时提供支持。 这些文件包含让你开始实现已在 IDL 中声明的 BgLabelControl 运行时类的存根。 这些存根是 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` 和 `BgLabelControl.cpp`。
 
-你会在 `BgLabelControl.h` 和 `BgLabelControl.cpp` 的顶部看到 `static_assert`，需要在生成项目之前将其删除。
+将这些存根文件 `BgLabelControl.h` 和 `BgLabelControl.cpp` 从 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\` 复制到项目文件夹中，即 `\BgLabelControlApp\BgLabelControlApp\`。 在 **“解决方案资源管理器”** 中，请确保将 **“显示所有文件”** 切换为打开。 右键单击已复制的存根文件，然后单击“包括在项目中”。
 
-## <a name="implement-the-bglabelcontrol-custom-control-class"></a>实现 BgLabelControl 自定义控件类 
-现在，让我们打开 `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` 和 `BgLabelControl.cpp` 并实现运行时类。 在 `BgLabelControl.h` 中，更改构造函数以设置默认样式密钥、实现 Label 和 LabelProperty，添加名为 OnLabelChanged 的静态事件处理程序以处理对依赖项属性值的更改，并添加私有成员以存储 LabelProperty 的备份字段     。
+你会在 `BgLabelControl.h` 和 `BgLabelControl.cpp` 的顶部看到 `static_assert`（需要删除）。 现在将生成项目。
+
+## <a name="implement-the-bglabelcontrol-custom-control-class"></a>实现 BgLabelControl 自定义控件类
+现在，让我们打开 `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` 和 `BgLabelControl.cpp` 并实现运行时类。 在 `BgLabelControl.h` 中，更改构造函数以设置默认样式密钥、实现 Label 和 LabelProperty，添加名为 OnLabelChanged 的静态事件处理程序以处理对依赖项属性值的更改，并添加私有成员以存储 LabelProperty 的备份字段   。
 
 在添加这些内容后，`BgLabelControl.h` 将如下所示。 可以复制并粘贴这些列出的代码来替换 `BgLabelControl.h` 的内容。
 
@@ -129,16 +132,16 @@ namespace winrt::BgLabelControlApp::implementation
 }
 ```
 
-本演练中，我们不会使用 OnLabelChanged  。 但在此处将使用，以便你理解如何为属性更改回调注册依赖项属性。 OnLabelChanged 的实现还展示如何从基本投影类型获取派生投影类型（本例中，基本投影类型为 DependencyObject）   。 它展示之后如何获取指针，该指针指向实现投影类型的类型。 第二个操作自然只能在实现投影类型的项目（即实现运行时类的项目）中执行。
+本演练中，我们不会使用 OnLabelChanged。 但在此处将使用，以便你理解如何为属性更改回调注册依赖项属性。 OnLabelChanged 的实现还展示如何从基本投影类型获取派生投影类型（本例中，基本投影类型为 DependencyObject） 。 它展示之后如何获取指针，该指针指向实现投影类型的类型。 第二个操作自然只能在实现投影类型的项目（即实现运行时类的项目）中执行。
 
 > [!NOTE]
-> 如果你尚未安装 Windows SDK 版本 10.0.17763.0（Windows 10 版本 1809）或更高版本，则需在上述依赖项属性更改事件处理器中调用 [winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)，而不是 [winrt::get_self](/uwp/cpp-ref-for-winrt/get-self)   。
+> 如果你尚未安装 Windows SDK 版本 10.0.17763.0（Windows 10 版本 1809）或更高版本，则需在上述依赖项属性更改事件处理器中调用 [winrt::from_abi](/uwp/cpp-ref-for-winrt/from-abi)，而不是 [winrt::get_self](/uwp/cpp-ref-for-winrt/get-self) 。
 
-## <a name="design-the-default-style-for-bglabelcontrol"></a>为 BgLabelControl 设计默认样式 
+## <a name="design-the-default-style-for-bglabelcontrol"></a>为 BgLabelControl 设计默认样式
 
-在其构造函数中，BgLabelControl 为自身设置默认样式密钥  。 但默认样式是什么  ？ 自定义（模板化）控件需要具有包含默认控件模板的默认样式，在控件的使用者未设置样式和/或模板时，可用于呈现。 在本节中，我们将向包含默认样式的项目添加标记文件。
+在其构造函数中，BgLabelControl 为自身设置默认样式密钥。 但默认样式是什么？ 自定义（模板化）控件需要具有包含默认控件模板的默认样式，在控件的使用者未设置样式和/或模板时，可用于呈现。 在本节中，我们将向包含默认样式的项目添加标记文件。
 
-确保“显示所有文件”仍处于打开状态（在“解决方案资源管理器”中）。   在项目节点下，新建文件夹（不是筛选器，而是文件夹），并将其命名为“Themes”。 在 `Themes` 下，添加类型为“Visual C++” > “XAML” > “XAML View”的新项目，并将其命名为“Generic.xaml”    。 文件夹和文件的名称必须与如下类似，以便 XAML 框架查找自定义控件的默认样式。 删除 `Generic.xaml` 的默认内容，并粘贴到下方标记中。
+确保“显示所有文件”仍处于打开状态（在“解决方案资源管理器”中）。  在项目节点下，新建文件夹（不是筛选器，而是文件夹），并将其命名为“Themes”。 在 `Themes` 下，添加类型为“Visual C++” > “XAML” > “XAML View”的新项目，并将其命名为“Generic.xaml”  。 文件夹和文件的名称必须与如下类似，以便 XAML 框架查找自定义控件的默认样式。 删除 `Generic.xaml` 的默认内容，并粘贴到下方标记中。
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
@@ -161,17 +164,17 @@ namespace winrt::BgLabelControlApp::implementation
 </ResourceDictionary>
 ```
 
-在本例中，默认样式所设置的唯一的属性是控件模板。 该模板由一个正方形（其背景绑定到 Background 属性，所有 XAML [Control](/uwp/api/windows.ui.xaml.controls.control) 类型的实例都具有该属性）和一个文本元素（其文本绑定到 BgLabelControl::Label 依赖项属性）组成    。
+在本例中，默认样式所设置的唯一的属性是控件模板。 该模板由一个正方形（其背景绑定到 Background 属性，所有 XAML [Control](/uwp/api/windows.ui.xaml.controls.control) 类型的实例都具有该属性）和一个文本元素（其文本绑定到 BgLabelControl::Label 依赖项属性）组成  。
 
-## <a name="add-an-instance-of-bglabelcontrol-to-the-main-ui-page"></a>将 BgLabelControl 的实例添加到主 UI 页面 
+## <a name="add-an-instance-of-bglabelcontrol-to-the-main-ui-page"></a>将 BgLabelControl 的实例添加到主 UI 页面
 
-打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 紧接在 Button 元素（StackPanel 内）之后，添加以下标记   。
+打开 `MainPage.xaml`，其中包含主 UI 页面的 XAML 标记。 紧接在 Button 元素（StackPanel 内）之后，添加以下标记 。
 
 ```xaml
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-此外，将以下 include 指令添加到 `MainPage.h`，以便 MainPage 类型（编译 XAML 标记和命令式代码的组合）意识到 BgLabelControl 自定义控件类型   。 如果想要使用另一个 XAML 页面的 BgLabelControl，则也可以将上述 include 指令添加到该页面的头文件  。 或者，也可以直接在预编译的头文件中放入一个 include 指令。
+此外，将以下 include 指令添加到 `MainPage.h`，以便 MainPage 类型（编译 XAML 标记和命令式代码的组合）意识到 BgLabelControl 自定义控件类型 。 如果想要使用另一个 XAML 页面的 BgLabelControl，则也可以将上述 include 指令添加到该页面的头文件。 或者，也可以直接在预编译的头文件中放入一个 include 指令。
 
 ```cppwinrt
 // MainPage.h
@@ -180,13 +183,13 @@ namespace winrt::BgLabelControlApp::implementation
 ...
 ```
 
-立即生成并运行该项目。 你将看到，默认控件模板绑定到标记中 BgLabelControl 实例的背景刷和标签  。
+立即生成并运行该项目。 你将看到，默认控件模板绑定到标记中 BgLabelControl 实例的背景刷和标签。
 
 本演练展示了 C++/WinRT 中自定义（模板化）控件的一个简单示例。 你可以任意将自己的自定义控件变得功能丰富、特色十足。 例如，自定义控件可以采用可编辑数据网格、视频播放器或 3D 几何可视化器等复杂形式。
 
-## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>实现 MeasureOverride 和 OnApplyTemplate 等可覆盖的函数   
+## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>实现 MeasureOverride 和 OnApplyTemplate 等可覆盖的函数 
 
-可以从 [Control](/uwp/api/windows.ui.xaml.controls.control) 运行时类派生自定义控件，而该运行时类本身派生自基本运行时类  。 以下是 [Control、](/uwp/api/windows.ui.xaml.frameworkelement) 和 [UIElement](/uwp/api/windows.ui.xaml.uielement) 的一些可覆盖方法，可在派生类中覆盖    。 下面的代码示例演示了如何执行该操作。
+可以从 [Control](/uwp/api/windows.ui.xaml.controls.control) 运行时类派生自定义控件，而该运行时类本身派生自基本运行时类。 以下是 [Control、](/uwp/api/windows.ui.xaml.frameworkelement) 和 [UIElement](/uwp/api/windows.ui.xaml.uielement) 的一些可覆盖方法，可在派生类中覆盖  。 下面的代码示例演示了如何执行该操作。
 
 ```cppwinrt
 struct BgLabelControl : BgLabelControlT<BgLabelControl>
@@ -205,7 +208,7 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 };
 ```
 
-可覆盖函数在不同语言投影中呈现出不同形式  。 例如，在 C# 中可覆盖函数通常呈现为受保护的虚拟函数。 在 C++/WinRT 中，它们既不是虚拟的也不是受保护的，但你仍可以覆盖它们并提供你自己的实现，如上所示。
+可覆盖函数在不同语言投影中呈现出不同形式。 例如，在 C# 中可覆盖函数通常呈现为受保护的虚拟函数。 在 C++/WinRT 中，它们既不是虚拟的也不是受保护的，但你仍可以覆盖它们并提供你自己的实现，如上所示。
 
 ## <a name="important-apis"></a>重要的 API
 * [Control 类](/uwp/api/windows.ui.xaml.controls.control)

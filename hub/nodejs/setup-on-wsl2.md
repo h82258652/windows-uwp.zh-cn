@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 node, wsl 上的 node, windows 中 linux 上的 node, 在 windows 上安装 node, 具有 vs code 的 nodejs, 通过 windows 上的 node 进行开发, 通过 windows 上的 nodejs 进行开发, 在 WSL 上安装 node, 适用于 Linux 的 Windows 子系统上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 06/09/2020
-ms.openlocfilehash: 494db609db577bd2b199f828fcf80e80a5c8c624
-ms.sourcegitcommit: 22ed0d4edad5e6bab352e641cf86cf455cf83825
+ms.openlocfilehash: e8fb06cb1e68d5dfa7f23e6966f917c96eb79859
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133970"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493272"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 设置 Node.js 开发环境
 
@@ -36,7 +36,7 @@ ms.locfileid: "85133970"
 
 新的 Windows 终端可启用多个选项卡（在多个 Linux 命令行、Windows 命令提示符、PowerShell 和 Azure CLI 等之间快速切换）、创建键绑定（用于打开或关闭选项卡、复制粘贴等的快捷方式键）、使用搜索功能，以及使用自定义主题（配色方案、字体样式和大小、背景图像/模糊/透明度）。 [了解详细信息](https://docs.microsoft.com/windows/terminal)。
 
-1. 获取 [Microsoft Store 中的 Windows 终端（预览版）](https://www.microsoft.com/store/apps/9n0dx20hk701)：通过 Microsoft Store 进行安装时，将自动处理更新。
+1. [在 Microsoft Store 中获取 Windows 终端](https://www.microsoft.com/store/apps/9n0dx20hk701)：通过 Microsoft Store 进行安装时，将自动处理更新。
 
 2. 安装完成后，打开 Windows 终端并选择“设置”以使用 `settings.json` 文件自定义终端。
 
@@ -140,5 +140,5 @@ ms.locfileid: "85133970"
 
 - [适用于初学者的 Node.js 入门](./beginners.md)
 - [开始在 Windows 上使用 Node.js Web 框架](./web-frameworks.md)
-- [开始将 Node.js 应用连接到数据库](./databases.md)
+- [开始将 Node.js 应用连接到数据库](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
 - [开始将 Docker 容器与 Node.js 结合使用](./containers.md)

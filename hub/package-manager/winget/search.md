@@ -4,12 +4,12 @@ description: 查询可用于安装的应用程序的源
 ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 366d2176fe9465495d8ed8f2eeb7912229bd07f1
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 7038f9b31c4c0446e3af56cac2d118598347d4d3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334473"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493252"
 ---
 # <a name="search-command-winget"></a>search 命令 (winget)
 
@@ -48,7 +48,7 @@ search 命令可以显示所有可用的应用程序，也可以向下筛选到�
 | **--name**      |  将搜索限制为应用程序的名称。 |
 | **--moniker**  |    将搜索限制为指定的名字对象。 |
 | **--tag**    |  将搜索限制为针对应用程序列出的标记。 |
-| **--command**   |   将搜索限制为应用程序的名称。 |
+| **--command**   |   将搜索限制为针对应用程序列出的命令。 |
 
 系统会将该字符串视为子字符串。 默认情况下，搜索也不区分大小写。 例如，`winget search micro` 可返回以下内容：
 

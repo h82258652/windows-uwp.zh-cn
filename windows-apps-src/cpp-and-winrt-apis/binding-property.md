@@ -5,20 +5,22 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, XAML, 控件, 绑定, 属性
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a20ae3df6ae83723550bf365aadab99b1b3b7b
-ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
+ms.openlocfilehash: 5ba06ece905e6a91a2279f0fe78e867a8f943bb3
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2020
-ms.locfileid: "84756524"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492932"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控件；绑定到 C++/WinRT 属性
+
 可有效地绑定到 XAML 项目控件的属性称为*可观测*属性。 这一想法基于称为“观察者模式”的软件设计模式。 本主题介绍如何在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中实现可观测属性，以及如何将 XAML 控件绑定到这些属性（如需背景信息，请参阅[数据绑定](/windows/uwp/data-binding)）。
 
 > [!IMPORTANT]
 > 有关支持你了解如何利用 C++/WinRT 来使用和创作运行时类的基本概述和术语，请参阅[通过 C++/WinRT 使用 API](consume-apis.md) 和[通过 C++/WinRT 创作 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-property"></a>对于属性来说，可观测意味着什么？
+
 假设名为 BookSku 的运行时类有一个名为“标题”的属性 。 如果 BookSku 选择每当“标题”的值发生更改时引发 [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件，则“标题”为一个可观测属性   。 BookSku 的行为（引发或未引发该事件）确定其属性是否可观测，有哪些可观测。
 
 XAML 文本元素或控件可检索更新的值并自行更新以显示新值，从而绑定到并处理这些事件。
@@ -27,7 +29,8 @@ XAML 文本元素或控件可检索更新的值并自行更新以显示新值，
 > 有关安装和使用 C++/WinRT Visual Studio 扩展 (VSIX) 和 NuGet 包（两者共同提供项目模板，并生成支持）的信息，请参阅[适用于 C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="create-a-blank-app-bookstore"></a>创建空白应用 (Bookstore)
-首先在 Microsoft Visual Studio 中创建新项目。 创建“空白应用 (C++/WinRT)”项目，然后将其命名为 Bookstore。
+
+首先在 Microsoft Visual Studio 中创建新项目。 创建“空白应用 (C++/WinRT)”项目，然后将其命名为 Bookstore。 请确保未选中“将解决方案和项目放在同一目录中”。 面向 Windows SDK 的最新正式发布（非预览）版本。
 
 我们将创作新类来表示具有可观测标题属性的书籍。 我们要在同一编译单元内创作和使用该类。 但我们希望能够从 XAML 绑定到此类，因此，它将成为一个运行时类。 而且我们将使用 C++/WinRT 来创作和使用它。
 
@@ -193,7 +196,7 @@ namespace winrt::Bookstore::implementation
 > [!NOTE]
 > `m_bookSku` 的类型是投影类型 (winrt::Bookstore::BookSku)，而且你用于 [winrt::make](/uwp/cpp-ref-for-winrt/make) 的模板参数是实现类型 (winrt::Bookstore::implementation::BookSku)  。 即使如此，make 也会返回投影类型的实例。
 
-## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>将类型 BookstoreViewModel 的属性添加到 MainPage 
+## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>将类型 BookstoreViewModel 的属性添加到 MainPage
 打开 `MainPage.idl`，这将声明表示主 UI 页面的运行时类。 添加导入语句以导入 `BookstoreViewModel.idl`，然后添加名为类型 BookstoreViewModel 的 MainViewModel 的只读属性。 此外删除 MyProperty 属性。 另外请注意下表中的 `import` 指令。
 
 ```idl
@@ -240,7 +243,7 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-在 `\Bookstore\Bookstore\MainPage.cpp` 中，调用 [winrt::make](/uwp/cpp-ref-for-winrt/make)（具有实现类型）将投影类型的新实例分配到 m_mainViewModel。 为书籍的标题分配一个初始值。 针对 MainViewModel 属性实现访问器。 最后，在按钮的事件处理程序中更新书籍的标题。 此外删除 MyProperty 属性。
+如以下列表所示，在 `\Bookstore\Bookstore\MainPage.cpp` 中进行以下更改。 调用 [winrt::make](/uwp/cpp-ref-for-winrt/make)（具有 BookstoreViewModel 实现类型）将投影的 BookstoreViewModel 类型的新实例分配到 m_mainViewModel  。 正如前文所述，BookstoreViewModel 构造函数会创建一个新的 BookSku 对象作为专用数据成员，并在一开始将其标题设置为 `L"Atticus"` 。 在按钮的事件处理程序 (ClickHandler) 中，将书籍的标题更新为其发布的标题。 最后，针对 MainViewModel 属性实现访问器。 此外删除 MyProperty 属性。
 
 ```cppwinrt
 // MainPage.cpp

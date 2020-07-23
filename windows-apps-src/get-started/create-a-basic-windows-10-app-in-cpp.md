@@ -6,14 +6,14 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c388b9b81744c0d27d96c1f97b4e405af63eaef
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 79022d1be13b98be4b086cbe452e55767ca0cedc
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80524086"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492896"
 ---
-# <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 创建“Hello world”应用
+# <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 创建“Hello, World!” 应用
 
 > [!IMPORTANT]
 > 本教程使用 C++/CX。 Microsoft 已发布 C++/WinRT：适用于 Windows 运行时 (WinRT) API 的完全标准的现代 C++17 语言投影。 有关此语言的详细信息，请参阅 [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)。
@@ -27,7 +27,7 @@ ms.locfileid: "80524086"
 
 -   若要完成本教程，在运行 Windows 10 的计算机上，必须使用 Visual Studio Community 或任一非社区版 Visual Studio。 若要进行下载，请参阅[获取工具](https://visualstudio.microsoft.com/downloads/)。
 -   我们假设你已基本了解 [XAML 概述](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)中的标准 C++/CX、XAML 和概念。
--   我们假定你正在使用 Visual Studio 中的默认窗口布局。 若要重置为默认布局，请在菜单栏上，选择“窗口” > “重置窗口布局”   。
+-   我们假定你正在使用 Visual Studio 中的默认窗口布局。 若要重置为默认布局，请在菜单栏上，选择“窗口” > “重置窗口布局” 。
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>将 C++ 桌面应用与 Windows 应用比较
 
@@ -73,18 +73,18 @@ ms.locfileid: "80524086"
 
 **首先在 Visual Studio 中创建一个解决方案**
 
-1.  在 Visual Studio 的菜单栏上，选择“文件” > “新建” > “项目...”    。
+1.  在 Visual Studio 的菜单栏上，选择“文件” > “新建” > “项目...”  。
 
-2.  在“创建新项目”对话框中，选择“空白应用(通用 Windows - C++/CX)”   。  如果没有看到此选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。
+2.  在“创建新项目”对话框中，选择“空白应用(通用 Windows - C++/CX)” 。  如果没有看到此选项，请确保已安装通用 Windows 应用开发工具。 有关详细信息，请参阅[准备工作](get-set-up.md)。
 
 ![“创建新项目”对话框中的 C++/CX 项目模板 ](images/vs2019-uwp-01.png)
 
-3.  选择“下一步”，  然后输入项目名称。 我们将其命名为 HelloWorld。
+3.  选择“下一步”，然后输入项目名称。 我们将其命名为 HelloWorld。
 
-4.  选择“创建”  按钮。
+4.  选择“创建”按钮。
 
 > [!NOTE]
-> 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框  。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框   。
+> 如果你是首次使用 Visual Studio，则可能会看到要求启用“开发人员模式”的“设置”对话框。 开发人员模式是一种用于启用某些功能（如允许直接运行应用，而不是只能从 Store 运行）的特殊设置。 有关更多信息，请阅读[启用设备进行开发](enable-your-device-for-development.md)。 若要继续使用本指南，请选择“开发人员模式”，然后单击“是”并关闭对话框 。
 
    已创建项目文件。
 
@@ -99,10 +99,10 @@ ms.locfileid: "80524086"
 让我们先看一下项目文件。
 
 -   **App.xaml、App.xaml.h、App.xaml.cpp：** 代表应用程序对象，这是应用的入口点。 App.xaml 不包含特定于页面的 UI 标记，但是你可以添加希望可以从任何页面访问的 UI 样式和其他元素。 代码隐藏文件包含 **OnLaunched** 和 **OnSuspending** 事件的处理程序。 通常，你在此处添加自定义代码以在应用启动时初始化应用并在它暂停或终止时执行清理。
--   **MainPage.xaml、MainPage.xaml.h、MainPage.xaml.cpp：** 包含应用中的默认“开始”页面的 XAML 标记和代码隐藏。 它没有导航支持或内置控件。
+-   MainPage.xaml、MainPage.xaml.h、MainPage.xaml.cpp：包含应用中的默认“开始”页面的 XAML 标记和代码隐藏。 它没有导航支持或内置控件。
 -   **pch.h、pch.cpp：** 预编译标头文件和在你的项目中包含它的文件。 在 pch.h 中，你可以在解决方案中包含任何不经常更改且包含在其他文件中的标头。
 -   **Package.appxmanifest：** 描述应用所需的设备功能、应用版本信息以及其他元数据的 XML 文件。 要在**清单设计器**中打开此文件，只需双击它。
--   **HelloWorld\_TemporaryKey.pfx：** 支持在此计算机上从 Visual Studio 部署应用的密钥。
+-   HelloWorld\_TemporaryKey.pfx：支持在此计算机上从 Visual Studio 部署应用的密钥。
 
 ## <a name="a-first-look-at-the-code"></a>代码一览
 
@@ -247,9 +247,9 @@ MainPage::MainPage()
 
    同时，在 MainPage.xaml 中，更新 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的 XAML 以声明 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件处理程序，如下所示：
 
-    ```xaml
-    <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
-    ```
+```xaml
+<Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
+```
 
    你可以只是手动将其添加到 xaml 代码，如果设计器未加载这可能会很有用。 如果你手动输入此信息，请键入“Click”，然后让 IntelliSense 弹出用于添加新事件处理程序的选项。 这样，Visual Studio 将创建必要的方法声明和存根。
 
@@ -257,12 +257,12 @@ MainPage::MainPage()
 
 5.  在 MainPage.xaml.cpp 中，将以下代码添加到刚创建的 **Button\_Click** 事件处理程序。 此代码将从 `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控件检索用户名并使用该用户名创建问候语。 `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 将显示相关结果。
 
-    ```cpp
-    void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-    {
-        greetingOutput->Text = "Hello, " + nameInput->Text + "!";
-    }
-    ```
+```cpp
+void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    greetingOutput->Text = "Hello, " + nameInput->Text + "!";
+}
+```
 
 6.  将项目设置为启动项，然后按 F5 生成并运行应用。 当你在文本框中键入姓名并单击按钮时，应用会显示个性化问候。
 
@@ -279,20 +279,20 @@ MainPage::MainPage()
 1.  打开 App.xaml。
 2.  在开始标记 [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) 中，编辑 [**RequestedTheme**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme) 属性并将其值设置为 **Dark**：
 
-    ```xaml
-    RequestedTheme="Dark"
-    ```
+```xaml
+RequestedTheme="Dark"
+```
 
-    以下是带有深色主题的完整 [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) 标记：
+    Here's the full [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
 
-    ```xaml
-        <Application
-        x:Class="HelloWorld.App"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:HelloWorld"
-        RequestedTheme="Dark">
-    ```
+```xaml
+    <Application
+    x:Class="HelloWorld.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HelloWorld"
+    RequestedTheme="Dark">
+```
 
 3.  按 F5 生成并运行应用。 请注意它使用深色主题。
 
@@ -321,9 +321,9 @@ MainPage::MainPage()
 
      在 XAML 设计图面中，文本外观会发生更改。 在 XAML 编辑器中，[**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 的 XAML 会进行更新：
 
-    ```xaml
-    <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
-    ```
+```xaml
+<TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
+```
 
 7.  重复该过程可设置字体大小并将 **BaseTextBlockStyle** 分配到 `greetingOutput`[**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素。
 
@@ -331,16 +331,16 @@ MainPage::MainPage()
 
     现在的 XAML 如下所示：
 
-    ```xaml
-    <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
-        <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
-            <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
-        </StackPanel>
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
+```xaml
+<StackPanel x:Name="contentPanel" Margin="120,30,0,0">
+    <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
+    <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
+        <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
+        <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
     </StackPanel>
-    ```
+    <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
+</StackPanel>
+```
 
 8.  按 F5 构建并运行应用。 现在它的外观如下所示：
 
@@ -354,27 +354,27 @@ MainPage::MainPage()
 
 1.  在 XAML 编辑器中，在根 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 元素的开始标记后添加此 XAML 块。
 
-    ```xaml
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup>
-            <VisualState x:Name="wideState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="641" />
-                </VisualState.StateTriggers>
-            </VisualState>
-            <VisualState x:Name="narrowState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="0" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter Target="contentPanel.Margin" Value="20,30,0,0"/>
-                    <Setter Target="inputPanel.Orientation" Value="Vertical"/>
-                    <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-    ```
+```xaml
+<VisualStateManager.VisualStateGroups>
+    <VisualStateGroup>
+        <VisualState x:Name="wideState">
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="641" />
+            </VisualState.StateTriggers>
+        </VisualState>
+        <VisualState x:Name="narrowState">
+            <VisualState.StateTriggers>
+                <AdaptiveTrigger MinWindowWidth="0" />
+            </VisualState.StateTriggers>
+            <VisualState.Setters>
+                <Setter Target="contentPanel.Margin" Value="20,30,0,0"/>
+                <Setter Target="inputPanel.Orientation" Value="Vertical"/>
+                <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
+            </VisualState.Setters>
+        </VisualState>
+    </VisualStateGroup>
+</VisualStateManager.VisualStateGroups>
+```
 
 2.  在本地计算机上调试应用。 请注意，UI 外观与以前相同，除非窗口变得窄于 641 与设备无关的像素 (DIP)。
 3.  在移动设备仿真器上调试应用。 请注意 UI 使用你在 `narrowState` 中定义的属性并正确显示在小屏幕上。

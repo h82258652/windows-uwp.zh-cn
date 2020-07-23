@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影的, 投影, 实现, 运行时类, 激活
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c162b7ae9cd588bea1062ed8c953d94d1b691c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: de461f94897110aaf1ff06b3863a7112c61fda1f
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "70393767"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86492942"
 ---
 # <a name="consume-apis-with-cwinrt"></a>通过 C++/WinRT 使用 API
 
@@ -247,7 +247,7 @@ GiftBox smallBox{ bigBox };
 auto smallBox{ GiftBox(bigBox) };
 ```
 
- 正确的做法是显式调用激活工厂。
+正确的做法是显式调用激活工厂。
 
 ```cppwinrt
 GiftBox bigBox{ ... };
@@ -280,7 +280,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-有关更多详细信息、代码以及使用在 Windows 运行时组件实现的 API 的演练，请参阅[使用 C++/WinRT 创作事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)。
+有关更多详细信息、代码以及使用在 Windows 运行时组件实现的 API 的演练，请参阅[使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)和[使用 C++/WinRT 创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)。
 
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>如果在使用的项目中实现 API
 通过 XAML UI 使用的类型必须为运行时类，即使其位于与 XAML 相同的项目中。
@@ -382,7 +382,7 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 
 ## <a name="membertype-ambiguities"></a>成员/类型多义性
 
-当成员函数的名称与类型的名称相同时，会产生多义性。 根据 C++ 的在成员函数中进行非限定名称查找的规则，必须先搜索类，然后才能在命名空间中进行搜索。  “替换失败不是错误 (SFINAE)”规则不适用（在对函数模板进行重载解析时适用）。 因此，如果类中的名称没有意义，则编译器不会继续查找更好的匹配&mdash;它会直接报告一个错误。
+当成员函数的名称与类型的名称相同时，会产生多义性。 根据 C++ 的在成员函数中进行非限定名称查找的规则，必须先搜索类，然后才能在命名空间中进行搜索。 “替换失败不是错误 (SFINAE)”规则不适用（在对函数模板进行重载解析时适用）。 因此，如果类中的名称没有意义，则编译器不会继续查找更好的匹配&mdash;它会直接报告一个错误。
 
 ```cppwinrt
 struct MyPage : Page
@@ -449,7 +449,8 @@ struct MyPage : Page
 * [winrt::Windows::Foundation::IUnknown 结构](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相关主题
-* [在 C++/WinRT 中创作事件](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [实现 C++/WinRT 与 ABI 之间的互操作](interop-winrt-abi.md)
-* [C++/WinRT 简介](intro-to-using-cpp-with-winrt.md)
-* [XAML 控件; 绑定到 C++/WinRT 属性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [在 C++/WinRT 中创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [实现 C++/WinRT 与 ABI 之间的互操作](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi)
+* [C++/WinRT 简介](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+* [使用 C++/WinRT 创建 Windows 运行时组件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [XAML 控件; 绑定到 C++/WinRT 属性](/windows/uwp/cpp-and-winrt-apis/binding-property)

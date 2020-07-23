@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: eae966c130c52305b53cc4122844aeae49ecab92
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5960de52c6cd68e98f80e7618f34dd0a94d08312
+ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267491"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86493362"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用委托处理事件
 
@@ -285,7 +285,7 @@ winrt::hstring f(ListView listview)
 }
 ```
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件处理委托安全访问 this 指针 
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件处理委托安全访问 this 指针
 
 如果你使用对象的成员函数处理事件，或者从对象成员函数中的某个 lambda 函数内部处理事件，则需要考虑事件接收方（处理事件的对象）和事件源（引发事件的对象）的相对生存期。 详细信息以及代码示例，请参阅 [C++/WinRT 中的强引用和弱引用](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
@@ -295,6 +295,6 @@ winrt::hstring f(ListView listview)
 * [winrt::implements::get_strong 函数](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>相关主题
-* [在 C++/WinRT 中创作事件](author-events.md)
-* [利用 C++/WinRT 实现的并发和异步操作](concurrency.md)
-* [C++/WinRT 中的弱引用](weak-references.md)
+* [在 C++/WinRT 中创作事件](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [利用 C++/WinRT 实现的并发和异步操作](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [C++/WinRT 中的弱引用](/windows/uwp/cpp-and-winrt-apis/weak-references)
