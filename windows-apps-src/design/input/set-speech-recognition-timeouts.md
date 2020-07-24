@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0df5f6c2e12b3b2e761ce45f95930dc179ef367f
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 026dd160ade3fa89af48e4f3ab8efaa85a80f490
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258254"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997754"
 ---
 # <a name="set-speech-recognition-timeouts"></a>设置语音识别超时
 
@@ -31,7 +31,7 @@ ms.locfileid: "74258254"
 -   BabbleTimeout - SpeechRecognizer 先继续侦听无法识别的声音（干扰），之后再假定语音输入已结束并结束识别操作的时长。
 -   EndSilenceTimeout - SpeechRecognizer 检测静默（在生成任何识别结果之后），并假定语音输入已结束的时长。
 
-**请注意**，可以根据每个识别器来设置  超时。
+**注意**   可以基于每个识别器设置超时。
 
  
 
@@ -44,14 +44,8 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 ## <a name="related-articles"></a>相关文章
 
-
 * [语音交互](speech-interactions.md)
+
 **示例**
+
 * [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
-
- 
-
-
-
-

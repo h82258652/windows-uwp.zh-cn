@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc1ec762e5c6f69db608805ac58cfb9469114beb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: bf1372289afcc8649fff6c2ed56ad85aad46b76c
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372274"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997984"
 ---
 # <a name="xphase-attribute"></a>x:Phase 属性
 
 
-将 **x:Phase** 与 [{x:Bind} 标记扩展](x-bind-markup-extension.md)结合使用，以便能以增量方式呈现 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 项并改进平移体验。 为了能实现与使用 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
+使用带有[{x:Bind} 标记扩展](x-bind-markup-extension.md)的**x:Phase**来增量呈现[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)和[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)项，并改善平移体验。 为了能实现与使用 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件手动控制列表项的呈现相同的效果，**x:Phase** 提供了一种声明性方法。 另请参阅[以增量方式更新 ListView 和 GridView 项](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
-## <a name="xaml-attribute-usage"></a>XAML 属性使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性用法
 
 
 ``` syntax
@@ -34,7 +34,7 @@ ms.locfileid: "66372274"
 
 ## <a name="remarks"></a>备注
 
-如果列表既能借助触摸快速平移又能使用鼠标滚轮实现，则该列表可能无法以足够快地速度呈现项目以跟上滚动速度，具体取决于数据模板的复杂程度。 这对于带有节能 CPU 的便携式设备（如手机或平板电脑）尤其如此。
+如果列表既能借助触摸快速平移又能使用鼠标滚轮实现，则该列表可能无法以足够快地速度呈现项目以跟上滚动速度，具体取决于数据模板的复杂程度。 对于具有电源效率 CPU （如平板电脑）的便携设备，情况尤其如此。
 
 阶段支持递增式呈现数据模板，以便可为内容设定优先级，即最重要的元素最先呈现。 这使列表能够在平移速度较快时为每个项显示相应内容，并且将在时间允许的情况下为每个模板呈现更多的元素。
 
@@ -79,5 +79,5 @@ ms.locfileid: "66372274"
 
 阶段仅影响 [{x:Bind}](x-bind-markup-extension.md) 绑定，而不会影响 [{Binding}](binding-markup-extension.md) 绑定。
 
-仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 适用于 Windows 10，这意味着[ **ListView** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)并[ **GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 或 [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
+仅当项目模板使用阶段感知的控件进行呈现时，才应用阶段。 对于 Windows 10，即表示 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 阶段既不会应用于其他项目控件中所使用的数据模板，也不会应用于诸如 [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 或 [**Hub**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Hub) 等部分中的方案，因为在这些用例中，将一次数据绑定所有 UI 元素。
 

@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5192177edf284d1fe6e0c6eb06bf8713fbff8b4e
-ms.sourcegitcommit: c660def841abc742600fbcf6ed98e1f4f7beb8cc
+ms.openlocfilehash: 8ecdd882357a7e20506ab6116748d57ab0dde33f
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80218377"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997714"
 ---
 # <a name="speech-recognition"></a>语音识别
 
@@ -221,7 +221,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 诸如听写语法等 Web 搜索语法包含了用户可能说出的大量字词和短语。 但是，优化它的目的是识别用户搜索 Web 时通常使用的术语。
 
 > [!NOTE]
-> ，因为预定义的听写和 web 搜索语法可能会很大，并且由于它们处于联机状态（不在设备上），因此性能可能不像在设备上安装了自定义语法那样快。     
+> 由于预定义的听写和 Web 搜索语法可能很大，而且处于联机状态（不在设备上），性能可能不如安装在设备上的自定义语法快。     
 
 可以使用这些预定义语法识别长达 10 秒的语音输入，并且不要求你进行任何创作。 然而，它们确实需要连接到网络。
 
@@ -229,7 +229,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 下面我们将介绍如何测试是否已启用语音输入，如果未启用，则打开“设置”->“隐私”->“语音、墨迹书写和键入”页面。
 
-首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅[C\# 或 Visual Basic 中的异常处理](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10))。
+首先，我们将全局变量 (HResultPrivacyStatementDeclined) 初始化为 0x80045509 的 HResult 值。 请参阅[C \# 或 Visual Basic 中的异常处理](https://docs.microsoft.com/previous-versions/windows/apps/dn532194(v=win.10))。
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
@@ -278,9 +278,9 @@ catch (Exception exception)
 
 使用语音命令定义 (VCD) XML 文件定义用户可以在激活应用时说出以启动操作的命令。 有关更多详细信息，请参阅[通过 Cortana 使用语音命令激活前台应用](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。
 
-请参阅[**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+请参阅[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
-**请注意**  所使用的约束类型类型取决于要创建的识别体验的复杂性。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
+**注意**   使用的约束类型类型取决于要创建的识别体验的复杂性。 对于特定识别任务，任一类型都可能是最佳选择，你也可能在应用中发现所有类型的约束的用途。
 要开始使用约束，请参阅[定义自定义识别约束](define-custom-recognition-constraints.md)。
 
 预定义的通用 Windows 应用听写语法可识别使用某种语言的大部分字词和短语。 如果语音识别器对象在没有自定义约束的情况下实例化，它会自动激活。
@@ -316,15 +316,15 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 如果你使用基于预定义语法的约束（听写或 Web 搜索）：
 
--   “侦听”屏幕。
--   “思考”屏幕。
--   “听到你说”屏幕或错误屏幕。
+-   **侦听**屏幕。
+-   **思考**屏幕。
+-   **听到你说**屏幕或错误屏幕。
 
 如果你使用的约束基于字词或短语列表，或者基于 SRGS 语法文件：
 
--   “侦听”屏幕。
--   “你说的是”屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
--   “听到你说”屏幕或错误屏幕。
+-   **侦听**屏幕。
+-   **你说的是**屏幕，如果用户所说的内容可以解释为不止一种可能性结果。
+-   **听到你说**屏幕或错误屏幕。
 
 下图演示了语音识别器在不同屏幕间的流程的示例，该识别器使用基于 SRGS 语法文件的约束。 在本例中，语音识别是成功的。
 
@@ -368,17 +368,8 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相关文章
 
-
-**商**
 * [语音交互](speech-interactions.md)
-**设计人员**
-* [语音设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+
 **示例**
+
 * [语音识别和语音合成示例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
-
- 
-
-
-
-

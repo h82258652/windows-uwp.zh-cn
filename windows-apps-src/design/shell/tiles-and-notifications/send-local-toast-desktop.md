@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: 'windows 10，uwp，win32，桌面，toast 通知，发送 toast，发送本地 toast，桌面桥，.msix，稀疏包，c #，c 清晰，toast 通知，wpf'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8332745b44bc688fbf2ca7cf3b42cf7300d579
-ms.sourcegitcommit: 179f8098d10e338ad34fa84934f1654ec58161cd
+ms.openlocfilehash: 6f1eef86045f44fa75363b54fa58e3e7089d64e0
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85717641"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997924"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>从桌面 C# 应用发送本地 toast 通知
 
@@ -58,17 +58,17 @@ public class MyNotificationActivator : NotificationActivator
 然后，必须注册通知平台。 具体步骤取决于你使用的是 .MSIX/稀疏包还是经典 Win32。 如果两者都支持，用于这两者的步骤均需执行（但无需对代码实施分支操作，库会自行执行此操作！）。
 
 
-### <a name="msixsparse-packages"></a>.MSIX/稀疏包
+#### <a name="msixsparse-packages"></a>[.MSIX/稀疏包](#tab/msix-sparse)
 
 如果你使用的是[.msix](https://docs.microsoft.com/windows/msix/desktop/source-code-overview)或[稀疏包](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)（或同时支持两者），请在**appxmanifest.xml**中添加：
 
 1. **xmlns:com** 声明
 2. **xmlns:desktop** 声明
 3. 在 **IgnorableNamespaces** 属性中，添加 **com** 和 **desktop**
-4. 使用步骤 4 中 GUID 的 COM 激活器的 **com:Extension**。 务必包括 `Arguments="-ToastActivated"`，以便了解是从 toast 启动
-5. **desktop：** **toastNotificationActivation**的扩展，用于声明 toast 激活器 CLSID （步骤 #3 中的 GUID）。
+4. **com：** com 激活器的扩展，使用步骤 #2 中的 GUID。 务必包括 `Arguments="-ToastActivated"`，以便了解是从 toast 启动
+5. **desktop：** **toastNotificationActivation**的扩展，用于声明 toast 激活器 CLSID （步骤 #2 中的 GUID）。
 
-**Appxmanifest.xml**
+**Package.appxmanifest**
 
 ```xml
 <!--Add these namespaces-->
@@ -104,15 +104,15 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 
-### <a name="classic-win32"></a>经典 Win32
+#### <a name="classic-win32"></a>[经典 Win32](#tab/classic)
 
-如果使用的是经典 Win32 （或同时支持这两者），则必须在开始时在应用的快捷方式中声明应用程序用户模型 ID （AUMID）和 toast 激活器 CLSID （步骤 #3 中的 GUID）。
+如果使用的是经典 Win32 （或同时支持这两者），则必须在开始时在应用的快捷方式中声明应用程序用户模型 ID （AUMID）和 toast 激活器 CLSID （步骤 #2 中的 GUID）。
 
 选取用于识别 Win32 应用的唯一 AUMID。 通常采用 [CompanyName].[AppName] 的形式，但需确保它在所有应用中均为唯一（可根据需要在末尾添加一些数字）。
 
-#### <a name="step-31-wix-installer"></a>步骤3.1： WiX 安装程序
+### <a name="step-31-wix-installer"></a>步骤3.1： WiX 安装程序
 
-如果对安装程序使用 WiX，则编辑 **Product.wxs** 文件，将两种快捷方式属性添加到“开始”菜单快捷方式中，如下所示。 请确保步骤 #3 的 GUID 包括在中， `{}` 如下所示。
+如果对安装程序使用 WiX，则编辑 **Product.wxs** 文件，将两种快捷方式属性添加到“开始”菜单快捷方式中，如下所示。 请确保步骤 #2 的 GUID 包括在中， `{}` 如下所示。
 
 **Product.wxs**
 
@@ -132,9 +132,9 @@ public class MyNotificationActivator : NotificationActivator
 > 为使用通知，必须在正常调试之前通过安装程序安装应用，以便显示包含有 AUMID 和 CLSID 的“开始”快捷方式。 出现“开始”快捷方式后，可以从 Visual Studio 中使用 F5 进行调试。
 
 
-#### <a name="step-32-register-aumid-and-com-server"></a>步骤3.2：注册 AUMID 和 COM 服务器
+### <a name="step-32-register-aumid-and-com-server"></a>步骤3.2：注册 AUMID 和 COM 服务器
 
-然后，无论你的安装程序在你的应用程序的启动代码中（在调用任何通知 Api 之前），请调用**RegisterAumidAndComServer**方法，并指定你的 notification activator 类（从步骤 #3 和你上面使用的 AUMID）。
+然后，无论你的安装程序在你的应用程序的启动代码中（在调用任何通知 Api 之前），请调用**RegisterAumidAndComServer**方法，并指定你的 notification activator 类（从步骤 #2 和你上面使用的 AUMID）。
 
 ```csharp
 // Register AUMID and COM server (for MSIX/sparse package apps, this no-ops)
@@ -145,12 +145,14 @@ DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivat
 
 使用此方法可调用兼容 API 来发送和管理通知，而无需总是提供 AUMID。 并且它会插入 COM 服务器的 LocalServer32 注册表项。
 
+---
+
 
 ## <a name="step-4-register-com-activator"></a>步骤4：注册 COM 激活器
 
 对于 .MSIX/稀疏包和经典 Win32 应用，必须注册 notification activator 类型，以便可以处理 toast 激活。
 
-在应用程序的启动代码中，调用以下**RegisterActivator**方法，并传入在步骤 #3 中创建的**NotificationActivator**类的实现。 必须调用此方法才能够接收任何 toast 激活。
+在应用程序的启动代码中，调用以下**RegisterActivator**方法，并传入在步骤 #2 中创建的**NotificationActivator**类的实现。 必须调用此方法才能够接收任何 toast 激活。
 
 ```csharp
 // Register COM server and activator type
@@ -165,7 +167,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 > [!NOTE]
 > 安装[通知库](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便能够按以下方式使用 C# 而非原始 XML 来构造通知。
 
-请确保使用下面所示的**ToastContent** （或 ToastGeneric 模板（如果你要手工编写 XML），因为旧 Windows 8.1 toast 通知模板不会激活你在步骤 #3 中创建的 COM 通知激活器。
+请确保使用下面所示的**ToastContent** （或 ToastGeneric 模板（如果你要手工编写 XML），因为旧 Windows 8.1 toast 通知模板不会激活你在步骤 #2 中创建的 COM 通知激活器。
 
 > [!IMPORTANT]
 > Http 映像仅在其清单中具有 internet 功能的 .MSIX/稀疏包应用中受支持。 经典 Win32 应用不支持 http 图像；必须将图像下载到本地应用数据中并在本地进行引用。

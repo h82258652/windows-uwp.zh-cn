@@ -8,12 +8,12 @@ keywords: 语音，语音，语音识别，自然语言，听写，输入，用�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a1db38120252febefd55933fa106f473b3f920d8
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8e672d67909a9090ac622ec53894a53fa8485f16
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234868"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997764"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定语音识别器语言
 
@@ -33,7 +33,7 @@ ms.locfileid: "83234868"
 
 如果你不熟悉如何开发 Windows 应用程序，请参阅这些主题，了解此处讨论的技术。
 
--   [创建第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
+-   [创建你的第一个应用](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
 -   借助[事件和路由事件概述](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)了解事件
 
 **用户体验指南：**
@@ -90,13 +90,7 @@ SRGS 语法是由 [**SpeechRecognitionGrammarFileConstraint**](https://docs.micr
 
 ## <a name="related-articles"></a>相关文章
 
-**开发人员**
-
 * [语音交互](speech-interactions.md)
-
-**设计器**
-
-* [语音设计指南](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
 
 **示例**
 
