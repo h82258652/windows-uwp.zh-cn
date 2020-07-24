@@ -96,7 +96,7 @@
           href: controls-and-patterns/rating.md
         - name: 滑块
           href: controls-and-patterns/slider.md
-        - name: 切换
+        - name: 切换开关
           href: controls-and-patterns/toggles.md
     - name: 集合
       items:
@@ -360,7 +360,7 @@
                   items:
                     - name: 概述
                       href: shell/tiles-and-notifications/toast-desktop-apps.md
-                    - name: 'C# 应用'
+                    - name: C# 应用
                       href: shell/tiles-and-notifications/send-local-toast-desktop.md
                     - name: C++ WRL 应用
                       href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
