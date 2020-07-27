@@ -178,14 +178,12 @@
       href: ../publish/insights-report.md
     - name: 广告性能报告
       href: ../publish/advertising-performance-report.md
-    - name: 广告市场活动报告
-      href: ../publish/ad-campaign-report.md
     - name: 下载分析报告
       href: ../publish/download-analytic-reports.md
-- name: 获取付款
+- name: 收取付款
   href: ../publish/getting-paid-apps.md
   items:
-    - name: 设置你的付款帐户和税单
+    - name: 设置付款帐户和纳税表单
       href: ../publish/setting-up-your-payout-account-and-tax-forms.md
     - name: 付款阈值、方法和时间范围
       href: ../publish/payment-thresholds-methods-and-timeframes.md
@@ -210,3 +208,5 @@
       href: ../publish/store-app-quality.md
     - name: 开发人员行为准则
       href: ../publish/store-developer-code-of-conduct.md
+    - name: Microsoft Store 产品排名、位置和营销披露声明
+      href: 'https://aka.ms/disclosurepolicypdf'

@@ -3,12 +3,12 @@ title: WinUI 3 预览版 2（2020 年 7 月）
 description: WinUI 3 预览版 2 发布概述。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 6dd29b7da0ce2d0f3a08538d392792337f1e1b5a
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 0acea4520f10d5f64baa29cb64fdf0ba1cc4552e
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493045"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997954"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 库 3 预览版 2（2020 年 7 月）
 
@@ -103,6 +103,9 @@ WinUI 3 预览版 2 提供有 Visual Studio 项目模板和 NuGet 包，前者�
 ## <a name="bug-fixes-and-other-improvements-in-winui-3-preview-2"></a>WinUI 3 预览版 2 中的 Bug 修复和其他改进
 
 这是预览版 2 的 Bug 修复和其他更新的完整列表。 请参阅我们的[发布公告](https://aka.ms/winui3/preview2-announcement)，以获得该发行版中解决的最关键 Bug 的列表。
+
+> [!NOTE]
+> WinUI 3 预览版 2 使用 WinUI 2 库的版本 2.4.2。 
 
 - [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) 和 [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) 目前在 C# 桌面应用中按预期方式工作
   - 这解决了其他一些问题，即有关集合控件在后端中更新时不会在 UI 中更新的问题。

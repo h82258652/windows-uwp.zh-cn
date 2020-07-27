@@ -426,7 +426,7 @@
                 - name: 间隙广告
                   href: ../monetize/interstitial-ads.md
                   items:
-                    - name: 'C# 中的间隙广告示例代码'
+                    - name: C# 中的间隙广告示例代码
                       href: ../monetize/interstitial-ad-sample-code-in-c.md
                     - name: JavaScript 中的间隙广告示例代码
                       href: ../monetize/interstitial-ad-sample-code-in-javascript.md
@@ -448,7 +448,7 @@
                 - name: 处理广告错误
                   href: ../monetize/error-handling-with-advertising-libraries.md
                   items:
-                    - name: 'XAML/C# 演练中的错误处理'
+                    - name: XAML/C# 演练中的错误处理
                       href: ../monetize/error-handling-in-xamlc-walkthrough.md
                     - name: JavaScript 演练中的错误处理
                       href: ../monetize/error-handling-in-javascript-walkthrough.md
@@ -457,7 +457,7 @@
               items:
                 - name: HTML 和 JavaScript 疑难解答指南
                   href: ../monetize/html-and-javascript-troubleshooting-guide.md
-                - name: 'XAML 和 C# 疑难解答指南'
+                - name: XAML 和 C# 疑难解答指南
                   href: ../monetize/xaml-and-c-troubleshooting-guide.md
             - name: 发行说明
               href: ../monetize/release-notes-for-the-advertising-libraries.md
@@ -690,9 +690,9 @@
                 - name: 提交 API 的代码示例
                   href: ../monetize/code-examples-for-the-windows-store-submission-api.md
                   items:
-                    - name: 'C# 示例：应用、加载项和外部测试版的提交'
+                    - name: C# 示例：应用、加载项和外部测试版的提交
                       href: ../monetize/csharp-code-examples-for-the-windows-store-submission-api.md
-                    - name: 'C# 示例：使用游戏选项和预告片的应用提交'
+                    - name: C# 示例：使用游戏选项和预告片的应用提交
                       href: ../monetize/csharp-code-examples-for-submissions-game-options-and-trailers.md
                     - name: Java 示例：应用、加载项和外部测试版的提交
                       href: ../monetize/java-code-examples-for-the-windows-store-submission-api.md
@@ -722,8 +722,6 @@
                   href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
                 - name: 续订 Microsoft Store ID 密钥
                   href: ../monetize/renew-a-windows-store-id-key.md
-            - name: 广告网络的应用元数据 API
-              href: ../monetize/app-metadata-api-for-advertising-networks.md
         - name: 向 Microsoft Store 发送请求
           href: ../monetize/send-requests-to-the-store.md
         - name: 添加零售演示 (RDX) 功能
@@ -799,9 +797,9 @@
           href: ../cpp-and-winrt-apis/interop-winrt-cx.md
         - name: 从 WRL 移动到 C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
-        - name: '从 C# 移植示例应用'
+        - name: 从 C# 移植示例应用
           href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
-        - name: '从 C# 移动到 C++/WinRT'
+        - name: 从 C# 移动到 C++/WinRT
           href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
         - name: 与 ABI 互操作
           href: ../cpp-and-winrt-apis/interop-winrt-abi.md
@@ -819,7 +817,7 @@
           items:
             - name: 值类别和引用
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
-    - name: 'C#/WinRT'
+    - name: C#/WinRT
       href: ../csharp-winrt/index.md
     - name: 安全
       href: ../security/index.md
@@ -930,11 +928,13 @@
     - name: Windows 运行时组件
       href: ../winrt-components/index.md
       items:
+        - name: 使用 C++/WinRT 的 Windows 运行时组件
+          href: ../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md
         - name: 使用 C++/CX 创建 Windows 运行时组件
           href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
         - name: C++/CX Windows 运行时组件的演练
           href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-        - name: '使用 C# 和 Visual Basic 创建 Windows 运行时组件'
+        - name: 使用 C# 和 Visual Basic 创建 Windows 运行时组件
           href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
           items:
             - name: Windows 运行时组件中的自定义事件和事件访问器
@@ -947,7 +947,7 @@
               href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
             - name: Windows 运行时类型的 .NET 映射
               href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-        - name: 'C# 或 Visual Basic Windows 运行时组件的演练'
+        - name: C# 或 Visual Basic Windows 运行时组件的演练
           href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
         - name: 在 Windows 运行时组件中引发事件
           href: ../winrt-components/raising-events-in-windows-runtime-components.md
@@ -1438,7 +1438,7 @@
           href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
         - name: 使用线程池的最佳做法
           href: ../threading-async/best-practices-for-using-the-thread-pool.md
-        - name: '使用 C# 或 Visual Basic 调用异步 API'
+        - name: 使用 C# 或 Visual Basic 调用异步 API
           href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
         - name: 创建定期工作项
           href: ../threading-async/create-a-periodic-work-item.md
