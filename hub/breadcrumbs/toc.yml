@@ -108,6 +108,12 @@
           topicHref: /windows/android/overview
         - name: Mac 到 Windows
           topicHref: /windows/dev-environment/mac-to-windows
+        - name: 提示
+          topicHref: /windows/dev-environment/tips
+        - name: 开发人员案例
+          topicHref: /windows/dev-environment/dev-stories
+        - name: 教程
+          topicHref: /windows/dev-environment/tutorials
         - name: 适用于 Linux 的 Windows 子系统
           tocHref: /windows/dev-environment/wsl
           topicHref: /windows/wsl/about
