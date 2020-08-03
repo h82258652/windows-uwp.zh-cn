@@ -5,12 +5,12 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 传递, 参数, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c5ce6a30e68fe6fc26316bc2f41c6e2556b98ef
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 51cde2332d3d9df9d1f488aa7f8246f9e1e2ed36
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255251"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997974"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>将参数传递到 ABI 边界
 
@@ -41,7 +41,7 @@ ms.locfileid: "82255251"
 
 ## <a name="iterable-parameters"></a>可迭代的参数
 
-**winrt::param::iterable\<T\>** 和 **winrt::param::async_iterable\<T\>** 简化了将参数传递给接受 **IIterable\<T\>** 的 API。
+winrt::param::iterable\<T\> 和 winrt::param::async_iterable\<T\> 简化了将参数传递给接受 IIterable\<T\> 的 API  。
 
 Windows 运行时集合已是 **IIterable** 类型。
 
@@ -55,9 +55,9 @@ Windows 运行时集合已是 **IIterable** 类型。
 | **std::initializer_list\<U\>** | 是 | 否 | **U**必须可转换为 **T**。|
 | `{ ForwardIt begin, ForwardIt end }` | 是 | 否 | `*begin` 必须可转换为 **T**。|
 
-请注意，不允许使用 **IIterable\<U\>** 和 **std::vector\<U\>** ，即使 **U** 可转换为 **T** 也是如此。对于 **std:: vector\<U\>** ，可以使用双迭代器版本（详见下文）。
+请注意，不允许使用 IIterable\<U\> 和 std::vector\<U\>，即使 U 可转换为 T 也是如此   。对于 std::vector\<U\>，可以使用双迭代器版本（详见下文）。
 
-在某些情况下，你的对象可能会真正实现你需要的 **IIterable**。 例如，由 [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) 生成的 **IVectorView\<StorageFile\>** 会实现 **IIterable<StorageFile>** 。 但它也实现 **IIterable<IStorageItem>** ；你只需显式请求它。
+在某些情况下，你的对象可能会真正实现你需要的 **IIterable**。 例如，由 [FileOpenPicker.PickMultipleFilesAsync](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) 生成的 IVectorView\<StorageFile\> 会实现 IIterable\<StorageFile\>  。 但它也实现 **IIterable\<IStorageItem\>** ；你只需显式请求它。
 
 ```cppwinrt
 IVectorView<StorageFile> pickedFiles{ co_await filePicker.PickMultipleFilesAsync() };
@@ -79,7 +79,7 @@ requestData.SetStorageItems(storageFiles); // This doesn't work.
 requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // But this works.
 ```
 
-如果迭代器为 `RandomAcessIt`，[**IIterator\<T\>.GetMany(T\[\])** ](/uwp/api/windows.foundation.collections.iiterator-1.getmany) 的实现会更高效。 否则，它会在该范围上进行多次传递。
+如果迭代器为 `RandomAcessIt`，[IIterator\<T\>.GetMany(T\[\])](/uwp/api/windows.foundation.collections.iiterator-1.getmany) 的实现会更高效。 否则，它会在该范围上进行多次传递。
 
 |可以传递的类型|同步|Async|注释|
 |-|-|-|-|
@@ -94,9 +94,9 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 ## <a name="vector-view-parameters"></a>向量视图参数
 
-**winrt::param::vector_view\<T\>** 和 **winrt::param::async_vector_view\<T\>** 简化了将参数传递给接受 **IVectorView\<T\>** 的 API。
+winrt::param::vector_view\<T\> 和 winrt::param::async_vector_view\<T\> 简化了将参数传递给接受 IVectorView\<T\> 的 API  。
 
-可以使用 [**IVector\<T\>.GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview) 从 **IVector** 获取 **IVectorView**。
+可以使用 [IVector\<T\>.GetView](/uwp/api/windows.foundation.collections.ivector-1.getview) 从 IVector 获取 IVectorView  。
 
 |可以传递的类型|同步|Async|注释|
 |-|-|-|-|
@@ -111,7 +111,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 ## <a name="map-view-parameters"></a>映射视图参数
 
-**winrt::param::map_view\<T\>** 和 **winrt::param::async_map_view\<T\>** 简化了将参数传递给接受 **IMapView\<T\>** 的 API。
+winrt::param::map_view\<T\> 和 winrt::param::async_map_view\<T\> 简化了将参数传递给接受 IMapView\<T\> 的 API  。
 
 可以使用 **IMap::GetView** 从**IMap** 获取 **IMapView**。
 
@@ -127,7 +127,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 ## <a name="vector-parameters"></a>向量参数
 
-**winrt::param::vector\<T\>** 简化了将参数传递给接受 **IVector\<T\>** 的 API。
+winrt::param::vector\<T\> 简化了将参数传递给接受 IVector\<T\> 的 API 。
 
 |可以传递的类型|注释|
 |-|-|
@@ -140,7 +140,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 ## <a name="map-parameters"></a>映射参数
 
-**winrt::param::map\<T\>** 简化了将参数传递给接受 **IMap\<T\>** 的 API。
+winrt::param::map\<T\> 简化了将参数传递给接受 IMap\<T\> 的 API 。
 
 |可以传递的类型|注释|
 |-|-|
@@ -154,7 +154,7 @@ requestData.SetStorageItems({ storageFiles.begin(), storageFiles.end() }); // Bu
 
 ## <a name="array-parameters"></a>数组参数
 
-**winrt::array_view\<T\>** 不在 **winrt::param** 命名空间中，但对于作为 C 样式数组（也称为“一致数组”）的  参数，可以使用它。
+winrt::array_view\<T\> 不在 winrt::param 命名空间中，但可以将其用于作为 C 样式数组（也称为“一致数组”）的参数 。
 
 |可以传递的类型|注释|
 |-|-|

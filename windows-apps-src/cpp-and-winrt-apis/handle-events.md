@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 已投影, 投影, 处理, 事件, 委托
 ms.localizationpriority: medium
-ms.openlocfilehash: 5960de52c6cd68e98f80e7618f34dd0a94d08312
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: cd67ea63fc633716cabf9a293a5faeeed6d24b70
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493362"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296177"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>在 C++/WinRT 中使用委托处理事件
 
@@ -39,10 +39,14 @@ XAML 设计器会将相应的事件处理程序函数原型（和存根实现）
 
 ```cppwinrt
 // MainPage.h
-void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */)
 {
     Button().Content(box_value(L"Clicked"));
 }
@@ -67,7 +71,9 @@ MainPage::MainPage()
 
 ```cppwinrt
 // MainPage.h
-static void ClickHandler(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+static void ClickHandler(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
 MainPage::MainPage()
@@ -76,7 +82,9 @@ MainPage::MainPage()
 
     Button().Click( MainPage::ClickHandler );
 }
-void MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */) { ... }
+void MainPage::ClickHandler(
+    IInspectable const& /* sender */,
+    RoutedEventArgs const& /* args */) { ... }
 ```
 
 还有其他方法可用来构建 RoutedEventHandler  。 下面是摘自 [RoutedEventHandler](/uwp/api/windows.ui.xaml.routedeventhandler) 的文档主题的语法块（从网页右上角“语言”下拉菜单中选择 C++/WinRT）    。 请注意各种构造函数：一种采用 lambda；另一种是自由函数；还有一种（我们在上面使用的）采用对象和指向成员函数的指针。
@@ -106,7 +114,9 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 > 该信息告诉我们 UIElement.KeyDown 事件（我们正在讨论的主题）具有 KeyEventHandler 的委托类型，因为那是向此事件类型注册委托时所传递的类型   。 因此，立即单击主题上的链接，转到该 [KeyEventHandler 委托](/uwp/api/windows.ui.xaml.input.keyeventhandler)类型。 这里，语法块包含函数调用运算符。 如上所述，它将告诉你委托的形参需要是怎样的。
 > 
 > ```cppwinrt
-> void operator()(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+> void operator()(
+    winrt::Windows::Foundation::IInspectable const& sender,
+    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
 > ```
 >
 >  如你所见，需要声明委托将 IInspectable 作为发送方，并将 [KeyRoutedEventArgs](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) 类的实例作为实参  。
@@ -182,7 +192,10 @@ struct Example : ExampleT<Example>
 {
     Example(winrt::Windows::UI::Xaml::Controls::Button button)
     {
-        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+        m_event_revoker = button.Click(
+            winrt::auto_revoke,
+            [this](IInspectable const& /* sender */,
+            RoutedEventArgs const& /* args */)
         {
             // ...
         });
@@ -193,7 +206,7 @@ private:
 };
 ```
 
-下面是摘自 [ButtonBase::Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的文档主题的语法块  。 它显示了三个不同的注册和撤销函数。 可以清楚地看到从第三个重载进行声明时需要哪种类型的事件撤销程序。
+下面是摘自 [ButtonBase::Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的文档主题的语法块  。 它显示了三个不同的注册和撤销函数。 可以清楚地看到从第三个重载进行声明时需要哪种类型的事件撤销程序。 你可以将相同类型的委托传递给“注册”和“使用 event_revoker 撤销”重载 。
 
 ```cppwinrt
 // Register
@@ -236,14 +249,20 @@ void ProcessFeedAsync()
     auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
 
     async_op_with_progress.Progress(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& /* sender */, RetrievalProgress const& args)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& /* sender */,
+            RetrievalProgress const& args)
         {
             uint32_t bytes_retrieved = args.BytesRetrieved;
             // use bytes_retrieved;
         });
 
     async_op_with_progress.Completed(
-        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const /* asyncStatus */)
+        [](
+            IAsyncOperationWithProgress<SyndicationFeed,
+            RetrievalProgress> const& sender,
+            AsyncStatus const /* asyncStatus */)
         {
             SyndicationFeed syndicationFeed = sender.GetResults();
             // use syndicationFeed;

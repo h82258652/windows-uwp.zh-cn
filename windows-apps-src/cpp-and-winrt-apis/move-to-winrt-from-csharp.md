@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 端口, 迁移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 21032a99c389e968728fe2dac2875475efc351c4
-ms.sourcegitcommit: 379fd00bfcc6c5f1e3c7e379a367b08641a7f961
+ms.openlocfilehash: 734173812ff5a853abfb93eb34fcfa43b9f16872
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84819013"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296205"
 ---
 # <a name="move-to-cwinrt-from-c"></a>从 C# 移动到 C++/WinRT
 
@@ -274,6 +274,34 @@ C# 有一个内置的 [**StringBuilder**](/dotnet/api/system.text.stringbuilder)
 | 访问结果 | `s = builder.ToString();` | `ws = builder.str();` |
 
 另请参阅[移植 **BuildClipboardFormatsOutputString** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#buildclipboardformatsoutputstring)和[移植 **DisplayChangedFormats** 方法](/windows/uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp#displaychangedformats)。
+
+### <a name="running-code-on-the-main-ui-thread"></a>在主 UI 线程上运行代码 
+
+此示例取自[条形码扫描仪示例](/samples/microsoft/windows-universal-samples/barcodescanner/)。
+
+要在 C# 项目的主 UI 线程上工作时，通常使用 [CoreDispatcher.RunAsync ](/uwp/api/windows.ui.core.coredispatcher.runasync) 方法，如下所示。
+
+```csharp
+private async void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
+{
+    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+    {
+        // Do work on the main UI thread here.
+    });
+}
+```
+
+更简单的是用 C++/WinRT 来表示。 请注意，假设我们希望在第一个暂停点（在本例中是 `co_await`）之后访问参数时，我们将按值接受参数。 有关详细信息，请参阅[参数传递](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)。
+
+```cppwinrt
+winrt::fire_and_forget Watcher_Added(DeviceWatcher sender, winrt::DeviceInformation args)
+{
+    co_await Dispatcher();
+    // Do work on the main UI thread here.
+}
+```
+
+如果需要以默认优先级以外的优先级执行工作，请参阅 [winrt::resume_foreground](/uwp/cpp-ref-for-winrt/resume-foreground) 函数，该函数包含需要优先处理的重载。 有关演示如何等待调用 winrt::resume_foreground 的代码示例，请参阅[编程时仔细考虑线程相关性](/windows/uwp/cpp-and-winrt-apis/concurrency-2#programming-with-thread-affinity-in-mind)。
 
 ## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>与移植相关且特定于 C++/WinRT 的任务
 

@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac 转到 Windows, 快捷键映射, 从 Unix 转到 Windows, 从 Mac 转到 Windows, 从 MacBook 转到 Surface 的帮助, Macintosh 用户如何使用 Windows, 从 Macintosh 切换到 Windows, 开发环境更改帮助, Mac OS X 转到 Windows, 从 Mac 转到电脑的帮助
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 457abcec97247afcc0d63c983c8a6cda2de51c66
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fa137ab51f0bb53e2907fa319d79ed77eb7ed655
+ms.sourcegitcommit: 1e06168ada5ce6013b1d07c428548f084464a286
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81643692"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87363706"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>将开发环境从 Mac 改为 Windows 的指南
 
@@ -66,27 +66,52 @@ ms.locfileid: "81643692"
 
 注意：这两个平台上均可配置触控板选项。
 
-## <a name="terminal-and-shell"></a>终端和 Shell
+## <a name="command-line-shells-and-terminals"></a>命令行 shell 和终端
 
-Windows 针对 Mac 的终端模拟器提供了多个替代选项。
+Windows 支持多个命令行 shell 和终端，它们的工作方式有时与 Mac 的 BASH shell 和终端模拟器应用（例如 Terminal 和 iTerm）稍有不同。
 
-1. Windows 命令行
+### <a name="windows-shells"></a>Windows shell
 
-Windows 命令行会接受 DOS 命令，是 Windows 上最常用的命令行工具。 若要打开它，请执行以下操作：按 WindowsKey+R 打开“运行”框，然后键入 cmd 并单击“确定”     。 若要打开管理员命令行，请键入 cmd  ，然后按 Ctrl+Shift+Enter  。
+Windows 有两个主要的命令行 shell：
 
-2. PowerShell
+1. **[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-7)** - PowerShell 是一个跨平台的任务自动化和配置管理框架，由基于 .NET 构建的命令行 shell 和脚本语言组成。 使用 PowerShell，管理员、开发人员和高级用户可以快速控制和自动完成以下任务：管理复杂流程，以及环境和运行环境的操作系统的各个方面。 PowerShell [完全开放源代码](https://github.com/powershell/powershell)，并且由于它是跨平台的，因此也同样[适用于 Mac 和 Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-7)。
 
-[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-6) 是根据 .NET 构建的基于任务的命令行 Shell 和脚本语言。 PowerShell 可帮助系统管理员和高级用户快速自动执行管理操作系统的任务。 换句话说，它是一个功能非常强大的命令行，尤其受系统管理员喜欢。
+    **Mac 和 Linux BASH shell 用户**：PowerShell 还支持许多你已经熟悉的命令别名。 例如：
+    - 使用 `ls` 列出当前目录的内容
+    - 使用 `mv` 移动文件
+    - 使用 `cd <path>` 移动到新目录
 
-顺便说一下，PowerShell [也可用于 Mac](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)。
+    PowerShell 和 BASH 中的某些命令和参数是不同的。 要了解详细信息，请在 PowerShell 中输入 [`get-help`](https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system?view=powershell-7) 或在文档中查看[兼容性别名](https://docs.microsoft.com/powershell/scripting/samples/appendix-1---compatibility-aliases?view=powershell-7)。
 
-3. 适用于 Linux 的 Windows 子系统 (WSL)
+    要以管理员身份运行 PowerShell，请在 Windows“开始”菜单中输入“PowerShell”，然后选择“以管理员身份运行”。
 
-通过 WSL 可以在 Windows 中运行 Linux shell。 这意味着，你可以运行 **bash** 或其他 shell，具体取决于选择和安装的特定 Linux 发行版。 使用 WSL 可提供 Mac 用户最熟悉的环境类型。 例如，你可以使用 ls 列出当前目录中的文件，而不是像在 Windows 命令行中使用 dir   。 若要了解如何安装和使用 WSL，请参阅[适用于 Linux 的 Windows 子系统安装指南 (Windows 10)](https://docs.microsoft.com/windows/wsl/install-win10)。
+2. **Windows 命令行 (Cmd)** ：Windows 仍然提供传统的命令提示符（和控制台 - 见下文），以提供与当前和旧版 MS-DOS-compatible 命令和批处理文件的兼容性。 Cmd 在运行现有/旧批处理文件或命令行操作时很有用，但一般情况下，建议用户了解和使用 PowerShell，因为 Cmd 现在正处于维护中，并且将来不会收到任何改进或新功能。
 
-4. Windows 终端（预览）
+### <a name="linux-shells"></a>Linux shell
 
-Windows 终端是一个结合命令行工具和多个来源的 shell 的应用程序，包括传统的 Windows 命令行、PowerShell 以及适用于 Linux 的 Windows 子系统。 尽管目前仍以预览版提供，但它已经包含多个实用的功能，例如对多个选项卡、拆分窗格、自定义主题和样式的支持以及完整的 Unicode 支持。 可以从 [Windows 10 上的 Microsoft Store](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) 安装 Windows 终端。
+现在可以安装适用于 Linux 的 Windows 子系统 (WSL) 来支持在 Windows 中运行 Linux shell。 这意味着你可以使用所选的任意特定 Linux 发行版，运行 Windows 内集成的 bash。 使用 WSL 可提供 Mac 用户最熟悉的环境类型。 例如，你可以使用 ls 列出当前目录中的文件，而不是像在传统 Windows Cmd Shell 中那样使用 dir 。 若要了解如何安装和使用 WSL，请参阅[适用于 Linux 的 Windows 子系统安装指南 (Windows 10)](https://docs.microsoft.com/windows/wsl/install-win10)。 可以使用 WSL 在 Windows 上安装的 Linux 发行版包括：
+
+1. [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71)
+2. [Kali Linux](https://www.microsoft.com/store/apps/9PKR34TNCV07)
+3. [Debian GNU/Linux](https://www.microsoft.com/store/apps/9MSVKQC78PK6)
+4. [openSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
+5. [SUSE Linux Enterprise Server 15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
+
+这只是其中一部分。 可在 [WSL 安装文档](https://docs.microsoft.com/windows/wsl/install-win10#install-your-linux-distribution-of-choice)中查找详细信息，并直接从 [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools) 安装它们。
+
+## <a name="windows-terminals"></a>Windows 终端
+
+除了许多第三方产品/服务外，Microsoft 还提供了两个“终端”- GUI 应用程序（用于访问命令行 shell 和应用程序）。
+
+1. **[Windows 终端](https://docs.microsoft.com/windows/terminal/)** ：Windows 终端是一种高度可配置的全新现代化命令行终端应用程序，它提供了超高性能、低延迟的命令行用户体验、多个选项卡、拆分窗口窗格、自定义主题和样式、针对不同 shell 或命令行应用的多个“配置文件”，并使用户有大量机会可以配置命令行用户体验的许多方面并对其进行个性化设置。
+
+    可以使用 Windows 终端打开连接到 PowerShell、WSL shell（例如 Ubuntu 或 Debian）、传统 Windows 命令提示符或任何其他命令行应用（例如 SSH、Azure CLI、Git Bash）的选项卡。
+
+2. **[控制台](https://docs.microsoft.com/windows/console/)** ：在 Mac 和 Linux 上，用户通常启动其首选的终端应用程序，然后创建并连接到用户的默认 shell（例如 BASH）。
+
+    然而，由于历史原因，Windows 用户通常会启动其 shell，而 Windows 会自动启动并连接 GUI 控制台应用。
+
+    尽管仍可以直接启动 shell 并使用旧版 Windows 控制台，但强烈建议用户安装并使用 Windows 终端来体验最佳、最快、最高效的命令行体验。
 
 ## <a name="apps-and-utilities"></a>应用和实用程序
 

@@ -5,21 +5,21 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c23a9539d0fc3902f715917b380e8b6b3e132c15
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 23cadaca6f82d7cb43834f5a86c56a3fa34cb00e
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68974451"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997794"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教程：创建用户界面
 
 本教程介绍如何通过以下方法为图像编辑程序创建基本 UI： 
 
-+ 使用 Visual Studio 中的 XAML 工具（例如 XAML 设计器、工具箱、XAML 编辑器、“属性”面板和文档大纲）将控件和内容添加到 UI 中。 
++ 使用 Visual Studio 中的 XAML 工具（例如 XAML 设计器、工具箱、XAML 编辑器、“属性”面板和文档大纲）将控件和内容添加到 UI 中。
 + 使用一些最常见的 XAML 布局面板，例如 **RelativePanel**、**Grid** 和 **StackPanel**。
 
-图像编辑程序有两个页面。  主页显示照片库视图，以及关于每个图像文件的一些信息。
+图像编辑程序有两个页面。 主页显示照片库视图，以及关于每个图像文件的一些信息。
 
 ![主页](images/xaml-basics/mainpage.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "68974451"
 
 ## <a name="part-1-add-a-textblock-control-by-using-xaml-designer"></a>第 1 部分：使用 XAML 设计器添加 TextBlock 控件
 
-为了使创建 XAML UI 更轻松，Visual Studio 提供了一些工具。 可以使用 XAML 设计器将控件拖到设计图面上并查看它们的外观，然后再运行应用。 可以通过“属性”面板查看和设置设计器中处于活动状态的所有控件属性。  文档大纲显示了 UI 的 XAML 可视化树的父/子结构。 可以使用 XAML 编辑器直接输入和修改 XAML 标记。
+为了使创建 XAML UI 更轻松，Visual Studio 提供了一些工具。 可以使用 XAML 设计器将控件拖到设计图面上并查看它们的外观，然后再运行应用。 可以通过“属性”面板查看和设置设计器中处于活动状态的所有控件属性。 文档大纲显示了 UI 的 XAML 可视化树的父/子结构。 可以使用 XAML 编辑器直接输入和修改 XAML 标记。
 
 下面是标记了工具的 Visual Studio UI。
 
@@ -99,7 +99,7 @@ ms.locfileid: "68974451"
 
     在后面的步骤中，你将更新这些值。
 
-4. 在“属性”面板中，将 TextBlock 控件的“名称”值从 **textBlock** 更改为 **TitleTextBlock**。    （请确保 **TextBlock** 控件仍然是活动对象。）
+4. 在“属性”面板中，将 TextBlock 控件的“名称”值从 **textBlock** 更改为 **TitleTextBlock**。 （请确保 **TextBlock** 控件仍然是活动对象。）
 
 5. 在“通用”  下面，将“文本”值更改为“集合”   。
 
@@ -120,7 +120,7 @@ ms.locfileid: "68974451"
 
     ![文档大纲](images/xaml-basics/doc-outline-reset.png)
 
-7. 在“属性”面板的搜索框中输入 **margin** 可以轻松地查找 **Margin** 属性。  将左边距和下边距设置为 24。
+7. 在“属性”面板的搜索框中输入 **margin** 可以轻松地查找 **Margin** 属性。 将左边距和下边距设置为 24。
 
     ![TextBlock 边距](images/xaml-basics/margins.png)
 
@@ -138,7 +138,7 @@ ms.locfileid: "68974451"
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. 在“属性”面板的搜索框中输入 **textwrapping** 可以查找 **TextWrapping** 属性。  选择 **TextWrapping** 属性的属性标记  以打开其菜单。 （属性标记是每个属性值右侧的小框符号。 此属性标记为黑色，表示该属性设置为非默认值。）在“属性”菜单上选择“重置”，重置 **TextWrapping** 属性。  
+9. 在“属性”面板的搜索框中输入 **textwrapping** 可以查找 **TextWrapping** 属性。 选择 **TextWrapping** 属性的属性标记  以打开其菜单。 （属性标记是每个属性值右侧的小框符号。 此属性标记为黑色，表示该属性设置为非默认值。）在“属性”菜单上选择“重置”，重置 **TextWrapping** 属性。
 
     Visual Studio 会添加此属性，但应用的样式中已设置该属性，因此，此处不需要该属性。
 
@@ -183,7 +183,7 @@ ms.locfileid: "68974451"
 
     有关使用 **RelativePanel** 的布局的详细信息，请参阅[布局面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel)。
 
-2. 在 **TextBlock** 元素下面，添加名为“ImageGridView”的 **GridView** 控件。  设置 **RelativePanel** 附加的属性  可将此控件放在标题文本下面，并使其横跨整个屏幕宽度。
+2. 在 **TextBlock** 元素下面，添加名为“ImageGridView”的 **GridView** 控件。 设置 **RelativePanel** 附加的属性  可将此控件放在标题文本下面，并使其横跨整个屏幕宽度。
 
     **添加以下 XAML**
 
@@ -264,9 +264,9 @@ ms.locfileid: "68974451"
 
     有关 XAML 命名空间的详细信息，请参阅 [XAML 命名空间和命名空间映射](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping)。
 
-3. 在“文档大纲”中，右键单击“ImageGridView”  。 在快捷菜单上，选择“编辑其他模板” > “编辑生成的项(ItemTemplate)” > “创建空项”    。 此时会打开“创建资源”对话框。 
+3. 在“文档大纲”中，右键单击“ImageGridView”  。 在快捷菜单上，选择“编辑其他模板” > “编辑生成的项(ItemTemplate)” > “创建空项”    。 此时会打开“创建资源”对话框。
 
-4. 在此对话框中，将“名称(键)”值更改为 **ImageGridView_DefaultItemTemplate**，然后选择“确定”。  
+4. 在此对话框中，将“名称(键)”值更改为 **ImageGridView_DefaultItemTemplate**，然后选择“确定”。
 
     选择“确定”  后，会出现以下结果：
 
@@ -387,9 +387,9 @@ ms.locfileid: "68974451"
 
 若要修改项容器，请执行以下操作：
 
-1. 在“文档大纲”中，右键单击“ImageGridView”  。 在快捷菜单上，选择“编辑其他模板” > “编辑生成的项容器(ItemContainerStyle)” > “编辑副本”    。 此时会打开“创建资源”对话框。 
+1. 在“文档大纲”中，右键单击“ImageGridView”  。 在快捷菜单上，选择“编辑其他模板” > “编辑生成的项容器(ItemContainerStyle)” > “编辑副本”    。 此时会打开“创建资源”对话框。
 
-2. 在此对话框中，将“名称(键)”值更改为 **ImageGridView_DefaultItemContainerStyle**，然后选择“确定”。  
+2. 在此对话框中，将“名称(键)”值更改为 **ImageGridView_DefaultItemContainerStyle**，然后选择“确定”。
 
     默认样式副本会添加到 XAML 的 **Page.Resources** 节中。
 
@@ -511,9 +511,9 @@ ms.locfileid: "68974451"
 
 3. 删除上一个步骤中的 **HorizontalAlignment** 设置。
 
-4. 在“文档大纲”中，右键单击“ImageGridView”  。 在快捷菜单上，选择“编辑其他模板” > “编辑项布局(ItemsPanel)” > “编辑副本”。    此时会打开“创建资源”对话框。 
+4. 在“文档大纲”中，右键单击“ImageGridView”  。 在快捷菜单上，选择“编辑其他模板” > “编辑项布局(ItemsPanel)” > “编辑副本”。 此时会打开“创建资源”对话框。
 
-5. 在此对话框中，将“名称(键)”值更改为 **ImageGridView_ItemsPanelTemplate**，然后选择“确定”。  
+5. 在此对话框中，将“名称(键)”值更改为 **ImageGridView_ItemsPanelTemplate**，然后选择“确定”。
 
     默认 **ItemsPanelTemplate** 副本会添加到 XAML 的 **Page.Resources** 节中。 （和以前一样，**GridView** 将会更新以引用此资源。）
 
@@ -558,5 +558,4 @@ ms.locfileid: "68974451"
 
 ## <a name="get-the-final-version-of-the-photolab-sample"></a>获取 PhotoLab 示例的最终版本
 
-本教程并不构建完整的照片编辑应用。 因此，请务必查看[最终版本](https://github.com/Microsoft/Windows-appsample-photo-lab)以了解其他功能，如自定义动画和手机支持。
-
+本教程并不构建完整的照片编辑应用。 因此，请务必查看[最终版本](https://github.com/Microsoft/Windows-appsample-photo-lab)以了解诸如自定义动画和自适应布局等其他功能。

@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 707c2ed110498f4ef18fea31ace87d1fd2434112
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d8f8d869bd18b6d3e6897d91b2616bc4eb1335d0
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67820346"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997834"
 ---
 # <a name="create-data-bindings"></a>创建数据绑定
 
@@ -18,7 +18,7 @@ ms.locfileid: "67820346"
 
 本教程将介绍如何用数据绑定替换样板并在 UI 和数据之间创建其他直接链接。 此外，介绍如何格式化或转换要显示的数据，并使 UI 和数据保持同步。完成本教程后，便可以改善 XAML 和 C# 代码的简洁性与结构，使其更易于维护和扩展。
 
-你将从简化版本的 PhotoLab 示例开始。 此简易版本包括完整的数据层以及基本 XAML 页面布局，并省去了许多功能以使代码更易于在上下文中浏览。 本教程并不构建完整的应用，因此，请务必查看最终版本以了解诸如自定义动画和手机支持等功能。 可以在 [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) 存储库的根文件夹中查找最终版本。 
+你将从简化版本的 PhotoLab 示例开始。 此简易版本包括完整的数据层以及基本 XAML 页面布局，并省去了许多功能以使代码更易于在上下文中浏览。 本教程并不生成完整的应用，因此，请务必查看最终版本以了解诸如自定义动画和自适应布局等功能。 可以在 [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) 存储库的根文件夹中查找最终版本。 
 
 ## <a name="prerequisites"></a>必备条件
 
@@ -160,7 +160,7 @@ PhotoLab 应用有两个主要页面：
               ItemsSource="{x:Bind Images}" 
     ```
 
-    Images 属性的类型为 ObservableCollection\<ImageFileInfo\>，因此 GridView 中显示的个别项的类型为 ImageFileInfo     。 这与第 1 部分中所描述的 x:DataType 值匹配  。 
+    Images 属性的类型为 ObservableCollection\<ImageFileInfo\>，因此 GridView 中显示的个别项的类型为 ImageFileInfo   。 这与第 1 部分中所描述的 x:DataType 值匹配  。 
 
 到目前为止，我们所看到的所有绑定都是一次性只读绑定，这是普通 x:Bind 表达式的默认行为  。 数据仅在初始化时才加载，这样可以实现高性能绑定 - 特别适合支持大数据集的多个复杂视图。 
 
@@ -171,9 +171,9 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-Images 属性值永远不会更改，但是由于属性的类型为 ObservableCollection\<T\>，所以集合的内容可能会发生更改，并且绑定将自动注意更改并更新 UI    。 
+Images 属性值永远不会更改，但是由于属性的类型为 ObservableCollection\<T\>，所以集合的内容可能会发生更改，并且绑定将自动注意更改并更新 UI 。 
 
-为了对此进行测试，我们将暂时添加一个删除当前所选图像的按钮。 此按钮不在最终版本中，因为选择图像会将你带入到详细信息页面中。 然而，ObservableCollection\<T\> 的行为在最终的 PhotoLab 示例中仍然很重要，因为 XAML 在页面构造函数中（通过 InitializeComponent 方法调用）进行了初始化，但后来在 OnNavigatedTo 方法中填充了 Images 集合     。 
+为了对此进行测试，我们将暂时添加一个删除当前所选图像的按钮。 此按钮不在最终版本中，因为选择图像会将你带入到详细信息页面中。 然而，ObservableCollection\<T\> 的行为在最终的 PhotoLab 示例中仍然很重要，因为 XAML 在页面构造函数中（通过 InitializeComponent 方法调用）进行了初始化，但后来在 OnNavigatedTo 方法中填充了 Images 集合   。 
 
 **添加删除按钮**
 
@@ -185,7 +185,7 @@ Images 属性值永远不会更改，但是由于属性的类型为 ObservableCo
                   Click="{x:Bind DeleteSelectedImage}" />
     ```
 
-    如果你已熟悉 XAML，那么此 Click 值可能看起来异常。  在以前版本的 XAML 中，必须将其设置为具有特定事件处理程序签名的方法，通常包括事件发件程序的参数和特定于事件的参数对象。 需要事件参数时，仍然可以使用此方法，但是通过使用 x:Bind，也可以连接到其他方法。 例如，如果不需要事件数据，则可以连接到没有参数的方法，跟我们在这里进行的操作一样。
+    如果你已熟悉 XAML，那么此 Click 值可能看起来异常。 在以前版本的 XAML 中，必须将其设置为具有特定事件处理程序签名的方法，通常包括事件发件程序的参数和特定于事件的参数对象。 需要事件参数时，仍然可以使用此方法，但是通过使用 x:Bind，也可以连接到其他方法。 例如，如果不需要事件数据，则可以连接到没有参数的方法，跟我们在这里进行的操作一样。
 
     <!-- TODO add doc links about event binding - and doc links in general? -->
 
@@ -198,7 +198,7 @@ Images 属性值永远不会更改，但是由于属性的类型为 ObservableCo
 
     此方法从 Images 集合中只删除所选的图像  。 
 
-现在，运行该应用并使用该按钮删除一些图像。 如你所见，UI 会自动更新，这是因为使用了数据绑定和 ObservableCollection\<T\> 类型。  
+现在，运行该应用并使用该按钮删除一些图像。 如你所见，UI 会自动更新，这是因为使用了数据绑定和 ObservableCollection\<T\> 类型。 
 
 > [!Note]
 > 作为一项挑战，请尝试添加在列表中将所选图像向上移动或向下移动的两个按钮，然后使用 x:Bind 将按钮的 Click 事件绑定到两个类似于 DeleteSelectedImage 的新方法。
@@ -428,7 +428,7 @@ Images 属性值永远不会更改，但是由于属性的类型为 ObservableCo
 1. 在 MainPage.xaml 中，查找名为 ImageGridView 的 GridView，并添加 ItemClick 值    。 
 
     > [!TIP] 
-    > 如果键入下面的更改，而不是复制/粘贴，则会看到一个 IntelliSense 弹出窗口，其中显示“<新事件处理程序>”\<\>。 如果按下 Tab 键，它将用默认方法处理程序名称填充此值，并自动去掉下一步中所显示的方法。 以后，可以按 F12 在代码隐藏部分中导航到此方法。 
+    > 如果键入下面的更改，而不是复制/粘贴，则会看到一个 IntelliSense 弹出窗口，其中显示“\<New Event Handler\>”。 如果按下 Tab 键，它将用默认方法处理程序名称填充此值，并自动去掉下一步中所显示的方法。 以后，可以按 F12 在代码隐藏部分中导航到此方法。 
 
     **之前：**
     ```xaml

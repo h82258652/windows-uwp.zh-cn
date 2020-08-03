@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 57002a1edafd5dd7a367220fc0425fdc52b711d1
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b68b5bc5fc6042d7abeae6944c351af178b70874
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970842"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998014"
 ---
 # <a name="password-box"></a>密码框
 
@@ -145,9 +145,7 @@ PasswordBox 具有内置按钮，用户按下该按钮可显示密码文本。 �
 
 其他 [PasswordRevealMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode) 枚举值（**Hidden** 和 **Visible**）会隐藏密码显示按钮，并允许你以编程方式管理是否掩盖密码。
 
-若要始终掩盖密码，请将 PasswordRevealMode 设置为 Hidden。 如果你不需要始终掩盖密码，可以提供自定义 UI，使用户在 Hidden 和 Visible 之间切换 PasswordRevealMode。
-
-在以前版本的 Windows Phone 中，PasswordBox 使用复选框切换是否掩盖密码。 你可以为你的应用创建类似的 UI，如以下示例所示。 你还可以使用其他控件（例如 [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)）以使用户切换模式。
+若要始终掩盖密码，请将 PasswordRevealMode 设置为 Hidden。 如果你不需要始终掩盖密码，可以提供自定义 UI，使用户在 Hidden 和 Visible 之间切换 PasswordRevealMode。 例如，可以使用复选框来切换是否遮盖密码，如下例所示。 你还可以使用其他控件（例如 [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton)）以使用户切换模式。
 
 此示例展示了如何使用 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 使用户切换 PasswordBox 的显示模式。
 

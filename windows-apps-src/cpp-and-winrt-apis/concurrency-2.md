@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 并发, async, 异步
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a0ea1ec70f4ae4255030541a6513541db1fb99
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ff00264d0806e7fbdfcabd000ec68857b1485dcd
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82267498"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296151"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>C++/WinRT 的更高级并发和异步
 
@@ -81,11 +81,14 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     co_await winrt::resume_background();
     // Do compute-bound work here.
 
-    co_await winrt::resume_foreground(textblock.Dispatcher()); // Switch to the foreground thread associated with textblock.
+    // Switch to the foreground thread associated with textblock.
+    co_await winrt::resume_foreground(textblock.Dispatcher());
 
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+winrt::resume_foreground 函数采用可选的优先级参数。 如果使用该参数，则可以使用上面所示的模式。 如果不使用，则可以选择将 `co_await winrt::resume_foreground(someDispatcherObject);` 简化为 `co_await someDispatcherObject;`。
 
 ## <a name="execution-contexts-resuming-and-switching-in-a-coroutine"></a>协同例程中的执行上下文、恢复和切换
 
@@ -145,7 +148,7 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 }
 ```
 
-在此方案中，调用 **StorageFile::OpenAsync** 会使效率略微下降。 恢复时有必要将上下文切换到后台线程（这样，处理程序便可以将执行返回给调用方），然后 C++/WinRT 会还原 UI 线程上下文。 但是，在此情况下，在我们即将更新 UI 之前，没有必要处于 UI 线程中。 在调用 **winrt::resume_background** 之前调用的 Windows 运行时 API 越多，发生的不必要往返上下文切换也越多。  解决方法是在此之前不要调用任何 Windows 运行时 API。  将所有此类调用移到 **winrt::resume_background** 的后面。
+在此方案中，调用 **StorageFile::OpenAsync** 会使效率略微下降。 恢复时有必要将上下文切换到后台线程（这样，处理程序便可以将执行返回给调用方），然后 C++/WinRT 会还原 UI 线程上下文。 但是，在此情况下，在我们即将更新 UI 之前，没有必要处于 UI 线程中。 在调用 **winrt::resume_background** 之前调用的 Windows 运行时 API 越多，发生的不必要往返上下文切换也越多。 解决方法是在此之前不要调用任何 Windows 运行时 API。 将所有此类调用移到 **winrt::resume_background** 的后面。
 
 ```cppwinrt
 IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
@@ -311,7 +314,7 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 }
 ```
 
-调用 **winrt::resume_foreground** 时会始终先排队，然后展开堆栈。  也可选择设置恢复优先级。
+调用 **winrt::resume_foreground** 时会始终先排队，然后展开堆栈。 也可选择设置恢复优先级。
 
 ```cppwinrt
 winrt::fire_and_forget RunAsync(DispatcherQueue queue)
@@ -595,7 +598,7 @@ int main()
 ```
 
 > [!NOTE]
-> 对一个异步操作或运算实现多个完成处理程序是错误的做法。  可对其已完成的事件使用单个委托，或者可对其运行 `co_await`。 如果同时采用这两种方法，则第二种方法会失败。 以下两种完成处理程序都是适当的；但不能同时对同一个异步对象使用两者。
+> 对一个异步操作或运算实现多个完成处理程序是错误的做法  。 可对其已完成的事件使用单个委托，或者可对其运行 `co_await`。 如果同时采用这两种方法，则第二种方法会失败。 以下两种完成处理程序都是适当的；但不能同时对同一个异步对象使用两者。
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };
@@ -655,7 +658,7 @@ winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, Medi
 
 ## <a name="awaiting-a-kernel-handle"></a>等待内核句柄
 
-C++/WinRT 提供一个 **resume_on_signal** 类，用于在收到内核事件信号之前暂停。 你有责任确保在 `co_await resume_on_signal(h)` 返回之前句柄始终有效。 **resume_on_signal** 本身不能为你执行该操作，因为在 **resume_on_signal** 开始之前，你就可能已失去句柄，如此示例（第一个示例）所示。
+C++/WinRT 提供一个 [winrt::resume_on_signal](/uwp/cpp-ref-for-winrt/resume-on-signal) 函数，用于在收到内核事件信号之前暂停。 你有责任确保在 `co_await resume_on_signal(h)` 返回之前句柄始终有效。 **resume_on_signal** 本身不能为你执行该操作，因为在 **resume_on_signal** 开始之前，你就可能已失去句柄，如此示例（第一个示例）所示。
 
 ```cppwinrt
 IAsyncAction Async(HANDLE event)
@@ -667,7 +670,7 @@ IAsyncAction Async(HANDLE event)
 
 传入的**句柄**仅在函数返回之前有效，该函数（为协同程序）在第一个暂停点（在此示例中为第一个 `co_await`）返回。 在等待 **DoWorkAsync** 时，控制返回到调用方，调用帧超出范围，你再也无法知道在协同程序继续时句柄是否会有效。
 
-从技术上来说，我们的协同程序在按值接收其参数，这符合预期（请参阅上面的[参数传递](concurrency.md#parameter-passing)）。 但在此示例中，我们需要更进一步，因此我们将遵循该指南的精神  （而不仅仅是字面涵义）。 除了句柄，我们还需要传递强引用（换句话说，所有权）。 操作方法如下。
+从技术上来说，我们的协同程序在按值接收其参数，这符合预期（请参阅上面的[参数传递](concurrency.md#parameter-passing)）。 但在此示例中，我们需要更进一步，因此我们将遵循该指南的精神（而不仅仅是字面涵义）。 除了句柄，我们还需要传递强引用（换句话说，所有权）。 操作方法如下。
 
 ```cppwinrt
 IAsyncAction Async(winrt::handle event)
@@ -712,6 +715,21 @@ IAsyncAction SampleCaller()
     event.close(); // Our handle is closed, but Async still has a valid handle.
 
     co_await async; // Will wake up when *event* is signaled.
+}
+```
+
+可以将超时值传递给 resume_on_signal，如本例所示。
+
+```cppwinrt
+winrt::handle event = ...
+
+if (co_await winrt::resume_on_signal(event.get(), std::literals::2s))
+{
+    puts("signaled");
+}
+else
+{
+    puts("timed out");
 }
 ```
 
@@ -798,7 +816,7 @@ Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();
 
 原因在于将数组用作参数化接口的形参类型实参无效。 因此，我们需要一种不太明显的方式来实现通过运行时类方法以异步方式传递回数组的目标。 
 
-可以将装箱的数组返回到 [PropertyValue](/uwp/api/windows.foundation.propertyvalue) 对象。 然后，调用代码会取消装箱。 以下是一个代码示例，在此示例中，可以将 SampleComponent 运行时类添加到 Windows Runtime Component (C++/WinRT) 项目，然后从（例如） Core App (C++/WinRT) 项目使用它    。
+可以将装箱的数组返回到 [PropertyValue](/uwp/api/windows.foundation.propertyvalue) 对象。 然后，调用代码会取消装箱。 以下是一个代码示例，在此示例中，可以将 SampleComponent 运行时类添加到 Windows Runtime Component (C++/WinRT) 项目，然后从（例如） Core App (C++/WinRT) 项目使用它  。
 
 ```cppwinrt
 // SampleComponent.idl

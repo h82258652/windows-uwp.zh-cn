@@ -5,12 +5,12 @@ keywords: XAML, UWP, 入门
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c5348063f277d4d76cbea120689328bcc217b1
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 389b4ec2566a392de35ae43505274511b4294f9f
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684155"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997784"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教程：创建自适应布局
 
@@ -332,4 +332,4 @@ ms.locfileid: "75684155"
 
 ## <a name="get-the-final-version-of-the-photolab-sample"></a>获取 PhotoLab 示例的最终版本
 
-本教程并不构建完整的照片编辑应用，因此，请务必查看[最终版本](https://github.com/Microsoft/Windows-appsample-photo-lab)以了解其他功能，如自定义动画和手机支持。
+本教程并不生成完整的照片编辑应用，因此，请务必查看[最终版本](https://github.com/Microsoft/Windows-appsample-photo-lab)以了解诸如自定义动画和样式等其他功能。

@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc12d76cf34b5a631435a7535567aab0cafb0f44
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: dcccc862768b276c3c7965e51e8b2c30dca61e59
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970372"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998004"
 ---
 # <a name="media-player"></a>媒体播放器
 
@@ -85,7 +85,7 @@ Windows 10 入门应用中的媒体播放器。
 
 对于大多数使用方案，尤其是在较大的屏幕上，建议使用双行控件布局（下图）。 此布局为控件提供更多的空间，并且使用户可以更轻松地操作时间线。
 
-![手机上的双行 MTC 控件示例](images/controls/mtc_double_inprod.png)
+![双行 MTC 控件示例](images/controls/mtc_double_inprod.png)
 
 **系统媒体传输控件**
 

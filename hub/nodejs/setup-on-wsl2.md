@@ -7,13 +7,13 @@ manager: jken
 ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 node, wsl 上的 node, windows 中 linux 上的 node, 在 windows 上安装 node, 具有 vs code 的 nodejs, 通过 windows 上的 node 进行开发, 通过 windows 上的 nodejs 进行开发, 在 WSL 上安装 node, 适用于 Linux 的 Windows 子系统上的 NodeJS
 ms.localizationpriority: medium
-ms.date: 06/09/2020
-ms.openlocfilehash: e8fb06cb1e68d5dfa7f23e6966f917c96eb79859
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.date: 07/28/2020
+ms.openlocfilehash: ce4e736751d5586c6ab4489e976fc397b1be0301
+ms.sourcegitcommit: 6b83f1854a113490dcd4f52425ecade9e66e0b44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493272"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87333791"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 设置 Node.js 开发环境
 
@@ -85,7 +85,10 @@ ms.locfileid: "86493272"
 
 ## <a name="install-your-favorite-code-editor"></a>安装你最喜欢的代码编辑器
 
-建议将 Visual Studio Code 与适用于 Node.js 项目的 Remote-WSL 扩展一起使用 。 这会将 VS Code 拆分为“客户端-服务器”体系结构，使客户端（用户界面）在 Windows 计算机上运行，而使服务器（你的代码、Git、插件等）远程运行。
+建议将 Visual Studio Code 与适用于 Node.js 项目的 Remote-WSL 扩展一起使用。 这会将 VS Code 拆分为“客户端-服务器”体系结构，使客户端（VS Code 用户界面）在 Windows 操作系统上运行，而使服务器（你的代码、Git、插件等）在 WSL Linux 发行版中远程运行。 
+
+> [!NOTE]
+> 这种“远程”方案与你可能习惯的方案有点不同。 WSL 支持实际的 Linux 发行版，此发行版中的项目代码与 Windows 操作系统分开运行，但仍然在本地计算机上运行。 Remote-WSL 扩展与 Linux 子系统连接，就像它是一个远程服务器一样，尽管它没有在云中运行… 它仍在 WSL 环境中（与 Windows 一起运行）的本地计算机上运行。 
 
 - 支持基于 Linux 的 Intellisense 和 linting。
 - 你的项目将在 Linux 中自动生成。

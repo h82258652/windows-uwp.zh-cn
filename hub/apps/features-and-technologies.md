@@ -6,12 +6,12 @@ ms.date: 05/08/2019
 ms.localizationpriority: medium
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: 6bae7fdef4e9cdf05dfa6f56160f1021033123e6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c214a31162b64853fd2115170ef1fd7766cafe96
+ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77705772"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997944"
 ---
 # <a name="features-and-technologies-for-windows-apps"></a>适用于 Windows 应用的功能和技术
 
@@ -38,9 +38,9 @@ Windows Ink 平台与笔设备一起提供了一种创建数字手写便笺、�
 
 ### <a name="speech-interactions"></a>语音交互
 
-![基于 sgrs 语法文件的约束的初始识别屏幕](images/speech-listening-initial.png)
+![基于 SGRS 语法文件的约束的初始识别屏幕](images/speech-listening-initial.png)
 
-![基于 sgrs 语法文件的约束的最终识别屏幕](images/speech-listening-complete.png)
+![基于 SGRS 语法文件的约束的最终识别屏幕](images/speech-listening-complete.png)
 
 Windows 提供许多方法以将语音识别和文本到语音转换（又称 TTS 或语音合成）直接集成到应用的用户体验中。 语音可以成为用户与应用交互的可靠而愉快的方式，补充甚至替代键盘、鼠标、触摸和手势。
 

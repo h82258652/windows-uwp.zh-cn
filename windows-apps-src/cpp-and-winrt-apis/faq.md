@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 标准, c++, cpp, winrt, 投影, 频繁, 提问, 问题, 常见问题解答
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f5ad82831b6b07e0bbc2127947f777f0cd50e5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 23f1733f5710d86c8481899f5865d0c190e21885
+ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81759924"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87296187"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有关 C++/WinRT 的常见问题解答
 对你可能存疑的关于通过 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 创作和使用 Windows 运行时 API 的问题的解答。
@@ -28,7 +28,7 @@ ms.locfileid: "81759924"
 有关完整更改（包括重大更改），请参阅 [C++/WinRT 2.0 中的新增功能和更改](news.md#news-and-changes-in-cwinrt-20)。 例如，如果在 Windows 运行时集合上使用基于范围的 `for`，则现在需要 `#include <winrt/Windows.Foundation.Collections.h>`。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>为何我的新项目不能编译？ 我使用的是 Visual Studio 2017（15.8.0 或更高版本）和 SDK 版本 17134
-如果你使用的是 Visual Studio 2017（15.8.0 或更高版本）并且面向 Windows SDK 版本 10.0.17134.0（Windows 10 版本 1803），则新建的 C++/WinRT 项目可能无法编译并出现错误“错误 C3861: 'from_abi': 找不到标识符”，以及源自 *base.h* 的其他错误。  解决方法是要么面向 Windows SDK 的更高（更相符）版本，要么设置项目属性“C/C++” > “语言” > “一致性模式:    否”（此外，如果 **/permissive-** 显示在“其他选项”下的项目属性“C/C++” > “命令行”中，请将其删除）。   
+如果你使用的是 Visual Studio 2017（15.8.0 或更高版本）并且面向 Windows SDK 版本 10.0.17134.0（Windows 10 版本 1803），则新建的 C++/WinRT 项目可能无法编译并出现错误“错误 C3861: 'from_abi': 找不到标识符”，以及源自 *base.h* 的其他错误。 解决方法是要么面向 Windows SDK 的更高（更相符）版本，要么设置项目属性“C/C++” > “语言” > “一致性模式:  否”（此外，如果 **/permissive-** 显示在“其他选项”下的项目属性“C/C++” > “命令行”中，请将其删除）。  
 
 ## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>如何解决生成错误“C++/WinRT VSIX 不再提供项目生成支持。  请将项目引用添加到 Microsoft.Windows.CppWinRT Nuget 包”？
 请在项目中安装 **Microsoft.Windows.CppWinRT** NuGet 包。 有关详细信息，请参阅[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
@@ -40,19 +40,19 @@ C++/WinRT 生成支持（属性/目标）记录在 Microsoft.Windows.CppWinRT Nu
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>C++/WinRT Visual Studio 扩展 (VSIX) 的要求是什么？
 对于 VSIX 扩展版本 1.0.190128.4 和更高版本，请参阅 [C++/WinRT 的 Visual Studio 支持](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。 对于其他版本，请参阅[早期版本的 VSIX 扩展](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
-## <a name="whats-a-runtime-class"></a>什么是运行时类？ 
+## <a name="whats-a-runtime-class"></a>什么是运行时类？
 运行时类是一个可通过现代 COM 接口进行激活和使用（通常跨可执行文件）的类型。 但是，运行时类也可在实现它的编译单元内使用。 以接口定义语言 (IDL) 声明运行时类，可以在标准 C++ 中使用 C++/WinRT 实现该类。
 
-## <a name="what-do-the-projected-type-and-the-implementation-type-mean"></a>什么是投影类型和实现类型？  
-如果你仅使用 Windows 运行时类（运行时类），则将要专门处理投影类型   。 C++/WinRT 是一种语言投影，所以投影类型是通过 C++/WinRT 投影到 C++ 中的 Windows 运行时的表面的一部分   。 有关更多详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。
+## <a name="what-do-the-projected-type-and-the-implementation-type-mean"></a>什么是投影类型和实现类型？ 
+如果你仅使用 Windows 运行时类（运行时类），则将要专门处理投影类型 。 C++/WinRT 是一种语言投影，所以投影类型是通过 C++/WinRT 投影到 C++ 中的 Windows 运行时的表面的一部分 。 有关更多详细信息，请参阅[通过 C++/WinRT 使用 API](consume-apis.md)。
 
-实现类型包含运行时类的实现，因此仅在实现该运行时类的项目中可用  。 在实现运行时类的项目中工作时（Windows 运行时组件项目或使用 XAML UI 的项目），请务必熟悉对某个运行时类的实现类型与表示该运行时类已投影到 C++/WinRT 中的投影类型之间的区别。 有关更多详细信息，请参阅[通过 C++/WinRT 创作 API](author-apis.md)。
+实现类型包含运行时类的实现，因此仅在实现该运行时类的项目中可用。 在实现运行时类的项目中工作时（Windows 运行时组件项目或使用 XAML UI 的项目），请务必熟悉对某个运行时类的实现类型与表示该运行时类已投影到 C++/WinRT 中的投影类型之间的区别。 有关更多详细信息，请参阅[通过 C++/WinRT 创作 API](author-apis.md)。
 
 ## <a name="do-i-need-to-declare-a-constructor-in-my-runtime-classs-idl"></a>是否需要在运行时类的 IDL 中声明构造函数？
 仅当运行时类设计为从其实现编译单元外部进行使用时（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件）。 有关在 IDL 中声明构造函数的目的和结果的完整详细信息，请参阅[运行时类构造函数](author-apis.md#runtime-class-constructors)。
 
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>链接器为何显示“LNK2019:未解析的外部符号”错误？
-如果无法解析的符号是 C++/WinRT 投影的 Windows 命名空间头文件中的 API（位于 **winrt** 命名空间），则是因为该 API 在已包含的头文件中做了前置声明，但其定义位于尚未包含的头文件中。 请包括以 API 的命名空间命名的头文件，并重新生成。 有关详细信息，请参阅 [C++/WinRT 投影头文件](consume-apis.md#cwinrt-projection-headers)。
+如果无法解析的符号是 C++/WinRT 投影的 Windows 命名空间标头文件中的 API（位于 **winrt** 命名空间），则是因为该 API 在已包含的标头文件中做了前置声明，但其定义位于尚未包含的标头文件中。 请包括以 API 的命名空间命名的标头文件，并重新生成。 有关详细信息，请参阅 [C++/WinRT 投影标头文件](consume-apis.md#cwinrt-projection-headers)。
 
 如果无法解析的符号是 Windows 运行时自由函数，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，则需要在项目中显式链接 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) umbrella 库。 C++/WinRT 投影依赖于这些自由（非成员）函数和入口点。 如果为应用程序使用了某个 [C++/WinRT Visual Studio 扩展 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 项目模板，则会自动链接 `WindowsApp.lib`。 否则，你可以使用项目链接设置包含它，或在源代码中包含它。
 
@@ -66,13 +66,13 @@ C++/WinRT 生成支持（属性/目标）记录在 Microsoft.Windows.CppWinRT Nu
 
 在这种情况下，症状是&mdash;在构造运行时类或访问静态成员时&mdash;，看到在运行时引发的异常，其中 HRESULT 值为 REGDB_E_CLASSNOTREGISTERED。
 
-一个原因可能是 Windows 运行时组件无法加载。 请确保该组件的 Windows 运行时元数据文件 (`.winmd`) 与组件二进制文件 (`.dll`) 的名称相同，这也是项目名称和根命名空间的名称。 此外，请确保生成过程已将 Windows 运行时元数据和二进制文件正确地复制到使用应用的 `Appx` 文件夹。 同时确认使用应用的 `AppxManifest.xml`（也在 `Appx` 文件夹中）包含 &lt;InProcessServer&gt;  元素，该元素正确声明了可激活的类和二进制文件名称。
+一个原因可能是 Windows 运行时组件无法加载。 请确保该组件的 Windows 运行时元数据文件 (`.winmd`) 与组件二进制文件 (`.dll`) 的名称相同，这也是项目名称和根命名空间的名称。 此外，请确保生成过程已将 Windows 运行时元数据和二进制文件正确地复制到使用应用的 `Appx` 文件夹。 同时确认使用应用的 `AppxManifest.xml`（也在 `Appx` 文件夹中）包含 &lt;InProcessServer&gt; 元素，该元素正确声明了可激活的类和二进制文件名称。
 
 ### <a name="uniform-construction"></a>统一构造
 
 如果尝试通过任何投影类型的构造函数（不是其 **std:: nullptr_t** 构造函数）实例化本地实现的运行时类，也可能会发生此错误。 为了解决此问题，你将需要通常称为“统一构造”的 C++/WinRT 2.0 功能。 若要选择加入该功能，并且需要详细信息和代码示例，请参阅[选择加入统一构造和直接实现访问](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
-有关实例化不  需要统一构造的本地实现运行时类的方法，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。
+有关实例化不需要统一构造的本地实现运行时类的方法，请参阅 [XAML 控件；绑定到 C++/WinRT 属性](binding-property.md)。
 
 ## <a name="should-i-implement-windowsfoundationiclosable-and-if-so-how"></a>我是否应实现 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，该怎么实现？
 如果你有在其构造函数中释放资源的运行时类，而且有旨在从其实现编译单元外部所使用的运行时类（即适用于 Windows 运行时客户端应用的一般使用的 Windows 运行时组件），则我们建议你还要实现 **IClosable**，以支持缺乏确定性终止化的语言对运行时类的使用。 确保资源得到释放，无论调用的是析构函数 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) 还是两者。 可调用 **IClosable::Close** 任意次数。
@@ -88,7 +88,7 @@ C++/WinRT 生成支持（属性/目标）记录在 Microsoft.Windows.CppWinRT Nu
 ## <a name="can-i-use-llvmclang-to-compile-with-cwinrt"></a>C++/WinRT 可以使用 LLVM/Clang 编译吗？
 C++/WinRT 不支持 LLVM 和 Clang 工具链，但我们在内部使用 LLVM 和 Clang 验证 C++/WinRT 的合规性。 例如，如果想模拟内部执行的操作，可以尝试进行如下所述的试验。
 
-转到 [LLVM 下载页](https://releases.llvm.org/download.html)，找到“下载 LLVM 6.0.0” > “预生成的二进制文件”，然后下载“Clang for Windows (64 位)”    。 安装期间，选择将 LLVM 添加到 PATH 系统变量，以便能够从命令提示符调用它。 在此试验中，如果遇到任何“找不到 MSBuild 工具集目录”和/或“MSVC 集成安装失败”错误，可将其忽略。 调用 LLVM/Clang 的方法有很多，下面的示例只演示了其中一种。
+转到 [LLVM 下载页](https://releases.llvm.org/download.html)，找到“下载 LLVM 6.0.0” > “预生成的二进制文件”，然后下载“Clang for Windows (64 位)”  。 安装期间，选择将 LLVM 添加到 PATH 系统变量，以便能够从命令提示符调用它。 在此试验中，如果遇到任何“找不到 MSBuild 工具集目录”和/或“MSVC 集成安装失败”错误，可将其忽略。 调用 LLVM/Clang 的方法有很多，下面的示例只演示了其中一种。
 
 ```cmd
 C:\ExperimentWithLLVMClang>type main.cpp
@@ -146,7 +146,7 @@ int main()
 }
 ```
 
-对于上面的 **ToString** 调用，Visual Studio 中的“转到声明”命令会显示从 Windows 运行时 **IStringable::ToString** 到 C++/WinRT 的投影，如下所示。 
+对于上面的 **ToString** 调用，Visual Studio 中的“转到声明”命令会显示从 Windows 运行时 **IStringable::ToString** 到 C++/WinRT 的投影，如下所示。
 
 ```cppwinrt
 winrt::hstring ToString() const;
@@ -181,9 +181,9 @@ a.f();
 
 ## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>如何使用 GetCurrentTime 和/或 TRY 解析多义性？
 
-头文件 `winrt/Windows.UI.Xaml.Media.Animation.h` 声明一个名为 **GetCurrentTime** 的方法，而 `windows.h`（通过 `winbase.h`）定义一个名为 **GetCurrentTime** 的宏。 当二者发生冲突时，C++ 编译器会生成“错误 C4002:  类函数宏的调用 GetCurrentTime 参数太多”。
+头文件 `winrt/Windows.UI.Xaml.Media.Animation.h` 声明一个名为 **GetCurrentTime** 的方法，而 `windows.h`（通过 `winbase.h`）定义一个名为 **GetCurrentTime** 的宏。 当二者发生冲突时，C++ 编译器会生成“错误 C4002:类函数宏的调用 GetCurrentTime 参数太多”。
 
-同样，`winrt/Windows.Globalization.h` 声明一个名为 **TRY** 的方法，而 `afx.h` 定义一个名为 **GetCurrentTime** 的宏。 当这些发生冲突时，C++ 编译器会生成“错误 C2334:‘{’的前面有意外标记；跳过明显的函数体”  。
+同样，`winrt/Windows.Globalization.h` 声明一个名为 **TRY** 的方法，而 `afx.h` 定义一个名为 **GetCurrentTime** 的宏。 当这些发生冲突时，C++ 编译器会生成“错误 C2334:‘{’的前面有意外标记；跳过明显的函数体”。
 
 若要解决一个或两个问题，可以执行此操作。
 
@@ -198,5 +198,8 @@ a.f();
 #pragma pop_macro("GetCurrentTime")
 ```
 
+## <a name="how-do-i-speed-up-symbol-loading"></a>如何加速符号加载？
+在 Visual Studio 中，转到“工具” > “选项” > “调试” > “符号”，选中“只加载指定模块”   。 然后，可以右键单击堆栈列表中的 DLL，并加载各个模块。
+
 > [!NOTE]
-> 如果此主题未回答你的问题，则可以通过访问 [Visual Studio C++ 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)或使用 [Stack Overflow 上的 `c++-winrt` 标记](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)获得帮助。
+> 如果本主题未解答你的问题，可以访问 [Visual Studio C++ 开发人员社区](https://developercommunity.visualstudio.com/spaces/62/index.html)或使用 [`c++-winrt`Stack Overflow 上的标记](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)来获得帮助。

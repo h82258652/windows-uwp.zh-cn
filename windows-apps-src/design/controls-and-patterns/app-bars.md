@@ -4,7 +4,7 @@ title: 命令栏
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.date: 05/19/2017
+ms.date: 07/23/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 97507e0d9a954bc102bd4d2bcd825369df4cced7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: f7b2c260d20c95012297c1f78037626844f6badf
+ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970042"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87160890"
 ---
 # <a name="command-bar"></a>命令栏
 
@@ -54,10 +54,6 @@ CommandBar 控件是一款通用、灵活、轻型的控件，可显示复杂内
 展开的命令栏。
 
 ![展开的命令栏](images/control-examples/command-bar-photos.png)
-
-Windows Phone 的 Outlook 日历中的命令栏。
-
-![Outlook 日历应用中的命令栏](images/control-examples/command-bar-calendar-phone.png)
 
 ## <a name="anatomy"></a>结构
 
@@ -260,7 +256,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 更改 ClosedDisplayMode 以向用户提供或多或少的提示会影响周围元素的布局。 相比之下，当 CommandBar 在关闭和打开之间转换时，它不会影响其他元素的布局。
 
 ## <a name="placement"></a>放置
-命令栏可以放置在应用窗口顶部、应用窗口底部和内联放置。
+命令栏可以放置在应用窗口顶部、底部和内联放置，方法是将其嵌入到布局控件（例如 ```Grid.row```）中。
 
 ![应用栏放置示例 1](images/AppbarGuidelines_Placement1.png)
 
