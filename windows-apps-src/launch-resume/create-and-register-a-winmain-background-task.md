@@ -9,20 +9,20 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 14c447312361166148da6a5a8c2b20165fabbe97
-ms.sourcegitcommit: df0cd9c82d1c0c17ccde424e3c4a6ff680c31a35
+ms.openlocfilehash: 1e06a87ce771f603721c928b984d0f57d8e45013
+ms.sourcegitcommit: 1d53d89bd3d044f4a2dc290b93c1ad15a088b361
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80487521"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87547309"
 ---
 # <a name="create-and-register-a-winmain-com-background-task"></a>创建并注册 winmain COM 后台任务
 
 > [!TIP]
-> 在 Windows 10 版本2004中开始提供 BackgroundTaskBuilder. SetTaskEntryPointClsid 方法。
+> 从 Windows 10 版本2004开始提供 BackgroundTaskBuilder. SetTaskEntryPointClsid 方法。
 
 > [!NOTE]
-> 此方案不适用于打包的 WinMain 应用。 UWP 应用程序在尝试实现此方案时将遇到错误。
+> 此方案仅适用于打包的 WinMain 应用。 UWP 应用程序在尝试实现此方案时将遇到错误。
 
 **重要的 API**
 
@@ -41,11 +41,11 @@ ms.locfileid: "80487521"
 2.  在该新类中，实现[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)接口。 [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是在触发指定事件时将调用的必需入口点;每个后台任务都需要此方法。
 
 > [!NOTE]
-> 后台任务类本身&mdash;和后台任务项目中的所有其他类&mdash;需要是**公共**的。
+> 后台任务类本身 &mdash; 以及后台任务项目中的所有其他类都 &mdash; 需要是**公共**的。
 
 下面的示例代码演示了一个基本的基本任务类，该类对 primes 进行计数，并将其写入文件，直到请求取消为止。
 
-C++/WinRT 示例将后台任务类作为[**COM coclass**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)实现。
+C + +/WinRT 示例将后台任务类作为[**COM coclass**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)实现。
 
 
 <details>
@@ -264,9 +264,9 @@ namespace PackagedWinMainBackgroundTaskSample {
 
 ## <a name="add-the-support-code-to-instantiate-the-com-class"></a>添加支持代码以实例化 COM 类
 
-为了使后台任务激活到完全信任的 winmain 应用程序中，后台任务类必须具有支持代码，以便 COM 了解如何启动应用程序进程（如果它未在运行），然后了解进程的哪个实例当前用于处理此后台任务的新激活的服务器。
+为了使后台任务激活到完全信任的 winmain 应用程序中，后台任务类必须具有支持代码，以便 COM 了解如何启动应用程序进程（如果它未在运行），然后了解进程的哪个实例当前是用于处理该后台任务的新激活的服务器。
 
-1.  如果应用程序尚未运行，COM 需要了解如何启动该应用程序。 承载后台任务代码的应用进程需要在包清单中声明。 下面的示例代码演示了如何在**SampleBackgroundApp**中托管**SampleTask** 。 当后台任务在没有进程运行时启动时，将用进程参数 **"-StartSampleTaskServer"** 启动**SampleBackgroundApp** 。
+1.  如果应用程序尚未运行，COM 需要了解如何启动该应用程序。 承载后台任务代码的应用进程需要在包清单中声明。 下面的示例代码演示了如何在**SampleBackgroundApp.exe**中承载**SampleTask** 。 当后台任务在没有进程正在运行时启动时，将用进程参数 **"-StartSampleTaskServer"** 启动**SampleBackgroundApp.exe** 。
 
 ```xml
 
@@ -473,7 +473,7 @@ if (!taskRegistered)
 
 1.  （可选）在触发器事件发生后，你可以添加条件控制任务何时运行。 例如，如果你不希望在 internet 可用之前运行任务，请使用条件**InternetAvailable**。 有关可能条件的列表，请参阅 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
-以下示例代码指定需要用户存在的条件：
+以下示例代码分配需要用户存在的条件：
 
 ```csharp
 builder.AddCondition(new SystemCondition(SystemConditionType.InternetAvailable));
@@ -1058,15 +1058,15 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 * [处理取消的后台任务](handle-a-cancelled-background-task.md)
 * [监视后台任务进度和完成](monitor-background-task-progress-and-completion.md)
 * [在计时器上运行后台任务](run-a-background-task-on-a-timer-.md)
-* [创建和注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
+* [创建并注册进程内后台任务](create-and-register-an-inproc-background-task.md)。
 * [将进程外后台任务转换为进程内后台任务](convert-out-of-process-background-task.md)
 
 **后台任务指南**
 
 * [后台任务指南](guidelines-for-background-tasks.md)
 * [调试后台任务](debug-a-background-task.md)
-* [如何在 UWP 应用中触发挂起、继续和后台事件（调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [如何在 UWP 应用中触发暂停、恢复和后台事件（在调试时）](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
 
-**后台任务 API 参考**
+**后台任务 API 引用**
 
-* [**Windows.applicationmodel.resources.core**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
