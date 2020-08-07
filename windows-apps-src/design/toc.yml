@@ -450,6 +450,18 @@
           href: input/respond-to-the-presence-of-the-touch-keyboard.md
         - name: 使用输入范围更改触摸键盘
           href: input/use-input-scope-to-change-the-touch-keyboard.md
+    - name: 文本输入
+      items:
+        - name: 自定义文本输入
+          href: input/custom-text-input.md
+        - name: 文本缩放
+          href: input/text-scaling.md
+        - name: 选择文本和图像
+          href: input/guidelines-for-textselection.md
+        - name: 输入法编辑器
+          href: input/input-method-editors.md
+        - name: 输入法编辑器要求
+          href: input/input-method-editor-requirements.md
     - name: 游戏板和遥控器
       href: input/gamepad-and-remote-interactions.md
     - name: 触摸板
@@ -497,10 +509,6 @@
       href: input/input-injection.md
     - name: 标识输入设备
       href: input/identify-input-devices.md
-    - name: 自定义文本输入
-      href: input/custom-text-input.md
-    - name: 文本缩放
-      href: input/text-scaling.md
     - name: 拖放
       href: input/drag-and-drop.md
     - name: 视觉缩放和调整大小
@@ -509,8 +517,6 @@
       href: input/guidelines-for-panning.md
     - name: 旋转
       href: input/guidelines-for-rotation.md
-    - name: 选择文本和图像
-      href: input/guidelines-for-textselection.md
     - name: 目标设定
       href: input/guidelines-for-targeting.md
     - name: 视觉反馈
@@ -527,7 +533,7 @@
   items:
     - name: 概述
       href: usability/index.md
-    - name: 辅助功能
+    - name: 可访问性
       href: accessibility/accessibility.md
       items:
         - name: 概述

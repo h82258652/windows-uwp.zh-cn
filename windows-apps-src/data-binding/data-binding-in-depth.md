@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 5d18e78047b26e080041b15d12d94f8ef5d340b2
-ms.sourcegitcommit: 90fe7a9a5bfa7299ad1b78bbef289850dfbf857d
+ms.openlocfilehash: ee5985cc92dfc580c50d02f17c6d9f5777e8928d
+ms.sourcegitcommit: dccba7256765116f06cf96143eb3cbaa12d7fe0b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/13/2020
-ms.locfileid: "84756553"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87523553"
 ---
 # <a name="data-binding-in-depth"></a>深入了解数据绑定
 
@@ -199,7 +199,7 @@ void HostViewModel::PropertyChanged(winrt::event_token const& token) noexcept
 
 现在，**NextButtonText** 属性可供观察。 当创作到该属性的单向或双向绑定（将在稍后介绍操作方法）时，生成的绑定对象将订阅 **PropertyChanged** 事件。 引发该事件后，绑定对象的处理程序将接收一个包含已更改的属性名的参数。 这是绑定对象知道已更改和重新读取的属性值的方式。
 
-这样你便无需多次实现上面所示的模式，如果使用的是 C#，则只需从 [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) 示例（位于“Common”文件夹中）提供的 BindableBase 基类派生即可  。 下面是具体操作的一个示例。
+这样你便无需多次实现上面所示的模式，如果使用的是 C#，则只需从 [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) 示例（位于“Common”文件夹中）提供的 BindableBase 基类派生即可。 下面是具体操作的一个示例。
 
 ```csharp
 public class HostViewModel : BindableBase
